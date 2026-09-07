@@ -8,16 +8,16 @@ The original schema varies over time. Files contain `meta_info` and `model_predi
 
 ## Folder classification
 
-Public paths follow `forecasts/<sport>/<competition>/<season-or-year>/<forecast-month>/<original-filename>`.
+Public paths follow `forecasts/<sport>/<competition>/<season-or-year>/<original-filename>`.
 
 - Sports are `basketball`, `football`, and `tennis`.
 - Each league or tournament has its own folder with a stable lowercase name.
 - Legacy NBA and European club-football records are assigned to `2025-26`; source `2026_27` folders map to `2026-27`. The importer checks that the target date falls within the assigned July-to-June season window. New seasonal source folders must be explicit, so later files are not silently added to a legacy season.
 - World Cup, Wimbledon, and US Open records use their tournament year, `2026`.
-- The last folder is the forecast month (`YYYY-MM`) from the original filename. It does not use the event date or the GitHub upload date.
+- The last folder is the season or tournament year. Forecast dates remain in the original filenames and index.
 - The JSON filename and its companion `.json.ots` filename are unchanged. `source_relative_path` records the path under the original production folder, allowing every public file to be traced back to its source.
 
-See the [forecast catalog](forecast_catalog.md) for month-by-month links and counts. Source folders are not reorganized by the archive importer.
+See the [forecast catalog](forecast_catalog.md) for season/year links and counts. Source folders are not reorganized by the archive importer.
 
 ## Dates
 
@@ -51,7 +51,7 @@ The archive retains completed production batches, including imperfect or incompl
 | Field | Meaning |
 | --- | --- |
 | `sport`, `competition`, `competition_label` | Public sport, competition folder name, and readable competition name |
-| `season_or_year`, `forecast_month` | Explicit season/tournament year and forecast month used in the public folder structure |
+| `season_or_year` | Explicit season or tournament year used in the public folder structure |
 | `source_collection`, `source_relative_path` | Original collection name and relative JSON path under the production forecast folder |
 | `json_path`, `ots_path` | Repository-relative paths |
 | `forecast_date_from_filename`, `target_date`, `target_date_source` | Descriptive dates and their source; blanks mean unavailable |

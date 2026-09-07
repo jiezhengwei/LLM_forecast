@@ -14,7 +14,7 @@ from pathlib import Path
 from verify_archive import ROOT, proof_info, sha256, verify
 from archive_layout import COLLECTIONS, EXCLUDED_COLLECTIONS, classify
 FIELDS = [
-    'sport', 'competition', 'competition_label', 'season_or_year', 'forecast_month',
+    'sport', 'competition', 'competition_label', 'season_or_year',
     'source_collection', 'source_relative_path', 'json_path', 'forecast_date_from_filename',
     'target_date', 'target_date_source', 'generated_at_raw', 'model_record_count',
     'model_label_count', 'json_bytes', 'json_sha256', 'ots_path', 'ots_bytes',
@@ -95,9 +95,9 @@ def write_metadata(rows):
     ]
     catalog = [
         '# Browse forecasts', '',
-        'Choose a sport, competition, season or tournament year, then the **forecast month**. '
-        'Months refer to the date the forecast was made, as recorded in the filename, not the event date. '
-        'Each original JSON stays next to its matching `.json.ots` proof.', '',
+        'Choose a **sport → competition → season or tournament year**. '
+        'Each season or year folder contains its forecast JSON files and matching `.json.ots` proofs directly. '
+        'Original filenames record the forecast and target dates.', '',
         f'This archive contains **{len(rows)} JSON files and {len(rows)} OTS files**. '
         'F1, policy predictions, and pilot runs are excluded.', '',
     ]
@@ -110,12 +110,10 @@ def write_metadata(rows):
                      f'{dates[0] if dates else "not recorded"} | {dates[-1] if dates else "not recorded"} |')
         if sport != current_sport:
             catalog += [f'## {sport.title()}', '',
-                        '| Competition | Season / year | JSON files | Forecast months (file count) |',
-                        '| --- | --- | ---: | --- |']
+                        '| Competition | Season / year | JSON files |',
+                        '| --- | --- | ---: |']
             current_sport = sport
-        months = Counter(r['forecast_month'] for r in group)
-        month_links = ' · '.join(f'[{month} ({count})]({folder}/{month}/)' for month, count in sorted(months.items()))
-        catalog.append(f'| [{label}]({folder}/) | {season} | {len(group)} | {month_links} |')
+        catalog.append(f'| [{label}]({folder}/) | {season} | {len(group)} |')
     # Insert a blank line before each heading following a table.
     catalog_text = '\n'.join(catalog).replace('\n## ', '\n\n## ')
     write_if_changed(ROOT / 'docs/forecast_catalog.md', catalog_text + '\n')

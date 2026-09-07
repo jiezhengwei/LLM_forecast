@@ -6,7 +6,7 @@ This repository makes the recorded prompts, model responses, and OpenTimestamps 
 
 ## Start here
 
-- [Browse by sport, competition, season, and month](docs/forecast_catalog.md)
+- [Browse by sport, competition, and season or year](docs/forecast_catalog.md)
 - [Download the file index](metadata/forecast_index.csv) (dates, model-label counts, SHA-256 hashes, and proof status)
 - [See archive coverage and validation status](docs/archive_snapshot.md)
 - [Verify a forecast file](docs/verification.md)
@@ -15,7 +15,7 @@ This repository makes the recorded prompts, model responses, and OpenTimestamps 
 
 ## What is included
 
-Each forecast batch consists of an original `.json` file and its companion `.json.ots` proof. The public archive organizes them by **sport → competition → season or tournament year → forecast month**. Filenames and file contents remain unchanged, and each proof stays beside its JSON.
+Each forecast batch consists of an original `.json` file and its companion `.json.ots` proof. The public archive organizes them by **sport → competition → season or tournament year**. Files sit directly in the season or year folder. Filenames and file contents remain unchanged, and each proof stays beside its JSON.
 
 The archive includes NBA, six European club-football competitions, the World Cup, Wimbledon, and the US Open. F1, policy predictions, World Cup pilot runs, temporary files, and timestamp backup files are excluded.
 
@@ -27,19 +27,19 @@ The archive includes NBA, six European club-football competitions, the World Cup
 
 ```text
 forecasts/
-  basketball/nba/2025-26/2026-03/                JSON + OTS pairs
-  football/premier-league/2025-26/2026-03/       JSON + OTS pairs
-  football/premier-league/2026-27/2026-08/       JSON + OTS pairs
-  football/world-cup/2026/2026-06/              JSON + OTS pairs
-  tennis/wimbledon/2026/2026-07/                JSON + OTS pairs
-  tennis/us-open/2026/2026-09/                  JSON + OTS pairs
+  basketball/nba/2025-26/                JSON + OTS pairs
+  football/premier-league/2025-26/       JSON + OTS pairs
+  football/premier-league/2026-27/       JSON + OTS pairs
+  football/world-cup/2026/              JSON + OTS pairs
+  tennis/wimbledon/2026/                JSON + OTS pairs
+  tennis/us-open/2026/                  JSON + OTS pairs
 metadata/forecast_index.csv   One row per forecast batch
 metadata/SHA256SUMS           Checksums of every archived JSON and OTS file
 docs/                        Coverage, data notes, and verification instructions
 scripts/                     Local import and integrity checks
 ```
 
-The tree above shows examples. The [catalog](docs/forecast_catalog.md) lists every included competition and month with file counts. Seasons are explicit, including `2025-26` for legacy NBA and European club-football records and `2026-27` for the new club-football records. Months use the forecast date in the filename; a June 30 forecast for a July 1 match is filed under `2026-06`. The file index records the original source-relative path for traceability.
+The tree above shows examples. The [catalog](docs/forecast_catalog.md) lists every included competition and season or year with file counts. Seasons are explicit, including `2025-26` for legacy NBA and European club-football records and `2026-27` for the new club-football records. Forecast and target dates remain in the original filenames and file index. The index also records the original source-relative path for traceability.
 
 ## Timing and integrity
 

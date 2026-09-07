@@ -13,7 +13,7 @@ git diff --stat
 git status --short
 ```
 
-The importer reads the original production layout and assigns each accepted batch to `forecasts/<sport>/<competition>/<season-or-year>/<forecast-month>/`. It accepts JSONs with matching, parseable SHA-256 OTS companions, always excludes F1, policy predictions and the `pilot_smoke*` directories, and checks for common credential patterns without printing their values. It completes preflight validation before copying new files. Unexpected layouts, missing proofs, digest mismatches, and changes to existing archived bytes stop the import.
+The importer reads the original production layout and assigns each accepted batch directly to `forecasts/<sport>/<competition>/<season-or-year>/`. It accepts JSONs with matching, parseable SHA-256 OTS companions, always excludes F1, policy predictions and the `pilot_smoke*` directories, and checks for common credential patterns without printing their values. It completes preflight validation before copying new files. Unexpected layouts, missing proofs, digest mismatches, and changes to existing archived bytes stop the import.
 
 Imports are additive. Removing a local source file does not remove its archived copy. Re-running without new files leaves the index and coverage unchanged. The script does not execute a forecasting notebook, call a model, create a timestamp, or upload anything.
 

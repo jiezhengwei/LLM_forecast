@@ -51,12 +51,11 @@ def classify(source_relative_path):
         if len(relative.parts) != 2 or target_date.year != int(period_type):
             raise ValueError(f'Target date/layout does not match tournament year: {relative}')
         period = period_type
-    month = forecast_date.strftime('%Y-%m')
     return {
         'sport': sport, 'competition': competition, 'competition_label': label,
-        'season_or_year': period, 'forecast_month': month,
+        'season_or_year': period,
         'source_collection': collection, 'source_relative_path': relative.as_posix(),
-        'json_path': f'forecasts/{sport}/{competition}/{period}/{month}/{relative.name}',
+        'json_path': f'forecasts/{sport}/{competition}/{period}/{relative.name}',
         'forecast_date_from_filename': forecast_date.isoformat(),
         'target_date': target_date.isoformat(), 'target_date_source': 'filename',
     }

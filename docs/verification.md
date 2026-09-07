@@ -31,7 +31,7 @@ Use the [OpenTimestamps verifier](https://opentimestamps.org/): select a `.json.
 For command-line verification with the official client:
 
 ```sh
-ots verify "forecasts/basketball/nba/2025-26/2026-06/nba_pred_on_2026-06-02_for_2026-06-03_persona-pro.json.ots"
+ots verify "forecasts/basketball/nba/2025-26/nba_pred_on_2026-06-02_for_2026-06-03_persona-pro.json.ots"
 ```
 
 Verification may require network access and a configured Bitcoin data source. A pending-only proof is incomplete evidence in its saved form. It may need upgrading from its original calendar servers. Work on a copy of the JSON/OTS pair outside the archive before running `ots upgrade`; keep the archived originals intact. Upgrading a proof retrieves additional evidence, whereas creating a new stamp today would not recover the original timestamp.
