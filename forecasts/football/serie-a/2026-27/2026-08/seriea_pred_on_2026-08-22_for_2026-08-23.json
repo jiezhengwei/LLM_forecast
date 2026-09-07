@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-22",
+        "target_date_et": "2026-08-23",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874930\nMatchup: Juventus (away) @ Frosinone (home)\nHome: Frosinone\nAway: Juventus\nKickoff UTC: 2026-08-23T16:30Z\nKickoff ET: 2026-08-23 12:30 EDT\nVenue: Stadio Benito Stirpe\nRound: unavailable\nHome form: WWWWW\nAway form: DLWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Frosinone +550 (open +500); Draw +340 (open +310); Juventus -235 (open -235)\nTavily context:\n  - Title: Frosinone vs Juventus prediction: teams form analysis, possible lineups on August 23, 2026 – Ratingbet.com\n    Content: ## Frosinone vs Juventus: Probable Starting Lineups\n\nFrosinone are expected to play in a 1-4-3-3 formation (probable lineup): Palmizani - Monterisi, Akpoguma, Calvani, Oyono - Schmid, Cichella, Calo - Kvernadze, Raimondo, Gedjemis\n\nJuventus are expected to play in a 1-3-4-2-1 formation (probable lineup): Di Gregorio - Kalulu, Kelly, Gatti - Cambiaso, Celik, Douglas Luiz, Locatelli - Arthur, Joao Mario - Milik\n\nPlace your bet on the upcoming match and follow your team's performance in the Italian Serie A standings\n\nOur Pick\n\nGame Prediction W2(-1)\n\n1.6\n\nMostbet app\n\nDetails → ...\n    URL: https://ratingbet.com/predictions/frosinone-vs-juventus-prediction-teams-form-analysis-possible-lineups-on-august-23-2026\n  - Title: Frosinone vs Juventus - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Frosinone vs Juventus — Sun, August 23, 4:30 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Benito Stirpe\n\nFrosinoneFrosinone\n\n‌\n‌\n\nJuventusJuventus\n\n# Frosinone vs Juventus — Sun, August 23, 4:30 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Benito Stirpe\n\nFrosinoneFrosinone\n\n‌\n‌\n\nJuventusJuventus\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Jeff Ekhator\n\n  Muscle injury / Late August 2026\n\nEkhatorMuscle injuryLate August 2026\n\n## Team form\n\n Frosinone\n\n  4 - 1\n\n  Juve Stabia\n Frosinone\n\n  1 - 2\n\n  Lazio\n Frosinone\n\n  5 - 0\n\n  Mantova\n Juve Stabia ...\n    URL: https://www.fotmob.com/matches/juventus-vs-frosinone/38fmtf\n  - Title: Frosinone vs Juventus Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Stake Logo\n\n## Frosinone vs Juventus Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nJuventus are the 1.43 favourites on the 1x2 betting. That implies a 70% chance of triumphing in this Serie A encounter according to the latest odds. For those wanting to back Frosinone, you will find 7.50 about this outsider. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/frosinone-vs-juventus-prediction-lineups-odds-2026-08-23\n  - Title: Frosinone vs Juventus Predictions, Picks & Odds - 23/08/ ...\n    Content: Serie A\n\nFrosinone Frosinone\n\n23 Aug 2026 17:30\n\nJuventus Juventus\n\nPrediction:\n\nJuventus to win 1.44\n\nView oddsBetfred >\n\nPick your prediction\n\n FrosinoneDraw Juventus\n\n# Frosinone vs Juventus Predictions, Picks & Odds – 23/08/2026\n\nSerie A · 1\n\n23 Aug 2026  Stadio Benito Stirpe  Louis Hecq\n\n### Frosinone vs Juventus – Best bets of the match ...\n    URL: https://www.toffeeweb.com/frosinone-vs-juventus-predictions-picks-odds-23-08-2026\n\nGame ID: 2\nSource event_id: 401874946\nMatchup: Lecce (away) @ Venezia (home)\nHome: Venezia\nAway: Lecce\nKickoff UTC: 2026-08-23T16:30Z\nKickoff ET: 2026-08-23 12:30 EDT\nVenue: Stadio Pier Luigi Penzo\nRound: unavailable\nHome form: WWDWW\nAway form: LWWLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Venezia +120 (open +125); Draw +210 (open +205); Lecce +240 (open +205)\nTavily context:\n  - Title: Venezia vs Lecce: Scores, Results Lineups, H2H & Odds\n    Content: Missing Players: Marin Sverko, Andrea Adorante.\n\nAway Team: LecceCoach: Eusebio Di Francesco.\n\nGoalkeeper: Wladimiro Falcone.\n\nDefenders: Danilo Veiga, Kialonda Gaspar, Tiago Gabriel, Antonino Gallo.\n\nMidfielders: Lassana Coulibaly, Oumar Ngom, Youssef Maleh.\n\nAttackers: Santiago Pierotti, Willem Geubbels, Konan N’Dri.\n\nSubs: Plamen Penev, Jamil Siebert, Gaby Jean, Corrie Ndaba, Olaf Gorter, Mohamed Kaba, Omri Gandelman, Nikola Stulic.\n\nMissing Players: Lameck Banda, Medon Berisha.\n\n### Event Details:\n\nName: Venezia vs. Lecce\n\nDate: Sunday, August 23, 2026\n\nTime: 16:30 ...\n    URL: https://www.365scores.com/en-us/football/match/serie-a-17/lecce-venezia-246-308-17\n  - Title: Venezia VS Lecce: Live Scores, Lineups, H2H & Odds\n    Content: Midfielders: Lassana Coulibaly, Oumar Ngom, Youssef Maleh.\n\nAttackers: Santiago Pierotti, Willem Geubbels, Konan N’Dri.\n\nSubs: Plamen Penev, Jamil Siebert, Gaby Jean, Corrie Ndaba, Olaf Gorter, Mohamed Kaba, Omri Gandelman, Nikola Stulic.\n\nMissing Players: Lameck Banda, Medon Berisha.\n\n### Event Details:\n\nName: Venezia vs. Lecce\n\nDate: Sunday, August 23, 2026\n\nTime: 16:30\n\nLocation: Stadio Pierluigi Penzo\n\nCapacity: 11150\n\nSee More\n\nImage 110 [...] Home Team: VeneziaCoach: Giovanni Stroppa.\n\nGoalkeeper: Filip Stankovic. ...\n    URL: https://www.365scores.com/football/match/serie-a-17/lecce-venezia-246-308-17\n  - Title: Venezia vs Lecce prediction, preview & betting tips – 23/08/2026\n    Content: ## Whispers predicts: Venezia 1-1 Lecce\n\nBased on their last four meetings, which have ended in a low-scoring affair, we expect a 1-1 draw for this clash.\n\nWith both teams eager to avoid an opening-day defeat, a tight affair with goals at both ends represents the most realistic outcome.\n\nBookmakers have tipped Venezia as slight favourites at odds of 5/4 (2.25) to claim a home victory.\n\nA draw is priced at 21/10 (3.10), while an away win for Lecce is offered at 23/10 (3.30) odds as a competitive option for the visiting team. ...\n    URL: https://footballwhispers.com/blog/venezia-vs-lecce-prediction-23-08-2026\n  - Title: Venezia vs Lecce prediction – Odds & stats – 23 August 2026\n    Content: +2.5\nProbability: 50.11%\n\nBet365\nBet365\n\n| Venezia |  | Lecce |\n ---\n| Venezia | stat | Lecce |\n| 5.5 | Average goals per game | 2.5 |\n| 3.83 | Average goal scored | 1.67 |\n| 1.67 | Goals conceded per match | 0.83 |\n| 0 % | Matches with -2.5 goals | 67 % |\n| 100 % | Matches with +2.5 goals | 33 % |\n| 4.5 | Average goals home team 1/away team 2 | 2.5 |\n| 3.67 | Avg. goals home team 1/away team 2 | 1.5 |\n| 0.83 | Avg. goals conceded home team 1/away team 2 | 1 |\nStats based on the last 6 matches\n\nVenezia\nLecce\n\n## Venezia vs Lecce BTTS tips\n\nNo\nProbability: 52.92%\n\nBet365\nBet365 ...\n    URL: https://www.wincomparator.com/predictions/venezia-lecce-8522044\n\nGame ID: 3\nSource event_id: 401874748\nMatchup: Sassuolo (away) @ Atalanta (home)\nHome: Atalanta\nAway: Sassuolo\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: New Balance Arena\nRound: unavailable\nHome form: DDLWD\nAway form: WLLLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Atalanta -200 (open -205); Draw +320 (open +310); Sassuolo +475 (open +425)\nTavily context:\n  - Title: Atalanta vs Sassuolo - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atalanta vs Sassuolo — Sun, August 23, 6:45 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nSassuoloSassuolo\n\n# Atalanta vs Sassuolo — Sun, August 23, 6:45 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nSassuoloSassuolo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Charles De Ketelaere\n\n  Muscle injury / Doubtful\n\nDe KetelaereMuscle injuryDoubtful\n\n  Honest Ahanor ...\n    URL: https://www.fotmob.com/matches/sassuolo-vs-atalanta/28qbxm\n  - Title: Atalanta vs Sassuolo Box Score - August 23, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nSerie A, Matchweek 1\n\nAtalanta\n\nATA\n\nSun Aug 23\n\n18:45\n\nSAS\n\nSassuolo\n\nInjury Report\n\nATA\n\nATA\n\nC. De Ketelaere\n\nC. De Ketelaere\n\nA\n\nOut\n\nGroin Injury\n\nH. Ahanor\n\nH. Ahanor\n\nD\n\nOut\n\nGroin Injury\n\nK. Sulemana\n\nK. Sulemana\n\nA\n\nOut\n\nMCL Knee Injury\n\nI. Hien\n\nI. Hien\n\nD\n\nOut\n\nThigh Injury\n\nL. Bernasconi\n\nL. Bernasconi\n\nD\n\nOut\n\nMCL Knee Injury\n\nSAS\n\nSAS\n\nD. Berardi\n\nD. Berardi\n\nA\n\nOut\n\nAnkle Injury\n\nI. Koné\n\nI. Koné\n\nM\n\nOut\n\nBroken Leg\n\nS. Walukiewicz\n\nS. Walukiewicz\n\nD\n\nOut\n\nLeg Injury\n\nD. Boloca\n\nD. Boloca\n\nM\n\nOut\n\nKnee Injury\n\nFali Candé\n\nFali Candé\n\nD\n\nOut ...\n    URL: https://www.nytimes.com/athletic/football/game/atalanta-vs-sassuolo/YbvQIX89niYpEX1Y\n  - Title: Atalanta vs Sassuolo Prediction & Betting Tips - Serie A - SportyTrader\n    Content: The probability according to Sportytrader ⭐ for a draw between Atalanta vs Sassuolo is 22.68% with odds of 4.5 at Stake. Our prediction model\n    URL: https://www.sportytrader.com/en/betting-tips/atalanta-sassuolo-367531\n  - Title: Atalanta vs. Sassuolo (Aug 23, 2026) Live Score - ESPN\n    Content: # Atalanta v Sassuolo\n\nATA\n\nParamount+\n\nSAS\n\n## Game Information\n\nBergamo, Italy\n\n## LAST FIVE MATCHES\n\n| DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/20/26 | vsHTA | D0-0 | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/14/26 | vsATH | W1-0 | Club Friendly |\n| 8/8/26 | @S04 | W3-0 | Club Friendly |\n| 8/2/26 | @FEY | L2-1 | Club Friendly |\n| 5/22/26 | @FIO | D1-1 | Italian Serie A | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874748/sassuolo-atalanta\n\nGame ID: 4\nSource event_id: 401874932\nMatchup: AC Milan (away) @ Torino (home)\nHome: Torino\nAway: AC Milan\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: Stadio Olimpico Grande Torino\nRound: unavailable\nHome form: WDLWL\nAway form: LWLLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Torino +330 (open +310); Draw +255 (open +250); AC Milan -130 (open -135)\nTavily context:\n  - Title: Torino vs AC Milan Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: 27 Apr Serie A\n\nAC Milan 0-0 Juventus\n\nConfirmed Lineups\n\n19 Apr Serie A\n\nHellas Verona 0-1 AC Milan\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nTorino  Injury Table\n\nType Name Info\n\nFranco Israel Shoulder\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nTino Anjorin Hip\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nZakaria Aboukhlal Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nPietro Pellegri Cruciate ligame\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-08-23 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/torino-vs-ac-milan-prediction-lineups-odds-2026-08-23\n  - Title: Serie A Injuries & Suspensions | Injury News\n    Content: Warren Bondo M - - - Other 2026-08-23\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected Return: 2026-08-23\n\n Stake logo    Torino vs AC Milan    1:4.60 X:3.70 2:1.72  Bet Now!    T&Cs apply, Gamble Responsibly 18+\n\n### Atalanta\n\nType Name Position Matches Goals Assists Info Expected Return\n\nKamaldeen Sulemana F - - - Knee -\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: -\n\nIsak Hien D - - - Thigh 2026-09-30\n\nPosition: Defender Matches: - Goals: - Assists: - Expected Return: 2026-09-30\n\nLorenzo Bernasconi D - - - Knee 2026-08-23 ...\n    URL: https://www.sportsgambler.com/injuries/football/italy-serie-a\n  - Title: Torino vs AC Milan prediction, preview & betting tips – 23/08/2026\n    Content: Based on recent performance metrics and squad strength, bookmakers have made AC Milan the match favourites at odds of 4/5 (1.80) to secure an away win.\n\nA draw is currently priced at 13/5 (3.60), representing a possible result if the hosts remain compact, while a home win for Torino stands at 10/3 (4.33).\n\nConsidering that the last six competitive encounters between these two teams produced high goal tallies with both sides finding the net, over 2.5 goals is available at 9/10 (1.90) odds. ...\n    URL: https://footballwhispers.com/blog/torino-vs-ac-milan-prediction-23-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874930\nMatchup: Juventus (away) @ Frosinone (home)\nHome: Frosinone\nAway: Juventus\nKickoff UTC: 2026-08-23T16:30Z\nKickoff ET: 2026-08-23 12:30 EDT\nVenue: Stadio Benito Stirpe\nRound: unavailable\nHome form: WWWWW\nAway form: DLWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Frosinone +550 (open +500); Draw +340 (open +310); Juventus -235 (open -235)\nTavily context:\n  - Title: Frosinone vs Juventus prediction: teams form analysis, possible lineups on August 23, 2026 – Ratingbet.com\n    Content: ## Frosinone vs Juventus: Probable Starting Lineups\n\nFrosinone are expected to play in a 1-4-3-3 formation (probable lineup): Palmizani - Monterisi, Akpoguma, Calvani, Oyono - Schmid, Cichella, Calo - Kvernadze, Raimondo, Gedjemis\n\nJuventus are expected to play in a 1-3-4-2-1 formation (probable lineup): Di Gregorio - Kalulu, Kelly, Gatti - Cambiaso, Celik, Douglas Luiz, Locatelli - Arthur, Joao Mario - Milik\n\nPlace your bet on the upcoming match and follow your team's performance in the Italian Serie A standings\n\nOur Pick\n\nGame Prediction W2(-1)\n\n1.6\n\nMostbet app\n\nDetails → ...\n    URL: https://ratingbet.com/predictions/frosinone-vs-juventus-prediction-teams-form-analysis-possible-lineups-on-august-23-2026\n  - Title: Frosinone vs Juventus - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Frosinone vs Juventus — Sun, August 23, 4:30 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Benito Stirpe\n\nFrosinoneFrosinone\n\n‌\n‌\n\nJuventusJuventus\n\n# Frosinone vs Juventus — Sun, August 23, 4:30 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Benito Stirpe\n\nFrosinoneFrosinone\n\n‌\n‌\n\nJuventusJuventus\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Jeff Ekhator\n\n  Muscle injury / Late August 2026\n\nEkhatorMuscle injuryLate August 2026\n\n## Team form\n\n Frosinone\n\n  4 - 1\n\n  Juve Stabia\n Frosinone\n\n  1 - 2\n\n  Lazio\n Frosinone\n\n  5 - 0\n\n  Mantova\n Juve Stabia ...\n    URL: https://www.fotmob.com/matches/juventus-vs-frosinone/38fmtf\n  - Title: Frosinone vs Juventus Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Stake Logo\n\n## Frosinone vs Juventus Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nJuventus are the 1.43 favourites on the 1x2 betting. That implies a 70% chance of triumphing in this Serie A encounter according to the latest odds. For those wanting to back Frosinone, you will find 7.50 about this outsider. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/frosinone-vs-juventus-prediction-lineups-odds-2026-08-23\n  - Title: Frosinone vs Juventus Predictions, Picks & Odds - 23/08/ ...\n    Content: Serie A\n\nFrosinone Frosinone\n\n23 Aug 2026 17:30\n\nJuventus Juventus\n\nPrediction:\n\nJuventus to win 1.44\n\nView oddsBetfred >\n\nPick your prediction\n\n FrosinoneDraw Juventus\n\n# Frosinone vs Juventus Predictions, Picks & Odds – 23/08/2026\n\nSerie A · 1\n\n23 Aug 2026  Stadio Benito Stirpe  Louis Hecq\n\n### Frosinone vs Juventus – Best bets of the match ...\n    URL: https://www.toffeeweb.com/frosinone-vs-juventus-predictions-picks-odds-23-08-2026\n\nGame ID: 2\nSource event_id: 401874946\nMatchup: Lecce (away) @ Venezia (home)\nHome: Venezia\nAway: Lecce\nKickoff UTC: 2026-08-23T16:30Z\nKickoff ET: 2026-08-23 12:30 EDT\nVenue: Stadio Pier Luigi Penzo\nRound: unavailable\nHome form: WWDWW\nAway form: LWWLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Venezia +120 (open +125); Draw +210 (open +205); Lecce +240 (open +205)\nTavily context:\n  - Title: Venezia vs Lecce: Scores, Results Lineups, H2H & Odds\n    Content: Missing Players: Marin Sverko, Andrea Adorante.\n\nAway Team: LecceCoach: Eusebio Di Francesco.\n\nGoalkeeper: Wladimiro Falcone.\n\nDefenders: Danilo Veiga, Kialonda Gaspar, Tiago Gabriel, Antonino Gallo.\n\nMidfielders: Lassana Coulibaly, Oumar Ngom, Youssef Maleh.\n\nAttackers: Santiago Pierotti, Willem Geubbels, Konan N’Dri.\n\nSubs: Plamen Penev, Jamil Siebert, Gaby Jean, Corrie Ndaba, Olaf Gorter, Mohamed Kaba, Omri Gandelman, Nikola Stulic.\n\nMissing Players: Lameck Banda, Medon Berisha.\n\n### Event Details:\n\nName: Venezia vs. Lecce\n\nDate: Sunday, August 23, 2026\n\nTime: 16:30 ...\n    URL: https://www.365scores.com/en-us/football/match/serie-a-17/lecce-venezia-246-308-17\n  - Title: Venezia VS Lecce: Live Scores, Lineups, H2H & Odds\n    Content: Midfielders: Lassana Coulibaly, Oumar Ngom, Youssef Maleh.\n\nAttackers: Santiago Pierotti, Willem Geubbels, Konan N’Dri.\n\nSubs: Plamen Penev, Jamil Siebert, Gaby Jean, Corrie Ndaba, Olaf Gorter, Mohamed Kaba, Omri Gandelman, Nikola Stulic.\n\nMissing Players: Lameck Banda, Medon Berisha.\n\n### Event Details:\n\nName: Venezia vs. Lecce\n\nDate: Sunday, August 23, 2026\n\nTime: 16:30\n\nLocation: Stadio Pierluigi Penzo\n\nCapacity: 11150\n\nSee More\n\nImage 110 [...] Home Team: VeneziaCoach: Giovanni Stroppa.\n\nGoalkeeper: Filip Stankovic. ...\n    URL: https://www.365scores.com/football/match/serie-a-17/lecce-venezia-246-308-17\n  - Title: Venezia vs Lecce prediction, preview & betting tips – 23/08/2026\n    Content: ## Whispers predicts: Venezia 1-1 Lecce\n\nBased on their last four meetings, which have ended in a low-scoring affair, we expect a 1-1 draw for this clash.\n\nWith both teams eager to avoid an opening-day defeat, a tight affair with goals at both ends represents the most realistic outcome.\n\nBookmakers have tipped Venezia as slight favourites at odds of 5/4 (2.25) to claim a home victory.\n\nA draw is priced at 21/10 (3.10), while an away win for Lecce is offered at 23/10 (3.30) odds as a competitive option for the visiting team. ...\n    URL: https://footballwhispers.com/blog/venezia-vs-lecce-prediction-23-08-2026\n  - Title: Venezia vs Lecce prediction – Odds & stats – 23 August 2026\n    Content: +2.5\nProbability: 50.11%\n\nBet365\nBet365\n\n| Venezia |  | Lecce |\n ---\n| Venezia | stat | Lecce |\n| 5.5 | Average goals per game | 2.5 |\n| 3.83 | Average goal scored | 1.67 |\n| 1.67 | Goals conceded per match | 0.83 |\n| 0 % | Matches with -2.5 goals | 67 % |\n| 100 % | Matches with +2.5 goals | 33 % |\n| 4.5 | Average goals home team 1/away team 2 | 2.5 |\n| 3.67 | Avg. goals home team 1/away team 2 | 1.5 |\n| 0.83 | Avg. goals conceded home team 1/away team 2 | 1 |\nStats based on the last 6 matches\n\nVenezia\nLecce\n\n## Venezia vs Lecce BTTS tips\n\nNo\nProbability: 52.92%\n\nBet365\nBet365 ...\n    URL: https://www.wincomparator.com/predictions/venezia-lecce-8522044\n\nGame ID: 3\nSource event_id: 401874748\nMatchup: Sassuolo (away) @ Atalanta (home)\nHome: Atalanta\nAway: Sassuolo\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: New Balance Arena\nRound: unavailable\nHome form: DDLWD\nAway form: WLLLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Atalanta -200 (open -205); Draw +320 (open +310); Sassuolo +475 (open +425)\nTavily context:\n  - Title: Atalanta vs Sassuolo - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atalanta vs Sassuolo — Sun, August 23, 6:45 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nSassuoloSassuolo\n\n# Atalanta vs Sassuolo — Sun, August 23, 6:45 PM UTC\n\nSerie A Round 1\n\n Serie A Round 1\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nSassuoloSassuolo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Charles De Ketelaere\n\n  Muscle injury / Doubtful\n\nDe KetelaereMuscle injuryDoubtful\n\n  Honest Ahanor ...\n    URL: https://www.fotmob.com/matches/sassuolo-vs-atalanta/28qbxm\n  - Title: Atalanta vs Sassuolo Box Score - August 23, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nSerie A, Matchweek 1\n\nAtalanta\n\nATA\n\nSun Aug 23\n\n18:45\n\nSAS\n\nSassuolo\n\nInjury Report\n\nATA\n\nATA\n\nC. De Ketelaere\n\nC. De Ketelaere\n\nA\n\nOut\n\nGroin Injury\n\nH. Ahanor\n\nH. Ahanor\n\nD\n\nOut\n\nGroin Injury\n\nK. Sulemana\n\nK. Sulemana\n\nA\n\nOut\n\nMCL Knee Injury\n\nI. Hien\n\nI. Hien\n\nD\n\nOut\n\nThigh Injury\n\nL. Bernasconi\n\nL. Bernasconi\n\nD\n\nOut\n\nMCL Knee Injury\n\nSAS\n\nSAS\n\nD. Berardi\n\nD. Berardi\n\nA\n\nOut\n\nAnkle Injury\n\nI. Koné\n\nI. Koné\n\nM\n\nOut\n\nBroken Leg\n\nS. Walukiewicz\n\nS. Walukiewicz\n\nD\n\nOut\n\nLeg Injury\n\nD. Boloca\n\nD. Boloca\n\nM\n\nOut\n\nKnee Injury\n\nFali Candé\n\nFali Candé\n\nD\n\nOut ...\n    URL: https://www.nytimes.com/athletic/football/game/atalanta-vs-sassuolo/YbvQIX89niYpEX1Y\n  - Title: Atalanta vs Sassuolo Prediction & Betting Tips - Serie A - SportyTrader\n    Content: The probability according to Sportytrader ⭐ for a draw between Atalanta vs Sassuolo is 22.68% with odds of 4.5 at Stake. Our prediction model\n    URL: https://www.sportytrader.com/en/betting-tips/atalanta-sassuolo-367531\n  - Title: Atalanta vs. Sassuolo (Aug 23, 2026) Live Score - ESPN\n    Content: # Atalanta v Sassuolo\n\nATA\n\nParamount+\n\nSAS\n\n## Game Information\n\nBergamo, Italy\n\n## LAST FIVE MATCHES\n\n| DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/20/26 | vsHTA | D0-0 | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/14/26 | vsATH | W1-0 | Club Friendly |\n| 8/8/26 | @S04 | W3-0 | Club Friendly |\n| 8/2/26 | @FEY | L2-1 | Club Friendly |\n| 5/22/26 | @FIO | D1-1 | Italian Serie A | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874748/sassuolo-atalanta\n\nGame ID: 4\nSource event_id: 401874932\nMatchup: AC Milan (away) @ Torino (home)\nHome: Torino\nAway: AC Milan\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: Stadio Olimpico Grande Torino\nRound: unavailable\nHome form: WDLWL\nAway form: LWLLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Torino +330 (open +310); Draw +255 (open +250); AC Milan -130 (open -135)\nTavily context:\n  - Title: Torino vs AC Milan Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: 27 Apr Serie A\n\nAC Milan 0-0 Juventus\n\nConfirmed Lineups\n\n19 Apr Serie A\n\nHellas Verona 0-1 AC Milan\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nTorino  Injury Table\n\nType Name Info\n\nFranco Israel Shoulder\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nTino Anjorin Hip\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nZakaria Aboukhlal Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nPietro Pellegri Cruciate ligame\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-08-23 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/torino-vs-ac-milan-prediction-lineups-odds-2026-08-23\n  - Title: Serie A Injuries & Suspensions | Injury News\n    Content: Warren Bondo M - - - Other 2026-08-23\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected Return: 2026-08-23\n\n Stake logo    Torino vs AC Milan    1:4.60 X:3.70 2:1.72  Bet Now!    T&Cs apply, Gamble Responsibly 18+\n\n### Atalanta\n\nType Name Position Matches Goals Assists Info Expected Return\n\nKamaldeen Sulemana F - - - Knee -\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: -\n\nIsak Hien D - - - Thigh 2026-09-30\n\nPosition: Defender Matches: - Goals: - Assists: - Expected Return: 2026-09-30\n\nLorenzo Bernasconi D - - - Knee 2026-08-23 ...\n    URL: https://www.sportsgambler.com/injuries/football/italy-serie-a\n  - Title: Torino vs AC Milan prediction, preview & betting tips – 23/08/2026\n    Content: Based on recent performance metrics and squad strength, bookmakers have made AC Milan the match favourites at odds of 4/5 (1.80) to secure an away win.\n\nA draw is currently priced at 13/5 (3.60), representing a possible result if the hosts remain compact, while a home win for Torino stands at 10/3 (4.33).\n\nConsidering that the last six competitive encounters between these two teams produced high goal tallies with both sides finding the net, over 2.5 goals is available at 9/10 (1.90) odds. ...\n    URL: https://footballwhispers.com/blog/torino-vs-ac-milan-prediction-23-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874930",
+                        "date_utc": "2026-08-23T16:30Z",
+                        "kickoff_et": "2026-08-23 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Frosinone",
+                        "away": "Juventus",
+                        "home_id": "4057",
+                        "away_id": "111",
+                        "matchup": "Juventus (away) @ Frosinone (home)",
+                        "venue": "Stadio Benito Stirpe",
+                        "city": "Frosinone",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWWWW",
+                        "form_away": "DLWDD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+500",
+                            "home_current": "+550",
+                            "draw_open": "+310",
+                            "draw_current": "+340",
+                            "away_open": "-235",
+                            "away_current": "-235"
+                        },
+                        "odds_text": "DraftKings: Frosinone +550 (open +500); Draw +340 (open +310); Juventus -235 (open -235)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874946",
+                        "date_utc": "2026-08-23T16:30Z",
+                        "kickoff_et": "2026-08-23 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Venezia",
+                        "away": "Lecce",
+                        "home_id": "17530",
+                        "away_id": "113",
+                        "matchup": "Lecce (away) @ Venezia (home)",
+                        "venue": "Stadio Pier Luigi Penzo",
+                        "city": "Venezia",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWDWW",
+                        "form_away": "LWWLW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+125",
+                            "home_current": "+120",
+                            "draw_open": "+205",
+                            "draw_current": "+210",
+                            "away_open": "+205",
+                            "away_current": "+240"
+                        },
+                        "odds_text": "Provider unavailable: Venezia +120 (open +125); Draw +210 (open +205); Lecce +240 (open +205)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401874748",
+                        "date_utc": "2026-08-23T18:45Z",
+                        "kickoff_et": "2026-08-23 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Atalanta",
+                        "away": "Sassuolo",
+                        "home_id": "105",
+                        "away_id": "3997",
+                        "matchup": "Sassuolo (away) @ Atalanta (home)",
+                        "venue": "New Balance Arena",
+                        "city": "Bergamo",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "DDLWD",
+                        "form_away": "WLLLW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-205",
+                            "home_current": "-200",
+                            "draw_open": "+310",
+                            "draw_current": "+320",
+                            "away_open": "+425",
+                            "away_current": "+475"
+                        },
+                        "odds_text": "Provider unavailable: Atalanta -200 (open -205); Draw +320 (open +310); Sassuolo +475 (open +425)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401874932",
+                        "date_utc": "2026-08-23T18:45Z",
+                        "kickoff_et": "2026-08-23 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Torino",
+                        "away": "AC Milan",
+                        "home_id": "239",
+                        "away_id": "103",
+                        "matchup": "AC Milan (away) @ Torino (home)",
+                        "venue": "Stadio Olimpico Grande Torino",
+                        "city": "Torino",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WDLWL",
+                        "form_away": "LWLLD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+310",
+                            "home_current": "+330",
+                            "draw_open": "+250",
+                            "draw_current": "+255",
+                            "away_open": "-135",
+                            "away_current": "-130"
+                        },
+                        "odds_text": "Provider unavailable: Torino +330 (open +310); Draw +255 (open +250); AC Milan -130 (open -135)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-22T08:26:52.990404-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:16:46.946600-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are heavy favorites with odds indicating around a 66% implied chance of winning away against Frosinone. Their strong form and superior squad value support this prediction.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight favorites playing at home on the opening day, though their historical meetings with Lecce point to a potential low-scoring tight affair.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are strong home favorites with odds around -200, despite some squad injuries. Sassuolo's historical record against top-tier opposition on the road makes a home win the highly likely outcome.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan enter as the away favorites around -130 odds. While Torino can be resilient at home, Milan's overall squad strength and favorable matchup history should carry them to an away victory.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-22T08:16:59.625648-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.142,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.648,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are heavy favorites with -235 odds despite playing away, implying a roughly 65% chance of victory. Frosinone faces a steep uphill climb given their 7.50 European odds.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.424,
+                    "draw_probability": 0.301,
+                    "away_win_probability": 0.275,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia are slight favorites at +120 (home advantage) in what is expected to be a tightly contested match. Lecce provides good competition, but Venezia's odds give them the edge.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.221,
+                    "away_win_probability": 0.161,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta enters with strong home odds of -200, giving them an implied win probability above 60%. Sassuolo has notable injuries, making an away upset significantly less likely.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.215,
+                    "draw_probability": 0.261,
+                    "away_win_probability": 0.524,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan comes into this match as the clear favorite at -130. Torino has a number of injury concerns that will hinder their performance, handing AC Milan the distinct advantage despite being the away side.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-22T08:17:28.862340-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus is a vastly superior team to Frosinone, a fact strongly reflected in the betting odds where Juventus is a -235 favorite. All provided expert predictions favor Juventus to win. Despite Frosinone's perfect pre-season form, the significant gap in squad quality and Serie A experience makes an away win the most probable result for the season opener.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.38,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "This match appears to be a very close contest, with betting odds making Venezia only a slight favorite at home. Expert analysis points towards a tight, low-scoring affair, with one prediction specifically calling for a 1-1 draw based on the history between the clubs. In an opening day fixture where both teams will be cautious to avoid a loss, a draw is a highly plausible outcome.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta is a significantly stronger team than Sassuolo and benefits from a strong home advantage. The betting odds heavily favor an Atalanta victory at -200. Both squads are contending with injuries, but Sassuolo's list of absentees, including key attacker Domenico Berardi, appears more detrimental. Atalanta's superior depth and quality should be decisive.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "As a perennial title contender, AC Milan boasts a more talented and deeper squad than Torino. The betting markets have established AC Milan as the clear -130 favorite, even playing away from home. While Torino is a competitive team that can be difficult to beat at home, AC Milan's overall quality gives them a distinct advantage to start their season with a win.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:17:45.008475-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.142,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.648,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Juventus is a strong favorite according to all available odds and expert predictions (e.g., DraftKings, SportsGambler, Ratingbet.com), with implied probabilities consistently around 65-70% for an away win. Frosinone's strong home form is likely against weaker opponents or preseason matches, and does not outweigh Juventus's clear advantage.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Draw",
+                    "confidence": "medium",
+                    "reasoning": "While Venezia is a slight favorite according to some odds providers (e.g., +120, 5/4), FootballWhispers explicitly predicts a 1-1 draw, describing it as the 'most realistic outcome' given both teams' desire to avoid an opening-day defeat and a likely 'tight affair'. The odds also suggest a high probability for a draw, making it a strong contender despite Venezia being marginally favored.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.221,
+                    "away_win_probability": 0.161,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta is a strong favorite with odds around -200, implying a high probability of a home win. Sassuolo's recent form is poor (WLLLW), while Atalanta, despite some mixed recent results, is expected to perform well at home against a weaker opponent. The injured players on both sides do not significantly alter Atalanta's strong favoritism.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.21521521521521522,
+                    "draw_probability": 0.26126126126126126,
+                    "away_win_probability": 0.5235235235235235,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan is a clear favorite with odds around -130 (1.80), implying a high probability of an away win. Torino faces multiple significant injuries, further disadvantaging them. Although previous encounters have seen high goal tallies, the outright match outcome strongly favors AC Milan.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:19:00.516211-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are a clear market favorite and have the stronger squad profile, while external previews also lean strongly to an away win. Frosinone's recent form and home venue keep some draw/upset risk, but the most likely 90-minute result is Juventus winning.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds make Venezia only slight favorites at home, with the draw priced close enough to signal a tight match. Venezia's home edge and recent form narrowly outweigh Lecce, but low-scoring draw risk is significant.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are strong home favorites and Sassuolo have notable absences, including attacking quality. Atalanta's own injury list and possible fatigue from recent European action lower the certainty, but a home win remains the most likely outcome.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favored by the market and have the stronger overall squad, while Torino have injury concerns. Torino's home advantage and Milan's uneven recent form keep the draw/home paths viable, but Milan are the most likely 90-minute winner.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:19:11.039733-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are strong away favorites in the market and have a clear squad-quality edge. Frosinone's recent form is positive, but the step up against Juventus makes an away win the most likely regulation-time result.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight home favorites, but the odds are close and recent matchup context points to a competitive, potentially low-margin game. Home advantage narrowly tilts the forecast toward Venezia, with draw risk significant.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are substantial home favorites and Sassuolo have notable attacking and squad absences, including Berardi. Atalanta also carry the stronger overall profile, though their own injury list keeps confidence below high.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are clear away favorites based on the market and squad strength. Torino's home setting and Milan's uneven recent form leave a meaningful draw/home-upset chance, but the away win remains the most likely outcome.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-22T08:19:51.901131-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Juventus a clear favorite, reflecting a sizable quality gap despite Frosinone's strong recent form. Juventus' structure and squad depth should translate into control over 90 minutes, with the main upset path being early-season variability and Frosinone home energy.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight home favorites by the prices, but the draw probability is substantial and the matchup projects as tight. With both teams close in overall strength and some absences noted, home advantage is the separator, though a cautious opener keeps draw risk high.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are strong home favorites in the market and Sassuolo carry notable injury issues (including key attacking absences), which lowers away-win likelihood. Even with Atalanta managing some injuries, their baseline quality and home edge point to a regulation win more often than not.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favored, but Torino's home setup typically increases draw probability versus top sides, and early-season match states can be conservative. Milan's higher talent level still makes an away win the single most likely 90-minute outcome, with a draw as the primary alternative.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-22T08:20:07.884782-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers make Juventus clear favourites despite Frosinone's strong recent form; Juve's superior squad depth and attacking options (Milik, João Mário) likely decide the opener. Upset risk exists at a small club's stadium, so a draw probability is non-negligible.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market and previews view this as a tight contest with Venezia slight favourites at home; both teams tend to produce low-scoring, close games. Expect a narrow Venezia edge but a draw is a realistic outcome.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are comfortable home favourites with stronger recent results and squad quality; Sassuolo are underdogs and injuries reduce their upside. Still, Atalanta conceding chances means draws remain plausible.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are market favourites despite playing away; Milan's higher-quality attack and experience should edge out Torino, though Torino's home solidity and recent variability in Milan's form keep draw/home probabilities meaningful.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-22T08:20:31.552019-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.141,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.649,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are favorites per market odds; after normalization, away win is the most likely outcome (~0.65).",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.424,
+                    "draw_probability": 0.301,
+                    "away_win_probability": 0.275,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia are slight home favorites; probabilities reflect a home win around 0.42 with substantial draw/away chances.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.221,
+                    "away_win_probability": 0.161,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are strong at home; predicted home win around 0.62.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.189,
+                    "draw_probability": 0.353,
+                    "away_win_probability": 0.458,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favored as the away team; predicted away win around 0.46.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-22T08:20:35.127120-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are heavy favorites per both odds and expert predictions, with a much stronger squad and recent form. Frosinone's home form is good, but their quality is significantly lower. Most models and bookmakers expect a Juventus win, and the away side's lineup is superior in every area.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Venezia are slight favorites at home, but both teams are evenly matched and recent H2H meetings have been low-scoring draws. Bookmakers and prediction models suggest a close contest, with a draw being the most likely outcome given the opening day caution and similar squad strengths.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are strong favorites at home, with a much deeper squad and better recent form. Sassuolo are missing key players, including Berardi, and have struggled away. Odds and expert models heavily favor Atalanta, making a home win the most probable result.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favored by bookmakers and have a stronger squad, but Torino's home advantage and Milan's inconsistent away form temper expectations. Recent H2H matches have been competitive, but Milan's quality should see them edge this opener.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-22T08:20:38.399288-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Juventus is a strong team with a high probability of winning, as indicated by the odds and their superior squad strength. Frosinone's recent good form is acknowledged, but Juventus is expected to overcome this challenge.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia is slightly favored due to their home advantage and recent form. However, Lecce's ability to perform well away from home makes this a competitive fixture, with a draw also a strong possibility.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta is expected to win due to their stronger squad and home advantage. Sassuolo's recent away form has been poor, further supporting Atalanta's likelihood of securing a victory.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan is favored to win based on their squad strength and recent performances. Torino's home advantage and potential for a draw are considered, but Milan's quality is expected to prevail.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-22T08:20:54.043453-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are strong favorites (-235) despite Frosinone's good recent form against weaker opposition. Market implies ~65% Juventus win probability, consistent with the large squad quality gap between a top club and a newly promoted/lower-table side.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight home favorites (+120) with strong recent form (WWDWW) versus Lecce's inconsistent form. Historic meetings have been tight and low-scoring, so a draw is a significant possibility, but home advantage tips the balance.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are clear home favorites (-200). Both sides carry multiple injuries, but Sassuolo's absences (Berardi, Boloca, Kone) hit key players harder. Atalanta's overall quality and home advantage make a home win the most likely outcome (~62%).",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Milan are away favorites (-130), with market-implied ~53% win probability. Torino have injury concerns (Israel, Anjorin, Aboukhlal) and mixed form. Recent meetings have featured goals from both sides, so a draw or upset is possible, but Milan's quality edge is decisive.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-22T08:21:03.693748-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are strong favorites (-235) against newly promoted Frosinone. Odds imply around 70% chance of a Juventus win. Superior squad quality makes an away win most likely.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight home favorites (+120) at the Penzo. Good home form (WWDWW) and home advantage tilt the balance, but it's a tight match with draw a real possibility.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are clear home favorites (-200) despite injuries. Sassuolo are missing key attackers like Berardi. Home strength at the New Balance Arena favors Atalanta.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "AC Milan are favorites (-130) on the road. Superior squad quality edges them ahead, but Torino at home and Milan's inconsistent form make this a relatively close call.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-22T08:21:21.810686-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are strong favourites across multiple odds providers, with DraftKings implying roughly 70% away win probability at -235. Frosinone are a Serie A side but clearly outmatched in quality. Juventus's squad depth and historical dominance in this matchup support an away win despite Frosinone's good recent preseason form (WWWWW). Juventus's away form (DLWDD) is mixed but their class advantage is significant. Odds consensus across sportsgambler, toffeeweb, and ratingbet all point to a Juventus victory.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight home favourites at around +120 to +125 American odds. Both teams are evenly matched mid-table Serie A sides. Venezia's home form (WWDWW) is strong, while Lecce's away form (LWWLW) is inconsistent. Football Whispers predicts a 1-1 draw based on H2H history. The market is tight with all three outcomes within range. Venezia's home advantage gives them a marginal edge, but this is a very open contest. Confidence is low given the competitive odds and balanced team profiles.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are clear favourites at around -200 odds, implying roughly 65-67% win probability. However, both teams are dealing with notable injuries: Atalanta missing De Ketelaere, Sulemana, Hien, and Bernasconi; Sassuolo missing Berardi, Koné, Walukiewicz, and Boloca. Despite Atalanta's injury concerns, their squad depth and home advantage at New Balance Arena against a Sassuolo side with multiple key absences supports a home win. Atalanta's recent form (DDLWD) is moderate but they remain a top-6 caliber team.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "AC Milan are favourites at around -130 odds but the market is relatively tight. Torino at +330 and Draw at +255 suggest a genuinely competitive match. Torino's home form (WDLWL) is inconsistent, while AC Milan's recent form (LWLLD) is also poor. Football Whispers makes Milan favourites at 4/5 (1.80), and the injury table shows Torino dealing with multiple forward absences (Anjorin, Aboukhlal, Pellegri). Despite Milan's uninspiring form, their squad quality and the Torino injury situation tilt the balance toward an away win. Confidence is low given both teams' inconsistent recent performances.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-22T08:21:46.549417-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are heavy favorites with odds implying 70% chance of victory. Frosinone are newly promoted with recent form against lower-tier opposition (Juve Stabia, Mantova), while Juventus possess significantly superior squad quality. The odds movement shows Frosinone drifting from +500 to +550, indicating market confidence in Juventus. Despite Frosinone's five-game winning streak, the quality gap is substantial. Juventus' recent draw-heavy form suggests they may struggle to dominate but should still secure the win.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A very tight opening day matchup between two evenly-matched sides. Venezia have slight home advantage with odds favoring them at +120. Recent meetings have been low-scoring affairs, and predictions suggest a 1-1 draw is likely. Both teams will be cautious on opening day to avoid defeat. Venezia's home form (WWDWW) is slightly superior to Lecce's away form (LWWLW). The narrow odds spread (+120, +210, +240) indicates bookmakers see minimal separation. Missing players on both sides (Banda and Berisha for Lecce; Sverko and Adorante for Venezia) add uncertainty. Given home advantage and marginally better form, slight edge to Venezia.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are strong favorites at -200 despite significant injury concerns (De Ketelaere, Ahanor, Sulemana, Hien, Bernasconi all out). Sassuolo also have major absences (Berardi, Koné, Walukiewicz, Boloca, Candé). However, Atalanta's squad depth and home advantage at New Balance Arena should prove decisive. Sassuolo's recent form (WLLLW) shows inconsistency with three consecutive losses, while Atalanta recently beat Schalke 3-0 in friendlies. The odds movement from -205 to -200 shows stable market confidence. Despite Atalanta's mixed form (DDLWD), their superior quality and home advantage make them clear favorites to start the season with a win.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favorites at -130 despite playing away and having poor recent form (LWLLD). Torino's form is similarly inconsistent (WDLWL). However, Milan's squad quality exceeds Torino's significantly. Both teams have injury concerns - Torino missing Israel, Anjorin, Aboukhlal, and Pellegri. Historical context shows high-scoring matches between these sides with both teams scoring. The odds suggest approximately 50% chance for Milan victory. Torino at home can be competitive (odds of +330 indicate roughly 23% chance), but Milan's superior roster should prevail. The recent head-to-head and Milan's need to start the season positively favor the away side, though Torino could make it difficult.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-22T08:21:53.499919-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are strong favorites with -235 odds implying ~70% win probability. Despite Frosinone's excellent recent form (WWWWW), Juventus' superior squad quality and away form advantages should prevail. Market odds heavily favor Juventus, and expert predictions align with an away victory.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia slight favorites at +120 odds with solid home form (WWDWW). Expert predictions suggest a tight match with Football Whispers forecasting a 1-1 draw based on historical H2H patterns. However, Venezia's marginally better odds and home advantage suggest slight edge. Both teams evenly matched with draw being realistic outcome given recent form.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta strong favorites with -200 odds implying ~67% win probability. Despite injury concerns (De Ketelaere, Hien, Sulemana out), Atalanta's squad depth and home advantage are decisive. Sassuolo's poor form (WLLLW) contrasts sharply with Atalanta's recent results. Market consensus and expert analysis favor Atalanta convincingly.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan slight favorites with -130 odds. Football Whispers notes high-scoring historical trends between these teams with both sides likely to score. Torino's mixed recent form (WDLWL) and injury issues (Israel, Anjorin, Aboukhlal, Pellegri questionable) weakens their position. AC Milan's marginally superior odds and away form suggest slight edge, though draw is plausible given competitive nature.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-22T08:22:20.085398-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Juventus are strong road favorites at -235 and have superior squad quality despite Frosinone's lower-level winning form. Market and prediction models point to an away win.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight favorites and have strong recent home form, but Lecce are competitive and some tipsters expect a tight draw, making this close.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are clear home favorites around -200 and the market gives them a strong probability, though Sassuolo could make it competitive.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favored on the road at -130 and have the stronger overall squad, but Torino's home edge and a meaningful draw probability keep confidence moderate.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-22T08:22:24.367636-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are clear favorites with odds around -235, and despite poor away form, they have superior squad quality. Frosinone's strong home form is noted, but the gap in class and market expectations favor an away win.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight favorites at +120, and their home form is strong (WWDWW). Lecce have decent away form but are slightly less favored. The match is expected to be tight, but home advantage gives Venezia a slight edge.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are heavy favorites at -200, and despite some injuries, they have a much stronger squad. Sassuolo have poor away form and are missing key players. Atalanta's home advantage and overall quality should secure a win.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favorites at -130, and despite Torino's home advantage, Milan have superior talent. Torino have some injuries, and Milan's away form is inconsistent but they are expected to edge a close match.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-22T08:22:49.324701-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.142,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.648,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus enters as heavy favorites with a significant talent advantage and strong odds (-235). Frosinone's recent form is good but mostly against lower-tier opposition, while Juventus' squad depth and tactical setup make them the clear choice for an away victory.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.424,
+                    "draw_probability": 0.301,
+                    "away_win_probability": 0.275,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia has home advantage and is priced as the slight favorite by bookmakers (+120). While both teams have shown mixed recent form, Venezia's strong home record and Lecce's missing players give the hosts the edge in what is expected to be a tight, low-scoring affair.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.221,
+                    "away_win_probability": 0.161,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta is a strong favorite at home (-200) against a Sassuolo side missing key attacking and midfield pieces like Berardi and Koné. Atalanta's superior squad depth and home-field advantage at the New Balance Arena make a home win the most probable outcome.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.215,
+                    "draw_probability": 0.261,
+                    "away_win_probability": 0.524,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan is favored on the road (-130) due to a stronger overall roster, despite Torino's resilience at home. Milan's attacking quality should be enough to break down a Torino side dealing with multiple injuries to key forwards and midfielders, securing a narrow away win.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-22T08:23:03.351254-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Juventus, despite their mixed away form, are strong favorites based on their overall team quality and recent odds. Frosinone's home form is good, but they are not expected to outperform a team like Juventus.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown similar form in recent matches, and the odds suggest a close game. The historical data and current form indicate a balanced match, making a draw the most likely outcome.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta has a stronger squad and better form compared to Sassuolo. Despite some injuries, Atalanta is favored to win at home, supported by the bookmakers' odds and recent performance.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan, despite their mixed away form, is a stronger team with a higher probability of winning. Torino's form is inconsistent, and the odds favor an AC Milan victory.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-22T08:24:22.943862-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Juventus enters as clear favorites based on market odds (-235) and superior squad depth. Frosinone's recent form is strong but against top-tier opposition, Juve's quality and predicted lineup favor a road victory. Slight regression risk for a newly promoted side keeps confidence at medium.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers list Venezia as slight favorites, but the draw is priced competitively at +210. Both teams have shown mixed but capable form, and recent head-to-head trends suggest tight, low-scoring encounters. A stalemate is the most plausible outcome in this evenly matched opener.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta is heavily favored by odds (-200) and plays at the New Balance Arena where they are typically dominant. Despite notable absences in attack, their midfield control and home advantage against a Sassuolo side missing several key defenders and attackers should secure a home win.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "AC Milan enters as odds-on favorites (-130) due to squad reputation, but their recent results indicate vulnerability. Torino lacks key attacking options and a starting goalkeeper, which tips the balance. However, Milan's inconsistency and a potentially hostile Turin atmosphere suggest a tight affair, justifying a cautious away prediction.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-22T08:25:05.643771-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are significant favorites (-235 odds) despite recent inconsistent form. Frosinone shows friendly success but faces a superior Serie A side. Implied win probability heavily favors Juventus.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia holds slight favoritism (+120) backed by strong recent form (WWDWW). Lecce struggles with away consistency. While a draw is possible, home advantage tips the scale.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta (-200) are clear favorites despite multiple injuries. Sassuolo suffers from critical absences and poor recent form. Squad depth gives Atalanta decisive edge at New Balance Arena.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan favored (-130) though with shaky recent form. Torino at home adds resistance, but Milan's offensive potential suggests a tight away victory. Bookmakers price Milan as likeliest winner.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-22T08:26:00.467821-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are heavy favorites with superior squad depth and a strong projected lineup. Despite Frosinone's positive form, the odds and market sentiment strongly favor the away side.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.36,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both sides are evenly matched on opening day, with recent head-to-head trends and bookmaker odds pointing to a tight contest. A draw is the most plausible outcome as neither team will want to lose the season opener.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta hold a significant quality advantage at home and Sassuolo are missing several key contributors including Berardi. Market odds reflect strong home confidence despite Atalanta's injury list.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are the stronger side on paper and market favorites even on the road. Torino's injury situation and Milan's superior attacking talent tilt the balance toward an away victory.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-22T08:26:44.265465-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are heavy favorites with implied probability around 70% based on -235 odds. Despite Frosinone showing strong pre-season form (WWWWW), Juventus possess superior squad depth and quality. The betting consensus supports a Juventus victory, with predictions suggesting they may win by more than one goal.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia are slight favorites (+120) at home with solid recent form (WWDWW), while Lecce have been inconsistent (LWWLW). Historical meetings suggest tight, low-scoring affairs, and bookmakers price the draw as a strong possibility. The match could easily go either way or end level.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atalanta are clear favorites (-200) at the New Balance Arena against a Sassuolo side showing poor form (WLLLW). Despite Atalanta's recent European qualifying draw and some injury concerns, their home strength and superior tactical setup under Gianluca Gasperini should prevail against a depleted Sassuolo squad missing key players like Berardi and Boloca.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are favorites (-130) despite patchy recent form (LWLLD). Torino face injury concerns with key players like Pellegri and Aboukhlal doubtful. While Milan's consistency is questionable, their superior attacking quality should edge a potentially high-scoring encounter against a Torino side that has been defensively vulnerable in warm-up fixtures.",
+                    "event_id": "401874932"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-22T08:26:52.982729-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Juventus (away) @ Frosinone (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus has a strong away form and is favored by the odds, despite Frosinone's good home form.",
+                    "event_id": "401874930"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lecce (away) @ Venezia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia has a slightly better form and is playing at home, but the match is expected to be close.",
+                    "event_id": "401874946"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta has a slight edge at home, and the odds favor them over Sassuolo.",
+                    "event_id": "401874748"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Torino (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan is favored by the odds and has a slight advantage over Torino, who has some key players returning from injury.",
+                    "event_id": "401874932"
+                }
+            ]
+        }
+    ]
+}

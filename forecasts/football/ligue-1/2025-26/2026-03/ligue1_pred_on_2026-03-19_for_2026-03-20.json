@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-19\n    Target Date: 2026-03-20\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Angers @ Lens                                        | Scheduled    | Away: 34.6% (9-5-12) vs Home: 69.2% (18-2-6)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Angers (Away) @ Lens (Home)\n**News & Injury Report:**\n- [Lens vs Angers Prediction, Betting Tips, Lineups & Odds | 20 Mar 2026](https://www.sportsgambler.com/betting-tips/football/lens-vs-angers-prediction-lineups-odds-2026-03-20/)\n  Snippet: Angers \u2013 Last 10 League Games\n\nAngers have won 3, lost 6 and drawn 1, with an average of 0.6 goals from 2.9 shots on goal and 8.8 attempts. The Pays de la Loire club have averaged 45.4% possession, 432.5 passes, 3.6 corners awarded and 4.2 corners ag...\n- [Preview: Lens vs Angers - prediction, team news, lineups](https://www.sportsmole.co.uk/football/lens/preview/lens-vs-angers-prediction-team-news-lineups_594058.html)\n  Snippet: Les Scoistes have lost six straight Ligue 1 meetings with Lens, five by a single goal, and on Friday, they can claim their first victory at Stade Bollaert-Delelis since 2021 (3-1).\n\nLens Ligue 1 form:\n\n W\n W\n L\n D\n W\n L\n\nLens form (all competitions):...\n**Betting Odds:**\n- [Lens vs Angers Prediction, Betting Tips, Lineups & Odds | 20 Mar 2026](https://www.sportsgambler.com/betting-tips/football/lens-vs-angers-prediction-lineups-odds-2026-03-20/)\n  Snippet: | # | Team | G | W | D | L | +/- | P |\n ---  ---  ---  --- |\n| 1 | Lens | 13 | 11 | 0 | 2 | 26:8 | 33 |\n| 2 | PSG | 12 | 10 | 1 | 1 | 31:7 | 31 |\n| 3 | Marseille | 13 | 9 | 3 | 1 | 33:15 | 30 |\n| 4 | Lyon | 12 | 9 | 1 | 2 | 20:8 | 28 |\n| 5 | Monaco |...\n- [Lens vs Angers Prediction & Betting Tips - Ligue 1 - SportyTrader](https://www.sportytrader.com/en/betting-tips/lens-angers-335755/)\n  Snippet: ## Lens v Angers Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  --- \n| Stake | 1.32 | 5.6 | 9.4 |  |\n| Melbet | 1.3 | 5.45 | 10 |  |\n| Betwinner | 1.3 | 5.35 | 10 |  |\n| Bet365 | 1.3 | 5.5 | 10 |  |\n| Roobet | 1.31 | 5.2 | 9.6 |  |\n...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-19 15:43:02"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-19 15:41:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market makes Lens a heavy favorite (around 1.30\u20131.32 home win vs ~5.5 draw and ~9.5\u201310 away), implying ~73%+ home-win after removing overround. Team strength/form supports it: Lens strong season win rate (18-2-6) and recent mixed-but-solid run, while Angers\u2019 last-10 profile is weak (3W-1D-6L) with very low scoring output. Historical matchup also favors Lens (Angers have lost six straight Ligue 1 meetings)."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:41:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favour Lens (approx. 1.3 home), which implies ~73% after normalization. Lens have an excellent home win rate this season (69.2% at home) and sit near the top of the table; head-to-head and recent notes show Angers have lost multiple meetings and are poor on the road. Angers' recent league form is weak (3W-6L-1D in last 10) with low scoring output (\u22480.6 goals per game), while Lens have solid form and attacking output. No major injuries reported in the provided notes to materially change the market view. Combining team strength, form, home advantage and the betting market yields a high-confidence lean to a Lens (home) win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens hold a strong home record (18-2-6) and better form at Stade Bollaert-Delelis than Angers' away record (9-5-12). Odds in the provided market show Lens as clear favorites (home odds around 1.3 imply ~0.73 probability). Head-to-head hints suggest Angers have struggled against Lens in recent meetings."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens are among the top Ligue 1 teams with an outstanding 69.2% home win rate this season, and their recent form is strong (3W-1D-2L in last six). Angers have lost six of their last ten matches and only managed a single win in their last six head-to-head meetings with Lens, all of which were close but ultimately losses. The bookies' odds heavily favor Lens (1.3 for home win, translating to ~77% implied probability), with very long odds for an Angers win (9.4\u201310.0, implied probability <11%). Angers also average just 0.6 goals per game in recent form and have struggled both offensively and defensively. No key injury news disrupts Lens\u2019 lineup. All indicators\u2014including home advantage, team strength, recent form, and betting market\u2014point to a high-confidence Lens win."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:25",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home win rate of 69.2% this season compared to Angers' 34.6% away win rate. Angers are in poor form with 6 losses in last 10 games, while Lens have been performing well despite some losses. The betting odds strongly favor Lens, reflecting the team\u2019s superior form and home advantage."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home record (69.2% win rate) and Angers has a poor away record (34.6% win rate). Betting odds heavily favor Lens (1.30 for home win). Lens is higher in the league table. Angers has lost six straight Ligue 1 meetings with Lens. Lens recent form is better than Angers. "
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has overwhelming statistical advantages: 69.2% home win rate (18-2-6) vs Angers' 34.6% away record. Lens has won 6 straight Ligue 1 meetings against Angers, including 5 by single goals. Betting odds strongly favor Lens (1.30-1.32 implied probability ~77%), though I've adjusted downward slightly for potential variance. Angers' recent form is poor (3 wins, 6 losses, 1 draw in last 10) with low offensive output (0.6 goals avg). Lens' home advantage at Stade Bollaert-Delelis is significant, and Angers hasn't won there since 2021."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:42:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens are in exceptional form with a 69.2% win rate (18-2-6) and sit top of Ligue 1 with 33 points from 13 games (11W-0D-2L). They have a dominant home record and strong goal difference (+26). Angers are struggling with only 34.6% win rate (9-5-12), have lost 6 of their last 10 league games, and have lost 6 straight Ligue 1 meetings with Lens, five by a single goal. Angers haven't won at Stade Bollaert-Delelis since 2021. Betting odds heavily favor Lens (1.30-1.32 for home win vs 9.4-10.0 for away win), which translates to approximately 77% implied probability for Lens victory. Considering potential variance and the possibility of a draw, I estimate 72% home win, 18% draw, and 10% away win. The massive gulf in form, head-to-head record, and league position make this a strong home win prediction."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:43:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Lens (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home record with a 69.2% win rate, and Angers has a poor away record with only a 34.6% win rate. Additionally, Angers has lost six straight Ligue 1 meetings with Lens, and the betting odds heavily favor Lens to win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

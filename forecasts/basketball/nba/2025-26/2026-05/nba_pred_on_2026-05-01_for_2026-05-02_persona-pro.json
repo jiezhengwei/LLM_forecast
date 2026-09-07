@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-01\n    Target Date: 2026-05-02\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/2 - 7:30 PM EDT] Philadelphia 76ers @ Boston Celtics | Away: 54.9% (45-37) vs Home: 68.3% (56-26)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Philadelphia 76ers (Away) @ Boston Celtics (Home)\n**News & Injury Report:**\n- [2025-2026  NBA Games: 76ers Celtics Injury Report - TeamRankings.com](https://www.teamrankings.com/nba/matchup/76ers-celtics-2026-05-02/injuries)\n  Snippet: ##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n# Philadelphia at Boston: Injury Report\n\nSaturday May 2, 2026 12:00 pm -\nBoston, MA\n\nOdds:\nN/A,\nTotal Points:\nN/A\n\n## Matchup Menu: PHI @ BOS\n\n## Philadelphia Injuries ...\n- [Philadelphia 76ers vs Boston Celtics Odds - Saturday May 2 2026](https://www.oddsshark.com/nba/philadelphia-boston-odds-may-2-2026-2521884)\n  Snippet: | PHI | Record | BOS |\n ---\n| 18-12 | All | 20-10 |\n| 10-5 | Home | 10-5 |\n| 8-7 | Away | 10-5 |\n| 13-2 | As Fav | 17-4 |\n| 5-10 | As Dog | 3-6 |\n| 14-16 | ATS | 18-12 |\n| 6-9 | ATS Home | 7-8 |\n| 8-7 | ATS Away | 11-4 |\n| 14-16 | O/U | 12-18 |\n| 6-9 | O/U Home | 7-8 |\n| 8-7 | O/U Away | 5-10 |\n\n## Trends\n\n PHI  BOS\n\nNo Trends to Report.\n\nNo Trends to Report.\n\n## Injuries\n\n PHI  BOS\n\n| Name | Position | Inj Desc |\n ---\n| Kelly Oubre Jr. | SF | Day-to-Day, Right adductor soreness |\n| Joel Embiid | C | Day-to-Day, Illness |\n| Johni Broome | C | Day-to-Day, Right knee meniscus tear | ...\n**Vegas Odds & Lines:**\n- [76ers vs Celtics Odds & Live Scores - May 2, 2026 | The Action Network](https://www.actionnetwork.com/nba-game/philadelphia-76ers-boston-celtics/288444)\n  Snippet: promotion logo\n\n# 76ers vs. Celtics Odds & Betting Predictions - May 2, 2026\n\n## 76ers at Celtics\n\nPhiladelphia 76ers logo\n\n### Philadelphia 76ers\n\nBoston Celtics logo\n\n### Boston Celtics\n\n## 76ers at Celtics Odds\n\n### Spread, Total, Moneyline\n\n| MatchupOpenSpreadTotalMoneyline | | | | |\n ---  ---\n| 76ers logo 76ers 3-3 | +8.5 | +8.5-115 | o206.5-110 | +260 |\n| Celtics logo Celtics  3-3 | u207.5 | -8.5-105 | u206.5-110 | -325 |\n\n76ers logo\nCeltics logo\nlocation pin\n\n### Prop Odds Comparison\n\nNo props found\n\n### Line Movement Tracker\n\n## 76ers vs. Celtics Public Betting Percentages\n\nAway Logo ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-01\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-01 17:19:27"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-01 17:18:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.74,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "Medium-High",
+                    "reasoning": "Vegas strongly favors Boston (Celtics -325 ML / -8.5 spread), implying roughly a low-to-mid 70% home win chance after vig adjustment. Boston has the stronger season profile and home-court edge (56-26, 68.3% win rate). Philadelphia has key availability uncertainty with Joel Embiid (day-to-day, illness) plus Oubre (day-to-day), which materially lowers PHI\u2019s ceiling if either is limited; Boston has no comparable injury red flags provided."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:18:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.76,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "Vegas markets show Boston as a sizable favorite (spread ~-8.5, moneyline ~-325 \u2192 implied win prob \u224876%), which is consistent with the teams' form: Celtics 68.3% home win rate (56-26) vs 76ers 54.9% overall (45-37) and weaker on the road. Philadelphia has day-to-day concerns for Joel Embiid (illness) and Kelly Oubre Jr. (adductor soreness); Embiid being limited or unavailable would materially lower Philly's chances. Home-court advantage, Boston's stronger record, and the large market line drive the forecast. (Away win probability = 0.24.)"
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:18:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas odds strongly favor Boston (Spread ~ -8.5, Moneyline ~ -325) implying ~0.76 home win probability. Home-court advantage is significant. Philadelphia enters with multiple injuries: Joel Embiid (Day-to-Day, Illness) and Kelly Oubre Jr. (Day-to-Day, adductor soreness) along with Johni Broome (Day-to-Day, knee) which could limit scoring and depth. Boston should advantage from relative health and depth, making them the likely winner despite some PHI uncertainty."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:18:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.74,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "Boston has a strong home record (68.3% win rate, 56-26 overall, 10-5 home in recent splits) and is favored by Vegas with a -8.5 spread (implied win probability ~74%). Philadelphia is dealing with key injuries (Joel Embiid and Kelly Oubre Jr. both day-to-day), which could impact their performance. Boston is healthier and has a significant home-court advantage. The moneyline (-325) and spread both strongly favor Boston. No major trends or upsets indicated."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:18:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "The Boston Celtics have a strong home win rate of 68.3% and are favored by the Vegas odds with a -8.5 spread. Additionally, key players for the 76ers, such as Joel Embiid and Kelly Oubre Jr., are listed as day-to-day, which could impact their performance. The Celtics' superior home record and the absence of significant injuries give them a high probability of winning."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:19:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.73,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "The Celtics are -8.5 point favorites at home with a -325 moneyline, reflecting an implied win probability of approximately 73%. Boston has a stronger season win rate (68.3% vs 54.9%) and Philadelphia has injury concerns, with Joel Embiid listed as day-to-day (illness)."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:19:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "Medium",
+                    "reasoning": "Celtics have strong home record (68.3% win rate) and are favored by -8.5 points. 76ers have key injuries (Embiid day-to-day, Oubre day-to-day, Broome out) which weakens their roster. However, Embiid might play, so confidence is medium."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:19:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.76,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "Boston has significant advantages across multiple factors: (1) Strong home record (68.3% win rate vs 76ers' 54.9% away record), (2) Vegas line favors Celtics -8.5 with -325 moneyline (implied probability ~76.5%), (3) Philadelphia dealing with key injury concerns - Joel Embiid listed as Day-to-Day with illness, Kelly Oubre Jr. with adductor soreness, and Johni Broome with knee meniscus tear. The 8.5-point spread suggests Vegas sees this as a comfortable Celtics win. Boston's 56-26 overall record demonstrates they're a superior team this season. With Embiid's health questionable and playing on the road against a top-tier home team, the 76ers face an uphill battle. The betting market consensus strongly supports Boston, and the combination of talent disparity, home-court advantage, and Philadelphia's injury situation points to a likely Celtics victory with approximately 76% probability."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-01 17:19:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Philadelphia 76ers (away) @ Boston Celtics (home)",
+                    "home_win_probability": 0.75,
+                    "predicted_winner": "Boston Celtics",
+                    "confidence": "High",
+                    "reasoning": "The Boston Celtics have a strong home record of 68.3% and are favored by -8.5 points. The 76ers have key injuries to Joel Embiid and Kelly Oubre Jr., which significantly weakens their lineup. Additionally, the 76ers' away win rate is 54.9%, which is lower than the Celtics' home win rate."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

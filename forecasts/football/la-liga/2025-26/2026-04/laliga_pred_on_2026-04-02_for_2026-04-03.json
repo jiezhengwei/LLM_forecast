@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-02\n    Target Date: 2026-04-03\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Elche @ Rayo Vallecano                               | Scheduled    | Away: 20.7% (6-11-12) vs Home: 24.1% (7-11-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Elche (Away) @ Rayo Vallecano (Home)\n**News & Injury Report:**\n- [Rayo Vallecano vs Elche Prediction and Betting Tips | April 3rd 2026](https://www.sportskeeda.com/football/rayo-vallecano-vs-elche-prediction-betting-tips-april-3rd-2026)\n  Snippet: Path\u00e9 Ciss was booked against Barcelona and will serve a suspension here. Ilias Akhomach has resumed training but remains a major doubt. Nobel Mendy picked up an injury during the international break, and his involvement for this match is doubtful.\n\n...\n- [Rayo Vallecano vs Elche Preview: Team News & Prediction](https://www.thestatszone.com/rayo-vallecano-vs-elche-preview-team-news-prediction-180056)\n  Snippet: A couple of weeks ago, the visitors managed to defeat fellow strugglers Real Mallorca by two goals to one with a come from behind win, courtesy of second-half goals from Rafa Mir and Tete Morente.\n\nRayo Vallecano team news: Ciss suspended\n\nSenegal in...\n**Betting Odds:**\n- [Rayo Vallecano vs Elche Prediction & Betting Tips - LaLiga](https://www.sportytrader.com/en/betting-tips/rayo-vallecano-elche-339033/)\n  Snippet: ## Rayo Vallecano v Elche Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  --- \n| Stake | 1.79 | 3.7 | 4.8 |  |\n| Melbet | 1.77 | 3.6 | 4.78 |  |\n| Betwinner | 1.75 | 3.62 | 4.84 |  |\n| Bet365 | 1.73 | 3.75 | 5 |  |\n| Roobet | 1.74 | ...\n- [Elche vs Rayo Vallecano Odds & Live Scores - April 3, 2026](https://www.actionnetwork.com/laliga-game/elche-rayo-vallecano-score-odds-april-3-2026/283823)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Vallecano logo Vallecano | 14-15 | 6-8 | 8-7 | 3-9 | 11-6 |\n| Elche logo Elche | 17-12 | 11-4 | 6-8 | 5-2 | 12-10 |\n\nValle...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-02\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-02 20:06:25"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-02 20:04:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market strongly favors Rayo at home (home ~1.73\u20131.79 vs away ~4.8\u20135.0), implying a clear home edge. Both sides have very draw-heavy profiles (11 draws each), so draw probability is lifted versus the raw odds. Rayo are weakened by Path\u00e9 Ciss suspension (plus doubts around Akhomach/Mendy), which slightly trims the home-win chance and shifts mass toward a draw, but Elche\u2019s overall/away win rate remains low, keeping the away-win probability modest."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market strongly favours Rayo (bookmaker odds ~1.73\u20131.79 home, 3.6\u20133.75 draw, ~4.8\u20135 away) \u2014 normalized implied probabilities point to a clear home edge. Season records show both teams struggle but Rayo's home win rate is marginally better than Elche's away win rate. Recent news reduces Rayo's strength somewhat (Path\u00e9 Ciss suspended; Ilias Akhomach and Nobel Mendy doubtful), so I pulled the home probability down slightly from pure market-implied levels. Elche have shown resilience (recent comeback win) and are capable of spoiling but their lower away win rate and inferior squad depth keep the most likely outcome as a Rayo home win. Given injury uncertainty and both teams' inconsistency, confidence is medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting odds imply a home win probability around 0.54. Rayo's home advantage is tempered by key injuries: Path\u00e9 Ciss suspended (defense) and Nobel Mendy doubtful (midfield). Elche's Ilias Akhomach is a major doubt, potentially weakening their attack. Overall, market signals favor Rayo Vallecano at home with a modest chance of a draw or upset if Elche's squad can counter."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano have a modest home win rate (24.1%), but bookmakers price them as notable favorites (implied probability from odds around 55-58%). Elche's away record is slightly weaker (20.7%) and they have been inconsistent despite a recent comeback win. Vallecano miss Path\u00e9 Ciss (suspension) and have a couple of doubts, but squad depth is relatively intact. The betting market\u2019s strong lean toward the home side boosts confidence for a Vallecano advantage, though moderate draw probability reflects both sides\u2019 tendency for draws (11 draws each this season)."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite Rayo Vallecano missing Path\u00e9 Ciss due to suspension, their slightly better home win rate and favorable betting odds (ranging from 1.73 to 1.79 for home win versus 4.78 to 5.00 for away win) give them a marginal advantage. Elche's recent form includes a win over Mallorca, but their away record is weaker."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano are slight favorites at home (odds around 1.75). Elche has a poor away record (6-11-12). Path\u00e9 Ciss is suspended for Rayo, which slightly weakens their midfield, but home advantage and Elche's away form tip the balance towards a home win being more probable. Injury doubts surrounding Akhomach and Mendy add further uncertainty but are unlikely to reverse the probability."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:05:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano has a slight home advantage (24.1% win rate vs Elche's 20.7% away) and better ATS performance as underdogs (11-6). Elche's recent win over Mallorca shows resilience, but Rayo's suspension of Path\u00e9 Ciss is offset by Elche's injury doubts (Ilias Akhomach doubtful, Nobel Mendy doubtful). Betting odds (average ~1.76 for Rayo win, ~3.67 for draw, ~4.86 for Elche win) imply probabilities of approximately 57% home win, 27% draw, 16% away win. Adjusting for team form and injuries, Rayo is favored but not overwhelmingly."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:06:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano hosts Elche in a match between two struggling La Liga sides. Betting odds favor Rayo (1.73-1.79 range) over Elche (4.78-5.0), with draw odds around 3.6-3.75. Converting these to implied probabilities: Home ~55-58%, Draw ~25-28%, Away ~17-21%. Both teams have poor records - Rayo 24.1% win rate (7-11-11) at home, Elche 20.7% (6-11-12) away. Key injury concerns for Rayo include Path\u00e9 Ciss suspended, Ilias Akhomach doubtful, and Nobel Mendy doubtful from international break. However, Elche's away form is marginally worse and recent victory over Mallorca was against another bottom-feeder. Home advantage and slightly better underlying metrics per betting markets give Rayo the edge. The suspension of Ciss (midfielder) is notable but not decisive. Against-the-spread records show Elche performing better as underdogs (12-10) but worse overall away (6-8). This is a classic relegation battle where home advantage matters significantly. Rayo should win but draw probability remains high given both teams' struggles to convert chances into wins."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 20:06:25",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano, despite having a slightly better win rate at home (24.1%) compared to Elche's away win rate (20.7%), is missing key players like Path\u00e9 Ciss due to suspension and Nobel Mendy due to injury. However, Elche's recent form, including a comeback win against Real Mallorca, suggests they are not to be underestimated. The betting odds also slightly favor Rayo Vallecano, but the draw probability is significant given the close nature of the teams."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

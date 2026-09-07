@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-19\n    Target Date: 2026-03-20\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Real Sociedad @ Villarreal                           | Scheduled    | Away: 35.7% (10-8-10) vs Home: 60.7% (17-4-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Real Sociedad (Away) @ Villarreal (Home)\n**News & Injury Report:**\n- [Villarreal vs Real Sociedad - live score, predicted lineups and H2H ...](https://www.fotmob.com/matches/real-sociedad-vs-villarreal/2wu0mj)\n  Snippet: Villarreal vs Real Sociedad\n\nFriday, 20 March 2026 - 20:00 | Estadio de la Cer\u00e1mica, Villarreal | Capacity: 24,500 | Ref: \n\nWeather: Cloudy, 13\u00b0C\n\n### Lineups(Predicted)\n\n#### Villarreal (4-4-2)\n\n1 Luiz J\u00fanior-\n15 Santiago Mouri\u00f1o-\n6 Pau Navarro-\n4 R...\n- [Villarreal CF - Real Sociedad, Mar 20, 2026 - LaLiga - Match sheet](https://www.transfermarkt.us/spielbericht/index/spielbericht/4645911)\n  Snippet: ## Missing players\n\n## Top fixture-goal scorers\n\n| Player | Club | Goals |\n --- \n| |  |  |  --- | | Willian Jos\u00e9 | Willian Jos\u00e9 | | Centre-Forward | | Real Sociedad | 6 |\n| |  |  |  --- | | Gerard Moreno | Gerard Moreno | | Centre-Forward | | Villarr...\n**Betting Odds:**\n- [Villarreal CF vs Real Sociedad Odds - Friday March 20 2026](https://www.oddsshark.com/soccer/la-liga/villarreal-real-sociedad-odds-march-22-2026-2423519)\n  Snippet: ## Team Records\n\n| VIL | Record | RSO |\n --- \n| 17-4-7 | All | 10-8-10 |\n| 11-1-2 | Home | 7-3-4 |\n| 6-3-5 | Away | 3-5-6 |\n| 14-12-2 | ATS | 15-12-1 |\n| 8-5-1 | ATS Home | 8-5-1 |\n| 6-7-1 | ATS Away | 7-7 |\n| 15-11-1 | O/U | 15-12-1 |\n| 8-4-1 | O/U ...\n- [Villarreal vs Real Sociedad Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/villarreal-vs-real-sociedad-prediction-lineups-odds-2026-03-20/)\n  Snippet: Villarreal Trading at Shorter Odds Than Sociedad\n\nVillarreal are forecasted to have a 53% chance of triumphing in this La Liga encounter according to the bookmakers. It leads to their latest betting odds being -111. Real Sociedad are the +295 outside...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-19 15:49:12"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-19 15:47:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal profile as the stronger side in this spot: better overall record (17-4-7) and strong home form (11-1-2) versus Sociedad\u2019s weaker away results (3-5-6). Market pricing also favors Villarreal (around -111 / ~53% implied), which aligns with a moderate home-win edge. Sociedad are draw-capable (8 season draws), so the draw remains a meaningful secondary outcome."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bookmakers price Villarreal as favourites (~53% implied). Villarreal have been very strong at home (approx. 11-1-2) while Real Sociedad's away record is moderate (about 6-3-5). Predicted lineups show Villarreal fielding a settled 4-4-2; there are hints of missing players for both sides but no clear top-scorer absences reported in the context. Weather is neutral. Combining market odds, clear home advantage, recent form and injury noise yields a home win probability edge. Draw remains a plausible outcome given LaLiga draw frequency."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.526,
+                    "draw_probability": 0.221,
+                    "away_win_probability": 0.253,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Villarreal hold strong home form (11-1-2) and overall better season record (17-4-7) compared to Real Sociedad's away form (3-5-6). Odds imply Villarreal ~53% to win (-111), Real Sociedad ~25% to win (+295), leaving ~22% for a draw. No major injuries noted; home advantage and venue support a Villarreal win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal's home record is very strong (11-1-2) and their season win rate at home is 60.7%. Bookmakers assign Villarreal about a 53% chance to win, which aligns with the analysis. Real Sociedad have a mediocre away record (3-5-6). There are no reports of key injuries swinging the game. Recent form, team stats, and market odds all favor Villarreal, but draws are common in La Liga so draw probability remains meaningful."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Villarreal has a strong home record with a win rate of 60.7% and favorable betting odds suggesting a 53% chance of winning. Real Sociedad is weaker on the road with a win rate of 35.7%. There are no major injury concerns reported that drastically sway probabilities."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Villarreal has a significantly better home record (17-4-7) compared to Real Sociedad's away record (10-8-10). Betting odds also favor Villarreal with a 53% implied probability of winning. I have adjusted the home win probability slightly downwards from 0.53 to 0.52 to account for the possibility of a draw."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal has dominant home form (11-1-2 record, 60.7% overall win rate) and strong season performance. Real Sociedad has weaker away record (3-5-6). Betting odds indicate Villarreal as favorites with 53% implied probability. Home advantage at Estadio de la Cer\u00e1mica and Villarreal's superior season metrics support this prediction, though Real Sociedad's decent away draw rate (5 draws in 14 away games) suggests draw probability is meaningful."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:48:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal shows significantly stronger form with 60.7% win rate (17-4-7) compared to Real Sociedad's 35.7% (10-8-10). Home advantage is substantial - Villarreal is 11-1-2 at home while Sociedad struggles away at 3-5-6. The betting market confirms this with Villarreal at -111 (53% implied probability) and Real Sociedad as underdogs at +295. Key scorer Gerard Moreno leads Villarreal while Willian Jos\u00e9 (6 goals in this fixture historically) is Sociedad's main threat. The home fortress at Estadio de la Cer\u00e1mica (11-1-2 record) is a decisive factor. ATS records are identical (8-5-1 home for both teams), suggesting competitive matches but with Villarreal's superior overall form, home win is most probable. Weather conditions (cloudy, 13\u00b0C) are neutral. Draw probability factored at 25% given La Liga's draw frequency, but Villarreal's dominance at home (only 1 draw in 14 home matches) slightly suppresses this."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:49:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Villarreal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Villarreal has a strong home record with a 60.7% win rate, and the betting odds favor them at -111, indicating a higher probability of a home win. Real Sociedad's away form is relatively poor with a 35.7% win rate, and no significant injuries are reported that would change this outlook."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

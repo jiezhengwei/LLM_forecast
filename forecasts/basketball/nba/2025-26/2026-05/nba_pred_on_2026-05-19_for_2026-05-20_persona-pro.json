@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-19\n    Target Date: 2026-05-20\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/20 - 8:30 PM EDT] San Antonio Spurs @ Oklahoma City Thunder | Away: 75.6% (62-20) vs Home: 78.0% (64-18)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: San Antonio Spurs (Away) @ Oklahoma City Thunder (Home)\n**News & Injury Report:**\n- [Spurs vs. Thunder (May 20, 2026) Live Score - ESPN](https://www.espn.com/nba/game/_/gameId/401873198/spurs-thunder)\n  Snippet: # San Antonio Spurs @ Oklahoma City Thunder\n\nSA\n\nNBC\n\n+1\n\nOKC\n\n## Matchup Predictor\n\nSan Antonio Spurs\nOklahoma City Thunder\n\nSA\n\nOKC\n\nAccording to ESPN Analytics\n\n## Game Information\n\nOklahoma City, OK\n\nPaycom Center\nPaycom Center\n\n## Season Leaders\n\nVictor Wembanyama\nShai Gilgeous-Alexander\nVictor Wembanyama\nChet Holmgren\nStephon Castle\nShai Gilgeous-Alexander\n\n## Injury Report\n\n| Name | Status | Est. Return |\n ---\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | Jul 2 | ...\n- [[PDF] Injury Report: 05/19/26 07:00 PM - NBA CMS](https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-05-19_07_00PM.pdf)\n  Snippet: Injury Report: 05/19/26 07:00 PM Page 1 of 1 Game Date Game Time Matchup Team Player Name Current Status Reason 05/19/2026 08:00 (ET) CLE@NYK Cleveland Cavaliers Nance Jr., Larry Questionable Injury/Illness - Illness; Illness New York Knicks Anunoby, OG Probable Injury/Illness - Right Hamstring; Strain 05/20/2026 08:30 (ET) SAS@OKC San Antonio Spurs Fox, De'Aaron Questionable Injury/Illness - Right Ankle; Soreness Oklahoma City Thunder Sorber, Thomas Out Injury/Illness - Right ACL; Surgical Recovery\n**Vegas Odds & Lines:**\n- [Spurs vs Thunder Odds, Betting Trends, and Line Movements - 05/17/2026](https://www.vegasinsider.com/nba/matchups/spurs-vs-thunder/)\n  Snippet: | San Antonio Spurs   543   Spurs | o217.5   -110 | o112.5   -110     + | N/A | o112.5   -110     + | o112.5   -115     + | o112.5   -120     + | N/A | N/A | o219.5   -110 |  |\n| Oklahoma City Thunder   544   Thunder | u217.5   -110 | u112.5   -110     + | N/A | u112.5   -110     + | u112.5   -105     + | u112.5   -115     + | N/A | N/A | u219.5   -110 |  |\n|  Matchup | | | | |\n|  | Open | bet365 \u203a | draftkings \u203a | caesars \u203a | fanduel \u203a | hardrock \u203a | fanatics \u203a | riverscasino \u203a | Consensus | ...\n- [Spurs vs. Thunder Game 2 Predictions, Odds & Stats \u2013 May 20](https://am1300thezone.iheart.com/content/2026-05-19-spurs-vs-thunder-game-2-predictions-odds-stats-may-20/)\n  Snippet: Thunder vs Spurs (Recent Matchups)\n\n| Date | Favorite | Spread | Total | Favorite Moneyline | Underdog Moneyline | Result |\n| 5/18/2026 | Thunder | -6.5 | 219.5 | -250 | +204 | 122-115 SA |\n| 2/4/2026 | Spurs | -9.5 | 221.5 | -420 | +325 | 116-106 SA |\n| 1/13/2026 | Thunder | -8.5 | 230.5 | -304 | +245 | 119-98 OKC |\n| 12/25/2025 | Thunder | -9.5 | 235 | -372 | +294 | 117-102 SA |\n| 12/23/2025 | Thunder | -6.5 | 235.5 | -237 | +195 | 130-110 SA |\n| 12/13/2025 | Thunder | -10.5 | 233.5 | -513 | +386 | 111-109 SA |\n| 3/2/2025 | Thunder | -13 | 238.5 | -787 | +541 | 146-132 OKC | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-20 10:40:13"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-20 10:38:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.7,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Oklahoma City holds a superior regular-season record (64-18) and a strong home-court advantage. After losing Game 1 at home, this becomes a virtual 'must-win' game to avoid a 0-2 series deficit, giving them a significant motivational edge. The Spurs' chances are further complicated by the 'Questionable' status of key player De'Aaron Fox due to an ankle injury. His potential absence or limited effectiveness heavily favors the home team in this crucial playoff matchup, despite the Spurs' recent head-to-head success."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "OKC has a slightly stronger season profile (64-18 vs 62-20) and home-court edge. Market pricing in the context points to OKC as a small favorite (near pick\u2019em to modest favorite), implying only a moderate win edge. Spurs\u2019 De\u2019Aaron Fox is listed questionable (ankle soreness), which meaningfully affects SA\u2019s creation/pace if limited or out; OKC\u2019s listed injury (Sorber out) is lower impact."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.62,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "OKC has the better overall record (64-18 vs 62-20) and home-court edge; Vegas priced OKC as the favorite (around -6.5, ML roughly -250 in the earlier line) which implies a strong market expectation. San Antonio did win the prior meeting (upset) so there is upset risk; Spurs are very good on the road and Victor Wembanyama is a major factor. Injury note: Spurs guard De'Aaron Fox listed questionable (right ankle) \u2014 if limited or out that lowers SA's ceiling. OKC's listed absence (Thomas Sorber - ACL) is not a key rotation factor. Balancing market odds, team strengths, home-court advantage, and the Game 1 upset yields a home-win probability of ~62% (Spurs win ~38%)."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.67,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Vegas odds list Thunder as a favorite around -6.5 with a total near 217\u2013219, indicating ~65\u201370% implied win probability for OKC. Home-court advantage at Paycom Center contributes. Spurs have De'Aaron Fox listed as Questionable (injury concern) and OKC has Thomas Sorber Out (ACL recovery), which dampens OKC\u2019s lineup but not enough to flip the favored status. Wembanyama vs. SGA/Holmgren matchup dynamics favor OKC on balance, and OKC\u2019s home-season performance supports a solid home edge."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.6,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have elite records (Spurs 62-20, Thunder 64-18), but the Thunder have a slightly better home win rate (78%) and are favored by Vegas (recent spread -6.5 to -8.5). However, the Spurs won the most recent matchup as underdogs, and De'Aaron Fox is questionable for San Antonio, which could impact their backcourt. OKC is missing Thomas Sorber, but their core (SGA, Holmgren) is healthy. Given home-court advantage, Vegas lean, and injury uncertainty for the Spurs, OKC is a moderate favorite, but not overwhelming."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have strong season records with OKC having a slight edge at home. The Spurs' De'Aaron Fox is questionable, which could impact their performance. Recent matchups show a mixed result, but the Thunder's home advantage and the close Vegas odds suggest a slight edge for OKC."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Thunder have home-court advantage and strong season record (78% win rate). Spurs have slightly lower win rate (75.6%) and key player De'Aaron Fox is questionable with ankle soreness. Recent head-to-head shows Spurs winning 4 of last 7, but Thunder are favored by -6.5 in Game 2 after losing Game 1 at home. Vegas odds imply ~55% home win probability (moneyline around -120)."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:39:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "This is a playoff game (Game 2) with two elite teams. OKC has home court advantage with a slightly better season record (78.0% vs 75.6%). However, the Spurs won Game 1 on May 18th as underdogs (122-115), covering a -6.5 spread. Recent head-to-head shows Spurs won 5 of last 7 matchups, demonstrating they match up well against OKC. Key injury concerns: De'Aaron Fox (Spurs) is questionable with right ankle soreness, which could impact backcourt depth. Thomas Sorber (Thunder) is out but appears to be a role player. Vegas opened Thunder around -6.5 to -9.5 in previous matchups, but Spurs consistently beat the spread. The current spread appears similar (around -6 to -7 range based on moneyline context). Given Spurs' momentum from Game 1 win, their strong head-to-head record, and potential Fox injury uncertainty, this projects as a close game. OKC gets a slight edge (58%) due to home court advantage in a must-win Game 2 scenario and their elite 78% home win rate, but the Spurs have proven they can win in Oklahoma City. The total hovering around 217.5-219.5 suggests a competitive, lower-scoring playoff game."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-20 10:40:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "The Oklahoma City Thunder have a slightly better win rate and home-court advantage. Additionally, the Vegas odds show the Thunder as slight favorites. However, the absence of Thomas Sorber for the Thunder and the potential absence of De'Aaron Fox for the Spurs could impact the game. The recent matchups have been competitive, with the Spurs winning most of the recent games, but the Thunder's strong home record suggests they have a slight edge."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

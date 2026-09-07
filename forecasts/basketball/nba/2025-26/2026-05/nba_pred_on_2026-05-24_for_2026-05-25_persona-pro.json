@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-24\n    Target Date: 2026-05-25\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/25 - 8:00 PM EDT] New York Knicks @ Cleveland Cavaliers | Away: 64.6% (53-29) vs Home: 63.4% (52-30)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: New York Knicks (Away) @ Cleveland Cavaliers (Home)\n**News & Injury Report:**\n- [Knicks vs Cavs Preview Eastern Conference Finals: Injury News, Prediction, Analysis, Keys To Victory](https://www.youtube.com/watch?v=s2_ZTZcZUR8)\n  Snippet: make his shots. Whether that is Jared Allen or that is Evan Mobley, there will be a big man guarding Josh Hart. He'll be sagging off into the paint trying to clog the lane and close off driving lanes for Towns Anobi Bridges and Brunson and saying, \"You know what? The Knicks are good offense, but we're going to roll the dice and let Josh Hart beat us from three if he does.\" In the regular season, he did a good job. He did 41.3% from three. His best year from downtown in his career. But in the playoffs, he's not been great from three. He has a hand injury. He has a wrist injury. ...\n- [Knicks vs. Cavaliers prediction, odds, spread, time: 2026 NBA playoff picks for Game 1 - CBS Sports](https://www.cbssports.com/nba/news/knicks-cavaliers-odds-prediction-spread-line-start-time-2026-nba-eastern-conference-finals-picks-game-1-best-bets)\n  Snippet: By  Ross Kelly\n\n\u2022  2 min read\n\nImagn Images\n\nThe 2026 NBA Eastern Conference Finals get underway on Tuesday with the Game 1 matchup between the New York Knicks and Cleveland Cavaliers. The third-seeded Knicks (53-29) swept Philly in the East Semis and have won seven straight games in the 2026 NBA playoffs. No. 4 Cleveland (52-30) needed seven games to win each of its first two postseason series but has won two straight away games after starting the playoffs 0-5 on the road. Larry Nance Jr. (illness) is questionable for Cleveland. OG Anunoby (hamstring) is probable for New York.\n**Vegas Odds & Lines:**\n- [Knicks vs. Cavaliers (May 23, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401873343)\n  Snippet: (53-29)\n\n(53-29)\n\n-1.5\n\n-110\n\n+2.5 -110o213.5 -110+114\n\nCleveland Cavaliers Cleveland Cavaliers CLE\n\n(52-30)\n\n(52-30)\n\nu213.5\n\n-110\n\n-2.5 -110u213.5 -110-135\n\nSee More Odds\n## Recent Schedule\n\nNY\n\nCLE\n\nDATE OPP RESULT SPREAD TOTAL\n5/22vs CLEW109-93-5.5 215.5\n5/20vs CLEW115-104-6.5 217.5\n5/10@PHIW144-114-1.5 213.5\n5/08@PHIW108-94+3.5 214.5\n5/06vs PHIW108-102-10.5 213.5\n\n## Betting 101\n\nImage 9 The Beginner's Guide to Betting Ready to enter the world of sports betting? Here's everything you need to know to get started.\n\n## Matchup Predictor\n\nImage 10: New York Knicks ...\n- [Knicks vs. Cavaliers prediction, odds, time: 2026 NBA Eastern Conference finals picks for Game 3 - CBS Sports](https://www.cbssports.com/nba/news/knicks-cavaliers-odds-prediction-spread-line-start-time-2026-nba-eastern-conference-finals-game-3-picks)\n  Snippet: |  |  |\n --- |\n| Knicks vs. Cavaliers spread: | Cavaliers -2.5 at FanDuel |\n| Knicks vs. Cavaliers over/under: | 215.5 points |\n| Knicks vs. Cavaliers money line: | Cavaliers -134, Knicks +114 |\n| Knicks vs. Cavaliers picks: | See picks at SportsLine |\n| Knicks vs. Cavaliers streaming: | Fubo (Try for free) |\n\n## Top Knicks vs. Cavaliers predictions\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-24\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-24 17:12:22"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-24 17:11:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "The teams have nearly identical regular season records, indicating a very close matchup. However, the game is being played in Cleveland, giving the Cavaliers a significant home-court advantage for Game 1 of the series. Vegas betting lines support this, establishing the Cavaliers as slight favorites with a -2.5 point spread and a moneyline around -135, which translates to an implied win probability of approximately 55%. While the Knicks are on an impressive 7-game playoff winning streak, the combination of home-court advantage for Cleveland and a notable hand injury to Knicks' role player Josh Hart, which could impact his shooting, tilts the odds in favor of the home team in a projected tight contest."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas has Cleveland favored (Cavs -2.5, ~-134 ML), which typically maps to ~56\u201358% home win probability after accounting for vig. Cleveland also gets home-court advantage in a matchup of similarly strong regular-season teams. New York enters in better recent form, but Josh Hart\u2019s wrist/hand issue may reduce spacing if Cleveland sags off him, while OG Anunoby is listed probable (less concerning). Cleveland\u2019s only notable question is Larry Nance Jr. (illness), a smaller impact compared to core availability, so the market-favored home side is the slight lean."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "Market calibration: Vegas prices (CLE ~-2.5, ML around -134) imply a modest home favorite (~56\u201358%). Team form & context: Knicks enter on strong momentum (swept Philly, seven straight playoff wins) which pushes the away upset probability up. Matchup & roster/injury factors: Cavs retain home-court edge with strong interior defense (Mobley/Allen) and recent ability to close out tight series despite needing seven games earlier; Larry Nance Jr. listed questionable (illness) which slightly reduces CLE depth. Knicks have OG Anunoby probable (boost) but Josh Hart's wrist/hand issues and inconsistent playoff 3-point shooting weaken NY's spacing. Taking Vegas, injuries, and momentum into account yields a moderate edge to Cleveland at home."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.63,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "High",
+                    "reasoning": "Cavaliers have home-court advantage and are the slight Vegas favorite (-2.5 spread; moneyline around -134). Knicks have some injury questions (OG Anunoby probable for NY; Josh Hart dealing with hand/wrist issue) that could dampen perimeter scoring and experience. Cavs also show stronger home-season efficiency and have recent playoff road win momentum, reinforcing the home-edge in this matchup."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.6,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas lines slightly favor Cleveland at home (-2.5, -134 ML), indicating a modest edge. Knicks are on a seven-game playoff win streak and swept their last series, but are dealing with injuries to key rotation players (Josh Hart hand/wrist, OG Anunoby probable but not 100%). Cleveland is healthier (Larry Nance Jr. questionable, but not a core piece) and has home-court advantage. Both teams have similar season win rates, but the Cavs' recent improvement on the road and the home crowd in Game 1 of the Conference Finals give them a slight edge. The probability is not higher due to the Knicks' strong playoff form and Cleveland's inconsistency, but the market and situational factors lean Cavs."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "The Knicks have been strong in the playoffs with a seven-game winning streak, but the Cavaliers have home-court advantage and are slightly favored by Vegas odds (-2.5). The Knicks' Josh Hart is dealing with a hand and wrist injury, which could impact their offensive efficiency. Cleveland's Larry Nance Jr. is questionable, but OG Anunoby is probable for New York, balancing some of the injury concerns. Overall, the home advantage and slight Vegas favoring give Cleveland a marginal edge."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:11:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "Cavaliers have home-court advantage and are slight favorites (-2.5, -135 moneyline). Knicks have been dominant in playoffs (7-game win streak) but Cavs have shown resilience. Key injuries: Nance questionable, Anunoby probable. Close series expected."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:12:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas odds favor Cleveland as home favorites (-2.5 spread, -135 moneyline vs +114), which typically translates to approximately 57-58% win probability. The Cavaliers have home-court advantage in this Game 1 of the Eastern Conference Finals. Key factors: (1) Cleveland is 52-30 with momentum from winning their last two road games after a rough 0-5 start on the road in playoffs, (2) New York has won 7 straight playoff games and swept the Sixers, showing strong form, (3) Josh Hart's wrist/hand injury limiting his 3-point effectiveness (down from 41.3% regular season to poor playoff shooting), (4) OG Anunoby is probable (hamstring) for NY but may not be 100%, (5) Larry Nance Jr. questionable (illness) for Cleveland - minor concern. The teams are evenly matched (53-29 vs 52-30 records, 64.6% vs 63.4% win rates), but home court and Vegas consensus give Cleveland a slight edge. The 213.5 point total suggests a competitive, lower-scoring playoff game. This is essentially a coin flip with home court being the tiebreaker."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-24 17:12:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ Cleveland Cavaliers (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "Cleveland Cavaliers",
+                    "confidence": "Medium",
+                    "reasoning": "The Cleveland Cavaliers have a slight edge as the home team, and the Vegas odds slightly favor them with a -2.5 spread. Additionally, the Knicks' key player, Josh Hart, is dealing with hand and wrist injuries, which could impact his shooting. The Cavaliers, despite their recent struggles on the road, have shown resilience in their last two away games. However, the Knicks' strong playoff performance, including sweeping the 76ers, makes this a close call."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

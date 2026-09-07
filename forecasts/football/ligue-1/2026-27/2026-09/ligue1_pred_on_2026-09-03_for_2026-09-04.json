@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-03",
+        "target_date_et": "2026-09-04",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876472\nMatchup: AJ Auxerre (away) @ Lyon (home)\nHome: Lyon\nAway: AJ Auxerre\nKickoff UTC: 2026-09-04T17:00Z\nKickoff ET: 2026-09-04 13:00 EDT\nVenue: Groupama Stadium\nRound: unavailable\nHome form: DLWDW\nAway form: LLWWW\nHome record: 1-1-0\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Lyon -190 (open -180); Draw +350 (open +320); AJ Auxerre +500 (open +450)\nTavily context:\n  - Title: Lyon-Auxerre - Ligue 1 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nLyon logo\nAuxerre logo\nLyon logo\nAuxerre logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Julien Duranville |  | Doubtful | 6.2 | ...\n    URL: https://www.whoscored.com/matches/1984068/preview/france-ligue-1-2026-2027-lyon-auxerre\n  - Title: Lyon vs Auxerre Prediction, Betting Tips, Lineups & Odds | 04 Sep 2026\n    Content: Auxerre have won 4, lost 3 and drawn 3, with an average of 1.8 goals from 11.3 attempts and 4.7 shots on goal. AJA average 46.3% possession, 376.8 passes, 5.0 corners in their favour and 5.2 corners against, while conceding 1.6 goals from 11.6 attempts and 4.6 shots on goal.\n\nLassine Sinayoko is top of the team’s scoring charts with 6, while Sekou Mara and Bryan Okoh have 3. Romain Faivre has been the top assist maker on 3, with Theo De Percin and Donovan Leon collectively notching 3 clean sheets in the previous 10 games.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lyon-vs-auxerre-prediction-lineups-odds-2026-09-04\n  - Title: Lyon vs Auxerre Prediction - Ligue 1 - 04/09/2026\n    Content: ## Lyon v Auxerre Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.54 | 4.5 | 5.6 |  |\n| 1xbet | 1.56 | 4.63 | 6.35 |  |\n| Melbet | 1.51 | 4.4 | 6.1 |  |\n| Betwinner | 1.51 | 4.4 | 6.1 |  |\n| 22bet | 1.5 | 4.4 | 6.2 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Lyon and Auxerre?\n\nOur prediction for the Lyon vs Auxerre match is: Lyon to win and BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/lyon-auxerre-370071\n  - Title: Lyon vs Auxerre Prediction and Betting Tips | September 4th 2026\n    Content: Lyon may have lost a dangerous attacker in the form of Fofana, but they still have plenty of firepower, including Openda, who has already opened his account.\n\nWith that in mind, then, the prediction here is a home win.\n\nPrediction: Lyon 2-0 Auxerre\n\n## Lyon vs Auxerre Betting Tips\n\nTip 1: Result - Lyon to win.\n\nTip 2: Auxerre to concede two or more goals - Yes (Auxerre have conceded eight goals in their opening two games).\n\nTip 3: Lois Openda to score for Lyon - Yes (Openda has scored two goals for Lyon this season already).\n\nlike selected\navatar selected\n\nQuick Links ...\n    URL: https://www.sportskeeda.com/football/lyon-vs-auxerre-prediction-betting-tips-september-4th-2026\n\nGame ID: 2\nSource event_id: 401876469\nMatchup: AS Monaco (away) @ Paris Saint-Germain (home)\nHome: Paris Saint-Germain\nAway: AS Monaco\nKickoff UTC: 2026-09-04T19:05Z\nKickoff ET: 2026-09-04 15:05 EDT\nVenue: Parc des Princes\nRound: unavailable\nHome form: DDLWW\nAway form: WWWWL\nHome record: 0-2-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Paris Saint-Germain -240 (open -270); Draw +425 (open +450); AS Monaco +550 (open +600)\nTavily context:\n  - Title: PSG vs Monaco - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Paris Saint-Germain vs Monaco — Fri, September 4, 7:05 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Parc des Princes\n\nPSGParis Saint-Germain\n\n‌\n‌\n\nMonacoMonaco\n\n# Paris Saint-Germain vs Monaco — Fri, September 4, 7:05 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Parc des Princes\n\nPSGParis Saint-Germain\n\n‌\n‌\n\nMonacoMonaco\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Nuno Mendes\n\n  Suspended\n\nMendesSuspended\n\n  Jordan Teze\n\n  Hamstring injury / Early September 2026\n\nTezeHamstring injuryEarly September 2026\n\n  Folarin Balogun\n\n  Injured\n\nBalogunInjured ...\n    URL: https://www.fotmob.com/matches/monaco-vs-paris-saint-germain/379cod\n  - Title: Paris Saint-Germain-Monaco - Ligue 1 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nParis Saint-Germain logo\nMonaco logo\nParis Saint-Germain logo\nMonaco logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nuno Mendes |  | Out | N/A |\n| Désiré Doué |  | Doubtful | 6.8 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Ansu Fati |  | Out | N/A |\n| Takumi Minamino |  | Out | N/A |\n| Mohammed Salisu |  | Out | N/A |\n| Folarin Balogun |  | Out | N/A |\n\n## Team News ...\n    URL: https://www.whoscored.com/matches/1984081/preview/france-ligue-1-2026-2027-paris-saint-germain-monaco\n  - Title: Paris Saint Germain vs Monaco Predictions, Picks & Odds - 04/09 ...\n    Content: Ligue 1 · 3\n\n04 Sep 2026  Parc des Princes  Louis Hecq\n\n### Paris Saint Germain vs Monaco – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 1.44 | 5.28 | 7.50 | View Odds |\n| Stake | 1.38 | 5.10 | 6.75 | View Odds |\n| bc.game | 1.40 | 5.00 | 6.80 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Monaco\n\n7.50 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 01:47 · Odds are subject to change\n\nCompetition: Ligue 1\n\nStage: Regular Season, 3\n\nDate: 04 Sep 2026\n\nTime: 20:05 BST\n\nStadium: Parc des Princes ...\n    URL: https://www.toffeeweb.com/int/paris-saint-germain-vs-monaco-predictions-picks-odds-04-09-2026\n  - Title: Paris Saint-Germain vs Monaco Prediction: 04 September 2026 Ligue 1 | Tips.GG\n    Content: ## Pre-game Odds and Win Probability: PSG the Favourite\n\nThe bookmakers price PSG at around 1.38 on average, which reflects their home advantage and squad quality. A 67% implied win probability for PSG feels slightly generous given their recent form. Monaco at 6.72 represents real value considering they sit top of Ligue 1 and have won six of their last seven matches. The draw at around 5.00 is also worth noting given PSG’s habit of dropping points this season. We lean toward the BTTS market and Over 2.5 goals as the most accurate reflection of what this fixture is likely to produce. ...\n    URL: https://tips.gg/article/paris-saint-germain-vs-monaco-04-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876472\nMatchup: AJ Auxerre (away) @ Lyon (home)\nHome: Lyon\nAway: AJ Auxerre\nKickoff UTC: 2026-09-04T17:00Z\nKickoff ET: 2026-09-04 13:00 EDT\nVenue: Groupama Stadium\nRound: unavailable\nHome form: DLWDW\nAway form: LLWWW\nHome record: 1-1-0\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Lyon -190 (open -180); Draw +350 (open +320); AJ Auxerre +500 (open +450)\nTavily context:\n  - Title: Lyon-Auxerre - Ligue 1 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nLyon logo\nAuxerre logo\nLyon logo\nAuxerre logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Julien Duranville |  | Doubtful | 6.2 | ...\n    URL: https://www.whoscored.com/matches/1984068/preview/france-ligue-1-2026-2027-lyon-auxerre\n  - Title: Lyon vs Auxerre Prediction, Betting Tips, Lineups & Odds | 04 Sep 2026\n    Content: Auxerre have won 4, lost 3 and drawn 3, with an average of 1.8 goals from 11.3 attempts and 4.7 shots on goal. AJA average 46.3% possession, 376.8 passes, 5.0 corners in their favour and 5.2 corners against, while conceding 1.6 goals from 11.6 attempts and 4.6 shots on goal.\n\nLassine Sinayoko is top of the team’s scoring charts with 6, while Sekou Mara and Bryan Okoh have 3. Romain Faivre has been the top assist maker on 3, with Theo De Percin and Donovan Leon collectively notching 3 clean sheets in the previous 10 games.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lyon-vs-auxerre-prediction-lineups-odds-2026-09-04\n  - Title: Lyon vs Auxerre Prediction - Ligue 1 - 04/09/2026\n    Content: ## Lyon v Auxerre Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.54 | 4.5 | 5.6 |  |\n| 1xbet | 1.56 | 4.63 | 6.35 |  |\n| Melbet | 1.51 | 4.4 | 6.1 |  |\n| Betwinner | 1.51 | 4.4 | 6.1 |  |\n| 22bet | 1.5 | 4.4 | 6.2 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Lyon and Auxerre?\n\nOur prediction for the Lyon vs Auxerre match is: Lyon to win and BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/lyon-auxerre-370071\n  - Title: Lyon vs Auxerre Prediction and Betting Tips | September 4th 2026\n    Content: Lyon may have lost a dangerous attacker in the form of Fofana, but they still have plenty of firepower, including Openda, who has already opened his account.\n\nWith that in mind, then, the prediction here is a home win.\n\nPrediction: Lyon 2-0 Auxerre\n\n## Lyon vs Auxerre Betting Tips\n\nTip 1: Result - Lyon to win.\n\nTip 2: Auxerre to concede two or more goals - Yes (Auxerre have conceded eight goals in their opening two games).\n\nTip 3: Lois Openda to score for Lyon - Yes (Openda has scored two goals for Lyon this season already).\n\nlike selected\navatar selected\n\nQuick Links ...\n    URL: https://www.sportskeeda.com/football/lyon-vs-auxerre-prediction-betting-tips-september-4th-2026\n\nGame ID: 2\nSource event_id: 401876469\nMatchup: AS Monaco (away) @ Paris Saint-Germain (home)\nHome: Paris Saint-Germain\nAway: AS Monaco\nKickoff UTC: 2026-09-04T19:05Z\nKickoff ET: 2026-09-04 15:05 EDT\nVenue: Parc des Princes\nRound: unavailable\nHome form: DDLWW\nAway form: WWWWL\nHome record: 0-2-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Paris Saint-Germain -240 (open -270); Draw +425 (open +450); AS Monaco +550 (open +600)\nTavily context:\n  - Title: PSG vs Monaco - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Paris Saint-Germain vs Monaco — Fri, September 4, 7:05 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Parc des Princes\n\nPSGParis Saint-Germain\n\n‌\n‌\n\nMonacoMonaco\n\n# Paris Saint-Germain vs Monaco — Fri, September 4, 7:05 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Parc des Princes\n\nPSGParis Saint-Germain\n\n‌\n‌\n\nMonacoMonaco\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Nuno Mendes\n\n  Suspended\n\nMendesSuspended\n\n  Jordan Teze\n\n  Hamstring injury / Early September 2026\n\nTezeHamstring injuryEarly September 2026\n\n  Folarin Balogun\n\n  Injured\n\nBalogunInjured ...\n    URL: https://www.fotmob.com/matches/monaco-vs-paris-saint-germain/379cod\n  - Title: Paris Saint-Germain-Monaco - Ligue 1 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nParis Saint-Germain logo\nMonaco logo\nParis Saint-Germain logo\nMonaco logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nuno Mendes |  | Out | N/A |\n| Désiré Doué |  | Doubtful | 6.8 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Ansu Fati |  | Out | N/A |\n| Takumi Minamino |  | Out | N/A |\n| Mohammed Salisu |  | Out | N/A |\n| Folarin Balogun |  | Out | N/A |\n\n## Team News ...\n    URL: https://www.whoscored.com/matches/1984081/preview/france-ligue-1-2026-2027-paris-saint-germain-monaco\n  - Title: Paris Saint Germain vs Monaco Predictions, Picks & Odds - 04/09 ...\n    Content: Ligue 1 · 3\n\n04 Sep 2026  Parc des Princes  Louis Hecq\n\n### Paris Saint Germain vs Monaco – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 1.44 | 5.28 | 7.50 | View Odds |\n| Stake | 1.38 | 5.10 | 6.75 | View Odds |\n| bc.game | 1.40 | 5.00 | 6.80 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Monaco\n\n7.50 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 01:47 · Odds are subject to change\n\nCompetition: Ligue 1\n\nStage: Regular Season, 3\n\nDate: 04 Sep 2026\n\nTime: 20:05 BST\n\nStadium: Parc des Princes ...\n    URL: https://www.toffeeweb.com/int/paris-saint-germain-vs-monaco-predictions-picks-odds-04-09-2026\n  - Title: Paris Saint-Germain vs Monaco Prediction: 04 September 2026 Ligue 1 | Tips.GG\n    Content: ## Pre-game Odds and Win Probability: PSG the Favourite\n\nThe bookmakers price PSG at around 1.38 on average, which reflects their home advantage and squad quality. A 67% implied win probability for PSG feels slightly generous given their recent form. Monaco at 6.72 represents real value considering they sit top of Ligue 1 and have won six of their last seven matches. The draw at around 5.00 is also worth noting given PSG’s habit of dropping points this season. We lean toward the BTTS market and Over 2.5 goals as the most accurate reflection of what this fixture is likely to produce. ...\n    URL: https://tips.gg/article/paris-saint-germain-vs-monaco-04-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876472",
+                        "date_utc": "2026-09-04T17:00Z",
+                        "kickoff_et": "2026-09-04 13:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lyon",
+                        "away": "AJ Auxerre",
+                        "home_id": "167",
+                        "away_id": "172",
+                        "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                        "venue": "Groupama Stadium",
+                        "city": "Lyon",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DLWDW",
+                        "form_away": "LLWWW",
+                        "record_home": "1-1-0",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-180",
+                            "home_current": "-190",
+                            "draw_open": "+320",
+                            "draw_current": "+350",
+                            "away_open": "+450",
+                            "away_current": "+500"
+                        },
+                        "odds_text": "DraftKings: Lyon -190 (open -180); Draw +350 (open +320); AJ Auxerre +500 (open +450)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401876469",
+                        "date_utc": "2026-09-04T19:05Z",
+                        "kickoff_et": "2026-09-04 15:05 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Paris Saint-Germain",
+                        "away": "AS Monaco",
+                        "home_id": "160",
+                        "away_id": "174",
+                        "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                        "venue": "Parc des Princes",
+                        "city": "Paris",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DDLWW",
+                        "form_away": "WWWWL",
+                        "record_home": "0-2-0",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-270",
+                            "home_current": "-240",
+                            "draw_open": "+450",
+                            "draw_current": "+425",
+                            "away_open": "+600",
+                            "away_current": "+550"
+                        },
+                        "odds_text": "Provider unavailable: Paris Saint-Germain -240 (open -270); Draw +425 (open +450); AS Monaco +550 (open +600)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-03T05:17:05.332743-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:06:31.691241-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong favorites at home against an Auxerre side that has struggled defensively, conceding eight goals in their opening two games. Backed by a potent attack featuring Openda, Lyon is expected to secure a victory.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "PSG are the bookmakers' favorites at the Parc des Princes but have shown some vulnerability early in the season with two home draws. While Monaco is in stellar form at the top of the table, PSG's superior squad quality should carry them to a narrow victory, though Monaco represents a dangerous opponent capable of taking points.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-03T05:06:48.367674-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.627,
+                    "draw_probability": 0.213,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is heavily favored at home with odds around -190 (approx 63% implied probability). Auxerre has struggled early in the season with an 0-0-2 record and is expected to face difficulties containing Lyon's attack at the Groupama Stadium.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.672,
+                    "draw_probability": 0.181,
+                    "away_win_probability": 0.147,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Monaco's strong start to the season (2-0-0) and some dropped points from PSG, the betting markets firmly back Paris Saint-Germain as a heavy home favorite at -240 (roughly 67% implied probability). The quality depth and home advantage at Parc des Princes give PSG a significant edge.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-03T05:07:10.590101-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is undefeated this season and playing at home against an Auxerre side that has lost both of its opening matches. The context indicates Auxerre has been defensively weak, conceding eight goals in two games. The betting odds and expert consensus all strongly point towards a comfortable victory for Lyon.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain has started the season with two draws, while Monaco has a perfect winning record. However, PSG is playing at home and possesses superior squad depth. Monaco is contending with significant injuries to key players, including Folarin Balogun and Takumi Minamino, which could hamper their potent attack. Despite their contrasting form, PSG's quality and Monaco's absences make a home win the most probable outcome.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:07:44.580332-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is heavily favored by all betting odds and expert predictions, with multiple sources explicitly forecasting a home win. Lyon has a better home record (1-1-0) compared to Auxerre's poor away record (0-0-2), and Auxerre has conceded 8 goals in their opening two games. Lyon also benefits from key players like Openda being in good form.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "While PSG is generally favored by bookmaker odds, their recent home form includes two draws (0-2-0) to start the season. AS Monaco has had an excellent start, winning both their away games (2-0-0) and is currently leading Ligue 1. Expert analysis suggests PSG's implied win probability might be generous, noting value in a draw or Monaco win given PSG's tendency to drop points and Monaco's strong form.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:47.305142-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are clear home favorites in the market, with implied prices around the low-to-mid 60% range after removing vig. Auxerre have opened 0-0-2 and the available context points to significant defensive issues, while Lyon have the stronger home edge and attacking profile. Early-season uncertainty and Auxerre's scoring threat keep this from high confidence.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are strong home favorites at Parc des Princes, with market-implied win probability near two-thirds. Monaco arrive in better early form, but they are dealing with several notable absences, including attacking and defensive pieces, while PSG retain the superior squad baseline. PSG's draw-prone start and Nuno Mendes' suspension raise upset risk, so confidence is medium.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:58.105671-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are clear home favorites in the market and have avoided defeat through their first two league matches, while Auxerre have opened 0-0-2 away and are reported to have conceded heavily early in the season. Home advantage at Groupama Stadium and Lyon's stronger attacking profile make a home win the most likely 90-minute result, though Auxerre's recent scoring form keeps some draw/upset risk.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG remain strong favorites at Parc des Princes and the odds imply a substantial home edge despite their early draws. Monaco arrive in excellent form and with strong away results, so their upset and draw chances are meaningful, but multiple reported Monaco absences, including attacking and defensive contributors, tilt the forecast toward a PSG regulation-time win.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-03T05:09:35.378481-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Lyon as a clear favorite at home (short home odds with only modest draw/away support). Lyon’s recent form and early record are steadier than Auxerre’s, and Auxerre’s profile suggests vulnerability defensively (notably heavy goals conceded early), which fits a Lyon home-win expectation even allowing for some variance.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are still the home favorite by the odds, but their draw-heavy start and Monaco’s strong early record increase the draw/upset paths versus a typical PSG home spot. Squad absences on both sides add uncertainty, so the home win is preferred but with elevated draw probability relative to a standard PSG mismatch.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-03T05:09:43.599002-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are clear bookmakers' favourites and have stronger overall squad depth at home. Lyon's recent form (DLWDW) and home advantage at Groupama Stadium, combined with Auxerre's mixed away record, tilt the odds to a Lyon win. Auxerre have attacking threat but have conceded heavily early in the season; minor doubts over Lyon personnel reduce confidence from high to medium.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are market favourites at Parc des Princes despite some early-season inconsistency. Monaco arrive in excellent form, so an upset is possible, but PSG's home quality and depth (even with a few absences like Nuno Mendes) make a PSG win the likeliest 90-minute result. Probabilities reflect PSG favoritism tempered by Monaco's recent run.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-03T05:09:55.670281-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is favored at home with strong odds; Auxerre have struggled away, making a regulation-time home win the most probable outcome.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG face injuries and weaker recent home form, while Monaco have strong away form and could pose a challenge, making an away win plausible.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-03T05:09:57.898893-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong favorites at home, reflected in both bookmaker odds and expert predictions. Auxerre have conceded heavily in their opening matches and Lyon's attack, led by Openda, is in good form. Most sources predict a Lyon win, with some expecting a multi-goal margin. Lyon's home form is solid, while Auxerre's away record is poor. The probability distribution reflects the consensus and the statistical edge for Lyon.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are favored at home, but their recent form has been inconsistent, and Monaco are in strong form with several wins. Bookmakers still give PSG a clear edge, but some tipsters see value in Monaco or a draw. PSG's squad quality and home advantage justify their favoritism, but Monaco's momentum and PSG's dropped points increase the draw and away probabilities slightly. The prediction leans PSG, but with moderate confidence.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-03T05:10:00.703231-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon has a strong home record and favorable odds, while Auxerre has struggled away. Lyon's attacking options and recent form suggest a likely home win.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "PSG is favored due to their squad quality and home advantage, despite recent inconsistencies. Monaco's strong form makes a draw possible, but PSG remains the likely winner.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-03T05:10:12.402769-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are clear favorites at home (odds around -190, ~1.51-1.56 decimal). Auxerre have conceded eight goals in their opening two matches despite two wins in recent form, and Lyon's attack led by Openda has been productive. Market and statistical previews strongly favor a Lyon home win.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are strong home favorites (-240) at Parc des Princes despite inconsistent early form and Nuno Mendes suspended. Monaco arrive in excellent form (won 6 of last 7) but face significant absences (Balogun, Salisu, Minamino, Fati). PSG's squad depth and home advantage tilt this their way, though Monaco's form makes an upset or draw plausible.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-03T05:10:17.995372-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Lyon",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong home favorites at -190 with Openda in form. Auxerre have conceded eight goals in two opening games and are winless on the road this season.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Paris Saint-Germain",
+                    "confidence": "medium",
+                    "reasoning": "PSG are home favorites at -240 despite some dropped points. Monaco are in good form but missing several key attackers (Balogun, Minamino, Salisu). PSG's quality at Parc des Princes should prevail.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-03T05:10:30.314190-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong favorites at home with odds implying roughly 60% win probability. Auxerre have conceded 8 goals in their opening two games, showing significant defensive vulnerability. Lyon have Openda in form with 2 goals already this season. While Auxerre's recent form includes 3 wins (likely from prior season carryover), their Ligue 1 record this season is 0-0-2. Multiple sources predict a Lyon home win, with some suggesting a clean sheet. Lyon's mixed home form (DLWDW) introduces some uncertainty, but the odds and context strongly favor Lyon.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "PSG are priced as favorites at home, but their season record is 0-2-0 (two draws) showing inconsistency. Monaco sit top of Ligue 1 with a 2-0-0 record and strong recent form (WWWWL). Monaco have multiple key absences (Balogun, Minamino, Salisu, Fati, Teze) while PSG are missing Nuno Mendes and possibly Doué. The clash between PSG's home advantage/squad depth and Monaco's in-form play creates genuine uncertainty. Odds have shifted from PSG -270 to -240, suggesting some market confidence in Monaco. This is a competitive fixture with BTTS and over 2.5 goals markets reflecting expected open play. PSG's slight edge comes from home advantage and squad quality, but confidence is low given Monaco's form.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-03T05:10:45.848735-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong favorites at home with odds of -190, playing at Groupama Stadium. Their recent form shows DLWDW with a 1-1-0 record. Auxerre have struggled away with a 0-0-2 record and conceded 8 goals in their opening two games according to the context. Multiple sources predict Lyon to win, with scorelines around 2-0. Lyon retain firepower with Openda already scoring 2 goals this season. While Auxerre have won 3 of their last 5 matches overall, their away form (LLWWW starting with two losses) and defensive vulnerabilities against quality opposition favor a home win. The odds movement from -180 to -190 indicates continued backing for Lyon.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "PSG are favorites at -240 playing at Parc des Princes, but this is a tight matchup. Monaco sit top of Ligue 1 with a perfect 2-0-0 away record and WWWWL form (6 wins in last 7). PSG have drawn twice already (0-2-0 record) showing inconsistency despite recent DDLWW form. Key absences affect both sides: PSG missing Nuno Mendes (suspended), Monaco without Balogun, Fati, Minamino, and Salisu. The context suggests Monaco at 6.72 represents value given their strong form and PSG's tendency to drop points. However, PSG's home advantage and quality still give them the edge. The 67% implied probability from odds feels slightly high. Both teams to score and over 2.5 goals are likely given the attacking quality on both sides. This is closer than the odds suggest.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-03T05:10:51.048463-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong favorites with -190 odds reflecting home advantage and superior form (DLWDW). Auxerre have a poor recent record (LLWWW with 0-0-2 start) and have conceded 8 goals in opening matches. Multiple sources predict Lyon 2-0 victory with Openda scoring. DraftKings odds and expert consensus strongly favor home win.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG favored at -240 odds with home advantage at Parc des Princes, but form is concerning (DDLWW). Monaco arrive in excellent form (WWWWL, 2-0-0 record) and sit top of Ligue 1. PSG missing key defender Nuno Mendes (suspended). Analysis suggests high-scoring match with BTTS likely. While PSG should win, Monaco's strong form and PSG's inconsistency creates uncertainty, reflected in odds moving from -270 to -240.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-03T05:12:45.203871-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong home favorites, while Auxerre have lost both away matches and conceded eight goals. The odds imply a clear Lyon win probability.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "PSG are favored at home, but two home draws and Monaco's strong away form create meaningful draw/upset risk.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-03T05:12:47.300677-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lyon have strong home form and are heavy favorites per odds. Auxerre have lost both away games, conceding many goals. Lyon's attacking quality should prevail.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "PSG are at home and have superior squad depth despite recent draws. Monaco are in good form but missing key players. PSG's quality should edge a competitive match.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-03T05:13:15.112609-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is in solid form and has a significant home advantage, while Auxerre has struggled defensively, conceding eight goals in their first two matches. Bookmakers and statistical models heavily favor a Lyon victory.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG is the clear favorite at home, but Monaco is in excellent form, sitting top of the league and winning both away matches so far. PSG's tendency to drop points at home this season lowers confidence in a straight win, though they remain the most likely victor.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-03T05:13:26.314803-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon has a strong home record and recent form, with key players like Lois Openda in good scoring form. Auxerre's away form and defensive issues make it less likely for them to secure a win or even a draw.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain has a strong squad and home advantage, but their recent form has been inconsistent. Monaco, on the other hand, is in good form and could pose a significant challenge, making the match more balanced than the odds suggest.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-03T05:14:12.313005-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon's solid home record and Auxerre's early defensive struggles (conceding multiple goals in their first two matches) strongly favor a home victory. Market odds heavily price Lyon at -190, and statistical previews align with a controlled 2-0 win for the hosts.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "PSG's home advantage and superior squad depth give them the edge, but their inconsistent start (0-2-0) and missing key defender Nuno Mendes introduce risk. Monaco arrives with a perfect record (2-0-0) despite missing several attackers. The combination of early-season volatility and defensive injuries on both sides makes a straightforward PSG win plausible but uncertain.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-03T05:15:04.471180-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong favorites at home with odds around -190, while Auxerre have conceded significantly in their opening games. Despite Auxerre's recent winning streak, Lyon's attack led by Openda and home advantage points to a home victory.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are favored by the market (-240) and home venue, though Monaco enter with impressive recent form. Defensive absences for PSG (Mendes) create slight uncertainty, but squad depth favors the hosts for a tight regulation-time win.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-03T05:15:38.324659-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strongly favored by bookmakers and predictive sources, benefiting from home advantage and a potent attack led by Openda. Auxerre have started the season poorly away from home, losing both road matches while conceding eight goals, making a home win the clear expectation.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG have shown vulnerability with consecutive home draws, and Monaco arrive in excellent form atop the table. However, Monaco are significantly weakened by the absences of Balogun, Minamino, Salisu and Fati, while PSG retain superior squad depth at the Parc des Princes. The home side is the most likely victor, but the gap is narrower than the market implies.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-03T05:16:30.941895-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lyon are strong home favorites (odds -190, implied ~63% after margin removal) and are unbeaten through two matches (1-1-0) with attacking options like Openda already scoring. Auxerre have lost both away fixtures (0-0-2) and have leaked heavily, conceding eight goals in their opening two games per preview reports. Multiple prediction outlets lean Lyon, with a 2-0 home win a common call. Auxerre's recent overall form (LLWWW) shows some attacking life, so an upset or draw isn't out of the question, but the home side's quality, venue advantage, and Auxerre's defensive fragility justify a clear lean to Lyon.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "PSG are priced as heavy favorites (-240, ~67% implied), but their early-season home form (0-2-0, two draws) and habit of dropping points temper that confidence. Monaco arrive in excellent shape, sitting top of Ligue 1 with two away wins and six wins in their last seven, suggesting real value on the visitors. However, Monaco are significantly depleted with Balogun, Fati, Minamino, and Salisu all out, blunting their attack, while PSG are only missing Nuno Mendes (suspended) with Doue doubtful. Weighing PSG's home advantage and squad depth against their shaky form and Monaco's strong run but lengthy injury list, this shapes up as a competitive, high-variance fixture where PSG remain the most likely winner but the draw and an away result carry meaningful probability.",
+                    "event_id": "401876469"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-03T05:17:05.329681-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Lyon (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong favorites at home with odds around -190 and multiple sources predicting a comfortable Lyon win (e.g., 2-0). Auxerre have started poorly with heavy away defeats and defensive issues, while Lyon possess attacking quality through Openda and home advantage at Groupama Stadium.",
+                    "event_id": "401876472"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are priced as clear home favorites and have superior squad depth, but they have drawn their opening two home games and Monaco arrive in excellent form with two away wins. Monaco's injuries to Balogun, Minamino and Salisu reduce their threat, making a PSG home win the most likely outcome, though with moderate confidence given PSG's stuttering start.",
+                    "event_id": "401876469"
+                }
+            ]
+        }
+    ]
+}

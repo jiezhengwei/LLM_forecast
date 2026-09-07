@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-24",
+        "target_date_et": "2026-08-25",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-24\n\nTarget Date (ET): 2026-08-25\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882917\nMatchup: Real Betis (away) @ Valencia (home)\nHome: Valencia\nAway: Real Betis\nKickoff UTC: 2026-08-25T19:00Z\nKickoff ET: 2026-08-25 15:00 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: DWWDW\nAway form: WWLWD\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Valencia +180 (open +165); Draw +235 (open +220); Real Betis +155 (open +165)\nTavily context:\n  - Title: Valencia vs Real Betis - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Valencia vs Real Betis — Tue, August 25, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio de Mestalla\n\nValenciaValencia\n\n‌\n‌\n\nReal BetisReal Betis\n\n# Valencia vs Real Betis — Tue, August 25, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio de Mestalla\n\nValenciaValencia\n\n‌\n‌\n\nReal BetisReal Betis\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alberto Marí\n\n  Muscle injury / Late August 2026\n\nMaríMuscle injuryLate August 2026\n\n  Diego López\n\n  Cruciate ligament injury / Early January 2027\n\nLópezCruciate ligament injuryEarly January 2027\n\n  Sergi Canós ...\n    URL: https://www.fotmob.com/matches/real-betis-vs-valencia/2y0d9k\n  - Title: Valencia vs Real Betis predicted lineup · 25 Aug 2026\n    Content: ## Injuries & suspensions\n\nFull list →\n\nValencia\n\n6\n\n MIDCanósKnee InjuryOut\n DEFCopeteAnkle InjuryOut\n FWDLópezKnee InjuryOut\n DEFFoulquierKnee InjuryDoubtful\n FWDRiojaMuscle InjuryDoubtful\n FWDMariLeg InjuryDoubtful\n\nReal Betis\n\n7\n\n GKCondeShoulder InjuryOut\n FWDRuibalKnee InjuryOut\n FWDPetitMuscle InjuryOut\n MIDCelsoMuscle InjuryOut\n FWDEzzalzouliKnee InjuryOut\n FWDMoranteInjuryOut\n DEFBellerínInjuryDoubtful\n\nReported availability, not a confirmed team sheet. Only an official lineup confirms who starts.\n\n### Valencia\n\nNo earlier lineup in this competition to compare.\n\n### Real Betis ...\n    URL: https://starting11.com/fixtures/valencia-vs-real-betis\n  - Title: Valencia CF vs. Real Betis Balompié Odds & Predictions (Aug. 25, 2026) | Polymarket\n    Content: The current moneyline odds for “Betis vs. Valencia” show Valencia CF at 36¢ (36% implied probability) and Real Betis Balompié at 35¢ (35%). All odds update in real-time as traders buy and sell shares, reflecting the latest collective view of how this game will play out. Check back frequently or bookmark this page to follow how the odds shift as game time approaches. [...] The current moneyline odds for “Betis vs. Valencia” show Valencia CF at 36¢ (36% implied probability) and Real Betis Balompié at 35¢ (35%). ...\n    URL: https://polymarket.com/sports/laliga/lal-val-bet-2026-08-25\n  - Title: Valencia vs Real Betis in Soccer Tipsters Competition\n    Content: |  |  |\n --- |\n| Betting Type: | Pre-Match 1X2Pre-Match Asian HandicapPre-Match Over / UnderPre-Match Double ChanceIn-Play 1X2In-Play Asian HandicapIn-Play Over / UnderIn-Play Double Chance |\n| Pick: | ValenciaDrawReal Betis  ValenciaReal Betis-4-3.75-3.5-3.25-3-2.75-2.5-2.25-2-1.75-1.5-1.25-1-0.75-0.5-0.250+0.25+0.5+0.75+1+1.25+1.5+1.75+2+2.25+2.5+2.75+3+3.25+3.5+3.75+4  OverUnder0.50.7511.251.51.7522.252.52.7533.253.53.754  Home or DrawHome or AwayAway or Draw |\n| Stake: | $1,000$6,000$11,000$16,000$21,000$26,000$31,000$36,000$41,000$46,000 |\n| Valencia's goals: | < ≤ = ≥ > | ...\n    URL: https://www.soccerpunter.com/competition/Spain/La-Liga/bet_match_4739044_Valencia_vs_Real_Betis_2026-08-25\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-24\n\nTarget Date (ET): 2026-08-25\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882917\nMatchup: Real Betis (away) @ Valencia (home)\nHome: Valencia\nAway: Real Betis\nKickoff UTC: 2026-08-25T19:00Z\nKickoff ET: 2026-08-25 15:00 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: DWWDW\nAway form: WWLWD\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Valencia +180 (open +165); Draw +235 (open +220); Real Betis +155 (open +165)\nTavily context:\n  - Title: Valencia vs Real Betis - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Valencia vs Real Betis — Tue, August 25, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio de Mestalla\n\nValenciaValencia\n\n‌\n‌\n\nReal BetisReal Betis\n\n# Valencia vs Real Betis — Tue, August 25, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio de Mestalla\n\nValenciaValencia\n\n‌\n‌\n\nReal BetisReal Betis\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alberto Marí\n\n  Muscle injury / Late August 2026\n\nMaríMuscle injuryLate August 2026\n\n  Diego López\n\n  Cruciate ligament injury / Early January 2027\n\nLópezCruciate ligament injuryEarly January 2027\n\n  Sergi Canós ...\n    URL: https://www.fotmob.com/matches/real-betis-vs-valencia/2y0d9k\n  - Title: Valencia vs Real Betis predicted lineup · 25 Aug 2026\n    Content: ## Injuries & suspensions\n\nFull list →\n\nValencia\n\n6\n\n MIDCanósKnee InjuryOut\n DEFCopeteAnkle InjuryOut\n FWDLópezKnee InjuryOut\n DEFFoulquierKnee InjuryDoubtful\n FWDRiojaMuscle InjuryDoubtful\n FWDMariLeg InjuryDoubtful\n\nReal Betis\n\n7\n\n GKCondeShoulder InjuryOut\n FWDRuibalKnee InjuryOut\n FWDPetitMuscle InjuryOut\n MIDCelsoMuscle InjuryOut\n FWDEzzalzouliKnee InjuryOut\n FWDMoranteInjuryOut\n DEFBellerínInjuryDoubtful\n\nReported availability, not a confirmed team sheet. Only an official lineup confirms who starts.\n\n### Valencia\n\nNo earlier lineup in this competition to compare.\n\n### Real Betis ...\n    URL: https://starting11.com/fixtures/valencia-vs-real-betis\n  - Title: Valencia CF vs. Real Betis Balompié Odds & Predictions (Aug. 25, 2026) | Polymarket\n    Content: The current moneyline odds for “Betis vs. Valencia” show Valencia CF at 36¢ (36% implied probability) and Real Betis Balompié at 35¢ (35%). All odds update in real-time as traders buy and sell shares, reflecting the latest collective view of how this game will play out. Check back frequently or bookmark this page to follow how the odds shift as game time approaches. [...] The current moneyline odds for “Betis vs. Valencia” show Valencia CF at 36¢ (36% implied probability) and Real Betis Balompié at 35¢ (35%). ...\n    URL: https://polymarket.com/sports/laliga/lal-val-bet-2026-08-25\n  - Title: Valencia vs Real Betis in Soccer Tipsters Competition\n    Content: |  |  |\n --- |\n| Betting Type: | Pre-Match 1X2Pre-Match Asian HandicapPre-Match Over / UnderPre-Match Double ChanceIn-Play 1X2In-Play Asian HandicapIn-Play Over / UnderIn-Play Double Chance |\n| Pick: | ValenciaDrawReal Betis  ValenciaReal Betis-4-3.75-3.5-3.25-3-2.75-2.5-2.25-2-1.75-1.5-1.25-1-0.75-0.5-0.250+0.25+0.5+0.75+1+1.25+1.5+1.75+2+2.25+2.5+2.75+3+3.25+3.5+3.75+4  OverUnder0.50.7511.251.51.7522.252.52.7533.253.53.754  Home or DrawHome or AwayAway or Draw |\n| Stake: | $1,000$6,000$11,000$16,000$21,000$26,000$31,000$36,000$41,000$46,000 |\n| Valencia's goals: | < ≤ = ≥ > | ...\n    URL: https://www.soccerpunter.com/competition/Spain/La-Liga/bet_match_4739044_Valencia_vs_Real_Betis_2026-08-25\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882917",
+                        "date_utc": "2026-08-25T19:00Z",
+                        "kickoff_et": "2026-08-25 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Valencia",
+                        "away": "Real Betis",
+                        "home_id": "94",
+                        "away_id": "244",
+                        "matchup": "Real Betis (away) @ Valencia (home)",
+                        "venue": "Mestalla Stadium",
+                        "city": "Manises",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DWWDW",
+                        "form_away": "WWLWD",
+                        "record_home": "0-1-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+165",
+                            "home_current": "+180",
+                            "draw_open": "+220",
+                            "draw_current": "+235",
+                            "away_open": "+165",
+                            "away_current": "+155"
+                        },
+                        "odds_text": "DraftKings: Valencia +180 (open +165); Draw +235 (open +220); Real Betis +155 (open +165)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-24T05:03:08.818150-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-24T04:53:33.508314-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Betis is the slight favorite according to both DraftKings and prediction market probabilities. Despite both sides experiencing several injuries early in the season, Real Betis enters with a marginally stronger form and slightly favorable odds to edge out Valencia at Mestalla.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-24T04:53:41.842481-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.341,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.374,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "DraftKings odds suggest a closely contested match, slightly favoring Real Betis on the road. Both teams have extensive injury lists, which makes the outcome highly variable, but normalized odds give Real Betis the narrowest of edges over a home win or draw.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-24T04:54:00.869845-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "This is projected to be a very closely contested match, as indicated by the tight betting odds from multiple sources. Real Betis is a slight favorite in the betting markets despite playing away from home. Both teams are contending with a significant number of injuries to key players at the start of the season, which adds a high degree of uncertainty to the outcome. While Valencia benefits from home-field advantage at Mestalla, the market sentiment suggests Real Betis may be the slightly stronger side. Given the near-even probabilities for all three outcomes, confidence in any single result is low.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-24T04:54:14.015229-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.287,
+                    "away_win_probability": 0.363,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "low",
+                    "reasoning": "Real Betis holds a marginal advantage according to normalized DraftKings odds (37.43%) and recent away form (WWLWD, 1-0-0 record). While Polymarket indicates a very slight edge for Valencia (36% vs 35%), the combined market perspective suggests Real Betis is the slightly more probable winner. Both teams are significantly impacted by injuries, which could level the playing field, but Real Betis's slightly better form and implied probability tilt the prediction.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-24T04:54:52.178103-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make this very close but give Real Betis a slight edge despite Valencia's Mestalla home advantage. Betis opened the season with a win and have shortened in the betting, while Valencia drew their opener. Both sides have notable injury concerns, with Betis missing several attacking options and Valencia also short-handed, so the draw remains a substantial risk.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-24T04:54:58.726734-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make this close, with Real Betis a slight favorite despite playing at Mestalla. Valencia have home advantage and both teams have notable injury concerns, but Betis' stronger early record and marginally shorter price tilt the forecast narrowly toward an away win. The draw remains a significant risk in a balanced matchup.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-24T04:55:24.752370-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.341,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.374,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Market prices make Betis a narrow road favorite (Betis odds shortened while Valencia drifted), implying a very even match with a slightly higher away-win likelihood. Valencia’s home edge keeps the home-win probability close, but the overall balance of pricing/form signals a small tilt toward Betis in 90 minutes.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-24T04:55:31.401355-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds slightly favor Real Betis and form for both sides is similar (Valencia DWWDW, Betis WWLWD), so this is close. Valencia have home advantage at Mestalla but multiple injury doubts to attacking and defensive options; Betis also have several absences including goalkeeper Conde reportedly out, which raises volatility. Bookmakers price Betis marginally ahead; combining odds, recent form, and injury uncertainty yields a modest edge to an away win. Early-season unpredictability and unconfirmed lineups lower confidence.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-24T04:55:46.883707-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.341,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.374,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Implied probabilities from odds Valencia +180, Draw +235, Betis +155; after normalization, Betis (away) shows the edge with ~37.4% probability, Valencia ~34.1%, and a ~28.5% chance of a draw. Injury/availability notes suggest Betis may still have the edge in midfield and attack.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-24T04:55:49.192316-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Valencia and Real Betis are closely matched, as reflected in both betting odds and recent form. Valencia have home advantage at Mestalla, but are missing several key players due to injury, including Canós, López, and possibly Foulquier and Rioja. Real Betis also have significant absences, notably in attack and defense. Both teams have shown decent preseason form, but neither has a clear edge. Market odds and prediction models suggest a very even contest, with a slight lean toward Valencia due to home field. The probability distribution is nearly even, with a marginal preference for a home win, but confidence is low given the injury uncertainty and early season volatility.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-24T04:55:51.954353-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Valencia has a strong home form and slight edge in betting odds. Despite injuries, their recent performances at home suggest they can secure a win. Real Betis also has injuries affecting key players, which might impact their performance.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-24T04:55:59.759468-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmaker odds make Real Betis a slight favorite (+155 vs +180 for Valencia), consistent with Betis's stronger recent form (WWLWD, 1-0-0). However, both sides carry significant injury lists (Betis missing Lo Celso, Ezzalzouli, Ruibal; Valencia missing Canós, Copete, Diego López), and Valencia's home advantage at Mestalla keeps this close to a coin flip among the three outcomes. Polymarket also shows near-even implied probabilities (~36% vs ~35%). Away win is the marginal pick with low confidence.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-24T04:56:05.389995-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds are essentially a coin-flip between the two sides, with Betis marginally favored on the moneyline (+155 vs +180 for Valencia). Betis has notable attacking absences (Ezzalzouli, Ruibal, Celso, Petit out), but Valencia also has several injuries including key attackers. The market and Polymarket implied probabilities favor Betis slightly as the stronger overall squad. Given the close balance and Valencia's home advantage at Mestalla, this is nearly even, leaning slightly toward Betis.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-24T04:56:13.304228-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very close match with odds suggesting near-parity. DraftKings has Real Betis as slight favorites (+155) over Valencia (+180), and Polymarket shows nearly equal probabilities (36% Valencia, 35% Betis, ~29% draw). Real Betis comes in with a win in their first match (1-0-0 record) while Valencia drew their opener (0-1-0). Real Betis has injury concerns (7 players out/doubtful including Ezzalzouli, Ruibal, Celso, Petit, Morante) but so does Valencia (Canós, Copete, López, Foulquier out/doubtful). Betis's recent form (WWLWD) is marginally better than Valencia's (DWWDW) but both are solid. The slight edge to Betis is supported by the current odds. Valencia playing at Mestalla provides home advantage. Overall this is a coin-flip match with a marginal lean toward Betis.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-24T04:56:22.987586-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This is a closely matched fixture with odds reflecting near-parity (Valencia +180, Draw +235, Betis +155). Valencia has solid home form (DWWDW) and holds home advantage at Mestalla Stadium. Real Betis shows slightly better recent form (WWLWD) and won their opening match (1-0-0 record) while Valencia drew (0-1-0). However, Betis faces significant injury concerns with 7 players affected including key attacking options (Ruibal, Petit, Ezzalzouli) compared to Valencia's 6 injuries. The market odds and prediction models show approximately 36% Valencia, 35% Betis, and 29% draw probability. Given home advantage, Valencia's strong home form, and Betis's injury situation, I marginally favor Valencia but with low confidence given how evenly matched these teams are. The opening odds movement (Valencia from +165 to +180) suggests market money on Betis, but Valencia's home record and Betis's depleted squad tips the balance slightly toward the home side.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-24T04:56:26.868127-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Valencia shows stronger recent form (DWWDW) compared to Real Betis (WWLWD), with the home advantage at Mestalla. However, both teams face significant injury concerns entering Round 1. Valencia has 6 players out/doubtful including key forward López and defender Copete, while Real Betis has 7 players unavailable including goalkeeper Conde and key attacking players. The betting market shows relatively balanced odds (Valencia +180, Betis +155, Draw +235), suggesting uncertainty. Valencia's home record (0-1-0 in preseason context) and recent form edge give slight advantage, but injuries to both squads create volatility. The draw is competitive given the squad depletion on both sides.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-24T04:58:12.150495-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Valencia's strong recent home form and Real Betis' key attacking absences (Lo Celso, Ezzalzouli) offset Betis' slight market edge. This is a close 90-minute matchup, with home advantage narrowly enough to project a Valencia win.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-24T04:58:13.902876-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Both teams are closely matched, with Real Betis having a slightly better away form and Valencia missing key players due to injuries. The odds are nearly even, but Betis' recent form and Valencia's injury list give a slight edge to the away side.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-24T04:58:28.913453-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis is the slight favorite according to sportsbooks with moneyline odds of +155 compared to Valencia's +180. Both teams have significant injury concerns, but Betis enters with a slightly stronger recent form and implied win probability.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-24T04:58:35.204749-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Valencia has a slight edge in the odds and is playing at home, which historically gives them an advantage. However, both teams have key injuries, and Real Betis has shown strong away form recently, making this a close and competitive match.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-24T04:59:33.634385-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds and Polymarket probabilities indicate an exceptionally tight contest with a slight statistical edge to Betis. However, Betis faces a severe attacking and midfield depletion (missing Celso, Ruibal, Ezzalzouli, and starter Conde), while Valencia's home advantage at Mestalla historically adds a meaningful boost in early-season fixtures. Both teams are missing key defensive starters, suggesting a cautious, low-scoring tactical match. The combination of home advantage, Betis's offensive limitations, and typical La Liga opener volatility gives Valencia a marginal edge for a narrow regulation-time victory.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-24T05:00:25.162968-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters the match as a slight betting favorite (+155 odds) compared to Valencia (+180 odds), reflecting their marginally better recent form (WWLWD vs DWWDW). Although Valencia benefits from playing at Mestalla, both teams face significant injury concerns impacting their lineups, particularly Valencia's attacking options and Betis's defensive depth. The odds indicate a tight contest with a moderate value for a draw, but the market lean favors the visiting side to secure all three points in the opening round.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-24T05:01:57.348929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds indicate a tight contest, but Valencia's home advantage at Mestalla and Real Betis's extensive injury crisis—including key midfielders and attacking options—tilt the scales slightly toward the hosts. Valencia enters with solid, unbeaten form (DWWDW), while Betis travels with a depleted squad. However, both sides are missing important players, keeping the expected margin narrow and the overall confidence moderate.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-24T05:03:05.402151-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters with superior early-season momentum (1-0-0 record) compared to Valencia's opening draw (0-1-0), and betting markets price Betis as slight favorites (+155) despite the Mestalla home advantage. Both sides face significant injury concerns—Valencia is without key attackers Diego López and Sergi Canós, while Betis misses Lo Celso and Ezzalzouli among others—but Betis's deeper squad and strong away form (WWLWD) provide the narrow edge in a tightly contested fixture.",
+                    "event_id": "401882917"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-24T05:03:08.808000-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has a better away form (WWLWD) compared to Valencia's home form (DWWDW). Additionally, the current moneyline odds show a higher implied probability for Real Betis to win (35%) compared to Valencia (36%). Taking into account the recent form and betting odds, Real Betis is favored to win this match.",
+                    "event_id": "401882917"
+                }
+            ]
+        }
+    ]
+}

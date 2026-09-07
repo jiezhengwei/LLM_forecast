@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-12\n    Target Date: 2026-04-13\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Lazio @ Fiorentina                                   | Scheduled    | Away: 35.5% (11-11-9) vs Home: 22.6% (7-11-13)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Lazio (Away) @ Fiorentina (Home)\n**News & Injury Report:**\n- [Preview: Fiorentina vs Lazio - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/fiorentina/preview/fiorentina-vs-lazio-prediction-team-news-lineups_595528.html)\n  Snippet: Meanwhile, Lazio are still missing first-choice goalkeeper Ivan Provedel and captain Mattia Zaccagni due to injury.\n\nLong-term absentee Samuel Gigot and playmaker Nicolo Rovella are also unavailable; Patric, Lorenzo Pellegrini and Mario Gila must und...\n- [Fiorentina vs Lazio Prediction 13/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-12-04-2026-fiorentina-lazio-rome-prediction)\n  Snippet: \ud83d\udeab The visitors also face squad issues: Mattia Zaccagni is doubtful due to a muscle injury, while Ivan Provedel (shoulder injury, out for the season), Samuel Gigot (muscle injury), and Nicolo Rovella (broken collarbone) are definitely sidelined.\n\n## \u26bd...\n**Betting Odds:**\n- [Fiorentina - Lazio, 04/13/2026: prediction, odds and match time | BetMines](https://betmines.com/match-preview/fiorentina-vs-lazio-prediction-match-preview-and-analysis-serie-a-13-04-2026)\n  Snippet: ## Fiorentina vs Lazio Prediction by BetMines\n\nBased on the available data and recent performances, the BetMines prediction for this Serie A clash points towards a home win (1) with a probability of 41%. A draw (X) follows at 29%, while an away win (...\n- [Fiorentina vs Lazio Prediction 13/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-12-04-2026-fiorentina-lazio-rome-prediction)\n  Snippet: Fiorentina\n\n1\n\n1.27\n\n0.4\n\n9\n\n1\n\n15\n\n7\n\n3\n\n1\n\n0\n\n1\n\n0\n\n0\n\n0\n\n1\n\n1.27\n\n0.4\n\n9\n\n1\n\n15\n\n7\n\n3\n\n1\n\nW\n\n22.03.26\n\nSerie A\n\nFiorentina\n\nFiorentina\n\nInter Milan\n\nInter Milan\n\n1.5\n\n1.2\n\n3\n\n5\n\n16\n\n12\n\n3\n\n3\n\n1\n\n1\n\n0\n\n1\n\n1\n\n0\n\n1.5\n\n1.2\n\n3\n\n5\n\n16\n\n12\n\n3\n\n3\n\nD\n\n19.0...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-12 17:17:35"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-12 17:16:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing makes Fiorentina a slight favorite (home ~41%, draw ~29%, away ~30%), and Lazio travel with notable absences: Provedel (first-choice GK) out, Zaccagni (captain) out/doubtful, plus Rovella and Gigot sidelined. Lazio\u2019s season win rate is stronger than Fiorentina\u2019s, but the away setting and injury hit (especially GK/attack) increases draw/home-win likelihood versus a fully-strength Lazio."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:16:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market calibration and available previews favor Fiorentina (~41% market-implied). Although Lazio have the better away record this season (11-11-9, stronger win rate than Fiorentina's poor home record), Lazio are missing key personnel \u2014 notably first-choice goalkeeper Ivan Provedel (out for season) and captain Mattia Zaccagni doubtful; other absences (Gigot, Rovella) increase defensive and midfield instability. Home advantage plus a healthier squad and market backing tilt the probability to a Fiorentina win, but Lazio's away competence and the goalkeeper uncertainty introduce variance, so confidence is medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:16:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Injury headlines heavily tilt Lazio in this away fixture: Provedel out for the season, Zaccagni doubtful, plus long-term absences (Gigot, Rovella) thin Lazio's spine. Fiorentina enjoy home advantage but their season home win rate is relatively low (22.6%), limiting the home edge. Market odds show a modest home bias (~41%/29%/30%), but Lazio's injury situation and Fiorentina's home context push probabilities toward an away win with a meaningful draw risk."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina are at home and betting markets (BetMines) give them a 41% chance to win, with a draw at 29% and Lazio win at 30%. Lazio is missing key starters including first-choice goalkeeper Provedel and captain Zaccagni, as well as Rovella and Gigot, which hurts their depth. Fiorentina's home record isn't stellar, but Lazio's away record is only moderate. The balance of form, injuries, and odds point toward a slight Fiorentina edge with a significant draw risk."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina has a slightly lower win rate at home compared to Lazio's away win rate; however, key injuries for Lazio including their first-choice goalkeeper Ivan Provedel and captain Mattia Zaccagni diminish their chances. The betting market also leans towards Fiorentina's home win, which aligns with this prediction."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina has a higher win probability based on betting odds (41% home win, 29% draw). Lazio is missing key players (Provedel, Zaccagni, Gigot, Rovella). Fiorentina's home record is poor (7-11-13) but Lazio's away record is better (11-11-9), so a draw is still possible. The odds suggest home advantage is significant enough to tip the balance."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina has home advantage and Lazio faces significant injury issues including goalkeeper Ivan Provedel (season-ending), captain Mattia Zaccagni (doubtful/muscle injury), plus Samuel Gigot and Nicolo Rovella sidelined. Betting market odds from BetMines indicate 41% home win probability, 29% draw, and 30% away win. Fiorentina's home record (7-11-13, 22.6% win rate) is weak but Lazio's away form (11-11-9, 35.5% win rate) is compromised by key absences. The absence of Provedel in goal and Zaccagni's attacking threat reduces Lazio's effectiveness significantly."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite Fiorentina's poor home record (22.6% win rate, 7-11-13), they face a significantly weakened Lazio squad. Lazio are missing key players: first-choice goalkeeper Ivan Provedel (shoulder injury, out for season), captain Mattia Zaccagni (muscle injury, doubtful), playmaker Nicolo Rovella (broken collarbone), and Samuel Gigot (muscle injury). While Lazio has a better overall record (35.5% win rate, 11-11-9), these critical absences - particularly in goal and midfield creativity - severely hamper their ability to perform away from home. The betting odds from BetMines show home win probability at 41%, draw at 29%, which aligns with the significant personnel issues Lazio face. Fiorentina playing at home with a fully available squad against a depleted Lazio side tips the balance toward a narrow home advantage, though Lazio's superior season form keeps this competitive with draw and away win probabilities relatively close."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:17:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Fiorentina has a slight edge in the betting odds, and Lazio is facing significant squad issues with key players like Ivan Provedel, Mattia Zaccagni, Samuel Gigot, and Nicolo Rovella out due to injuries. Fiorentina's home advantage and Lazio's weakened lineup make a home win more likely."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

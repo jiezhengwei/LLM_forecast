@@ -1,0 +1,1169 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-14",
+        "target_date_et": "2026-08-15",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-14\n\nTarget Date (ET): 2026-08-15\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882926\nMatchup: Getafe (away) @ Alavés (home)\nHome: Alavés\nAway: Getafe\nKickoff UTC: 2026-08-15T17:30Z\nKickoff ET: 2026-08-15 13:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: LWWDL\nAway form: WLWDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Alavés +135 (open +135); Draw +185 (open +180); Getafe +270 (open +250)\nTavily context:\n  - Title: Preview: Alaves vs Getafe - prediction, team news, lineups\n    Content: Andres Garcia and Orel Mangala have been notable loan additions from Aston Villa and Lyon respectively, and the pair are also expected to be involved.\n\nHowever, Christantus Uche will miss the entirety of the 2026-27 campaign due to the serious knee injury that he suffered in the recent friendly with Monaco.\n\nAlaves possible starting lineup:\n\nSivera; Jonny, Valentini, Koski, Enriquez; Blanco, Alena, Protesoni, Suarez; Boye, Martinez\n\nGetafe possible starting lineup:\n\nSoria; A Garcia, Abqar, Romero, Davinchi; Dakonam, Martin, Terrats; Sancris, Satriano, Juanmi ...\n    URL: https://www.sportsmole.co.uk/football/getafe/preview/alaves-vs-getafe-prediction-team-news-lineups_602897.html\n  - Title: Alavés vs. Getafe (Aug 15, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Alavés | 0 | 0 | 0 | 0 | 0 | 0 |\n| Athletic Club | 0 | 0 | 0 | 0 | 0 | 0 |\n| Atlético Madrid | 0 | 0 | 0 | 0 | 0 | 0 |\n| Barcelona | 0 | 0 | 0 | 0 | 0 | 0 |\n| Celta Vigo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Deportivo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Elche | 0 | 0 | 0 | 0 | 0 | 0 |\n| Espanyol | 0 | 0 | 0 | 0 | 0 | 0 |\n| Getafe | 0 | 0 | 0 | 0 | 0 | 0 |\n| Levante | 0 | 0 | 0 | 0 | 0 | 0 |\n| Málaga | 0 | 0 | 0 | 0 | 0 | 0 |\n| Osasuna | 0 | 0 | 0 | 0 | 0 | 0 |\n| Racing Santander | 0 | 0 | 0 | 0 | 0 | 0 |\n| Rayo Vallecano | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882926/getafe-alaves\n  - Title: August 15, 2026: Alaves vs Getafe: First Half Winner Soccer Prediction Market\n    Content: Prediction markets / Soccer\n\n# Alaves vs Getafe: First Half Winner\n\nALA0¢\n\nGET0¢\n\nTie 1st Half0¢\n\nLIVE\n\n1D\n\n1W\n\nMAX\n\n## Select a contract\n\nDeportivo Alavés\n\n0¢\n\nGetafe CF\n\n0¢\n\nTie 1st Half\n\n0¢\n\n## Timeline\n\nTrading hours\n\n24 hours a day, except Thursday 3AM-5AM ET\n\nEvent day\n\nAugust 15, 2026\n\nContract resolves\n\nDetermines the outcome of the contract\n\nPayout\n\nUsually within 1 hour of event resolution\n\n## About [...] ## Similar events ...\n    URL: https://robinhood.com/us/en/prediction-markets/soccer/events/alaves-vs-getafe-first-half-winner-aug-15-2026\n\nGame ID: 2\nSource event_id: 401882918\nMatchup: Rayo Vallecano (away) @ Sevilla (home)\nHome: Sevilla\nAway: Rayo Vallecano\nKickoff UTC: 2026-08-15T19:30Z\nKickoff ET: 2026-08-15 15:30 EDT\nVenue: Ramón Sánchez Pizjuán Stadium\nRound: unavailable\nHome form: LLWWW\nAway form: LWWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Sevilla +135 (open +120); Draw +225 (open +220); Rayo Vallecano +220 (open +230)\nTavily context:\n  - Title: Sevilla vs Rayo Vallecano Prediction, Betting Tips, Lineups & Odds | 15 Aug 2026\n    Content: Rayo Vallecano predicted lineup (4-2-3-1): Augusto Batalla (GK), Andrei Ratiu, Florian Lejeune, Pelayo Fernandez, Ivan Balliu, Oscar Valentin, Unai Lopez, Jorge de Frutos, Isi Palazon, Alvaro Garcia, Alexandre Zurawski.\n\n## Main Match Prediction\n\nThe stats suggest that we’ll see a low-scoring La Liga encounter, with a combined goal count of two or less looking the way forward. Land odds of 1.63 for Under 2.5 Goals. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/sevilla-vs-rayo-vallecano-prediction-lineups-odds-2026-08-15\n  - Title: Preview: Sevilla vs Rayo Vallecano - prediction, team news, lineups\n    Content: As for Rayo, Andrei Ratiu is out of the match through injury, but the visitors have not reported any further fitness concerns at this stage of their preparations.\n\nIsi Palazon is available, with the attacker having his sanction from last season suspended.\n\nJorge de Frutos and Alvaro Garcia are also set for spots in the final third of the field, while new signings Kumbulla and Vertrouwd could both feature at the back.\n\nSevilla possible starting lineup:\n\nVlachodimos; Carmona, Salas, Marcao, Oso; Agoume, Guridi; Ejuke, P Fernandez, Vargas; Ure\n\nRayo Vallecano possible starting lineup: ...\n    URL: https://www.sportsmole.co.uk/football/sevilla/preview/sevilla-vs-rayo-vallecano-prediction-team-news-lineups_602899.html\n  - Title: Sevilla vs Rayo Vallecano Prediction and Betting Tips | August 15th 2026\n    Content: Rayo's manager Inigo Perez departed at the end of that campaign, heading for Villarreal, while the club have also sold a couple of key players during the summer. Their pre-season campaign has also been pretty underwhelming.\n\nSevilla, meanwhile, have strengthened in the summer with a number of new players and should be able to call upon a full-strength squad here.\n\nAdd in the fact that Sevilla have a good record against Rayo, and the prediction is a home win.\n\nPrediction: Sevilla 2-1 Rayo Vallecano\n\n## Sevilla vs Rayo Vallecano Betting Tips\n\nTip 1: Result - Sevilla to win. ...\n    URL: https://www.sportskeeda.com/football/sevilla-vs-rayo-vallecano-prediction-betting-tips-august-15th-2026\n  - Title: Sevilla vs Rayo Vallecano Odds - RotoWire\n    Content: # Sevilla vs Rayo Vallecano Odds\n\nPick Your\n\nFanDuel FanDuel   BetMGM BetMGM   BetRivers BetRivers   Caesars Caesars   Hard Rock Hard Rock   theScore theScore   Circa Sports Circa Sports\n\nRayo Vallecano\n\nRAY\n\nSaturday August 15, 2026 at 2:30 PM ET\n\nLoading Possible Bets...\n\nDraftKings DraftKings\n\n+135 SEV\n\nPROBABILITY with vig removed\n\nSEV Sevilla Win (+135)\n\n40.7%\n\nDraw (+225)\n\n29.4%\n\nRAY Rayo Vallecano Win (+220)\n\n29.9%\n\nLINE MOVEMENT\n\nSEV\n\nSevilla Injury Report\n\nLoading Sevilla Injuries\n\nRAY\n\nRayo Vallecano Injury Report\n\nLoading Rayo Vallecano Injuries...\n\nSEV\n\nSevilla Lineup\n\n G ...\n    URL: https://www.rotowire.com/betting/soccer/game/sevilla-vs-rayo-vallecano-odds-2026-08-15-2650770\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-14\n\nTarget Date (ET): 2026-08-15\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882926\nMatchup: Getafe (away) @ Alavés (home)\nHome: Alavés\nAway: Getafe\nKickoff UTC: 2026-08-15T17:30Z\nKickoff ET: 2026-08-15 13:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: LWWDL\nAway form: WLWDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Alavés +135 (open +135); Draw +185 (open +180); Getafe +270 (open +250)\nTavily context:\n  - Title: Preview: Alaves vs Getafe - prediction, team news, lineups\n    Content: Andres Garcia and Orel Mangala have been notable loan additions from Aston Villa and Lyon respectively, and the pair are also expected to be involved.\n\nHowever, Christantus Uche will miss the entirety of the 2026-27 campaign due to the serious knee injury that he suffered in the recent friendly with Monaco.\n\nAlaves possible starting lineup:\n\nSivera; Jonny, Valentini, Koski, Enriquez; Blanco, Alena, Protesoni, Suarez; Boye, Martinez\n\nGetafe possible starting lineup:\n\nSoria; A Garcia, Abqar, Romero, Davinchi; Dakonam, Martin, Terrats; Sancris, Satriano, Juanmi ...\n    URL: https://www.sportsmole.co.uk/football/getafe/preview/alaves-vs-getafe-prediction-team-news-lineups_602897.html\n  - Title: Alavés vs. Getafe (Aug 15, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Alavés | 0 | 0 | 0 | 0 | 0 | 0 |\n| Athletic Club | 0 | 0 | 0 | 0 | 0 | 0 |\n| Atlético Madrid | 0 | 0 | 0 | 0 | 0 | 0 |\n| Barcelona | 0 | 0 | 0 | 0 | 0 | 0 |\n| Celta Vigo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Deportivo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Elche | 0 | 0 | 0 | 0 | 0 | 0 |\n| Espanyol | 0 | 0 | 0 | 0 | 0 | 0 |\n| Getafe | 0 | 0 | 0 | 0 | 0 | 0 |\n| Levante | 0 | 0 | 0 | 0 | 0 | 0 |\n| Málaga | 0 | 0 | 0 | 0 | 0 | 0 |\n| Osasuna | 0 | 0 | 0 | 0 | 0 | 0 |\n| Racing Santander | 0 | 0 | 0 | 0 | 0 | 0 |\n| Rayo Vallecano | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882926/getafe-alaves\n  - Title: August 15, 2026: Alaves vs Getafe: First Half Winner Soccer Prediction Market\n    Content: Prediction markets / Soccer\n\n# Alaves vs Getafe: First Half Winner\n\nALA0¢\n\nGET0¢\n\nTie 1st Half0¢\n\nLIVE\n\n1D\n\n1W\n\nMAX\n\n## Select a contract\n\nDeportivo Alavés\n\n0¢\n\nGetafe CF\n\n0¢\n\nTie 1st Half\n\n0¢\n\n## Timeline\n\nTrading hours\n\n24 hours a day, except Thursday 3AM-5AM ET\n\nEvent day\n\nAugust 15, 2026\n\nContract resolves\n\nDetermines the outcome of the contract\n\nPayout\n\nUsually within 1 hour of event resolution\n\n## About [...] ## Similar events ...\n    URL: https://robinhood.com/us/en/prediction-markets/soccer/events/alaves-vs-getafe-first-half-winner-aug-15-2026\n\nGame ID: 2\nSource event_id: 401882918\nMatchup: Rayo Vallecano (away) @ Sevilla (home)\nHome: Sevilla\nAway: Rayo Vallecano\nKickoff UTC: 2026-08-15T19:30Z\nKickoff ET: 2026-08-15 15:30 EDT\nVenue: Ramón Sánchez Pizjuán Stadium\nRound: unavailable\nHome form: LLWWW\nAway form: LWWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Sevilla +135 (open +120); Draw +225 (open +220); Rayo Vallecano +220 (open +230)\nTavily context:\n  - Title: Sevilla vs Rayo Vallecano Prediction, Betting Tips, Lineups & Odds | 15 Aug 2026\n    Content: Rayo Vallecano predicted lineup (4-2-3-1): Augusto Batalla (GK), Andrei Ratiu, Florian Lejeune, Pelayo Fernandez, Ivan Balliu, Oscar Valentin, Unai Lopez, Jorge de Frutos, Isi Palazon, Alvaro Garcia, Alexandre Zurawski.\n\n## Main Match Prediction\n\nThe stats suggest that we’ll see a low-scoring La Liga encounter, with a combined goal count of two or less looking the way forward. Land odds of 1.63 for Under 2.5 Goals. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/sevilla-vs-rayo-vallecano-prediction-lineups-odds-2026-08-15\n  - Title: Preview: Sevilla vs Rayo Vallecano - prediction, team news, lineups\n    Content: As for Rayo, Andrei Ratiu is out of the match through injury, but the visitors have not reported any further fitness concerns at this stage of their preparations.\n\nIsi Palazon is available, with the attacker having his sanction from last season suspended.\n\nJorge de Frutos and Alvaro Garcia are also set for spots in the final third of the field, while new signings Kumbulla and Vertrouwd could both feature at the back.\n\nSevilla possible starting lineup:\n\nVlachodimos; Carmona, Salas, Marcao, Oso; Agoume, Guridi; Ejuke, P Fernandez, Vargas; Ure\n\nRayo Vallecano possible starting lineup: ...\n    URL: https://www.sportsmole.co.uk/football/sevilla/preview/sevilla-vs-rayo-vallecano-prediction-team-news-lineups_602899.html\n  - Title: Sevilla vs Rayo Vallecano Prediction and Betting Tips | August 15th 2026\n    Content: Rayo's manager Inigo Perez departed at the end of that campaign, heading for Villarreal, while the club have also sold a couple of key players during the summer. Their pre-season campaign has also been pretty underwhelming.\n\nSevilla, meanwhile, have strengthened in the summer with a number of new players and should be able to call upon a full-strength squad here.\n\nAdd in the fact that Sevilla have a good record against Rayo, and the prediction is a home win.\n\nPrediction: Sevilla 2-1 Rayo Vallecano\n\n## Sevilla vs Rayo Vallecano Betting Tips\n\nTip 1: Result - Sevilla to win. ...\n    URL: https://www.sportskeeda.com/football/sevilla-vs-rayo-vallecano-prediction-betting-tips-august-15th-2026\n  - Title: Sevilla vs Rayo Vallecano Odds - RotoWire\n    Content: # Sevilla vs Rayo Vallecano Odds\n\nPick Your\n\nFanDuel FanDuel   BetMGM BetMGM   BetRivers BetRivers   Caesars Caesars   Hard Rock Hard Rock   theScore theScore   Circa Sports Circa Sports\n\nRayo Vallecano\n\nRAY\n\nSaturday August 15, 2026 at 2:30 PM ET\n\nLoading Possible Bets...\n\nDraftKings DraftKings\n\n+135 SEV\n\nPROBABILITY with vig removed\n\nSEV Sevilla Win (+135)\n\n40.7%\n\nDraw (+225)\n\n29.4%\n\nRAY Rayo Vallecano Win (+220)\n\n29.9%\n\nLINE MOVEMENT\n\nSEV\n\nSevilla Injury Report\n\nLoading Sevilla Injuries\n\nRAY\n\nRayo Vallecano Injury Report\n\nLoading Rayo Vallecano Injuries...\n\nSEV\n\nSevilla Lineup\n\n G ...\n    URL: https://www.rotowire.com/betting/soccer/game/sevilla-vs-rayo-vallecano-odds-2026-08-15-2650770\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882926",
+                        "date_utc": "2026-08-15T17:30Z",
+                        "kickoff_et": "2026-08-15 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Alavés",
+                        "away": "Getafe",
+                        "home_id": "96",
+                        "away_id": "2922",
+                        "matchup": "Getafe (away) @ Alavés (home)",
+                        "venue": "Mendizorrotza",
+                        "city": "Vitoria-Gasteiz",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LWWDL",
+                        "form_away": "WLWDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+135",
+                            "home_current": "+135",
+                            "draw_open": "+180",
+                            "draw_current": "+185",
+                            "away_open": "+250",
+                            "away_current": "+270"
+                        },
+                        "odds_text": "DraftKings: Alavés +135 (open +135); Draw +185 (open +180); Getafe +270 (open +250)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882918",
+                        "date_utc": "2026-08-15T19:30Z",
+                        "kickoff_et": "2026-08-15 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Sevilla",
+                        "away": "Rayo Vallecano",
+                        "home_id": "243",
+                        "away_id": "101",
+                        "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                        "venue": "Ramón Sánchez Pizjuán Stadium",
+                        "city": "Sevilla",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLWWW",
+                        "form_away": "LWWDD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+120",
+                            "home_current": "+135",
+                            "draw_open": "+220",
+                            "draw_current": "+225",
+                            "away_open": "+230",
+                            "away_current": "+220"
+                        },
+                        "odds_text": "Provider unavailable: Sevilla +135 (open +120); Draw +225 (open +220); Rayo Vallecano +220 (open +230)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-14T11:42:45.717654-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-14T10:45:32.844023-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés is favored at home with odds of +135. Getafe is weakened by the season-long injury to Christantus Uche, giving the home side a distinct advantage in this opening round match.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla enters the season with a strengthened squad and a solid historical record against Rayo Vallecano. Rayo is currently undergoing transition after losing manager Inigo Perez and some notable key players, which favors a Sevilla home victory.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-14T10:45:40.968006-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.406,
+                    "draw_probability": 0.335,
+                    "away_win_probability": 0.259,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Alavés is favored at home with +135 odds, implying a roughly 40.6% chance of a victory after adjusting for the bookmaker's vig. Despite opening-day uncertainties and injuries on both sides (like Getafe's Uche), Alavés maintains the home-field advantage which edges them ahead in a tightly contested fixture.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.407,
+                    "draw_probability": 0.294,
+                    "away_win_probability": 0.299,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sevilla enters the match as +135 favorites, reflecting around a 40.7% implied win probability. With Rayo Vallecano dealing with the recent departure of their manager and poor preseason form, Sevilla's summer reinforcements and home crowd at the Ramón Sánchez Pizjuán make them the most probable winners.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-14T10:45:57.478954-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "Medium",
+                    "reasoning": "This is the opening match of the season, making form less relevant. Alavés has the home advantage at Mendizorrotza and is favored by the betting markets (+135). Getafe is reportedly dealing with a significant long-term injury to Christantus Uche. While first matches can be unpredictable and cagey, the combination of home support and a slight edge on paper points towards an Alavés victory.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "Medium",
+                    "reasoning": "Sevilla is playing at home and is the favorite according to betting odds (+135). Contextual analysis suggests Sevilla has strengthened its squad during the summer transfer window, while Rayo Vallecano has lost its manager and key players, resulting in a lackluster pre-season. Sevilla also historically performs well against Rayo. These factors combined make a home win the most likely result.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-14T10:46:09.057995-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.4065,
+                    "draw_probability": 0.3353,
+                    "away_win_probability": 0.2582,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Alavés, playing at home, is positioned as a slight favorite by DraftKings odds. While they face a significant injury concern with Christantus Uche, the team has also secured new loan additions that are expected to be involved. As it is the opening game of the season, home advantage could be a deciding factor in what is expected to be a competitive match.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.4069406940694069,
+                    "draw_probability": 0.29422942294229426,
+                    "away_win_probability": 0.2988298829882988,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Sevilla has strengthened its squad over the summer and is expected to be at full strength. Conversely, Rayo Vallecano has experienced significant changes, including a managerial departure and the sale of key players, leading to an underwhelming pre-season. Multiple previews and betting tips explicitly predict a home win for Sevilla, citing their good record against Rayo and current form advantages.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-14T10:52:16.647932-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.407,
+                    "draw_probability": 0.335,
+                    "away_win_probability": 0.258,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-low",
+                    "reasoning": "Market prices make Alavés a modest home favorite, with a large draw component expected in a likely low-scoring opener. Home advantage at Mendizorrotza and Getafe missing Christantus Uche tilt the forecast slightly toward Alavés, though the draw remains a serious risk.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.292,
+                    "away_win_probability": 0.288,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-low",
+                    "reasoning": "Sevilla are narrow home favorites and appear to have a healthier, strengthened squad, while Rayo have managerial turnover, some key departures, and an injury absence at right back. The matchup profiles as relatively low scoring, keeping draw and away-win probabilities meaningful, but Sevilla have the edge at home.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-14T10:53:11.396652-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-low",
+                    "reasoning": "Alavés have a modest home edge at Mendizorrotza and are priced as clear but not dominant favorites. The market implies a relatively high draw probability, consistent with a likely low-scoring opening-round matchup between two defensively oriented sides. Getafe remain competitive, but the away price and reported long-term absence of Christantus Uche slightly reduce their upset chances.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-low",
+                    "reasoning": "Sevilla have the home advantage, a slight market edge, and contextual support from previews noting squad strengthening and a favorable recent profile against Rayo. Rayo remain live given the tight odds, but injury and transition concerns make Sevilla the more likely 90-minute winner. A low-scoring match profile keeps the draw probability significant.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-14T10:55:39.974131-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.55",
+                    "reasoning": "Market pricing makes Alavés a modest home favorite at Mendizorrotza, with draw also heavily weighted—typical of a tight, low-margin matchup. Both sides show similar recent form and it’s the opening round (higher uncertainty), but home advantage and Getafe’s longer away price keep Alavés as the most likely 90-minute result.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.58",
+                    "reasoning": "Odds indicate Sevilla as a moderate favorite at the Ramón Sánchez Pizjuán, and the contextual notes point to Sevilla being more settled/strengthened while Rayo have had departures and a less convincing preseason. With a likely low-scoring game, the draw remains a strong secondary outcome, but Sevilla still has the highest win probability in regulation time.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-14T10:56:59.300427-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.407,
+                    "draw_probability": 0.335,
+                    "away_win_probability": 0.258,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.55",
+                    "reasoning": "Market odds favor Alavés (home) and, after normalizing the listed prices, the home side retains the edge. Both teams showed similar pre-season form, but Alavés' home advantage and starting XI stability (plus Getafe being priced as the underdog) tilt the expectation toward an Alavés win. Injury news (notably Alavés losing Christantus Uche long-term) reduces conviction slightly, keeping a sizable probability on a draw.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.407,
+                    "draw_probability": 0.294,
+                    "away_win_probability": 0.299,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.6",
+                    "reasoning": "Odds and preview analysis give Sevilla the narrow advantage at home. Sevilla have reinforced over the summer and are expected to field a strong XI; Rayo have sold players and showed mixed pre-season form. The probabilities reflect a competitive match (notably a meaningful chance of an away upset), but favor a Sevilla 90-minute win.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-14T10:58:19.388818-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.62",
+                    "reasoning": "Alavés are favored at home with a favorable odds line and early-season momentum; Getafe may be hampered by an injury to Christantus Uche, improving Alavés' chances in regulation time.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.52",
+                    "reasoning": "Sevilla have the home advantage and are marginal favorites, but Rayo Vallecano are capable of causing problems; the match is expected to be competitive with Sevilla edging it in regulation time.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-14T10:58:54.320518-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.6",
+                    "reasoning": "Alavés have home advantage and have made notable loan signings, while Getafe's away form is inconsistent. The odds slightly favor Alavés, and their projected lineup is close to full strength despite Uche's injury. Both teams are starting the season, so form is based on pre-season and last season's end. The market and expert previews lean toward a narrow Alavés win, but a draw is also plausible given both teams' defensive tendencies.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.65",
+                    "reasoning": "Sevilla have strengthened their squad over the summer and are expected to be at full strength. Rayo Vallecano have lost key players and their manager, and their pre-season has been underwhelming. Sevilla's historical record against Rayo is strong, and betting markets and expert previews both favor a home win. The probability distribution reflects Sevilla's edge, but a draw remains a significant possibility in a low-scoring match.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-14T10:59:21.905221-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "0.7",
+                    "reasoning": "Alavés has a slightly better form and home advantage. The odds favor Alavés, and their recent signings could strengthen their lineup. Getafe's away form is inconsistent, making Alavés the likely winner.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "0.8",
+                    "reasoning": "Sevilla has a strong home record and has strengthened their squad over the summer. Rayo Vallecano has had an underwhelming pre-season and managerial changes, which could impact their performance. The odds and expert predictions favor Sevilla.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-14T11:00:12.880130-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.41",
+                    "reasoning": "DraftKings odds (Alavés +135, Draw +185, Getafe +270) imply Alavés as modest favorites at home at Mendizorrotza. Getafe are hurt by the season-long loss of Christantus Uche to a knee injury, while Alavés have solid loan reinforcements. Opening-day matches between mid/lower table sides carry an elevated draw probability, but home advantage tilts this toward Alavés.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.41",
+                    "reasoning": "Market odds (Sevilla +135, Draw +225, Rayo +220) give Sevilla a ~41% win probability with vig removed. Sevilla strengthened over the summer and have a near full-strength squad, while Rayo lost manager Inigo Perez to Villarreal, sold key players, and are missing Andrei Ratiu through injury. Sevilla's historical edge over Rayo and home advantage make a narrow home win the most likely outcome, though this is expected to be a tight, low-scoring match.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-14T11:00:53.815568-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Alavés",
+                    "confidence": "0.42",
+                    "reasoning": "Alavés play at home at Mendizorrotza and are favored per odds (+135 vs Getafe +270). Getafe lose key player Uche for the season. Both defensively solid sides suggest a tight, low-scoring match, but home advantage tips this toward Alavés.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Sevilla",
+                    "confidence": "0.41",
+                    "reasoning": "Sevilla are home favorites (+135) with strengthened summer squad and good historical record vs Rayo, who lost key players and had an underwhelming pre-season plus Ratiu injury. Low-scoring encounter expected, but home edge favors Sevilla.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-14T11:01:03.455368-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds favor Alavés as home side at Mendizorrotza (implied ~42% after vig removal). Both teams enter with identical 0-0-0 records as it is the season opener. Recent form is similar (both showing mixed results). Alavés has notable loan additions in Mangala and Andres Garcia, though they lose Uche for the season. Home advantage at Mendizorrotza is a meaningful factor for Alavés. Getafe are slight underdogs per the market. Probabilities calibrated to align closely with DraftKings implied odds after vig removal.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla are favored at home with odds implying roughly 41-43% win probability after vig removal. Multiple sources predict a Sevilla home win, citing their stronger summer recruitment, full squad availability, and historically favorable record against Rayo. Rayo lost key players over the summer and had an underwhelming pre-season; manager Inigo Perez also departed. The match is expected to be low-scoring per analytics. Sevilla's home advantage at the Ramón Sánchez Pizjuán reinforces the prediction.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-14T11:01:17.666464-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Alavés hosts Getafe in the 2026-27 season opener. The odds favor Alavés (+135) over Getafe (+270), suggesting home advantage. Getafe faces a significant setback with Christantus Uche ruled out for the entire season due to a serious knee injury. Both teams have mixed recent form (LWWDL for both), but Alavés has home advantage at Mendizorrotza. Getafe has made loan additions including Andres Garcia and Orel Mangala, but the loss of Uche is substantial. The odds imply approximately 42% home win probability, 35% draw, and 27% away win. Given home advantage and Getafe's injury concerns, Alavés is favored to win, though this could be a tight contest typical of season openers.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla hosts Rayo Vallecano at Ramón Sánchez Pizjuán Stadium. Multiple sources predict a Sevilla victory (2-1), citing their strong summer recruitment and good historical record against Rayo. Sevilla shows better recent form (LLWWW) compared to Rayo's LWWDD. Rayo lost manager Inigo Perez to Villarreal and sold key players during summer, while also missing Andrei Ratiu through injury. Sevilla has strengthened with new signings and fields a full-strength squad. The odds favor Sevilla (+135) over Rayo (+220). Predictions suggest a low-scoring affair with under 2.5 goals likely. Sevilla's home advantage, stronger squad depth, and Rayo's off-season disruptions support a home win prediction, though Rayo's defensive capabilities could keep it close.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-14T11:01:54.721215-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.58",
+                    "reasoning": "Alavés home advantage at Mendizorrotza with positive recent form (LWWDL). Quality loan additions (García from Aston Villa, Mangala from Lyon) strengthen the squad. However, loss of Christantus Uche to knee injury is a setback. Getafe's mixed form (WLWDL) and away status suggest slightly lower win probability. DraftKings odds favor home win (+135). Opening odds movement from +135 to +135 indicates stable market confidence in Alavés. Expect a competitive match with moderate home advantage.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.58",
+                    "reasoning": "Sevilla shows stronger recent form (LLWWW last 5) compared to Rayo Vallecano (LWWDD). Sevilla strengthened in summer with new signings and expected full-strength squad. Rayo lost manager Inigo Pérez to Villarreal and sold key players, with underwhelming pre-season. Sevilla's historical advantage against Rayo and home ground support at Ramón Sánchez Pizjuán. Expert prediction favors Sevilla 2-1. Market implied probabilities from DraftKings (+135 home, +225 draw, +220 away) suggest 40.7% home win. Low-scoring match expected (Under 2.5 Goals favored at 1.63). Home win confidence slightly higher than draw given form and squad depth.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-14T11:02:12.306137-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are at home and listed as moderate favorites, while Getafe are missing Christantus Uche to a long-term injury. The odds and team news point toward a low-scoring home edge, though Getafe's defensive style keeps a draw possible.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla are at home, have strengthened during the summer, and face a Rayo Vallecano side that lost their manager and key players with an underwhelming preseason. The betting market narrowly favors Sevilla, and form/context supports a home win.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-14T11:02:38.878484-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "0.55",
+                    "reasoning": "Alavés have home advantage and slightly better form, while Getafe have key injuries. Odds imply a home edge, and the market suggests a competitive match but Alavés are favored.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "0.6",
+                    "reasoning": "Sevilla have strengthened and have a good record against Rayo, who have lost key players and have an underwhelming pre-season. Home win is the most likely outcome.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-14T11:04:42.590638-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.65",
+                    "reasoning": "Alavés is favored at home with odds of +135 and has made notable loan additions to bolster their squad, while Getafe's odds at +270 reflect their underdog status. Alavés' recent form and home advantage at Mendizorrotza give them the edge in this opener.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "0.7",
+                    "reasoning": "Sevilla has strengthened their squad over the summer and possesses a good historical record against Rayo. Conversely, Rayo has lost key players and their manager to other clubs, making Sevilla the clear favorite to secure a home win at the Ramón Sánchez Pizjuán.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-14T11:05:30.419013-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home",
+                    "confidence": "0.7",
+                    "reasoning": "Alavés has made notable loan additions and their home form is slightly better than Getafe's away form. The odds also favor Alavés, indicating a higher likelihood of a home win.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "0.8",
+                    "reasoning": "Sevilla has strengthened their squad in the summer and has a good record against Rayo Vallecano. Additionally, Rayo Vallecano has lost key players and their pre-season performance was underwhelming. The odds and recent form suggest a home win for Sevilla.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T21:50:36.849898-04:00"
+            }
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-14T11:08:21.147807-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Alavés holds a slight market and home-venue advantage at Mendizorrotza, with odds implying the highest probability for a home result. Getafe's historically cautious, low-block away style points toward a tight, physical contest, but Alavés's recent home form and impactful loan additions give them the marginal edge to break a deadlock within regulation time.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds, historical head-to-head records, and preseason context strongly align behind Sevilla. Rayo's offseason departures and underwhelming preparation contrast with Sevilla's targeted summer reinforcements, making the home side clear favorites to capitalize at Ramón Sánchez Pizjuán and secure a regulation-time victory.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "inline_auto",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T11:42:45.717314-04:00"
+            }
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-14T11:10:30.985028-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "Medium",
+                    "reasoning": "Alavés benefits from home advantage at Mendizorrotza and market odds lean slightly toward them despite Uche's injury. Getafe's away form and recent mix of results suggest a tighter contest, making a narrow home victory probable.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "Medium",
+                    "reasoning": "Sevilla entered the summer with squad strengthening and has a strong historical record against Rayo. Rayo Vallecano faces instability after their manager departed and key player sales, giving Sevilla the edge at Sánchez Pizjuán.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "inline_auto",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T11:42:45.717419-04:00"
+            }
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-14T11:11:26.595071-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are slight home favorites with vig-free implied probability near 40%. Mendizorrotza provides a solid opening-day edge, while Getafe’s mixed away form and limited road attack keep them as underdogs. A draw is also plausible (~33%), but Alavés’ summer additions and home status give them the nod in a likely low-scoring affair.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla carry a vig-free win probability around 41–42% thanks to a strengthened squad and home advantage at the Sánchez Pizjuán. Rayo Vallecano face an unsettled offseason, missing manager Iñigo Pérez, key departures, and injured defender Andrei Ratiu, while their pre-season form has been poor. The draw and away win are similarly rated (~29% each), making Sevilla the clear modal prediction.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-14T11:12:13.561813-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés benefit from home advantage at Mendizorrotza and have reinforced their squad with notable loan additions. Getafe remains a defensively solid but goal-shy side away from home, and the absence of Christantus Uche weakens their attack. The hosts are slightly favored to edge a tight encounter.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-high",
+                    "reasoning": "Sevilla enter the campaign with a strengthened squad and a strong home record against Rayo. Rayo Vallecano face significant transition after losing manager Iñigo Pérez and key players, compounded by an underwhelming pre-season and defensive injuries. Sevilla's superior quality and depth should see them secure an opening-day victory.",
+                    "event_id": "401882918"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-14T11:12:45.705595-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Alavés (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "moderate",
+                    "reasoning": "Both teams have similar form and no competitive matches have been played yet, making it difficult to predict a clear winner. The odds are also quite balanced.",
+                    "event_id": "401882926"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Sevilla (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "moderate",
+                    "reasoning": "Sevilla has strengthened their squad and has a good record against Rayo Vallecano. Rayo Vallecano has had a few changes and an underwhelming pre-season, making Sevilla the favorite in this match.",
+                    "event_id": "401882918"
+                }
+            ],
+            "column_retry": {
+                "via": "inline_auto",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "confidence for game_id 1: must be a nonempty string",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-14T11:42:45.717431-04:00"
+            }
+        }
+    ]
+}

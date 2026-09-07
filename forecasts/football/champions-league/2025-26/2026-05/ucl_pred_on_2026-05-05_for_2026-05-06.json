@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-05\n    Target Date: 2026-05-06\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Paris Saint-Germain @ Bayern Munich (2nd Leg - Paris Saint-Germain lead 5-4 on aggregate) | Scheduled    | Away: #11 50% (4-2-2) Pts:14 Form:DWWWL | Home: #2 88% (7-0-1) Pts:21 Form:DLWWW\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Paris Saint-Germain (Away) @ Bayern Munich (Home)\n**News & Injury Report:**\n- [Bayern vs PSG Prediction 6/05/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-06-05-2026-bayern-munich-paris-saint-germain-prediction)\n  Snippet: ## Latest news\n\n### Bayern Munich\n\n\u2714 The squad situation for the hosts remains stable, with no new injuries over the past week. In fact, Tom Bischof has recovered, and Lennart Carl is likely to be ready.\n\n\u274c In the infirmary, Raphael Guerreiro remains sidelined, but he wasn't expected to see significant playing time. Serge Gnabry is a more notable absence, yet Bayern have quality options for the number ten role. Jamal Musiala has hit form, was rested in the last match, and is prepared to play as much as needed. ...\n- [Bayern Munich vs Paris Saint-Germain Prediction and Betting Tips | May 6th 2026](https://www.sportskeeda.com/football/bayern-munich-vs-paris-saint-germain-prediction-betting-tips-may-6th-2026)\n  Snippet: Bayern Munich and Paris Saint-Germain will square off in the second leg of their UEFA Champions League semifinal tie on Wednesday (May 6th). The game will be played at the Allianz Arena.\n\nThe visitors hold a narrow one-goal advantage in the tie, having claimed a 5-4 home win in an all-time classic in the first leg in Paris last week. Ousmane Dembele and Khvicha Kvaratskhelia each scored braces for the hosts, while Joao Neves scored one goal. ...\n**Betting Odds:**\n- [FC Bayern M\u00fcnchen \u2013 Paris Saint-Germain FC prediction 06.05.2026](https://www.transfermarkt.com/betting/tips/bayern-munich-vs-paris-saint-germain-prediction-06-05-2026/)\n  Snippet: | Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 1.66 | BetMGM Sportsbook |\n| Draw | 5.00 | DraftKings Sportsbook |\n| Away Win | 4.00 | DraftKings Sportsbook |\n| Both Teams to Score - Yes | 1.27 | BetMGM Sportsbook |\n| Both Teams to Score - No | 3.65 | DraftKings Sportsbook |\n| Exact Result | 2:1 @ 9.50 | BetMGM Sportsbook | ...\n- [Bayern Munich vs PSG Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/bayern-munich-vs-psg-prediction-lineups-odds-2026-05-06/)\n  Snippet: The bet builder feature allows football punters to place a multiple wager on the same game. It results in you being able to place a tailored bet at a larger price based on the number of predictions made.\n\nbet365 Logo\n\n## Bayern Munich vs PSG Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-05\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-05 16:07:55"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-05 16:05:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds strongly favor Bayern at home (1.66 vs 4.00 away; normalized implied probs ~57/19/24). Bayern\u2019s UCL league-stage performance is elite (#2, 7-0-1) and the squad is largely stable (only Guerreiro and Gnabry notable absences), with Musiala in form. PSG arrive with a narrow aggregate lead (5-4), which can make a draw more likely tactically, but Bayern must chase the game at Allianz Arena, tilting the 90-minute result toward a home win while keeping PSG\u2019s away-win chance live via counterattacks in what projects as another high-variance, goal-heavy matchup."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:05:58",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (best available: H 1.66 / D 5.00 / A 4.00) imply a strong Bayern home edge (~57% normalized). Bayern's home form in this UCL stage is excellent (7-0-1, 88% record) and Jamal Musiala is fit and rested; Serge Gnabry's absence is noted but not crippling. PSG travel with a slender 5-4 aggregate lead and will naturally adopt a cautious approach; their away form is solid (50%) and they have shown they can score in Munich (first leg 5-4 aggregate). Both-teams-to-score market pricing also signals an open tie. Balancing the market-implied probabilities with the knockout aggregate context (PSG can play for a draw) and team news leads to a Bayern-favored outcome but with a meaningful chance for PSG to progress or for the match to draw. Confidence rated Medium due to knockout dynamics and limited injury volatility."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:06:25",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich enjoy clear home advantage and have recent form favorable to them (DLWWW). Musiala is in good form; Gnabry is out, which slightly lowers Bayern's goal threat, but Tom Bischof and Lennart Carl are fit and ready. PSG arrive with no notable injuries reported and hold a one-goal aggregate lead, keeping them competitive. Market odds (Home 1.66, Draw 5.00, Away 4.00) tilt toward Bayern, providing calibration for a home-favored outcome despite PSG's away edge in the first leg."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:06:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich have a nearly perfect home record (7-0-1) in the Champions League this season and a strong recent form at home (DLWWW). Their squad is largely healthy except for Serge Gnabry, but Jamal Musiala has returned and is in form. PSG lead on aggregate and have an impressive offense, but their away form is only moderate (4-2-2). Market odds price Bayern as strong favorites (1.66 home win, which implies ~60% after accounting for the overround), with long odds for a draw (5.00, ~17%) and moderate for PSG (4.00, ~20%). The probability is slightly adjusted lower for the home win due to PSG's high scoring capability and their aggregate advantage, making them likely to approach the game more conservatively, which slightly raises the likelihood of a draw or even a PSG win. However, the most probable result remains a Bayern win at home."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:06:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich have a strong home record (88% win rate) and have recovered key players like Tom Bischof and Lennart Carl. They are motivated and only need a narrow win with a clean sheet to advance. While PSG has a one-goal advantage on aggregate, their away form is less convincing, and they are facing a full-strength Bayern side at the Allianz Arena. The betting odds also favor Bayern win. Despite PSG's attacking prowess, the home advantage and Bayern's squad depth suggest a higher probability of a home win."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:07:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "The analysis is heavily influenced by the betting markets and the match context. The odds of 1.66 for a Bayern Munich victory imply a raw probability of over 60%, which normalizes to approximately 58% after removing the bookmaker's margin. This strong favoritism is justified by several factors: Bayern's formidable UCL home record (7-0-1), the significant home-field advantage at the Allianz Arena, and the critical game state. Trailing 5-4 on aggregate, Bayern must win the match to have any chance of advancing, which will dictate an aggressive, attacking game plan from the start. While key player Serge Gnabry is out, the return of others and the form of Jamal Musiala mitigate this loss. However, confidence is tempered to 'Medium' because PSG's explosive offense, demonstrated by the 5 goals in the first leg, poses a massive threat on the counter-attack against a risk-taking Bayern side. The low probability of a draw (18%) reflects a game state where neither team is likely to settle, pushing the outcome towards a decisive winner."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:07:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich are at home with strong UCL form (7-0-1), while PSG lead on aggregate 5-4 but have inferior league stage record (4-2-2). Bayern's key players Musiala and Bischof are fit, and Serge Gnabry is out but depth remains. Odds heavily favor a home win (1.66) with draw at 5.00 and away win at 4.00, implying a ~60% home win probability. Bayern need to win by 2+ to advance or by 1 to force extra time, but given their home dominance and PSG's vulnerability away, I lean Home Win."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:07:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "This is a UCL semifinal 2nd leg with PSG leading 5-4 on aggregate. Bayern must win by 2+ goals to advance (or by 1 goal to force extra time). Key factors: (1) Bayern's exceptional home form - 88% win rate (7-0-1) in UCL league stage with 21 points vs PSG's 50% away record (4-2-2, 14 points). (2) Betting odds strongly favor Bayern at home (1.66 for home win vs 4.00 away win, 5.00 draw), implying ~52% home win probability after margin removal. (3) Bayern has no significant injuries - Gnabry out but Musiala is in form and rested. Guerreiro absence is minor. (4) The 5-4 first leg scoreline suggests both teams are attacking and the defenses are vulnerable (BTTS odds at 1.27 heavily favored). (5) Bayern at Allianz Arena is a fortress and they have the quality to overturn a 1-goal deficit. However, PSG has the advantage of needing only a draw or narrow loss, and they showed attacking prowess with Dembele and Kvaratskhelia both scoring braces in the first leg. The aggregate situation and away goal considerations mean PSG can play more conservatively. Given Bayern's desperation to advance at home, slight edge to Bayern victory in 90 minutes, but significant draw probability exists given PSG's defensive approach likely, and away win probability reflects PSG's quality and aggregate cushion."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-05 16:07:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Bayern Munich has a strong home record with 88% win rate and only one loss in the UCL this season. PSG, despite leading 5-4 on aggregate, has a weaker away form with only 50% win rate. Key players for Bayern like Jamal Musiala are in good form, and they have no significant new injuries. The betting odds also favor a home win with a 1.66 best odds, indicating a high likelihood of a Bayern Munich victory."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

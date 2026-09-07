@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-27",
+        "target_date_et": "2026-08-28",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879294\nMatchup: Manchester City (away) @ Crystal Palace (home)\nHome: Crystal Palace\nAway: Manchester City\nKickoff UTC: 2026-08-28T19:00Z\nKickoff ET: 2026-08-28 15:00 EDT\nVenue: Selhurst Park\nRound: unavailable\nHome form: LWLDL\nAway form: WLLDW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Crystal Palace +380 (open +425); Draw +310 (open +330); Manchester City -150 (open -170)\nTavily context:\n  - Title: C Palace vs. Man City (Aug 28, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| AFC Bournemouth | 0 | 0 | 0 | 0 | 0 | 0 |\n| Arsenal | 0 | 0 | 0 | 0 | 0 | 0 |\n| Aston Villa | 0 | 0 | 0 | 0 | 0 | 0 |\n| Brentford | 0 | 0 | 0 | 0 | 0 | 0 |\n| Brighton & Hove Albion | 0 | 0 | 0 | 0 | 0 | 0 |\n| Chelsea | 0 | 0 | 0 | 0 | 0 | 0 |\n| Coventry City | 0 | 0 | 0 | 0 | 0 | 0 |\n| Crystal Palace | 0 | 0 | 0 | 0 | 0 | 0 |\n| Everton | 0 | 0 | 0 | 0 | 0 | 0 |\n| Fulham | 0 | 0 | 0 | 0 | 0 | 0 |\n| Hull City | 0 | 0 | 0 | 0 | 0 | 0 |\n| Ipswich Town | 0 | 0 | 0 | 0 | 0 | 0 |\n| Leeds United | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879294/manchester-city-crystal-palace\n  - Title: Crystal Palace vs Man City - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Crystal Palace vs Manchester City — Fri, August 28, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Selhurst Park\n\nCrystal PalaceCrystal Palace\n\n‌\n‌\n\nMan CityManchester City\n\n# Crystal Palace vs Manchester City — Fri, August 28, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Selhurst Park\n\nCrystal PalaceCrystal Palace\n\n‌\n‌\n\nMan CityManchester City\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Matheus Nunes\n\n  Knock / Doubtful\n\nNunesKnockDoubtful\n\n  Jérémy Doku\n\n  Calf injury / Mid September 2026\n\nDokuCalf injuryMid September 2026 ...\n    URL: https://www.fotmob.com/matches/man-city-vs-crystal-palace/2ri9zd\n  - Title: Crystal Palace vs Manchester City Prediction, Odds & Betting Tips | 28.08.2026 | Premier League\n    Content: Crystal Palace vs Manchester City odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| Granawin logo  Granawin | 5.60 | 4.10 | 1.58 | 1.65 | 2.23 |\n| Megapari logo  Megapari | 5.25 | 4.00 | 1.65 | 1.66 | 2.20 |\n| Mostbet logo  Mostbet | 5.00 | 4.16 | 1.62 | 1.73 | 2.28 |\n| Roobet logo  Roobet | 5.25 | 4.00 | 1.65 | 1.66 | 2.20 |\n| Helabet logo  Helabet | 5.23 | 4.32 | 1.69 | 1.73 | 2.28 |\n| 20Bet logo  20Bet | 1.14 | 9.50 | 7.00 |  |  |\n| 22bet logo  22bet | 5.60 | 4.10 | 1.58 | 1.65 | 2.23 |\n| Boomerang-bet.com logo  Boomerang-bet.com | 5.25 | 4.10 | 1.62 | 1.63 | 2.10 | ...\n    URL: https://www.mightytips.com/football-predictions/crystal-palace-vs-manchester-city-prediction-28-08-2026\n  - Title: Crystal Palace vs Manchester City Predictions, Picks & Odds - 28/08 ...\n    Content: Premier League · 2\n\n28 Aug 2026  Selhurst Park  Louis Hecq\n\n### Crystal Palace vs Manchester City – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 5.75 | 4.10 | 1.57 | View Odds |\n| bc.game | 5.00 | 4.10 | 1.61 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Manchester City\n\n1.57 on StakeStake · Confidence Medium\n\nOdds recorded on 27 Aug 2026 at 01:51 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 28 Aug 2026\n\nTime: 20:00 BST\n\nStadium: Selhurst Park ...\n    URL: https://www.toffeeweb.com/int/crystal-palace-vs-manchester-city-predictions-picks-odds-28-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879294\nMatchup: Manchester City (away) @ Crystal Palace (home)\nHome: Crystal Palace\nAway: Manchester City\nKickoff UTC: 2026-08-28T19:00Z\nKickoff ET: 2026-08-28 15:00 EDT\nVenue: Selhurst Park\nRound: unavailable\nHome form: LWLDL\nAway form: WLLDW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Crystal Palace +380 (open +425); Draw +310 (open +330); Manchester City -150 (open -170)\nTavily context:\n  - Title: C Palace vs. Man City (Aug 28, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| AFC Bournemouth | 0 | 0 | 0 | 0 | 0 | 0 |\n| Arsenal | 0 | 0 | 0 | 0 | 0 | 0 |\n| Aston Villa | 0 | 0 | 0 | 0 | 0 | 0 |\n| Brentford | 0 | 0 | 0 | 0 | 0 | 0 |\n| Brighton & Hove Albion | 0 | 0 | 0 | 0 | 0 | 0 |\n| Chelsea | 0 | 0 | 0 | 0 | 0 | 0 |\n| Coventry City | 0 | 0 | 0 | 0 | 0 | 0 |\n| Crystal Palace | 0 | 0 | 0 | 0 | 0 | 0 |\n| Everton | 0 | 0 | 0 | 0 | 0 | 0 |\n| Fulham | 0 | 0 | 0 | 0 | 0 | 0 |\n| Hull City | 0 | 0 | 0 | 0 | 0 | 0 |\n| Ipswich Town | 0 | 0 | 0 | 0 | 0 | 0 |\n| Leeds United | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879294/manchester-city-crystal-palace\n  - Title: Crystal Palace vs Man City - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Crystal Palace vs Manchester City — Fri, August 28, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Selhurst Park\n\nCrystal PalaceCrystal Palace\n\n‌\n‌\n\nMan CityManchester City\n\n# Crystal Palace vs Manchester City — Fri, August 28, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Selhurst Park\n\nCrystal PalaceCrystal Palace\n\n‌\n‌\n\nMan CityManchester City\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Matheus Nunes\n\n  Knock / Doubtful\n\nNunesKnockDoubtful\n\n  Jérémy Doku\n\n  Calf injury / Mid September 2026\n\nDokuCalf injuryMid September 2026 ...\n    URL: https://www.fotmob.com/matches/man-city-vs-crystal-palace/2ri9zd\n  - Title: Crystal Palace vs Manchester City Prediction, Odds & Betting Tips | 28.08.2026 | Premier League\n    Content: Crystal Palace vs Manchester City odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| Granawin logo  Granawin | 5.60 | 4.10 | 1.58 | 1.65 | 2.23 |\n| Megapari logo  Megapari | 5.25 | 4.00 | 1.65 | 1.66 | 2.20 |\n| Mostbet logo  Mostbet | 5.00 | 4.16 | 1.62 | 1.73 | 2.28 |\n| Roobet logo  Roobet | 5.25 | 4.00 | 1.65 | 1.66 | 2.20 |\n| Helabet logo  Helabet | 5.23 | 4.32 | 1.69 | 1.73 | 2.28 |\n| 20Bet logo  20Bet | 1.14 | 9.50 | 7.00 |  |  |\n| 22bet logo  22bet | 5.60 | 4.10 | 1.58 | 1.65 | 2.23 |\n| Boomerang-bet.com logo  Boomerang-bet.com | 5.25 | 4.10 | 1.62 | 1.63 | 2.10 | ...\n    URL: https://www.mightytips.com/football-predictions/crystal-palace-vs-manchester-city-prediction-28-08-2026\n  - Title: Crystal Palace vs Manchester City Predictions, Picks & Odds - 28/08 ...\n    Content: Premier League · 2\n\n28 Aug 2026  Selhurst Park  Louis Hecq\n\n### Crystal Palace vs Manchester City – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 5.75 | 4.10 | 1.57 | View Odds |\n| bc.game | 5.00 | 4.10 | 1.61 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Manchester City\n\n1.57 on StakeStake · Confidence Medium\n\nOdds recorded on 27 Aug 2026 at 01:51 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 28 Aug 2026\n\nTime: 20:00 BST\n\nStadium: Selhurst Park ...\n    URL: https://www.toffeeweb.com/int/crystal-palace-vs-manchester-city-predictions-picks-odds-28-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879294",
+                        "date_utc": "2026-08-28T19:00Z",
+                        "kickoff_et": "2026-08-28 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Crystal Palace",
+                        "away": "Manchester City",
+                        "home_id": "384",
+                        "away_id": "382",
+                        "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                        "venue": "Selhurst Park",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWLDL",
+                        "form_away": "WLLDW",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+425",
+                            "home_current": "+380",
+                            "draw_open": "+330",
+                            "draw_current": "+310",
+                            "away_open": "-170",
+                            "away_current": "-150"
+                        },
+                        "odds_text": "DraftKings: Crystal Palace +380 (open +425); Draw +310 (open +330); Manchester City -150 (open -170)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-27T08:25:33.402157-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:11.059920-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City enter this match as clear favorites, with bookmaker odds implying around a 60% probability of an away victory. Although Crystal Palace has historically been a challenging opponent at Selhurst Park, City's superior squad depth and early season momentum make them the expected winners.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-27T08:19:19.300109-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.59,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are the strong favorites going into this match against Crystal Palace, with bookmakers pricing them around -150 (implied probability of roughly 60%). Although Crystal Palace are playing at Selhurst Park, Manchester City's overall superior squad depth and winning form justify their position as clear favorites to secure the away win.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-27T08:19:35.836374-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are the clear favorites based on their superior squad depth, historical performance, and the betting market consensus. The odds consistently place them around -150 (or 1.67 decimal), indicating a high probability of victory. While Crystal Palace has the home-field advantage at Selhurst Park and Manchester City may have a couple of injuries (Doku, Nunes), City's overall quality and talent are expected to be the deciding factor. The early season records of 1-0-0 for City and 0-0-1 for Palace further support the likelihood of an away win.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:48.369113-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.1804,
+                    "draw_probability": 0.2321,
+                    "away_win_probability": 0.5875,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is overwhelmingly favored by all major bookmakers, with implied win probabilities for an away victory consistently above 58%. Crystal Palace has shown poor recent form (LWLDL) and started the season with a loss, while Manchester City secured a win in their opening game. Despite potential minor injuries for Manchester City (Nunes, Doku), their superior squad depth and quality are expected to overcome Crystal Palace at Selhurst Park. The collective odds and team performance indicators strongly support an away win.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:39.615976-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Manchester City clear away favorites, with no-vig pricing around the high-50% range for an away win. City also enter with a stronger squad baseline and an opening away record of 1-0-0, while Palace lost their opener. Selhurst Park and early-season uncertainty keep the draw and home upset live, and City have some listed injury concerns, but the most likely 90-minute result is still Manchester City to win.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:44.941939-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.56,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are clear market favorites despite being away at Selhurst Park, with listed odds implying roughly a mid-to-high 50% chance of an away win after removing vig. Crystal Palace have home advantage and enough counterattacking threat to make the draw or upset plausible, especially early in the season, but City's overall squad strength and stronger baseline quality make the away win the most likely 90-minute result.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-27T08:21:11.533379-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.56,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market 1X2 pricing makes Manchester City a clear favorite (roughly mid-to-high 50% after vigorish normalization). Crystal Palace at Selhurst Park raises draw/upset chances slightly, and City’s listed absences (e.g., Doku out, Nunes doubtful) temper the edge, but overall squad quality and baseline performance still point most strongly to an away win in 90 minutes.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-27T08:21:22.700805-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City enter as clear favorites per market odds and squad quality despite mixed recent form; Crystal Palace have home advantage and a solid defensive setup at Selhurst Park but lack the consistent firepower to massively upset City. Bookmaker pricing, squad depth, and Manchester City's higher-quality attack make an away win the most likely 90-minute result, with a draw or home shock remaining plausible given Palace’s home resilience and City’s occasional early-season inconsistencies.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-27T08:21:34.501157-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.198,
+                    "draw_probability": 0.232,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "City are favored in the pre-match odds; normalization of implied probabilities (home 0.208, draw 0.244, away 0.600) yields a higher away-win probability after removing vig, reflecting City’s superior squad strength and away form relative to Palace.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-27T08:21:36.626515-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are strong favorites based on both betting odds and recent form. Most bookmakers price City at around 1.60 or lower, implying a high probability of an away win. Crystal Palace have struggled in recent matches and have a poor home record, while City have already won away this season. Although City have a couple of injury doubts, their squad depth remains superior. The draw is possible but less likely, and a Palace win is considered unlikely by all major odds providers.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-27T08:21:39.229002-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is a strong team with a good away record and favorable odds. Crystal Palace's recent form and odds suggest they are less likely to win. The absence of key players for Manchester City is noted, but their overall squad depth and quality give them a significant advantage.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:48.732592-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.59,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds (City ~ -150 to 1.60 decimal) imply roughly 60% for a Manchester City win after removing bookmaker margin. City won their opener while Palace lost theirs, and despite Doku's injury and Nunes being doubtful, City's squad depth remains superior. Palace at Selhurst Park can be difficult and has historically frustrated City occasionally, which supports a meaningful draw probability (~23%), but the away side is the clear favorite.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-27T08:21:53.358085-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "Manchester City",
+                    "confidence": "medium",
+                    "reasoning": "Market odds favor Manchester City (-150) as clear favorites at Selhurst Park. City are the stronger side despite Doku's injury absence. Crystal Palace are dangerous at home, which lifts draw and home-win chances, but City's superior squad depth makes them favorites.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-27T08:22:00.766387-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are clear favourites at Selhurst Park despite the short early-season form samples. Bookmaker odds cluster around Man City at roughly -150 to -170 (implied ~60% win probability), which after removing the vig aligns with an away win probability in the low-to-mid 50s. Crystal Palace have home advantage and a raucous Selhurst Park atmosphere, and their form (LWLDL) is mixed, while City's form (WLLDW) is inconsistent too. Key City injuries include Doku (out until mid-September) and Nunes (doubtful), which slightly dents their attacking options. Nonetheless, City's squad depth and quality advantage should prevail. The draw probability (~26%) reflects the genuine competitiveness of this fixture historically. Predicted outcome is an away Manchester City win.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-27T08:22:08.200292-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are strong favorites with odds around -150 to -170, reflecting their superior quality. City won their opening match (1-0-0 record) while Palace lost (0-0-1). Palace's recent form shows LWLDL with struggles, while City's WLLDW form includes a recent win. City have injury concerns with Doku out and Nunes doubtful, which adds some uncertainty. However, City's overall squad depth and quality should prevail at Selhurst Park. The market clearly favors City with odds implying around 60% chance of an away win. Palace's home advantage provides some resistance, keeping this at medium confidence rather than high.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-27T08:22:11.234007-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City is favored with -150 odds (implied probability ~60%), reflecting their historical dominance. Crystal Palace's recent form shows weakness (LWLDL), while Man City shows strength (WLLDW). The away team's superior quality, combined with betting market consensus and Man City's track record, suggests a likely away victory. However, confidence is moderate rather than high due to early season variance and the unpredictability of the opening fixture. Crystal Palace's home advantage provides some uncertainty, but Man City's quality should prevail in 90 minutes of regulation play.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-27T08:22:26.238036-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are clear favorites on the road, with current odds around -150 implying roughly 57-60% probability after removing vig. Crystal Palace are at home but have a mixed recent form and lost their home opener, while Man City have the stronger squad despite minor injury concerns.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-27T08:22:28.098802-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are strong favorites despite playing away, with odds around -150. Crystal Palace have poor recent form (LWLDL) and are winless in the league. City's away form is decent (WLLDW) and they have superior squad depth. However, City have some injury concerns (Doku, Nunes doubtful), which adds uncertainty, hence medium confidence.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-27T08:22:46.819647-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.59,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is heavily favored by bookmakers, reflecting their superior squad depth and historical dominance over Crystal Palace. Despite missing Jérémy Doku, City's overall quality and Palace's inconsistent recent form (LWLDL) point towards an away win, even at a challenging venue like Selhurst Park.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-27T08:22:52.249894-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City has a strong away form and is favored by the odds. Crystal Palace's recent form and home record are not as strong, and they have some key players injured or doubtful for the match.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-27T08:23:42.349428-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City is favored by both historical pedigree and betting markets (~1.60 implied probability), despite early-season injury concerns for Jérémy Doku and Matheus Nunes. Crystal Palace's mixed recent form (LWLDL) and lack of points in Round 1 suggest defensive vulnerabilities, but Selhurst Park provides a moderate home advantage. City's squad depth and tactical consistency typically give them the edge in early-season away fixtures, though Palace's organized structure could keep it close, justifying a meaningful draw probability. The probabilities heavily favor an away victory in regulation time.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-27T08:24:24.619172-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City enters as heavy favorites with implied odds suggesting a >55% win probability. Crystal Palace's recent form (LWLDL) indicates struggle, while City's squad depth remains superior despite minor injury concerns. Historical dominance at Selhurst Park supports an away victory in regulation time.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-27T08:25:09.878611-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City enters as a heavy favorite with market odds (-150) implying roughly a 60% win probability, supported by superior squad depth and an opening away victory. Crystal Palace shows poor form (LWLDL) and a 0-0-1 record, struggling at Selhurst Park. Even with injuries to Doku and a doubtful Nunes, City's quality and depth make an away win the most likely outcome.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-27T08:25:29.500274-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City enters as heavy favorites despite traveling to Selhurst Park, reflected in market odds pricing them at -150 (implied ~60%). Crystal Palace carries poor momentum with form of LWLDL and an 0-0-1 record to start the campaign, struggling for defensive cohesion and attacking output. While City contends with injuries to Jérémy Doku (out until mid-September) and a doubtful Matheus Nunes, their squad depth and tactical organization under Pep Guardiola remain significantly superior to a Palace side in transition. City's opening victory contrasts with Palace's defeat, suggesting the visitors will control possession and create higher-quality chances. Palace's home advantage at Selhurst Park provides some resistance, but the gulf in class and current form makes an away win the most probable outcome within 90 minutes.",
+                    "event_id": "401879294"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-27T08:25:33.399046-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester City (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City has a strong start to the season with a win, while Crystal Palace has a loss and draw in their form. The odds heavily favor Manchester City, and their away record is solid with one win. Crystal Palace has not yet secured a win this season.",
+                    "event_id": "401879294"
+                }
+            ]
+        }
+    ]
+}

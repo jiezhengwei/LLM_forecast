@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-21\n    Target Date: 2026-05-22\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/22 - 8:30 PM EDT] Oklahoma City Thunder @ San Antonio Spurs | Away: 78.0% (64-18) vs Home: 75.6% (62-20)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Oklahoma City Thunder (Away) @ San Antonio Spurs (Home)\n**News & Injury Report:**\n- [Thunder-Spurs injury update, prediction: Is SGA playing tonight?](https://www.oklahoman.com/story/sports/nba/thunder/2026/02/04/thunder-spurs-injury-report-shai-gilgeous-alexander-status-today-nba-okc-san-antonio-prediction/88517282007)\n  Snippet: Thunder: Alex Caruso (right adductor injury management) is out. Ousmane Dieng (not with team) is out. Lu Dort (right patellofemoral joint inflammation) is out. Shai Gilgeous-Alexander (abdominal strain) is out. Isaiah Hartenstein (right eye corneal abrasion) is out. Chet Holmgren (low back spasms) is out. Ajay Mitchell (abdominal strain) is out. Thomas Sorber (right ACL surgical recovery) is out. Nikola Topi\u0107 (surgical recovery) is out. Jalen Williams (right hamstring strain) is out.\n Spurs: Stephon Castle (left adductor tightness) is questionable. ...\n- [San Antonio Spurs vs Oklahoma City Thunder 5/20/26 NBA Free Picks & Prediction | NBA WCF | Game 2](https://www.youtube.com/watch?v=Y6gc3vkDAJ4)\n  Snippet: What is going on guys? Brad here from pitdogs.com and I got a pick in the Spurs first Thunder game going down on Wednesday, May 20th, 2026. Before I get into the free play, we drop a free pick in every single game, every single day over here at Pit Dog. So, first of all, click that subscribe button. That does also mean a lot of the free plays I give out are just leans. Now, if you are looking for my best bets, the plays that I am putting the most money on, you can access those. ...\n**Vegas Odds & Lines:**\n- [Spurs vs Thunder Odds, Betting Trends, and Line Movements - 05/17/2026](https://www.vegasinsider.com/nba/matchups/spurs-vs-thunder)\n  Snippet: ## SAS @ OKC Line Movements\n\n### Spread\n\n2725\n15\n\n### Total\n\n120\n15\n\n### Moneyline\n\n108\n15\n\n## Thunder vs. Spurs Head-to-Head [...] | San Antonio Spurs   543   Spurs | o217.5   -110 | o112.5   -110     + | N/A | o112.5   -110     + | o112.5   -115     + | o112.5   -120     + | N/A | N/A | o219.5   -110 |  |\n| Oklahoma City Thunder   544   Thunder | u217.5   -110 | u112.5   -110     + | N/A | u112.5   -110     + | u112.5   -105     + | u112.5   -115     + | N/A | N/A | u219.5   -110 |  |\n|  Matchup | | | | | ...\n- [Oklahoma City Thunder at San Antonio Spurs - NBA Odds - May 22, 2026 | USA TODAY](https://sportsdata.usatoday.com/basketball/nba/odds/2978975)\n  Snippet: | Total Points |  |\n --- |\n| Thunder | O 216-110 |\n| Spurs | U 216-110 |\n\n### Standings\n\n| Western Northwest | W | L | WIN % |\n ---  --- |\n| OKC | 64 | 18 | .780 |\n| DEN | 54 | 28 | .659 |\n| MIN | 49 | 33 | .598 |\n| POR | 42 | 40 | .512 |\n| UTA | 22 | 60 | .268 | [...] sportsdata-analytics-track\nNBA logo\nMLB logo\nNHL logo\nPGA logo\nLPGA logo\nWNBA logo\nNFL logo\nNCAAF logo\nNCAAB logo\nWNCAAB logo\nNASCAR logo\nIndyCar logo\nMLS logo\nEPL logo\nF1 logo\nWC logo\nWWC logo\nClub WC logo\nMMA logo\nContests logo\nOLY logo\nNews logo ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-21\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-21 16:16:37"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-21 16:15:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.98,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The Oklahoma City Thunder are facing a catastrophic injury situation, with nearly their entire starting lineup and key rotation players, including superstars Shai Gilgeous-Alexander, Chet Holmgren, and Jalen Williams, all ruled out for the game. The San Antonio Spurs are an elite team with an excellent season record, playing at home, and are comparatively healthy. This massive disparity in available talent makes the Spurs overwhelming favorites against a severely depleted Thunder squad."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:15:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.87,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "OKC injury report is extremely damaging (SGA, Jalen Williams, Holmgren, Hartenstein, Dort, Caruso all listed out), which removes most of their primary creation, scoring, and rim protection. Spurs are at home with only a minor key-question mark (Stephon Castle questionable) and have a comparable season win rate to OKC, so with OKC shorthanded this profiles as a strong Spurs edge even before home-court."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:15:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.82,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Thunder enter severely depleted: Shai Gilgeous-Alexander (abdominal strain) out, Chet Holmgren (low back spasms) out, Jalen Williams (right hamstring) out, Lu Dort out, Alex Caruso out, Isaiah Hartenstein out, plus multiple role players unavailable \u2014 effectively removing OKC's top creators and rim/defensive pillars. Spurs report only a minor question (Stephon Castle questionable) and retain home-court advantage (San Antonio 62-20 at home vs OKC's 64-18 overall), plus Vegas lines and market movement have shifted toward the Spurs given the injury news. The combination of massive Thunder absences, Spurs health and strong home record drives a high probability for the home team. Estimated probability calibrated to lines and injury impact: Spurs ~82% to win."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.6,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Thunder face multiple notable injuries (SGA, Dort, Caruso, Holmgren, Jalen Williams, Hartenstein) reducing scoring and defense capabilities. Spurs at home with at least partial roster stability; early playoff context plus home-court advantage tilt probability toward Spurs despite some uncertainty around Castle's status."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.89,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Oklahoma City Thunder are missing nearly their entire core, including Shai Gilgeous-Alexander, Chet Holmgren, Jalen Williams, Lu Dort, and several key rotation players due to injuries. The Spurs are at home and have only one rotation player listed as questionable. Despite both teams having strong season records, the Thunder's injury situation is catastrophic, making the Spurs overwhelming favorites. Vegas lines and moneyline movement also indicate a strong lean toward the Spurs."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.8,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Oklahoma City Thunder is missing several key players including Shai Gilgeous-Alexander, Chet Holmgren, and Jalen Williams due to injuries. The Spurs have a strong home record and the absence of these players significantly weakens the Thunder's lineup. Vegas odds also favor the Spurs."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.85,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Thunder have 9 key players out including SGA, Jalen Williams, Chet Holmgren, and Lu Dort. Spurs are at home with a strong record (62-20) and only Castle questionable. Vegas lines show Spurs as favorites (moneyline around -200 implied probability ~66.7%), but given extreme Thunder injuries, actual probability is higher."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.92,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "This is a catastrophic injury situation for Oklahoma City. The Thunder are missing their entire core: Shai Gilgeous-Alexander (abdominal strain), Jalen Williams (hamstring strain), Chet Holmgren (back spasms), Isaiah Hartenstein (eye injury), Lu Dort (knee inflammation), and Alex Caruso (adductor). This removes essentially all their primary rotation players and their top 3-4 scorers. The Vegas lines show the Spurs as significant favorites, and the total has moved from 217.5 to 219.5 to 216 across books, indicating uncertainty about Thunder's offensive capability. San Antonio is relatively healthy with only Stephon Castle questionable (adductor tightness). Even though both teams have excellent season records (Thunder 78%, Spurs 75.6%), the Thunder will be forced to play deep bench players in what appears to be a Western Conference Finals game (Game 2 based on the video title from 5/20). Home court advantage combined with having their full roster against a decimated opponent makes this heavily favor San Antonio. The probability reflects that while upsets can happen, the talent disparity in this specific game is extreme."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:16:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.75,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The Oklahoma City Thunder are significantly impacted by injuries, with key players like Shai Gilgeous-Alexander and Lu Dort out. The San Antonio Spurs, on the other hand, have a relatively healthy roster. The Vegas odds also favor the Spurs, with the spread indicating a strong home advantage. Given the Thunder's current injury situation, the Spurs are more likely to win this game."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

@@ -1,0 +1,713 @@
+{
+    "meta_info": {
+        "competition": "FIFA World Cup 2026",
+        "stage": "knockout",
+        "forecast_target": "dual_90min_plus_advancement",
+        "panel_spec": "docs/superpowers/specs/2026-06-10-worldcup-final-spec.md",
+        "system_prompt": "You are an expert FIFA World Cup Football Analyst and Bettor.\nYou think in probabilities. Knockout matches cannot finish without an advancing team, but the\n90-minute 3-way market can still end Home Win, Draw, or Away Win before extra time and penalties.\nYour goal is to predict both the 90-minute outcome and the team that advances based on squad strength,\nrecent form, injuries, tournament context, venue conditions, and betting market odds.\n\"Home\" and \"Away\" are official fixture designations; most venues are neutral (see tournament notes).\nReply in valid JSON format only.",
+        "user_prompt": "\nCurrent Date: 2026-07-13\nTarget Date: 2026-07-14\nCompetition: FIFA World Cup 2026\n\n[Tournament Format — FIFA World Cup 2026]\n48 teams in 12 groups of 4. Group stage: round-robin, NO extra time (draws stand).\nAdvance to the Round of 32: the top two of each group plus the 8 best third-placed teams.\nKnockout stage: from the Round of 32 onward, a level match after regulation goes to extra time and then penalties if needed; one team must advance.\nGroup tiebreakers, in order: points; goal difference; goals scored; head-to-head among tied teams; fair-play points; drawing of lots.\nHosts: United States, Canada, Mexico. Matches are at neutral venues unless a team plays in its own host country (note true home advantage in those cases).\nOfficial starting lineups are NOT announced at forecast time (they are released about one hour before kickoff); reason from the 26-man squads, team news, and probable-lineup reports only.\n\n[Today's Schedule, Squads, Conditions & News]\n--- Match 1: Spain (away) @ France (home) ---\nKickoff: 2026-07-14 15:00 ET | Venue: AT&T Stadium, Arlington, Texas, USA\nRecent form (last 5, most recent first): France: WWWWW | Spain: WWWWW\nDraftKings 3-way moneyline (American odds): France +140 (opened +135) / Draw +215 / Spain +215 (opened +225)\nFrance official squad (26 players):\n  G: Brice Samba(#1), Mike Maignan(#16), Robin Risser(#23)\n  D: Lucas Digne(#3), Lucas Hernández(#21), Dayot Upamecano(#4), Jules Koundé(#5), Theo Hernández(#19), Ibrahima Konaté(#15), Maxence Lacroix(#26), William Saliba(#17), Malo Gusto(#2)\n  M: N'Golo Kanté(#13), Adrien Rabiot(#14), Aurélien Tchouaméni(#8), Manu Koné(#6), Michael Olise(#11), Rayan Cherki(#24), Maghnes Akliouche(#25), Warren Zaïre-Emery(#18)\n  F: Marcus Thuram(#9), Ousmane Dembélé(#7), Kylian Mbappé(#10), Jean-Philippe Mateta(#22), Bradley Barcola(#12), Désiré Doué(#20)\nSpain official squad (26 players):\n  G: David Raya(#1), Unai Simón(#23), Joan García(#13)\n  D: Eric García(#4), Aymeric Laporte(#14), Alejandro Grimaldo(#3), Marc Cucurella(#24), Pedro Porro(#12), Marc Pubill(#2), Pau Cubarsí(#22)\n  M: Marcos Llorente(#5), Mikel Merino(#6), Fabián Ruiz(#8), Dani Olmo(#10), Rodri(#16), Pedri(#20), Martín Zubimendi(#18), Yéremy Pino(#11), Álex Baena(#15), Gavi(#9)\n  F: Borja Iglesias(#26), Mikel Oyarzabal(#21), Ferran Torres(#7), Nico Williams(#17), Lamine Yamal(#19), Víctor Muñoz(#25)\n[Team News & Market Snippets]\n  - [France vs Spain Preview: Lineups, Team News & Odds] Predicted lineups: France are projected in their familiar 4-2-3-1 under Didier Deschamps, with Kylian Mbappe leading the line, Ousmane Dembele, Michael Olise and Desire Doue behind him, and Aurelien Tchouameni alongside Adrien Rabiot in the pivot. The one real watch is Tchouameni, listed as a game-time decision with a thigh issue and a return date that lands on match day, and Marcus Thuram (calf) is also a game-time decision but is not in the projected XI. ...\n  - [Spain XI vs France: Confirmed team news, predicted lineup and injury latest for World Cup 2026 - Yahoo Sports] Captain Rodri is their midfield anchor, with Dani Olmo occupying an attacking midfield space and Ruiz or Pedri sitting in alongside him.\n\nPau Cubarsi and Aymeric Laporte have formed a solid centre-back partnership, while Pedro Porro has won the battle for a starting berth at right-back over Marcos Llorente.\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nNew Real Madrid signing Marc Cucurella is influential from left-back, while Unai Simon will retain his place between the sticks. ...\n  - [France vs. Spain odds, prediction, time: 2026 World Cup ...] Kickoff for France vs. Spain is at 3 p.m. ET at Dallas Stadium. The latest France vs. Spain odds from FanDuel Sportsbook list France at +130 (risk $100 to win $130) on the 90-minute money line, with Spain at +220 and a draw at +220. The over/under for total goals is 2.5 (-114/-106). France are -140 to advance to the finals, with Spain at +122. Before locking in any France vs. Spain picks or World Cup 2026 predictions, check out the France vs. Spain predictions from SportsLine's Martin Green. [...] Now, Green has studied France vs. ...\n  - [France vs. Spain odds, lines, predictions: 2026 World Cup ...] Kickoff for France vs. Spain is at 3 p.m. ET in Arlington, Texas. The latest France vs. Spain odds from FanDuel Sportsbook list France at +135 (risk $100 to win $135) on the 90-minute money line, with Spain at +220 and a draw at +210. The over/under for total goals is 2.5. France are -144 to advance to the finals, with Spain at +118. Trade France vs. Spain at Kalshi, where new users get a $15 bonus after $15 in trades with the Kalshi promo code SPORTSLINE15: ...\n\nTask:\n    Predict EVERY match listed above using the knockout-stage dual target.\n\n    A) 90-minute / regulation-time 3-way outcome:\n      - home_win_probability (0.0 to 1.0)\n      - draw_probability (0.0 to 1.0)\n      - away_win_probability (0.0 to 1.0)\n    These three must sum to 1.0. The draw_probability is the probability that\n    the match is level after regulation time, before extra time and penalties.\n    It is NOT a final tournament outcome and should not be set to zero just\n    because a knockout match must produce an advancing team.\n\n    B) Advancement / tie winner:\n      - home_advance_probability (0.0 to 1.0)\n      - away_advance_probability (0.0 to 1.0)\n    These two must sum to 1.0 and should incorporate extra time and penalties\n    conditional on a regulation-time draw.\n\n    If betting odds are available in the context above, use the 3-way\n    moneyline as the key calibration signal for part A; infer advancement\n    probabilities from part A plus team strength, extra-time depth, goalkeeper\n    and penalty considerations, and knockout context.\n\nOutput Format (JSON strictly):\n{\n    \"forecast_timestamp\": \"2026-07-13\",\n    \"predictions\": [\n        {\n            \"game_id\": 1,\n            \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n            \"home_win_probability\": 0.45,\n            \"draw_probability\": 0.25,\n            \"away_win_probability\": 0.30,\n            \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n            \"confidence\": \"High/Medium/Low\",\n            \"reasoning\": \"90-minute result reasoning...\"\n        },\n        ... (repeat for all matches)\n    ],\n    \"predictions_advancement\": [\n        {\n            \"game_id\": 1,\n            \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n            \"home_advance_probability\": 0.58,\n            \"away_advance_probability\": 0.42,\n            \"predicted_advancer\": \"HomeTeam / AwayTeam\",\n            \"confidence\": \"High/Medium/Low\",\n            \"reasoning\": \"Advancement reasoning including extra time and penalties...\"\n        },\n        ... (repeat for all matches)\n    ]\n}\n\n",
+        "generated_at": "2026-07-13 22:31:38"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-07-13 22:18:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "France enters as the slight favorite, backed by a star-studded squad featuring Kylian Mbappé and Michael Olise. While Aurélien Tchouaméni's thigh issue is a concern, Didier Deschamps' side possesses immense tactical depth. Spain has been highly impressive with their possession-based style anchored by Rodri, but France's transition threat and individual quality give them a slight edge in regulation time."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France has a strong historical pedigree in late-tournament knockout stages and possesses superior depth off the bench to impact extra time. Additionally, goalkeeper Mike Maignan gives France a marginal advantage in a potential penalty shootout scenario compared to Unai Simón, justifying their -144 market status to advance to the final."
+                }
+            ],
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:18:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "France is slightly favored in the 90-minute betting markets (around +135 to +140), translating to roughly a 40% implied probability when removing the vig. Both teams possess tremendous quality and are in excellent form, but France's attacking firepower and defensive solidity give them a marginal edge in regulation. The high likelihood of a tightly contested, tactical match is reflected in the 30% draw probability."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement markets list France at around -140 to -144, indicating a 57% probability of moving on. With Mike Maignan in goal and a wealth of high-quality substitutes to inject pace in extra time, France has a slight squad depth advantage if the match goes beyond 90 minutes. Spain will rely heavily on their midfield control through Rodri, but France's overall physical edge and transitional superiority justifies their favorite status to advance."
+                }
+            ],
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:19:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This World Cup semi-final is a clash of titans, reflected in the tight betting market. France is a slight favorite, possessing arguably the most potent attacking force in the tournament led by Kylian Mbappé. Their perfect form (WWWWW) underscores their dominance. However, Spain also enters with a perfect record and boasts a world-class midfield anchored by Rodri, capable of controlling possession and dictating tempo. The key uncertainty revolves around the fitness of French midfielder Aurélien Tchouaméni. His absence would be a significant blow to France's defensive structure and could tilt the midfield battle in Spain's favor. The calculated probabilities are derived from an average of market odds, slightly adjusted for this key injury concern, which increases the likelihood of a draw or a Spanish win compared to the raw odds. France's win probability sits at 40%, but a draw (31%) or a Spanish victory in regulation (29%) are very plausible outcomes."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France's status as favorites to advance is built on their 40% chance of winning in regulation combined with their superior squad depth, which is a major asset in extra time. The ability to bring on game-changers like N'Golo Kanté or Bradley Barcola against tired legs gives them an edge if the match is level after 90 minutes. However, Spain cannot be underestimated in a prolonged match. Their goalkeeper, Unai Simón, has a strong penalty shootout record, and France's recent history in shootouts (notably the 2022 World Cup final loss) is a point of weakness. Despite this, the betting markets favor France to advance with an implied probability around 56-58%. This forecast aligns with the market consensus, acknowledging France's overall quality and depth as the likely decisive factor, while giving Spain a substantial 44% chance to pull off the upset through extra time or penalties."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:19:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "This is a clash between two European giants in excellent form, both coming off five consecutive wins. The 90-minute market odds from DraftKings (France +140, Draw +215, Spain +215) imply France has a slight edge, which is reasonable given their attacking talent led by Kylian Mbappé. However, the potential game-time decision for Aurélien Tchouaméni with a thigh issue could impact France's midfield solidity, even if the market has already somewhat adjusted (France's odds drifted slightly). Spain counters with a formidable midfield anchor in Rodri and creative players like Dani Olmo and Pedri, alongside a robust defensive pairing of Cubarsí and Laporte. The match is at a neutral venue, so no true home advantage. Expect a highly competitive contest, with France's individual brilliance slightly favored to win in regulation, but a draw or a Spanish victory are significant possibilities due to Spain's strong structure and midfield control."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "HomeTeam",
+                    "confidence": "Medium",
+                    "reasoning": "Building on the 90-minute prediction, France is slightly favored to advance overall, as reflected by the market odds (France -140 to advance, Spain +122). While both teams possess strong squads, France's depth and experience in high-stakes knockout games, particularly with key figures like Mbappé and a solid goalkeeping duo (Maignan/Samba) who could be crucial in a penalty shootout, give them a marginal edge if the game extends beyond regulation. Spain's youthful exuberance and technical quality mean they are more than capable of winning in extra time or penalties, but France's slightly stronger odds to win in 90 minutes, combined with their overall tournament pedigree, position them as the more likely team to progress to the next round."
+                }
+            ],
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:20:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.396,
+                    "draw_probability": 0.302,
+                    "away_win_probability": 0.302,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "The 3-way market is the main anchor and implies roughly France 40%, draw 30%, Spain 30% after removing vig. France have a marginal regulation edge through Mbappe, Dembele, Olise and superior transition threat, but Spain's Rodri-led midfield control, wide quality from Yamal and Nico Williams, and France's Tchouameni fitness watch keep this very close. Arlington is effectively neutral, so the official home designation adds little."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.562,
+                    "away_advance_probability": 0.438,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advance markets price France as a modest favorite, and that aligns with the regulation forecast plus a slight France edge if the match reaches extra time or penalties. France's attacking depth, Mbappe's knockout-match influence, and Maignan's shot-stopping give them a small tie-winning advantage, while Spain's midfield structure and penalty-quality technical players keep the upset probability substantial."
+                }
+            ],
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:21:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.405,
+                    "draw_probability": 0.297,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "The 90-minute market makes France a narrow regulation-time favorite, with the available 3-way odds implying roughly a 40% France win chance, around 30% draw, and around 30% Spain win after removing vig. This is a neutral-site match in Arlington despite France being the official home team, so there is no meaningful home-field edge. France have the more explosive transition threat through Mbappe, Dembele, Olise and Doue, plus elite defensive depth, but Spain's Rodri-led midfield, possession control, and wide threat from Lamine Yamal and Nico Williams make this close. Tchouameni being a game-time decision slightly trims France's midfield certainty, while Spain appear more settled structurally. The most likely single regulation outcome is still a narrow France win, but the draw and Spain win probabilities are very live."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement markets price France around the mid-50s to advance, which aligns with their slight 90-minute edge plus superior knockout-game explosiveness. If the match is level after regulation, France have marginal advantages in extra-time attacking depth, individual match-winners, and goalkeeper quality with Maignan, though Spain's technical control and penalty composure keep the conditional draw scenario close. France's bench options give them more ways to change the match late, but Spain's midfield can suppress transition chances if Rodri, Pedri and Olmo control tempo. Overall, France are the more likely finalist, but only by a modest margin."
+                }
+            ],
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:21:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market prices France as a slight 90-minute favorite (France +140 vs Spain +215, draw +215). Both teams are in elite form (WWWWW each) and well-matched in midfield control (Rodri-led Spain vs Tchouameni/Rabiot), which supports a relatively high draw probability in a knockout setting. France’s attacking edge (Mbappé with multiple high-end creators around him) and overall depth tilt the most likely 90-minute result narrowly toward France, though Tchouameni’s game-time decision slightly caps France’s regulation win probability."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement pricing also favors France (approx. mid-50s after vig), consistent with their superior knockout depth and match-winner profile. If level after 90, France project slightly better in extra time/penalties due to elite transition threats (Mbappé) and strong goalkeeping options (Maignan/Samba) plus multiple reliable penalty takers across the front line. Spain’s possession structure keeps them very live, but France have the marginal edge in late-game decisive moments."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:22:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market-calibrated 90-minute forecast anchored to DraftKings moneyline (France ~+140, Spain/Draw ~+215). Both teams arrive in excellent form (5W), so the market rightly prices a close game with France a small favorite. France's attacking edge (Mbappé, Dembele/Olise) and slightly deeper forward bench push them ahead; Spain's midfield control (Rodri, Pedri/Fabián) and tactical cohesion keep them firmly in contention and make a draw reasonably likely. Minor injury/question marks (Tchouaméni listed as game-time decision, Thuram doubtful) slightly temper France's edge, preventing a larger gap."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "HomeTeam",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement probabilities derived from the 90-minute distribution plus knockout considerations. If France leads after 90 they advance (40%). Given a draw (29%), France is favored to progress in extra time/penalties because of greater attacking firepower, slightly stronger bench depth and a marginal psychological/penalty taker advantage; I estimate ~59% chance France wins from a drawn 90'. Spain remains a live threat in ET and penalties (good possession/technical players, reliable keeper) so the tie-break scenarios keep their advancement probability sizeable. Injury uncertainty around Tchouaméni (midfield pivot) is the main downside risk to the forecast."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:22:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.396,
+                    "draw_probability": 0.302,
+                    "away_win_probability": 0.302,
+                    "predicted_outcome": "Home Win / Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Calibrated to the 3-way moneyline: implied home win ~39.6%, draw ~30.2%, away win ~30.2% after normalizing for market overround. France are slight favorites at home with strong recent form, but Spain’s balance of attack and midfield control keeps this tightly contested. Potential late-game uncertainties (France’s Tchouaméni fitness doubt; Thuram risk) introduce modest downside for the home contingency, keeping odds balanced with a plausible draw."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement incorporates potential extra time/PKs after regulation draws. From the 90-minute calibration (home ~0.396, draw ~0.302, away ~0.302) and assuming a plausible home-edge in tiebreak scenarios (e.g., 0.54 chance home advances if ET/PKs are needed), the unconditional home advance probability ≈ 0.56 and away ≈ 0.44. France benefit from slight tactical edge and tournament experience in deadlock situations."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:22:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "The 3-way moneyline odds from multiple books (France +130 to +140, Spain +215 to +220, Draw +210 to +220) imply France are slight favorites in regulation, but not by a wide margin. Both teams are in excellent form (WWWWW last 5), and neither has a clear home advantage at the neutral AT&T Stadium. France's squad is slightly deeper and more experienced in knockout settings, but Spain's midfield (Rodri, Pedri, Olmo) is in top form and their defense (Laporte, Cubarsi) has been solid. France have some injury doubts (Tchouameni, Thuram), which slightly narrows the gap. The market-implied probabilities (after adjusting for overround) are roughly France 0.38, Draw 0.33, Spain 0.29. Given the tactical caution likely in a World Cup semifinal and the strength of both defenses, a draw after 90 minutes is the most probable single outcome."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France are favored to advance by the market (-140 to -144, implying ~0.58), with Spain at +118 to +122 (~0.42). This reflects France's edge in knockout experience, squad depth, and penalty shootout pedigree (Maignan is a strong penalty keeper). If the match goes to extra time, France's bench (Thuram, Barcola, Rabiot, Zaïre-Emery) offers more impact options than Spain's, and their defensive structure under Deschamps is proven in high-pressure scenarios. Spain's technical quality and midfield control give them a real chance, but France's slight edge in both regulation and extra time/penalties makes them the more likely advancer."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:22:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams are in excellent form with identical recent records. France has a slight edge in squad depth and individual talent, particularly with Mbappe leading the attack. However, Spain's midfield control and defensive solidity, especially with Rodri and Laporte, balance the scales. The betting market shows a slight preference for France, but the odds for a draw are competitive, suggesting a closely contested match."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.55,
+                    "away_advance_probability": 0.45,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "While the match is expected to be tight, France's slight edge in squad depth and the presence of key players like Mbappe and Maignan in goal could prove decisive in extra time or penalties. The betting odds favor France to advance, reflecting their overall strength and experience in knockout scenarios."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:22:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a heavyweight semifinal-caliber clash between two teams in perfect form (both WWWWW) at a neutral venue in Arlington. The DraftKings 3-way market (France +140, Draw +215, Spain +215) implies roughly 40% France, 30% draw, 30% Spain after removing vig, and the line has moved slightly toward France (+135 to +140 open-to-close variance across books suggests near-equilibrium). France's edge comes from superior attacking depth (Mbappé, Dembélé, Olise, Doué) and physical superiority in transition, but there are real concerns: Tchouameni is a game-time decision with a thigh issue and Thuram (calf) is doubtful. Losing Tchouameni would weaken the pivot against Spain's elite midfield of Rodri, Pedri, Fabián Ruiz and Zubimendi, who dominate possession better than any team in the world. Spain's control-based game keeps draw probability elevated in a match of this quality — a tight, tactical regulation period ending level is very plausible. France remain slight favorites in 90 minutes but with low confidence given how evenly matched these squads are."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.565,
+                    "away_advance_probability": 0.435,
+                    "predicted_advancer": "France",
+                    "confidence": "Low",
+                    "reasoning": "The advancement market (France -140 / Spain +118-122 at FanDuel) implies roughly 56-57% France after removing vig, consistent with converting France's ~40% regulation win plus a slight edge in the ~30% draw scenarios. France's bench firepower (Barcola, Cherki, Mateta, Akliouche) is arguably the best in the tournament for extra time, and their transition threat grows as legs tire. However, Spain's midfield control could suffocate an extended match, and their penalty pedigree has improved markedly since Euro 2024 with reliable takers (Olmo, Oyarzabal, Ferran Torres). Goalkeeper battle is close — Maignan is an elite shot-stopper, Unai Simón has a strong penalty shootout record (Euro 2020, 2024). France's injury doubts on Tchouameni and Thuram temper confidence, but their depth and Mbappé's decisive ceiling in knockout football give them the marginal edge to advance."
+                }
+            ],
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:23:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is effectively a neutral-venue clash at AT&T Stadium in Arlington, Texas, so France's fixture 'home' designation carries no true home advantage. Both sides are in scorching form (WWWWW). The DraftKings 3-way line (France +140 / Draw +215 / Spain +215) implies France as slight favorites, roughly 41% France / 30% draw / 30% Spain after removing the vig. France's edge comes from elite attacking depth (Mbappe, Dembele, Olise, Doue) and world-class defense (Saliba, Konate, Upamecano). Spain counters with superior ball control through Rodri, Pedri, and Fabian Ruiz, plus the emergence of Yamal and Nico Williams. The Tchouameni thigh issue and Thuram calf question slightly weaken France's midfield/attack balance. Given tactical parity, I lean marginally to France per the market but keep this near a coin flip with a meaningful draw share given two disciplined defenses and roof-covered controlled conditions."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.53,
+                    "away_advance_probability": 0.47,
+                    "predicted_advancer": "France",
+                    "confidence": "Low",
+                    "reasoning": "With a substantial draw probability in regulation (~28%), extra time and penalties are realistic. France holds a slight edge to advance (market shows them around -140 to reach the final, ~55-58%). France's squad depth off the bench (Cherki, Barcola, Mateta, Kolo Muani-type options) is elite for extra-time impact, and Maignan is a strong shot-stopper for penalties. However, Spain's technical superiority and composure in possession, plus Raya/Simon in goal, keep penalty scenarios close to even. Combining France's marginal 90-minute lead with roughly even extra-time/shootout prospects yields France ~53% to advance versus Spain ~47%, a genuine toss-up leaning France."
+                }
+            ],
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:23:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is an exceptionally close semifinal between two of the tournament's best sides, both on five-match winning runs. The DraftKings line (France +140 / Draw +215 / Spain +215) implies roughly France 41%, Draw 32%, Spain 31% before the vig; FanDuel's line is similar, with France slightly favored. After removing the overround (~5%), calibrated fair-value probabilities land near France 38%, Draw 27%, Spain 35%. France are designated 'home' for fixture purposes but AT&T Stadium in Arlington is a neutral venue, so no true home advantage applies — the edge France hold is marginal and based on squad depth and Mbappé's match-winning ceiling. Spain's concern is Rodri's fitness management throughout the tournament; if he is limited, the midfield engine loses some dynamism. France's concern is Tchouaméni (thigh, game-time decision) — if he misses, Manu Koné or Zaïre-Emery would slot in, reducing defensive midfield security against Spain's intricate build-up. Spain's Laporte-Cubarsí backline has been excellent, and their 4-3-3 with Lamine Yamal and Nico Williams offers serious width. The over/under sitting at 2.5 suggests a tight, low-scoring affair. Both teams are tactically disciplined; France will likely sit compact and hit on the break via Mbappé and Dembélé, while Spain will dominate possession. France's slight market edge gives them the narrow predicted-outcome nod at 38% vs. 35%, but the gap is within statistical noise."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.52,
+                    "away_advance_probability": 0.48,
+                    "predicted_advancer": "France",
+                    "confidence": "Low",
+                    "reasoning": "France's outright advancement odds (approximately -140 to -144 across books) imply roughly 58% advancement probability before vig; fair value lands closer to 54-55%. Spain's implied advancement is ~45-46% fair value. I've shaded these modestly toward Spain (France 52% / Spain 48%) to account for the following factors: (1) Spain's superior penalty-taking record and experience — Unai Simón has been solid in the tournament, and Spain's shootout composure historically is strong. (2) In extra time, Spain's high pressing and possession system tends to wear opponents down even when fatigued, giving them a slight edge in the 30-minute extension. (3) France's potential Tchouaméni absence would leave them more exposed in a drawn-out extra-time period. (4) If the match reaches penalties, Spain's squad includes reliable spot-kick takers (Rodri, Fabián Ruiz, Dani Olmo, Oyarzabal), while France's record in shootouts at major tournaments has been mixed. Offsetting this: Mbappé as a penalty taker is world-class, and Mike Maignan's reflexes could prove decisive. The final advancement split is extremely tight — France at 52% reflects their narrow regulation-time market edge but acknowledges this is a true coin-flip contest that could easily go either way through extra time and penalties."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:23:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "90-minute result reasoning: This is an evenly-matched semifinal between two elite European powers, both on 5-match winning streaks. The DraftKings moneyline calibration shows France as slight favorites at +140 (41.7% implied), Draw at +215 (31.7%), and Spain at +215 (31.7%). I've adjusted these slightly to France +142 equivalent (42%), Draw 27%, Spain 31% to account for: (1) France's deeper squad depth with elite firepower in Mbappé, Dembélé, and Olise; (2) Spain's technical superiority and possession dominance with Rodri-Pedri-Olmo midfield control; (3) Tchouaméni's game-time decision status with thigh issue slightly weakens France's midfield solidity; (4) Neutral venue in Texas eliminates true home advantage despite 'home' designation; (5) Tactical matchup favors France's transition speed against Spain's high line, but Spain's ball retention limits France's counter opportunities; (6) Both defenses are strong - France's Saliba-Konaté partnership vs Spain's Cubarsí-Laporte axis; (7) Historical World Cup knockout context suggests tight matches between these nations. The market correctly prices this as France's narrowest of edges in regulation, with draw probability elevated given defensive quality on both sides and semifinal caution."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.54,
+                    "away_advance_probability": 0.46,
+                    "predicted_advancer": "France",
+                    "confidence": "Low",
+                    "reasoning": "Advancement reasoning: France holds a 54-46 edge to reach the final, derived from: (1) 42% regulation win + (12% of the 27% draw scenarios); (2) Market signals show France -140 to advance (58.3% implied) vs Spain +122 (45.0% implied) - I'm slightly more conservative than market consensus; (3) Extra-time considerations favor France's superior squad rotation and attacking depth (Thuram, Barcola, Mateta off bench vs Spain's Oyarzabal, Ferran Torres); (4) Penalty shootout factors: Mike Maignan is an elite shot-stopper with strong penalty-saving record; Unai Simón is solid but less proven in World Cup shootouts; (5) France's experience advantage - Mbappé, Dembélé, Griezmann generation has deep knockout pedigree; Spain's squad is younger with less pressure-match experience; (6) Physical endurance: France's athleticism (Tchouaméni if fit, Kanté, Camavinga-type legs via Rabiot/Koné) may outlast Spain in 120 minutes; (7) Mentality: Deschamps' pragmatic knockout record (2018 WC winners, 2022 WC finalists) vs De la Fuente's first World Cup semifinal; (8) However, Spain's technical superiority and ball control could dominate extra time possession, and their penalty takers (Rodri, Olmo, Oyarzabal) are clinical. This is essentially a coin flip with France's slight edge coming from tournament experience and bench quality. Confidence is low given how evenly matched these squads are across all phases."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:24:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "DraftKings 3-way moneyline shows France +140 (implied ~41.7% probability), Draw +215 (implied ~31.8%), Spain +215 (implied ~31.8%). Converting to fair probabilities: France ~0.52, Draw ~0.22, Spain ~0.26. Both teams are in exceptional form (5W in last 5). France has home advantage at a neutral venue in Texas but gains psychological boost. France's squad depth is marginally superior (Mbappé, Dembélé, Thuram in attack; strong midfield with Kanté, Tchouaméni, Rabiot). Spain's strength lies in midfield control (Rodri anchor, Dani Olmo creativity, Pedri/Fabián Ruiz) and defensive solidity (Laporte-Cubarsí partnership, Cucurella at LB). Tchouaméni (thigh issue, game-time decision) and Thuram (calf, not in projected XI) are injury concerns for France. Market slightly favors France but not decisively. Expect a competitive, tight match with France's attacking pace (Mbappé's speed vs Cucurella) and transitional threat giving them a marginal edge in open play."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.58,
+                    "away_advance_probability": 0.42,
+                    "predicted_advancer": "France",
+                    "confidence": "High",
+                    "reasoning": "From regulation probabilities: France wins 52%, Draw 22%, Spain wins 26%. In extra time and penalties, France holds advantages: (1) Deeper bench with fresh attacking options (Barcola, Doué, Mateta), (2) Mbappé's elite athleticism and ball-carrying in open space during extra time, (3) Maignan vs Raya in penalties—Maignan has demonstrated composure in high-pressure moments; Raya's international experience is less extensive. Spain's midfield control (Rodri's leadership) would be tested in chaotic extra time. Conditional advancement: if regulation draw (22%), France's extra-time/penalty edge ~62% (0.22 × 0.62 = 0.136). Base 90-min win paths: France win outright 52%, Spain win outright 26%. Total France advance: 0.52 + (0.136) = 0.656 ≈ 0.58. Market advance odds (France -140, Spain +122) imply France ~58%, Spain ~42%, aligning with this analysis. France's forward press in ET and penalty-kick specialization (recent success in shootouts) support the edge."
+                }
+            ],
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:24:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Semifinal at a neutral venue (Arlington, TX). Both sides carry perfect recent form into the contest. France hold a marginal edge in attacking firepower through Mbappé, Dembélé and Olise, while Spain's possession style lacks a proven #9 and may struggle to break down a solid backline of Saliba, Konaté and Theo Hernández. Tchouaméni's game‑time thigh concern slightly weakens France's midfield if he cannot start, but Rabiot plus depth options provide cover. Market lines imply France ~40% to win in regulation, with draw and Spain each around 30%. The high draw probability reflects expected cagey knockout‑stage dynamics between two elite sides."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France's 90‑minute win probability (0.40) and a higher conditional chance of progressing from extra time/penalties (estimated ~55% if tied at full time) drive the advancement probability to 0.57, aligning closely with the to‑advance market (France -140). Spain's route relies on a regulation win or winning a shootout, but recent history and squad composition favor France in extended periods. The absence of a natural striker for Spain further tilts the balance if the match opens up after 90 minutes."
+                }
+            ],
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:24:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "France have home advantage and strong recent form, but Spain are equally impressive. Odds imply a slight edge for France (implied probability ~41% from +140). Both teams are deep and balanced. Draw probability is significant given knockout tension and quality."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.55,
+                    "away_advance_probability": 0.45,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France have slight edge in regulation and likely advantage in extra time/penalties due to home crowd and experience. Spain's technical quality keeps them close. Advancement odds from market (France -140) imply ~58% home advance, but we adjust slightly lower due to Spain's strength."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:25:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "France holds a slight edge in the 90-minute market, driven by their explosive attacking depth with Mbappé, Dembélé, and Olise, despite injury doubts surrounding Tchouaméni and Thuram. Spain's midfield control via Rodri and creative threats like Yamal and Olmo make them incredibly resilient, ensuring a tightly contested match. The normalized implied probabilities from the 3-way moneyline slightly favor a narrow France victory in regulation, though a draw is highly probable given the elite tactical setups of both sides."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "France is favored to advance, aligning with the -140 moneyline for tournament progression. In a knockout scenario that could extend to extra time and penalties, France's superior physical depth, pace on the counter-attack, and extensive recent pedigree in deep tournament runs under Didier Deschamps give them a tangible edge. Spain is exceptionally disciplined and capable of winning via penalties, but France's ability to unlock defenses in fatigued late-game states tilts the overall advancement probability in their favor."
+                }
+            ],
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:25:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw / Away Win",
+                    "confidence": "High",
+                    "reasoning": "France and Spain both come into this match with strong recent form, each having won their last five games. The odds slightly favor France, which is reflected in the higher home win probability. Both teams have solid defensive and attacking options, but the potential absence of key players like Tchouameni and Thuram for France could slightly tilt the balance. The draw probability is significant given the quality and tactical discipline of both sides."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.58,
+                    "away_advance_probability": 0.42,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "While the 90-minute result is close, France's depth and experience in knockout matches, along with their home advantage, give them a slight edge in extra time and penalties. Kylian Mbappe's presence and France's overall team strength are key factors. However, Spain's midfield, led by Rodri and Pedri, can control the game, making the advancement outcome less certain. The goalkeeper performance and penalty shootout skills will be crucial if the match goes to that stage."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:27:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "The DraftKings 3-way moneyline (+140 / +215 / +215) de-vigges to approximately 39.6% / 30.2% / 30.2%, reflecting a tightly contested knockout tie. France holds a slight regulatory edge due to their elite transition attack (Mbappé, Olise) and tournament pedigree, though the game-time status of Tchouaméni and Thuram weakens their midfield pivot and central depth. Spain's possession-based structure (Rodri, Pedri) and wide threats (Yamal, Nico) are fully intact, making a draw or narrow away victory highly plausible. The ~31% draw probability accurately captures the tactical caution and parity expected in regulation time between two in-form, evenly matched sides."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.57,
+                    "away_advance_probability": 0.43,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement probabilities are calibrated against the market advance odds (France -140 / Spain +122) and conditional knockout modeling. If regulation ends in a draw, France's superior bench depth (Barcola, Koundé, Saliba, Maignan) and structured extra-time management give them roughly a 60% share of the 31% draw probability. Spain's penalty-saving profile (Unai Simón) and technical composure prevent them from being large underdogs in a shootout, but France's overall squad depth, set-piece threat, and counter-attacking viability over 120 minutes tilt the tie-breaker odds slightly in their favor, resulting in a ~57% advance probability."
+                }
+            ],
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:27:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (DraftKings/FanDuel) suggest a tightly contested affair with France slightly favored as the 'home' designation holder, despite the neutral venue. France's offensive firepower (Mbappe, Dembele, Thuram availability uncertain) contrasts with Spain's superior midfield control (Rodri anchor) and defensive cohesion (Laporte/Cubarsi). Injury doubts regarding Tchouameni and Thuram introduce volatility, elevating the draw probability to nearly 30% typical of high-stakes knockouts between evenly matched sides. France's counter-attacking edge offers the sliver needed for the 90-minute win."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.58,
+                    "away_advance_probability": 0.42,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Based on the 90-minute forecast, France holds a mathematical advantage even if the match ends in regulation time draws (calculated via penalty/win-in-extra-time probabilities). Spain is disciplined, but France's individual superstar quality (Mbappe) provides higher variance upside in extra time. This aligns with the advancement markets pricing France as -140 favorites (approx. 58% implied chance). Spain remains highly competitive, so advancement confidence is not rated High due to the risk of a late breakaway equalizer forcing penalties where luck plays a role."
+                }
+            ],
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:29:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "The 3-way moneyline converges around France +140, Spain +215 and Draw +215, normalizing to roughly 40/30/30. Both sides enter on five-match winning runs in a neutral Arlington venue with no true home advantage, yet France is priced as the narrow regulation favorite. Spain’s line has sharpened from +225 to +215, reflecting market respect for their midfield control and wingers, while Tchouaméni’s late fitness test adds just enough uncertainty to keep the draw probability elevated. A World Cup semifinal naturally favors cautious, low-margin tactics, supporting the elevated draw price near 30%."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Conditional on a 30% chance of a regulation draw, the market prices France around -140 to advance and Spain near +122, implying France wins extra time or penalties roughly 53% of the time. France’s bench—featuring game-breaking pace from Barcola, Thuram and Dembélé, plus elite center-back depth in Saliba, Konaté and Upamecano—gives them a marginal physical and tactical edge over 120 minutes. Spain’s midfield is elite, but France’s superior athletic profiles and major-tournament knockout experience tilt the tiebreaker scenario slightly in their favor, supporting a 56/44 advance split."
+                }
+            ],
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:31:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.395,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Calibration to the DraftKings 3-way moneyline (France +140 / Draw +215 / Spain +215) suggests a tight contest with France holding a slight edge (~40% implied probability). Both sides enter with perfect recent form (WWWWW). However, France faces a late fitness concern over midfield anchor Aurélien Tchouaméni (thigh), which has seen the market drift slightly toward Spain (opening +225 to current +215). France's attacking quality (Mbappé, Dembélé, Olise) and defensive solidity (Saliba, Upamecano) give them a narrow advantage in regulation, while Spain's possession-heavy midfield (Rodri, Pedri, Ruiz) and high press ensure a high probability of a stalemate after 90 minutes at a neutral venue (Arlington, TX)."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.56,
+                    "away_advance_probability": 0.44,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Advancement pricing (France -140 / Spain +122) implies France has approximately a 56% probability of reaching the final. Conditional on the ~30% chance of a draw after 90 minutes, France's superior squad depth—particularly the availability of high-energy substitutes like N'Golo Kanté and fresh legs in Thuram/Barcola—provides an advantage in extra time. Additionally, Mike Maignan’s penalty-saving pedigree offers a marginal edge in a potential shootout against Unai Simón, though Spain's technical quality ensures the tie remains competitive through 120 minutes."
+                }
+            ],
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5"
+        },
+        {
+            "forecast_timestamp": "2026-07-13 22:31:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have been in excellent form with five consecutive wins. France has a slight edge with home advantage and a strong squad, but Spain's solid defense and midfield could neutralize the French attack. The betting odds are close, suggesting a tight match. A draw is plausible, but the home advantage might give France a slight edge in a close contest."
+                }
+            ],
+            "predictions_advancement": [
+                {
+                    "game_id": 1,
+                    "matchup": "Spain (away) @ France (home)",
+                    "home_advance_probability": 0.55,
+                    "away_advance_probability": 0.45,
+                    "predicted_advancer": "France",
+                    "confidence": "Medium",
+                    "reasoning": "Considering both teams' strengths and the closeness of the match, the advancement prediction leans slightly towards France due to home advantage. However, Spain's solid defense and midfield could force the game into extra time or penalties, where either team could win. The slight edge to France reflects their overall squad depth and the potential impact of home crowd support in a knockout match."
+                }
+            ],
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k"
+        }
+    ]
+}

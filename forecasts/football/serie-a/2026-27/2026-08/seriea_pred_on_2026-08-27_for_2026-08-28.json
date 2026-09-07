@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-27",
+        "target_date_et": "2026-08-28",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874758\nMatchup: Venezia (away) @ AC Milan (home)\nHome: AC Milan\nAway: Venezia\nKickoff UTC: 2026-08-28T18:45Z\nKickoff ET: 2026-08-28 14:45 EDT\nVenue: San Siro\nRound: unavailable\nHome form: WLWLL\nAway form: LWWDW\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: AC Milan -280 (open -295); Draw +360 (open +350); Venezia +700 (open +700)\nTavily context:\n  - Title: AC Milan VS Venezia: Live Scores, Lineups, H2H & Odds\n    Content: Goalkeeper: Filip Stankovic.\n\nDefenders: Antoine Hainaut, Thierry Correia, Bartol Franjic, Armel Bella Kotchap, Joël Schingtienne.\n\nMidfielders: Toma Basic, Gianluca Busio, Kike Pérez.\n\nAttackers: John Yeboah, Akor Adams.\n\nSubs: Lorenzo Montipo, Redouane Halhal, Ale Gomes, Richie Sagrado, Ridgeciano Haps, Simone Panada, Lamine Fanne, Simon Sohm, Thórir Helgason, Matteo Dagasso, Marko Farji, Kornel Lisman, Albion Rrahmani, Lion Lauberbach, Alvin Okoro.\n\nMissing Players: Andrea Adorante, Marin Sverko, Matias Moreno.\n\n### Event Details:\n\nName: AC Milan vs. Venezia\n\nDate: Friday, August 28, 2026 ...\n    URL: https://www.365scores.com/football/match/serie-a-17/ac-milan-venezia-227-308-17\n  - Title: Milan vs Venezia prediction: expert analysis, possible lineups, August 28, 2026 – Ratingbet.com\n    Content: All signs point to a home win. We recommend betting on them with a \"-1 goal\" handicap (odds – 1.60).\n\n## Milan vs Venezia: Key Stats and Trends\n\n Milan have won two matches in a row\n Venezia have lost two of their last four matches\n\n## Milan vs Venezia: Probable Starting Lineups\n\nMilan are expected to play in a 1-3-4-2-1 formation (probable lineup): Maignan – Pavlovic, De Winter, Hila – Estupiñán, Iashari, Musah, Chukwueze – Cissé, Loftus-Cheek – Gonçalo Ramos ...\n    URL: https://ratingbet.com/predictions/milan-vs-venezia-prediction-expert-analysis-possible-lineups-august-28-2026\n  - Title: AC Milan vs Venezia prediction – Odds & stats – 28 August 2026\n    Content: +2.5\nProbability: 70.1%\n\nBet365\nBet365\n\n| AC Milan |  | Venezia |\n ---\n| AC Milan | stat | Venezia |\n| 3.5 | Average goals per game | 4.83 |\n| 1.67 | Average goal scored | 3.17 |\n| 1.83 | Goals conceded per match | 1.67 |\n| 17 % | Matches with -2.5 goals | 17 % |\n| 83 % | Matches with +2.5 goals | 83 % |\n| 3.17 | Average goals home team 1/away team 2 | 4.17 |\n| 1.33 | Avg. goals home team 1/away team 2 | 3.17 |\n| 1.83 | Avg. goals conceded home team 1/away team 2 | 1 |\nStats based on the last 6 matches\n\nAC Milan\nVenezia\n\n## AC Milan vs Venezia BTTS tips\n\nYes\nProbability: 58.33% ...\n    URL: https://www.wincomparator.com/predictions/ac-milan-venezia-8522109\n  - Title: AC Milan vs. Venezia FC - Live Score - August 28, 2026 | FOX Sports\n    Content: Databricks\nAC Milan\nVenezia FC\n\n## AC Milan vs Venezia FC\n\nGiuseppe Meazza\n\n# AC Milan vs. Venezia FC: Aug 28, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAC Milan\n\n|  | | |\n ---\n| 8/23 | Torino TOR (A) | W2-1 |\n| 8/15 | Manchester Utd MUN (H) | W4-2 |\n| 8/8 | Chelsea CHE (A) | L3-0 |\n| 8/5 | Inter Milan INT (H) | D1-1 |\n| 7/25 | Celtic CTC (A) | D2-2 |\n\nTorino\nManchester Utd\nChelsea\nInter Milan\nCeltic\nVenezia FC ...\n    URL: https://www.foxsports.com/soccer/serie-a-ac-milan-vs-venezia-fc-aug-28-2026-game-boxscore-869401\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874758\nMatchup: Venezia (away) @ AC Milan (home)\nHome: AC Milan\nAway: Venezia\nKickoff UTC: 2026-08-28T18:45Z\nKickoff ET: 2026-08-28 14:45 EDT\nVenue: San Siro\nRound: unavailable\nHome form: WLWLL\nAway form: LWWDW\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: AC Milan -280 (open -295); Draw +360 (open +350); Venezia +700 (open +700)\nTavily context:\n  - Title: AC Milan VS Venezia: Live Scores, Lineups, H2H & Odds\n    Content: Goalkeeper: Filip Stankovic.\n\nDefenders: Antoine Hainaut, Thierry Correia, Bartol Franjic, Armel Bella Kotchap, Joël Schingtienne.\n\nMidfielders: Toma Basic, Gianluca Busio, Kike Pérez.\n\nAttackers: John Yeboah, Akor Adams.\n\nSubs: Lorenzo Montipo, Redouane Halhal, Ale Gomes, Richie Sagrado, Ridgeciano Haps, Simone Panada, Lamine Fanne, Simon Sohm, Thórir Helgason, Matteo Dagasso, Marko Farji, Kornel Lisman, Albion Rrahmani, Lion Lauberbach, Alvin Okoro.\n\nMissing Players: Andrea Adorante, Marin Sverko, Matias Moreno.\n\n### Event Details:\n\nName: AC Milan vs. Venezia\n\nDate: Friday, August 28, 2026 ...\n    URL: https://www.365scores.com/football/match/serie-a-17/ac-milan-venezia-227-308-17\n  - Title: Milan vs Venezia prediction: expert analysis, possible lineups, August 28, 2026 – Ratingbet.com\n    Content: All signs point to a home win. We recommend betting on them with a \"-1 goal\" handicap (odds – 1.60).\n\n## Milan vs Venezia: Key Stats and Trends\n\n Milan have won two matches in a row\n Venezia have lost two of their last four matches\n\n## Milan vs Venezia: Probable Starting Lineups\n\nMilan are expected to play in a 1-3-4-2-1 formation (probable lineup): Maignan – Pavlovic, De Winter, Hila – Estupiñán, Iashari, Musah, Chukwueze – Cissé, Loftus-Cheek – Gonçalo Ramos ...\n    URL: https://ratingbet.com/predictions/milan-vs-venezia-prediction-expert-analysis-possible-lineups-august-28-2026\n  - Title: AC Milan vs Venezia prediction – Odds & stats – 28 August 2026\n    Content: +2.5\nProbability: 70.1%\n\nBet365\nBet365\n\n| AC Milan |  | Venezia |\n ---\n| AC Milan | stat | Venezia |\n| 3.5 | Average goals per game | 4.83 |\n| 1.67 | Average goal scored | 3.17 |\n| 1.83 | Goals conceded per match | 1.67 |\n| 17 % | Matches with -2.5 goals | 17 % |\n| 83 % | Matches with +2.5 goals | 83 % |\n| 3.17 | Average goals home team 1/away team 2 | 4.17 |\n| 1.33 | Avg. goals home team 1/away team 2 | 3.17 |\n| 1.83 | Avg. goals conceded home team 1/away team 2 | 1 |\nStats based on the last 6 matches\n\nAC Milan\nVenezia\n\n## AC Milan vs Venezia BTTS tips\n\nYes\nProbability: 58.33% ...\n    URL: https://www.wincomparator.com/predictions/ac-milan-venezia-8522109\n  - Title: AC Milan vs. Venezia FC - Live Score - August 28, 2026 | FOX Sports\n    Content: Databricks\nAC Milan\nVenezia FC\n\n## AC Milan vs Venezia FC\n\nGiuseppe Meazza\n\n# AC Milan vs. Venezia FC: Aug 28, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAC Milan\n\n|  | | |\n ---\n| 8/23 | Torino TOR (A) | W2-1 |\n| 8/15 | Manchester Utd MUN (H) | W4-2 |\n| 8/8 | Chelsea CHE (A) | L3-0 |\n| 8/5 | Inter Milan INT (H) | D1-1 |\n| 7/25 | Celtic CTC (A) | D2-2 |\n\nTorino\nManchester Utd\nChelsea\nInter Milan\nCeltic\nVenezia FC ...\n    URL: https://www.foxsports.com/soccer/serie-a-ac-milan-vs-venezia-fc-aug-28-2026-game-boxscore-869401\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874758",
+                        "date_utc": "2026-08-28T18:45Z",
+                        "kickoff_et": "2026-08-28 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "AC Milan",
+                        "away": "Venezia",
+                        "home_id": "103",
+                        "away_id": "17530",
+                        "matchup": "Venezia (away) @ AC Milan (home)",
+                        "venue": "San Siro",
+                        "city": "Milano",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WLWLL",
+                        "form_away": "LWWDW",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-295",
+                            "home_current": "-280",
+                            "draw_open": "+350",
+                            "draw_current": "+360",
+                            "away_open": "+700",
+                            "away_current": "+700"
+                        },
+                        "odds_text": "DraftKings: AC Milan -280 (open -295); Draw +360 (open +350); Venezia +700 (open +700)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-27T08:25:23.424273-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:12.968766-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "HOME_WIN",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites at the San Siro, as indicated by bookmaker odds favoring a home win at around -280. They boast a much stronger lineup and have shown good form leading up to the match, while Venezia has struggled with consistency away from home.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-27T08:19:21.908794-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.683,
+                    "draw_probability": 0.201,
+                    "away_win_probability": 0.116,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan enters this match as heavy favorites (-280), playing at home at the San Siro. Based on the betting markets, they have an implied win probability of around 68% over Venezia.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-27T08:19:39.483989-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites playing at their home stadium, San Siro. They began their season with a win, while Venezia started with a loss. The betting odds reflect this disparity, with AC Milan at -280 on DraftKings, implying a high probability of a home victory. Expert analysis also concurs, suggesting a comfortable win for AC Milan.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:45.498646-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan is heavily favored to win at home, with DraftKings odds at -280, indicating a high implied probability of a home victory. Expert analysis also strongly points to a home win, recommending a handicap bet on AC Milan. Their recent form includes two consecutive wins, contrasting with Venezia's two losses in their last four matches.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:11.246322-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong home favorites at San Siro, with market odds implying roughly a two-thirds chance after removing vig. Milan have the stronger squad profile and enter off a league win, while Venezia are priced as clear underdogs with modest upset probability.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:16.314429-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong home favorites at San Siro, with market odds implying a clear advantage over Venezia. Milan opened the season with a win, have superior squad quality, and available context points to a likely home win, while Venezia enter with an away loss on record and are significant underdogs.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-27T08:20:32.108565-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.683,
+                    "draw_probability": 0.201,
+                    "away_win_probability": 0.116,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Market odds heavily favor AC Milan at San Siro (roughly 68% implied win probability after normalizing vig). Milan have the stronger squad and home advantage, while Venezia are priced as a clear underdog and enter with a weaker early-season record, making a regulation-time home win the most likely 1X2 result.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-27T08:20:39.345754-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong at home, coming off recent wins and fielding a deep squad (probable starting XI includes Maignan and attacking options Ramos/Cissé). Bookmakers make Milan a heavy favorite (AC Milan ~-280), and Venezia arrive with mixed form, missing several players and with limited away threat. Defensive solidity and superior attacking personnel give Milan a clear edge in 90-minute regulation time, so a home win is the most likely result.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-27T08:20:48.903941-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.682,
+                    "draw_probability": 0.201,
+                    "away_win_probability": 0.117,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites at home per odds (-280) implying ~0.68 win probability after normalization; Venezia are clear underdogs; probabilities sum to 1 after adjusting for vigorish.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-27T08:20:50.999140-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.69,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites based on recent form, squad strength, and home advantage. Bookmakers heavily favor Milan, and expert analysis recommends a Milan win with a handicap. Milan have won two in a row, while Venezia have lost two of their last four. Milan's probable lineup is strong and they are playing at San Siro. Venezia's away form is decent but not enough to outweigh Milan's advantages. The statistical models and odds both point to a high probability of a home win.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-27T08:20:52.987401-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan have a strong home record and are in good form, having won their last two matches. Venezia have struggled recently, losing two of their last four matches. The odds heavily favor AC Milan, and expert analysis suggests a likely home win.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:02.267372-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are heavy favorites at home (DraftKings -280, implying ~68% after removing vig). Milan enter with recent wins over Torino and Manchester United and superior squad quality, while newly promoted Venezia have key absences (Adorante, Sverko, Moreno) and a weaker away profile. Venezia's decent recent form provides slight upset/draw potential, but San Siro advantage and talent gap strongly favor Milan in regulation.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-27T08:21:06.354991-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "AC Milan",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong home favorites at San Siro, reflected in odds of -280. They have solid recent form and superior squad quality, while Venezia are a promoted/lower-tier side missing key players. Home win is the clear expected outcome.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-27T08:21:13.147204-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites at home with odds implying roughly 73-74% win probability (DraftKings -280). Adjusting for market overround, a true probability around 64% is reasonable. Milan have won two consecutive matches including a 2-1 away win at Torino, while Venezia are a promoted/lower-table side who lost their opening fixture. Milan's San Siro home advantage is significant. The ratingbet analysis recommends a Milan -1 handicap bet, consistent with an expected comfortable home win. Venezia's squad quality is considerably below Milan's, and their form (LW for the campaign opener) is mixed. The odds movement is stable (no significant shift from open), suggesting no major news to upset the expected outcome.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:20.715371-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites at home at San Siro with DraftKings odds of -280. Milan have won their last two matches including a 2-1 away win at Torino, showing good form. Venezia are newly promoted and have struggled with a 0-0-1 record, having lost their opening match. The statistical analysis shows Milan averaging 1.67 goals scored per match at home while Venezia concede 1.67 goals per match away. Expert predictions recommend betting on Milan with a -1 goal handicap. The quality gap between these sides is significant, with Milan possessing superior attacking options including Gonçalo Ramos. While both teams have shown they can score goals (high percentage of 2.5+ goal matches), Milan's home advantage and quality edge make them clear favorites for all three points in regulation time.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-27T08:21:24.559475-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are strong favorites based on multiple factors: (1) DraftKings odds heavily favor Milan at -280; (2) Milan's recent form shows 2 consecutive wins with strong attacking output (3.17 goals per game at home); (3) Expert analysis recommends Milan with -1 goal handicap (odds 1.60); (4) Statistical probability for +2.5 goals is 70.1%, favoring a Milan victory; (5) Venezia are missing key defenders (Sverko, Moreno, Adorante), weakening their backline; (6) Milan's home record is undefeated (1-0-0) while Venezia are winless away (0-0-1); (7) BTTS probability is 58.33%, but Milan's superior attacking quality should prevail. The -280 odds imply ~73.7% win probability.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-27T08:21:40.554781-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.6828,
+                    "draw_probability": 0.2014,
+                    "away_win_probability": 0.1158,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are heavy favorites at San Siro with implied odds around 74% before removing vigorish, strong recent home form, and Venezia have a poor away record. A regulation home win is the most likely outcome.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-27T08:21:42.020823-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AC Milan are strong at home and have won their last two matches, while Venezia have been inconsistent. The odds heavily favor Milan, and the expert analysis suggests a comfortable home win. However, Venezia have shown some resilience, so a draw is possible but less likely.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-27T08:21:56.734959-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan is heavily favored at home against Venezia, supported by strong betting odds and recent form, including a win against Torino. Venezia struggles on the road and has a weaker squad on paper, making a home win the most likely outcome.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-27T08:22:01.433917-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan has a strong home record and recent form, with two consecutive wins. They also have a better average goals per game and a lower average goals conceded compared to Venezia. The odds and expert analysis also favor AC Milan, suggesting a high probability of a home win.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-27T08:22:50.713609-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "DraftKings odds heavily favor AC Milan (-280), translating to roughly a 70% fair win probability after removing the bookmaker overround. Milan enters with momentum from consecutive wins and holds a pronounced home advantage at San Siro. Venezia arrives as a clear road underdog (+700) with a less consistent away record, despite showing solid attacking statistics in recent fixtures. Expert analysis and market pricing strongly align on a home victory in regulation time. Early-season squad rotation and typical Serie A defensive adjustments keep confidence at medium, but the probability distribution and trend data decisively point to a Milan win.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-27T08:23:53.563742-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are significant favorites with -280 odds and play at home in San Siro. Betting markets and analyst consensus strongly favor a home victory, supported by Venezia's inconsistent recent results compared to Milan's stronger momentum.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-27T08:24:49.507655-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan are heavy favorites at the San Siro, supported by short betting odds (-280), back-to-back wins in recent fixtures, and a materially stronger squad than Venezia. Venezia enter as significant underdogs (+700) with inconsistent form, and expert analysis points toward a comfortable home victory. Milan's home advantage and superior attacking quality make a regulation-time home win the clear projection.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-27T08:25:19.387830-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan holds a significant advantage as home favorites at San Siro, backed by a season-opening victory (1-0-0 record) and two consecutive wins across all competitions. Venezia enters with an 0-0-1 record and defensive vulnerabilities, having lost two of their last four matches. The betting odds (-280 for Milan) reflect a substantial quality gap between the squads, and Milan's attacking firepower against a side conceding goals makes a home win the clear probabilistic outcome.",
+                    "event_id": "401874758"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-27T08:25:23.422323-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ AC Milan (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AC Milan has a strong home form and has won two matches in a row, while Venezia has lost two of their last four matches. The structured odds heavily favor AC Milan, and the expert analysis suggests a home win with a -1 goal handicap. The average goals per game for AC Milan is also higher than Venezia, indicating a stronger attacking presence.",
+                    "event_id": "401874758"
+                }
+            ]
+        }
+    ]
+}

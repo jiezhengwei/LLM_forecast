@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-06-04\n    Target Date: 2026-06-05\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [6/5 - 8:30 PM EDT] New York Knicks @ San Antonio Spurs | Away: 64.6% (53-29) vs Home: 75.6% (62-20)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: New York Knicks (Away) @ San Antonio Spurs (Home)\n**News & Injury Report:**\n- [Knicks vs. Spurs (Jun 5, 2026) Live Score - ESPN](https://www.espn.com/nba/game/_/gameId/401859964/knicks-spurs)\n  Snippet: # New York Knicks @ San Antonio Spurs\n\nNY\n\nABC\n\nSA\n\n## Matchup Predictor\n\nNew York Knicks\nSan Antonio Spurs\n\nNY\n\nSA\n\nAccording to ESPN Analytics\n\n## Game Information\n\nSan Antonio, TX\n\nFrost Bank Center\nFrost Bank Center\n\n## Season Leaders\n\nJalen Brunson\nVictor Wembanyama\nKarl-Anthony Towns\nVictor Wembanyama\nJalen Brunson\nStephon Castle\n\n## Injury Report\n\n| Name | Status | Est. Return |\n ---\n| Mitchell RobinsonM. RobinsonC | GTDFinger | Jun 3 |\n\n| Name | Status | Est. Return |\n ---\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | Jul 2 |\n\n## Team Stats\n\n116.5\n\nPoints\n\n119.8\n\n100.6 ...\n- [New York Knicks at San Antonio Spurs | 2026-06-05 | NBA Basketball | Betting Pick by FirstDown | Sportsbook Lines](https://www.goonersguide.com/basketball-pick-59455-New-York-Knicks-at-San-Antonio-Spurs.htm)\n  Snippet: There was much to like about the way the Knicks kept battling, but New York will also believe there is much more to come from themselves- Brunson was immense late in the Fourth Quarter yet again, but overall he will believe he needs to be more efficient and everyone will be hoping that the early knee and ankle injuries suffered by the best player on the team are not going to become a problem. ...\n**Vegas Odds & Lines:**\n- [Knicks vs. Spurs (Jun 5, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401859964)\n  Snippet: # New York Knicks @ San Antonio Spurs\n\nNY\n\nABC\n\nSA\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 6/03 | @SA | W105-95 | +4.5 | 217.5 |\n| 5/25 | @CLE | W130-93 | -2.5 | 218.5 |\n| 5/23 | @CLE | W121-108 | +3.5 | 216.5 |\n| 5/21 | vsCLE | W109-93 | -5.5 | 215.5 |\n| 5/19 | vsCLE | W115-104 | -6.5 | 217.5 |\n\n## Betting 101\n\n## Matchup Predictor\n\nNew York Knicks\nSan Antonio Spurs\n\nNY\n\nSA\n\nAccording to ESPN Analytics\n\n## Injury Report\n\n| Name | Status |\n --- |\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | |\n\n## NBA Finals\n\n| TEAMODDS | ...\n- [Knicks vs. Spurs (Jun 3, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401859963)\n  Snippet: Game Props\n\n   Team Total Points\n   Team 1st Half Points\n\nSan Antonio Spurs\n\n62-20\n\nNew York Knicks\n\n53-29\n\no110.5 -115u110.5 -105\n\no108.5 -102u108.5 -118\n\nSee More Odds\n\n## Injury Report\n\nImage 66New York Knicks\n| Name | Status |\n --- |\n| Mitchell Robinson M. RobinsonC | GTD Finger |\n\nImage 67San Antonio Spurs\n| Name | Status |\n --- |\n| David Jones Garcia D. Jones GarciaF | OFS Ankle |\n\nFull Injury Report\n## NBA Finals\n\n| TEAM ODDS |\n\n| SA SA -185 |\n\n| TEAM ODDS |\n\n| NY NY +155 |\n\nSee More NBA Futures\n\nTop Betting Headlines [...] o16.5 -110u16.5 -116\n\no15.5 -119u15.5 -108 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-06-04\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-06-05 04:13:25"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-06-05 04:12:16",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.64,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "The San Antonio Spurs have a significantly better season record (62-20) and a strong home-court advantage. Vegas betting lines from the previous game in this series heavily favored the Spurs (SA -185), implying approximately a 62-64% win probability after removing the vig. Although the Knicks won the most recent game on June 3rd, key player Jalen Brunson is reportedly dealing with minor knee and ankle issues, and center Mitchell Robinson is a game-time decision. A top-tier team like the Spurs is unlikely to lose two consecutive games at home, making them the probable victor in this matchup."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:12:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.63,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas pricing has Spurs favored (SA -185 / NY +155), implying roughly a low-to-mid 60% home win chance after de-vig. San Antonio also owns the stronger season profile (62-20) and home-court edge. Knicks just won in San Antonio on 6/03, which lowers confidence and keeps the probability from climbing higher, but injury/availability looks cleaner for SA (only a depth piece out) while Mitchell Robinson is listed GTD for NY."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:12:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.66,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas market strongly favors the Spurs (listed around SA -185 \u2192 implied ~64\u201365%), the Spurs had a markedly better regular-season record (62-20 vs 53-29) and possess the home-court advantage. San Antonio\u2019s roster (including Victor Wembanyama) gives them an edge in two-way impact. New York has some injury/availability noise (Mitchell Robinson listed GTD for a finger issue and there are reports of knee/ankle knocks to key players), and while the Knicks have shown they can win on the road (recent 6/3 win at San Antonio), the market, team strength and home court together justify roughly a two-thirds probability for the Spurs. Variance in a single game and Knicks\u2019 late-game performance keep confidence at Medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.63,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Strong home-court advantage for Spurs (62-20 at home, 75.6% win rate). Knicks dealing with a potential Mitchell Robinson (finger) injury, which could impact interior defense and rebounding. Vegas context from a recent Spurs-leaning matchup shows market expects Spurs to win on their home court, supporting a Spurs win probability in the low-to-mid 0.6s range."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.66,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The Spurs have a significantly better home record (75.6% win rate, 62-20) compared to the Knicks' away record (64.6%, 53-29). Vegas odds favor the Spurs at -185 (implied probability ~65%), which aligns with the statistical edge. Both teams have minor injuries (Mitchell Robinson GTD for NY, David Jones Garcia out for SA), but neither is a core star. The Spurs' home-court advantage, superior season record, and Vegas line all point to San Antonio as the favorite."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.7,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The San Antonio Spurs have a strong home record of 75.6% and are favored by Vegas odds at -185. The Knicks have a key player, Mitchell Robinson, listed as game-time decision due to a finger injury, which could impact their defensive capabilities. Additionally, the Spurs have been performing well in recent games, and the home-court advantage in the NBA Finals context further boosts their chances."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Spurs have a superior record (75.6% win rate) and home-court advantage. Knicks' Mitchell Robinson is listed as GTD with a finger injury, which may affect their interior defense. Vegas odds favor Spurs heavily (moneyline -185)."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "This is an NBA Finals game (Game 2) with San Antonio leading the series 1-0 after winning Game 1 (105-95). Vegas odds strongly favor the Spurs at -185 (implied probability ~65%), reflecting significant home-court advantage. The Spurs have a superior regular season record (62-20, 75.6% win rate) compared to the Knicks (53-29, 64.6%). San Antonio is at home at Frost Bank Center where they've been dominant. Victor Wembanyama is the key difference-maker for the Spurs. The Knicks have Mitchell Robinson listed as GTD (game-time decision) with a finger injury, which could impact their interior defense. While Jalen Brunson has been excellent in clutch situations for NY, the Spurs' overall team strength, home court, series momentum from Game 1, and Vegas line all point strongly toward a San Antonio victory. The Knicks showed resilience in Game 1 but ultimately couldn't overcome the Spurs' superiority. Adjusting slightly above Vegas implied odds due to home-court momentum in Finals setting and health concerns for NY."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-06-05 04:13:25",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "New York Knicks (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.75,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The San Antonio Spurs have a strong home record of 75.6% (62-20). The New York Knicks, while having a solid away record of 64.6% (53-29), are facing a tough opponent on the road. Additionally, the Vegas odds favor the Spurs with a -185 line, indicating a higher probability of a home win. Mitchell Robinson's injury for the Knicks also slightly weakens their lineup."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-19\n    Target Date: 2026-03-20\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. TSG Hoffenheim @ RB Leipzig                          | Scheduled    | Away: 57.7% (15-5-6) vs Home: 53.8% (14-5-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: TSG Hoffenheim (Away) @ RB Leipzig (Home)\n**News & Injury Report:**\n- [RB Leipzig vs Hoffenheim Prediction, Stats, H2H - 20 Mar 2026](https://www.forebet.com/en/football/matches/rb-leipzig-hoffenheim-2344137)\n  Snippet: | injured and suspended    Player  Reason  Until  X. Schlager (M)  Fitness  -  Y. Diomande (F)  Broken Nose Bone  -  K. Nedeljkovi\u0107 (D)  Back Problems  -  F. Ouedraogo (M)  Knee Injury  03/31/2026  P. Gul\u00e1csi (G)  INNER\\_KNEE\\_LIGAMENT\\_TEAR  -  V. G...\n- [RB Leipzig vs Hoffenheim - live score, predicted lineups and H2H stats](https://www.fotmob.com/matches/tsg-hoffenheim-vs-rb-leipzig/808m8nx)\n  Snippet: The current predicted lineups are:   \nRB Leipzig (4-3-3): Maarten Vandevoordt - Ridle Baku, Willi Orb\u00e1n, Castello Lukeba, David Raum - Ezechiel Banzuzi, Nicolas Seiwald, Christoph Baumgartner - Yan Diomande, R\u00f4mulo, Antonio Nusa.   \nHoffenheim (4-2-1...\n**Betting Odds:**\n- [RB Leipzig - TSG 1899 Hoffenheim prediction & tips 20.03.2026](https://www.transfermarkt.com/betting/tips/rb-leipzig-vs-1899-hoffenheim-prediction-20-03-2026/)\n  Snippet: Our betting tip for this intriguing Bundesliga encounter is a home victory for RB Leipzig, with odds of 1.97 available at 1win representing solid value for punters. Despite Hoffenheim's superior league position, Leipzig's impressive home record of ei...\n- [RB Leipzig vs TSG Hoffenheim Betting Pick | German Bundesliga](https://www.goonersguide.com/football-pick-58826-RB-Leipzig-vs-TSG-Hoffenheim.htm)\n  Snippet: RB Leipzig vs TSG Hoffenheim Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | RBL | DRAW | HOF |  | BET365 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-19 15:57:36"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-19 15:56:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing leans RB Leipzig at home (home win odds around ~1.97 implying ~50% before vig), consistent with a solid home-edge despite Hoffenheim's slightly better season win rate. Leipzig injuries/suspensions are a meaningful drag\u2014especially with Gulacsi reportedly out and other absences in midfield/attack\u2014which raises draw/away upset chances. Overall, Leipzig still projects as the single most likely outcome at home, but not at high confidence given the injury list and Hoffenheim's strong season results."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:56:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (~1.97) and strong Leipzig home form support a home edge, but signals are mixed. Hoffenheim show the superior season win rate overall and an excellent away record (57.7% away win rate vs Leipzig 53.8% home win rate). Leipzig have notable injury concerns (GK P\u00e9ter Gul\u00e1csi out with a serious knee ligament injury plus other fitness doubts), which reduces their reliability despite home advantage. Bookmaker pricing implies ~51% for a Leipzig win; balancing market signal with Hoffenheim's form and Leipzig's key absences yields a modest home-favouring probability but elevated draw/away chances. Confidence is medium due to conflicting indicators (market vs injuries/form)."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:56:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Leipzig's home advantage and betting odds (~1.97 for a home win) favor the home side. However, Leipzig are missing key GK P. Gul\u00e1csi (inner knee ligament tear), which dampens the defensive stability. Hoffenheim have strong away form (57.7% win rate) and can exploit any gaps, keeping the match competitive. Overall, the home edge is present but not overwhelming, yielding a balanced probability distribution."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:56:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "RB Leipzig are slightly favored by the betting market (odds ~1.97) despite Hoffenheim's superior season record. Leipzig maintain a strong home win percentage (53.8%), and their predicted lineup is close to full strength apart from a few notable absentees (especially the keeper Gul\u00e1csi and midfielder Schlager). Hoffenheim have a marginally better overall record and higher win rate, but Leipzig's home advantage and market pricing provide the edge. Draw risk remains moderate (~26%) given both teams' recent form and squad news."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:56:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Although Hoffenheim has a slightly better season record, RB Leipzig has a strong home performance history. Leipzig's key player, P. Gul\u00e1csi, is injured, but their remaining squad is capable. The betting odds favor a home win at 1.97, indicating the market's expectation for Leipzig to leverage their home advantage."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:57:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "RB Leipzig has a slightly better home record and the betting odds favor them (around 1.97 for home win). Hoffenheim's away record is decent, but Leipzig's home advantage and desire to climb the table should give them an edge. Injury report indicates several Leipzig players are out, but the impact is judged to be less significant than the home advantage. The predicted lineups show some changes. Overall, leaning towards home win but with a significant chance of a draw."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:57:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "RB Leipzig has strong home advantage (53.8% win rate at home) and betting markets favor them (odds around 1.97). Hoffenheim has better overall record (57.7% win rate) but is playing away. Leipzig's injury report shows several key absences including goalkeeper Gul\u00e1csi and midfielder Schlager, which reduces their strength. Hoffenheim's superior league position suggests they could challenge, but Leipzig's home form and market signals point to narrow home victory."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:57:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "RB Leipzig hosts TSG Hoffenheim in a closely matched encounter. Despite Hoffenheim's superior away record (57.7% win rate, 15-5-6) compared to Leipzig's home record (53.8%, 14-5-7), several factors favor the home side. Leipzig has a strong home fortress with 8 wins in 13 home matches. Key injuries affect Leipzig (Gul\u00e1csi, Schlager, Ouedraogo, Nedeljkovi\u0107 with various issues including knee ligament tear and back problems), but they maintain a solid predicted lineup with Vandevoordt in goal and attacking threats like Diomande, R\u00f4mulo, and Nusa. The betting market shows Leipzig as favorites with odds around 1.97 for a home win, suggesting approximately 50% implied probability. Hoffenheim's away form is impressive but playing at Leipzig's Red Bull Arena presents challenges. The injury situation and home advantage slightly tip the balance toward Leipzig, though this remains a competitive fixture. The draw probability is significant (27%) given both teams' quality and the tactical nature of Bundesliga matches. Leipzig's need for points at home and their historical advantage in this fixture supports a narrow home win prediction."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:57:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "TSG Hoffenheim (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig has a strong home record with a 53.8% win rate, and despite some key injuries (X. Schlager, Y. Diomande, K. Nedeljkovi\u0107, F. Ouedraogo, P. Gul\u00e1csi), they are still favored by the betting odds at 1.97 for a home win. TSG Hoffenheim, while having a better overall season record, is playing away and might struggle against a resilient Leipzig side."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

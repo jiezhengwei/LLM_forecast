@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-30",
+        "target_date_et": "2026-08-31",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882901\nMatchup: Getafe (away) @ Osasuna (home)\nHome: Osasuna\nAway: Getafe\nKickoff UTC: 2026-08-31T17:30Z\nKickoff ET: 2026-08-31 13:30 EDT\nVenue: El Sadar\nRound: unavailable\nHome form: WDLLL\nAway form: LWWLW\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Osasuna +120 (open +115); Draw +195 (open +220); Getafe +290 (open +265)\nTavily context:\n  - Title: Preview: Osasuna vs Getafe - prediction, team news, lineups\n    Content: The head-to-head record between these two clubs is evenly balanced, with two wins apiece and a draw across the last five meetings - though Getafe claimed the most recent encounter, a 1-0 win at the Coliseum.\n\nOsasuna La Liga form:\n\n DW\n\nGetafe La Liga form:\n\n LW\n\nGetafe form (all competitions):\n\n LWWL\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081437126-1-6a92ff59bbeed424933198.jpg)\n\n© Imago / Alterphotos ...\n    URL: https://www.sportsmole.co.uk/football/osasuna/preview/osasuna-vs-getafe-prediction-team-news-lineups_604021.html\n  - Title: Osasuna vs Getafe Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: 23 Aug La Liga\n\nGetafe 1-0 Racing Club\n\nConfirmed Lineups\n\n20 Aug Europa Conference League\n\nGetafe 3-1 Partizan Belgrade\n\nConfirmed Lineups\n\n15 Aug La Liga\n\nAlavés 3-0 Getafe\n\nConfirmed Lineups\n\n23 May La Liga\n\nGetafe 1-0 Osasuna\n\nConfirmed Lineups\n\n17 May La Liga\n\nElche 1-0 Getafe\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nOsasuna  Injury Table\n\nType Name Info\n\nIker Munoz Yellow cards\n\nPosition: Midfielder Matches: 2 Goals: - Assists: - Expected return: -\n\nRockson Yeboah Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nValentin Rosier Hamstring ...\n    URL: https://www.sportsgambler.com/betting-tips/football/osasuna-vs-getafe-prediction-lineups-odds-2026-08-31\n  - Title: Prediction Osasuna vs Getafe: analysis, odds and betting tips\n    Content: 1X2 betting odds. The odds are: Osasuna to win 2.20, draw 2.90, Getafe to win 3.90. The odds are Over 2.5 at 3.20 and Under 2.5 at 1.36. The\n    URL: https://betmines.com/match-preview/osasuna-vs-getafe-prediction-match-preview-and-analysis-la-liga-31-08-2026\n\nGame ID: 2\nSource event_id: 401882903\nMatchup: Rayo Vallecano (away) @ Barcelona (home)\nHome: Barcelona\nAway: Rayo Vallecano\nKickoff UTC: 2026-08-31T19:30Z\nKickoff ET: 2026-08-31 15:30 EDT\nVenue: Spotify Camp Nou\nRound: unavailable\nHome form: WWWLW\nAway form: DLLWW\nHome record: 2-0-0\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Barcelona -650 (open -450); Draw +800 (open +550); Rayo Vallecano +1500 (open +1000)\nTavily context:\n  - Title: Barcelona vs Rayo Vallecano predicted lineup · 31 Aug 2026\n    Content: CM\n\nRW\n\nST\n\nLW\n\nNo predictions yet. Be the first below.\n\nConfidence rings appear once 20fans have predicted.\n\n1 prediction\n\nPredict Barcelona's XI\n\n→No predictions yet\n\nPredict Rayo Vallecano's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nBarcelona\n\n8\n\n DEFFortCoach's decisionOut\n MIDCasadóCoach's decisionOut\n MIDGaviKnee InjuryOut\n FWDBardghjiKnee InjuryOut\n MIDJongKnee InjuryOut\n MIDRodriLacking Match FitnessOut\n DEFBaldeCoach's decisionOut\n FWDBisiwuInactiveOut\n\nRayo Vallecano\n\n4 ...\n    URL: https://starting11.com/fixtures/barcelona-vs-rayo-vallecano\n  - Title: Barcelona vs Rayo Vallecano Prediction, Betting Tips, Lineups ...\n    Content: #### Previous Rayo Vallecano Lineups\n\n21 Aug La Liga\n\nRayo Vallecano 1-1 Alavés\n\nConfirmed Lineups\n\n16 Aug La Liga\n\nSevilla 2-1 Rayo Vallecano\n\nConfirmed Lineups\n\n28 May Europa Conference League\n\nCrystal Palace 1-0 Rayo Vallecano\n\nConfirmed Lineups\n\n24 May La Liga\n\nAlavés 1-2 Rayo Vallecano\n\nConfirmed Lineups\n\n17 May La Liga\n\nRayo Vallecano 2-0 Villarreal\n\nConfirmed Lineups\n\n14 May La Liga\n\nValencia 1-1 Rayo Vallecano\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBarcelona  Injury Table\n\nType Name Info\n\nGavi Knee ...\n    URL: https://www.sportsgambler.com/betting-tips/football/barcelona-vs-rayo-vallecano-prediction-lineups-odds-2026-08-31\n  - Title: FC Barcelona vs Rayo Vallecano Predictions, Picks & Odds\n    Content: Rayo Vallecano occupy 13th place after a mixed opening to the season. A 2-1 defeat to Sevilla on matchday one was followed by a 1-1 draw against Alaves, where goalkeeper Augusto Batalla was stretchered off with a shin contusion. His availability remains uncertain. Despite reaching the Conference League final last term, Rayo's recent form reads one win in five across all competitions. Historically, they have managed just three victories in 23 meetings with Barcelona.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/fc-barcelona-vs-rayo-vallecano-predictions-picks-odds-31-08-2026\n  - Title: Barcelona vs Rayo Vallecano in Soccer Tipsters Competition\n    Content: |  |  |\n --- |\n| Betting Type: | Pre-Match 1X2Pre-Match Asian HandicapPre-Match Over / UnderPre-Match Double ChanceIn-Play 1X2In-Play Asian HandicapIn-Play Over / UnderIn-Play Double Chance |\n| Pick: | BarcelonaDrawRayo Vallecano  BarcelonaRayo Vallecano-4-3.75-3.5-3.25-3-2.75-2.5-2.25-2-1.75-1.5-1.25-1-0.75-0.5-0.250+0.25+0.5+0.75+1+1.25+1.5+1.75+2+2.25+2.5+2.75+3+3.25+3.5+3.75+4  OverUnder0.50.7511.251.51.7522.252.52.7533.253.53.754  Home or DrawHome or AwayAway or Draw |\n| Stake: | $1,000$6,000$11,000$16,000$21,000$26,000$31,000$36,000$41,000$46,000 |\n| Barcelona's goals: | < ≤ = ≥ > | ...\n    URL: https://www.soccerpunter.com/competition/Spain/La-Liga/bet_match_4739561_FC_Barcelona_vs_Rayo_Vallecano_2026-08-31\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882901\nMatchup: Getafe (away) @ Osasuna (home)\nHome: Osasuna\nAway: Getafe\nKickoff UTC: 2026-08-31T17:30Z\nKickoff ET: 2026-08-31 13:30 EDT\nVenue: El Sadar\nRound: unavailable\nHome form: WDLLL\nAway form: LWWLW\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Osasuna +120 (open +115); Draw +195 (open +220); Getafe +290 (open +265)\nTavily context:\n  - Title: Preview: Osasuna vs Getafe - prediction, team news, lineups\n    Content: The head-to-head record between these two clubs is evenly balanced, with two wins apiece and a draw across the last five meetings - though Getafe claimed the most recent encounter, a 1-0 win at the Coliseum.\n\nOsasuna La Liga form:\n\n DW\n\nGetafe La Liga form:\n\n LW\n\nGetafe form (all competitions):\n\n LWWL\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081437126-1-6a92ff59bbeed424933198.jpg)\n\n© Imago / Alterphotos ...\n    URL: https://www.sportsmole.co.uk/football/osasuna/preview/osasuna-vs-getafe-prediction-team-news-lineups_604021.html\n  - Title: Osasuna vs Getafe Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: 23 Aug La Liga\n\nGetafe 1-0 Racing Club\n\nConfirmed Lineups\n\n20 Aug Europa Conference League\n\nGetafe 3-1 Partizan Belgrade\n\nConfirmed Lineups\n\n15 Aug La Liga\n\nAlavés 3-0 Getafe\n\nConfirmed Lineups\n\n23 May La Liga\n\nGetafe 1-0 Osasuna\n\nConfirmed Lineups\n\n17 May La Liga\n\nElche 1-0 Getafe\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nOsasuna  Injury Table\n\nType Name Info\n\nIker Munoz Yellow cards\n\nPosition: Midfielder Matches: 2 Goals: - Assists: - Expected return: -\n\nRockson Yeboah Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nValentin Rosier Hamstring ...\n    URL: https://www.sportsgambler.com/betting-tips/football/osasuna-vs-getafe-prediction-lineups-odds-2026-08-31\n  - Title: Prediction Osasuna vs Getafe: analysis, odds and betting tips\n    Content: 1X2 betting odds. The odds are: Osasuna to win 2.20, draw 2.90, Getafe to win 3.90. The odds are Over 2.5 at 3.20 and Under 2.5 at 1.36. The\n    URL: https://betmines.com/match-preview/osasuna-vs-getafe-prediction-match-preview-and-analysis-la-liga-31-08-2026\n\nGame ID: 2\nSource event_id: 401882903\nMatchup: Rayo Vallecano (away) @ Barcelona (home)\nHome: Barcelona\nAway: Rayo Vallecano\nKickoff UTC: 2026-08-31T19:30Z\nKickoff ET: 2026-08-31 15:30 EDT\nVenue: Spotify Camp Nou\nRound: unavailable\nHome form: WWWLW\nAway form: DLLWW\nHome record: 2-0-0\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Barcelona -650 (open -450); Draw +800 (open +550); Rayo Vallecano +1500 (open +1000)\nTavily context:\n  - Title: Barcelona vs Rayo Vallecano predicted lineup · 31 Aug 2026\n    Content: CM\n\nRW\n\nST\n\nLW\n\nNo predictions yet. Be the first below.\n\nConfidence rings appear once 20fans have predicted.\n\n1 prediction\n\nPredict Barcelona's XI\n\n→No predictions yet\n\nPredict Rayo Vallecano's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nBarcelona\n\n8\n\n DEFFortCoach's decisionOut\n MIDCasadóCoach's decisionOut\n MIDGaviKnee InjuryOut\n FWDBardghjiKnee InjuryOut\n MIDJongKnee InjuryOut\n MIDRodriLacking Match FitnessOut\n DEFBaldeCoach's decisionOut\n FWDBisiwuInactiveOut\n\nRayo Vallecano\n\n4 ...\n    URL: https://starting11.com/fixtures/barcelona-vs-rayo-vallecano\n  - Title: Barcelona vs Rayo Vallecano Prediction, Betting Tips, Lineups ...\n    Content: #### Previous Rayo Vallecano Lineups\n\n21 Aug La Liga\n\nRayo Vallecano 1-1 Alavés\n\nConfirmed Lineups\n\n16 Aug La Liga\n\nSevilla 2-1 Rayo Vallecano\n\nConfirmed Lineups\n\n28 May Europa Conference League\n\nCrystal Palace 1-0 Rayo Vallecano\n\nConfirmed Lineups\n\n24 May La Liga\n\nAlavés 1-2 Rayo Vallecano\n\nConfirmed Lineups\n\n17 May La Liga\n\nRayo Vallecano 2-0 Villarreal\n\nConfirmed Lineups\n\n14 May La Liga\n\nValencia 1-1 Rayo Vallecano\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBarcelona  Injury Table\n\nType Name Info\n\nGavi Knee ...\n    URL: https://www.sportsgambler.com/betting-tips/football/barcelona-vs-rayo-vallecano-prediction-lineups-odds-2026-08-31\n  - Title: FC Barcelona vs Rayo Vallecano Predictions, Picks & Odds\n    Content: Rayo Vallecano occupy 13th place after a mixed opening to the season. A 2-1 defeat to Sevilla on matchday one was followed by a 1-1 draw against Alaves, where goalkeeper Augusto Batalla was stretchered off with a shin contusion. His availability remains uncertain. Despite reaching the Conference League final last term, Rayo's recent form reads one win in five across all competitions. Historically, they have managed just three victories in 23 meetings with Barcelona.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/fc-barcelona-vs-rayo-vallecano-predictions-picks-odds-31-08-2026\n  - Title: Barcelona vs Rayo Vallecano in Soccer Tipsters Competition\n    Content: |  |  |\n --- |\n| Betting Type: | Pre-Match 1X2Pre-Match Asian HandicapPre-Match Over / UnderPre-Match Double ChanceIn-Play 1X2In-Play Asian HandicapIn-Play Over / UnderIn-Play Double Chance |\n| Pick: | BarcelonaDrawRayo Vallecano  BarcelonaRayo Vallecano-4-3.75-3.5-3.25-3-2.75-2.5-2.25-2-1.75-1.5-1.25-1-0.75-0.5-0.250+0.25+0.5+0.75+1+1.25+1.5+1.75+2+2.25+2.5+2.75+3+3.25+3.5+3.75+4  OverUnder0.50.7511.251.51.7522.252.52.7533.253.53.754  Home or DrawHome or AwayAway or Draw |\n| Stake: | $1,000$6,000$11,000$16,000$21,000$26,000$31,000$36,000$41,000$46,000 |\n| Barcelona's goals: | < ≤ = ≥ > | ...\n    URL: https://www.soccerpunter.com/competition/Spain/La-Liga/bet_match_4739561_FC_Barcelona_vs_Rayo_Vallecano_2026-08-31\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882901",
+                        "date_utc": "2026-08-31T17:30Z",
+                        "kickoff_et": "2026-08-31 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Osasuna",
+                        "away": "Getafe",
+                        "home_id": "97",
+                        "away_id": "2922",
+                        "matchup": "Getafe (away) @ Osasuna (home)",
+                        "venue": "El Sadar",
+                        "city": "Pamplona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WDLLL",
+                        "form_away": "LWWLW",
+                        "record_home": "1-1-0",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+115",
+                            "home_current": "+120",
+                            "draw_open": "+220",
+                            "draw_current": "+195",
+                            "away_open": "+265",
+                            "away_current": "+290"
+                        },
+                        "odds_text": "DraftKings: Osasuna +120 (open +115); Draw +195 (open +220); Getafe +290 (open +265)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882903",
+                        "date_utc": "2026-08-31T19:30Z",
+                        "kickoff_et": "2026-08-31 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Barcelona",
+                        "away": "Rayo Vallecano",
+                        "home_id": "83",
+                        "away_id": "101",
+                        "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                        "venue": "Spotify Camp Nou",
+                        "city": "Barcelona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWWLW",
+                        "form_away": "DLLWW",
+                        "record_home": "2-0-0",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-450",
+                            "home_current": "-650",
+                            "draw_open": "+550",
+                            "draw_current": "+800",
+                            "away_open": "+1000",
+                            "away_current": "+1500"
+                        },
+                        "odds_text": "Provider unavailable: Barcelona -650 (open -450); Draw +800 (open +550); Rayo Vallecano +1500 (open +1000)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-30T09:59:04.647072-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:49:57.394834-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is the home favorite with DraftKings odds of +120, implying a 43-44% probability of winning once adjusted for margin. Getafe has shown mixed form and generally struggles to secure away wins, making a narrow home victory the most likely outcome at El Sadar.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.83,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a heavy favorite with -650 odds, reflecting their strong home form at Spotify Camp Nou and Rayo Vallecano's historical struggles against them. Barcelona is expected to comfortably secure all three points.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-30T09:50:11.575456-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Osasuna enters the match as slight favorites according to the oddsmakers (+120), benefiting from home advantage. While the head-to-head record is closely contested, Getafe's inconsistent form tilts the balance slightly toward a home victory.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored at -650 against a Rayo Vallecano side that has struggled for consistency early in the season. With massive advantages in both squad depth and home-field dominance, Barcelona is expected to comfortably win in regulation.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-30T09:50:29.977518-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is undefeated in their first two league matches and benefits from playing at their home ground, El Sadar. The betting odds favor Osasuna, although the head-to-head record is evenly split, suggesting a competitive match. Getafe's mixed start to the season gives the home side a slight edge in what is expected to be a tight contest.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.84,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona has started the season perfectly with two wins and are playing at Camp Nou, where they are historically dominant. Rayo Vallecano has had a slow start with a draw and a loss. The vast difference in team quality, current form, and the lopsided betting odds all point towards a convincing victory for Barcelona.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:50:43.190862-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna, playing at home, has a slightly better recent La Liga form (DW) and home record (1-1-0) compared to Getafe's away record (1-0-1). While the head-to-head record is balanced, the odds suggest Osasuna has an edge. However, Getafe won their last encounter, indicating they can compete, which tempers the confidence.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.83,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a strong favorite, playing at home with a perfect 2-0-0 home record and excellent overall form (WWWLW). Rayo Vallecano has a poor historical record against Barcelona (3 wins in 23 meetings) and their current form is struggling (DLLWW overall, 0-1-1 away record). Despite some injuries to Barcelona, their squad depth and home advantage are expected to secure a comfortable victory, as reflected by the heavily skewed odds.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:51:54.545089-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.323,
+                    "away_win_probability": 0.244,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are slight home favorites at El Sadar, with the market implying a narrow edge and a relatively high draw probability in a likely low-scoring matchup. Getafe have shown mixed early form and remain dangerous, but home advantage and steadier league start tilt the forecast toward Osasuna.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.833,
+                    "draw_probability": 0.107,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming home favorites, have opened the league with two wins, and the odds have moved further toward them. Rayo have struggled away and may have goalkeeper availability concerns, so Barcelona are strongly favored despite some squad absences.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:52:02.190545-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are favored at El Sadar by the market, with odds implying a modest home edge. Getafe have had the better recent results but remain less trusted away, and the low total-goals outlook raises draw risk. Overall, Osasuna's home advantage narrowly outweighs Getafe's form.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.83,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming home favorites, have opened with two wins, and historically dominate this matchup. Rayo have taken only one point from two league matches and may have goalkeeper availability concerns. Even with some Barcelona absences, the gap in squad quality and home advantage make a Barcelona win the clear most likely result.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-30T09:52:28.242776-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43298,
+                    "draw_probability": 0.322858,
+                    "away_win_probability": 0.244162,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Osasuna a modest home favorite at El Sadar. Recent H2H is fairly even, but home advantage plus Getafe’s volatility early season (mixed results) nudges this toward a narrow Osasuna 90-minute win over draw/away outcomes.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.833111,
+                    "draw_probability": 0.106809,
+                    "away_win_probability": 0.06008,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are a heavy home favorite by the 1X2 market and historically dominate this matchup. Even allowing for squad absences, the baseline talent gap and home setting point strongly to a Barcelona win in regulation time, with draw and Rayo win comparatively unlikely.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-30T09:52:41.280035-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market and previews slightly favor Osasuna at home; despite mixed recent form (WDLLL) they have the home advantage and balanced H2H with Getafe. Getafe have shown better recent all-competitions form but are the underdog on the road and their La Liga record is patchy. Odds and squad/injury context support a narrow Osasuna win being most likely, with draws and away wins still plausible.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.87,
+                    "draw_probability": 0.09,
+                    "away_win_probability": 0.04,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites at home with strong early-season form and a dominant record versus Rayo; market odds imply a very high probability of a home win. Injury absences dampen confidence slightly but not enough to overturn the gulf in quality and home advantage, so a Barcelona victory in 90 minutes is the clear most likely outcome.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-30T09:52:53.885803-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Head-to-head is fairly balanced, but Osasuna's solid home form and current performance favor them; Getafe's away form is middling, supporting a home win projection.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's strong home form and quality edge over a Rayo side that tends to struggle against top opponents suggest a regulation-time win for Barcelona.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-30T09:52:56.560203-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna have a slight edge at home, with recent form showing a draw and a win in La Liga, and a solid home record. Getafe's away form is mixed, and while the head-to-head is balanced, Osasuna's home advantage and slightly stronger odds make them favorites. Injuries for Osasuna are not critical, and Getafe's recent Conference League involvement could add fatigue. The draw is a significant risk given both teams' tendency for close matches, but Osasuna are more likely to edge it.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming favorites at home, with a perfect home record and strong recent form. Rayo Vallecano have struggled in their opening matches and historically perform poorly against Barcelona, with only three wins in 23 meetings. Despite some injuries for Barcelona, their squad depth and attacking power should be enough to secure a comfortable win. The odds and historical data strongly support a Barcelona victory.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-30T09:52:59.563629-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a slightly better home form and favorable odds. Despite Getafe's recent win against Osasuna, their overall form is inconsistent.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's strong home form and significant odds advantage make them clear favorites against Rayo Vallecano, who have struggled historically against Barcelona.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-30T09:53:08.735211-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Osasuna are modest favorites at El Sadar per market odds (~+120), but the head-to-head record is evenly balanced and Getafe have won two of their last three, including a 1-0 win in the most recent meeting. Getafe also carry extra fixture load from the Conference League. A tight, low-scoring match is likely, keeping draw probability elevated.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.83,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites (-650) at Camp Nou with a perfect start to the season. Rayo have only three wins in 23 all-time meetings against Barcelona, are winless in recent league play, and may be without first-choice keeper Batalla. Despite some Barcelona absences (Gavi, de Jong, Balde), the quality gap is substantial.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-30T09:53:15.433848-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Osasuna",
+                    "confidence": "low",
+                    "reasoning": "Osasuna are favored at El Sadar where they are traditionally strong, with odds around +120. Getafe won the most recent meeting but head-to-head is balanced. Home advantage tips this toward Osasuna, though Getafe are defensively solid making a draw plausible.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "Barcelona",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites at -650, perfect 2-0-0 home record, and hold a dominant historical edge with Rayo winning just 3 of 23 meetings. Rayo's poor recent form (one win in five) and potential goalkeeper issue further favor Barcelona despite some Barca injuries.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-30T09:53:27.429385-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Osasuna are slight favorites at home per the odds (around +120), reflecting their home advantage at El Sadar. The head-to-head record is evenly balanced with Getafe winning the most recent encounter. Osasuna's La Liga form is mixed (W-D in recent Liga games) while Getafe have shown some resilience (L-W in Liga). The odds imply roughly 45% for Osasuna, 34% draw, and 25% Getafe. Adjusting slightly for the balanced H2H and Getafe's recent competitive form, I give Osasuna a modest edge at home. Low confidence given the closeness of the contest.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are massive favorites at home at Spotify Camp Nou with odds around -650, implying roughly 87% win probability. Despite multiple injury absences (Gavi, Frenkie de Jong, Balde, Casado, Rodri among others), Barcelona's squad depth and home form (4W-1L start) far outclasses a Rayo Vallecano side with just one win in five across all competitions and their own injury concerns (goalkeeper Batalla's availability uncertain). Historically Rayo have only three wins in 23 meetings with Barcelona. I shade slightly below the implied odds to account for Barcelona's injury list, but a home win remains highly likely.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-30T09:53:40.028388-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Osasuna hosts Getafe at El Sadar with both teams showing mixed early-season form. Osasuna's record stands at 1-1-0 with recent form of WDLLL, while Getafe is 1-0-1 with LWWLW form. The head-to-head record is evenly balanced (2 wins each, 1 draw in last 5), though Getafe won the most recent meeting 1-0. The betting odds favor Osasuna at home (+120) over Getafe (+290), suggesting the home advantage is valued. Given the tight historical matchup and both teams' inconsistent form, this projects as a close contest. Osasuna's home venue provides a slight edge, but Getafe's recent win and their ability to grind out results makes this a low-confidence pick for the home side.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Barcelona hosts Rayo Vallecano at Camp Nou with a strong 2-0-0 record and excellent form (WWWLW). Rayo Vallecano sits 13th with 0-1-1 record and mixed form (DLLWW). The odds heavily favor Barcelona at -650 versus Rayo at +1500, reflecting the significant gulf in quality. Barcelona has dominated this fixture historically, with Rayo managing just 3 wins in 23 meetings. While Barcelona has several injury concerns (Gavi, Barde, Fort, Casado, De Jong, Rodri), their squad depth remains superior. Rayo's goalkeeper Batalla's availability is uncertain after a shin injury. Rayo's recent form shows just one win in their last five across all competitions. Despite reaching the Conference League final last season, Rayo lacks the firepower to trouble Barcelona at home. This is a strong home win projection.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-30T09:53:45.545970-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna playing at home with recent form showing W-D against Getafe's L-W. DraftKings odds favor Osasuna (+120). However, Getafe won their most recent encounter 1-0. Head-to-head record is balanced (2-2-1 in last 5). Osasuna's home advantage and current odds suggest slight edge, but moderately uncertain given mixed recent form and Getafe's capability.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.79,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona significantly favored with strong home form (W-W-W-L-W) versus Rayo's inconsistent away record (D-L-L-W-W). Massive odds disparity (-650 Barcelona vs +1500 Rayo) reflects Barcelona's dominance. Rayo has only 3 wins in 23 meetings with Barcelona historically. Barcelona's injury concerns (Gavi, Casadó, Jong, Rodri) are notable but insufficient to overcome the quality gap and home advantage. High confidence in Barcelona victory.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-30T09:54:57.447607-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.323,
+                    "away_win_probability": 0.244,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are priced as home favorites, but Getafe's solid away form and recent head-to-head win keep the match close. Current odds imply around a 43% home win, with the draw next most likely.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.833,
+                    "draw_probability": 0.107,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming favorites at Camp Nou. Despite squad absences, Rayo Vallecano's poor recent form and historical struggles at Barcelona make a home win highly probable.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-30T09:54:59.878356-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna have home advantage and slightly better odds, but Getafe have won the last meeting. Both teams are inconsistent, so a home win is slightly favored.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are strong at home with a good record, while Rayo Vallecano have poor away form and multiple injuries. The odds heavily favor Barcelona.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-30T09:55:21.200160-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is favored at home with odds around +120, and despite mixed recent form, they hold a solid home record. Getafe has been decent away but the bookmakers and home advantage lean towards Osasuna in what is expected to be a tight, low-scoring affair.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored at home (-650) and has a perfect 2-0-0 home record so far this season. Rayo Vallecano has struggled historically against Barcelona and comes in with a poor overall recent form, making a home win highly probable.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-30T09:55:31.461050-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a slight edge in the recent form and home advantage, although Getafe's away form is also strong. The head-to-head record is balanced, but Osasuna's recent performances suggest they have a good chance of winning at home.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a strong favorite at home, with a solid recent form and a significant historical advantage over Rayo Vallecano. Despite some key injuries, Barcelona's overall quality and home advantage make them likely to secure a win.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-30T09:56:35.342705-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna enters as a slight home favorite (+120) with venue advantage at El Sadar. Getafe's recent attacking form and Osasuna's defensive injury concerns (Rosier) suggest a competitive match, but home momentum and early-season structure make a narrow Osasuna victory the most probable regulation-time result.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a massive favorite (-650) with a perfect start and historically dominant home record. Rayo Vallecano is struggling defensively, missing their starting goalkeeper, and has a poor head-to-head record at Camp Nou. Squad depth and market odds strongly point to a straightforward Barcelona win within 90 minutes.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-30T09:57:07.762655-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna holds a marginal home advantage at El Sadar with betting odds slightly favoring them over Getafe. While Osasuna's form is inconsistent, their defensive structure under home conditions aligns with Getafe's ability to concede goals. Head-to-head history is evenly balanced, making a narrow home win the most probable outcome based on market pricing and venue factors.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Despite Barcelona managing several injuries and suspensions, their historical dominance over Rayo Vallecano (only three victories for Rayo in 23 meetings) and superior home form (WWWLW) make them strong favorites. The betting odds heavily reflect this disparity (-650), suggesting a likely comfortable regulation-time victory for the home team.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-30T09:58:31.375122-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are slight home favorites with an unbeaten start at El Sadar (1-1-0) and the backing of their crowd, but Getafe arrive with decent away form and having won the most recent head-to-head 1-0. Osasuna are hampered by suspensions and injuries (Munoz out, Rosier hamstring), which compresses the margin and makes a draw plausible. Still, home structure and form edge the prediction toward a narrow Osasuna victory.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona have opened with two league wins and remain dominant at Spotify Camp Nou despite a lengthy injury list. Rayo Vallecano are winless through two matches, struggling for rhythm, and historically poor against Barcelona. The gulf in squad quality and home-field advantage outweigh Barcelona's absentees, making a home win the highly probable regulation-time outcome.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-30T09:58:59.719992-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna holds a slight edge at El Sadar with an unbeaten start (1-1-0) and home advantage, while Getafe arrives with mixed away form (1-0-1) and potential fatigue from midweek European fixtures. The odds (+120 home) reflect a near coin-flip scenario where Osasuna's defensive organization and home support should narrowly prevail in a low-scoring contest, though Getafe's recent head-to-head victory adds uncertainty.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enters with a perfect 2-0-0 record and overwhelming market support (-650 odds) at Spotify Camp Nou. Despite significant injury absences including Gavi and De Jong, the squad depth remains vastly superior to Rayo Vallecano, who are winless away (0-1-1) and have claimed only three victories in 23 historical meetings against Barcelona. Rayo's uncertain goalkeeper situation further diminishes their capacity to resist Barcelona's attack.",
+                    "event_id": "401882903"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-30T09:59:04.640706-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Osasuna (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a slight edge in home form and the head-to-head record is evenly balanced, but Getafe has been performing better recently.",
+                    "event_id": "401882901"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Rayo Vallecano (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona has a strong home record and is a heavy favorite against Rayo Vallecano, who has struggled historically against Barcelona.",
+                    "event_id": "401882903"
+                }
+            ]
+        }
+    ]
+}

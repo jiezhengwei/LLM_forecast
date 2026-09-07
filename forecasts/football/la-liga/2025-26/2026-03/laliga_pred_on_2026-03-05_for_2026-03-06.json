@@ -1,0 +1,142 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-05\n    Target Date: 2026-03-06\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule]\n    ----------------------------------------------------------------------------------------\nLa Liga Matchup                                              | Status                   \n----------------------------------------------------------------------------------------\n1. Real Madrid @ Celta Vigo                                  | Scheduled                \n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Real Madrid (Away) @ Celta Vigo (Home)\n- [Celta Vigo vs Real Madrid Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/celta-vigo-vs-real-madrid-prediction-lineups-odds-2026-03-06/)\n  Snippet: Type Name Info\n\nBorja Iglesias Yellow cards \n\nPosition: Forward Matches: 23 Goals: 10 Assists: 2 Expected return: 2026-03-06\n\nHugo Sotelo Ankle \n\nPosition: Midfielder Matches: 14 Goals: - Assists: 1 E...\n- [Celta Vigo vs Real Madrid prediction 06.03.2026 | La Liga - MightyTips](https://www.mightytips.com/football-predictions/celta-vigo-vs-real-madrid-prediction-06-03-2026/)\n  Snippet: |  | Regular Season | P | W | D | L | G - A | GD | Pts |\n ---  ---  ---  --- \n| 1 | FC Barcelona | 26 | 21 | 1 | 4 | 71 - 26 | +45 | 64 |\n| 2 | Real Madrid | 26 | 19 | 3 | 4 | 54 - 22 | +32 | 60 |\n| 3...\n- [Real Madrid grapple with injury crisis ahead of Celta Vigo clash](https://www.besoccer.com/new/real-madrid-grapple-with-injury-crisis-ahead-of-celta-vigo-clash-1397399)\n  Snippet: Pending the results of the tests, Rodrygo will be out this Friday against Celta Vigo, along with seven other players from the Madrid squad.\n\nDean Huijsen, Alvaro Carreras and Argentine Franco Mastantu...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-05\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-05 18:39:03"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-05 18:38:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid have a clear overall quality edge and are 2nd in the table (19-3-4 after 26), but reports indicate an injury crisis with Rodrygo and several others expected out, which lowers their win probability and raises draw/upset chances. Celta\u2019s home advantage at Balaidos and likely availability of Borja Iglesias (return expected 2026-03-06) add to their scoring threat, though Madrid should still control most game states if their core starters remain fit."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid are the stronger side in the table (2nd, high goals-for, superior squad depth) and remain favorites despite an injury crisis that reportedly threatens Rodrygo and several other first-team players. Injuries reduce Real's attacking depth and increase variance, boosting Celta's chances. Celta benefit from home advantage and have a reliable goalscorer in Borja Iglesias; they may also be missing midfielder Hugo Sotelo (ankle) which slightly offsets their edge. Balancing Real's overall quality, motivation in the title race, and likely weakened lineup, I estimate a clear but not overwhelming edge to an away win. Draw is a plausible result given squad uncertainty and Celta's home form."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid face an injury crisis (Rodrygo out and several others) ahead of the trip, weakening their attack. Celta Vigo have home advantage and a returning Hugo Sotelo could bolster their attack, yet Real Madrid remain the stronger side on paper. Overall, away win is favored but with notable risk of a draw or home upset due to injuries."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "While Real Madrid is a stronger team overall, their significant injures, including Rodrygo and potentially seven other major players, could hamper their typical play. Celta Vigo, being at home and having most players available including key forward Borja Iglesias, might leverage the home advantage and Madrid's weakened lineup to secure at least a point."
+                }
+            ],
+            "model_name": "GPT-4 Turbo"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite playing away, Real Madrid has a stronger squad and is currently second in the league. However, they face an injury crisis with several key players, including Rodrygo, unavailable. Celta Vigo, playing at home, will look to capitalize on these absences but lacks the depth in comparison, reflected in their lower league standing."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid is the stronger team, currently ranked higher in La Liga (2nd). However, they have a significant injury crisis, including Rodrygo. Celta Vigo has Borja Iglesias available. Despite this, Real Madrid's overall quality suggests they are still favored, but with a reduced probability due to the injuries. The home-court advantage for Celta Vigo slightly increases their chances of a draw or win."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:38:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid (2nd, 60 pts) is significantly stronger than Celta Vigo (mid-table, exact position not provided but implied lower). Despite Real Madrid's reported injury crisis (8 players out, including Rodrygo), their squad depth and superior quality should prevail. Celta Vigo has Borja Iglesias available (10 goals) but Hugo Sotelo is out. Real Madrid's away form and goal difference (+32 vs. Celta's implied lower GD) support an away win, though injuries and Celta's home advantage increase draw probability."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "model_name": "Claude 3.5",
+            "error": "Claude failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CYjnjeHje7kAhpn2EjJFM'}"
+        },
+        {
+            "forecast_timestamp": "2026-03-05 18:39:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid, despite their injury crisis, still has a strong squad and is currently second in the league table. Celta Vigo, on the other hand, is missing key players like Hugo Sotelo due to injuries. The away team's form and overall strength give them a significant edge."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-17\n    Target Date: 2026-05-18\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/18 - 8:30 PM EDT] San Antonio Spurs @ Oklahoma City Thunder | Away: 75.6% (62-20) vs Home: 78.0% (64-18)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: San Antonio Spurs (Away) @ Oklahoma City Thunder (Home)\n**News & Injury Report:**\n- [Spurs vs. Thunder (May 18, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401873197)\n  Snippet: # San Antonio Spurs @ Oklahoma City Thunder\n\nSA\n\nNBC\n\n+1\n\nOKC\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 5/15 | @MIN | W139-109 | -5.5 | 219.5 |\n| 5/12 | vsMIN | W126-97 | -10.5 | 218.5 |\n| 5/10 | @MIN | L114-109 | -5.5 | 218.5 |\n| 5/08 | @MIN | W115-108 | -5.5 | 216.5 |\n| 5/06 | vsMIN | W133-95 | -10.5 | 217.5 |\n\n## Betting 101\n\n## Matchup Predictor\n\nSan Antonio Spurs\nOklahoma City Thunder\n\nSA\n\nOKC\n\nAccording to ESPN Analytics\n\n## Injury Report\n\n| Name | Status |\n --- |\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | | ...\n- [Spurs vs Thunder Game Overview, Stats, Injuries, Records - NBA Game on May 18, 2026](https://www.covers.com/sport/basketball/nba/matchup/380227)\n  Snippet: ### More Stats\n\nMore Stats\n\n| SA logoOFFENSE | Off. Rank | Stat | Def. Rank | DEFENSEOK logo |\n| 47.0 | (2) | REB | (20) | 44.6 |\n| 11.4 | (14) | OREB | (24) | 11.8 |\n| 35.6 | (14) | DREB | (3) | 32.7 |\n| 27.8 | (9) | AST | (5) | 24.8 |\n| 13.5 | (4) | TO | (2) | 16.8 |\n| 2.1 | (5) | AST/TO | (2) | 1.5 |\n| 7.6 | (5) | STL | (2) | 7.4 |\n| 5.8 | (11) | BLK | (6) | 4.2 |\n\nLeague Average\n\n| League Avg. |\n| 43.7 |\n| 11.4 |\n| 32.3 |\n| 26.5 |\n| 14.5 |\n| 1.8 |\n| 8.4 |\n| 4.9 |\n\n### Points\n\nPoints ...\n**Vegas Odds & Lines:**\n- [Spurs vs Thunder Odds & Betting Lines For May 18, 2026 - NBA](https://www.covers.com/sport/basketball/nba/matchup/380227/odds)\n  Snippet: Oklahoma City  1st West64-17\n\n Stats\n Picks\n Odds\n\n# San Antonio vs Oklahoma City   Odds\n\n## Game Odds\n\nGame Odds San Antonio Spurs vs. Oklahoma City Thunder\n\n| Spread | Total | Moneyline |\n| San Antonio  San Antonio Spurs logo  San Antonio | +6.5 -110  William Hill logo | o217.5 -111  BetVictor logo | +222  William Hill logo |\n| Oklahoma City  Oklahoma City Thunder logo  Oklahoma City | -6.5 -105  Betway logo | u218.5 -115  Betway logo | -235  Betway logo |\n\n## Spread\n\nGame Odds San Antonio Spurs vs. Oklahoma City Thunder ...\n- [Spurs vs Thunder Odds & Live Scores - May 18, 2026 | The Action Network](https://www.actionnetwork.com/nba-game/spurs-thunder-score-odds-may-18-2026/291184)\n  Snippet: promotion logo\n\n# Spurs vs. Thunder Odds & Betting Predictions - May 19, 2026\n\n## Spurs at Thunder\n\nSan Antonio Spurs logo\n\n### San Antonio Spurs\n\nOklahoma City Thunder logo\n\n### Oklahoma City Thunder\n\n## Spurs at Thunder Odds\n\n### Spread, Total, Moneyline\n\n| MatchupOpenSpreadTotalMoneyline | | | | |\n ---  ---\n| Spurs logo Spurs 0-0 | +6.5 | +6.5-110 | o219.5-109 | +210 |\n| Thunder logo Thunder  0-0 | u218.5 | -6.5-110 | u219.5-110 | -260 |\n\nSpurs logo\nThunder logo\nlocation pin\nLock & Cash\nTop Shelf Action \ud83e\udd43\nBrandon Kravitz\nRyan Minion\n\n### Prop Odds Comparison\n\nNo props found ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-17\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-17 17:17:17"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-17 17:16:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.71,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Oklahoma City holds a superior regular season record (64-18 vs 62-20) and a significant home-court advantage. Vegas betting lines strongly support this, establishing the Thunder as -6.5 point favorites with a moneyline average around -245. This implies a win probability of approximately 71% after accounting for the vig. While the Spurs are an elite team, the combination of playing on the road against the top-seeded Thunder and having a player listed on the injury report tilts the odds firmly in Oklahoma City's favor."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.69,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas is a strong calibration signal here: OKC is around -235 on the moneyline with a -6.5 spread, which implies roughly a ~68\u201371% home win probability after accounting for vig. Both teams have elite season-level win rates, but OKC gets meaningful home-court advantage and is priced as the clearly better side on a neutral-adjusted basis. No major injury news is reflected in the provided report (only a lower-rotation Spurs injury), so the market edge and OKC home strength drive the projection."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.7,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Vegas markets consistently list OKC as the clear favorite (spread ~ -6.5, moneyline around -235) which implies roughly a 68\u201371% win probability; I round to 70%. Oklahoma City has a slight edge in record (64-18 vs 62-20) and home-court advantage, and available advanced stats/coverage indicate OKC is one of the league's top defensive/rebounding teams while San Antonio is elite offensively but more reliant on generating offense and protecting the ball. No major injury news in the provided feed to materially reduce OKC\u2019s advantage. Given the market signal, home-court, and team strengths, Oklahoma City is the most likely winner."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Thunder are favored by roughly -6.5 on the spread with a -235 moneyline, implying ~70% implied win probability. Additionally, OKC has a strong home record (~78% at home), and the spread/moneyline align with a home-advantage edge for this matchup. Spurs have some injury chatter but no clear, game-changing absence reported in the provided data."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Oklahoma City Thunder have a slightly better season record (64-18, 78% win rate) than the Spurs (62-20, 75.6%). The Thunder are at home, which is a significant advantage in the playoffs. Vegas lines have OKC as -6.5 favorites (implied win probability ~68%), and the moneyline is around -235 to -260 for OKC, further supporting a strong home edge. No major injuries reported for either side. Team stats are close, but OKC's defense and home-court advantage tip the scales. All signals (Vegas, analytics, home-court) align for OKC."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Oklahoma City Thunder have a strong home record (78.0% win rate) and are favored by the Vegas odds with a -6.5 spread. The Spurs have a slightly lower away win rate (75.6%) and are missing a key player due to injury. The Thunder's defensive stats are superior, particularly in turnovers and steals, which could be crucial in this matchup."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:16:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "Thunder have best record in West (64-18) and strong home court (78% win rate). Spurs are elite but slightly worse on road (75.6% overall). Vegas line favors Thunder by -6.5, implying ~70% win probability. No major injuries reported for either side."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:17:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium-High",
+                    "reasoning": "Oklahoma City Thunder are favored at home with a -6.5 spread and -235/-260 moneyline (implying ~70% win probability). Both teams have elite records (OKC 78.0% win rate, SAS 75.6%), making this a competitive playoff matchup. OKC holds home-court advantage and slightly better season record (64-18 vs 62-20). The Spurs are coming off a strong series against Minnesota (4-1), showing excellent form with recent wins of 139-109 and 126-97. However, OKC's defensive metrics are superior (2nd in turnovers forced at 16.8, 2nd in steals at 7.4). The narrow spread of -6.5 indicates Vegas expects a competitive game, but OKC's home court in the playoffs is a significant advantage. The Thunder's defensive pressure (forcing 16.8 turnovers per game vs league average 14.5) should disrupt San Antonio's offensive flow. With both teams elite, this comes down to home-court advantage and OKC's slight statistical edge, particularly on defense. The Vegas moneyline consensus around -235 to -260 translates to approximately 68-72% implied probability for OKC, which aligns with my projection."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-17 17:17:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ Oklahoma City Thunder (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "High",
+                    "reasoning": "The Oklahoma City Thunder have a slightly better win rate and home-court advantage. The Vegas spread of -6.5 in favor of the Thunder also indicates a strong likelihood of a home win. Additionally, the Thunder's defensive and offensive statistics are generally better than the league average, which supports a higher probability of winning at home."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

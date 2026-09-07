@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-03",
+        "target_date_et": "2026-09-04",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874744\nMatchup: Como (away) @ Genoa (home)\nHome: Genoa\nAway: Como\nKickoff UTC: 2026-09-04T18:45Z\nKickoff ET: 2026-09-04 14:45 EDT\nVenue: Stadio Luigi Ferraris\nRound: unavailable\nHome form: LLWLL\nAway form: WDWWW\nHome record: 0-0-2\nAway record: 1-1-0\nESPN structured 1X2 odds: DraftKings: Genoa +390 (open +390); Draw +215 (open +210); Como -125 (open -130)\nTavily context:\n  - Title: Genoa vs Como Prediction: 04.09.2026 Serie A\n    Content: Yes N/A | No N/A\n\nThe Como win price ranging from 1.67 to 1.88 across bookmakers reflects a strong consensus. Genoa at 5.00-5.50 is not without appeal as a speculative punt given home advantage, but nothing in the data right now justifies backing them to win. The draw at 3.05-3.45 is worth noting as a side option if you want coverage, but with Como’s current form and Genoa’s inability to score, the away win feels like the cleaner call.\n\n## Possible Starting Lineups\n\n### Genoa Possible Starting Eleven\n\nImage 8 ...\n    URL: https://tips.gg/article/genoa-vs-como-04-09-2026\n  - Title: Genoa vs Como Predictions, Picks & Odds - 04/09/2026\n    Content: Genoa's current form offers little reason for optimism. Daniele De Rossi's men have managed just one win across their last five matches, sitting in a precarious 17th position. Their opening-day defeat to Napoli underlined persistent defensive frailties. Como, by contrast, arrive on the back of three wins from five, drawing the other two, and opened their campaign with a creditable point at Udinese. ...\n    URL: https://www.toffeeweb.com/int/genoa-vs-como-predictions-picks-odds-04-09-2026\n  - Title: Genoa vs Como prediction, preview & betting tips – 04/09/2026\n    Content: They have also maintained a good away record against the hosts, with three wins and one draw in their last four encounters across all competitions.\n\nBookmakers have priced Genoa at 15/4 (4.75) to claim a victory on home soil, while a draw is offered at odds of 23/10 (3.30), and an away win for Como is currently available at 4/5 (1.80).\n\nAlso, over 2.5 goals is attractive at 13/10 (2.30), while both teams to score (yes) stands at 11/10 (2.10), and Anastasios Douvikas anytime goalscorer is offered at 7/5 (2.40).\n\n📈 Genoa vs. Como — Whispers' Tips ...\n    URL: https://footballwhispers.com/blog/genoa-vs-como-prediction-04-09-2026\n  - Title: Genoa vs Como football predictions and stats - 04 Sep 2026\n    Content: ## Over Under Prediction\n\nOver 2.5\n\nOdd:2.25\n\nFor the Over/Under market the artificial intelligence algorithm gives a Over 2.5 goals. The Over 2.5 have an odd of 2.25.\n\n## Correct Score Prediction\n\n1 - 2\n\nOdd:7.00\n\nThe artificial intelligence algorithm predicts that the final result of the game can be 1 - 2. This result is priced at 7.00.\n\n## Match Odds\n\nGenoa\n\n4.75\n\nDraw\n\n3.30\n\nComo\n\n1.80\n\n## Double Chance Odds\n\nGenoa or Draw\n\n1.95\n\nGenoa or Como\n\n1.25\n\nDraw or Como\n\n1.18\n\n## Both Teams To Score Odds\n\nYes\n\n2.05\n\nNo\n\n1.73\n\n## Under/Over Goals Odds\n\nOver 1.5 Goals\n\n1.42\n\nUnder 1.5 Goals\n\n2.80 ...\n    URL: https://footballpredictions.ai/football-predictions/genoa-vs-como-predictions-tips-04-sep-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874744\nMatchup: Como (away) @ Genoa (home)\nHome: Genoa\nAway: Como\nKickoff UTC: 2026-09-04T18:45Z\nKickoff ET: 2026-09-04 14:45 EDT\nVenue: Stadio Luigi Ferraris\nRound: unavailable\nHome form: LLWLL\nAway form: WDWWW\nHome record: 0-0-2\nAway record: 1-1-0\nESPN structured 1X2 odds: DraftKings: Genoa +390 (open +390); Draw +215 (open +210); Como -125 (open -130)\nTavily context:\n  - Title: Genoa vs Como Prediction: 04.09.2026 Serie A\n    Content: Yes N/A | No N/A\n\nThe Como win price ranging from 1.67 to 1.88 across bookmakers reflects a strong consensus. Genoa at 5.00-5.50 is not without appeal as a speculative punt given home advantage, but nothing in the data right now justifies backing them to win. The draw at 3.05-3.45 is worth noting as a side option if you want coverage, but with Como’s current form and Genoa’s inability to score, the away win feels like the cleaner call.\n\n## Possible Starting Lineups\n\n### Genoa Possible Starting Eleven\n\nImage 8 ...\n    URL: https://tips.gg/article/genoa-vs-como-04-09-2026\n  - Title: Genoa vs Como Predictions, Picks & Odds - 04/09/2026\n    Content: Genoa's current form offers little reason for optimism. Daniele De Rossi's men have managed just one win across their last five matches, sitting in a precarious 17th position. Their opening-day defeat to Napoli underlined persistent defensive frailties. Como, by contrast, arrive on the back of three wins from five, drawing the other two, and opened their campaign with a creditable point at Udinese. ...\n    URL: https://www.toffeeweb.com/int/genoa-vs-como-predictions-picks-odds-04-09-2026\n  - Title: Genoa vs Como prediction, preview & betting tips – 04/09/2026\n    Content: They have also maintained a good away record against the hosts, with three wins and one draw in their last four encounters across all competitions.\n\nBookmakers have priced Genoa at 15/4 (4.75) to claim a victory on home soil, while a draw is offered at odds of 23/10 (3.30), and an away win for Como is currently available at 4/5 (1.80).\n\nAlso, over 2.5 goals is attractive at 13/10 (2.30), while both teams to score (yes) stands at 11/10 (2.10), and Anastasios Douvikas anytime goalscorer is offered at 7/5 (2.40).\n\n📈 Genoa vs. Como — Whispers' Tips ...\n    URL: https://footballwhispers.com/blog/genoa-vs-como-prediction-04-09-2026\n  - Title: Genoa vs Como football predictions and stats - 04 Sep 2026\n    Content: ## Over Under Prediction\n\nOver 2.5\n\nOdd:2.25\n\nFor the Over/Under market the artificial intelligence algorithm gives a Over 2.5 goals. The Over 2.5 have an odd of 2.25.\n\n## Correct Score Prediction\n\n1 - 2\n\nOdd:7.00\n\nThe artificial intelligence algorithm predicts that the final result of the game can be 1 - 2. This result is priced at 7.00.\n\n## Match Odds\n\nGenoa\n\n4.75\n\nDraw\n\n3.30\n\nComo\n\n1.80\n\n## Double Chance Odds\n\nGenoa or Draw\n\n1.95\n\nGenoa or Como\n\n1.25\n\nDraw or Como\n\n1.18\n\n## Both Teams To Score Odds\n\nYes\n\n2.05\n\nNo\n\n1.73\n\n## Under/Over Goals Odds\n\nOver 1.5 Goals\n\n1.42\n\nUnder 1.5 Goals\n\n2.80 ...\n    URL: https://footballpredictions.ai/football-predictions/genoa-vs-como-predictions-tips-04-sep-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874744",
+                        "date_utc": "2026-09-04T18:45Z",
+                        "kickoff_et": "2026-09-04 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Genoa",
+                        "away": "Como",
+                        "home_id": "3263",
+                        "away_id": "2572",
+                        "matchup": "Como (away) @ Genoa (home)",
+                        "venue": "Stadio Luigi Ferraris",
+                        "city": "Genova",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LLWLL",
+                        "form_away": "WDWWW",
+                        "record_home": "0-0-2",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+390",
+                            "home_current": "+390",
+                            "draw_open": "+210",
+                            "draw_current": "+215",
+                            "away_open": "-130",
+                            "away_current": "-125"
+                        },
+                        "odds_text": "DraftKings: Genoa +390 (open +390); Draw +215 (open +210); Como -125 (open -130)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-03T05:12:58.200474-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:06:35.779262-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como enters this matchup in significantly better form (WDWWW) compared to Genoa's disappointing start to the season (LLWLL, 0-0-2). Bookmakers heavily favor Como, pricing them as clear road favorites around -125 (1.80). Given Genoa's defensive fragilities and lack of offensive output, Como is well-positioned to secure an away victory.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-03T05:06:43.667231-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como is heavily favored with moneyline odds of -125, translating to an implied probability of over 50%. Genoa is struggling with poor recent form and offers longer odds at +390. Given Como's strong form and the clear betting consensus, they are the most likely winner.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-03T05:07:03.812449-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "The prediction for an away win is based on the stark contrast in recent form between the two teams. Como is in excellent form, being unbeaten in their last five matches (WDWWW), while Genoa has struggled significantly, losing four of their last five (LLWLL). Como also possesses a strong recent head-to-head record when playing away against Genoa, with three wins and one draw in their last four encounters. Betting markets and expert analysis are in strong agreement, positioning Como as the clear favorite with odds around 1.80, which implies a probability of over 50% for an away victory.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:07:12.838545-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.197,
+                    "draw_probability": 0.283,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Como is in significantly better form (WDWWW) compared to Genoa (LLWLL), and bookmakers' odds strongly favor an away win, with Como's win price ranging from 1.67 to 1.88. Como also boasts a strong away record against Genoa, with three wins and one draw in their last four encounters across all competitions. The AI algorithm also predicts a 1-2 scoreline in favor of Como, reinforcing the away win as the most probable outcome.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:09.585098-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are clear market favorites and enter with much stronger recent form than Genoa, who have opened 0-0-2 and shown scoring/defensive concerns. Genoa's home advantage and the inherent draw risk in Serie A keep this from being a high-confidence pick.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:16.761519-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are clear market favorites and enter with stronger early-season form, while Genoa have started 0-0-2 and recent reports point to scoring and defensive concerns. Home advantage at Stadio Luigi Ferraris and Serie A draw risk keep the away probability from being higher, but the most likely 90-minute result is a Como win.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-03T05:08:45.429532-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Como a clear favorite (roughly mid-50% implied after normalization) and recent form supports it (Como WDWWW vs Genoa LLWLL). Genoa’s early-season record (0-0-2) and reported scoring/defensive issues reduce the home-win case, while the draw remains a meaningful secondary risk given away fixtures.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-03T05:08:52.323352-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers strongly favor Como (prices ~1.67–1.88) and the market-implied probability aligns with an away win. Como arrive in markedly better form (WDWWW) than Genoa (LLWLL), and Genoa’s home record and scoring issues (0-0-2 at home) reduce their likelihood of a win. Recent head-to-head and Como’s solid away performances further support an away victory; the draw is the secondary plausible result given home advantage and variance, while a Genoa win is least likely.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-03T05:09:04.507635-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como has stronger away form and is favored in the market; Genoa's home form is weak, making an away win the most likely regulation-time result (90 minutes, including stoppage time).",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-03T05:09:07.451472-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Como are in strong form, unbeaten in their last five matches and with a solid away record against Genoa. Genoa, by contrast, have struggled both defensively and offensively, with only one win in their last five and sitting near the bottom of the table. Bookmakers and AI models heavily favor Como, with away win odds consistently shorter than both draw and home win. The consensus across expert previews and statistical models is that Como are the clear favorites to win in regulation.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-03T05:09:09.120445-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Como's strong form and favorable odds suggest a high likelihood of an away win. Genoa's poor form and defensive issues further support this prediction.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-03T05:09:16.978029-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market consensus strongly favors Como (-125, ~1.80 decimal), consistent with their WDWWW form versus Genoa's LLWLL and 17th-place struggles. Como also holds a strong recent head-to-head record away at Genoa (three wins, one draw in last four). Home advantage keeps Genoa's chances non-trivial, but normalized bookmaker odds imply roughly 52% Como, 29% draw, 19% Genoa.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-03T05:09:21.683282-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como arrive in excellent form (WDWWW) and are strong favorites per market odds (~1.80), while Genoa are winless in their opening two matches with poor form (LLWLL) and defensive/scoring struggles under De Rossi. Como also have a solid recent away record against Genoa. Home advantage keeps some equity for Genoa, but the away win is the cleaner call.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-03T05:09:36.257574-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como arrive in strong form (WDWWW, 1W-1D in their opening two Serie A matches) while Genoa have struggled badly (LLWLL, 0-0-2 record). The market consensus strongly favors Como at odds around 1.80, implying roughly 55% probability. Genoa have shown defensive frailties and limited attacking output. Como's away record against Genoa in recent meetings is positive (3W-1D in last four). All major bookmakers and prediction models point to an away win as the most likely outcome. The draw remains a reasonable secondary option given typical Serie A volatility.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-03T05:09:44.528410-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Como enters this match in excellent form with WDWWW across their last five matches (1-1-0 record), while Genoa struggles badly with LLWLL form and an 0-0-2 record, sitting in 17th position. The market strongly favors Como with odds around 1.67-1.88 for the away win versus 5.00-5.50 for Genoa. Como has dominated recent head-to-head meetings with three wins and one draw in their last four encounters against Genoa across all competitions. Genoa's defensive frailties were exposed in their opening defeat to Napoli, and their inability to score at home is concerning. Como opened with a creditable draw at Udinese and appears the more organized side under current management. While home advantage provides some value for Genoa, the form differential and recent history strongly favor an away victory. The draw probability is elevated given it's early in the season and Serie A's competitive nature, but Como should have enough quality to secure three points.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-03T05:09:48.232175-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como arrive in significantly better form (WDWWW vs Genoa's LLWLL), with three wins in their last five matches and a strong recent away record against Genoa. Genoa sit 17th with defensive issues and inability to score consistently. DraftKings odds heavily favor Como (-125), with bookmakers pricing Como around 1.67-1.88 across the market. While Genoa's home advantage provides some value as a speculative punt, the data overwhelmingly supports an away victory. The draw remains a viable middle option given both teams' inconsistency, but Como's form and Genoa's struggles make the away win the most probable outcome.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-03T05:09:57.303476-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como enter in strong form and are clear favorites, while Genoa have lost their opening home matches and struggle defensively. The odds and predictive models point toward an away win, with a draw as the main secondary risk.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-03T05:09:58.623042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are in strong form (WDWWW) and have a good away record, while Genoa are struggling (LLWLL) and have failed to win at home. Bookmakers heavily favor Como, and multiple sources predict an away win. Genoa's defensive issues and Como's attacking quality make an away victory the most likely outcome.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-03T05:10:24.134507-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.197,
+                    "draw_probability": 0.283,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Como enters the match in excellent form (WDWWW) and holds a strong recent head-to-head record against Genoa. Genoa is struggling (LLWLL) with persistent defensive issues and an 0-0-2 home record. Bookmakers and predictive models heavily favor Como, aligning with the statistical edge for an away victory.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-03T05:10:28.760610-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Como's recent form, with three wins and two draws in their last five matches, and their strong away record against Genoa, make them the clear favorites. Genoa's poor form and defensive issues further support this prediction.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-03T05:11:20.790341-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como enters this fixture in significantly better form (WDWWW, 1-1-0) compared to Genoa's struggles (LLWLL, 0-0-2). Bookmaker odds and expert consensus heavily favor the visitors, with implied probabilities heavily skewing toward an away victory. Genoa's defensive frailties and lack of scoring contrast with Como's consistency and strong historical record against these hosts. AI models and multiple prediction sources also point to a 1-2 away win. While home advantage provides Genoa a marginal boost, Como's current trajectory and market pricing make the away result the most probable outcome.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-03T05:12:07.193225-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Genoa enters the fixture in poor form (LLWLL) with documented defensive frailties, while Como boasts superior recent momentum (WDWWW). Bookmaker odds strongly favor the away side at approximately 1.80 compared to Genoa's 4.75. Historical head-to-head data indicates Como has dominated recent visits to Stadio Luigi Ferraris. Analysis suggests an away victory, likely with both teams scoring, aligning with the 1-2 correct score prediction found in multiple sources.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-03T05:12:32.300944-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Como arrives in strong form (WDWWW, unbeaten away record) while Genoa is struggling badly (LLWLL, 17th place, defensive frailties). Bookmakers and AI models price Como as the clear favorite (~1.80) with a projected 1-2 scoreline. Genoa’s home edge is not enough to close the current gap in quality and momentum, making the away win the most probable outcome.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-03T05:12:45.362573-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como arrive in strong form (WDWWW, unbeaten through two matches this season) while Genoa are winless (0-0-2) with poor recent form (LLWLL) and persistent defensive frailties. Market consensus strongly favors Como, with away win odds around -125 (implied ~52-55% after margin removal), and multiple preview sources lean toward a Como victory, including a predicted 1-2 correct score. Como also hold a strong recent away record against Genoa (three wins and a draw in their last four meetings). Genoa's home advantage at the Luigi Ferraris keeps the draw and a home upset plausible, but the away win is the cleaner call.",
+                    "event_id": "401874744"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-03T05:12:58.196032-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Genoa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Como enters in much stronger form (WDWWW) and have a solid away record, while Genoa are struggling with LLWLL and defensive issues. Bookmakers price Como as a clear favorite (~-125), and the available analysis points to an away win as the cleanest call.",
+                    "event_id": "401874744"
+                }
+            ]
+        }
+    ]
+}

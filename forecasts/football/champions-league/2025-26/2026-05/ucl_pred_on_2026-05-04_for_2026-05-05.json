@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-04\n    Target Date: 2026-05-05\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Atl\u00e9tico Madrid @ Arsenal (2nd Leg - Tied on aggregate) | Scheduled    | Away: #14 50% (4-1-3) Pts:13 Form:WDWLL | Home: #1 100% (8-0-0) Pts:24 Form:WDWLD\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Atl\u00e9tico Madrid (Away) @ Arsenal (Home)\n**News & Injury Report:**\n- [Arsenal vs Atletico Madrid - prediction, team news, lineups](https://www.sportsmole.co.uk/football/arsenal/champions-league/preview/arsenal-vs-atletico-prediction-team-news-lineups_596909.html)\n  Snippet: Meanwhile, Atletico suffered a major scare in the first leg when Alvarez hobbled off in the second half, but examinations have ruled out a serious injury for the Argentine, who is expected to lead the line in North London.\n\nAlvarez incredibly broke a Lionel Messi record in the first leg, when he became the quickest Argentine to hit the 25-goal mark in the Champions League, doing so in 41 games; the eight-time Ballon d'Or winner needed 42. ...\n- [Atletico Madrid lineup vs. Arsenal - Champions League - Sports Mole](https://www.sportsmole.co.uk/football/atletico-madrid/champions-league/predicted-lineups/will-alvarez-play-after-injury-scare-predicted-atletico-xi-vs-arsenal_596911.html)\n  Snippet: Champions League\n\nMay 5, 2026 8.00pm\n\n Emirates Stadium\n\nAtletico Madrid/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2F19%2F06%2Fatllog.png)\n\nAtletico\n\n# Atletico Madrid lineup vs. Arsenal: Predicted XI for Champions League semi-final second leg\n\nBy   Ben Knapton   |\n\nWill Alvarez play after injury scare? Predicted Atletico XI vs. Arsenal/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F03%2Ficonsport-361551-0102-1-69b560866f7b6508942731.jpg \"Will Alvarez play after injury scare? Predicted Atletico XI vs. Arsenal\") ...\n**Betting Odds:**\n- [Arsenal vs Atletico Madrid Prediction - Champions League - 05/05/2026](https://www.sportytrader.com/en/betting-tips/arsenal-atletico-madrid-346823/)\n  Snippet: ## Arsenal v Atletico Madrid Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.67 | 3.95 | 5.2 |  |\n| Melbet | 1.64 | 3.9 | 5.35 |  |\n| Betwinner | 1.64 | 3.9 | 5.35 |  |\n| Bet365 | 1.6 | 4 | 5.25 |  |\n| Roobet | 1.65 | 3.95 | 5.2 |  |\n\nCheck all Arsenal vs Atletico Madrid odds\n\n## What is the prediction for the football match between Arsenal and Atletico Madrid?\n\nOur prediction for the Arsenal vs Atletico Madrid match is: Arsenal wins. ...\n- [ARSENAL LONDON-Atletico Madrid pick, preview, tips and odds](https://www.betrush.com/pick,ARSENAL_LONDON_Atletico_Madrid,249185.html)\n  Snippet: Published: 04-05-2026, 10:22 CET   Pick: ARSENAL HOME WIN\n Odds: 1.7 at Interwetten\n\n  Category: European football\n Date: 05-05-2026\n Option: 1X2 / Moneyline\n Stake: 7 (tipster's average: 7)\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-04\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-04 22:44:51"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-04 22:43:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market strongly favors Arsenal (home ~1.64\u20131.67 vs draw ~3.9\u20134.0 vs away ~5.2\u20135.35), implying a clear home edge. Arsenal\u2019s UCL league-stage record is elite (#1, 8-0-0) and they retain strong home advantage. Atl\u00e9tico arrive with weaker recent form (WDWLL) and while Alvarez is expected to be fit (reducing injury downside), Arsenal\u2019s overall strength still projects the highest win probability. Second-leg dynamics with aggregate tied slightly elevate draw likelihood versus a pure league match."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:43:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds (Arsenal ~1.6, draw ~4.0, Atletico ~5.25) imply a strong Arsenal favourite; normalized odds give roughly 0.59/0.23/0.18 and I keep similar weights after adjusting for context. Arsenal are dominant at home in UCL (8-0-0 at home in group stage) and top seed with solid recent form. Atl\u00e9tico have quality (Alvarez expected to play after a scare) but weaker away UCL record and inferior form; the tie on aggregate will make the match tighter, raising draw probability slightly, but overall Arsenal's home advantage and market consensus justify a high probability for a home win."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:43:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.576,
+                    "draw_probability": 0.241,
+                    "away_win_probability": 0.183,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal hold a dominant home record (8-0-0) and solid form (WDWLD). Atl\u00e9tico Madrid have decent away form (4-1-3) but face a stiff test on the road with Alvarez back and a strong Arsenal lineup expected. Betting odds heavily favor Arsenal (approx 1.6\u20131.65), aligning with the home win probability."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:43:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal is undefeated at home in the Champions League (8-0-0), highlighting a strong home advantage at Emirates. Betting odds heavily favor Arsenal (best market odds range from 1.6 to 1.7), implying roughly a 58-60% win chance when market overround is backed out. Arsenal's recent form slightly outpaces Atl\u00e9tico\u2019s, and key Atl\u00e9tico striker Alvarez has been cleared after an injury scare but may not be 100%. With the tie level and Arsenal\u2019s fortress home record, statistical and market signals both point strongly to Arsenal progressing in regulation, but with a notable chance for a draw given the stakes. Atl\u00e9tico are solid but underdogs, with their away form only moderate (4-1-3)."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:43:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal has a perfect home record in the UCL this season and sits at the top of their group with an impressive form of 8-0-0, indicating a strong home-court advantage. Although Atletico's Alvarez is expected to play, their recent form outside the league is inconsistent, as demonstrated by their record of 4-1-3 and recent dip in performance with consecutive losses. Moreover, the betting odds strongly favor Arsenal, enhancing confidence in their home win outcome."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:44:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "The prediction is heavily influenced by Arsenal's immaculate 8-0-0 record in the Champions League this season and their significant home advantage at the Emirates Stadium. The betting markets align with this, giving Arsenal an implied win probability of approximately 58% after removing the bookmaker's margin. While Atl\u00e9tico Madrid benefit from the confirmed fitness of their star striker Alvarez and possess vast European experience, their recent form (WDWLL) is inconsistent compared to Arsenal's. With the aggregate score tied, Arsenal has a clear incentive to leverage their home strength and secure a victory within 90 minutes to advance to the final."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:44:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Arsenal has a perfect home record in the UCL league stage (8-0-0) and strong form. Atl\u00e9tico Madrid's away form is average (4-1-3) but they have key player Alvarez fit. First leg ended 2-2, so aggregate is tied. Betting odds favor Arsenal (1.6-1.67) but the draw is also possible given Atl\u00e9tico's resilience. Slight edge to Arsenal due to home advantage."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:44:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal's dominant UCL league stage performance (100% win rate, 8-0-0, #1 ranking) provides a massive advantage at the Emirates. The tie is level on aggregate from the first leg, making this essentially a home-deciding match. Arsenal's recent form shows WDWLD with only one loss, while Atl\u00e9tico's form of WDWLL indicates vulnerability with two recent losses. The betting odds heavily favor Arsenal (1.60-1.67 for home win vs 5.2-5.35 for away win), which translates to approximately 60% implied probability for Arsenal victory. Atl\u00e9tico's key player Alvarez had an injury scare in the first leg but is expected to play - however, this may still affect his performance. Home advantage in a knockout second leg with the tie level is significant, and Arsenal's perfect home record in this competition is compelling. The draw probability is notable (3.9-4.0 odds \u2248 25%) as Atl\u00e9tico will likely play defensively to force extra time. However, Arsenal's attacking quality and home fortress status make them strong favorites to advance with a win in regular time."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-04 22:44:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Arsenal (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal has a strong home record in the Champions League this season, with a 100% win rate and 24 points. They are also favored by the betting markets, with odds around 1.67 for a home win. Atl\u00e9tico Madrid, while having Alvarez back from an injury scare, has a mixed away record and is not as strong on the road. The first leg ended in a tie, but Arsenal's home advantage and recent form suggest they are more likely to win."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

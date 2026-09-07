@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-09\n    Target Date: 2026-04-10\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Girona @ Real Madrid                                 | Scheduled    | Away: 30.0% (9-10-11) vs Home: 73.3% (22-3-5)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Girona (Away) @ Real Madrid (Home)\n**News & Injury Report:**\n- [Real Madrid vs Girona Prediction, Odds & Betting Tips | 10.04.2026 | La Liga](https://www.mightytips.com/football-predictions/real-madrid-vs-girona-prediction-10-04-2026/)\n  Snippet: \u00c1lvaro Carreras\n\nMidfielders\n\n14\n\nAur\u00e9lien Tchouam\u00e9ni\n\n6\n\nEduardo Camavinga\n\n8\n\nFederico Valverde\n\n15\n\nArda G\u00fcler\n\nForwards\n\n21\n\nBrahim D\u00edaz\n\n10\n\nKylian Mbapp\u00e9\n\nGirona\n\nGirona\n\n## Girona team overview\n\nGirona enter this fixture in 12th place. Recent ...\n- [Real Madrid vs Girona Prediction, Betting Tips, Lineups & Odds | 10 Apr 2026](https://www.sportsgambler.com/betting-tips/football/real-madrid-vs-girona-prediction-lineups-odds-2026-04-10/)\n  Snippet: | # | Team | G | W | D | L | +/- | P |\n ---  ---  ---  --- |\n| 1 | Barcelona | 30 | 25 | 1 | 4 | 80:29 | 76 |\n| 2 | Real Madrid | 30 | 22 | 3 | 5 | 64:28 | 69 |\n| 3 | Villarreal | 30 | 18 | 4 | 8 | 54:35 | 58 |\n| 4 | Atl\u00e9tico Madrid | 30 | 17 | 6 | 7...\n**Betting Odds:**\n- [Girona vs Real Madrid Odds & Live Scores - April 10, 2026 | The Action Network](https://www.actionnetwork.com/laliga-game/girona-real-madrid/283989)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Real Madrid logo Real Madrid | 2-4-1 | 1-3 | 1-1-1 | 2-2-1 | 0-2 |\n| Girona logo Girona | 16-14 | 7-8 | 9-6 | 3-8 | 13-6 |...\n- [Real Madrid vs Girona : Prediction (10 Apr 2026) Odds & Betting tips](https://ghanasoccernet.com/predictions/real-madrid-vs-girona-prediction-preview-and-team-news-11-04-26)\n  Snippet: ## Real Madrid vs Girona: Betting Tips and Odds (1xBet)\n\nReal Madrid to win \u2013 odds: 1.35\n\nReal Madrid are in better form than Girona, so we expect them to win the match.\n\nOver 2.5 goals \u2013 odds: 1.40\n\nMadrid recorded over 2.5 goals in their last fiv m...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-09\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-09 20:30:26"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-09 20:29:15",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds heavily favor Real Madrid (home win around 1.35 implies ~74% before vig), aligning with Madrid\u2019s strong season record (22-3-5, 73% win rate) and home advantage. Girona\u2019s overall record (9-10-11) suggests a mid-table side with a relatively high draw rate, which keeps the draw probability meaningful, but an away win still looks unlikely given the strength gap."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market and form strongly favor Real Madrid: bookmakers list Madrid ~1.35 (implied ~74%), and Madrid have dominant home form this season (home win rate ~73%). Girona sit mid-table (12th) with modest away numbers (season away win rate ~30%) and are unlikely to outscore Madrid at the Bernab\u00e9u. Some sources list squad notes but no confirmed loss of multiple key starters for Madrid; even allowing for Madrid occasionally underperforming against the spread, the balance of team strength, league position, home advantage and the betting market point to a Madrid win. This yields a high probability for a home win, a moderate chance of a draw (gameplan/defensive Girona approach away), and a low probability for an away win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid hold a strong home record (22-3-5) and are favored in the market (approx. 1.35 to win). Girona struggle more on the road (9-10-11 away). No major injuries listed; home advantage and form edge Madrid."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid are second in the league, boasting a 73.3% home win rate (22-3-5) compared to Girona's 30% away win rate (9-10-11). Madrid are in strong form, have a nearly full-strength squad with key players like Mbapp\u00e9 and Valverde available, and the bookmakers reflect this with a low home win odds (~1.35, implying a ~74% chance). Girona sit mid-table and lack recent strong performances, giving Real Madrid a very high win probability. A draw is possible given Girona's occasional away resilience, but an away win is unlikely."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid has a strong home win rate of 73.3% compared to Girona's away win rate of 30.0%. Current squad is in good form with key players like Mbapp\u00e9 available. Betting odds heavily favor Real Madrid with odds at 1.35 for a win. Real Madrid's position in the league (2nd) and overall team strength further indicate a high likelihood of a home win."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid has a strong home record (73.3% win rate) and is in better form than Girona. Betting odds also heavily favor Real Madrid (1.35 odds for Real Madrid to win). Although Girona is a decent team, Real Madrid's home advantage and superior team quality make a home win the most probable outcome."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:29:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid (2nd, 69 pts) has a dominant home record (73.3% win rate, 22-3-5) and is in significantly better form than Girona (12th). Betting odds strongly favor a Real Madrid win (implied probability ~74% from 1.35 odds). Girona's away record (30.0% win rate) and mid-table position suggest limited threat. Real Madrid's squad appears strong with key players like Mbapp\u00e9 available. The combination of home advantage, superior league position, and market confidence points to a clear home victory."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:30:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid are heavily favored with a 73.3% home win rate (22-3-5) compared to Girona's poor 30.0% away record (9-10-11). Real Madrid sit 2nd in La Liga with 69 points while Girona are in 12th place. The betting odds strongly favor Real Madrid at 1.35 to win, which implies approximately 74% probability. Real Madrid have superior form and quality with key players like Mbapp\u00e9, Valverde, and Tchouam\u00e9ni available. The significant gap in league position (2nd vs 12th) and home advantage at the Santiago Bernab\u00e9u make this a clear favorite situation. Over 2.5 goals is also expected given Madrid's attacking prowess. Adjusting slightly from pure odds conversion to account for football variance and Girona's ability to occasionally frustrate top teams, I estimate a 68% home win probability with realistic draw (19%) and upset (13%) chances."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:30:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Girona (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid has a strong home record with a 73.3% win rate, and Girona's away win rate is only 30.0%. Additionally, the betting odds strongly favor Real Madrid to win, with odds of 1.35 for a home win. Real Madrid's form and recent performance also suggest they are in better shape compared to Girona."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

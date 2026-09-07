@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-03",
+        "target_date_et": "2026-09-04",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882894\nMatchup: Real Madrid (away) @ Real Betis (home)\nHome: Real Betis\nAway: Real Madrid\nKickoff UTC: 2026-09-04T19:00Z\nKickoff ET: 2026-09-04 15:00 EDT\nVenue: Estadio La Cartuja\nRound: unavailable\nHome form: LWWWL\nAway form: WWWWW\nHome record: 2-0-1\nAway record: 3-0-0\nESPN structured 1X2 odds: DraftKings: Real Betis +600 (open +370); Draw +425 (open +340); Real Madrid -260 (open -160)\nTavily context:\n  - Title: PREVIEW | Real Betis vs Real Madrid: team news, lineups, predictions (La Liga 04/09) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nReal Madrid have picked up 9 points and currently lie in 2nd position. Last time out, the merengues triumphed 4-0 against Málaga CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Real Betis\n\n## Real Madrid\n\n Aurélien Tchouaméni - Muscle Injury\n Endrick - Muscle Injury\n\n## Last starting XIs\n\nReal Betis ( vs Levante 2026-08-29): Álvaro Valles, Héctor Bellerín, Natan, Marc Bartra, Fran García, Marc Roca, Facundo Bernal, Antony, Isco, Rodrigo Riquelme, Troy Parrott ...\n    URL: https://sports.yahoo.com/articles/preview-real-betis-vs-real-190500120.html\n  - Title: Real Betis vs Real Madrid - live score, predicted lineups ...\n    Content: MendyLigament injuryMid September 2026\n\n  Raúl Asencio\n\n  Shin injury / Late September 2026\n\nAsencioShin injuryLate September 2026\n\n  Aurélien Tchouaméni\n\n  Muscle injury / Mid September 2026\n\nTchouaméniMuscle injuryMid September 2026\n\n  Thiago Pitarch\n\n  Knee injury / Mid September 2026\n\nPitarchKnee injuryMid September 2026\n\n  Endrick\n\n  Muscle injury / Mid September 2026\n\nEndrickMuscle injuryMid September 2026\n\n  Rodrygo\n\n  Cruciate ligament injury / Late December 2026\n\nRodrygoCruciate ligament injuryLate December 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Levante\n\n  5 - 2 ...\n    URL: https://www.fotmob.com/matches/real-betis-vs-real-madrid/2gg3e3\n  - Title: Real Betis vs Real Madrid Predictions, Picks & Odds - 04/09 ...\n    Content: 04 Sep 2026  Estadio La Cartuja de Sevilla  Louis Hecq\n\n### Real Betis vs Real Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 7.22 | 5.28 | 1.45 | View Odds |\n| Stake | 7.00 | 5.20 | 1.38 | View Odds |\n| bc.game | 6.80 | 4.90 | 1.40 | View Odds |\n\nOur prediction\n\n2: Real Madrid to win\n\n1.45 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 00:50 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 4\n\nDate: 04 Sep 2026\n\nTime: 20:00 BST\n\nStadium: Estadio La Cartuja de Sevilla ...\n    URL: https://www.toffeeweb.com/int/real-betis-vs-real-madrid-predictions-picks-odds-04-09-2026\n  - Title: Real Betis vs Real Madrid Predictions, Picks & Odds - 04/09/2026\n    Content: La Liga · 4\n\n04 Sep 2026  Estadio La Cartuja de Sevilla  Tiernan Allen\n\n### Real Betis vs Real Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betano | 8.00 | 5.00 | 1.38 | View odds |\n\nOur prediction\n\n2: Real Madrid to win\n\n1.38 on BetanoBetano · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 09:19 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 4\n\nDate: 04 Sep 2026\n\nTime: 20:00 WAT\n\nStadium: Estadio La Cartuja de Sevilla ...\n    URL: https://www.toffeeweb.com/ng/real-betis-vs-real-madrid-predictions-picks-odds-04-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882894\nMatchup: Real Madrid (away) @ Real Betis (home)\nHome: Real Betis\nAway: Real Madrid\nKickoff UTC: 2026-09-04T19:00Z\nKickoff ET: 2026-09-04 15:00 EDT\nVenue: Estadio La Cartuja\nRound: unavailable\nHome form: LWWWL\nAway form: WWWWW\nHome record: 2-0-1\nAway record: 3-0-0\nESPN structured 1X2 odds: DraftKings: Real Betis +600 (open +370); Draw +425 (open +340); Real Madrid -260 (open -160)\nTavily context:\n  - Title: PREVIEW | Real Betis vs Real Madrid: team news, lineups, predictions (La Liga 04/09) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nReal Madrid have picked up 9 points and currently lie in 2nd position. Last time out, the merengues triumphed 4-0 against Málaga CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Real Betis\n\n## Real Madrid\n\n Aurélien Tchouaméni - Muscle Injury\n Endrick - Muscle Injury\n\n## Last starting XIs\n\nReal Betis ( vs Levante 2026-08-29): Álvaro Valles, Héctor Bellerín, Natan, Marc Bartra, Fran García, Marc Roca, Facundo Bernal, Antony, Isco, Rodrigo Riquelme, Troy Parrott ...\n    URL: https://sports.yahoo.com/articles/preview-real-betis-vs-real-190500120.html\n  - Title: Real Betis vs Real Madrid - live score, predicted lineups ...\n    Content: MendyLigament injuryMid September 2026\n\n  Raúl Asencio\n\n  Shin injury / Late September 2026\n\nAsencioShin injuryLate September 2026\n\n  Aurélien Tchouaméni\n\n  Muscle injury / Mid September 2026\n\nTchouaméniMuscle injuryMid September 2026\n\n  Thiago Pitarch\n\n  Knee injury / Mid September 2026\n\nPitarchKnee injuryMid September 2026\n\n  Endrick\n\n  Muscle injury / Mid September 2026\n\nEndrickMuscle injuryMid September 2026\n\n  Rodrygo\n\n  Cruciate ligament injury / Late December 2026\n\nRodrygoCruciate ligament injuryLate December 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Levante\n\n  5 - 2 ...\n    URL: https://www.fotmob.com/matches/real-betis-vs-real-madrid/2gg3e3\n  - Title: Real Betis vs Real Madrid Predictions, Picks & Odds - 04/09 ...\n    Content: 04 Sep 2026  Estadio La Cartuja de Sevilla  Louis Hecq\n\n### Real Betis vs Real Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 7.22 | 5.28 | 1.45 | View Odds |\n| Stake | 7.00 | 5.20 | 1.38 | View Odds |\n| bc.game | 6.80 | 4.90 | 1.40 | View Odds |\n\nOur prediction\n\n2: Real Madrid to win\n\n1.45 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 00:50 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 4\n\nDate: 04 Sep 2026\n\nTime: 20:00 BST\n\nStadium: Estadio La Cartuja de Sevilla ...\n    URL: https://www.toffeeweb.com/int/real-betis-vs-real-madrid-predictions-picks-odds-04-09-2026\n  - Title: Real Betis vs Real Madrid Predictions, Picks & Odds - 04/09/2026\n    Content: La Liga · 4\n\n04 Sep 2026  Estadio La Cartuja de Sevilla  Tiernan Allen\n\n### Real Betis vs Real Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betano | 8.00 | 5.00 | 1.38 | View odds |\n\nOur prediction\n\n2: Real Madrid to win\n\n1.38 on BetanoBetano · Confidence Medium\n\nOdds recorded on 03 Sep 2026 at 09:19 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 4\n\nDate: 04 Sep 2026\n\nTime: 20:00 WAT\n\nStadium: Estadio La Cartuja de Sevilla ...\n    URL: https://www.toffeeweb.com/ng/real-betis-vs-real-madrid-predictions-picks-odds-04-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882894",
+                        "date_utc": "2026-09-04T19:00Z",
+                        "kickoff_et": "2026-09-04 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Betis",
+                        "away": "Real Madrid",
+                        "home_id": "244",
+                        "away_id": "86",
+                        "matchup": "Real Madrid (away) @ Real Betis (home)",
+                        "venue": "Estadio La Cartuja",
+                        "city": "Sevilla",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LWWWL",
+                        "form_away": "WWWWW",
+                        "record_home": "2-0-1",
+                        "record_away": "3-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+370",
+                            "home_current": "+600",
+                            "draw_open": "+340",
+                            "draw_current": "+425",
+                            "away_open": "-160",
+                            "away_current": "-260"
+                        },
+                        "odds_text": "DraftKings: Real Betis +600 (open +370); Draw +425 (open +340); Real Madrid -260 (open -160)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-03T05:18:03.689904-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:11:04.392483-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enter this matchup in stellar form with a perfect league record and a recent 4-0 victory. Despite missing key players such as Rodrygo and Tchouaméni, their squad depth makes them strong favorites. Bookmakers heavily favor an away win with odds around -260 (1.38 decimal), while Real Betis have struggled for consistency.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-03T05:11:11.899447-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.135,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.685,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is heavily favored with away odds around -260 and implied probabilities indicating a strong advantage. They enter the match with a perfect 3-0-0 record and formidable recent form, making them the clear favorites against Real Betis despite a few notable absences.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-03T05:11:28.862996-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid has started the season with a perfect 3-0-0 record and is in dominant form, as evidenced by their recent 4-0 victory. Betting markets strongly favor them, with odds around -260, implying a high probability of winning. While Real Betis has a respectable 2-0-1 record and the benefit of playing at home, their form is less consistent. The last meeting between these two teams was a draw, showing Betis can compete. However, Madrid's superior quality and current momentum should be the deciding factor, despite key injuries to players like Aurélien Tchouaméni and Endrick, which makes the confidence level medium rather than high.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:11:35.530410-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.1353,
+                    "draw_probability": 0.1804,
+                    "away_win_probability": 0.6843,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enters this match with a perfect away record (3-0-0) and strong current form (WWWWW). They recently triumphed 4-0 against Málaga CF. Despite significant injuries to key players like Aurélien Tchouaméni, Endrick, and Rodrygo, major bookmakers overwhelmingly favor Real Madrid, with implied win probabilities around 68-72% based on DraftKings odds. Real Betis has a mixed form (LWWWL) and home record (2-0-1). While the last encounter was a draw, Real Madrid's consistent dominance and the strong betting market consensus point towards an away victory.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:12:18.896036-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enter with a perfect 3-0-0 league record and strong recent form, while betting markets have moved sharply toward Madrid, implying roughly a two-thirds chance of an away win after normalization. Betis have enough quality and home-field benefit to keep draw/upset risk meaningful, but Madrid remain the clear most likely 90-minute result despite some injury absences.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:12:25.544713-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enter with perfect early-season form and a 3-0-0 record, while market odds have moved strongly toward Madrid from the opener. Betis have been competitive but are significant underdogs, and the match being at Estadio La Cartuja slightly reduces traditional home-field edge. Madrid do have notable absences, including Tchouameni, Endrick, Mendy, Asencio, and Rodrygo, which keeps draw risk meaningful, but their overall squad strength and current momentum make an away win the most likely regulation-time result.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-03T05:12:52.137918-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds heavily favor Real Madrid (around -260), implying a clear away edge even after vig. Recent form supports that gap (Real Madrid WWWWW vs Betis LWWWL) and Madrid are 3-0-0 vs Betis 2-0-1. Despite some Madrid absences noted, their overall squad strength and momentum still project the highest likelihood as an away win, with the draw as the main alternative given the recent 1-1 head-to-head.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-03T05:13:16.666577-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enter with dominant recent form (5 wins in a row) and a convincing 4-0 league win in their last match, while Betis have mixed results. Bookmakers strongly favor Madrid and their away record is excellent (3-0-0). Madrid have some injury absences (Tchouaméni, Endrick, and others noted) which reduce but do not negate their edge. The last meeting was a 1-1 draw, but overall squad quality and current momentum favor an away victory at Estadio La Cartuja. Given injuries and Betis' home advantage, there's a non-negligible draw/home chance, hence a medium confidence.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-03T05:13:32.802985-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.135338,
+                    "draw_probability": 0.180451,
+                    "away_win_probability": 0.684211,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Madrid are favored for regulation-time victory given their strong away form (3-0-0) and recent results, plus historical alignment with Betis. Using implied-bet odds as a baseline and normalizing to sum to 1 yields away_win as the most probable outcome for the 90 minutes.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-03T05:13:34.751177-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are in excellent form, winning all their away matches so far this season and coming off a dominant 4-0 victory. Real Betis have a decent home record but are clear underdogs based on both recent form and bookmaker odds, which heavily favor Real Madrid. While Real Madrid have some injury concerns, their squad depth and momentum make them strong favorites. The draw is possible given the last head-to-head ended 1-1, but the probability is much lower. Real Betis winning would be a significant upset.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-03T05:13:36.818927-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid's strong away form and superior squad depth, despite some injuries, make them favorites. Real Betis' inconsistent form and the odds heavily favoring Real Madrid support this prediction.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-03T05:13:48.763492-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid arrive in perfect form (WWWWW, 3-0-0) after a 4-0 win, while Betis are inconsistent (LWWWL). Market odds (Madrid -260, ~1.38-1.45 decimal) imply roughly a two-thirds chance of an away win after removing the vig. Madrid have injuries (Tchouameni, Rodrygo, Mendy, Asencio) but retain a clearly stronger squad. Betis at home in La Cartuja retain draw/upset potential, as last season's meeting ended 1-1, but Madrid are firm favorites.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-03T05:13:53.475952-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.56,
+                    "predicted_outcome": "Real Madrid",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enter with a perfect 3-0-0 record and strong WWWWW form, and are heavy favorites at -260. Betis have solid form (LWWWL) and home advantage at La Cartuja, plus several Madrid injuries (Tchouameni, Endrick, Rodrygo, Mendy, Asencio). However, Madrid's depth and quality still make them clear favorites. Betis can draw or upset, but away win is most likely.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-03T05:14:01.553482-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid arrive in perfect form with 3 wins from 3 and 9 points, sitting 2nd in La Liga. Their most recent result was a dominant 4-0 victory over Málaga. Real Betis have a mixed record (2W-0D-1L) and lost their last match. The market strongly favors Real Madrid at around -260 (implied ~72%), with multiple prediction sites giving them a 'medium confidence' win. Real Madrid's injury concerns include Tchouaméni, Endrick, Mendy, Asencio, and Rodrygo, which slightly tempers confidence. Betis at home at La Cartuja could make this competitive, and the last head-to-head ended in a 1-1 draw. Adjusting slightly from raw market odds to account for Real Madrid's injury list and Betis's home advantage, the probabilities are set at 68% Real Madrid win, 19% draw, 13% Betis win.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-03T05:14:10.039388-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enters with perfect form (WWWWW) and a 3-0-0 record, having scored 4 goals in their last match. Real Betis has mixed form (LWWWL) with a 2-0-1 record. The significant odds movement from open (+370/+340/-160) to current (+600/+425/-260) indicates strong market confidence in Real Madrid. Madrid is missing key players (Tchouaméni, Endrick, Rodrygo with long-term injury) but their superior form and quality depth make them clear favorites. The last meeting was a 1-1 draw, suggesting Betis can be competitive at home, which justifies moderate probability for draw/home scenarios. However, Madrid's current momentum and second-place position with 9 points from 9 available strongly favor an away victory.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-03T05:14:13.862332-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid arrives in excellent form with 5 consecutive wins and 9 points from 3 matches (3-0-0 record), while Real Betis shows mixed recent form (LWWWL). Madrid's 4-0 demolition of Málaga demonstrates attacking potency despite injuries to key players (Tchouaméni, Endrick, Rodrygo). Real Betis's home record is modest (2-0-1). Market odds favor Madrid (-260 DraftKings) with implied 72% probability, though this appears slightly overconfident. Conservative estimate of 55% away win reflects Madrid's clear superiority in form and record, with modest probabilities for home upset (25%) and draw (20%).",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-03T05:14:29.088594-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enter in strong away form with a perfect record and are clear favorites despite several injuries. Real Betis have been inconsistent, and the market odds plus prediction sources strongly favor an away win.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-03T05:14:30.727784-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are in excellent form with 3 wins, while Real Betis have mixed results. Despite Betis having home advantage, Madrid's superior squad and recent performances make them clear favorites. Odds also heavily favor Madrid.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-03T05:14:52.061755-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid enters this match in perfect form with three consecutive victories, showcasing their attacking prowess and squad depth. Although they are dealing with significant injuries to key players like Rodrygo and Aurelien Tchouameni, their overall quality remains far superior to Real Betis. Betis has shown inconsistency in their opening fixtures and faces a formidable opponent. The betting markets heavily favor Real Madrid, aligning with their dominant recent performances and historical superiority in this fixture.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-03T05:14:58.222477-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid has been in excellent form, winning their last five away matches and currently sitting in 2nd position. Real Betis, on the other hand, has a mixed home record with two wins and one loss. The odds and recent form suggest that Real Madrid is more likely to win this match.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-03T05:15:42.522141-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid arrives with a perfect 3-0-0 league record and a five-match winning streak, heavily favored by sportsbooks (implied win probability near 68%). Despite notable absences in midfield and attack (Rodrygo, Tchouaméni, Endrick, Mendy), their squad depth and tactical consistency give them a clear edge. Real Betis shows inconsistent recent form (LWWWL) and, while playing at Estadio La Cartuja provides a modest home advantage, their defensive vulnerabilities and lower win probability align with the odds. The distribution reflects Madrid's strong favorite status while reserving meaningful probability for a competitive Betis performance or draw due to the injury impact.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-03T05:16:36.581254-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid dominates with a perfect away record (3-0-0) and five consecutive wins, including a recent 4-0 victory. Despite injuries to key figures like Mendy and Tchouaméni, their league position (2nd) and offensive strength heavily favor them over Betis, whose home form (LWWWL) is inconsistent. Market odds (Madrid -260) reflect this disparity, though squad absiments moderate confidence levels.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-03T05:17:28.816576-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid brings a perfect 3-0-0 start and blistering form (WWWWW) into this fixture, fresh off a 4-0 demolition of Málaga. Although Los Blancos are missing several regulars—Tchouaméni, Endrick, Mendy, and Asencio—their squad depth remains far superior to a Real Betis side showing mixed form (LWWWL). Odds have moved aggressively toward Madrid (-260 from an open of -160), reflecting market conviction that Betis is overmatched despite hosting at Estadio La Cartuja. While the last head-to-head finished 1-1, Madrid’s early-season attacking rhythm and defensive solidity make an away victory the clear favorite.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-03T05:17:48.557793-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are heavy favorites (DraftKings -260, other books ~1.38-1.45) with a perfect 3-0-0 start and five straight wins, including a 4-0 rout of Málaga. Betis (2-0-1) are coming off a demoralizing 5-2 home loss to Levante, exposing defensive fragility. Madrid do carry significant injury absences (Rodrygo out long-term, plus Tchouaméni, Endrick, Mendy, Asencio, and Pitarch), and the last head-to-head ended 1-1, which tempers confidence slightly. Still, Madrid's squad depth, superior form, and Betis's defensive issues point to an away win in regulation.",
+                    "event_id": "401882894"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-03T05:18:03.687656-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enter the match in excellent form (WWWWW, 3-0-0) and sit second in La Liga after a 4-0 victory over Málaga, while Real Betis are more inconsistent (LWWWL, 2-0-1). The betting market strongly favors Madrid, with away odds around -260 / 1.38-1.45 and implied win probability near 70%. Although Betis have home advantage and the last meeting ended 1-1, Madrid's quality and momentum outweigh the absences of Tchouaméni, Endrick, Rodrygo, Mendy, Asencio, and Pitarch.",
+                    "event_id": "401882894"
+                }
+            ]
+        }
+    ]
+}

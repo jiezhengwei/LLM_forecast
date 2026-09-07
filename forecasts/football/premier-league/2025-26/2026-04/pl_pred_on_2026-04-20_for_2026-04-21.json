@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-20\n    Target Date: 2026-04-21\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Chelsea @ Brighton & Hove Albion                     | Scheduled    | Away: 39.4% (13-9-11) vs Home: 36.4% (12-11-10)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Chelsea (Away) @ Brighton & Hove Albion (Home)\n**News & Injury Report:**\n- [Brighton vs Chelsea Prediction - Premier League - 21/04/2026](https://www.sportytrader.com/en/betting-tips/brighton-chelsea-343612/)\n  Snippet: Dunk is back for the Seagulls.\n\nBrighton also have James Milner and Adam Webster injured at present. However captain Lewis Dunk has now served his two-game suspension and is free to return to the side for this vital home game against Chelsea.\n\nChelse...\n- [Brighton vs Chelsea Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/brighton-vs-chelsea-prediction-lineups-odds-2026-04-21/)\n  Snippet: Confirmed Lineups\n\n17 Mar Champions League\n\nChelsea 0-3 PSG\n\nConfirmed Lineups\n\n14 Mar Premier League\n\nChelsea 0-1 Newcastle\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBrighton  Injury Table\n\nType Name Info\n\nLewis Dunk Yellow cards \n\nPosition: D...\n**Betting Odds:**\n- [Brighton & Hove Albion vs Chelsea FC Odds - Tuesday April 21 2026](https://www.oddsshark.com/soccer/epl/brighton-hove-albion-chelsea-odds-april-21-2026-2521272)\n  Snippet: Skip to main content \n\nSoccer\n\n# Brighton & Hove Albion vs Chelsea FC\n\nChelsea\n\n13 - 9 - 10\n\nL-L-L-W-L-D\n\nBrighton & Hove Albion\n\n12 - 10 - 10\n\nW-W-W-L-W-W\n\nApril 21, 2026, 3:00 PM EDT  \n | American Express Stadium\n\nPredicted Score\n\n1.6\n\nCHE\n\n1.3\n\nBH...\n- [Brighton vs Chelsea prediction 21.04.2026 | Premier League](https://www.mightytips.com/football-predictions/brighton-vs-chelsea-prediction-21-04-2026/)\n  Snippet: Updated\n19.04.2026\n\nclock\nwinrate\n\n60% winrate\n\nwins\n\n3 wins in a row\n\nFootball betting expert with a background in data science and statistical modeling.\n\nBest Odds:\n\nBetnero\n\nBetnero\n\nBet \u00a310 & Get \u00a310 Free Bet\n\n## Additional predictions\n\nBrighton ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-20\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-20 17:00:51"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-20 16:59:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "Market signals (projected goals ~1.6 CHE vs ~1.3 BHA) imply Chelsea are a slight favorite despite being away. Brighton have stronger recent form (multiple wins recently) and get captain Lewis Dunk back, which improves defensive stability, while Milner/Webster remain out. Chelsea\u2019s recent results are poor (noted L-L-L-W-L-D run), so away-win edge is marginal and draw risk is meaningful."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 16:59:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brighton have superior recent form (W-W-W-L-W-W) and home advantage at the American Express Stadium. Lewis Dunk returning from suspension strengthens their defense despite injuries to Milner and Adam Webster. Chelsea arrive in poor form (recent league and Champions League defeats) and may be impacted by fatigue/rest rotation. Market signals are close (some models/odds slightly favour Chelsea), so probabilities remain fairly tight, but the balance of form, home edge and Dunk's return tilt the forecast to a Brighton home win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea away @ Brighton & Hove Albion home",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brighton host with Dunk returning to the defense, which strengthens their resilience at home. Chelsea's away win rate (approx. 39%) is competitive, and their attacking threat on the road plus Brighton's injury concerns (Milner, Webster) provide Chelsea a slight edge on the day. Odds signal a closely contested game; model assigns a modest tilt to Chelsea on away trips, hence the away win probability."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brighton have strong recent form (WWWLWW) and regain their captain, Lewis Dunk, from suspension, which is a defensive boost despite missing Milner and Webster. Chelsea's recent form is poor (LLLWL-D), and their away win rate is only slightly higher than Brighton's home win rate. Market odds and models indicate a narrow edge for Brighton at home, but the match is closely contested, with draw probability also substantial."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "The match is relatively balanced. Brighton have a strong home form recently with several wins, and Lewis Dunk's return from suspension strengthens their defense. However, they have key injuries in Milner and Webster. Chelsea's recent form shows losses against strong teams, but they remain competitive. Given the home advantage but mixed injury situation for Brighton, and Chelsea's uneven form, a draw is a likely outcome."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brighton has a slightly better home record and their captain Lewis Dunk is back from suspension. While Chelsea's away record is marginally better, Brighton's recent winning streak and the predicted score lean towards a slight home advantage. James Milner and Adam Webster are injured for Brighton. The betting odds also suggest a closer game, but slightly favoring Brighton."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brighton has significantly better recent form (W-W-W-L-W-W vs Chelsea's L-L-L-W-L-D) and strong home advantage. Brighton captain Lewis Dunk returns from suspension, strengthening their defense, while Chelsea has key injuries. Chelsea's away win rate (39.4%) is slightly better than Brighton's home win rate (36.4%), but current momentum favors Brighton. Betting odds snippets suggest Brighton as favorites with implied probability around 45% for home win."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a closely matched fixture between two mid-table sides with similar records. Brighton (12-11-10, 36.4% win rate) have excellent recent form with 4 wins in their last 5 matches (W-W-W-L-W-W pattern visible). Chelsea (13-9-11, 39.4% win rate) are struggling badly with poor form showing L-L-L-W-L-D in recent games, including a damaging 0-3 home loss to PSG and 0-1 loss to Newcastle. The predicted score from betting markets (1.6-1.3) suggests a tight, low-scoring affair slightly favoring Chelsea, but Brighton's home advantage and superior current form tips the balance. Key factors: Lewis Dunk returns from suspension to strengthen Brighton's defense, while Chelsea have James Milner and Adam Webster injured. Brighton's momentum (3 wins in a row per expert analysis with 60% win rate prediction) at home against a Chelsea side in crisis makes this a marginal home win prediction. The probabilities reflect the closeness of this match - any of the three outcomes is plausible, but Brighton's form and home advantage give them a slight edge despite Chelsea's marginally better season record."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-20 17:00:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Chelsea, despite recent poor form, has a slightly better win rate this season (39.4% vs 36.4%). Brighton's key player, Lewis Dunk, is back from suspension, which strengthens their defense, but they still have injuries to James Milner and Adam Webster. The betting odds also slightly favor Chelsea, indicating a slight edge for the away team."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

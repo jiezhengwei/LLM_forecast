@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-04",
+        "target_date_et": "2026-09-05",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882895\nMatchup: Atlético Madrid (away) @ Athletic Club (home)\nHome: Athletic Club\nAway: Atlético Madrid\nKickoff UTC: 2026-09-05T14:15Z\nKickoff ET: 2026-09-05 10:15 EDT\nVenue: San Mamés\nRound: unavailable\nHome form: WLLLD\nAway form: WDWLW\nHome record: 1-0-2\nAway record: 2-1-0\nESPN structured 1X2 odds: DraftKings: Athletic Club +205 (open +180); Draw +250 (open +245); Atlético Madrid +130 (open +140)\nTavily context:\n  - Title: Athletic Club vs Atlético Madrid - live score, predicted lineups and H2H stats\n    Content: VivianGroin injuryEarly September 2026\n\n  Unai Egiluz\n\n  Cruciate ligament injury / Mid January 2027\n\nEgiluzCruciate ligament injuryMid January 2027\n\n  Morten Hjulmand\n\n  Muscle injury / Doubtful\n\nHjulmandMuscle injuryDoubtful\n\n  Alexander Sørloth\n\n  Muscle injury / Early September 2026\n\nSørlothMuscle injuryEarly September 2026\n\n## Team form\n\n Barcelona\n\n  2 - 0\n\n  Athletic Club\n Athletic Club\n\n  1 - 3\n\n  Sevilla\n Real Zaragoza\n\n  3 - 1\n\n  Athletic Club\n Atalanta\n\n  1 - 0\n\n  Athletic Club\n Marseille\n\n  3 - 1\n\n  Athletic Club\n\n Atlético Madrid\n\n  2 - 2\n\n  Villarreal\n Atlético Madrid\n\n  2 - 0 ...\n    URL: https://www.fotmob.com/matches/athletic-club-vs-atletico-madrid/2queyl\n  - Title: Athletic Club vs Atlético de Madrid Box Score - September 05, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nLa Liga Primera Division, Matchweek 4\n\nAthletic Club\n\n20th in La Liga Primera Division\n\nATH\n\nSat Sep 5\n\n14:15\n\nATM\n\nAtlético de Madrid\n\n4th in La Liga Primera Division\n\nTeam Leaders\n\nLa Liga Primera Division\n\nATH\n\nATH\n\nGoals\n\nAitor Paredes\n\nAitor ParedesD, #4\n\n1GP\n\n1G\n\n1SOT\n\nAssists\n\nYeray\n\nYerayD, #5\n\n1GP\n\n1A\n\n85.2PAcc\n\nSaves\n\nUnai Simón\n\nUnai SimónGK, #1\n\n1GP\n\n2SV\n\n3GA\n\nATM\n\nATM\n\nGoals\n\nÁlex Baena\n\nÁlex BaenaM, #10\n\n2GP\n\n1G\n\n1SOT\n\nAssists\n\nÁlex Baena\n\nÁlex BaenaM, #10\n\n2GP\n\n1A\n\n76.7PAcc\n\nSaves\n\nJ. Oblak\n\nJ. OblakGK, #13\n\n2GP\n\n5SV\n\n2GA\n\nInjury Report\n\nATH ...\n    URL: https://www.nytimes.com/athletic/football/game/athletic-club-vs-atl%C3%A9tico-de-madrid/ezzK279wsoC5jFcS\n  - Title: Athletic Club vs Atlético de Madrid Predictions, Picks & Odds\n    Content: Atlético de Madrid arrive in Bilbao brimming with confidence. Diego Simeone's side sit third, unbeaten this term with two wins and a draw, and their 3-1 dismantling of Sevilla showcased real attacking intent. Five summer signings, including Jonathan David and Lee Kang-in, have added depth. Julián Alvarez returned to training after illness and could feature from the bench, giving Simeone enviable options across the pitch.\n\n### Recommended Bets\n\n| 1xBet | Stake | bc.game |\n ---\n| Athletic Club to win | 3.09 | 2.88 | 2.92 |\n| Under 2.5 | 1.97 | · | 1.87 |\n| BTTS Yes | 1.68 | 1.04 | 1.67 | ...\n    URL: https://www.toffeeweb.com/int/athletic-club-vs-atletico-de-madrid-predictions-picks-odds-05-09-2026\n  - Title: Athletic Club vs Atlético Madrid Prediction, Betting Tips, Lineups ...\n    Content: The Atlético Madrid betting odds are 2.28 which means that they’re favourites to land victory in this La Liga encounter. It’s also suggested by the bookies that this team have a 44% chance of winning. Athletic Club are regarded as the least likely winner at 3.10.\n\nIf you fancy Atléti to win, then the 1.95 for them on the Asian Handicap -0.25 is a potential wager. You get a full payout if they beat Athletic and half your stake back if it ends in a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/athletic-club-vs-atletico-madrid-prediction-lineups-odds-2026-09-05\n\nGame ID: 2\nSource event_id: 401882889\nMatchup: Racing Santander (away) @ Rayo Vallecano (home)\nHome: Rayo Vallecano\nAway: Racing Santander\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: Estadio Municipal de Butarque\nRound: unavailable\nHome form: LDLLW\nAway form: WLDWD\nHome record: 0-1-2\nAway record: 1-1-1\nESPN structured 1X2 odds: Provider unavailable: Rayo Vallecano +125 (open +125); Draw +250 (open +240); Racing Santander +215 (open +215)\nTavily context:\n  - Title: Rayo Vallecano vs Racing Santander Prediction & Betting Tips - 05/09/2026\n    Content: 1.3Goals scored\n\n1.3Goals conceded\n\n#### Racing Santander\n\nRecent form\n\nWLD\n\nWins1/3 (33%)\n\nDraws1/3 (33%)\n\nLosses1/3 (33%)\n\nSeason statistics (3)\n\n3Total goals\n\n54%Both teams score\n\n1.5Goals scored\n\n1.5Goals conceded\n\nProbable lineup\n\n### Lineups: Rayo Vallecano vs Racing Santander\n\n#### Rayo Vallecano\n\n4-3-3\n\nStarters\n\n1. 1 Dani Cardenas\n2. 2 Iván Balliu\n3. 3 Florian Lejeune\n4. 4 Pathé Ciss\n5. 5 Adrià Pedrosa\n6. 6 Óscar Valentín\n7. 7 Unai López\n8. 8 Pablo Díaz\n9. 9 Jorge de Frutos\n10. 10 Sergio Camello\n11. 11 Álvaro García\n\nAbsent ...\n    URL: https://thefootballfaithful.com/rayo-vallecano-vs-racing-santander-prediction-betting-tips-05-09-2026\n  - Title: Rayo Vallecano vs Racing Santander Predictions, Picks & Odds - 05/09/2026\n    Content: Absent\n\n Andrés Martín (injury)\n Pedro Felipe (injury)\n Iker Luque (Suspension.)\n\nMedium confidence\n\nA 4-3-3 versus 4-3-3 contest shapes up at Vallecas, with both sides mirroring each other structurally across the pitch. Rayo's probable XI carries four credible source confirmations, giving it slightly stronger backing than Racing's two-outlet lineup, so a degree of caution around the visitors' final selection is reasonable. ...\n    URL: https://www.toffeeweb.com/int/rayo-vallecano-vs-racing-santander-predictions-picks-odds-05-09-2026\n  - Title: Rayo Vallecano vs. Racing Santander Prediction & Picks [9/5/2026]\n    Content: ### Match overview\n\n Teams: Rayo Vallecano vs. Racing Santander\n Date: Saturday, September 5, 2026\n Time: 12:30 PM ET\n Venue: Campo de Futbol de Vallecas\n\n### Current betting odds\n\n Moneyline: Rayo Vallecano +133, Racing Santander +245, draw +245\n Total (Over/Under): 2.5 goals (-104/+100)\n\n### Dimers' win & correct score probabilities\n\n Rayo Vallecano: 45.2%\n Racing Santander: 29.7%\n Draw: 25.1%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets. ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_4_rvc_racs\n\nGame ID: 3\nSource event_id: 401882887\nMatchup: Deportivo (away) @ Villarreal (home)\nHome: Villarreal\nAway: Deportivo\nKickoff UTC: 2026-09-05T19:00Z\nKickoff ET: 2026-09-05 15:00 EDT\nVenue: Estadio de la Cerámica\nRound: unavailable\nHome form: LDDWL\nAway form: WDDLW\nHome record: 0-2-1\nAway record: 1-2-0\nESPN structured 1X2 odds: Provider unavailable: Villarreal -200 (open -190); Draw +370 (open +330); Deportivo +500 (open +500)\nTavily context:\n  - Title: PREVIEW | Villarreal CF vs Deportivo: team news, lineups, predictions (La Liga 05/09) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nDeportivo have won 5 points to date and are placed in 8th position. In their last game, Antonio Hidalgo's team won 3-1 against Valencia CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Villarreal CF winning 4-2.\n\n## Predicted lineups\n\nVillarreal CF: Luiz Júnior, Santiago Mouriño, Juan Foyth, Renato Veiga, Carlos Romero, Nicolas Pépé, Pape Gueye, Santi Comesaña, Tajon Buchanan, Gerard Moreno, Georges Mikautadze ...\n    URL: https://sports.yahoo.com/articles/preview-villarreal-cf-vs-deportivo-190500050.html\n  - Title: Preview: Villarreal vs Deportivo La Coruna - prediction, team news, lineups - Sports Mole\n    Content: Deportivo have made a positive start to the 2026-27 campaign, picking up five points from three matches, which has left them up in eighth spot in the table.\n\nThe Blue and Whites opened their season with back-to-back draws against Elche and Malaga, before recording a 3-1 victory over Valencia on home soil last time out.\n\nAntonio Hidalgo's side made 10 signings during a busy summer transfer window, while nine players moved on, so there is a fresh look to the squad this season. ...\n    URL: https://www.sportsmole.co.uk/football/villarreal/preview/villarreal-vs-deportivo-prediction-team-news-lineups_604413.html\n  - Title: Villarreal vs Deportivo A Coruña Predictions, Picks & Odds - 05/09/2026\n    Content: The double chance 1X selection reflects a straightforward reading of the home advantage at the Estadio de la Cerámica. Villarreal's squad depth remains considerably stronger than that of a newly promoted side, and the home odds at 1.51 underline that expectation. Despite their sluggish start with two draws and a defeat, the Yellow Submarine possess the quality to turn things around on familiar turf. ...\n    URL: https://www.toffeeweb.com/int/villarreal-vs-deportivo-a-coruna-predictions-picks-odds-05-09-2026\n  - Title: Villarreal vs Deportivo La Coruna Prediction: 5 September 2026 La Liga\n    Content: Yes — | No —\n\nThe moneyline odds around 1.51 for Villarreal reflect a comfortable home favourite status, and that price is fair given the shot volume and squad depth advantage. The draw at 4.72 carries some appeal given Deportivo’s resilience, but backing a draw for a home side that desperately needs points after a poor start is a low-value play. Deportivo at 6.96 is too long given their unbeaten La Liga run, but three games is too small a sample to trust it against a top-half squad at home. ...\n    URL: https://tips.gg/article/villarreal-vs-deportivo-la-coruna-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882895\nMatchup: Atlético Madrid (away) @ Athletic Club (home)\nHome: Athletic Club\nAway: Atlético Madrid\nKickoff UTC: 2026-09-05T14:15Z\nKickoff ET: 2026-09-05 10:15 EDT\nVenue: San Mamés\nRound: unavailable\nHome form: WLLLD\nAway form: WDWLW\nHome record: 1-0-2\nAway record: 2-1-0\nESPN structured 1X2 odds: DraftKings: Athletic Club +205 (open +180); Draw +250 (open +245); Atlético Madrid +130 (open +140)\nTavily context:\n  - Title: Athletic Club vs Atlético Madrid - live score, predicted lineups and H2H stats\n    Content: VivianGroin injuryEarly September 2026\n\n  Unai Egiluz\n\n  Cruciate ligament injury / Mid January 2027\n\nEgiluzCruciate ligament injuryMid January 2027\n\n  Morten Hjulmand\n\n  Muscle injury / Doubtful\n\nHjulmandMuscle injuryDoubtful\n\n  Alexander Sørloth\n\n  Muscle injury / Early September 2026\n\nSørlothMuscle injuryEarly September 2026\n\n## Team form\n\n Barcelona\n\n  2 - 0\n\n  Athletic Club\n Athletic Club\n\n  1 - 3\n\n  Sevilla\n Real Zaragoza\n\n  3 - 1\n\n  Athletic Club\n Atalanta\n\n  1 - 0\n\n  Athletic Club\n Marseille\n\n  3 - 1\n\n  Athletic Club\n\n Atlético Madrid\n\n  2 - 2\n\n  Villarreal\n Atlético Madrid\n\n  2 - 0 ...\n    URL: https://www.fotmob.com/matches/athletic-club-vs-atletico-madrid/2queyl\n  - Title: Athletic Club vs Atlético de Madrid Box Score - September 05, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nLa Liga Primera Division, Matchweek 4\n\nAthletic Club\n\n20th in La Liga Primera Division\n\nATH\n\nSat Sep 5\n\n14:15\n\nATM\n\nAtlético de Madrid\n\n4th in La Liga Primera Division\n\nTeam Leaders\n\nLa Liga Primera Division\n\nATH\n\nATH\n\nGoals\n\nAitor Paredes\n\nAitor ParedesD, #4\n\n1GP\n\n1G\n\n1SOT\n\nAssists\n\nYeray\n\nYerayD, #5\n\n1GP\n\n1A\n\n85.2PAcc\n\nSaves\n\nUnai Simón\n\nUnai SimónGK, #1\n\n1GP\n\n2SV\n\n3GA\n\nATM\n\nATM\n\nGoals\n\nÁlex Baena\n\nÁlex BaenaM, #10\n\n2GP\n\n1G\n\n1SOT\n\nAssists\n\nÁlex Baena\n\nÁlex BaenaM, #10\n\n2GP\n\n1A\n\n76.7PAcc\n\nSaves\n\nJ. Oblak\n\nJ. OblakGK, #13\n\n2GP\n\n5SV\n\n2GA\n\nInjury Report\n\nATH ...\n    URL: https://www.nytimes.com/athletic/football/game/athletic-club-vs-atl%C3%A9tico-de-madrid/ezzK279wsoC5jFcS\n  - Title: Athletic Club vs Atlético de Madrid Predictions, Picks & Odds\n    Content: Atlético de Madrid arrive in Bilbao brimming with confidence. Diego Simeone's side sit third, unbeaten this term with two wins and a draw, and their 3-1 dismantling of Sevilla showcased real attacking intent. Five summer signings, including Jonathan David and Lee Kang-in, have added depth. Julián Alvarez returned to training after illness and could feature from the bench, giving Simeone enviable options across the pitch.\n\n### Recommended Bets\n\n| 1xBet | Stake | bc.game |\n ---\n| Athletic Club to win | 3.09 | 2.88 | 2.92 |\n| Under 2.5 | 1.97 | · | 1.87 |\n| BTTS Yes | 1.68 | 1.04 | 1.67 | ...\n    URL: https://www.toffeeweb.com/int/athletic-club-vs-atletico-de-madrid-predictions-picks-odds-05-09-2026\n  - Title: Athletic Club vs Atlético Madrid Prediction, Betting Tips, Lineups ...\n    Content: The Atlético Madrid betting odds are 2.28 which means that they’re favourites to land victory in this La Liga encounter. It’s also suggested by the bookies that this team have a 44% chance of winning. Athletic Club are regarded as the least likely winner at 3.10.\n\nIf you fancy Atléti to win, then the 1.95 for them on the Asian Handicap -0.25 is a potential wager. You get a full payout if they beat Athletic and half your stake back if it ends in a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/athletic-club-vs-atletico-madrid-prediction-lineups-odds-2026-09-05\n\nGame ID: 2\nSource event_id: 401882889\nMatchup: Racing Santander (away) @ Rayo Vallecano (home)\nHome: Rayo Vallecano\nAway: Racing Santander\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: Estadio Municipal de Butarque\nRound: unavailable\nHome form: LDLLW\nAway form: WLDWD\nHome record: 0-1-2\nAway record: 1-1-1\nESPN structured 1X2 odds: Provider unavailable: Rayo Vallecano +125 (open +125); Draw +250 (open +240); Racing Santander +215 (open +215)\nTavily context:\n  - Title: Rayo Vallecano vs Racing Santander Prediction & Betting Tips - 05/09/2026\n    Content: 1.3Goals scored\n\n1.3Goals conceded\n\n#### Racing Santander\n\nRecent form\n\nWLD\n\nWins1/3 (33%)\n\nDraws1/3 (33%)\n\nLosses1/3 (33%)\n\nSeason statistics (3)\n\n3Total goals\n\n54%Both teams score\n\n1.5Goals scored\n\n1.5Goals conceded\n\nProbable lineup\n\n### Lineups: Rayo Vallecano vs Racing Santander\n\n#### Rayo Vallecano\n\n4-3-3\n\nStarters\n\n1. 1 Dani Cardenas\n2. 2 Iván Balliu\n3. 3 Florian Lejeune\n4. 4 Pathé Ciss\n5. 5 Adrià Pedrosa\n6. 6 Óscar Valentín\n7. 7 Unai López\n8. 8 Pablo Díaz\n9. 9 Jorge de Frutos\n10. 10 Sergio Camello\n11. 11 Álvaro García\n\nAbsent ...\n    URL: https://thefootballfaithful.com/rayo-vallecano-vs-racing-santander-prediction-betting-tips-05-09-2026\n  - Title: Rayo Vallecano vs Racing Santander Predictions, Picks & Odds - 05/09/2026\n    Content: Absent\n\n Andrés Martín (injury)\n Pedro Felipe (injury)\n Iker Luque (Suspension.)\n\nMedium confidence\n\nA 4-3-3 versus 4-3-3 contest shapes up at Vallecas, with both sides mirroring each other structurally across the pitch. Rayo's probable XI carries four credible source confirmations, giving it slightly stronger backing than Racing's two-outlet lineup, so a degree of caution around the visitors' final selection is reasonable. ...\n    URL: https://www.toffeeweb.com/int/rayo-vallecano-vs-racing-santander-predictions-picks-odds-05-09-2026\n  - Title: Rayo Vallecano vs. Racing Santander Prediction & Picks [9/5/2026]\n    Content: ### Match overview\n\n Teams: Rayo Vallecano vs. Racing Santander\n Date: Saturday, September 5, 2026\n Time: 12:30 PM ET\n Venue: Campo de Futbol de Vallecas\n\n### Current betting odds\n\n Moneyline: Rayo Vallecano +133, Racing Santander +245, draw +245\n Total (Over/Under): 2.5 goals (-104/+100)\n\n### Dimers' win & correct score probabilities\n\n Rayo Vallecano: 45.2%\n Racing Santander: 29.7%\n Draw: 25.1%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets. ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_4_rvc_racs\n\nGame ID: 3\nSource event_id: 401882887\nMatchup: Deportivo (away) @ Villarreal (home)\nHome: Villarreal\nAway: Deportivo\nKickoff UTC: 2026-09-05T19:00Z\nKickoff ET: 2026-09-05 15:00 EDT\nVenue: Estadio de la Cerámica\nRound: unavailable\nHome form: LDDWL\nAway form: WDDLW\nHome record: 0-2-1\nAway record: 1-2-0\nESPN structured 1X2 odds: Provider unavailable: Villarreal -200 (open -190); Draw +370 (open +330); Deportivo +500 (open +500)\nTavily context:\n  - Title: PREVIEW | Villarreal CF vs Deportivo: team news, lineups, predictions (La Liga 05/09) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nDeportivo have won 5 points to date and are placed in 8th position. In their last game, Antonio Hidalgo's team won 3-1 against Valencia CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Villarreal CF winning 4-2.\n\n## Predicted lineups\n\nVillarreal CF: Luiz Júnior, Santiago Mouriño, Juan Foyth, Renato Veiga, Carlos Romero, Nicolas Pépé, Pape Gueye, Santi Comesaña, Tajon Buchanan, Gerard Moreno, Georges Mikautadze ...\n    URL: https://sports.yahoo.com/articles/preview-villarreal-cf-vs-deportivo-190500050.html\n  - Title: Preview: Villarreal vs Deportivo La Coruna - prediction, team news, lineups - Sports Mole\n    Content: Deportivo have made a positive start to the 2026-27 campaign, picking up five points from three matches, which has left them up in eighth spot in the table.\n\nThe Blue and Whites opened their season with back-to-back draws against Elche and Malaga, before recording a 3-1 victory over Valencia on home soil last time out.\n\nAntonio Hidalgo's side made 10 signings during a busy summer transfer window, while nine players moved on, so there is a fresh look to the squad this season. ...\n    URL: https://www.sportsmole.co.uk/football/villarreal/preview/villarreal-vs-deportivo-prediction-team-news-lineups_604413.html\n  - Title: Villarreal vs Deportivo A Coruña Predictions, Picks & Odds - 05/09/2026\n    Content: The double chance 1X selection reflects a straightforward reading of the home advantage at the Estadio de la Cerámica. Villarreal's squad depth remains considerably stronger than that of a newly promoted side, and the home odds at 1.51 underline that expectation. Despite their sluggish start with two draws and a defeat, the Yellow Submarine possess the quality to turn things around on familiar turf. ...\n    URL: https://www.toffeeweb.com/int/villarreal-vs-deportivo-a-coruna-predictions-picks-odds-05-09-2026\n  - Title: Villarreal vs Deportivo La Coruna Prediction: 5 September 2026 La Liga\n    Content: Yes — | No —\n\nThe moneyline odds around 1.51 for Villarreal reflect a comfortable home favourite status, and that price is fair given the shot volume and squad depth advantage. The draw at 4.72 carries some appeal given Deportivo’s resilience, but backing a draw for a home side that desperately needs points after a poor start is a low-value play. Deportivo at 6.96 is too long given their unbeaten La Liga run, but three games is too small a sample to trust it against a top-half squad at home. ...\n    URL: https://tips.gg/article/villarreal-vs-deportivo-la-coruna-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882895",
+                        "date_utc": "2026-09-05T14:15Z",
+                        "kickoff_et": "2026-09-05 10:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Athletic Club",
+                        "away": "Atlético Madrid",
+                        "home_id": "93",
+                        "away_id": "1068",
+                        "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                        "venue": "San Mamés",
+                        "city": "Bilbao",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WLLLD",
+                        "form_away": "WDWLW",
+                        "record_home": "1-0-2",
+                        "record_away": "2-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+180",
+                            "home_current": "+205",
+                            "draw_open": "+245",
+                            "draw_current": "+250",
+                            "away_open": "+140",
+                            "away_current": "+130"
+                        },
+                        "odds_text": "DraftKings: Athletic Club +205 (open +180); Draw +250 (open +245); Atlético Madrid +130 (open +140)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882889",
+                        "date_utc": "2026-09-05T16:30Z",
+                        "kickoff_et": "2026-09-05 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Rayo Vallecano",
+                        "away": "Racing Santander",
+                        "home_id": "101",
+                        "away_id": "87",
+                        "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                        "venue": "Estadio Municipal de Butarque",
+                        "city": "Leganés, Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDLLW",
+                        "form_away": "WLDWD",
+                        "record_home": "0-1-2",
+                        "record_away": "1-1-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+125",
+                            "home_current": "+125",
+                            "draw_open": "+240",
+                            "draw_current": "+250",
+                            "away_open": "+215",
+                            "away_current": "+215"
+                        },
+                        "odds_text": "Provider unavailable: Rayo Vallecano +125 (open +125); Draw +250 (open +240); Racing Santander +215 (open +215)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882887",
+                        "date_utc": "2026-09-05T19:00Z",
+                        "kickoff_et": "2026-09-05 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Villarreal",
+                        "away": "Deportivo",
+                        "home_id": "102",
+                        "away_id": "90",
+                        "matchup": "Deportivo (away) @ Villarreal (home)",
+                        "venue": "Estadio de la Cerámica",
+                        "city": "Villarreal",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDDWL",
+                        "form_away": "WDDLW",
+                        "record_home": "0-2-1",
+                        "record_away": "1-2-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-190",
+                            "home_current": "-200",
+                            "draw_open": "+330",
+                            "draw_current": "+370",
+                            "away_open": "+500",
+                            "away_current": "+500"
+                        },
+                        "odds_text": "Provider unavailable: Villarreal -200 (open -190); Draw +370 (open +330); Deportivo +500 (open +500)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-04T10:15:07.005479-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:00:00.395290-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enters the match in strong form (unbeaten with two wins and a draw) and with significant summer squad reinforcements. Athletic Club has started their campaign poorly and sits near the bottom of the table, making the visitors the favorites even away at San Mamés.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano holds the home-field advantage and boasts a more settled top-tier squad structure. While Racing Santander has shown some early resilience, Rayo is favored to take all three points at the Campo de Fútbol de Vallecas.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are heavy favorites at the Estadio de la Cerámica. Despite Deportivo's surprisingly positive start as a newly promoted side, Villarreal's squad depth, offensive quality, and urgent need to correct a sluggish start should secure them a comfortable home victory.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-04T10:00:08.779240-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are entering the match unbeaten and sit 4th (or 3rd as noted) in La Liga with an in-form squad, while Athletic Club are struggling at the bottom of the table in 20th place with a 1-0-2 record. Odds favor the visitors to take all three points.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are playing at home and are favored by predictive models and bookmakers (around 45% implied win probability). While Racing Santander have had a slightly better start to the season, Rayo's home advantage gives them the edge.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are heavy favorites at -200 to secure a victory at home against a newly promoted Deportivo side. Despite Deportivo's solid start, Villarreal boasts far superior squad depth and quality at the Estadio de la Cerámica.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-04T10:00:34.738760-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid is unbeaten this season and in strong form, while Athletic Club has started poorly with a 1-0-2 record and is dealing with several injuries. Betting odds favor Atlético, even on the road at the challenging San Mamés, reflecting their superior current form and squad depth.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.452,
+                    "draw_probability": 0.251,
+                    "away_win_probability": 0.297,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Rayo Vallecano's winless start to the season (0-1-2), both betting odds and predictive models give them a significant edge at home. Racing Santander has a slightly better record but is the away team. The Dimers model gives Rayo a 45.2% chance of winning, which is the most probable of the three outcomes.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are heavy home favorites against newly-promoted Deportivo. Despite Villarreal's slow start to the season (0-2-1), their squad quality is considered far superior. Playing at home provides a strong advantage, and they will be highly motivated to secure their first win of the campaign.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:00:53.708478-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid arrives in strong form, unbeaten this season with two wins and a draw, and has made impactful summer signings. They are ranked 4th in La Liga, significantly higher than Athletic Club at 20th. Athletic Club's recent form is poor (WLLLD), and they hold a losing home record (1-0-2). The betting odds heavily favor Atlético Madrid, and their overall squad depth and current momentum make them clear favorites despite playing away.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano is favored by betting markets and models, likely due to home advantage, despite their very poor home record of 0-1-2. Racing Santander has a respectable away record of 1-1-1 and slightly better recent form (WLDWD vs LDLLW). While Rayo struggles at home, the overall market sentiment and prediction models lean towards a narrow home victory. The match is expected to be closely contested, given the similar tactical setups of both teams.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal, despite a sluggish start to the season (0-2-1 home record) and poor form (LDDWL), is the stronger team on paper with considerably deeper squad talent. They are heavily favored by the market. Deportivo, a newly promoted side, has had a surprisingly positive start, remaining unbeaten in their first three league games (1-2-0 away record, WDDLW form) including a recent 3-1 win over Valencia. While Villarreal needs a win and is expected to get it, Deportivo's resilience and strong early form suggest they could make this a challenging fixture.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:05:02.990483-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are the market favorite and enter with stronger early-season form and an unbeaten record. Athletic Club have San Mamés home advantage, but poor recent results and defensive injury concerns tilt the forecast toward Atlético.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Rayo are slight favorites on the 1X2 market and should carry more established La Liga quality, but their poor start and Racing's competitive early results make this a tight match with meaningful draw and away-win risk.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are strong home favorites by the market and have a deeper squad despite a slow start. Deportivo's unbeaten opening and recent win over Valencia reduce certainty, but the home side remains the most likely 90-minute winner.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:05:19.813534-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enter with the stronger early-season record and are slight market favorites, while Athletic Club have started poorly and appear to be dealing with defensive injury concerns. San Mamés keeps the draw and home-win chances meaningful, but Atlético look more reliable overall.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are modest home favorites by the market and model context, with a slightly stronger projected lineup profile. Racing Santander have been competitive and carry enough scoring threat to keep this close, but Rayo have the narrow edge.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are clear home favorites based on squad strength, home advantage, and market pricing. Deportivo have started well and remain capable of making the match competitive, but Villarreal's attacking quality and depth make a home win the most likely result.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-04T10:06:07.104703-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Atlético a modest road favorite, and their early-season record/form edge (2-1-0; WDWLW) supports that. Athletic’s recent form is weaker (WLLLD) despite the San Mamés home advantage, so the most likely 90-minute result is a narrow Atlético win with a fairly high draw chance in a typically tight matchup.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo are priced as the clear home favorite and projection models in the provided context also lean Rayo by a similar margin. Racing are competitive but less reliable away, and absences/suspension noted for the visitors add slight downside, making a Rayo 90-minute home win the single most likely outcome.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are strong home favorites per odds (heavy negative price) reflecting a significant squad-quality and home-field edge at Estadio de la Cerámica. Deportivo’s decent start raises the draw probability somewhat, but the most likely 90-minute result remains a Villarreal win.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-04T10:06:22.282162-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético arrive unbeaten with stronger attacking options and more consistent early-season form; bookmakers make them clear favourites. Athletic have inconsistent form and injury concerns, and while San Mamés offers home support, Atlético's squad depth and recent performances make an away win the likeliest 90‑minute result.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo are marginal favourites with home advantage in Vallecas; both teams have produced low scoring games and mixed form, so a narrow Rayo victory is most likely but a draw is reasonably probable given defensive tendencies and squad parity.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are clear home favourites with stronger squad depth and quality; Deportivo have shown resilience and are unbeaten recently, so an upset is possible, but Villarreal winning in regulation is the most likely outcome.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-04T10:06:50.435481-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds favor Atlético Madrid (+130) and their road form edges; normalization with home/away forms yields a modest away-edge.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Home odds at +125 indicate a win probability around 0.44, normalized with current forms; Rayo have slight home advantage.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are strong favorites (-200) at home; Deportivo away form is modest; expect home win with some draw potential.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-04T10:06:56.039868-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are unbeaten this season and have shown strong attacking form, bolstered by new signings and squad depth. Athletic Club are struggling, sitting 20th in the table, and are missing key players due to injury. Bookmakers and expert previews consistently favor Atlético, with odds and models giving them a clear edge. The draw is a reasonable risk given Atlético's tendency for close games, but the away side's quality and form make them deserved favorites.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are slight favorites at home, with most models and bookmakers giving them a 44-45% chance of victory. Both teams have similar recent form, but Rayo's home advantage and more settled lineup give them the edge. Racing Santander have been competitive but lack the squad depth and away record to be favored. The draw is a significant possibility, but Rayo's home win is the most likely outcome.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are strong home favorites, with odds and expert analysis reflecting their superior squad depth and home advantage. Deportivo have started the season well but are newly promoted and face a significant step up in quality. Villarreal's need for points and historical dominance in this fixture further support a home win. The draw is possible given Deportivo's resilience, but Villarreal's quality should prevail.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-04T10:07:01.478582-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid is in better form and has a stronger squad depth. Athletic Club is struggling with injuries and poor form, making Atlético the likely winner.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano has a slight edge with home advantage and a more stable lineup, despite both teams having inconsistent form.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal's squad depth and home advantage make them strong favorites against a newly promoted Deportivo, despite their decent start.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-04T10:07:15.522646-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Atlético are unbeaten (2-1-0) with attacking form and new depth (Baena, David), while Athletic have lost three straight across competitions and carry key injuries (Vivian, Sørloth). Odds make Atlético the favorite at +130 despite the San Mamés venue, but Athletic's home strength keeps this close and draw-heavy.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo are moderate home favorites (+125) despite poor recent form (0-1-2), while promoted Racing Santander have started reasonably (1-1-1). Model probabilities (~45% Rayo) align with the market. Rayo's home advantage at Vallecas and superior top-flight quality edge this, but the margin is thin.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are strong home favorites (-200) with a significant squad quality and depth advantage over newly promoted Deportivo, despite a slow start. Deportivo are unbeaten with five points but face a step up in class at La Cerámica, where Villarreal won the last meeting 4-2.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-04T10:07:24.240369-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Atlético are favorites per odds (+130 vs +205) and arrive unbeaten with strong form and squad depth despite some muscle injuries. Athletic have poor recent form (WLLLD) and sit low in the table. San Mamés provides home advantage keeping this competitive, but Atlético's quality edges it.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano are home favorites (+125) with model estimates around 45% win probability. Racing Santander are newly promoted with mixed form. Home advantage and top-flight quality favor Rayo despite their inconsistent start.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are strong home favorites (-200) with superior squad depth at Estadio de la Cerámica. Despite a sluggish start, they have the quality to overcome newly promoted Deportivo, who have shown resilience but lack the depth to win here.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-04T10:07:41.747412-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enter this match unbeaten in La Liga (2W-1D) and in strong form, having beaten Sevilla 3-1 among other results. New signings including Jonathan David and Lee Kang-in have added attacking quality. Athletic Club are struggling (1W-0D-2L in La Liga) and have lost several recent fixtures including to Barcelona, Sevilla, and Atalanta. Injury concerns for Athletic (Vivian, Sørloth) weaken their squad further. The odds firmly favour Atlético (-130 to -140 away), reflecting their superior current form. San Mamés provides home advantage but Athletic's poor start and Atlético's depth and quality make the away side the pick. Odds imply roughly 42-45% Atlético win probability, consistent with the form data.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano are slight home favourites (+125 to +133) despite a mixed start (0W-1D-2L record but with a recent win in form LDLLW). Racing Santander are newly promoted/returning to La Liga and have a reasonable early-season record (1W-1D-1L). Both teams are evenly matched structurally with mirror 4-3-3 formations. Rayo's home advantage at Vallecas is meaningful. The Dimers model gives Rayo ~45% win probability which aligns with market pricing. Confidence is low due to both teams' inconsistency and the competitive nature of this fixture.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are strong home favourites at -200 (implied ~67%), though their early-season form has been sluggish (0W-2D-1L). Deportivo are a promoted/returning side with a decent start (1W-2D-0L, 5 points), including a 3-1 win over Valencia. However, Villarreal possess considerably superior squad depth and quality, with experience at this level. The last head-to-head ended 4-2 to Villarreal. At home and desperate for points, Villarreal should have enough quality to overcome a resilient but outmatched Deportivo side. Slightly discounted from raw market odds given Deportivo's unbeaten La Liga run and Villarreal's underwhelming start.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-04T10:08:04.674840-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid arrive unbeaten with 2 wins and a draw, sitting third in the table with strong form (WDWLW). Their 3-1 win over Sevilla showcased attacking quality, and they've added depth with five summer signings including Jonathan David and Lee Kang-in. Athletic Club have struggled with poor form (WLLLD), including a 3-1 loss to Sevilla and a 3-1 loss to Real Zaragoza. The closing odds favor Atlético at +130 versus Athletic at +205, and multiple sources rate Atlético as 44% favorites. Athletic are missing key players including Vivian and Sørloth to injuries. While San Mamés is traditionally difficult, Atlético's superior form and squad depth give them the edge.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano opened at +125 and hold that line, suggesting bookmaker confidence in the home side. Their recent form shows improvement with a win in their last match after a difficult stretch. Dimers' model projects Rayo at 45.2% to win versus Racing's 29.7%. Racing Santander have been inconsistent with 1-1-1 record and WLDWD form. Both teams have mirrored 4-3-3 formations, and with 54% of Racing's games seeing both teams score, this could be competitive. However, Rayo are missing key players (Andrés Martín, Pedro Felipe suspended Iker Luque), which adds some uncertainty. The home advantage at Vallecas and slightly better expected goal metrics (1.3 goals scored/conceded for Rayo vs 1.5 for Racing) favor the hosts narrowly.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are heavily favored at -200 closing odds despite a poor start (0-2-1 record, LDDWL form). They possess significantly superior squad depth compared to newly promoted Deportivo and desperately need points at home in the Estadio de la Cerámica. Deportivo have made a solid start with 5 points from 3 matches (1-2-0, WDDLW), remaining unbeaten in La Liga play, but face a considerable step up in quality. Multiple sources emphasize Villarreal's quality advantage and home advantage, with the 1X double chance priced at just 1.51 reflecting strong home confidence. While Deportivo's 3-1 win over Valencia shows promise and they made 10 summer signings, Villarreal's established top-half quality should prevail at home as they seek to correct their slow start.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-04T10:08:11.702602-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid arrive unbeaten (2W-1D) with strong recent form, including a 3-1 victory over Sevilla. They sit 4th in the league with quality reinforcements (Jonathan David, Lee Kang-in). Athletic Club are struggling (1W-3L-1D), sitting 20th with soft defensive displays. Despite home advantage and positive DraftKings odds for Athletic Club, Atlético's superior form and attacking intent give them the edge. Odds reflect Athletic favored but context suggests Atlético value.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano hold home advantage with recent W form and +125 moneyline odds. Dimers model projects Rayo at 45.2% win probability vs Racing's 29.7%. Racing Santander show mixed form (W-L-D-W-D) with inconsistent performances. Both teams structurally similar (4-3-3), but Rayo's home record and slightly better recent momentum favor the hosts. Draw probability at 25-26% reflects competitive nature of the fixture.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are strong home favorites (-200 moneyline) with superior squad depth and quality. Despite sluggish start (0W-2D-1L), they face newly promoted Deportivo at the Estadio de la Cerámica. Deportivo's 5-point tally from 3 matches is respectable but achieved against weaker competition. Villarreal's recent record shows vulnerability (L-D-D-W-L) but home advantage and squad quality disparity strongly favor the Yellow Submarine. Moneyline odds at 1.51 represent solid value for home victory.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-04T10:09:38.637486-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are unbeaten and in strong form, while Athletic Club are bottom with defensive injuries and a poor run. The odds and recent performances favor an away win.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano are the betting favorites and have home advantage, but their home record is poor and Racing Santander have been competitive, making this close.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal's home quality and squad depth give them the edge despite a slow start. Deportivo's unbeaten start creates some upset risk, but odds heavily favor the home side.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-04T10:09:42.265685-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are in strong form (2 wins, 1 draw) and sit 4th, while Athletic Club are 20th with poor form (1 win, 2 losses). Atlético have superior squad depth and recent head-to-head advantage. Home advantage and Athletic's resilience make a draw possible, but away win is most likely.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano have home advantage and slightly better overall squad. Both teams have inconsistent form, but Rayo's home support and stronger attacking options give them an edge. Racing Santander are decent but less proven at this level. A draw is possible, but home win is the most probable single outcome.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are clear favourites at home despite a slow start. They have much stronger squad depth and quality compared to newly promoted Deportivo. Deportivo have been solid but are unlikely to upset at Estadio de la Cerámica. Villarreal's need for points and home advantage should secure a win.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-04T10:10:09.110537-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid is in much better form and sits higher in the table, while Athletic Club is struggling in 20th place and dealing with key defensive injuries. The odds and team news heavily favor the away side.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano has a structural advantage and home-field edge, supported by predictive models giving them around a 45% win probability. Racing Santander has been inconsistent on the road.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal is a strong home favorite despite a slow start, possessing superior squad depth against newly promoted Deportivo. The moneyline odds reflect a high implied probability of a home victory.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-04T10:10:21.163918-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid is in good form and has a strong squad, with recent signings adding depth. Athletic Club, on the other hand, has struggled in their recent matches and has key players out due to injury.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano has a slightly better form and home advantage. Racing Santander, while showing some resilience, has not been as consistent. The home team's probable lineup also seems more settled, giving them an edge.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal, despite a slow start, has a stronger and deeper squad. They are playing at home and need to turn things around. Deportivo, although unbeaten, is a newly promoted team and may struggle against a top-half side like Villarreal.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-04T10:11:44.728881-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enters with superior squad depth, an unbeaten early-season record, and key new signings. Athletic Club's poor recent form and significant injuries to core defenders and striker Sørloth undermine their San Mamés advantage. The odds and tactical matchup point toward a narrow away victory, though derby intensity suggests a competitive game.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano holds a slight edge due to home advantage and predictive models favoring the hosts, despite a winless home record early in the campaign. Racing Santander's inconsistent away form and mirrored 4-3-3 structure indicate a tight contest. Missing midfield personnel for Rayo and early-season volatility keep confidence low, but the home field provides the marginal advantage.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal is heavily favored due to a substantial gap in squad quality, attacking talent, and home advantage at Estadio de la Cerámica. Although Deportivo's positive start and win over Valencia demonstrate early resilience, newly promoted sides typically struggle to maintain that level against top-half opposition on the road. The betting market and underlying stats strongly support a home victory.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-04T10:13:00.806538-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atletico Madrid enters as the favorite with better recent form (unbeaten) and deeper squad including summer signings, while Athletic faces key injuries such as Egiluz (long-term) and Hjulmand (doubtful). Although San Mamés offers home advantage, the odds and form trend favor the away side.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo holds slight edge based on odds and Dimers' model probability (45.2%), supported by more credible lineup sources. However, both sides are structurally similar (4-3-3) and Rayo misses key players to suspension, making this a competitive contest where home advantage tips the scale.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal is a clear favorite at home with significantly stronger squad depth compared to Deportivo, identified as a newly promoted side in context. Despite Villarreal's poor start, the Estadio de la Cerámica advantage and quality difference justify the -200 odds.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-04T10:14:00.957036-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are unbeaten this term with superior squad depth and attacking reinforcements firing, whereas Athletic Club sit 20th with five consecutive defeats across all competitions and key defensive injuries.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano hold a narrow edge at home with stronger established La Liga quality, but Racing Santander's resilient unbeaten start and Rayo's absences make this a tight contest.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal's significantly greater talent and home advantage at the Estadio de la Cerámica should see them overcome a sluggish start against a newly-promoted Deportivo side that has yet to face top-tier opposition away from home.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-04T10:14:38.473045-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético arrive unbeaten (2-1-0) with strong underlying form and a deep squad bolstered by summer signings, sitting near the top of the table, while Athletic Club are bottom of the standings (20th) on a poor run including losses to Barcelona, Sevilla and Zaragoza, plus defensive injuries to Vivian and Egiluz. San Mamés is historically difficult for visitors, which keeps the home win and draw live, but DraftKings' move toward Atlético (+130 from +140) and their superior form and squad quality make the away win the most likely regulation-time result.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo are winless this season (0-1-2) but remain the bookmakers' and models' favorite at home (+125; Dimers 45.2% home win), reflecting the quality gap over newly promoted Racing Santander. Racing's form (1-1-1) is respectable and they have absences of their own (Andrés Martín, Pedro Felipe injured; Iker Luque suspended), but Vallecas home advantage and Rayo's more confirmed lineup tilt the prediction to a narrow home win, with the draw a realistic alternative given Rayo's scoring struggles.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are heavy home favorites (-200) at the Estadio de la Cerámica despite a sluggish start (0-2-1), owing to clearly superior squad depth over newly promoted Deportivo and a 4-2 win in the last head-to-head. Deportivo's unbeaten start (1-2-0, including a 3-1 win over Valencia) adds some upset risk and supports draw equity, but Villarreal's desperation for points at home plus their attacking talent (Gerard Moreno, Mikautadze, Pépé) make a home win the most probable outcome.",
+                    "event_id": "401882887"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-04T10:15:07.003698-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atlético Madrid (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are unbeaten through three matches and sit near the top of the table, while Athletic Club are 20th with a struggling attack and defensive injuries to Vivian. Market odds (+130 away) and recent form point toward Atlético as the value side, though Athletic Club at San Mamés can be competitive.",
+                    "event_id": "401882895"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are modest home favorites with a confirmed XI and stronger squad continuity, while Racing Santander face lineup uncertainty and absences. Rayo's winless home record so far tempers confidence, but structural balance and home advantage favor them narrowly.",
+                    "event_id": "401882889"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Deportivo (away) @ Villarreal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Villarreal are heavy home favorites (-200) with considerably greater squad depth and talent than newly promoted Deportivo. While Deportivo remain unbeaten this season, Villarreal's quality at Estadio de la Cerámica and need to recover from a slow start make the home win the clear call.",
+                    "event_id": "401882887"
+                }
+            ]
+        }
+    ]
+}

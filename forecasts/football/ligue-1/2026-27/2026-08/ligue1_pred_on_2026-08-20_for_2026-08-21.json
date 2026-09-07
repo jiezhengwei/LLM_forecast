@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-20",
+        "target_date_et": "2026-08-21",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876489\nMatchup: Strasbourg (away) @ Marseille (home)\nHome: Marseille\nAway: Strasbourg\nKickoff UTC: 2026-08-21T18:45Z\nKickoff ET: 2026-08-21 14:45 EDT\nVenue: Stade Vélodrome\nRound: unavailable\nHome form: WWLDL\nAway form: WWDLL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Marseille -140 (open -165); Draw +320 (open +330); Strasbourg +340 (open +360)\nTavily context:\n  - Title: Marseille vs Strasbourg - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Marseille vs Strasbourg — Fri, August 21, 6:45 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nStrasbourgStrasbourg\n\n# Marseille vs Strasbourg — Fri, August 21, 6:45 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nStrasbourgStrasbourg\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Quinten Timber\n\n  Suspended / August 21, 2026\n\nTimberSuspendedAugust 21, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026 ...\n    URL: https://www.fotmob.com/matches/marseille-vs-strasbourg/2t8gik\n  - Title: Preview: Marseille vs Strasbourg - prediction, team news, lineups - Sports Mole\n    Content: Strasbourg have points in each of their last two matchday one away games in this competition, winning 1-0 at Metz in their opener a season ago.\n\nLe Racing are unbeaten in their last four visits to Stade Velodrome but have not collected maximum points at that venue in Ligue 1 since 1997 (1-0).\n\nMarseille Pre-season form:\n\n W\n L\n W\n W\n W\n L\n\nStrasbourg Pre-season form:\n\n L\n L\n L\n L\n L\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fcj-egan-riley-6a838fe40bb7d961788492.jpg)\n\n© Imago / APL ...\n    URL: https://www.sportsmole.co.uk/football/marseille/preview/marseille-vs-strasbourg-prediction-team-news-lineups_603243.html\n  - Title: Marseille vs Strasbourg Prediction, Betting Tips, Lineups & Odds | 21 Aug 2026\n    Content: Bookies Think Marseille Most Likely to Win\n\nMarseille are the 1.65 favourites on the 1x2 betting. That implies a 61% chance of triumphing in this Ligue 1 encounter according to the latest odds. For those wanting to back Strasbourg, you will find 4.70 about this outsider.\n\nIf you fancy Marseille to be leading at the interval, then you can secure odds of 2.05. Alternatively, there’s the chance to wager on Strasbourg at 4.35 on the Half-Time Result, with the draw trading at 2.43. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/marseille-vs-strasbourg-prediction-lineups-odds-2026-08-21\n  - Title: Olympique Marseille vs Strasbourg Predictions, Picks & Odds - 21/08/2026\n    Content: Marseille's home win at 1.77 forms the backbone of our recommended selections. The hosts sit top of the table and have won three of their last five matches, while Strasbourg have suffered three consecutive defeats and occupy ninth. That disparity in momentum, combined with the Vélodrome factor on opening night, tilts the balance firmly towards Génésio's side despite their summer upheaval. ...\n    URL: https://www.toffeeweb.com/int/olympique-marseille-vs-strasbourg-predictions-picks-odds-21-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876489\nMatchup: Strasbourg (away) @ Marseille (home)\nHome: Marseille\nAway: Strasbourg\nKickoff UTC: 2026-08-21T18:45Z\nKickoff ET: 2026-08-21 14:45 EDT\nVenue: Stade Vélodrome\nRound: unavailable\nHome form: WWLDL\nAway form: WWDLL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Marseille -140 (open -165); Draw +320 (open +330); Strasbourg +340 (open +360)\nTavily context:\n  - Title: Marseille vs Strasbourg - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Marseille vs Strasbourg — Fri, August 21, 6:45 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nStrasbourgStrasbourg\n\n# Marseille vs Strasbourg — Fri, August 21, 6:45 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nStrasbourgStrasbourg\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Quinten Timber\n\n  Suspended / August 21, 2026\n\nTimberSuspendedAugust 21, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026 ...\n    URL: https://www.fotmob.com/matches/marseille-vs-strasbourg/2t8gik\n  - Title: Preview: Marseille vs Strasbourg - prediction, team news, lineups - Sports Mole\n    Content: Strasbourg have points in each of their last two matchday one away games in this competition, winning 1-0 at Metz in their opener a season ago.\n\nLe Racing are unbeaten in their last four visits to Stade Velodrome but have not collected maximum points at that venue in Ligue 1 since 1997 (1-0).\n\nMarseille Pre-season form:\n\n W\n L\n W\n W\n W\n L\n\nStrasbourg Pre-season form:\n\n L\n L\n L\n L\n L\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fcj-egan-riley-6a838fe40bb7d961788492.jpg)\n\n© Imago / APL ...\n    URL: https://www.sportsmole.co.uk/football/marseille/preview/marseille-vs-strasbourg-prediction-team-news-lineups_603243.html\n  - Title: Marseille vs Strasbourg Prediction, Betting Tips, Lineups & Odds | 21 Aug 2026\n    Content: Bookies Think Marseille Most Likely to Win\n\nMarseille are the 1.65 favourites on the 1x2 betting. That implies a 61% chance of triumphing in this Ligue 1 encounter according to the latest odds. For those wanting to back Strasbourg, you will find 4.70 about this outsider.\n\nIf you fancy Marseille to be leading at the interval, then you can secure odds of 2.05. Alternatively, there’s the chance to wager on Strasbourg at 4.35 on the Half-Time Result, with the draw trading at 2.43. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/marseille-vs-strasbourg-prediction-lineups-odds-2026-08-21\n  - Title: Olympique Marseille vs Strasbourg Predictions, Picks & Odds - 21/08/2026\n    Content: Marseille's home win at 1.77 forms the backbone of our recommended selections. The hosts sit top of the table and have won three of their last five matches, while Strasbourg have suffered three consecutive defeats and occupy ninth. That disparity in momentum, combined with the Vélodrome factor on opening night, tilts the balance firmly towards Génésio's side despite their summer upheaval. ...\n    URL: https://www.toffeeweb.com/int/olympique-marseille-vs-strasbourg-predictions-picks-odds-21-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876489",
+                        "date_utc": "2026-08-21T18:45Z",
+                        "kickoff_et": "2026-08-21 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Marseille",
+                        "away": "Strasbourg",
+                        "home_id": "176",
+                        "away_id": "180",
+                        "matchup": "Strasbourg (away) @ Marseille (home)",
+                        "venue": "Stade Vélodrome",
+                        "city": "Marseille",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "WWLDL",
+                        "form_away": "WWDLL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-165",
+                            "home_current": "-140",
+                            "draw_open": "+330",
+                            "draw_current": "+320",
+                            "away_open": "+360",
+                            "away_current": "+340"
+                        },
+                        "odds_text": "DraftKings: Marseille -140 (open -165); Draw +320 (open +330); Strasbourg +340 (open +360)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-20T11:05:02.448040-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:58:49.092783-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille enters the opening match of the Ligue 1 season as strong favorites, bolstered by home advantage at the Stade Vélodrome and superior pre-season form compared to Strasbourg, who suffered five defeats in their warm-up fixtures. Bookmaker odds strongly align with a Marseille victory, representing approximately a 56% probability after adjusting for margin.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-20T10:59:03.120001-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.581,
+                    "draw_probability": 0.192,
+                    "away_win_probability": 0.227,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are clear favorites to win their opening game at home with odds of -140, implying around a 58% win probability. Despite Strasbourg's four-game unbeaten streak in their recent visits to the Stade Vélodrome, Marseille's squad depth, pre-season momentum, and strong home advantage give them the definitive edge on opening day.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-20T10:59:21.865547-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille enters the season opener as the clear favorite, playing at home with strong backing from the betting markets and a much more successful pre-season campaign than Strasbourg. The home advantage at the Stade Vélodrome is significant. However, Strasbourg has a notable recent head-to-head record, being unbeaten in their last four visits to Marseille. This history of securing draws tempers confidence slightly. Despite this, Strasbourg's very poor pre-season form contrasts sharply with Marseille's, making a home win the most probable outcome for the first match of the season.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:59:29.745374-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.5563,
+                    "draw_probability": 0.227,
+                    "away_win_probability": 0.2167,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Marseille are strong favorites according to multiple bookmakers, with implied win probabilities ranging from 56% to 61%. They demonstrated better pre-season form compared to Strasbourg's struggles. While Strasbourg has a surprisingly good recent record at Stade Vélodrome (unbeaten in their last four visits), they haven't secured a Ligue 1 win there since 1997. The 'Vélodrome factor' on opening night, coupled with the absence of Quinten Timber for Strasbourg due to suspension, further strengthens Marseille's position.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T11:00:20.011707-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are clear home favorites in the betting market and have the Stade Vélodrome advantage for the opening round. Strasbourg have been competitive in recent visits, which keeps draw and away chances meaningful, but Marseille's overall squad strength and home edge make a regulation-time home win the most likely outcome.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T11:00:27.703896-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are clear home favorites in the 1X2 market and benefit from the Stade Velodrome edge on opening night. Their preseason indicators are stronger than Strasbourg's, while Strasbourg enter with weaker recent preparation and at least one significant injury concern. The draw and away outcomes remain meaningful because it is Round 1, Marseille have some squad uncertainty, and Strasbourg have historically been competitive on recent visits to Marseille.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-20T11:00:56.467410-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds favor Marseille at home (clear 1X2 favorite after removing vig). Marseille also enter in better recent/pre-season form and benefit from the Stade Vélodrome opener environment. Strasbourg’s recent ability to avoid defeat at this venue slightly boosts draw/away chances, but overall Marseille remain the likeliest 90-minute winner.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-20T11:01:04.020628-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are clear favourites at home (book odds and recent previews), opening the season at the Orange Vélodrome where they retain a strong home advantage. Preseason and form trends favor Marseille, while Strasbourg arrive with mixed results and limited attacking momentum. Suspension to Quinten Timber slightly weakens Marseille defensively but not enough to overturn the home advantage. Historical H2H and bookmaker pricing point to a home victory being the most likely 90-minute outcome, with a draw a plausible secondary outcome and an away win less likely.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-20T11:01:15.827910-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille are favorites (-140) with strong home advantage at Stade Vélodrome; odds imply ~0.58 probability of a home win. Strasbourg historically struggle here, with draws and away wins comprising the remainder.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-20T11:01:18.702987-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are strong favorites at home, with bookmakers giving them a 61-65% implied probability to win. Their pre-season form is solid, and they have home advantage at the Vélodrome. Strasbourg have struggled in pre-season and have lost three consecutive matches, though they have a decent record at Marseille in recent years. However, Marseille's squad quality and momentum outweigh Strasbourg's resilience, making a home win the most likely outcome.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-20T11:01:20.476602-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Marseille are strong favorites with a 61% chance of winning according to betting odds. They have a good home record and Strasbourg have struggled in recent matches. Additionally, Marseille's pre-season form has been better than Strasbourg's, and they have the advantage of playing at home.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-20T11:01:28.639856-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds (DraftKings -140 on Marseille) imply roughly a 56% home win chance after removing vig. Marseille have strong pre-season form and the Vélodrome advantage on opening night, while Strasbourg are missing key striker Panichelli to a cruciate ligament injury and arrive with poor pre-season results. Strasbourg's recent unbeaten run at the Vélodrome adds some draw/away value, but momentum and squad depth favor the hosts.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-20T11:01:33.935782-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Marseille",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are strong home favorites at the Vélodrome (odds imply ~61% win probability). Strasbourg have poor pre-season form with three straight defeats and are missing key striker Panichelli (ACL). Marseille's home advantage and superior squad depth tilt this firmly toward the hosts, though Strasbourg have been historically tough at this venue, warranting some caution on the draw.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-20T11:01:40.611386-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are firm home favourites at Stade Vélodrome on Ligue 1 opening night. DraftKings odds imply roughly 58% home win probability, which I shade slightly down given Strasbourg's historical resilience at this venue (unbeaten in last four visits) and Quinten Timber's suspension for Marseille. Strasbourg's pre-season form was poor (5 losses in 6) while Marseille's pre-season was solid (4W-2L). The Vélodrome home advantage and Strasbourg's recent three-match losing streak tip the balance clearly toward Marseille, but Strasbourg's defensive record in away openers (won at Metz last season) and their unbeaten run at this ground moderate confidence somewhat.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-20T11:01:49.407934-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille open their Ligue 1 season at home in the Stade Vélodrome with significant advantages. The betting markets favor them at -140 (implied 58% probability), reflecting their strong home form and momentum. Marseille finished their pre-season with WWWLW in their last five matches. Strasbourg, meanwhile, struggled badly in pre-season with five consecutive losses before a final win (LLLLLW), and their away form shows three losses in recent matches (WWDLL). Strasbourg are unbeaten in their last four visits to the Vélodrome but haven't won there in Ligue 1 since 1997. Key personnel issues include Quinten Timber's suspension for Strasbourg and Joaquín Panichelli's long-term injury. The opening day at home, combined with Marseille's superior recent form and Strasbourg's pre-season struggles, points to a home victory. However, Strasbourg's recent defensive record at this venue warrants some caution, keeping confidence at medium rather than high.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-20T11:01:52.589554-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille are strong home favorites with odds implying 61% win probability. They show superior form (WWLDL vs WWDLL), have home advantage at Stade Vélodrome, and bookmakers consensus strongly favors them at 1.65-1.77 odds. Strasbourg are unbeaten in last 4 away visits to Marseille but have poor pre-season form (1W-5L) and occupy 9th place versus Marseille's top position. The combination of home field advantage, recent form disparity, and market consensus strongly supports a Marseille victory.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-20T11:02:10.423365-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are clear favorites at home with odds around -140/1.65, but Strasbourg have a recent unbeaten record at the Velodrome and the market has moved slightly toward the away side. Expect Marseille's home quality to edge a tight opener.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-20T11:02:12.271345-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are strong at home and have better form, while Strasbourg have poor pre-season form and have not won at the Vélodrome in Ligue 1 since 1997. However, Strasbourg have been unbeaten in their last four visits, so a draw is possible.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-20T11:02:29.658259-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are strong favorites at home in the Stade Vélodrome for the opening night of the season. Despite Strasbourg's decent historical record of avoiding defeat at this venue in recent years, their poor pre-season form and Marseille's overall momentum make the home side the clear pick.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-20T11:02:34.010490-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille is favored by the bookies and has a strong home record. Strasbourg, on the other hand, has struggled in recent matches and has not won at Stade Vélodrome in Ligue 1 since 1997. Despite some key injuries for Marseille, the overall form and historical advantage suggest a home win.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-20T11:03:20.937973-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille enters as clear favorites with implied win probabilities around 60-61% based on market odds, reflecting their strong historical dominance at the Stade Vélodrome where Strasbourg has not won a league match since 1997. Marseille's preseason momentum and deeper squad contrast with Strasbourg's poor recent form and confirmed absences of key players like Quinten Timber (suspended) and Joaquín Panichelli (injured). While season openers inherently carry variance, the convergence of venue advantage, betting market pricing, and opponent squad degradation points to a regulation-time home victory.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-20T11:04:06.904870-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille enter the season as heavy favorites at Stade Vélodrome, with betting odds implying nearly a 60% win probability. Their pre-season form significantly outperforms Strasbourg's recent decline, and historical data indicates Strasbourg struggles to secure maximum points at this venue despite occasional draws. A pending suspension for Marseille midfielder Quinten Timber adds slight risk, tempering confidence to medium level for this opening round fixture.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-20T11:04:35.907103-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille benefit from the Stade Vélodrome crowd on opening night and carry better pre-season momentum, while Strasbourg are missing suspended Quinten Timber and injured Joaquín Panichelli. Although Strasbourg have drawn on several recent trips to Marseille, they have not won there in Ligue 1 since 1997, and the market odds strongly favor a home victory.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-20T11:04:59.733407-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille enter the season opener at Stade Vélodrome as clear favorites with superior pre-season form (4 wins, 2 losses) compared to Strasbourg's struggles (1 win, 5 losses). The home side benefits from opening-day momentum and the intimidating Vélodrome atmosphere, while Strasbourg faces the additional setback of Quinten Timber's suspension. Although Strasbourg has been historically resilient at this venue (unbeaten in their last four visits), their poor pre-season trajectory and Marseille's quality tilt the balance toward a home victory. The odds pricing (Marseille -140) reflects this hierarchy, though Strasbourg's capacity to frustrate hosts suggests the draw remains a live possibility.",
+                    "event_id": "401876489"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-20T11:05:02.444942-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Marseille (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille are favored to win based on their strong preseason form and home advantage. Strasbourg's poor preseason results and recent away form suggest they are unlikely to win. Marseille's unbeaten streak at home against Strasbourg also supports the prediction.",
+                    "event_id": "401876489"
+                }
+            ]
+        }
+    ]
+}

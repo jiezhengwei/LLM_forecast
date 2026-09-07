@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-30\n    Target Date: 2026-05-01\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Burnley @ Leeds United                               | Scheduled    | Away: 11.8% (4-8-22) vs Home: 26.5% (9-13-12)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Burnley (Away) @ Leeds United (Home)\n**News & Injury Report:**\n- [Leeds United vs Burnley prediction, preview & betting tips 01/05/2026](https://footballwhispers.com/blog/leeds-united-vs-burnley-prediction-01-05-2026/)\n  Snippet: Burnley are in far worse shape when it comes to injuries, with Josh Cullen, Jordan Beyer, and former Leeds man Connor Roberts all ruled out.\n\nTo make matters worse for Scott Parker, there are also doubts surrounding Zeki Amdouni, Hannibal Mejbri and Axel Tuanzebe.\n\nA long list of injuries is not the only thing on Parker\u2019s mind, who is already pondering his future following Burnley\u2019s relegation from the Premier League. ...\n- [Leeds vs Burnley Prediction 1/05/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-02-05-2026-leeds-united-burnley-prediction)\n  Snippet: ## Latest news\n\n### Leeds United\n\nThe squad situation is gradually improving. Anton Stach, who was expected to return from an ankle injury only by early May, made an early comeback, playing 45 minutes in the FA Cup semi-final. However, Farke mentioned that the German is currently fit for just one half. Ilia Gruev is out for the season with a meniscus tear, but the Bulgarian has recently fallen out of the starting lineup. Serious concerns surround Gabriel Gudmundsson's condition, as he injured his hamstring in the match against Chelsea and might miss the upcoming game. ...\n**Betting Odds:**\n- [Leeds United vs Burnley Betting Pick | English Premier | 2026-05-01 |](https://www.goonersguide.com/football-pick-59183-Leeds-United-vs-Burnley.htm)\n  Snippet: Leeds United vs Burnley Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Handicap BETS |  | LEE | H/C | BUR |  | BET365 |  | 1.90 | - 1.25 | 1.95 | | CLOUDBET | | 1.89 | - 1.25 | 1.97 |  | Fixed Odds BETS |  | LEE | DRAW | BUR |  | BET365 |  | 1.42 | 4.50 | 7.50 | | BETFRED | | 1.40 | 4.60 | 7.50 | | CLOUDBET | | 1.43 | 4.85 | 6.95 | | SPORTBET | | 1.36 | 4.89 | 7.43 |  | Click the bookmaker name to visit the betting site |  | ...\n- [Leeds United - Burnley FC prediction & tips 01.05.2026](https://www.transfermarkt.com/betting/tips/leeds-united-vs-burnley-fc-prediction-01-05-2026/)\n  Snippet: ## Our Betting Prediction for Leeds United vs Burnley FC\n\nOur betting tip for this Premier League clash strongly favours a Leeds United victory, with the home side offering excellent value at odds of 1.47 with 1win. Given Leeds' superior league position, home advantage, and Burnley's woeful away record of just two wins from 17 away fixtures, backing the Whites represents our primary recommendation. The significant disparity in current form and league standing makes this an attractive proposition for punters seeking reliable returns.\n\n## Our tips\n\n1xBet\n\nTotal Goals\n\nOver 2.5 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-30\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-30 20:39:41"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-30 20:38:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.69,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Betting market heavily favors Leeds (home ~1.40\u20131.43; draw ~4.5\u20134.9; Burnley ~7.0\u20137.5), implying a strong home-win baseline. Burnley\u2019s season profile is poor (4-8-22, ~11.8% win rate) and they are reported relegated with multiple key absences (Cullen, Beyer, Roberts out; Amdouni/Mejbri/Tuanzebe doubts), which lowers away-win probability further. Leeds have home advantage and a materially better record (9-13-12, ~26.5% win rate) with squad situation improving despite some injuries (e.g., Gudmundsson concern, Gruev out), supporting a high home-win probability with some draw protection typical in EPL."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:38:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favour Leeds (implied ~66% for a home win) and I tilt slightly more to Leeds given Burnley\u2019s dreadful away record (11.8% win rate), recent relegation pressure, and a long injury list (key absences: Josh Cullen, Jordan Beyer, Connor Roberts; doubts over Amdouni, Mejbri, Tuanzebe). Leeds have improved squad availability and home advantage. The combination of form, injuries and market pricing makes a Leeds win the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:38:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.705,
+                    "draw_probability": 0.179,
+                    "away_win_probability": 0.116,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United have clear home advantage and a stronger season profile. Burnley are dealing with multiple injuries and doubts, reducing their threat. Betting odds heavily favor Leeds (around 1.4 for a Leeds win), which calibrates toward a Home Win; limited key Leeds injuries and improved squad fitness support the home side."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.69,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United have a significant home advantage and are in better form, while Burnley are already relegated, suffering from a lengthy injury list, and have extremely poor away results (11.8% away win rate). Betting odds heavily favor Leeds (c. 1.40 home win, 4.60 draw, 7.50 away); these imply about a 65-70% win probability for Leeds and only a 12-14% chance for Burnley. Leeds' injury status is not ideal but substantially less damaging than Burnley's, whose morale and squad depth are low. All major signals (odds, form, news) converge on a high-confidence home win."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United have a significantly better home win rate and are facing a Burnley side that has a very poor away record and is plagued with numerous key injuries. Betting odds strongly favor Leeds with odds of 1.42 for a home win, which aligns with their superior form and home advantage."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United are heavily favored to win against an already relegated Burnley side. Burnley are missing several key players including Josh Cullen, Jordan Beyer, and Connor Roberts, and have a dreadful away record this season. Betting odds around 1.42 for a Leeds victory strongly support a home win."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United have significant advantages: superior home record (26.5% win rate), facing a Burnley side with a terrible away record (11.8% win rate) and already relegated. Burnley are hit hard by injuries (Cullen, Beyer, Roberts out; Amdouni, Mejbri, Tuanzebe doubtful) and low morale. Betting odds strongly favor Leeds (1.42-1.43) with draws at 4.50-4.85 and away wins at 7.00-7.50, implying roughly 68% home win, 20% draw, 12% away win probabilities. All factors align for a comfortable Leeds victory."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United are heavily favored with betting odds showing home win at 1.40-1.47 (implied probability ~68-71%). Leeds have a superior season record (26.5% win rate vs Burnley's 11.8%), and crucially, Burnley are already relegated and plagued by severe injury crisis. Burnley are missing key players Josh Cullen, Jordan Beyer, Connor Roberts with doubts over Amdouni, Mejbri, and Tuanzebe. Manager Scott Parker is reportedly pondering his future post-relegation, suggesting potential loss of motivation. Burnley's away record is woeful with only 2 wins from 17 away fixtures. Leeds have home advantage and while they have some injury concerns (Gruev out, Gudmundsson doubtful), their squad depth is significantly better. The -1.25 handicap odds (1.90-1.97) suggest bookmakers expect Leeds to win comfortably. All factors point to a clear Leeds victory with minimal chance of a Burnley upset."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Burnley (away) @ Leeds United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Leeds United has a home win rate of 26.5% and is in better form compared to Burnley, who have an away win rate of only 11.8%. Burnley is also dealing with a significant number of injuries, including key players like Josh Cullen and Jordan Beyer. Betting odds strongly favor Leeds United, with a home win at 1.47, which aligns with the team's superior form and home advantage."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

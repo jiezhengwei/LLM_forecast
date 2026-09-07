@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-23\n    Target Date: 2026-04-24\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Real Madrid @ Real Betis                             | Scheduled    | Away: 71.9% (23-4-5) vs Home: 37.5% (12-13-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Real Madrid (Away) @ Real Betis (Home)\n**News & Injury Report:**\n- [Preview: Real Betis vs Real Madrid - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/real-madrid/race-for-the-la-liga-title/preview/betis-vs-real-madrid-prediction-team-news-lineups_596182.html)\n  Snippet: Raul Asencio could return to the squad following illness, but Eder Militao is set to miss out with the hamstring issue that forced him off against Alaves, with Antonio Rudiger therefore in line to feature in the middle of the defence alongside Dean Huijsen.\n\nChanges further forward are unlikely despite the quick turnaround, with Vinicius and Mbappe set to continue in the attack, while Jude Bellingham, Federico Valverde, Arda Guler and Aurelien Tchouameni should again feature in a fluid midfield.\n\nReal Betis possible starting lineup: ...\n- [Real Betis vs Real Madrid Prediction, Odds & Betting Tips | 24.04.2026 | La Liga](https://www.mightytips.com/football-predictions/real-betis-vs-real-madrid-prediction-24-04-2026/)\n  Snippet: | Regular Season | P | W | D | L | G - A | GD | Pts |\n ---  ---  ---  --- |\n| 1 | FC Barcelona | 32 | 27 | 1 | 4 | 85 - 30 | +55 | 82 |\n| 2 | Real Madrid | 32 | 23 | 4 | 5 | 67 - 30 | +37 | 73 |\n| 3 | Villarreal | 31 | 19 | 4 | 8 | 56 - 36 | +20 | 61 |\n| 4 | Atl\u00e9tico Madrid | 32 | 17 | 6 | 9 | 53 - 35 | +18 | 57 |\n| 5 | Real Betis | 32 | 12 | 13 | 7 | 48 - 40 | +8 | 49 |\n| 6 | Celta de Vigo | 32 | 11 | 11 | 10 | 44 - 41 | +3 | 44 |\n| 7 | Getafe | 32 | 13 | 5 | 14 | 28 - 32 | -4 | 44 |\n| 8 | Real Sociedad | 32 | 11 | 9 | 12 | 49 - 49 | 0 | 42 | ...\n**Betting Odds:**\n- [Betis vs Real Madrid Prediction - LaLiga - 24/04/2026](https://www.sportytrader.com/en/betting-tips/betis-real-madrid-344351/)\n  Snippet: ## Betis v Real Madrid Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 3.65 | 4 | 1.92 |  |\n| Melbet | 3.56 | 4.16 | 1.88 |  |\n| Betwinner | 3.56 | 4.16 | 1.88 |  |\n| Bet365 | 3.75 | 3.75 | 1.85 |  |\n| Roobet | 3.6 | 4 | 1.87 |  |\n\nCheck all Betis vs Real Madrid odds\n\n## What is the prediction for the football match between Betis and Real Madrid?\n\nOur prediction for the Betis vs Real Madrid match is: draw. ...\n- [Real Betis vs Real Madrid Odds - Friday April 24 2026](https://www.oddsshark.com/soccer/la-liga/real-betis-real-madrid-odds-april-19-2026-2425509)\n  Snippet: ## Form Last 10\n\n RBB  MAD\n\n| Date | Opp | Score | SU | Total | Venue | League |\n ---  ---  ---\n| Apr 21, 2026 | GIR | 3-2 | W | 2.50 | Away | Spain - La Liga |\n| Apr 12, 2026 | OSA | 1-1 | D | 2.50 | Away | Spain - La Liga |\n| Apr 4, 2026 | ESP | 0-0 | D | 2.50 | Home | Spain - La Liga |\n| Mar 22, 2026 | ATH | 1-2 | L | 2.50 | Away | Spain - La Liga |\n| Mar 15, 2026 | CEL | 1-1 | D | 2.50 | Home | Spain - La Liga |\n| Mar 8, 2026 | GET | 0-2 | L | 1.75 | Away | Spain - La Liga |\n| Mar 1, 2026 | SFC | 2-2 | D | 2.50 | Home | Spain - La Liga | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-23 18:39:15"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-23 18:37:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market strongly favors Real Madrid (away ~1.85\u20131.92) which implies roughly a ~50%+ away-win chance after vigorish, and their season form is elite (23-4-5; ~71.9% win rate) versus Betis' more draw-heavy profile (12-13-7). Betis' high draw count and home advantage lift the draw probability, while Madrid's defensive injury (Militao out; Rudiger/rotation at CB) adds some volatility, but Madrid's attacking quality (Mbappe/Vinicius with Bellingham/Valverde support) still makes them the most likely winner."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favor Real Madrid (avg. away price ~1.85) and implied probabilities (after removing vig) put Madrid as the clear favorite. Season form reinforces that: Real Madrid have an outstanding away win rate (~71.9%), sit 2nd with 73 pts and boast top attacking personnel (Vinicius, Mbapp\u00e9) available. Betis are solid at home but inconsistent (home win rate ~37.5%, several recent draws) and lack the depth to reliably stop Madrid. Injury note: \u00c9der Milit\u00e3o is out but Rudiger/Huijsen provide cover; this is a minor defensive downgrade relative to the overall quality gap. Combining team strength, recent form, injuries and betting-market signals gives a strong lean to an away win while leaving non-negligible probability for a draw or home upset."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds imply away win around 50% after margin. Real Madrid's strong away form (23-4-5) and robust attacking lineup offset a Militao injury (Rudiger steps in); Betis at home is mid-range (12-13-7) and could benefit from Raul Asencio's return, but overall Madrid are favored to win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid are away favorites based on form (23-4-5, 71.9% win rate), underlying squad quality (Vinicius, Mbappe, Bellingham fit), and away win odds near 1.85-1.92 (implied probability roughly 52-54%). Real Betis have a strong home draw tendency (13 draws in 32), but only 12 wins (37.5% home win rate) and patchy form (many recent draws, 2 losses and only 1 win in last 6). Real Madrid miss Militao but have strong defensive depth. The draw is more likely than a Betis win, and away win is the probabilistic favorite. Market odds back this up, and Madrid still chasing the title."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid has a significantly higher win rate this season at 71.9%, and despite the absence of Eder Militao due to injury, they have strong attacking options with Vinicius and Mbappe. The betting market also heavily favors an away win with odds around 1.88 - 1.92, indicating confidence in Real Madrid's victory. Additionally, Real Betis has been inconsistent with a season home win rate of only 37.5%."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid has a significantly better season record (71.9% win rate away) compared to Real Betis (37.5% win rate at home). Betting odds favor Real Madrid (around 1.85-1.92) indicating a higher probability of an away win. While Real Betis's recent form includes several draws, Real Madrid's attack led by Vinicius and Mbappe, and a strong midfield, make them likely to secure a win. The injury report indicates Militao is out, but Rudiger is available. The odds provided suggest a draw is possible, and Betis' recent form corroborates that they are hard to beat at home, but Real Madrid's away record and overall strength suggest a higher likelihood of an away win."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:38:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid's strong away record (71.9% win rate) and overall quality contrast with Betis's modest home record (37.5% win rate). Betting odds favor Madrid (avg ~1.88) but not overwhelmingly, suggesting some risk. Madrid's key injuries (Militao out, Asencio doubtful) slightly weaken defense, yet their attack (Mbappe, Vinicius, Bellingham) remains potent. Betis sits mid-table with decent form but lacks firepower to consistently contain Madrid. Draw is a significant possibility given Betis's defensive resilience (13 draws at home)."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:39:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid (23-4-5, 71.9% win rate) are significantly stronger than Real Betis (12-13-7, 37.5% win rate) and are fighting for the La Liga title, trailing Barcelona by 9 points with limited matches remaining. The betting odds strongly favor Real Madrid (1.85-1.92 for away win vs 3.56-3.75 for home win), converting to implied probabilities of approximately 52-54% for Madrid win, 24-26% for draw, and 22-27% for Betis win. However, Real Madrid face injury concerns with Eder Militao out due to hamstring injury and must manage a quick turnaround. Real Betis have shown resilience with 13 draws this season (most in their record) and recently won 3-2 at Girona. Their home form and tendency to draw (reflected in 4.00-4.16 draw odds) creates uncertainty. Madrid's attacking trio of Vinicius, Mbappe, and Bellingham should prove decisive, but Betis' ability to frustrate opponents and Madrid's defensive adjustments increase draw probability. The odds suggest a relatively tight match by Madrid's standards, reflecting both the quick turnaround and Betis' stubborn home form."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:39:15",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Madrid (away) @ Real Betis (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Real Madrid has a significantly better win rate (71.9% away) compared to Real Betis (37.5% home). Despite Eder Militao's absence, Real Madrid's overall form and strength in the midfield and attack with players like Vinicius and Mbappe make them strong favorites. Betting odds also favor Real Madrid, with an average away win odds of around 1.85, indicating a high probability of an away win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

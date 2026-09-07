@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-07\n    Target Date: 2026-05-08\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Osasuna @ Levante                                    | Scheduled    | Away: 32.4% (11-9-14) vs Home: 23.5% (8-9-17)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Osasuna (Away) @ Levante (Home)\n**News & Injury Report:**\n- [Levante vs Osasuna Prediction, Betting Tips, Lineups & Odds | 08 May 2026](https://www.sportsgambler.com/betting-tips/football/levante-vs-osasuna-prediction-lineups-odds-2026-05-08/)\n  Snippet: #### Previous Osasuna Lineups\n\n### Injuries & Suspensions\n\n#### Levante Player Stats & Squad\n\n#### Manager: Luis Castro\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Mathew Ryan | 13 | G | 32 | 2880 | 32 | 0 | 0 | 0 | 2 | 0 |\n| Jeremy Toljan | 22 | D | 33 | 2872 | 33 | 0 | 1 | 3 | 7 | 0 |\n| Manuel Sanchez | 23 | D | 29 | 2533 | 28 | 5 | 1 | 2 | 8 | 0 |\n| Adrian De La Fuente | 4 | D | 29 | 2366 | 26 | 4 | 2 | 1 | 5 | 0 | ...\n- [Preview: Levante vs Osasuna - prediction, team news, lineups](https://www.sportsmole.co.uk/football/levante/preview/levante-vs-osasuna-prediction-team-news-lineups_597032.html)\n  Snippet: The bulk of Osasuna's success this season has come in front of their own fans, with the team boasting the fifth-best home record in La Liga, but it has been a struggle on their travels, picking up only 10 points, with just two teams - Mallorca and Elche - claiming fewer points on the road.\n\nLevante La Liga form:\n\nWLWWDL\n\nOsasuna La Liga form:\n\nWDDLWL\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F04%2Ficonsport-361246-0040-1-69e7918b31839920121679.jpg)\n\n\u00a9 Iconsport / GSI ...\n**Betting Odds:**\n- [Levante vs Osasuna prediction \u2013 Odds & stats \u2013 8 May 2026](https://www.wincomparator.com/predictions/levante-osasuna-7687644/)\n  Snippet: Under 2.5 goals\n\nBet365\n\n1.8\n\nOver 2.5 goals\n\nBet365\n\n2\n\nCheck all odds\n\nBoth Teams To Score: Levante v Osasuna BTTS Odds\n\nYes\n\nBet365\n\n1.75\n\nNo\n\nBet365\n\n2\n\nCheck all odds\n\nLevante vs Osasuna 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake Stake\n\n2.6\n\n3.3\n\n2.85\n\n\u20ac1000\n\nMelbet Melbet\n\n2.58\n\n3.15\n\n2.87\n\n\u20ac150\n\nBetwinner Betwinner\n\n2.58\n\n3.15\n\n2.87\n\n\u20ac130\n\nBet365 Bet365\n\n2.5\n\n3.25\n\n2.7\n\nSee the offer\n\nBC Game BC Game\n\n2.54\n\n3.15\n\n2.84\n\n$4000\n\nBwin Bwin\n\n2.6\n\n3.2\n\n2.75\n\n\u00a320\n\n888Starz 888Starz\n\n2.68\n\n3.27\n\n2.97\n\n$400\n\nBetfred Betfred\n\n2.5\n\n3.3\n\n2.75\n\n\u00a350\n\nTonybet Tonybet\n\n2.6\n\n3.25\n\n2.85 ...\n- [Levante vs Osasuna Prediction 8/05/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-10-05-2026-levante-ud-osasuna-prediction)\n  Snippet: ## Editor's Prediction\n\nPredicting the outcome of this matchup presents a challenge. Levante have limited resources to achieve their goals, while Osasuna can afford to take it easy. It's more crucial to focus on the average scoring in their head-to-head encounters. In the last six meetings at \u201cCiudad de Valencia,\u201d no more than two goals were scored per game. We predict a final score of 0-0, with the key bet being under 2.5 goals.\n\nOur choice\n\nTotal goals Under (2.5) at odds of 1.93\\\n\n1xBet\n\nBet\n\n\\The odds are relevant for the time of publication (May 6, 2026, 3:08 PM) ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-07 20:33:28"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-07 20:31:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Market 1X2 prices are very tight (Levante ~2.6, Draw ~3.25, Osasuna ~2.7), implying near-coinflip with a meaningful draw chance. Osasuna have struggled away (reported as one of the poorer road records/only ~10 away points), while Levante\u2019s recent form (WLWWDL) is slightly stronger than Osasuna\u2019s (WDDLWL) and they benefit from home advantage. Goal markets lean under 2.5, supporting a lower-scoring, higher-variance match where the draw probability is elevated."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market calibration: bookmakers (example Bet365 2.50 / 3.25 / 2.70) imply roughly Levante ~37%, Draw ~29%, Osasuna ~34% after normalizing odds. Adjustments made: Levante's home advantage and slightly better recent form (WLWWDL) tilt marginally toward the home side; Osasuna have been inconsistent away and several previews highlight their struggles on the road, which reduces the away probability slightly. Head-to-head and match previews point to low-scoring affairs (under 2.5 and frequent 0-0/1-0 outcomes at Ciudad de Valencia), which increases draw probability relative to a pure market-implied model. No major injury/suspension headlines in the provided report to materially change expectations. Overall a close contest with a small edge to Levante at home."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.292,
+                    "away_win_probability": 0.338,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds imply Levante as slight home favorite with 1X2 odds around 2.6/3.3/2.85; after normalization the implied probabilities are roughly Levante 37.0%, Osasuna 33.8%, Draw 29.2%. Osasuna have a stronger away form (32.4% win rate away) than Levante's home win rate (23.5%), but market pricing still favors Levante at home. Overall, Levante win is the most likely outcome among the three."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Levante\u2019s home win rate (23.5%) is only slightly worse than Osasuna\u2019s away win rate (32.4%), but Osasuna\u2019s road struggles are notable: only 10 points on their travels and among the worst away records this season. Both teams are inconsistent in form (Levante: WLWWDL, Osasuna: WDDLWL) and neither has serious injury news tilting the tie. Bookmaker odds have home win (avg. 2.6), draw (3.22), away (2.8), suggesting an evenly-matched fixture with a small tilt toward Levante at home. Recent H2H matches also trend to low-scoring and close outcomes. Underlying stats and betting odds suggest home edge but with significant draw risk and Osasuna\u2019s slight away threat."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have struggled with consistency, but Levante's home form and Osasuna's poor away record balance out the match. The betting odds slightly favor Levante, but Osasuna has managed unexpected results occasionally. The recent low-scoring trends in their matchups support the higher draw probability."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:33:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a very tight match according to the betting markets, with odds of ~2.60 for a home win, ~3.25 for a draw, and ~2.85 for an away win. The primary factor favoring the home side is Osasuna's extremely poor away form, noted as one of the worst in La Liga with only 10 points gathered on their travels. Conversely, Levante plays at home and comes into the match with slightly better recent form (WLWWDL) compared to Osasuna (WDDLWL). Motivation may also favor Levante, who are fighting with a poor season record, while news suggests Osasuna is in a comfortable mid-table position and can 'afford to take it easy'. The history of low-scoring games at this venue increases the draw probability, making this a low-confidence prediction. However, the combination of home advantage and Osasuna's travel woes gives Levante a marginal edge."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:33:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Levante's home record (32.4%) is better than Osasuna's poor away form (10 points, among worst in La Liga). Betting odds imply a close match but slightly favor Levante (average home win odds ~2.6, draw 3.2, away win 2.8). Recent form is roughly even (Levante WLWWDL, Osasuna WDDLWL). Key injuries not highlighted, but Levante's slight edge in home performance and market odds lead to a narrow home win probability higher than draw or away win. Under 2.5 goals is suggested by head-to-head history."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:33:16",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Low",
+                    "reasoning": "This is a tightly contested matchup between two struggling teams. Levante's home record is poor (23.5% win rate, 8-9-17) while Osasuna has been dreadful on the road (only 10 points away, 2nd worst in La Liga with just 2 away wins). The betting odds show this is essentially a pick'em: Home 2.5-2.6, Draw 3.15-3.3, Away 2.7-2.87, indicating the market sees all three outcomes as roughly equally likely. Head-to-head history at Ciudad de Valencia shows low-scoring affairs (under 2 goals in last 6 meetings). Levante's recent form (WLWWDL) is slightly better than Osasuna's (WDDLWL), but Osasuna's overall season record is superior (32.4% vs 23.5% win rate). The prediction leans toward a low-scoring draw (0-0 or 1-1) given both teams' defensive tendencies in this fixture, limited attacking quality, and the stakes being relatively low at this stage. Multiple betting sources recommend under 2.5 goals at 1.8-1.93 odds. With neither team having clear advantages and the odds being so tight, this projects as a coin-flip match most likely ending in a stalemate."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:33:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Levante has a poor home record this season, winning only 23.5% of their home games. Osasuna, despite struggling on the road, has a better overall win rate and recent form. The betting odds also slightly favor Osasuna. Additionally, Levante's recent form (WLWWDL) is not as strong as Osasuna's (WDDLWL). The under 2.5 goals market suggests a low-scoring game, which could favor Osasuna given their defensive strength."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-23",
+        "target_date_et": "2026-08-24",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882909\nMatchup: Levante (away) @ Osasuna (home)\nHome: Osasuna\nAway: Levante\nKickoff UTC: 2026-08-24T17:30Z\nKickoff ET: 2026-08-24 13:30 EDT\nVenue: El Sadar\nRound: unavailable\nHome form: LLLLL\nAway form: LLWWW\nHome record: 0-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Osasuna -125 (open -115); Draw +265 (open +255); Levante +350 (open +320)\nTavily context:\n  - Title: Osasuna vs Levante Predictions, Picks & Odds - 24/08/2026\n    Content: Recent form\n\nLWWLL\n\nWins2/5 (40%)\n\nDraws0/5 (0%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n2.9Total goals\n\n50%Both teams score\n\n1.3Goals scored\n\n1.6Goals conceded\n\n| Statistic | Osasuna | Levante |\n ---\n| Last 5 results | 1W 4L | · | 2W 3L |\n| Avg goals scored | 1.4 | · | 1.3 |\n| Avg goals conceded | 1.2 | · | 1.6 |\n| Under 2.5 (last 5) | 1/5 | · | 1/5 |\n| H2H, last 2 meetings | 1 Osasuna · 0 Draws · 1 Levante |\n\nProbable lineup\n\n### Lineups: Osasuna vs Levante\n\n#### Osasuna\n\n4-3-3\n\nStarters ...\n    URL: https://www.toffeeweb.com/osasuna-vs-levante-predictions-picks-odds-24-08-2026\n  - Title: Osasuna vs Levante Predictions, Picks & Odds - 24/08/2026\n    Content: Medium confidence\n\nA 4-3-3 mirror match at El Sadar sets up an intriguing tactical duel, though both lineups carry a degree of uncertainty given their probable status. For Osasuna, the fitness of Raul Moro on the left flank is the key question, with his presence or absence shaping how much width the home side can generate. ...\n    URL: https://www.toffeeweb.com/ng/osasuna-vs-levante-predictions-picks-odds-24-08-2026\n  - Title: Osasuna vs Levante Prediction: Match Preview and Analysis\n    Content: What are the 1X2 betting odds for. The odds are: Osasuna to win 1.80, draw 3.60, Levante to win 4.50. The odds are Over 2.5 at 2.00 and Under 2\n    URL: https://betmines.com/match-preview/osasuna-vs-levante-prediction-match-preview-and-analysis-la-liga-24-08-2026\n  - Title: Osasuna vs Levante Betting Odds – 24.08.2026\n    Content: As of now, the highest odds on Osasuna is 1.85 by Vave, and 4.54 on Levante by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/24-08-2026/osasuna-vs-levante/06-30/odds\n\nGame ID: 2\nSource event_id: 401882910\nMatchup: Deportivo (away) @ Málaga (home)\nHome: Málaga\nAway: Deportivo\nKickoff UTC: 2026-08-24T19:30Z\nKickoff ET: 2026-08-24 15:30 EDT\nVenue: La Rosaleda\nRound: unavailable\nHome form: LWDDW\nAway form: DLWWW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Málaga +150 (open +155); Draw +200 (open +205); Deportivo +220 (open +200)\nTavily context:\n  - Title: La Liga Injuries & Suspensions\n    Content: Yeremay Hernandez M - - - Groin 2026-08-24\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected Return: 2026-08-24\n\n Stake logo    Malaga vs Deportivo    1:2.55 X:3.05 2:3.00  Bet Now!    T&Cs apply, Gamble Responsibly 18+\n\n### Elche\n\nType Name Position Matches Goals Assists Info Expected Return\n\nAdam Boayar F - - - Other 2026-08-23\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: 2026-08-23\n\nAbiel Osorio F - - - Hamstring -\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: -\n\nYago Santiago M - - - Knee - ...\n    URL: https://www.sportsgambler.com/injuries/football/spain-la-liga\n  - Title: Malaga vs Deportivo La Coruña\n    Content: Away Team: Deportivo A CoruñaCoach: Antonio Hidalgo.\n\nGoalkeeper: Leo Román.\n\nDefenders: Ximo Navarro, Lucas Noubi, Bright Ede, Adrià Altimira, Giacomo Quagliata.\n\nMidfielders: Lorenzo Amatucci, Mario Soriano, Jonathan Asp Jensen.\n\nAttackers: Pierre Aubameyang, Bil Nsongo.\n\nSubs: German Parreno, Álvaro Fernández, Arnau Comas, Miguel Loureiro, Angeliño, Diego Villares, Riki Rodríguez, Teun Gijselhart, David Mella, Luismi Cruz, Zakaria Eddahchouri, Kevin Sánchez.\n\nMissing Players: Noé Carrillo, Yeremay Hernández.\n\n### Event Details:\n\nName: Malaga vs. Deportivo A Coruña ...\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/deportivo-la-coruna-malaga-148-152-11\n  - Title: Malaga vs Deportivo La Coruna Betting Odds – 24.08.2026\n    Content: As of now, the highest odds on Malaga is 2.57 by Spinbetter, and 3.02 on Deportivo La Coruna by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/24-08-2026/malaga-vs-deportivo-la-coruna/08-30/odds\n  - Title: Málaga vs Deportivo A Coruña Predictions, Picks & Odds - 24/08/2026\n    Content: La Liga\n\nMálaga Málaga\n\n24 Aug 2026 20:30\n\nDeportivo A Coruña Deportivo A Coruña\n\nPrediction:\n\nMálaga to win 2.50\n\nView oddsBetfred >\n\nPick your prediction\n\n MálagaDraw Deportivo A Coruña\n\n# Málaga vs Deportivo A Coruña Predictions, Picks & Odds – 24/08/2026\n\nLa Liga · 2\n\n24 Aug 2026  Estadio La Rosaleda  Louis Hecq\n\n### Málaga vs Deportivo A Coruña – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betfred | 2.50 | 3.10 | 3.00 | View odds |\n| William Hill | 2.45 | 3.10 | 2.90 | View Odds |\n| Smarkets | 2.14 | 2.30 | 2.54 | View Odds |\n\nOur prediction ...\n    URL: https://www.toffeeweb.com/malaga-vs-deportivo-a-coruna-predictions-picks-odds-24-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882909\nMatchup: Levante (away) @ Osasuna (home)\nHome: Osasuna\nAway: Levante\nKickoff UTC: 2026-08-24T17:30Z\nKickoff ET: 2026-08-24 13:30 EDT\nVenue: El Sadar\nRound: unavailable\nHome form: LLLLL\nAway form: LLWWW\nHome record: 0-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Osasuna -125 (open -115); Draw +265 (open +255); Levante +350 (open +320)\nTavily context:\n  - Title: Osasuna vs Levante Predictions, Picks & Odds - 24/08/2026\n    Content: Recent form\n\nLWWLL\n\nWins2/5 (40%)\n\nDraws0/5 (0%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n2.9Total goals\n\n50%Both teams score\n\n1.3Goals scored\n\n1.6Goals conceded\n\n| Statistic | Osasuna | Levante |\n ---\n| Last 5 results | 1W 4L | · | 2W 3L |\n| Avg goals scored | 1.4 | · | 1.3 |\n| Avg goals conceded | 1.2 | · | 1.6 |\n| Under 2.5 (last 5) | 1/5 | · | 1/5 |\n| H2H, last 2 meetings | 1 Osasuna · 0 Draws · 1 Levante |\n\nProbable lineup\n\n### Lineups: Osasuna vs Levante\n\n#### Osasuna\n\n4-3-3\n\nStarters ...\n    URL: https://www.toffeeweb.com/osasuna-vs-levante-predictions-picks-odds-24-08-2026\n  - Title: Osasuna vs Levante Predictions, Picks & Odds - 24/08/2026\n    Content: Medium confidence\n\nA 4-3-3 mirror match at El Sadar sets up an intriguing tactical duel, though both lineups carry a degree of uncertainty given their probable status. For Osasuna, the fitness of Raul Moro on the left flank is the key question, with his presence or absence shaping how much width the home side can generate. ...\n    URL: https://www.toffeeweb.com/ng/osasuna-vs-levante-predictions-picks-odds-24-08-2026\n  - Title: Osasuna vs Levante Prediction: Match Preview and Analysis\n    Content: What are the 1X2 betting odds for. The odds are: Osasuna to win 1.80, draw 3.60, Levante to win 4.50. The odds are Over 2.5 at 2.00 and Under 2\n    URL: https://betmines.com/match-preview/osasuna-vs-levante-prediction-match-preview-and-analysis-la-liga-24-08-2026\n  - Title: Osasuna vs Levante Betting Odds – 24.08.2026\n    Content: As of now, the highest odds on Osasuna is 1.85 by Vave, and 4.54 on Levante by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/24-08-2026/osasuna-vs-levante/06-30/odds\n\nGame ID: 2\nSource event_id: 401882910\nMatchup: Deportivo (away) @ Málaga (home)\nHome: Málaga\nAway: Deportivo\nKickoff UTC: 2026-08-24T19:30Z\nKickoff ET: 2026-08-24 15:30 EDT\nVenue: La Rosaleda\nRound: unavailable\nHome form: LWDDW\nAway form: DLWWW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Málaga +150 (open +155); Draw +200 (open +205); Deportivo +220 (open +200)\nTavily context:\n  - Title: La Liga Injuries & Suspensions\n    Content: Yeremay Hernandez M - - - Groin 2026-08-24\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected Return: 2026-08-24\n\n Stake logo    Malaga vs Deportivo    1:2.55 X:3.05 2:3.00  Bet Now!    T&Cs apply, Gamble Responsibly 18+\n\n### Elche\n\nType Name Position Matches Goals Assists Info Expected Return\n\nAdam Boayar F - - - Other 2026-08-23\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: 2026-08-23\n\nAbiel Osorio F - - - Hamstring -\n\nPosition: Forward Matches: - Goals: - Assists: - Expected Return: -\n\nYago Santiago M - - - Knee - ...\n    URL: https://www.sportsgambler.com/injuries/football/spain-la-liga\n  - Title: Malaga vs Deportivo La Coruña\n    Content: Away Team: Deportivo A CoruñaCoach: Antonio Hidalgo.\n\nGoalkeeper: Leo Román.\n\nDefenders: Ximo Navarro, Lucas Noubi, Bright Ede, Adrià Altimira, Giacomo Quagliata.\n\nMidfielders: Lorenzo Amatucci, Mario Soriano, Jonathan Asp Jensen.\n\nAttackers: Pierre Aubameyang, Bil Nsongo.\n\nSubs: German Parreno, Álvaro Fernández, Arnau Comas, Miguel Loureiro, Angeliño, Diego Villares, Riki Rodríguez, Teun Gijselhart, David Mella, Luismi Cruz, Zakaria Eddahchouri, Kevin Sánchez.\n\nMissing Players: Noé Carrillo, Yeremay Hernández.\n\n### Event Details:\n\nName: Malaga vs. Deportivo A Coruña ...\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/deportivo-la-coruna-malaga-148-152-11\n  - Title: Malaga vs Deportivo La Coruna Betting Odds – 24.08.2026\n    Content: As of now, the highest odds on Malaga is 2.57 by Spinbetter, and 3.02 on Deportivo La Coruna by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/24-08-2026/malaga-vs-deportivo-la-coruna/08-30/odds\n  - Title: Málaga vs Deportivo A Coruña Predictions, Picks & Odds - 24/08/2026\n    Content: La Liga\n\nMálaga Málaga\n\n24 Aug 2026 20:30\n\nDeportivo A Coruña Deportivo A Coruña\n\nPrediction:\n\nMálaga to win 2.50\n\nView oddsBetfred >\n\nPick your prediction\n\n MálagaDraw Deportivo A Coruña\n\n# Málaga vs Deportivo A Coruña Predictions, Picks & Odds – 24/08/2026\n\nLa Liga · 2\n\n24 Aug 2026  Estadio La Rosaleda  Louis Hecq\n\n### Málaga vs Deportivo A Coruña – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betfred | 2.50 | 3.10 | 3.00 | View odds |\n| William Hill | 2.45 | 3.10 | 2.90 | View Odds |\n| Smarkets | 2.14 | 2.30 | 2.54 | View Odds |\n\nOur prediction ...\n    URL: https://www.toffeeweb.com/malaga-vs-deportivo-a-coruna-predictions-picks-odds-24-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882909",
+                        "date_utc": "2026-08-24T17:30Z",
+                        "kickoff_et": "2026-08-24 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Osasuna",
+                        "away": "Levante",
+                        "home_id": "97",
+                        "away_id": "1538",
+                        "matchup": "Levante (away) @ Osasuna (home)",
+                        "venue": "El Sadar",
+                        "city": "Pamplona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLLLL",
+                        "form_away": "LLWWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-115",
+                            "home_current": "-125",
+                            "draw_open": "+255",
+                            "draw_current": "+265",
+                            "away_open": "+320",
+                            "away_current": "+350"
+                        },
+                        "odds_text": "DraftKings: Osasuna -125 (open -115); Draw +265 (open +255); Levante +350 (open +320)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882910",
+                        "date_utc": "2026-08-24T19:30Z",
+                        "kickoff_et": "2026-08-24 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Málaga",
+                        "away": "Deportivo",
+                        "home_id": "99",
+                        "away_id": "90",
+                        "matchup": "Deportivo (away) @ Málaga (home)",
+                        "venue": "La Rosaleda",
+                        "city": "Malaga",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LWDDW",
+                        "form_away": "DLWWW",
+                        "record_home": "0-0-1",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+155",
+                            "home_current": "+150",
+                            "draw_open": "+205",
+                            "draw_current": "+200",
+                            "away_open": "+200",
+                            "away_current": "+220"
+                        },
+                        "odds_text": "Provider unavailable: Málaga +150 (open +155); Draw +200 (open +205); Deportivo +220 (open +200)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-23T11:45:30.105547-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:35:18.236793-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is the favorite at El Sadar with decimal odds around 1.80, translating to a ~53% implied probability. Backed by home field advantage and a more consistent top-flight experience recently, they are favored to secure three points against Levante.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga is a narrow home favorite at around +150 (38% probability) against Deportivo. This matchup is highly contested with a draw being a very strong possibility, but the home advantage at La Rosaleda tilts the predicted outcome slightly in Málaga's favor.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-23T11:35:31.364697-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.528,
+                    "draw_probability": 0.261,
+                    "away_win_probability": 0.211,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna enters this match as the clear favorite with odds around -125 (implied probability of roughly 53%). While their recent form has been shaky, playing at home at El Sadar gives them the edge over Levante, who have longer odds (+350).",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.383,
+                    "draw_probability": 0.319,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This is expected to be a tightly contested match. Málaga is slightly favored by the bookmakers (+150) playing at La Rosaleda. Deportivo is dealing with the absence of Yeremay Hernandez, which could tilt the balance marginally in favor of the home side.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-23T11:35:54.257571-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is the clear betting favorite across multiple bookmakers, with implied probabilities consistently over 50% after accounting for the vig. This strong market consensus is likely driven by their significant home-field advantage at El Sadar. While some form data is conflicting, the odds heavily favor the home side. Head-to-head history is split, but in an early season match, home advantage is a key differentiator.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This match is projected to be extremely close, with betting odds nearly identical for all three outcomes. Málaga's slight favoritism is attributed almost entirely to playing at La Rosaleda. Both teams enter the match in good form. However, Deportivo may be without key midfielder Yeremay Hernandez due to injury. In such an evenly matched contest, the home advantage provides a narrow edge to Málaga.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:36:09.584482-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is heavily favored by various bookmakers, with DraftKings opening at -115 and current odds at -125. Their recent form (LWWLL) and goal statistics (1.4 avg scored, 1.2 avg conceded) are slightly better than Levante's (1.3 avg scored, 1.6 avg conceded). While Levante's away form (LLWWW) shows some wins, the strong home advantage and consistent odds in favor of Osasuna make them the more likely winner, aligned with a 'medium confidence' prediction from one source.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga, playing at home, is a slight favorite according to multiple odds providers (e.g., +150 from an unnamed provider, 2.50 from Betfred). Although Deportivo has strong away form (DLWWW), Málaga's overall home form (LWDDW) is decent. Deportivo is also noted to have missing players, including Yeremay Hernández, which could impact their performance. The odds are relatively close, suggesting a competitive match, but Málaga's home advantage and Deportivo's absences slightly tip the balance in favor of a home win.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:46.999382-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are the clear market favorite at El Sadar, with odds movement toward the home side. Levante's better recent form keeps draw and upset risk meaningful, but home advantage and pricing point to Osasuna over 90 minutes.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds make this a tight match, but Málaga hold a slight home-price edge and have the benefit of La Rosaleda. Deportivo's recent form is solid, though reported absences temper their away-win case, leaving Málaga as a narrow 90-minute pick.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:56.263450-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are clear market favorites at El Sadar, with available 1X2 prices consistently implying a home-win probability just above 50% after normalization. Levante enter as underdogs despite somewhat better recent form, and the venue plus odds movement toward Osasuna support the home side. A draw remains a meaningful risk given early-season uncertainty and both teams' uneven form.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "The betting market makes Málaga only a narrow home favorite, with probabilities clustered closely across all three outcomes. Málaga have home advantage and slight positive odds movement, while Deportivo's chances are tempered by reported missing players including Yeremay Hernández. However, both sides show competitive recent form and the pricing indicates a highly balanced match, so confidence is low.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-23T11:38:29.572640-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Osasuna a clear favorite at El Sadar (home win shortest price), and the normalized 1X2 odds imply a modest but real edge. Levante’s recent results show volatility and they’re priced as a clear underdog away; with generally similar recent scoring/conceding rates, home advantage is the main separator.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds indicate a fairly even match with Málaga only a slight home favorite, so the draw and away-win remain live outcomes. Málaga’s home edge and steadier recent form tilt it marginally toward the hosts, while Deportivo’s injury/absence note (Yeremay Hernández) adds a small negative to the away attack/creation.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-23T11:38:42.714426-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are marginal favorites at El Sadar per market odds and home advantage despite mixed recent form. Levante have shown a late run but are the underdog on the moneyline; both teams concede and matches can be open, so a home win is most likely but a draw remains a plausible outcome.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Tight fixture at La Rosaleda: Málaga have decent recent home form and bookmakers give them a slight edge, but Deportivo arrive with good attacking options and recent wins, keeping this close. Missing/injury notes for Málaga slightly dampen confidence, so a Málaga win is favored but an away win or draw remain realistic.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-23T11:39:07.141531-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.528,
+                    "draw_probability": 0.261,
+                    "away_win_probability": 0.211,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is favored in the betting odds; after normalizing implied probabilities, home win ~0.528, draw ~0.261, away ~0.211.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.383,
+                    "draw_probability": 0.319,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga shown as home favorite in odds; after normalization, home ~0.383, draw ~0.319, Deportivo ~0.298.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-23T11:39:09.173263-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are favored by both bookmakers and recent form, with home advantage at El Sadar and slightly better defensive stats. Levante's away form is mixed, and Osasuna's probable lineup, despite some uncertainty, is expected to be strong enough to secure a win. The odds and recent H2H suggest Osasuna are more likely to take three points, but a draw is not out of the question given both teams' inconsistencies.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers narrowly favor Málaga, but the odds are close and both teams have similar recent form. Málaga's home advantage and slightly better recent results tip the balance, but Deportivo's strong away form and the absence of key players for both sides make this a difficult match to call. A draw is a strong possibility, but Málaga are marginal favorites.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-23T11:39:11.539571-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a stronger home advantage and better odds, despite recent poor form. Levante's away form is improving, but Osasuna's tactical setup at home gives them the edge.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar recent form, but Málaga's slight home advantage and odds favor them. Deportivo's away form is strong, making this a close match.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-23T11:39:27.036791-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are clear favorites at home at El Sadar, with market odds around -125 implying roughly 53-55% win probability. Despite Osasuna's poor recent form (1W 4L), Levante concede more goals on average (1.6 per game) and are the weaker side on paper. Home advantage at El Sadar is traditionally strong, supporting the home win as the most likely outcome, though not with high confidence given both teams' inconsistent form.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly priced match with Málaga a slight favorite at home (~2.50) versus Deportivo (~3.00). Deportivo are missing key attacker Yeremay Hernández, which weakens their creative threat, while Málaga have decent recent form (2W 2D 1L). However, Deportivo's own strong form (3 wins in last 5) keeps this close to a three-way toss-up. The home edge at La Rosaleda tips the prediction toward Málaga, but with low confidence given the narrow margins.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-23T11:39:33.517740-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Osasuna",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are home favorites at El Sadar (-125), where they traditionally perform well. Levante's away form is mixed, and market odds strongly favor the hosts. Draw remains a reasonable outcome given both sides' modest scoring.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Málaga",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly balanced match with odds close across the board. Málaga have a slight home edge and decent form (LWDDW), while Deportivo are missing key players (Yeremay Hernández, Noé Carrillo). Very open contest with all three outcomes plausible.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-23T11:39:43.462028-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are favored at home at El Sadar with odds around -125, implying roughly 55% probability before margin adjustment. Both teams have struggled early in the season with losing records. Osasuna's home advantage at El Sadar is historically significant. Levante has shown some away form (LLWWW) but this is a tough venue. The odds consensus across multiple books points to Osasuna as moderate favorites. Adjusting for the vig and balancing against Levante's recent form, a home win is the most likely outcome but far from certain.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight match with odds close across all three outcomes. Málaga are slight favorites at home at La Rosaleda with odds around +150 (implied ~40%). Deportivo are missing key players including Yeremay Hernández due to injury. However, Deportivo have strong recent form (DLWWW) and are competitive. The ESPN open odds actually suggest a more balanced contest. Both teams are newly promoted/competitive sides in La Liga. The narrow edge goes to Málaga for home advantage, but confidence is low given the even matchup and multiple bookmakers showing near-parity odds.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-23T11:39:56.662849-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna hosts Levante at El Sadar in what appears to be an evenly matched fixture. The betting odds favor Osasuna at -125, suggesting home advantage and market confidence in the hosts. Both teams have struggled recently based on their form (Osasuna LLLLL, Levante LLWWW), though Levante shows better recent momentum with 3 consecutive wins. Statistical analysis indicates both teams average similar goals scored (Osasuna 1.4, Levante 1.3) but Levante concedes more (1.6 vs 1.2). The H2H record is split 1-1 over the last 2 meetings. Home advantage at El Sadar and Levante's higher goals conceded rate give Osasuna a slight edge, though fitness concerns around Raul Moro add uncertainty. The match profile suggests a tight, low-scoring affair with home advantage being the decisive factor.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely matched fixture at La Rosaleda with very tight odds (Málaga +150, Draw +200, Deportivo +220). Málaga's recent form shows mixed results (LWDDW), while Deportivo arrives with strong momentum (DLWWW). Deportivo appears to be in better form with 3 consecutive wins, but they face key absences with Yeremay Hernández unavailable. The odds suggest this is essentially a toss-up with a slight lean toward Málaga due to home advantage. Deportivo's away record (0-1-0) compared to Málaga's home record (0-0-1) doesn't provide clear differentiation. The betting market odds are extremely tight, with some bookmakers offering nearly equal prices across all three outcomes. Given the marginal home advantage at La Rosaleda and Deportivo's injury concerns, a narrow Málaga win is predicted, but confidence is low due to the competitive nature and Deportivo's superior recent form.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-23T11:40:01.750288-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna plays at home with favorable odds (-125). Despite poor recent form (LLLLL), home advantage at El Sadar is significant. Levante shows better recent form (LLWWW) but away form is less reliable. Head-to-head is split 1-1. Both teams average 1.3-1.4 goals scored with defensive vulnerabilities. Market odds heavily favor Osasuna. The 4-3-3 tactical setup suggests a competitive match with moderate scoring expected.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga at home with slight odds advantage (+150). Málaga's recent form is mixed (LWDDW) while Deportivo shows stronger form (DLWWW), creating uncertainty. Deportivo has key injury absences (Yeremay Hernández - midfielder, Noé Carrillo). Market consensus slightly favors Málaga. With both teams showing inconsistent form and competitive odds across all outcomes, confidence is low. The draw and away win probabilities are relatively close to home win, indicating a tightly matched contest.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-23T11:40:44.961558-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are favored at El Sadar and market odds imply around a 53% home win probability. However, Osasuna's poor recent home form and Levante's strong away run add risk, so confidence is only medium.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Málaga have a slight odds advantage at La Rosaleda, but Deportivo's recent away form is solid and the market is tight. Home win is the most likely single outcome, though draw and away win are very plausible.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-23T11:40:47.428487-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are at home and favored by odds, despite poor recent form. Levante have won two of their last five but are away and have a worse overall record. The matchup is close, but home advantage and odds tilt it slightly to Osasuna.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are evenly matched according to odds, with Málaga slight favorites but Deportivo having decent away form. The match is likely to be tight, and a draw is a plausible outcome given the balanced probabilities.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-23T11:41:12.374020-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is the clear favorite at home according to the betting odds and implied probabilities. Despite some mixed recent form, their home advantage at El Sadar gives them a significant edge over Levante, who are the underdogs.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga has a slight edge playing at home at La Rosaleda, reflected in the betting odds. The match is expected to be tightly contested with Deportivo missing key players like Yeremay Hernandez, making a narrow home win the most probable outcome, though a draw is also highly likely.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-23T11:41:20.182751-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a slight edge in recent form and home advantage, despite both teams having similar goal scoring and conceding averages. The odds also favor Osasuna, and the head-to-head record is balanced, but Osasuna's home form is slightly better.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both Málaga and Deportivo have shown mixed results in their recent matches, with neither team having a clear advantage. The odds are relatively close, and given the away form of Deportivo and the home form of Málaga, a draw seems a likely outcome.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-23T11:42:36.502394-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna is priced as the clear favorite (-125) with home advantage at El Sadar. Despite recent form volatility, the odds and home field edge strongly favor a narrow home victory. Levante's away record and lack of consistent scoring make them unlikely to secure points on the road.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers price this as a tightly contested match with Málaga as slight favorites (+150). Both teams show mixed recent form and face key early-season injury absences, adding significant volatility. Home advantage provides a marginal statistical edge, but the probabilities are nearly identical, reflecting a highly unpredictable fixture.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-23T11:43:05.980110-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna enters as the clear favorite at El Sadar despite early season form fluctuations. Bookmaker odds favor the home side significantly over Levante, reflecting a higher probability of victory within regulation time.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This fixture is highly competitive with Málaga holding only a marginal home advantage against Deportivo's strong recent form. Near-parity in odds indicates high uncertainty regarding the final result.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-23T11:44:36.138321-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna are priced as clear favorites at El Sadar and own the head-to-head tiebreaker in recent seasons, but a five-match home losing streak and Levante's strong away form (LLWWW) erode conviction. The home side still holds the highest probability due to squad quality and market support.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Málaga's balanced home form (LWDDW) and slightly shorter odds (+150) give them a marginal edge in a tightly priced contest. Deportivo's useful away record and the absence of key personnel for the visitors keep the outcome uncertain, resulting in low confidence.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-23T11:45:25.844397-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Osasuna's concerning LLLLL home form, market odds heavily favor them (-125) at El Sadar against a Levante side showing mixed recent results (LLWWW). Historical squad quality and the difficulty of the venue for opponents outweigh Osasuna's recent stumbles, though Levante's three consecutive away wins suggest a competitive match.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo enters with superior away momentum (DLWWW, three wins in four) compared to Málaga's modest home record (LWDDW). The absence of key midfielder Yeremay Hernández for Málaga further erodes their advantage, tilting the tight market (+150 vs +220) slightly toward Deportivo in what projects as an open, closely contested fixture.",
+                    "event_id": "401882910"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-23T11:45:30.101755-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Osasuna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Osasuna has a slight edge in recent form and is playing at home, but Levante has been performing well recently. The odds slightly favor Osasuna, but the match is expected to be close.",
+                    "event_id": "401882909"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Deportivo (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar recent forms and are evenly matched. The odds slightly favor Málaga, but the match is expected to be close with a high probability of a draw.",
+                    "event_id": "401882910"
+                }
+            ]
+        }
+    ]
+}

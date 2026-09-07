@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-04",
+        "target_date_et": "2026-09-05",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876473\nMatchup: Lorient (away) @ Lens (home)\nHome: Lens\nAway: Lorient\nKickoff UTC: 2026-09-05T15:15Z\nKickoff ET: 2026-09-05 11:15 EDT\nVenue: Stade Bollaert-Delelis\nRound: unavailable\nHome form: LWWWW\nAway form: LDLWD\nHome record: 1-0-1\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Lens -205 (open -220); Draw +370 (open +360); Lorient +500 (open +500)\nTavily context:\n  - Title: PREVIEW | Lens vs FC Lorient: team news, lineups, predictions (Ligue 1 05/09)\n    Content: Lens have picked up 3 points and currently lie in 7th position. In their last game, Dino Toppmöller's team lost 2-1 against Strasbourg (Ligue 1 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nFC Lorient have 1 point to their name this season and occupy 14th position in the table. In their last fixture, Alexandre Dujeux's team suffered a 1-2 reverse against Troyes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with FC Lorient winning 2-1.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-lens-vs-fc-lorient-152000547.html\n  - Title: Lens vs Lorient Prediction: 05.09.2026 Ligue 1 | Tips.GG\n    Content: ## Possible Starting Lineups\n\n### Lens Possible Starting Eleven\n\nLens are likely to line up in their preferred 3-4-2-1 shape, with Robin Risser in goal after 13 saves across three recent appearances. The back three of Ganiou, Nawrocki, and Sagnan provides solidity, while Udol and Abdulhamid push forward from wing-back positions. Thauvin is the key man in attack. His four goals in three recent games make him the most dangerous player on the pitch, and Lorient will need to monitor his movement closely. ...\n    URL: https://tips.gg/article/lens-vs-lorient-05-09-2026\n  - Title: Lens vs Lorient Predictions, Picks & Odds - 05/09/2026\n    Content: Lorient, by contrast, endured a frustrating goalless draw with Nice to open their campaign and currently occupy tenth place. Their recent form across all competitions has been patchy, with just two wins from the last five outings. The visitors do carry some historical confidence into Stade Bollaert-Delelis, holding a narrow advantage in head-to-head meetings with eight wins to Lens' seven across 22 encounters. Securing a first league win of the season remains the priority for this trip north.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/lens-vs-lorient-predictions-picks-odds-05-09-2026\n  - Title: Lorient vs Lens on 2026-09-05 - Soccer - Betting offer\n    Content: Soccer France Ligue 1 Lens / Lorient 41.00. Prediction Number: 30027. Soccer France Ligue 1 Lens / Tie 12.50. Prediction Number: 11056. Soccer\n    URL: https://miseojeu.lotoquebec.com/en/betting-offer/soccer/next-3-days?idEve=1024927\n\nGame ID: 2\nSource event_id: 401876474\nMatchup: Brest (away) @ Le Havre AC (home)\nHome: Le Havre AC\nAway: Brest\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Stade Océane\nRound: unavailable\nHome form: DLWLD\nAway form: DDDLL\nHome record: 0-1-1\nAway record: 0-2-0\nESPN structured 1X2 odds: Provider unavailable: Le Havre AC +165 (open +160); Draw +230 (open +220); Brest +175 (open +170)\nTavily context:\n  - Title: Preview: Le Havre vs Brest - prediction, team news, lineups - Sports Mole\n    Content: Stephan Zagadou remains out with a cruciate ligament injury and is not expected back until early 2027, while Felix Mambimbi is recovering from an Achilles problem and Abdoulaye Toure is out with a knee issue.\n\nBrest remain without Brendan Chardonnet because of a calf injury, while Justin Bourgault is doubtful, and the absence of Chardonnet leaves Gautier Lloris and Raphael Le Guen as the expected central defensive pairing. ...\n    URL: https://www.sportsmole.co.uk/football/le-havre/preview/le-havre-vs-brest-prediction-team-news-lineups_604386.html\n  - Title: Le Havre vs Brest Predictions, Picks & Odds - 05/09/2026\n    Content: 2.2Total goals\n\n51%Both teams score\n\n0.9Goals scored\n\n1.3Goals conceded\n\n#### Brest\n\nRecent form\n\nDDLLL\n\nWins0/5 (0%)\n\nDraws2/5 (40%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n3Total goals\n\n55%Both teams score\n\n1.3Goals scored\n\n1.7Goals conceded\n\n| Statistic | Le Havre | Brest |\n ---\n| Last 5 results | 2D 3L | · | 2D 3L |\n| Avg goals scored | 0.9 | · | 1.3 |\n| Avg goals conceded | 1.3 | · | 1.7 |\n| Under 2.5 (last 5) | 4/5 | · | 1/5 |\n| H2H, last 5 meetings | 1 Le Havre · 1 Draws · 3 Brest |\n\nProbable lineup\n\n### Lineups: Le Havre vs Brest\n\n#### Le Havre\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/le-havre-vs-brest-predictions-picks-odds-05-09-2026\n  - Title: Le Havre vs Brest Betting Odds – 05.09.2026\n    Content: As of now, the highest odds on Le Havre is 2.65 by Spinbetter, and 2.73 on Brest by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/05-09-2026/le-havre-vs-brest/07-45/odds\n\nGame ID: 3\nSource event_id: 401876470\nMatchup: Le Mans (away) @ Nice (home)\nHome: Nice\nAway: Le Mans\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Allianz Riviera\nRound: unavailable\nHome form: LDWDL\nAway form: LDWDD\nHome record: 0-1-1\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Nice -120 (open -135); Draw +275 (open +275); Le Mans +320 (open +350)\nTavily context:\n  - Title: Nice vs Le Mans Predictions, Picks & Odds - 05/09/2026\n    Content: 33%Both teams score\n\n1.3Goals scored\n\n0.9Goals conceded\n\n#### Le Mans\n\nRecent form\n\nLD\n\nWins0/2 (0%)\n\nDraws1/2 (50%)\n\nLosses1/2 (50%)\n\nSeason statistics (2)\n\n2.7Total goals\n\n67%Both teams score\n\n1.3Goals scored\n\n1.4Goals conceded\n\n| Statistic | Nice | Le Mans |\n ---\n| Last 5 results | 2D 3L | · | 1D 1L |\n| Avg goals scored | 1.3 | · | 1.3 |\n| Avg goals conceded | 0.9 | · | 1.4 |\n| Under 2.5 (last 5) | 2/5 | · | 0/2 |\n| H2H, last 1 meetings | 0 Nice · 0 Draws · 1 Le Mans |\n\nProbable lineup\n\n### Lineups: Nice vs Le Mans\n\n#### Nice\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/nice-vs-le-mans-predictions-picks-odds-05-09-2026\n  - Title: PREVIEW | Nice vs Le Mans: team news, lineups, predictions (Ligue 1 05/09) - Yahoo Sports\n    Content: Nice have 1 point to their name this season and occupy 17th position in the table. In their last fixture, Olivier Pantaloni's team suffered a 3-0 reverse against Paris FC (Ligue 1 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nLe Mans have picked up 1 point and currently lie in 13th position. In their last game, Patrick Videira's team lost 3-2 against Rennes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Le Mans winning 3-2.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-nice-vs-le-mans-185000618.html\n  - Title: Nice vs Le Mans Prediction & Betting Tips - 05/09/2026\n    Content: ### Recommended Bets\n\n| Betfred | William Hill | Smarkets |\n ---\n| Nice to win | 1.80 | 1.83 | 1.87 |\n| BTTS Yes | 1.80 | 1.80 | · |\n\nOdds recorded on 04 Sep 2026 at 09:05 · Odds are subject to change\n\n## Match Analysis\n\nLe Mans arrive as the logical favourite despite their away tag, priced at 4.33. Newly promoted but unbeaten in their last seven domestic away matches, they carry genuine attacking momentum through Louis Mafouta into a fragile Nice side. [...] ### Odds comparison ...\n    URL: https://thefootballfaithful.com/nice-vs-le-mans-prediction-betting-tips-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876473\nMatchup: Lorient (away) @ Lens (home)\nHome: Lens\nAway: Lorient\nKickoff UTC: 2026-09-05T15:15Z\nKickoff ET: 2026-09-05 11:15 EDT\nVenue: Stade Bollaert-Delelis\nRound: unavailable\nHome form: LWWWW\nAway form: LDLWD\nHome record: 1-0-1\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Lens -205 (open -220); Draw +370 (open +360); Lorient +500 (open +500)\nTavily context:\n  - Title: PREVIEW | Lens vs FC Lorient: team news, lineups, predictions (Ligue 1 05/09)\n    Content: Lens have picked up 3 points and currently lie in 7th position. In their last game, Dino Toppmöller's team lost 2-1 against Strasbourg (Ligue 1 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nFC Lorient have 1 point to their name this season and occupy 14th position in the table. In their last fixture, Alexandre Dujeux's team suffered a 1-2 reverse against Troyes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with FC Lorient winning 2-1.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-lens-vs-fc-lorient-152000547.html\n  - Title: Lens vs Lorient Prediction: 05.09.2026 Ligue 1 | Tips.GG\n    Content: ## Possible Starting Lineups\n\n### Lens Possible Starting Eleven\n\nLens are likely to line up in their preferred 3-4-2-1 shape, with Robin Risser in goal after 13 saves across three recent appearances. The back three of Ganiou, Nawrocki, and Sagnan provides solidity, while Udol and Abdulhamid push forward from wing-back positions. Thauvin is the key man in attack. His four goals in three recent games make him the most dangerous player on the pitch, and Lorient will need to monitor his movement closely. ...\n    URL: https://tips.gg/article/lens-vs-lorient-05-09-2026\n  - Title: Lens vs Lorient Predictions, Picks & Odds - 05/09/2026\n    Content: Lorient, by contrast, endured a frustrating goalless draw with Nice to open their campaign and currently occupy tenth place. Their recent form across all competitions has been patchy, with just two wins from the last five outings. The visitors do carry some historical confidence into Stade Bollaert-Delelis, holding a narrow advantage in head-to-head meetings with eight wins to Lens' seven across 22 encounters. Securing a first league win of the season remains the priority for this trip north.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/lens-vs-lorient-predictions-picks-odds-05-09-2026\n  - Title: Lorient vs Lens on 2026-09-05 - Soccer - Betting offer\n    Content: Soccer France Ligue 1 Lens / Lorient 41.00. Prediction Number: 30027. Soccer France Ligue 1 Lens / Tie 12.50. Prediction Number: 11056. Soccer\n    URL: https://miseojeu.lotoquebec.com/en/betting-offer/soccer/next-3-days?idEve=1024927\n\nGame ID: 2\nSource event_id: 401876474\nMatchup: Brest (away) @ Le Havre AC (home)\nHome: Le Havre AC\nAway: Brest\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Stade Océane\nRound: unavailable\nHome form: DLWLD\nAway form: DDDLL\nHome record: 0-1-1\nAway record: 0-2-0\nESPN structured 1X2 odds: Provider unavailable: Le Havre AC +165 (open +160); Draw +230 (open +220); Brest +175 (open +170)\nTavily context:\n  - Title: Preview: Le Havre vs Brest - prediction, team news, lineups - Sports Mole\n    Content: Stephan Zagadou remains out with a cruciate ligament injury and is not expected back until early 2027, while Felix Mambimbi is recovering from an Achilles problem and Abdoulaye Toure is out with a knee issue.\n\nBrest remain without Brendan Chardonnet because of a calf injury, while Justin Bourgault is doubtful, and the absence of Chardonnet leaves Gautier Lloris and Raphael Le Guen as the expected central defensive pairing. ...\n    URL: https://www.sportsmole.co.uk/football/le-havre/preview/le-havre-vs-brest-prediction-team-news-lineups_604386.html\n  - Title: Le Havre vs Brest Predictions, Picks & Odds - 05/09/2026\n    Content: 2.2Total goals\n\n51%Both teams score\n\n0.9Goals scored\n\n1.3Goals conceded\n\n#### Brest\n\nRecent form\n\nDDLLL\n\nWins0/5 (0%)\n\nDraws2/5 (40%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n3Total goals\n\n55%Both teams score\n\n1.3Goals scored\n\n1.7Goals conceded\n\n| Statistic | Le Havre | Brest |\n ---\n| Last 5 results | 2D 3L | · | 2D 3L |\n| Avg goals scored | 0.9 | · | 1.3 |\n| Avg goals conceded | 1.3 | · | 1.7 |\n| Under 2.5 (last 5) | 4/5 | · | 1/5 |\n| H2H, last 5 meetings | 1 Le Havre · 1 Draws · 3 Brest |\n\nProbable lineup\n\n### Lineups: Le Havre vs Brest\n\n#### Le Havre\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/le-havre-vs-brest-predictions-picks-odds-05-09-2026\n  - Title: Le Havre vs Brest Betting Odds – 05.09.2026\n    Content: As of now, the highest odds on Le Havre is 2.65 by Spinbetter, and 2.73 on Brest by Spinbetter. Top upcoming matches.\n    URL: https://tips.gg/matches/football/05-09-2026/le-havre-vs-brest/07-45/odds\n\nGame ID: 3\nSource event_id: 401876470\nMatchup: Le Mans (away) @ Nice (home)\nHome: Nice\nAway: Le Mans\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Allianz Riviera\nRound: unavailable\nHome form: LDWDL\nAway form: LDWDD\nHome record: 0-1-1\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Nice -120 (open -135); Draw +275 (open +275); Le Mans +320 (open +350)\nTavily context:\n  - Title: Nice vs Le Mans Predictions, Picks & Odds - 05/09/2026\n    Content: 33%Both teams score\n\n1.3Goals scored\n\n0.9Goals conceded\n\n#### Le Mans\n\nRecent form\n\nLD\n\nWins0/2 (0%)\n\nDraws1/2 (50%)\n\nLosses1/2 (50%)\n\nSeason statistics (2)\n\n2.7Total goals\n\n67%Both teams score\n\n1.3Goals scored\n\n1.4Goals conceded\n\n| Statistic | Nice | Le Mans |\n ---\n| Last 5 results | 2D 3L | · | 1D 1L |\n| Avg goals scored | 1.3 | · | 1.3 |\n| Avg goals conceded | 0.9 | · | 1.4 |\n| Under 2.5 (last 5) | 2/5 | · | 0/2 |\n| H2H, last 1 meetings | 0 Nice · 0 Draws · 1 Le Mans |\n\nProbable lineup\n\n### Lineups: Nice vs Le Mans\n\n#### Nice\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/nice-vs-le-mans-predictions-picks-odds-05-09-2026\n  - Title: PREVIEW | Nice vs Le Mans: team news, lineups, predictions (Ligue 1 05/09) - Yahoo Sports\n    Content: Nice have 1 point to their name this season and occupy 17th position in the table. In their last fixture, Olivier Pantaloni's team suffered a 3-0 reverse against Paris FC (Ligue 1 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nLe Mans have picked up 1 point and currently lie in 13th position. In their last game, Patrick Videira's team lost 3-2 against Rennes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Le Mans winning 3-2.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-nice-vs-le-mans-185000618.html\n  - Title: Nice vs Le Mans Prediction & Betting Tips - 05/09/2026\n    Content: ### Recommended Bets\n\n| Betfred | William Hill | Smarkets |\n ---\n| Nice to win | 1.80 | 1.83 | 1.87 |\n| BTTS Yes | 1.80 | 1.80 | · |\n\nOdds recorded on 04 Sep 2026 at 09:05 · Odds are subject to change\n\n## Match Analysis\n\nLe Mans arrive as the logical favourite despite their away tag, priced at 4.33. Newly promoted but unbeaten in their last seven domestic away matches, they carry genuine attacking momentum through Louis Mafouta into a fragile Nice side. [...] ### Odds comparison ...\n    URL: https://thefootballfaithful.com/nice-vs-le-mans-prediction-betting-tips-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876473",
+                        "date_utc": "2026-09-05T15:15Z",
+                        "kickoff_et": "2026-09-05 11:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lens",
+                        "away": "Lorient",
+                        "home_id": "175",
+                        "away_id": "273",
+                        "matchup": "Lorient (away) @ Lens (home)",
+                        "venue": "Stade Bollaert-Delelis",
+                        "city": "Lens",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWWWW",
+                        "form_away": "LDLWD",
+                        "record_home": "1-0-1",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-220",
+                            "home_current": "-205",
+                            "draw_open": "+360",
+                            "draw_current": "+370",
+                            "away_open": "+500",
+                            "away_current": "+500"
+                        },
+                        "odds_text": "DraftKings: Lens -205 (open -220); Draw +370 (open +360); Lorient +500 (open +500)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401876474",
+                        "date_utc": "2026-09-05T18:45Z",
+                        "kickoff_et": "2026-09-05 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Le Havre AC",
+                        "away": "Brest",
+                        "home_id": "3236",
+                        "away_id": "6997",
+                        "matchup": "Brest (away) @ Le Havre AC (home)",
+                        "venue": "Stade Océane",
+                        "city": "Le Havre",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DLWLD",
+                        "form_away": "DDDLL",
+                        "record_home": "0-1-1",
+                        "record_away": "0-2-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+160",
+                            "home_current": "+165",
+                            "draw_open": "+220",
+                            "draw_current": "+230",
+                            "away_open": "+170",
+                            "away_current": "+175"
+                        },
+                        "odds_text": "Provider unavailable: Le Havre AC +165 (open +160); Draw +230 (open +220); Brest +175 (open +170)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401876470",
+                        "date_utc": "2026-09-05T18:45Z",
+                        "kickoff_et": "2026-09-05 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Nice",
+                        "away": "Le Mans",
+                        "home_id": "2502",
+                        "away_id": "2697",
+                        "matchup": "Le Mans (away) @ Nice (home)",
+                        "venue": "Allianz Riviera",
+                        "city": "Nice",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LDWDL",
+                        "form_away": "LDWDD",
+                        "record_home": "0-1-1",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-135",
+                            "home_current": "-120",
+                            "draw_open": "+275",
+                            "draw_current": "+275",
+                            "away_open": "+350",
+                            "away_current": "+320"
+                        },
+                        "odds_text": "Provider unavailable: Nice -120 (open -135); Draw +275 (open +275); Le Mans +320 (open +350)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-04T10:15:46.495001-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:00:35.163273-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enter this match as clear favorites with -205 odds. They possess a strong home record and have been in solid overall form recently (4 wins in last 5 matches), while Lorient have started the season poorly and struggle on the road.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly matched contest according to the bookmakers, with Le Havre priced slightly ahead at +165 compared to Brest at +175. Home advantage gives Le Havre a minimal edge in what is projected to be a low-scoring, tight affair.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are the clear favorites playing at the Allianz Riviera with -120 odds. Despite some early season struggles for the home side, Le Mans is a newly promoted outfit, and Nice's squad quality should be enough to secure three points.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-04T10:00:46.484370-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.639,
+                    "draw_probability": 0.202,
+                    "away_win_probability": 0.159,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens is highly favored with -205 odds (DraftKings) and boasts a strong squad shape at home. Lorient has struggled to secure victories recently, making a home win the most probable outcome.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.361,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.349,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This matchup looks incredibly tight, with odds slightly favoring the home team at +165 over Brest's +175. Both teams have lacked consistency recently, making this a coin-flip type of game, but home advantage slightly edges it for Le Havre.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.519,
+                    "draw_probability": 0.254,
+                    "away_win_probability": 0.227,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice is the favored side with -120 odds. Although Le Mans showed resilience on the road in lower divisions or prior meetings, Nice's overall quality gives them the upper hand at home in this fixture.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-04T10:01:16.998877-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens is a strong home team and a heavy favorite in the betting markets, with odds around -205. Their season has started better than Lorient's, and they possess a significant attacking threat in Florian Thauvin, who has scored four goals in three recent games. Despite Lorient winning the last head-to-head encounter, Lens's current form and home advantage are expected to be the decisive factors.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is a matchup between two teams who are both winless in the new season. The betting odds are extremely close, indicating no clear favorite. Brest has started their campaign with two consecutive draws, while Le Havre has one draw and one loss. Both teams are also dealing with key injuries, notably to Brest's defense. Given the circumstances and the difficulty both sides have in securing wins, a draw appears to be a highly probable outcome.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice is the established Ligue 1 side and playing at home, making them the favorite according to betting markets with odds around -120. Despite a poor start to the season, including a recent 3-0 loss, they are expected to have the quality to overcome newly promoted Le Mans. Le Mans has also started the season with just one point, and stepping up a division is a significant challenge. The home advantage for Nice is likely to be the deciding factor.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:02:03.195975-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Lens is the clear favorite with strong implied odds (-205) and a better recent form (LWWWW) compared to Lorient's struggling LDLWD. Key player Thauvin is in goal-scoring form. Lorient has not secured a win yet this season (0-1-1).",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are in very poor form, with Le Havre (0-1-1) and Brest (0-2-0) yet to win this season. The odds are extremely close, indicating a highly competitive match. Le Havre holds a slight edge due to playing at home, but a draw is a very strong possibility given both teams' struggles to secure victories and their low goal-scoring averages.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Nice is favored by the structured odds (-120) and holds home advantage, despite both teams having an identical early-season record (0-1-1). Le Mans has shown resilience on the road, reportedly unbeaten in their last seven domestic away matches, and won the last head-to-head meeting 3-2. However, Nice's overall quality and home advantage should see them through, making them the narrow favorite.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:04:01.160477-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are a clear market favorite at home, with stronger recent form and a better early-season profile than winless Lorient. Lorient's head-to-head note adds some upset risk, but Lens' home advantage and attacking edge make a home win the most likely result.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds are very tight, with only a slight lean toward Le Havre at home. Both teams have struggled for wins, injuries affect both defenses, and the matchup projects as low-margin, so the draw and Brest away win remain nearly as plausible as a home win.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are priced as a moderate home favorite despite an uneven start, reflecting home advantage and a stronger squad baseline. Le Mans have shown enough attacking threat to keep the draw or upset in play, but Nice remain the likeliest 90-minute winner.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:04:18.390192-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens are strong market favorites at home and have the better recent form profile, while Lorient are still winless and coming off a loss. Stade Bollaert-Delelis is a meaningful home advantage, and Lens appear to have the more reliable attacking threat.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The betting market prices this as close to even, with Le Havre only a slight home-side edge. Both teams have struggled for wins, and Brest's defensive absences slightly reduce their away outlook, but the draw remains a significant possibility.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are favored by the market and benefit from home advantage, despite a poor start and recent defensive concerns. Le Mans have shown attacking competitiveness, but as the away side they are less likely to control the match over 90 minutes.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-04T10:05:02.728352-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Lens a clear favorite at home, and Lens arrive in strong recent form (LWWWW) versus a Lorient side with mixed/weak results and no win in their first two league matches. Lens' attacking edge and home advantage at Stade Bollaert-Delelis outweigh Lorient's recent head-to-head win.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds indicate a near coin-flip with a meaningful draw chance, but Brest's poor recent form (DDDLL) and defensive absences tilt a tight match slightly toward Le Havre at home. Le Havre's marginally better recent results and home field provide the small edge in a likely low-scoring game.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are favored by the market at home, but their recent struggles and Le Mans' competitive showings keep draw/away outcomes live. Home advantage and baseline squad quality still make Nice the single most likely 90-minute result, though with elevated volatility.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-04T10:05:27.960477-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bookmakers and preview context strongly favor Lens at home (shorter odds). Lens are in better recent form (LWWWW), Thauvin is in strong scoring form and the team has home advantage at Stade Bollaert-Delelis. Lorient have struggled for points early in the season and are less consistent on the road; their recent meeting history gives them confidence but does not offset Lens' current momentum. Probabilities reflect the market edge toward a Lens victory but allow for a draw or Lorient upset.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds are fairly balanced with a slight lean toward the home side. Both teams have shown inconsistent form and defensive absences (Le Havre missing Zagadou long-term; Brest with defensive doubts), which increases draw/low-margin outcomes. Given Le Havre's home stability and marginal market edge, a narrow home win is most likely, but the probabilities keep Brest and a draw realistic outcomes.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds favor Nice at home and previews note Nice searching for points after a poor result; Le Mans have shown attacking promise but are newly promoted and inconsistent away. Home advantage and slightly stronger squad depth tilt probability to a Nice victory, though a competitive match and draw/Le Mans upset remain plausible.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-04T10:05:56.612705-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are a home favorite per odds (-205); normalization yields Lens ≈ 64%, draw ≈ 20%, Lorient ≈ 16% for regulation-time result.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Le Havre favored slightly at home with near parity; normalized implied probabilities place Le Havre ≈ 36%, Brest ≈ 35%, draw ≈ 29%.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice is a home favorite (-120); normalized odds suggest Nice ≈ 52% to win, Le Mans ≈ 23–25%, draw ≈ 25%.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-04T10:06:00.500822-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens are strong at home and have won four of their last five matches, while Lorient have struggled with only one point so far this season. Lens' key attacker Thauvin is in excellent form, and the odds heavily favor the home side. Lorient's historical edge in head-to-head is outweighed by current form and squad strength.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams are missing key players and have struggled for wins, with Le Havre and Brest each failing to impress in recent matches. The odds are very close, and both sides have a tendency to draw, making a stalemate the most likely outcome.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are slight favorites at home despite poor recent form, as Le Mans are newly promoted and have not yet won this season. However, Le Mans have shown attacking promise and beat Nice in their last meeting, so an upset is possible, but Nice's home advantage and market odds tip the balance.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-04T10:06:06.972762-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lens have a strong home form and are favored by the odds. Lorient's away form is weaker, and Lens' key player Thauvin is in excellent form.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have struggled recently, with similar form and injury issues. The odds suggest a close match, making a draw a likely outcome.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Nice have the home advantage and are slightly favored by the odds. However, Le Mans have shown resilience in recent matches, making this a competitive fixture.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-04T10:06:20.516046-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are strong favorites at home per market odds (-205), with strong recent form (LWWWW) and Thauvin in-form with four goals in three games. Lorient are winless this season and struggling. Some upset risk given Lorient's historical head-to-head edge, but Lens should prevail at Bollaert-Delelis.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Very tight market (+165 vs +175), reflecting two struggling sides: Le Havre with mixed form and Brest winless (0-2-0) and missing captain Chardonnet in defense. Home advantage gives Le Havre a slight edge, but this is close to a coin flip with meaningful draw probability.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nice are modest favorites (-120) despite poor recent form and a 3-0 loss to Paris FC. Newly promoted Le Mans have shown attacking threat and beat Nice in their last meeting, but Nice's superior squad quality and home advantage at Allianz Riviera should give them the edge. Odds drift toward Nice supports the home pick, though confidence is low given Nice's fragility.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-04T10:06:28.007757-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Lens",
+                    "confidence": "medium",
+                    "reasoning": "Lens are strong favorites at home (-205), with good form and Thauvin in excellent scoring shape. Lorient sit low with just 1 point despite historical H2H edge.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Le Havre AC",
+                    "confidence": "low",
+                    "reasoning": "Very tight odds with both sides in poor form. Le Havre have slight home edge but low scoring; Brest winless. Effectively a coin flip leaning home.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Nice",
+                    "confidence": "medium",
+                    "reasoning": "Nice favored at home (-120) despite shaky form. Le Mans carry away momentum and won the last H2H, keeping this competitive, but home advantage tips it to Nice.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-04T10:06:43.389089-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are strong favorites at home with odds around -205, reflecting their home advantage at Stade Bollaert-Delelis and recent form (LWWWW). Thauvin has been in exceptional form with 4 goals in 3 recent games. Lorient have been struggling with LDLWD form and only 1 point this season. However, Lens lost their last game to Strasbourg and Lorient historically hold a slight head-to-head edge. The odds imply roughly 62% for Lens, but adjusting for some uncertainty and Lorient's historical H2H edge, a 55% home win probability is appropriate.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely contested match with market odds showing Le Havre at +165 and Brest at +175, making it nearly even. Both teams are struggling this season with poor form (Le Havre DLWLD, Brest DDDLL). Brest have a slightly better H2H record (3-1-1 in last 5), but Le Havre have home advantage. Both teams are missing key defenders due to injury. The very tight odds and poor form from both sides suggest high uncertainty; a slight lean toward Le Havre due to home advantage.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nice are slight favorites at -120 on their home ground, but this is a surprisingly competitive match. Nice have been poor this season (17th, just 1 point, lost 3-0 to Paris FC last time out). Le Mans are newly promoted but unbeaten in recent away games and won the last H2H meeting 3-2. The odds suggest Nice around 52% implied probability. However, Nice's poor recent form (LDWDL, struggling at home) and Le Mans' away form temper confidence in a home win. Adjusting downward from market implied probability gives Nice a 40% win chance with meaningful uncertainty across all outcomes.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-04T10:07:22.926989-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are in excellent form with 4 consecutive wins (LWWWW) and have strong home advantage at Stade Bollaert-Delelis. Their star player Thauvin has scored 4 goals in 3 recent games, making them highly dangerous in attack. Lorient have struggled with mixed form (LDLWD) and only 1 point from 2 games this season. The odds heavily favor Lens at -205, reflecting their superiority. While Lorient won the last head-to-head 2-1 and hold a slight historical edge (8-7 in 22 meetings), current form and home advantage point strongly to a Lens victory.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a highly competitive match between two struggling sides. Le Havre have 1 point from 2 games (0-1-1) while Brest are winless with 0 points from 2 games (0-2-0). Both teams have poor recent form across competitions - Le Havre with DLWLD and Brest with DDDLL. The odds are extremely tight, with Le Havre at +165 and Brest at +175, indicating a genuine toss-up. Brest have won 3 of the last 5 head-to-head meetings, but they're missing key defender Brendan Chardonnet. Le Havre have multiple injury concerns (Zagadou, Mambimbi, Toure) but benefit from home advantage. Both teams average low scoring (under 1.5 goals per game recently). Given the marginal home advantage and slightly better odds positioning, Le Havre edges this, but confidence is very low.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have identical records of 0-1-1 with 1 point each, making this a closely matched fixture. Nice suffered a heavy 3-0 defeat to Paris FC in their last match and sit in 17th position, while Le Mans lost 3-2 to Rennes and are in 13th. Interestingly, Le Mans won the last meeting 3-2, and one source suggests they're unbeaten in their last 7 domestic away matches as a newly promoted side. However, Nice have home advantage at the Allianz Riviera and are priced as favorites at -120. Both teams average 1.3 goals scored but Le Mans concede more (1.4 vs 0.9). The tight odds and contrasting narratives (Nice's home edge vs Le Mans' away form) create uncertainty. Nice's home advantage tips the balance slightly, but this is a difficult game to call with confidence.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-04T10:07:30.114457-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are in superior form (LWWWW) and sit 7th in the table with 3 points, while Lorient are struggling in 14th with only 1 point. Lens feature Thauvin in exceptional form (4 goals in 3 games). DraftKings odds heavily favor Lens (-205), reflecting their clear dominance. Despite Lorient's historical 8-7 head-to-head advantage, current form and context strongly support a Lens home victory.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams show concerning recent form: Le Havre are 0-1-1 (DLWLD) and Brest are 0-2-0 (DDDLL) with no wins in 5 matches. Brest average 1.7 goals conceded per match while Le Havre average only 0.9 scored. The odds are tightly bunched (Le Havre +165, Draw +230, Brest +175), indicating genuine uncertainty. Low-scoring stalemate is plausible given both teams' defensive struggles and lack of attacking consistency.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nice are in 17th place with 1 point and lost 3-0 to Paris FC, showing severe defensive vulnerabilities. Le Mans, despite being promoted and having just 1 point, appear stronger (1D 1L record, unbeaten in 7 domestic away matches, better attacking metrics). However, odds slightly favor Nice (-120), and Le Mans won the recent head-to-head 3-2. This is a genuinely uncertain matchup between two struggling sides; slight edge to Nice at home given odds and recent defensive collapse by Le Mans.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-04T10:09:27.039003-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens are strong at home and heavily favored on the moneyline, while Lorient arrive in poor away form.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A tight matchup with both sides struggling, but Le Havre have a slight home edge on the prices.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nice are favored at home but have been unconvincing, while Le Mans are resilient away, making this a low-confidence home lean.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-04T10:09:29.923246-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lens have strong home form (LWWWW) and are favored by odds (-205). Lorient have poor away form (LDLWD) and sit 14th. Lens key attacker Thauvin in form. Historical last meeting went to Lorient, but Lens should edge this.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling: Le Havre have 0 wins in last 5 (2D 3L), Brest have 0 wins (2D 3L). Odds are close (Le Havre +165, Brest +175). Likely a tight, low-scoring affair; draw is plausible.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Nice are slight favorites at home (-120) despite poor form (LDWDL). Le Mans are newly promoted but have shown resilience (LDWDD). Nice have home advantage and better squad quality, but inconsistency makes this uncertain.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-04T10:09:55.001963-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens is in strong form overall and has a solid home record, while Lorient has struggled on the road. The odds heavily favor Lens at home.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both Le Havre and Brest have struggled to secure wins, with Brest winless in their last five and Le Havre lacking home victories. The odds are very tight, giving a slight edge to the home team in a likely low-scoring affair.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Nice's fragile start to the season and lower league position, the odds still favor them at home against newly promoted Le Mans. However, Le Mans's solid away form keeps the upset probability notable.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-04T10:10:06.428410-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lens has a strong home form and is currently in a better position in the league table. Lorient, on the other hand, has struggled in their recent matches. The odds also favor Lens to win.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar recent forms and records, with neither team showing a clear advantage. The odds and historical head-to-head suggest a close match, likely ending in a draw.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Le Mans, despite being the away team, has shown strong form and recently beat Nice. Nice's current form and recent results indicate they might struggle against a confident Le Mans side.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-04T10:12:03.701266-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens holds a strong home advantage at Stade Bollaert-Delelis and enters with superior recent form (LWWWW) compared to Lorient's inconsistent start. Denis Thauvin's attacking threat and favorable market odds heavily support a home victory, though Lorient's previous H2H win and potential for a counter-attack warrant a moderate confidence level.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both sides are in poor early-season form and missing key defensive personnel, suggesting a tightly contested, low-scoring affair. Market odds are nearly identical for both teams, reflecting the unpredictability, but a stalemate appears most probable given Le Havre's home grind and Brest's recent draw-heavy record.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Nice's home form is questionable following a heavy 3-0 defeat, while newly promoted Le Mans arrives with genuine away momentum, remaining unbeaten in their last seven domestic away matches. Despite Nice's slight market favoritism, the evenly matched records and contrasting recent trajectories point toward a tightly contested stalemate.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-04T10:13:03.537465-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are heavy favorites per market odds (-205) and playing at Stade Bollaert-Delelis. Despite mixed recent context regarding a loss to Strasbourg, their home form LWWWW suggests attacking strength compared to Lorient's weaker road record. Head-to-head favors Lorient slightly historically, but home advantage and odds drive the prediction toward a Lens victory.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested matchup with odds nearly equal (+165 vs +175). Both teams show poor form this season with zero league wins recorded in the provided metrics. Defensive absences on both sides coupled with low-scoring historical trends (Under 2.5) increase the likelihood of a stalemate draw.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmaker odds list Nice as favorites (-120) despite their current 17th-place standing. Le Mans enters with unbeaten away form in domestic play, but Nice's home advantage at Allianz Riviera and superior defensive stats (conceding 0.9 avg) outweigh the visitor's momentum in this forecast.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-04T10:14:18.308254-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens carry stronger home momentum and attacking form led by Florian Thauvin, while Lorient sit in 14th with just one point and a winless away record. Despite Lens dropping their last match and Lorient winning the last H2H, the structural and venue advantages favor a Lens victory.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling for wins, with identical 2-draw, 3-loss form over their last five and significant defensive absences. The market prices this as nearly a pick'em, and Brest's recent H2H superiority is offset by Le Havre's home standing, making a stalemate the most likely result.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice are favored by the market and possess greater overall squad quality, needing a response after a 3-0 defeat. Le Mans have shown fight as a newly promoted side, but Nice's home advantage at Allianz Riviera and superior talent should see them secure the three points.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-04T10:15:03.191827-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are clear market favorites at home and their broader form is stronger than Lorient's, though a recent league loss and Lorient's win in the last head-to-head keep this from being high confidence.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds are nearly split, with Le Havre only a slight home favorite. Both sides are winless and dealing with absences; Brest's stronger recent head-to-head and Le Havre's low scoring make a draw very live.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nice remain the home market favorite, but their 3-0 defeat and poor table position point to fragility. Le Mans have away resilience and won the last meeting, so the upset risk is meaningful despite Nice's edge.",
+                    "event_id": "401876470"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-04T10:15:46.490150-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lorient (away) @ Lens (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lens are strong at Stade Bollaert-Delelis and have a balanced 1-0-1 start, with Florian Thauvin in excellent scoring form. Lorient are winless and just lost to Troyes, and although they beat Lens in the last meeting, the market and form point clearly to a Lens victory.",
+                    "event_id": "401876473"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brest (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both sides are struggling, with Le Havre winless and Brest also failing to win this season. The odds are essentially a coin flip, but Le Havre’s home advantage and Brest’s defensive absences give the hosts a tiny edge in a likely tight, low-scoring contest.",
+                    "event_id": "401876474"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Le Mans (away) @ Nice (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nice have had a slow start and lost heavily to Paris FC, but they remain the stronger squad and are clear home favorites against newly promoted Le Mans. Le Mans’ away unbeaten run and the recent head-to-head win create some upset risk, so confidence is only medium.",
+                    "event_id": "401876470"
+                }
+            ]
+        }
+    ]
+}

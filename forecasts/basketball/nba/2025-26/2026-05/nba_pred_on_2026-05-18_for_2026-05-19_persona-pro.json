@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-18\n    Target Date: 2026-05-19\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/19 - 8:00 PM EDT] Cleveland Cavaliers @ New York Knicks | Away: 63.4% (52-30) vs Home: 64.6% (53-29)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Cleveland Cavaliers (Away) @ New York Knicks (Home)\n**News & Injury Report:**\n- [Cavs vs. Knicks: preview, odds, injury report, TV - cleveland.com](https://www.cleveland.com/cavs/2025/12/cavs-vs-knicks-preview-odds-injury-report-tv.html)\n  Snippet: The point spread: Knicks minus-5.5; O/U 239.5\n\nTV: ABC & ESPN\n\n## Injury report\n\nCavs\n\nQuestionable:\n\n Evan Mobley (left calf; strain)\n\nOut:\n\n Chris Livingston (G League \u2013 Two-Way)\n Larry Nance Jr. (right calf; strain)\n Max Strus (left foot; Jones fracture surgery)\n Luke Travers (G League \u2013 Two-Way)\n\nKnicks\n\nQuestionable:\n\n Guerschon Yabusele (illness)\n\nOut:\n\n Miles McBride (left ankle; sprain)\n Landry Shamet (right shoulder; sprain)\n\n# Cavaliers Insider with Chris Fedor\n\nFree Trial 14 Days ...\n- [New York Knicks vs Cleveland Cavaliers predictions for NBA playoffs](https://www.azcentral.com/story/sports/nba/2026/05/17/new-york-knicks-cleveland-cavaliers-picks-predictions-odds-nba-playoffs/90106056007/)\n  Snippet: The Arizona Republic\n\n Home\n Sports\n World Cup\n Cardinals & NFL\n Suns & NBA\n ASU Sun Devils\n UA Wildcats\n GCU Antelopes\n High Schools\n Sports On TV\n D-Backs & MLB\n Cactus League\n\nThe Arizona Republic\n\n# Knicks vs Cavaliers picks, predictions, odds for NBA playoff series\n\nJeremy Cluff   Arizona Republic\n\nplay\n\nShow Caption\n\nHide Caption\n\nCan any teams stop the Knicks in the East?\n\nThe New York Knicks are gaining momentum in the Eastern Conference playoffs, but does any team still have what it takes to keep them out of the NBA Finals? ...\n**Vegas Odds & Lines:**\n- [Knicks vs Cavaliers Odds, Betting Trends, and Line Movements - 05/18/2026](https://www.vegasinsider.com/nba/matchups/cavaliers-vs-knicks/)\n  Snippet: | New York Knicks   509   Knicks | o228.5   -110 | o56.5   -110 | N/A | o53.5   -125 | N/A | o54.5   -113 | o55.5   -110 | o54.5   -115 | o54.5   -124 | o231.5   -110 |  |\n| Cleveland Cavaliers   510   Cavaliers | u228.5   -110 | u56.5   -120 | N/A | u53.5   -105 | N/A | u54.5   -113 | u55.5   -120 | u54.5   -120 | u54.5   -110 | u231.5   -110 |  |\n|  Matchup | | | | |\n| Final | Open | bet365 \u203a | betmgm \u203a | draftkings \u203a | caesars \u203a | fanduel \u203a | hardrock \u203a | fanatics \u203a | riverscasino \u203a | Consensus | ...\n- [Cleveland Cavaliers vs New York Knicks odds for NBA playoff Game 1](https://www.azcentral.com/story/sports/nba/2026/05/17/cleveland-cavaliers-new-york-knicks-odds-nba-playoffs-game-1/90107185007/)\n  Snippet: Here's what you need to know about NBA playoff betting odds for the Eastern Conference Finals postseason game between the No. 4 seed Cavaliers and No. 3 seed Knicks, which is being played on Tuesday, May 19, 2026.\n\nWhat is the point spread for the Knicks vs Cavaliers game?\n\nWhat is the moneyline for the Cavaliers vs Knicks game?\n\nWhat is the over/under (point total) for betting on the conference final NBA playoff matchup?\n\nNBA playoffs odds: Spurs vs Thunder | Cavaliers vs Pistons | NBA championship odds | Game odds\n\nWatch Cavaliers vs Knicks on FUBO (free trial) ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-18\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-18 15:26:32"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-18 15:25:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.7,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "High",
+                    "reasoning": "The New York Knicks are significant favorites, backed by a -5.5 point spread from Vegas and a strong home-court advantage at Madison Square Garden. The primary factor is the lopsided injury report. The Cavaliers will be without key starter Max Strus and role player Larry Nance Jr., while their All-Defensive caliber big man, Evan Mobley, is questionable with a calf strain and likely to be limited if he plays. The Knicks are comparatively healthier, giving them a decisive edge."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:25:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.66,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas has NYK favored by ~-5.5, which typically maps to roughly mid-60% win probability at home. Team strength is similar by record, so the line/home-court is a key separator. Cleveland\u2019s injury context is more impactful (Max Strus out; Larry Nance Jr. out; Evan Mobley questionable with a calf strain), which reduces lineup stability and two-way ceiling if Mobley is limited/out. New York\u2019s outs (McBride/Shamet) are more replaceable rotation losses, and MSG home-court plus current market support tilts the edge to the Knicks."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:25:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.63,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas has the Knicks ~-5.5 which implies a clear home favorite; I calibrate that to roughly a 62\u201365% chance. Both teams had similar regular-season records, but New York's home-court and recent playoff momentum favor them. Cleveland is impacted by key absences/questionable players \u2014 Evan Mobley (questionable with a left-calf strain) and confirmed outs like Max Strus and Larry Nance Jr. reduce Cleveland's defensive/rebounding and spacing ability. New York has some rotation losses (Miles McBride, Landry Shamet out) but deeper frontcourt and the home crowd advantage tilt the matchup. Combining team strength, injuries, and the spread, I estimate a 63% probability the Knicks win Game 1."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.65,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Knicks hold home-court edge with a strong home win rate (~64.6%). Vegas odds list Knicks -5.5, implying a ~0.63\u20130.66 win probability. Cavs face notable injuries (Mobley questionable; Nance Jr., Strus, Livingston out) reducing scoring and frontcourt impact, while Knicks have relatively healthier depth."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.67,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "High",
+                    "reasoning": "The Knicks are favored by Vegas with a -5.5 point spread, indicating a strong home-court advantage and market confidence. Both teams have similar season win rates (Cavs 63.4%, Knicks 64.6%), but the Knicks are at home and have fewer impactful injuries. The Cavaliers are missing Max Strus (key rotation player) and have Evan Mobley questionable, which could impact their frontcourt depth. The Knicks' injuries are less significant to their core rotation. Given the playoff context, home-court, and Vegas signals, the Knicks are clear favorites."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "High",
+                    "reasoning": "The Knicks have a slightly better home win rate compared to the Cavaliers' away win rate. The Knicks are favored by 5.5 points according to the Vegas odds, indicating a strong expectation of their victory. Additionally, the Cavaliers are dealing with significant injuries, including Evan Mobley being questionable and key players like Max Strus and Larry Nance Jr. being out. The Knicks' injuries are less impactful, with only Guerschon Yabusele questionable and other less critical players out."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:11",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.62,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Knicks are at home with a slightly better season record (64.6% vs 63.4%). Vegas line has Knicks as -5.5 favorites, indicating home advantage. Cavs have key injuries: Evan Mobley questionable, Larry Nance Jr. out. Knicks have minor injury to Yabusele (questionable) but McBride and Shamet out. Overall, Knicks have the edge."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium-High",
+                    "reasoning": "This is an Eastern Conference Finals playoff game. The Knicks are favored by 5.5 points according to Vegas, which typically translates to approximately 67-70% win probability for the home favorite. Key factors: (1) Knicks have home court advantage in a playoff atmosphere at MSG, (2) Cavaliers' Evan Mobley is QUESTIONABLE with a left calf strain - his potential absence or limited effectiveness would significantly impact Cleveland's interior defense and offense, (3) Both teams have nearly identical regular season records (Knicks 64.6% vs Cavs 63.4%), suggesting evenly matched squads, (4) The betting line of Knicks -5.5 indicates sharp money favors New York, (5) Knicks are noted as 'gaining momentum' in the Eastern Conference playoffs per the Arizona Republic article, (6) Cleveland is missing Larry Nance Jr. (right calf) and Max Strus (foot surgery), reducing their depth. The O/U around 228.5-231.5 suggests a moderate-paced playoff game. The Mobley injury question is the X-factor - if he's out or limited, probability shifts higher toward Knicks (70%+). With current information and Vegas consensus, 68% home win probability accounts for playoff intensity, home court, and the injury uncertainty favoring New York."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-18 15:26:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cleveland Cavaliers (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.65,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "High",
+                    "reasoning": "The New York Knicks have a slight edge in the season record and are playing at home. The point spread of -5.5 in favor of the Knicks indicates that Vegas also favors them. Additionally, the Cavaliers have several key players out or questionable, which could impact their performance. The Knicks, despite having a couple of players out, are still in a better position to win."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

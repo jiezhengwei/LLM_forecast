@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Bundesliga 2026-2027",
+        "competition_key": "bundesliga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-29",
+        "target_date_et": "2026-08-30",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast German Bundesliga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884814\nMatchup: Werder Bremen (away) @ SC Freiburg (home)\nHome: SC Freiburg\nAway: Werder Bremen\nKickoff UTC: 2026-08-30T13:30Z\nKickoff ET: 2026-08-30 09:30 EDT\nVenue: Europa-Park Stadion\nRound: unavailable\nHome form: WWWLW\nAway form: WLLLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: SC Freiburg -115 (open -110); Draw +255 (open +220); Werder Bremen +275 (open +210)\nTavily context:\n  - Title: Preview: Freiburg vs Werder Bremen - prediction, team news, lineups - Sports Mole\n    Content: Werder Bremen emerged as 3-0 winners against Luneburger Hansa in the first round of the DFB-Pokal on August 22, and that was just their third away victory in 16 attempts, a stretch in which they lost nine times.\n\nFreiburg form (all competitions):\n\n W\n W\n W\n\nWerder Bremen form (all competitions):\n\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fginter-6a8dec7baff51095240858.jpg)\n\n© Iconsport / PA Images ...\n    URL: https://www.sportsmole.co.uk/football/freiburg/preview/freiburg-vs-werder-bremen-prediction-team-news-lineups_603917.html\n  - Title: SC Freiburg vs Werder Bremen Predictions, Picks & Odds - 30/08 ...\n    Content: 63%Both teams score\n\n1.7Goals scored\n\n1.5Goals conceded\n\n#### Werder Bremen\n\nRecent form\n\nWLLDW\n\nWins2/5 (40%)\n\nDraws1/5 (20%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3Total goals\n\n45%Both teams score\n\n1.4Goals scored\n\n1.6Goals conceded\n\n| Statistic | SC Freiburg | Werder Bremen |\n ---\n| Last 5 results | 4W 1L | · | 2W 1D 2L |\n| Avg goals scored | 1.7 | · | 1.4 |\n| Avg goals conceded | 1.5 | · | 1.6 |\n| Under 2.5 (last 5) | 0/5 | · | 2/5 |\n| H2H, last 4 meetings | 4 SC Freiburg · 0 Draws · 0 Werder Bremen |\n\nProbable lineup\n\n### Lineups: SC Freiburg vs Werder Bremen\n\n#### SC Freiburg ...\n    URL: https://www.toffeeweb.com/int/sc-freiburg-vs-werder-bremen-predictions-picks-odds-30-08-2026\n  - Title: Freiburg vs Werder Bremen Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Full-Time Result\n\n1\n\n1.93\n\nX\n\n3.50\n\n2\n\n3.70\n\n Stake Logo\n\nHalf-Time Result\n\n1\n\n2.45\n\nX\n\n2.30\n\n2\n\n3.95\n\n Stake Logo\n\nDouble Chance\n\n1X\n\n1.26\n\n12\n\n1.28\n\nX2\n\n1.83\n\n Stake Logo\n\nDraw No Bet\n\n1\n\n1.41\n\n2\n\n2.63\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.5\n\n1.93\n\n2 Hcp +0.5\n\n1.86\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n2.05\n\nOver 2.5\n\n1.73\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.61\n\nNo\n\n2.20\n\n Stake Logo\n\nIgor Matanovic Heads First Goalscorer Market\n\nThere is 2.55 available that Igor Matanovic finds the net, while he is available at 5.20 to register the first goal which makes him favourite. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/freiburg-vs-werder-bremen-prediction-lineups-odds-2026-08-30\n  - Title: SC Freiburg vs Werder Bremen Predictions, Picks & Odds - 30/08/2026\n    Content: Bundesliga\n\nSC Freiburg SC Freiburg\n\n30 Aug 2026 14:30\n\nWerder Bremen Werder Bremen\n\nPrediction:\n\nSC Freiburg to win 2.05\n\nView OddsWilliam Hill >\n\nPick your prediction\n\n SC FreiburgDraw Werder Bremen\n\n# SC Freiburg vs Werder Bremen Predictions, Picks & Odds – 30/08/2026\n\nBundesliga · 1\n\n30 Aug 2026  Europa-Park Stadion  Louis Hecq\n\n### SC Freiburg vs Werder Bremen – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| William Hill | 2.05 | 3.50 | 3.50 | View Odds |\n\nOur prediction\n\n1: SC Freiburg to win\n\n2.05 on William HillWilliam Hill · Confidence High ...\n    URL: https://www.toffeeweb.com/sc-freiburg-vs-werder-bremen-predictions-picks-odds-30-08-2026\n\nGame ID: 2\nSource event_id: 401884813\nMatchup: Schalke 04 (away) @ FC Augsburg (home)\nHome: FC Augsburg\nAway: Schalke 04\nKickoff UTC: 2026-08-30T15:30Z\nKickoff ET: 2026-08-30 11:30 EDT\nVenue: WWK Arena\nRound: unavailable\nHome form: WLWWD\nAway form: WWLWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: FC Augsburg +115 (open +105); Draw +255 (open +245); Schalke 04 +205 (open +205)\nTavily context:\n  - Title: Augsburg vs Schalke 04 - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Augsburg vs Schalke 04 — Sun, August 30, 3:30 PM UTC\n\nBundesliga Round 1\n\n Bundesliga Round 1\n WWK Arena\n\nAugsburgAugsburg\n\n‌\n‌\n\nSchalke 04Schalke 04\n\n# Augsburg vs Schalke 04 — Sun, August 30, 3:30 PM UTC\n\nBundesliga Round 1\n\n Bundesliga Round 1\n WWK Arena\n\nAugsburgAugsburg\n\n‌\n‌\n\nSchalke 04Schalke 04\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Adrian Gantenbein\n\n  Ankle injury / Mid September 2026\n\nGantenbeinAnkle injuryMid September 2026\n\n## Team form\n\n Leeds\n\n  4 - 0\n\n  Augsburg\n Schwaz\n\n  0 - 15\n\n  Augsburg\n Augsburg\n\n  1 - 1 ...\n    URL: https://www.fotmob.com/matches/augsburg-vs-schalke-04/2uxy4s\n  - Title: FC Augsburg vs Schalke 04\n    Content: Missing Players: Tim Breithaupt, Sima Suso.\n\nAway Team: Schalke 04Coach: Miron Muslić.\n\nGoalkeeper: Loris Karius.\n\nDefenders: Vitalie Becker, Hasan Kuruçay, Nikola Katic, Timo Becker.\n\nMidfielders: Adil Aouchiche, Satoshi Tanaka, Soufiane El-Faouzi, Dejan Ljubicic.\n\nAttackers: Junior Adamu, Moussa Sylla.\n\nSubs: Kevin Müller, Dylan Leonard, Maximilian Wöber, Mertcan Ayhan, Robin Gosens, Ron Schallenberg, Junior Dina Ebimbe, Christian Gomis, Edin Džeko.\n\nMissing Players: Kenan Karaman, Adrian Gantenbein, Bryan Lasme.\n\n### Event Details:\n\nName: FC Augsburg vs. Schalke 04 ...\n    URL: https://www.365scores.com/en-us/football/match/bundesliga-25/fc-augsburg-schalke-04-335-358-25\n  - Title: FC Augsburg vs Schalke 04 Predictions, Picks & Odds\n    Content: Schalke 04 arrive in Augsburg with considerable uncertainty. Currently placed first, their away form data remains unavailable, making it difficult to gauge how they have performed on the road this season. What is clear is the psychological disadvantage they carry from that heavy defeat at this very ground. Rebuilding momentum after such a lopsided result is never straightforward, and the Royal Blues will need a vastly improved showing to avoid a repeat.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/fc-augsburg-vs-schalke-04-predictions-picks-odds-30-08-2026\n  - Title: Augsburg vs Schalke 04 prediction – Odds & stats – 30 August 2026\n    Content: +2.5\nProbability: 70.31%\n\nBet365\nBet365\n\n| Augsburg |  | Schalke 04 |\n ---\n| Augsburg | stat | Schalke 04 |\n| 5.83 | Average goals per game | 4 |\n| 3.83 | Average goal scored | 2.5 |\n| 2 | Goals conceded per match | 1.5 |\n| 33 % | Matches with -2.5 goals | 17 % |\n| 67 % | Matches with +2.5 goals | 83 % |\n| 4 | Average goals home team 1/away team 2 | 2.83 |\n| 2 | Avg. goals home team 1/away team 2 | 1.5 |\n| 2 | Avg. goals conceded home team 1/away team 2 | 1.33 |\nStats based on the last 6 matches\n\nAugsburg\nSchalke 04\n\n## Augsburg vs Schalke 04 BTTS tips\n\nYes\nProbability: 63.33%\n\nBet365\nBet365 ...\n    URL: https://www.wincomparator.com/predictions/augsburg-schalke-04-8595825\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884814\nMatchup: Werder Bremen (away) @ SC Freiburg (home)\nHome: SC Freiburg\nAway: Werder Bremen\nKickoff UTC: 2026-08-30T13:30Z\nKickoff ET: 2026-08-30 09:30 EDT\nVenue: Europa-Park Stadion\nRound: unavailable\nHome form: WWWLW\nAway form: WLLLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: SC Freiburg -115 (open -110); Draw +255 (open +220); Werder Bremen +275 (open +210)\nTavily context:\n  - Title: Preview: Freiburg vs Werder Bremen - prediction, team news, lineups - Sports Mole\n    Content: Werder Bremen emerged as 3-0 winners against Luneburger Hansa in the first round of the DFB-Pokal on August 22, and that was just their third away victory in 16 attempts, a stretch in which they lost nine times.\n\nFreiburg form (all competitions):\n\n W\n W\n W\n\nWerder Bremen form (all competitions):\n\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fginter-6a8dec7baff51095240858.jpg)\n\n© Iconsport / PA Images ...\n    URL: https://www.sportsmole.co.uk/football/freiburg/preview/freiburg-vs-werder-bremen-prediction-team-news-lineups_603917.html\n  - Title: SC Freiburg vs Werder Bremen Predictions, Picks & Odds - 30/08 ...\n    Content: 63%Both teams score\n\n1.7Goals scored\n\n1.5Goals conceded\n\n#### Werder Bremen\n\nRecent form\n\nWLLDW\n\nWins2/5 (40%)\n\nDraws1/5 (20%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3Total goals\n\n45%Both teams score\n\n1.4Goals scored\n\n1.6Goals conceded\n\n| Statistic | SC Freiburg | Werder Bremen |\n ---\n| Last 5 results | 4W 1L | · | 2W 1D 2L |\n| Avg goals scored | 1.7 | · | 1.4 |\n| Avg goals conceded | 1.5 | · | 1.6 |\n| Under 2.5 (last 5) | 0/5 | · | 2/5 |\n| H2H, last 4 meetings | 4 SC Freiburg · 0 Draws · 0 Werder Bremen |\n\nProbable lineup\n\n### Lineups: SC Freiburg vs Werder Bremen\n\n#### SC Freiburg ...\n    URL: https://www.toffeeweb.com/int/sc-freiburg-vs-werder-bremen-predictions-picks-odds-30-08-2026\n  - Title: Freiburg vs Werder Bremen Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Full-Time Result\n\n1\n\n1.93\n\nX\n\n3.50\n\n2\n\n3.70\n\n Stake Logo\n\nHalf-Time Result\n\n1\n\n2.45\n\nX\n\n2.30\n\n2\n\n3.95\n\n Stake Logo\n\nDouble Chance\n\n1X\n\n1.26\n\n12\n\n1.28\n\nX2\n\n1.83\n\n Stake Logo\n\nDraw No Bet\n\n1\n\n1.41\n\n2\n\n2.63\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.5\n\n1.93\n\n2 Hcp +0.5\n\n1.86\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n2.05\n\nOver 2.5\n\n1.73\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.61\n\nNo\n\n2.20\n\n Stake Logo\n\nIgor Matanovic Heads First Goalscorer Market\n\nThere is 2.55 available that Igor Matanovic finds the net, while he is available at 5.20 to register the first goal which makes him favourite. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/freiburg-vs-werder-bremen-prediction-lineups-odds-2026-08-30\n  - Title: SC Freiburg vs Werder Bremen Predictions, Picks & Odds - 30/08/2026\n    Content: Bundesliga\n\nSC Freiburg SC Freiburg\n\n30 Aug 2026 14:30\n\nWerder Bremen Werder Bremen\n\nPrediction:\n\nSC Freiburg to win 2.05\n\nView OddsWilliam Hill >\n\nPick your prediction\n\n SC FreiburgDraw Werder Bremen\n\n# SC Freiburg vs Werder Bremen Predictions, Picks & Odds – 30/08/2026\n\nBundesliga · 1\n\n30 Aug 2026  Europa-Park Stadion  Louis Hecq\n\n### SC Freiburg vs Werder Bremen – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| William Hill | 2.05 | 3.50 | 3.50 | View Odds |\n\nOur prediction\n\n1: SC Freiburg to win\n\n2.05 on William HillWilliam Hill · Confidence High ...\n    URL: https://www.toffeeweb.com/sc-freiburg-vs-werder-bremen-predictions-picks-odds-30-08-2026\n\nGame ID: 2\nSource event_id: 401884813\nMatchup: Schalke 04 (away) @ FC Augsburg (home)\nHome: FC Augsburg\nAway: Schalke 04\nKickoff UTC: 2026-08-30T15:30Z\nKickoff ET: 2026-08-30 11:30 EDT\nVenue: WWK Arena\nRound: unavailable\nHome form: WLWWD\nAway form: WWLWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: FC Augsburg +115 (open +105); Draw +255 (open +245); Schalke 04 +205 (open +205)\nTavily context:\n  - Title: Augsburg vs Schalke 04 - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Augsburg vs Schalke 04 — Sun, August 30, 3:30 PM UTC\n\nBundesliga Round 1\n\n Bundesliga Round 1\n WWK Arena\n\nAugsburgAugsburg\n\n‌\n‌\n\nSchalke 04Schalke 04\n\n# Augsburg vs Schalke 04 — Sun, August 30, 3:30 PM UTC\n\nBundesliga Round 1\n\n Bundesliga Round 1\n WWK Arena\n\nAugsburgAugsburg\n\n‌\n‌\n\nSchalke 04Schalke 04\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Adrian Gantenbein\n\n  Ankle injury / Mid September 2026\n\nGantenbeinAnkle injuryMid September 2026\n\n## Team form\n\n Leeds\n\n  4 - 0\n\n  Augsburg\n Schwaz\n\n  0 - 15\n\n  Augsburg\n Augsburg\n\n  1 - 1 ...\n    URL: https://www.fotmob.com/matches/augsburg-vs-schalke-04/2uxy4s\n  - Title: FC Augsburg vs Schalke 04\n    Content: Missing Players: Tim Breithaupt, Sima Suso.\n\nAway Team: Schalke 04Coach: Miron Muslić.\n\nGoalkeeper: Loris Karius.\n\nDefenders: Vitalie Becker, Hasan Kuruçay, Nikola Katic, Timo Becker.\n\nMidfielders: Adil Aouchiche, Satoshi Tanaka, Soufiane El-Faouzi, Dejan Ljubicic.\n\nAttackers: Junior Adamu, Moussa Sylla.\n\nSubs: Kevin Müller, Dylan Leonard, Maximilian Wöber, Mertcan Ayhan, Robin Gosens, Ron Schallenberg, Junior Dina Ebimbe, Christian Gomis, Edin Džeko.\n\nMissing Players: Kenan Karaman, Adrian Gantenbein, Bryan Lasme.\n\n### Event Details:\n\nName: FC Augsburg vs. Schalke 04 ...\n    URL: https://www.365scores.com/en-us/football/match/bundesliga-25/fc-augsburg-schalke-04-335-358-25\n  - Title: FC Augsburg vs Schalke 04 Predictions, Picks & Odds\n    Content: Schalke 04 arrive in Augsburg with considerable uncertainty. Currently placed first, their away form data remains unavailable, making it difficult to gauge how they have performed on the road this season. What is clear is the psychological disadvantage they carry from that heavy defeat at this very ground. Rebuilding momentum after such a lopsided result is never straightforward, and the Royal Blues will need a vastly improved showing to avoid a repeat.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/fc-augsburg-vs-schalke-04-predictions-picks-odds-30-08-2026\n  - Title: Augsburg vs Schalke 04 prediction – Odds & stats – 30 August 2026\n    Content: +2.5\nProbability: 70.31%\n\nBet365\nBet365\n\n| Augsburg |  | Schalke 04 |\n ---\n| Augsburg | stat | Schalke 04 |\n| 5.83 | Average goals per game | 4 |\n| 3.83 | Average goal scored | 2.5 |\n| 2 | Goals conceded per match | 1.5 |\n| 33 % | Matches with -2.5 goals | 17 % |\n| 67 % | Matches with +2.5 goals | 83 % |\n| 4 | Average goals home team 1/away team 2 | 2.83 |\n| 2 | Avg. goals home team 1/away team 2 | 1.5 |\n| 2 | Avg. goals conceded home team 1/away team 2 | 1.33 |\nStats based on the last 6 matches\n\nAugsburg\nSchalke 04\n\n## Augsburg vs Schalke 04 BTTS tips\n\nYes\nProbability: 63.33%\n\nBet365\nBet365 ...\n    URL: https://www.wincomparator.com/predictions/augsburg-schalke-04-8595825\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401884814",
+                        "date_utc": "2026-08-30T13:30Z",
+                        "kickoff_et": "2026-08-30 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "SC Freiburg",
+                        "away": "Werder Bremen",
+                        "home_id": "126",
+                        "away_id": "137",
+                        "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                        "venue": "Europa-Park Stadion",
+                        "city": "Freiburg im Breisgau",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "WWWLW",
+                        "form_away": "WLLLD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-110",
+                            "home_current": "-115",
+                            "draw_open": "+220",
+                            "draw_current": "+255",
+                            "away_open": "+210",
+                            "away_current": "+275"
+                        },
+                        "odds_text": "DraftKings: SC Freiburg -115 (open -110); Draw +255 (open +220); Werder Bremen +275 (open +210)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401884813",
+                        "date_utc": "2026-08-30T15:30Z",
+                        "kickoff_et": "2026-08-30 11:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "FC Augsburg",
+                        "away": "Schalke 04",
+                        "home_id": "3841",
+                        "away_id": "133",
+                        "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                        "venue": "WWK Arena",
+                        "city": "Augsburg",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "WLWWD",
+                        "form_away": "WWLWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+105",
+                            "home_current": "+115",
+                            "draw_open": "+245",
+                            "draw_current": "+255",
+                            "away_open": "+205",
+                            "away_current": "+205"
+                        },
+                        "odds_text": "Provider unavailable: FC Augsburg +115 (open +105); Draw +255 (open +245); Schalke 04 +205 (open +205)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-29T08:12:28.197354-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:56:51.388265-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg has a dominant head-to-head record against Werder Bremen, winning their last four meetings. Playing at the Europa-Park Stadion, Freiburg are favored by bookmakers with odds around -115, reflecting their strong home advantage and solid recent form.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "FC Augsburg are slight favorites on home turf at the WWK Arena. However, Schalke 04 has shown solid form leading up to this matchup. Given the relatively tight betting odds, a competitive game is expected, with Augsburg holding a slight edge.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-29T08:01:09.117762-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.494,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.246,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg enters the match as favorites with odds around -115, implying a near 50% chance of a home victory. Werder Bremen has struggled recently in away matches, losing nine of their last 16 on the road, giving Freiburg the edge.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.262,
+                    "away_win_probability": 0.305,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg is favored at home with odds around +115, resulting in an implied probability of 43%. Schalke 04 may struggle on the road after a historically heavy defeat at this venue, making a home win the most probable outcome.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-29T08:01:31.163648-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg enters this match with superior recent form (WWWLW), a significant home advantage, and a dominant head-to-head record, having won the last four meetings against Werder Bremen. Bremen has a poor recent away record, losing nine of their last sixteen away matches per one report. The betting odds consistently favor Freiburg, reflecting these strong underlying factors.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "This is a closely matched season opener, but FC Augsburg holds the edge as the home team and slight betting favorite. While Schalke 04 shows strong pre-season form (WWLWW), Augsburg is solid at home and context suggests they may hold a psychological advantage from past encounters at the WWK Arena. The odds are tight, indicating a competitive match, but home advantage is the deciding factor.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-29T08:01:45.802251-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.4788,
+                    "draw_probability": 0.2653,
+                    "away_win_probability": 0.2559,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg has a strong historical advantage over Werder Bremen, winning all of their last four head-to-head encounters. Werder Bremen has a notably poor away record, with only 3 wins in their last 16 away attempts and 9 losses. Market odds consistently favor SC Freiburg, and expert predictions (Toffeeweb) also point to a Freiburg win with 'High Confidence'. Freiburg's recent form is also good (WWW).",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4328,
+                    "draw_probability": 0.2621,
+                    "away_win_probability": 0.3051,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg is favored by the market odds, with an implied home win probability significantly higher than Schalke 04's away win probability. Although Schalke 04 shows decent recent form, context from Toffeeweb mentions a 'psychological disadvantage' for Schalke at Augsburg's ground due to a past heavy defeat, which could play a role. Both teams have shown a tendency for higher-scoring matches based on recent stats, but the home advantage and odds lean towards an Augsburg victory.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:03:32.916529-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg are priced as moderate home favorites and enter with stronger recent form, while Werder Bremen's away profile is weaker and recent head-to-head notes favor Freiburg. A draw or Bremen result remains plausible, but the home side has the clearest edge.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "FC Augsburg have home advantage and are slight market favorites, but Schalke's recent form is also strong and the odds imply a relatively tight matchup. The most likely single result is an Augsburg win, though uncertainty is elevated.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:03:39.830731-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg are favored by the market at home and enter with stronger recent form. Werder Bremen's away profile is a concern, with context noting only three away wins in their previous 16 attempts. Recent head-to-head trends also lean Freiburg, though the draw and Bremen counterattacking threat keep the edge moderate rather than overwhelming.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "FC Augsburg hold a modest home advantage and are slight market favorites, but Schalke's recent form is competitive enough to make this a close matchup. Both teams' recent scoring profiles point to a potentially open game, increasing volatility. Augsburg are the most likely regulation-time result, but the margin over Schalke is not large.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-29T08:04:05.839509-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Freiburg as the clear favorite at home, and that aligns with recent matchup history (Freiburg winning the last several H2H meetings noted) plus Bremen’s weak away trend (few away wins over an extended stretch). Bremen can compete, but Freiburg’s home edge and more reliable recent form make a regulation home win the most likely outcome.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds give Augsburg a modest home advantage, but Schalke’s recent form is strong and this looks closer to a coin-flip than a clear lean. With both teams showing winning stretches and limited early-season signal, a narrow Augsburg edge at home is the best single pick, while the draw and away win remain substantial.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-29T08:04:28.784442-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg enter on strong form (WWWLW) and hold clear recent H2H advantage versus Werder Bremen. Bookmakers list Freiburg as favourites and home advantage at Europa-Park Stadion further supports a Freiburg edge. Werder have been inconsistent away, so Freiburg is the likeliest 90-minute winner.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds imply a close game with Augsburg slightly favoured at home. Both sides show decent recent form, but Augsburg's home advantage and line-up stability tilt the balance marginally in their favour. Expect a competitive match where a draw or away upset remain plausible.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-29T08:04:54.637015-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.494,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.246,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg have stronger home form and Bremen are weaker away; odds normalization suggests Freiburg as slight favorite.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.262,
+                    "away_win_probability": 0.305,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Schalke 04 show solid away potential; after odds normalization, Schalke have the highest win probability in this matchup despite Augsburg being the home side.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-29T08:04:58.083697-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg have won all of their last four head-to-head meetings with Werder Bremen and are in strong form, winning four of their last five matches. Werder Bremen have struggled away from home, with only three wins in their last sixteen away games and a high number of losses. Bookmaker odds and expert predictions also favor Freiburg, with consensus suggesting a home win. Freiburg's attacking output and Bremen's defensive vulnerabilities further support this forecast.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown decent form, but Augsburg have a slight edge at home and have scored more goals on average. Schalke 04's away form is uncertain and they have some key injuries. The odds are close, but Augsburg's home advantage and recent attacking performances tip the balance slightly in their favor, though a draw or away win remain plausible given the high-scoring tendencies of both sides.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-29T08:05:01.383335-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg has a strong home form and has won all recent head-to-head matches against Werder Bremen. The odds and expert predictions favor Freiburg, and Werder Bremen's away form is weak.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg has a solid home form, while Schalke 04 has uncertainties in their away performance. The odds slightly favor Augsburg, but the match could be closely contested.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-29T08:05:13.164142-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are clear market favorites (-115) and enter in strong form (WWWLW), while Werder Bremen have poor recent away form with just three away wins in 16 attempts. Freiburg have also won all four recent head-to-head meetings. Draw and away win remain plausible but the home side is the strongest single outcome.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds slightly favor Augsburg at home (+115 vs +205 for Schalke), and Schalke suffered a heavy defeat at this venue previously. However, Schalke arrive in strong form (WWLWW) and carry momentum as a newly promoted/rebuilt side, making this a fairly open match. Home advantage tips the balance narrowly toward Augsburg.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-29T08:05:19.310756-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "SC Freiburg",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are strong at home with good form (WWWLW) and have won all last 4 H2H meetings. Werder's away record is historically poor. Market favors Freiburg at -115.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "FC Augsburg",
+                    "confidence": "low",
+                    "reasoning": "Both teams show good form. Augsburg have home advantage and previously beat Schalke heavily at this ground, but Schalke's form (WWLWW) is strong. Odds are close, making this a tight match slightly favoring the home side.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-29T08:05:31.153593-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg enters this match in strong form with 4 wins in their last 5 matches and a dominant H2H record (4-0 in last 4 meetings). The Europa-Park Stadion provides a significant home advantage. Werder Bremen's away form is poor (just 3 away wins in 16 attempts, losing 9). DraftKings odds imply approximately 48% home win probability. Prediction sites broadly favor Freiburg. The bookmaker consensus (1.93-2.05 for Freiburg) aligns with a moderate home advantage. Slight adjustment upward for Freiburg given the H2H dominance and Werder's historically weak away performances.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely contested match. Augsburg's home form has been mixed (WLWWD) but they benefit from home advantage. Schalke 04's away form is strong (WWLWW) and they currently sit first in the table. The ESPN odds (+115 for Augsburg, +205 for Schalke) imply roughly equal chances, with Augsburg holding a slight edge as the home side. However, Schalke's strong away form and overall momentum temper confidence in an Augsburg win. The high-scoring nature of both sides' recent matches (Augsburg avg 5.83 goals/game in last 6) suggests goals but makes the result harder to call. Augsburg predicted as marginal favorite due to home advantage, but confidence is low.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-29T08:05:43.743017-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg enters with strong form (WWWLW) and dominant recent head-to-head record (4-0-0 in last 4 meetings). The odds heavily favor Freiburg at -115, reflecting their home advantage at Europa-Park Stadion. Werder Bremen's poor away form (only 3 wins in last 16 away matches, losing 9) is a significant factor. Both teams average similar goals scored (1.7 vs 1.4) and conceded (1.5 vs 1.6), but Freiburg's home strength and Bremen's away struggles tip the balance. The 63% both teams to score probability and 67% over 2.5 goals suggests an attacking game, but Freiburg's recent dominance in this fixture warrants a home win prediction with medium confidence.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This is a closely matched fixture with considerable uncertainty. Augsburg shows decent form (WLWWD) while Schalke 04 arrives with strong form (WWLWW). The odds are relatively balanced (Augsburg +115, Draw +255, Schalke +205), indicating bookmakers see this as competitive. Key factors favoring Augsburg: home advantage at WWK Arena and historical psychological edge from a heavy previous victory at this ground. Both teams show high-scoring tendencies (Augsburg 5.83 avg goals per game, Schalke 4.0) with 67-83% of recent matches featuring over 2.5 goals. However, Schalke's away form data is unavailable, and their current first-place position suggests quality. The tight odds and mixed signals warrant a slight home edge prediction with low confidence, as this could easily end in a draw or narrow away win.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-29T08:05:49.621054-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg shows strong recent form (WWWLW) with excellent home record and average 1.7 goals scored. Werder Bremen has poor away record (only 3 wins in 16 away attempts) with form WLLLD. H2H favors Freiburg (4-0 in last 4 meetings). Freiburg's -115 odds and expert consensus predictions (2.05 for home win) strongly support home victory. Context indicates Bremen's weakness away from home makes this a high-confidence home win.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams show competitive recent form (Augsburg WLWWD, Schalke WWLWW). Schalke currently leads the table suggesting strong overall form, but Augsburg has home advantage with average 3.83 goals scored at home. Odds are relatively close (Augsburg +115, Schalke +205, Draw +255) indicating competitive match. High BTTS probability (63.33%) and Over 2.5 (70.31%) suggest offensive-minded teams. Augsburg's home ground provides slight edge, but Schalke's current first-place position creates genuine uncertainty. Medium confidence reflects competitive nature of fixture.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-29T08:07:54.494549-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg have home advantage, strong recent form, and four straight head-to-head wins over Werder Bremen; the odds also point clearly to a home result.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Augsburg are favored at home and Schalke have key absences, but Schalke's recent away form and the relatively close odds make this a less certain home lean.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-29T08:07:56.985685-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg have strong home form and have won all three competitive matches this season. Werder Bremen have poor away form, with only one win in their last five away matches. Historical head-to-head favors Freiburg, who have won the last four meetings. Odds also favor Freiburg.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "FC Augsburg have decent home form and Schalke have been inconsistent. However, Schalke have won their last two away matches. The odds are close, with Augsburg slight favorites. This is a tough match to call, but home advantage gives Augsburg a slight edge.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-29T08:08:24.279949-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg is in excellent form and has won their last four head-to-head meetings against Werder Bremen. Bremen has historically struggled away from home, making Freiburg the clear favorite at the Europa-Park Stadion.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg holds the edge in the betting odds and possesses a psychological advantage over Schalke 04 at the WWK Arena following a previous heavy defeat for the visitors. Augsburg's solid home form supports a home victory.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-29T08:08:34.100534-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg has a strong home form and recent performance, with 4 wins in their last 5 matches. Werder Bremen's away form is poor, with only 3 wins in their last 16 away games. The odds and historical head-to-head also favor SC Freiburg.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Schalke 04 has a better recent form with 3 wins in their last 5 away games. FC Augsburg's home form is mixed, and they have key players missing due to injuries. The odds and the need for Schalke 04 to bounce back from a previous heavy defeat suggest a potential away win.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-29T08:09:30.575976-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg has dominated the recent head-to-head record with four straight victories and enters the match in excellent home form. Werder Bremen has struggled on the road, losing four of their last five away games. The market odds align with these trends, making a home win the most probable outcome.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams arrive with mixed but generally positive pre-season form, making this a highly competitive matchup. The betting market gives a slight edge to Augsburg playing at home, but Schalke's upward trajectory and Augsburg's historical inconsistency keep the probabilities tight. A narrow home victory is favored, but the risk of a draw or away upset is significant.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-29T08:10:41.679711-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg is favored based on dominant recent form (WWWLW) and a perfect 4-0 head-to-head record against Werder Bremen in their last four meetings. Market odds assign Freiburg as the clear favorite at -115, reflecting high confidence in a regulation-time home victory at Europa-Park Stadion.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Schalke 04's strong recent form, betting odds (+205 for Schalke vs +115 for Augsburg) favor the home team. Historical data suggests a psychological disadvantage for the visitors due to past heavy defeats at the WWK Arena, supporting a narrow Augsburg result, projected here as a home win based on value probability.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-29T08:11:52.678865-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg brings strong form and a commanding head-to-head record into the match, having won the last four meetings against Werder Bremen. Werder Bremen has struggled away from home recently and the betting markets price Freiburg as solid favorites, reflecting the gulf in current momentum and historical dominance at this venue.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg is priced as a slight home favorite and benefits from Schalke 04's psychological disadvantage following a heavy prior defeat at this ground. Although Schalke has shown decent away form, Augsburg's home advantage and superior squad availability give them a narrow edge in what should be a competitive encounter.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-29T08:12:22.862061-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg has won the last four head-to-head meetings and enters with strong form (WWW in recent matches). Werder Bremen has struggled away from home, recording only three wins in their last 16 away attempts. The betting odds reflect Freiburg as clear favorites at -115, supported by their historical dominance and Bremen's poor road record.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg holds a slight advantage with home support and favorable odds (+115). While Schalke 04 arrives with strong recent form (WWLWW), Augsburg's decent home record (WLWWD) and the psychological edge from Schalke's previous heavy defeat at this venue tip the balance toward a narrow home victory in what should be a competitive match.",
+                    "event_id": "401884813"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-29T08:12:28.191614-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Werder Bremen (away) @ SC Freiburg (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg has been in strong form with three consecutive wins, while Werder Bremen has had mixed results with two losses in their last five games. The home advantage and recent form suggest a likely win for SC Freiburg.",
+                    "event_id": "401884814"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Schalke 04 (away) @ FC Augsburg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both FC Augsburg and Schalke 04 have shown inconsistent forms in their recent matches. With Augsburg having a slight edge in their home form and Schalke 04's uncertain away performance, a draw seems like a plausible outcome.",
+                    "event_id": "401884813"
+                }
+            ]
+        }
+    ]
+}

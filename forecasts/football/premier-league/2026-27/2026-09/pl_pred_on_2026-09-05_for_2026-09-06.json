@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-05",
+        "target_date_et": "2026-09-06",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879291\nMatchup: Manchester United (away) @ Everton (home)\nHome: Everton\nAway: Manchester United\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Hill Dickinson Stadium\nRound: unavailable\nHome form: DWWLL\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Everton +225 (open +200); Draw +265 (open +235); Manchester United +115 (open +130)\nTavily context:\n  - Title: Preview: Everton vs Manchester United - prediction, team news, lineups\n    Content: Ex-Arsenal full-back Ainsley Maitland-Niles should be involved following his own September 1 arrival too, but another former Gunner - Christian Norgaard - is still struggling with an unspecified injury.\n\nIliman Ndiaye's £60m exit to Manchester City could also open the door for Brennan Johnson to come in on the right flank, while Thierno Barry has little competition up front following Beto's move to Fiorentina and the sensational Folarin Balogun transfer collapse.\n\nEverton possible starting lineup: ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/preview/everton-vs-man-utd-prediction-team-news-lineups_604449.html\n  - Title: Everton vs Manchester United Prediction, Lineups & Team News\n    Content: ## When & Where to Watch (USA)\n\n### Sunday, Sept. 6 at 2:00 PM BST / 9:00 AM ET / 6:00 AM PT\n\nVenue: Hill Dickinson Stadium, Liverpool\n\n English TV: USA Network\n Spanish TV: Telemundo\n Streaming: Fubo, Sling Blue, Hulu + Live TV, DirecTV Stream\n\n## Everton vs Manchester United Lineups & Injury News\n\n### Everton vs Manchester United Predicted Lineups ...\n    URL: https://www.rotowire.com/soccer/article/everton-vs-manchester-united-prediction-predicted-lineups-team-news-131844\n  - Title: Everton vs Manchester United Picks, Prediction, Odds, and Line Movement for Sunday September 6 2026\n    Content: ## TLDR: Quick Picks and Prediction\n\n Moneyline Pick: Manchester United +115\n Total Pick: Over 2.5 (-150)\n Projected Final Score: Manchester United 2, Everton 1\n\n## Odds and Line Movement\n\n### Everton and Manchester United Current Odds\n\n| Team | Moneyline | Handicap |\n ---\n| Manchester United | +115 | -0.5 (+105) |\n| Everton | +225 | +0.5 (-145) |\n| Draw | +265\n\n| Total | Under |\n --- |\n| 2.5 | +120 |\n\n### Line Movement - Moneyline ...\n    URL: https://picksandparlays.net/free-picks/soccer/everton-vs-manchester-united-picks-prediction-odds-and-line-movement-for-sunday-september-6-2026\n  - Title: Everton vs. Manchester United prediction, odds, Premier League picks [9/6/2026]\n    Content: Moneyline: Manchester United +120, Everton +245\n Total Goals: Over/Under 2.5 (-138/+127)\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Model picks and best bet\n\nAfter matching our predictions against the best available odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Everton @ +245 via Novig\n Total Goals: Over 2.5 @ -138 via Novig\n\nAccording to our Premier League best bets, the top play to make on this game is Everton to win. ...\n    URL: https://www.dimers.com/epl/news/everton-vs-manchester-united-prediction-09-06-2026-ac\n\nGame ID: 2\nSource event_id: 401879292\nMatchup: Chelsea (away) @ Arsenal (home)\nHome: Arsenal\nAway: Chelsea\nKickoff UTC: 2026-09-06T15:30Z\nKickoff ET: 2026-09-06 11:30 EDT\nVenue: Emirates Stadium\nRound: unavailable\nHome form: WWWWL\nAway form: WWWLW\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Arsenal -140 (open -155); Draw +300 (open +260); Chelsea +370 (open +425)\nTavily context:\n  - Title: Arsenal XI vs Chelsea: Confirmed team news, predicted lineup and injury latest for Premier League\n    Content: In attack, Christos Tzolis had a tough time of it against Villa and Eberechi Eze pushed his case for a start by making a difference after coming on at half time.\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nViktor Gyokeres has not played a minute in the Premier League this season and is not expected to replace Kai Havertz for this match, with Arteta so often trusting the German in big games.\n\nBukayo Saka has started the season well and is looking to get on the scoresheet for the third match in a row. ...\n    URL: https://sports.yahoo.com/articles/arsenal-xi-vs-chelsea-confirmed-053016807.html\n  - Title: Arsenal XI vs Chelsea: Confirmed team news and predicted lineup\n    Content: Predicted Arsenal XI (4-2-3-1): Raya; White, Konsa, Gabriel, Calafiori; Rice, Guimaraes; Saka, Odegaard, Tzolis; Havertz\n\nInjured: Timber, Saliba\n\nTime and date: 4:30pm BST on Sunday, September 6, 2026\n\nVenue: Emirates Stadium\n\nHow to watch: Sky Sports\n\nMORE ABOUT\n\nChelsea\n    URL: https://www.standard.co.uk/sport/football/arsenal-fc-xi-vs-chelsea-confirmed-team-news-predicted-lineup-injury-latest-premier-league-b1295570.html\n  - Title: Arsenal vs Chelsea Predictions, Picks & Odds - 06/09/2026\n    Content: Chelsea occupy eighth place after a mixed run that includes a loss and a draw in their last five matches. Xabi Alonso's squad face a potential double blow in midfield; Moises Caicedo is a major doubt with an unspecified injury, and Jordan Henderson remains sidelined following a wrist problem sustained at the 2026 World Cup. Enzo Fernandez has thrived in a more advanced role, but Chelsea's inconsistency away from home raises questions ahead of this trip.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/arsenal-vs-chelsea-predictions-picks-odds-06-09-2026\n  - Title: Arsenal vs Chelsea Betting Pick | English Premier | 2026-09-06 |\n    Content: ## The Pick :\n\nArsenal 1-0 Chelsea\n\n## BEST BETTING TIP :\n\nI'll back Arsenal to Win & Under 5 Total Goals (Bet Builder) at 2.05 with Bet365 (early payout if a team is leading by two goals)\n\nBEST BETTING SITE FOR YOUR LOCATION\n\n### PH\n\nWho is YOUR favourite bookmaker or Sportsbook ?\n\n## Arsenal vs Chelsea Match Report :\n\nArsenal vs Chelsea Betting Odds guide ...\n    URL: https://www.goonersguide.com/football-pick-59883-Arsenal-vs-Chelsea.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879291\nMatchup: Manchester United (away) @ Everton (home)\nHome: Everton\nAway: Manchester United\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Hill Dickinson Stadium\nRound: unavailable\nHome form: DWWLL\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Everton +225 (open +200); Draw +265 (open +235); Manchester United +115 (open +130)\nTavily context:\n  - Title: Preview: Everton vs Manchester United - prediction, team news, lineups\n    Content: Ex-Arsenal full-back Ainsley Maitland-Niles should be involved following his own September 1 arrival too, but another former Gunner - Christian Norgaard - is still struggling with an unspecified injury.\n\nIliman Ndiaye's £60m exit to Manchester City could also open the door for Brennan Johnson to come in on the right flank, while Thierno Barry has little competition up front following Beto's move to Fiorentina and the sensational Folarin Balogun transfer collapse.\n\nEverton possible starting lineup: ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/preview/everton-vs-man-utd-prediction-team-news-lineups_604449.html\n  - Title: Everton vs Manchester United Prediction, Lineups & Team News\n    Content: ## When & Where to Watch (USA)\n\n### Sunday, Sept. 6 at 2:00 PM BST / 9:00 AM ET / 6:00 AM PT\n\nVenue: Hill Dickinson Stadium, Liverpool\n\n English TV: USA Network\n Spanish TV: Telemundo\n Streaming: Fubo, Sling Blue, Hulu + Live TV, DirecTV Stream\n\n## Everton vs Manchester United Lineups & Injury News\n\n### Everton vs Manchester United Predicted Lineups ...\n    URL: https://www.rotowire.com/soccer/article/everton-vs-manchester-united-prediction-predicted-lineups-team-news-131844\n  - Title: Everton vs Manchester United Picks, Prediction, Odds, and Line Movement for Sunday September 6 2026\n    Content: ## TLDR: Quick Picks and Prediction\n\n Moneyline Pick: Manchester United +115\n Total Pick: Over 2.5 (-150)\n Projected Final Score: Manchester United 2, Everton 1\n\n## Odds and Line Movement\n\n### Everton and Manchester United Current Odds\n\n| Team | Moneyline | Handicap |\n ---\n| Manchester United | +115 | -0.5 (+105) |\n| Everton | +225 | +0.5 (-145) |\n| Draw | +265\n\n| Total | Under |\n --- |\n| 2.5 | +120 |\n\n### Line Movement - Moneyline ...\n    URL: https://picksandparlays.net/free-picks/soccer/everton-vs-manchester-united-picks-prediction-odds-and-line-movement-for-sunday-september-6-2026\n  - Title: Everton vs. Manchester United prediction, odds, Premier League picks [9/6/2026]\n    Content: Moneyline: Manchester United +120, Everton +245\n Total Goals: Over/Under 2.5 (-138/+127)\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Model picks and best bet\n\nAfter matching our predictions against the best available odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Everton @ +245 via Novig\n Total Goals: Over 2.5 @ -138 via Novig\n\nAccording to our Premier League best bets, the top play to make on this game is Everton to win. ...\n    URL: https://www.dimers.com/epl/news/everton-vs-manchester-united-prediction-09-06-2026-ac\n\nGame ID: 2\nSource event_id: 401879292\nMatchup: Chelsea (away) @ Arsenal (home)\nHome: Arsenal\nAway: Chelsea\nKickoff UTC: 2026-09-06T15:30Z\nKickoff ET: 2026-09-06 11:30 EDT\nVenue: Emirates Stadium\nRound: unavailable\nHome form: WWWWL\nAway form: WWWLW\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Arsenal -140 (open -155); Draw +300 (open +260); Chelsea +370 (open +425)\nTavily context:\n  - Title: Arsenal XI vs Chelsea: Confirmed team news, predicted lineup and injury latest for Premier League\n    Content: In attack, Christos Tzolis had a tough time of it against Villa and Eberechi Eze pushed his case for a start by making a difference after coming on at half time.\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nViktor Gyokeres has not played a minute in the Premier League this season and is not expected to replace Kai Havertz for this match, with Arteta so often trusting the German in big games.\n\nBukayo Saka has started the season well and is looking to get on the scoresheet for the third match in a row. ...\n    URL: https://sports.yahoo.com/articles/arsenal-xi-vs-chelsea-confirmed-053016807.html\n  - Title: Arsenal XI vs Chelsea: Confirmed team news and predicted lineup\n    Content: Predicted Arsenal XI (4-2-3-1): Raya; White, Konsa, Gabriel, Calafiori; Rice, Guimaraes; Saka, Odegaard, Tzolis; Havertz\n\nInjured: Timber, Saliba\n\nTime and date: 4:30pm BST on Sunday, September 6, 2026\n\nVenue: Emirates Stadium\n\nHow to watch: Sky Sports\n\nMORE ABOUT\n\nChelsea\n    URL: https://www.standard.co.uk/sport/football/arsenal-fc-xi-vs-chelsea-confirmed-team-news-predicted-lineup-injury-latest-premier-league-b1295570.html\n  - Title: Arsenal vs Chelsea Predictions, Picks & Odds - 06/09/2026\n    Content: Chelsea occupy eighth place after a mixed run that includes a loss and a draw in their last five matches. Xabi Alonso's squad face a potential double blow in midfield; Moises Caicedo is a major doubt with an unspecified injury, and Jordan Henderson remains sidelined following a wrist problem sustained at the 2026 World Cup. Enzo Fernandez has thrived in a more advanced role, but Chelsea's inconsistency away from home raises questions ahead of this trip.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/arsenal-vs-chelsea-predictions-picks-odds-06-09-2026\n  - Title: Arsenal vs Chelsea Betting Pick | English Premier | 2026-09-06 |\n    Content: ## The Pick :\n\nArsenal 1-0 Chelsea\n\n## BEST BETTING TIP :\n\nI'll back Arsenal to Win & Under 5 Total Goals (Bet Builder) at 2.05 with Bet365 (early payout if a team is leading by two goals)\n\nBEST BETTING SITE FOR YOUR LOCATION\n\n### PH\n\nWho is YOUR favourite bookmaker or Sportsbook ?\n\n## Arsenal vs Chelsea Match Report :\n\nArsenal vs Chelsea Betting Odds guide ...\n    URL: https://www.goonersguide.com/football-pick-59883-Arsenal-vs-Chelsea.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879291",
+                        "date_utc": "2026-09-06T13:00Z",
+                        "kickoff_et": "2026-09-06 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Everton",
+                        "away": "Manchester United",
+                        "home_id": "368",
+                        "away_id": "360",
+                        "matchup": "Manchester United (away) @ Everton (home)",
+                        "venue": "Hill Dickinson Stadium",
+                        "city": "Liverpool",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DWWLL",
+                        "form_away": "WLWWD",
+                        "record_home": "1-1-0",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+200",
+                            "home_current": "+225",
+                            "draw_open": "+235",
+                            "draw_current": "+265",
+                            "away_open": "+130",
+                            "away_current": "+115"
+                        },
+                        "odds_text": "DraftKings: Everton +225 (open +200); Draw +265 (open +235); Manchester United +115 (open +130)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879292",
+                        "date_utc": "2026-09-06T15:30Z",
+                        "kickoff_et": "2026-09-06 11:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Arsenal",
+                        "away": "Chelsea",
+                        "home_id": "359",
+                        "away_id": "363",
+                        "matchup": "Chelsea (away) @ Arsenal (home)",
+                        "venue": "Emirates Stadium",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWWWL",
+                        "form_away": "WWWLW",
+                        "record_home": "2-0-0",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-155",
+                            "home_current": "-140",
+                            "draw_open": "+260",
+                            "draw_current": "+300",
+                            "away_open": "+425",
+                            "away_current": "+370"
+                        },
+                        "odds_text": "Provider unavailable: Arsenal -140 (open -155); Draw +300 (open +260); Chelsea +370 (open +425)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-05T04:57:54.347896-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:00.930497-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "AWAY_WIN",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United enters as the away favorite with +115 moneyline odds. While Everton has home advantage at Hill Dickinson Stadium, Manchester United's stronger squad depth and favorable analytical projections support an away victory in a closely contested matchup.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "HOME_WIN",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is heavily favored at home (-140) and has started the season in strong form. Chelsea is facing potential midfield selection issues with key doubts and injuries, which gives Arsenal a clear tactical upper hand at the Emirates Stadium.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-05T04:50:09.916929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.294,
+                    "draw_probability": 0.262,
+                    "away_win_probability": 0.444,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Manchester United is favored in the betting odds with implied probability backing them to win at roughly 44%. While Everton is at home, the market indicators point toward a tight away win.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.558,
+                    "draw_probability": 0.239,
+                    "away_win_probability": 0.203,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal comes into this match as the clear favorite with moneyline odds around -140. With the match at the Emirates Stadium and Chelsea dealing with inconsistency and injuries in midfield, Arsenal is heavily backed to secure the three points.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-05T04:50:41.666800-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are the favorites according to betting markets and possess slightly better recent form. While expert opinions are split and Everton has home advantage, the odds suggest an away win is the most probable outcome. Uncertainty from Everton's recent squad changes contributes to a medium confidence level.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong favorites playing at home with excellent recent form. Chelsea are also in good form but face significant injury doubts in their midfield with both Moises Caicedo and Jordan Henderson potentially unavailable. The betting markets and expert opinion strongly support an Arsenal victory.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:53.203846-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.2939,
+                    "draw_probability": 0.2617,
+                    "away_win_probability": 0.4444,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United is favored by betting markets (+115) and multiple prediction sources (SportsMole, PicksandParlays), with a projected score of 2-1. While Dimers' model picks Everton, the consensus of odds and other forecasts points to a Manchester United victory. Manchester United's recent form (WLWWD) and away record (1-0-1) are slightly better than Everton's (DWWLL) home record (1-1-0).",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6068,
+                    "draw_probability": 0.2124,
+                    "away_win_probability": 0.1808,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is a strong favorite according to betting odds (-140) and expert predictions (Goonersguide). They boast excellent home form (WWWWL) and a perfect home record (2-0-0). Chelsea, despite a good away record, is facing midfield injury doubts with Moises Caicedo and Jordan Henderson, and has been described with 'inconsistency away from home.' Arsenal's strong form and home advantage are key factors.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:51:26.787366-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Market-implied probabilities make Manchester United the clear but not dominant favorite, with movement toward United from opening odds. Everton have home advantage at Hill Dickinson Stadium and an unbeaten early home record, but squad turnover and attacking uncertainty reduce their win outlook. United's better recent form gives them a narrow edge.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are substantial home favorites by the 1X2 market and have started strongly with a perfect early record. Chelsea also enter in good form, but potential midfield absences and the away setting at Emirates Stadium tilt the matchup toward Arsenal despite some Arsenal defensive injury concerns.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:51:33.574999-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are the market favorite and have seen odds shorten from the opener, while Everton are dealing with attacking turnover and some lineup uncertainty. Everton's home edge at Hill Dickinson Stadium keeps the match competitive, but United's stronger recent form and attacking profile make the away win the most likely 90-minute result.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are clear home favorites, have started strongly, and benefit from Emirates advantage. Chelsea also enter in good form, but midfield injury concerns and the difficulty of this away fixture lower their win probability. A tight Arsenal win is the most likely regulation-time outcome.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-05T04:52:03.016225-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds slightly favor Manchester United and have moved further toward them (United shortened; Everton drifted), suggesting stronger win expectation. Everton’s recent form is mixed and they appear to be adjusting after notable squad changes (attack reshuffle, Ndiaye departure) plus a midfield injury concern, while United’s recent results are steadier. Home advantage and typical Everton defensive competitiveness keep the draw and home-win chances meaningful, but United remain the most likely 90-minute result.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and early-season performance both point to Arsenal as the likeliest winner at the Emirates, with Arsenal in strong form and priced as a clear favorite. Chelsea’s upside is tempered by potential midfield availability issues and questions about away consistency, while Arsenal’s own defensive injuries add volatility. Given the rivalry and generally tight tactical matchups, the draw probability is elevated, but Arsenal still project as the most likely 90-minute outcome.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-05T04:52:21.648551-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing and recent form favor Manchester United: United are unbeaten in their last five (WLWWD) and bookmakers make them the slight favorite despite being the away side. Everton have mixed form (DWWLL) and squad disruption from recent transfers; injuries to midfield options reduce their stability. Odds imply a roughly 45% chance for an away win, with draws and a home shock less likely. Close margins and Everton's home familiarity keep this at medium confidence.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.558,
+                    "draw_probability": 0.239,
+                    "away_win_probability": 0.203,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are clear favorites on the moneyline and have strong early-season form (WWWWL) while Chelsea face midfield doubts (Caicedo questionable, Henderson sidelined) and inconsistent away form. Bookmaker odds (-140 for Arsenal) translate to a substantially higher probability for a home win after normalization. Given Arsenal's depth, home advantage and Chelsea's personnel concerns, a home victory is the most likely result with high confidence.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-05T04:52:34.766839-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.2936,
+                    "draw_probability": 0.2633,
+                    "away_win_probability": 0.4431,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Normalized implied probabilities from bookmakers' odds for Everton vs Manchester United; away win has the highest probability after adjusting for the overround.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.5584,
+                    "draw_probability": 0.2392,
+                    "away_win_probability": 0.2024,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Normalized implied probabilities from Arsenal vs Chelsea odds; home side Arsenal is favored to win in regulation time.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-05T04:52:37.409762-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are favored by both the market and most model-based predictions, with away odds around +115 and a projected 2-1 scoreline from several sources. Everton have lost key attacking options and are integrating new signings, while United's away form is solid. However, Everton's home advantage and some model picks for an upset keep the draw and home win probabilities significant.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong home favorites with odds around -140 and a perfect home record. Chelsea are missing key midfielders and have shown inconsistency away. Most expert and model predictions back Arsenal, with a low-scoring win expected. Arsenal's attacking form and Chelsea's injury issues further tilt the balance.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-05T04:52:39.469526-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United has shown strong away form and is favored by the odds. Everton's recent player changes and injuries may impact their performance.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal's strong home record and Chelsea's inconsistency away from home, coupled with key injuries, make Arsenal the likely winner.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-05T04:52:49.806088-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make Manchester United a moderate favorite (+115) despite playing away, with line movement toward United (from +130). United's form (WLWWD) edges Everton's (DWWLL), and Everton has lost attacking depth with Ndiaye's departure and Beto's exit, leaving them thin up front. However, Everton's home advantage at Hill Dickinson Stadium keeps this competitive, so confidence is low.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are clear favorites at home (-140), with both teams at 2-0-0 but Chelsea facing significant midfield absences: Caicedo is a major doubt and Henderson remains sidelined. Arsenal's strong home record at the Emirates in big matches and Saka's scoring form support the home side, though Timber and Saliba injuries in defense add some uncertainty. Market-implied probabilities favor Arsenal at roughly 56%.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-05T04:52:57.408575-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Manchester United",
+                    "confidence": "low",
+                    "reasoning": "Market favors United as slight favorites (+115 vs Everton +225). United's away form is solid (WLWWD) and the odds imply they are the stronger side. Everton at home can be tough, but United's superior squad edges it in a competitive fixture.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Arsenal",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong home favorites (-140) with a perfect 2-0-0 record and excellent form. Chelsea face potential midfield disruptions with Caicedo doubtful and Henderson sidelined, plus inconsistent away form. Arsenal's home strength at the Emirates makes them clear favorites.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-05T04:53:13.649071-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "The odds strongly favor Manchester United, with the market pricing them as clear favorites at around +115 to +120. Everton are at home but have had a mixed start (1 win, 1 draw in 2 games) with a recent form of DWWLL. United's form of WLWWD shows more consistency, and they beat Everton as recent away favorites. Everton's squad has been weakened by Ndiaye's departure to Man City and Beto's move to Fiorentina, leaving thin attacking options. United benefit from slightly superior squad depth for this stage of the season. Multiple prediction models and betting lines converge on a Manchester United victory, though Everton's home advantage and the unpredictability of derbies keeps uncertainty moderate.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal enter this London derby with a perfect 2-0-0 record and strong recent form (WWWWL), playing at the Emirates. Chelsea are also 2-0-0 but face significant midfield injury concerns with Caicedo a major doubt and Henderson sidelined. Arsenal's odds of around -140 reflect their home advantage and current form edge. Kai Havertz is expected to lead the line with Arteta trusting him in big games, and Saka has started the season in excellent form. Chelsea's inconsistency away from home is a noted concern. Saliba's absence is a blow for Arsenal's defense, but overall the home side has the edge. The draw remains a genuine possibility given the quality on both sides.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-05T04:53:26.203716-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are favorites with opening odds moving from +130 to +115, indicating sharp money on the visitors. Everton's form is concerning (DWWLL) with losses in their last two matches, while United have shown more consistency (WLWWD) with a better away record (1-0-1 vs Everton's 1-1-0 home record). Multiple sources predict a 2-1 Manchester United victory. Everton are dealing with squad disruption following Iliman Ndiaye's £60m departure to Manchester City and Beto's exit, leaving them thin up front with Thierno Barry having little competition. Christian Norgaard remains injured. United's superior squad depth and recent form make them the justified favorites despite playing away from home.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favorites at home with odds of -140, backed by excellent form (WWWWL) and a perfect home record (2-0-0). Chelsea also have a strong record (2-0-0) but face significant injury concerns with Moises Caicedo a major doubt and Jordan Henderson sidelined. Arsenal have injury issues too with Timber and Saliba out, but have brought in Bruno Guimaraes and Konsa to strengthen their squad. Multiple predictions favor a narrow Arsenal victory (1-0 being a common scoreline). Arsenal's home advantage at Emirates Stadium, combined with Chelsea's midfield injury problems and noted inconsistency away from home under Xabi Alonso, gives the Gunners the edge. Bukayo Saka is in good form looking for a third consecutive match with a goal.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-05T04:53:31.544985-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Manchester United",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United favored by odds (+115 moneyline) despite poor recent form (WLWWD). Everton's form is concerning (DWWLL) with recent losses. Expert predictions lean toward Manchester United 2-1 win. Everton missing key players (Beto to Fiorentina, Ndiaye to City) weakens their attack. Manchester United's away record (1-0-1) and superior squad depth give them edge in this rivalry match.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Arsenal",
+                    "confidence": "high",
+                    "reasoning": "Arsenal in excellent form (WWWWL, 2-0-0 record) at home vs Chelsea's inconsistency (WWWLW, 2-0-0 record but weaker away form). Odds strongly favor Arsenal (-140). Chelsea dealing with midfield injuries (Caicedo major doubt, Henderson sidelined). Arsenal's attacking form with Saka scoring in consecutive matches and Havertz trusted in big games. Expert predictions favor Arsenal 1-0 or low-scoring wins. Home advantage at Emirates is significant in this rivalry.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-05T04:54:05.379265-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are favored on the road and have the stronger squad and away form, while Everton are missing attacking options and have shown mixed home form.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong at home and Chelsea have midfield injury concerns and away inconsistency, making an Arsenal win the likeliest outcome.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-05T04:54:07.358287-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United have better form and are favored by odds. Everton have key player departures and injuries.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong at home and have a better record. Chelsea have injury concerns and inconsistent away form.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-05T04:54:33.867651-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United is favored by the sportsbooks and has shown slightly better recent form. Everton has lost key attacking pieces like Iliman Ndiaye and Beto, which weakens their offensive threat at the Hill Dickinson Stadium. Despite some contrarian models suggesting an upset, the market odds and squad depth favor Manchester United to secure a narrow away victory.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is strong at home and enters this London derby as clear favorites according to the odds. While Arsenal is missing key defenders in Saliba and Timber, Chelsea's midfield is severely compromised with Moises Caicedo a major doubt and Jordan Henderson sidelined. Arsenal's attacking options, including Saka and Odegaard, should be able to exploit Chelsea's inconsistencies away from home.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-05T04:54:40.938519-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United has a slightly better away form and recent record, and the odds favor them. Everton's key player, Christian Norgaard, is still injured, which could impact their performance.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal has a strong home form and a solid record this season. Chelsea has been inconsistent, especially away from home, and they are dealing with potential midfield injuries to Moises Caicedo and Jordan Henderson.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-05T04:55:35.589242-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United enters as the betting favorite (+115) with greater squad stability, while Everton is navigating significant attacking roster changes following key departures. The odds and predictive models point to a narrow United victory, though Everton's home advantage and United's inconsistent start keep a draw firmly in play.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal's strong home form and perfect start contrast sharply with Chelsea's missing key midfielders and documented away inconsistencies. The betting market heavily favors the Gunners, who are expected to control the match tempo and secure a decisive victory at the Emirates Stadium.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-05T04:56:06.718544-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United enters as slight favorite based on superior squad depth and away form (WLWWD) compared to Everton's inconsistent home start (DWWLL). Current odds favor United (+115), while Everton navigates roster changes at their new venue.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal holds home advantage at Emirates with strong recent form (WWWWL) despite defensive injuries. Chelsea faces significant midfield disruptions (Caicedo, Henderson doubts) and inconsistency away from home. Market odds strongly favor Arsenal (-140).",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-05T04:57:10.279979-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are favored by the market with odds shortening to +115, while Everton have drifted to +225. Everton's attack has been weakened by the summer sale of Iliman Ndiaye and the collapse of the Folarin Balogun transfer, leaving Thierno Barry as the primary striker. Christian Norgaard is also struggling with injury. Manchester United's more consistent form (WLWWD) and stronger squad depth support an away victory.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are firm home favorites (-140) with a strong attacking trio in Saka, Odegaard, and Havertz, and Saka is aiming for his third consecutive scoring appearance. Chelsea are depleted in midfield with Moises Caicedo a major doubt and Jordan Henderson still sidelined, raising concerns about their ability to control the game away from home. Despite Arsenal missing Saliba and Timber, their home dominance and superior offensive quality point to a home win.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-05T04:57:34.719135-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United arrive as clear betting favorites (+115) despite playing away, reflecting superior squad depth and decent early-season form (WLWWD). Everton's attack has been weakened by the departures of Iliman Ndiaye to Manchester City and Beto to Fiorentina, leaving Thierno Barry with little support up front, though new arrivals Maitland-Niles and potentially Brennan Johnson add options. Everton's mixed form (DWWLL) and United's quality edge point to an away win, but Everton's home advantage at Hill Dickinson Stadium and United's occasional inconsistency keep the draw and home win live. One model even flagged Everton as value at +245, so confidence is moderate rather than high.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are solid home favorites (-140) at the Emirates with a perfect 2-0-0 start and strong recent form (WWWWL), with Saka, Odegaard, Rice and Havertz all available. However, defensive absences of William Saliba and Jurrien Timber temper confidence slightly. Chelsea are also in good form (WWWLW) but face midfield concerns with Moises Caicedo a major doubt and Jordan Henderson sidelined, and their away inconsistency under Xabi Alonso is a documented weakness. The market and most preview models lean toward a narrow Arsenal win (commonly 1-0 or 2-1), but Chelsea's attacking quality and Arsenal's depleted back line make an upset or draw plausible, hence medium confidence.",
+                    "event_id": "401879292"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-05T04:57:54.343238-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Everton (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are favored by the market (+115) and their moneyline has shortened from +130, while Everton's line has drifted. United's away form (WLWWD) is solid, whereas Everton's home form (DWWLL) is mixed and their attack has been weakened by the departure of Iliman Ndiaye and the collapse of the Balogun transfer. Everton also have injury concerns in midfield (Norgaard). Most preview sources pick United to win.",
+                    "event_id": "401879291"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Chelsea (away) @ Arsenal (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong home favorites (-140) at the Emirates with a perfect 2-0-0 start and strong form (WWWWL). Chelsea are also unbeaten but face key midfield absences with Caicedo doubtful and Henderson sidelined. Arsenal's attacking momentum, led by Bukayo Saka, and home advantage make them the clear pick despite defensive injuries to Timber and Saliba.",
+                    "event_id": "401879292"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-07\n    Target Date: 2026-05-08\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Eintracht Frankfurt @ Borussia Dortmund              | Scheduled    | Away: 34.4% (11-10-11) vs Home: 62.5% (20-7-5)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Eintracht Frankfurt (Away) @ Borussia Dortmund (Home)\n**News & Injury Report:**\n- [Preview: Borussia Dortmund vs Eintracht Frankfurt - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/borussia-dortmund/preview/dortmund-vs-frankfurt-prediction-team-news-lineups_597062.html)\n  Snippet: Borussia Dortmund Bundesliga form:\n\n W\n W\n L\n L\n W\n L\n\nEintracht Frankfurt Bundesliga form:\n\n L\n D\n W\n L\n D\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F04%2Faaa-ade-69e73237a16b1127681325.jpg)\n\n\u00a9 Iconsport / SUSA\n\nBorussia Dortmund will unfortunately be without star forward Karim Adeyemi due to a muscle injury, while centre-backs Ramy Bensebaini (foot), Emre Can (knee) and Niklas Sule (knee) have been ruled out. ...\n- [Borussia Dortmund vs Eintracht Frankfurt prediction, preview & betting tips 08/05/2026](https://footballwhispers.com/blog/borussia-dortmund-vs-eintracht-frankfurt-prediction-08-05-2026/)\n  Snippet: Friday\u2019s clash with Eintracht Frankfurt presents Dortmund with an opportunity to secure their first second-placed finish since 2022-23, and above all, it is a chance to thank their supporters for their loyalty during a frustrating campaign.\n\nDespite several positives, the Black and Yellows failed to make a serious dent in any competition this season - including the DFB Pokal and the Champions League. ...\n**Betting Odds:**\n- [Borussia Dortmund - Eintracht Frankfurt prediction & tips 08.05.2026](https://www.transfermarkt.com/betting/tips/borussia-dortmund-vs-eintracht-frankfurt-prediction-08-05-2026/)\n  Snippet: Top odds at 1xBet\n\n  Main market (three-way 1X2): Borussia Dortmund are the clear favourites with best available odds for a home win at 1.55 with 1win. The draw is offered at 5.02 (1win) and an away victory for Eintracht Frankfurt is priced around 5.78 (1win). Given the discrepancy between the favourite and the alternatives, a Dortmund win represents value on the 1X2 market. For those seeking to improve returns, a handicap market (Dortmund -1) could provide enhanced odds if one expects a decisive home victory, though such a bet carries greater risk. [...] ## Best odds and our betting tips ...\n- [Borussia Dortmund vs Eintracht Frankfurt prediction \u2013 Odds & stats \u2013 8 May 2026](https://www.wincomparator.com/predictions/borussia-dortmund-eintracht-frankfurt-7679846/)\n  Snippet: 1.48\n\nX\n\nBet365\n\n4.5\n\n2\n\nBet365\n\n5.5\n\nCheck all odds\n\nBoth Teams To Score: Borussia Dortmund v Eintracht Frankfurt BTTS Odds\n\nYes\n\nBet365\n\n1.44\n\nNo\n\nBet365\n\n2.63\n\nCheck all odds\n\nBorussia Dortmund vs Eintracht Frankfurt 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake Stake\n\n1.52\n\n5\n\n5.4\n\n\u20ac1000\n\nMelbet Melbet\n\n1.49\n\n4.9\n\n5.6\n\n\u20ac150\n\nBetwinner Betwinner\n\n1.49\n\n4.9\n\n5.6\n\n\u20ac130\n\nBet365 Bet365\n\n1.48\n\n4.5\n\n5.5\n\nSee the offer\n\nBC Game BC Game\n\n1.51\n\n4.7\n\n5.4\n\n$4000\n\nBwin Bwin\n\n1.52\n\n4.8\n\n5.25\n\n\u00a320\n\n888Starz 888Starz\n\n1.55\n\n5.02\n\n5.78\n\n$400\n\nBetfred Betfred\n\n1.5\n\n5\n\n5.5\n\n\u00a350\n\nTonybet Tonybet ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-07 20:52:56"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-07 20:40:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market makes Dortmund a clear favourite (home ~1.48\u20131.55 vs draw ~4.5\u20135.0 vs away ~5.4\u20135.8), implying roughly low-60% home win after normalization. Dortmund also have the much stronger season profile (62.5% win rate) and home advantage. Frankfurt\u2019s recent league form is poor (L-D-W-L-D-L). Main caution: Dortmund are missing Adeyemi plus multiple defensive absences (e.g., Can, Sule, Bensebaini), which slightly increases draw/away upset risk versus the raw odds."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:41:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bookmakers make Dortmund heavy favourites (1.48\u20131.55 home odds) which when normalized imply a clear home edge; I use those odds as the baseline. Dortmund\u2019s strong home record this season (62.5% win rate) and motivation to secure a high finish support a home bias. However, major absences \u2014 Karim Adeyemi (muscle) plus centre-back injuries (Bensebaini, Emre Can, Niklas S\u00fcle) \u2014 weaken Dortmund both offensively and defensively, increasing the chance of a draw/Frankfurt upset. Frankfurt\u2019s away form is poor (34.4% win rate) and recent results are inconsistent, so an away win is less likely. Recent forms: Dortmund mixed (W W L L W L), Frankfurt poor (L D W L D L). Market BTTS pricing also suggests both teams likely to score, supporting a competitive game rather than a comfortable Dortmund romp. Overall balance: favour Dortmund but account for injury-driven uncertainty, producing a moderate increase in draw/away probabilities versus raw odds."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:41:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.584,
+                    "draw_probability": 0.226,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Odds imply Dortmund are favorites at home (implied ~0.63 win, ~0.20 draw, ~0.17 Frankfurt). Dortmund\u2019s injury list (Adeyemi, Bensebaini, Can, Sule) reduces attacking and defensive strength, nudging probabilities toward a higher draw and away share, but Dortmund retains home advantage and relatively stronger form. Frankfurt away form is weaker, reinforcing the home win lean."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:41:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Dortmund are clear favourites based on both season records (62.5% home win rate vs Frankfurt's 34.4% away rate) and market odds (implied win probability ~65-68%). Despite some notable injuries (Adeyemi, Bensebaini, Can, Sule), Dortmund's squad depth and superior recent form (W-W-L-L-W-L) compared to Frankfurt (L-D-W-L-D-L) point to a strong home advantage. Motivation to secure second place and end the season on a positive note in front of home fans strengthens their position. The odds for a home win are between 1.48 and 1.55, strongly supporting Dortmund as favourites; the draw and away win both have notably longer odds. Potential squad rotation or defensive gaps could increase the risk of an upset, but these factors are outweighed by overall team strength, form, and stakes."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:41:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Borussia Dortmund's strong home win rate (62.5%) and significant betting market favoritism (odds around 1.55 for a home win) contribute to a high confidence prediction for a home victory. Eintracht Frankfurt's away record is weaker, and Dortmund's motivation to secure second place serves as an additional incentive. Despite key injuries for Dortmund, their squad depth should compensate. Current form slightly favors Dortmund, who have demonstrated higher resilience even amidst injuries in recent matches."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:42:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Borussia Dortmund possesses a significant advantage at home, as reflected in their strong season record (62.5% win rate) and the favorable betting odds (around 1.55). They are also motivated to secure a second-place finish in their final home match. However, confidence in a straightforward victory is tempered by a severe injury crisis. Dortmund will be without key attacker Karim Adeyemi and, more critically, three central defenders in Bensebaini, Emre Can, and Niklas Sule. This defensive vulnerability significantly increases the probability of Eintracht Frankfurt scoring and potentially securing a draw or an upset, despite Frankfurt's own poor run of form (one win in their last six). While Dortmund's superior quality should ultimately prevail, the defensive absences make this a riskier proposition than the base odds suggest."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:52:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Dortmund has a strong home record (62.5%) and are favorites according to odds (~1.50). However, key injuries to Adeyemi, Bensebaini, Can, and Sule weaken their defense and attack. Frankfurt's away form is modest (34.4%) and their recent form is poor (3 losses in last 5). The draw and away win probabilities are elevated due to Dortmund's injuries."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:52:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Borussia Dortmund are heavily favored with betting odds around 1.48-1.55 for a home win, implying ~65-68% probability. Dortmund has a strong 62.5% win rate (20-7-5) this season compared to Frankfurt's poor 34.4% (11-10-11). Dortmund's recent form shows 3 wins in last 6 Bundesliga matches, while Frankfurt has struggled with only 1 win in their last 6 (1-2-3 record). Despite missing key players (Adeyemi, Bensebaini, Can, Sule), Dortmund playing at home with motivation to secure 2nd place finish provides significant advantage. Frankfurt's away form and recent struggles (3 losses in last 4) make them unlikely to secure points. The market consensus strongly favors Dortmund, with draw odds at ~4.5-5.0 and away win at 5.5-5.78, confirming low probability for Frankfurt victory. BTTS odds suggest both teams likely to score (1.44 for yes), but Dortmund's superior quality should prevail at Signal Iduna Park."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:52:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ Borussia Dortmund (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Borussia Dortmund has a strong home record with a 62.5% win rate, and despite the absence of key players like Karim Adeyemi, they are still favored by the betting odds. Eintracht Frankfurt's recent form is poor, with only one win in their last six matches. The betting odds also heavily favor a Dortmund win, which aligns with their home advantage and overall better form."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

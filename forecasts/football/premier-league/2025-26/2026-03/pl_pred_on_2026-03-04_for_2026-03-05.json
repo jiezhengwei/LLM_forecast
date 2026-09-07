@@ -1,0 +1,142 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-04\n    Target Date: 2026-03-05\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule]\n    ----------------------------------------------------------------------------------------\nPremier League Matchup                                       | Status                   \n----------------------------------------------------------------------------------------\n1. Crystal Palace @ Tottenham Hotspur                        | Scheduled                \n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Crystal Palace (Away) @ Tottenham Hotspur (Home)\n- [Tottenham vs Crystal Palace Prediction - Premier League - 05/03/2026](https://www.sportytrader.com/en/betting-tips/tottenham-crystal-palace-331748/)\n  Snippet: Djed Spence and Pedro Porro are back from injury, but the hosts still have a laundry list of absentees at present, including Lucas Bergvall, Ben Davies, Rodrigo Bentancur, James Maddison, Mohammed Kud...\n- [Tottenham Hotspur vs Crystal Palace - prediction, team news, lineups](https://www.sportsmole.co.uk/football/spurs/relegation-battle/preview/spurs-vs-crystal-palace-prediction-team-news-lineups_593112.html)\n  Snippet: Tottenham Hotspur Premier League form:\n\n D\n D\n L\n L\n L\n L\n\nTottenham Hotspur form (all competitions):\n\n W\n D\n L\n L\n L\n L\n\nCrystal Palace Premier League form:\n\n L\n D\n W\n L\n W\n L\n\nCrystal Palace form (a...\n- [Tottenham vs Crystal Palace - team news, lineups, predictions](https://ca.sports.yahoo.com/news/preview-tottenham-vs-crystal-palace-200500824.html)\n  Snippet: Crystal Palace have 35 points to their name this season and occupy 14th position in the table. Last time out, Oliver Glasner's team slipped to a 2-1 defeat against Manchester United (Premier League 20...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-04\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-04 18:53:31"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-04 18:52:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Tottenham have strong baseline squad quality and home advantage, with Pedro Porro and Djed Spence reportedly back, but their Premier League form is very poor (winless run with multiple recent losses/draws) and they still have a long absentee list (e.g., Maddison, Bentancur and others noted). Crystal Palace are mid-table and inconsistent but more stable than Spurs recently, making an away result live; the combination of Spurs' injuries + form elevates draw/away probabilities materially."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:52:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham retain home advantage but are in poor form and carrying a lengthy injury list (missing key starters like James Maddison, Rodrigo Bentancur and others), which reduces their edge. Recent returns (Djed Spence, Pedro Porro) help defensively, but inconsistency persists. Crystal Palace are mid-table and erratic away but capable of taking points under Oliver Glasner; probabilities reflect a slight Spurs favourite with elevated draw/away chances due to Spurs' absences and recent run of results."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:52:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham at home typically has edge, and Spence/Porro are back from injury which strengthens the wing-back supply. However, Spurs have notable absences (Maddison, Bentancur, Davies) which weakens midfield/defence. Palace arrive with a mixed away form and can counter-attack effectively; the match is likely tight with a slight tilt to Spurs due to home advantage, but a draw or upset by Palace remains plausible."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:52:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham Hotspur shows a weak form in the Premier League with a series of losses and draws, despite having one victory in all competitions. Crystal Palace's recent performance includes both wins and losses, showing variability. Tottenham's numerous injuries could impact their performance, yet the return of key players like Djed Spence and Pedro Porro could bolster their defense slightly."
+                }
+            ],
+            "model_name": "GPT-4 Turbo"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:53:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite Tottenham's poor recent form with several consecutive losses, they have key players Djed Spence and Pedro Porro returning from injury. However, with a number of significant players like James Maddison and Rodrigo Bentancur still injured, their strength is compromised. Crystal Palace themselves have been inconsistent, currently positioned 14th in the league, but tend to struggle away from home. The home advantage, recent player recoveries, and Crystal Palace's inconsistent form lead to a slightly higher probability of a Tottenham win."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:53:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham has a number of injuries, including key players like Maddison and Bentancur, but Porro and Spence are back. Crystal Palace is in poor form. Tottenham's home advantage tips the balance slightly in their favor, though the injuries make a draw a distinct possibility. The overall negative form of Tottenham is concerning but Palace lost their last match against ManU."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:53:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham's recent form is concerning with 4 consecutive Premier League losses and 1 draw in their last 5 league matches, despite having Djed Spence and Pedro Porro returning from injury. They still face significant absences including Lucas Bergvall, Ben Davies, Rodrigo Bentancur, James Maddison, and Mohammed Kudus. Crystal Palace shows inconsistent but competitive form with 2 wins, 1 draw, and 2 losses in their last 5 league matches, sitting 14th with 35 points. Tottenham's home advantage is diminished by their poor form and injury crisis, while Palace under Oliver Glasner has shown resilience. The probability distribution reflects Tottenham's slight edge due to home advantage but significant vulnerabilities."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "model_name": "Claude 3.5",
+            "error": "Claude failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CYhv2RnC9oAwRoaPisCkL'}"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 18:53:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham has a significant home advantage, and the return of key players like Djed Spence and Pedro Porro could boost their performance. However, their recent form in the Premier League is poor, with a string of losses and draws. Crystal Palace, on the other hand, has shown mixed results but has managed to secure some wins recently. The injuries to key Tottenham players like Lucas Bergvall, Ben Davies, Rodrigo Bentancur, James Maddison, and Mohammed Kudus may impact their overall strength."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

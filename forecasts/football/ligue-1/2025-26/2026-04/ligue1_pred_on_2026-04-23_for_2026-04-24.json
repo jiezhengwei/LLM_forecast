@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-23\n    Target Date: 2026-04-24\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Lens @ Brest                                         | Scheduled    | Away: 69.0% (20-2-7) vs Home: 34.5% (10-7-12)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Lens (Away) @ Brest (Home)\n**News & Injury Report:**\n- [Brest vs Lens Prediction, Betting Tips, Lineups & Odds | 24 Apr 2026](https://www.sportsgambler.com/betting-tips/football/brest-vs-lens-prediction-lineups-odds-2026-04-24/)\n  Snippet: | 16 | Auxerre | 15 | 4 | 4 | 7 | 13:15 | 16 |\n| 17 | Metz | 15 | 2 | 4 | 9 | 14:26 | 10 |\n| 18 | Nantes | 15 | 2 | 3 | 10 | 15:27 | 9 | [...] France Flag [...] | # | Team | G | W | D | L | +/- | P |\n ---  ---  ---  --- |\n| 1 | Lens | 15 | 13 | 0 | 2 | 34:11 | 39 |\n| 2 | PSG | 15 | 12 | 1 | 2 | 38:10 | 37 |\n| 3 | Marseille | 15 | 10 | 3 | 2 | 37:18 | 33 |\n| 4 | Monaco | 16 | 10 | 2 | 4 | 33:22 | 32 |\n| 5 | Lyon | 14 | 10 | 1 | 3 | 23:10 | 31 |\n| 6 | Lorient | 15 | 8 | 6 | 1 | 29:20 | 30 |\n| 7 | Rennes | 15 | 8 | 4 | 3 | 26:15 | 28 |\n| 8 | Lille | 15 | 8 | 4 | 3 | 23:14 | 28 | ...\n- [Brest vs Lens Prediction, Odds & Betting Tips | 24.04.2026 | Ligue 1](https://www.mightytips.com/football-predictions/brest-vs-lens-prediction-24-04-2026/)\n  Snippet: | Icon League Two League Two  23.04  19:00 | Salford City logo Salford City  vs  Bromley logo Bromley | Bookmaker LuckyHunter logo W1 4/5 x 11/4 W2 3/1 | Read Prediction | [...] |  | Regular Season | P | W | D | L | G - A | GD | Pts |\n ---  ---  ---  ---\n| 1 | Paris Saint Germain | 29 | 21 | 3 | 5 | 65 - 25 | +40 | 66 |\n| 2 | Lens | 29 | 20 | 2 | 7 | 57 - 29 | +28 | 62 |\n| 3 | LOSC Lille | 30 | 16 | 6 | 8 | 49 - 34 | +15 | 54 |\n| 4 | Olympique Lyonnais | 30 | 16 | 6 | 8 | 45 - 30 | +15 | 54 |\n| 5 | Rennes | 30 | 15 | 8 | 7 | 52 - 41 | +11 | 53 | ...\n**Betting Odds:**\n- [Brest vs Lens prediction \u2013 Odds & stats \u2013 24 April 2026](https://www.wincomparator.com/predictions/brest-lens-7680894/)\n  Snippet: Under 2.5 goals\n\nUnibet\n\n1.95\n\nOver 2.5 goals\n\nUnibet\n\n1.9\n\nCheck all odds\n\nBoth Teams To Score: Brest v Lens BTTS Odds\n\nYes\n\nUnibet\n\n1.67\n\nNo\n\nUnibet\n\n2.1\n\nCheck all odds\n\nBrest vs Lens 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake Stake\n\n4.4\n\n3.95\n\n1.79\n\n\u20ac1000\n\nMelbet Melbet\n\n4.26\n\n4.02\n\n1.76\n\n150%\n\nBetwinner Betwinner\n\n4.26\n\n4.02\n\n1.76\n\n\u20ac130\n\nBet365 Bet365\n\n4.5\n\n3.75\n\n1.73\n\nSee the offer\n\nBC Game BC Game\n\n4.4\n\n3.85\n\n1.74\n\n$4000\n\n888Starz 888Starz\n\n4.42\n\n4.17\n\n1.82\n\n$400\n\nBetfred Betfred\n\n4.33\n\n3.75\n\n1.8\n\n\u00a350\n\nTonybet Tonybet\n\n4.2\n\n3.85\n\n1.75\n\n\u20ac100\n\nShangrila Shangrila\n\n4.4\n\n3.9 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-23 18:21:58"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-23 18:20:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds heavily favor Lens (away ~1.79 vs draw ~3.95 vs Brest ~4.4), implying an away-win probability around the mid-0.50s after margin removal. Lens also show a much stronger season profile (20-2-7; 69% win rate) compared to Brest\u2019s weaker overall record (10-7-12; 34.5% win rate). Home advantage and Ligue 1 draw frequency keep the draw probability meaningful, but Lens remain the most likely winner."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Market and form strongly favour Lens. Season records show Lens (20-2-7) with a very high win rate (\u224869%) while Brest's home win rate is modest (\u224834.5%). Bookmaker 1X2 odds cluster around Lens ~1.73\u20131.82 (implied \u224857\u201358%), draw ~3.75\u20134.02 (\u224825\u201327%), Brest ~4.2\u20134.5 (\u224822\u201324%) \u2014 I calibrated to those odds and the teams' season performance. No significant injuries reported in the supplied brief. Home advantage for Brest reduces but does not offset Lens' superior strength and form, so Lens is the clear favorite. Confidence is high given consistent market pricing and the large gap in season quality."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens have strong away form (69.0% away win rate, 20-2-7) while Brest's home win rate is only 34.5%. Betting odds favor Lens (away) with typical odds ~1.75, indicating a higher probability of an away win. Home advantage for Brest exists, but Lens' superiority on the road dominates."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens are clear title contenders with a stellar away record (20-2-7, 69% win rate) and sit second in the table, while Brest have a poor home record (10-7-12, 34.5% win rate). Bookmaker odds average ~1.75 for Lens and ~4.3 for Brest, implying a strong away bias. No major injury news to change baseline estimates. The draw is more probable than a Brest win, but Lens\u2019s superior season form and strength make them strong favorites."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.59,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong record this season with a 69% win rate and is in 2nd place, indicating strong form. Betting odds also favor Lens significantly with odds for their win at 1.79 compared to higher odds for Brest and a draw. Brest's home form is weaker with only a 34.5% win rate, and no significant injuries or news affecting Lens have been reported."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a significantly better season record than Brest (69% win rate away vs Brest's 34.5% at home). Betting odds also heavily favor Lens, with away win odds around 1.75-1.82, home win odds around 4.2-4.5, and draw odds around 3.75-4.17. The odds suggest a strong likelihood of an away win for Lens."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens boasts a superb 69% away win rate with a 20-2-7 record, while Brest has struggled at home (34.5% win rate, 10-7-12). Season standings show Lens 2nd (62 pts) vs Brest mid-table (approx. 39 pts from snippet). Betting odds heavily favor Lens (away win ~1.75-1.82) vs Brest (~4.2-4.5). However, Lens' away dominance and Brest's home weakness make away win the clear most likely outcome, with draw slightly more likely than Brest win."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens is significantly stronger with a 69.0% win rate (20-2-7) compared to Brest's struggling 34.5% (10-7-12). League standings show Lens at 2nd place with 62 points from 29 games (20-2-7 record), while Brest is in mid-to-lower table position. The betting odds strongly favor Lens with away win odds around 1.73-1.82 (implied probability ~55-58%), home win at 4.2-4.5 (implied ~22-24%), and draw at 3.75-4.17 (implied ~24-27%). Lens has an excellent away record and superior goal difference (+28 vs Brest's negative differential). The market consensus clearly indicates Lens as heavy favorites despite playing away. Brest's home advantage is insufficient to overcome the substantial quality gap between these teams. Both teams to score is favored (1.67 odds), suggesting an open game, but Lens's attacking prowess (57 goals in 29 games) and defensive solidity make them clear favorites for all three points."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:21:58",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Brest (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong away record with a 69.0% win rate, while Brest's home record is only 34.5%. Betting odds also favor Lens with a 1.73 to 1.80 odds for an away win, indicating a high likelihood of Lens winning."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-07\n    Target Date: 2026-05-08\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Nantes @ Lens                                        | Scheduled    | Away: 15.6% (5-8-19) vs Home: 64.5% (20-4-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Nantes (Away) @ Lens (Home)\n**News & Injury Report:**\n- [Lens vs Nantes Prediction, Betting Tips, Lineups & Odds | 08 May 2026](https://www.sportsgambler.com/betting-tips/football/lens-vs-nantes-prediction-lineups-odds-2026-05-08/)\n  Snippet: ### Lens Predicted Lineup 3-4-3\n\n### Nantes Predicted Lineup 4-3-3\n\n### Lens Predicted Lineup 3-4-3\n\n### Nantes Predicted Lineup 4-3-3\n\n#### Previous Lens Lineups\n\n#### Previous Nantes Lineups\n\n### Injuries & Suspensions\n\n#### Lens Player Stats & Squad\n\n#### Manager: Pierre Sage\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Robin Risser | 40 | G | 31 | 2790 | 31 | 0 | 0 | 1 | 2 | 0 |\n| Matthieu Udol | 14 | D | 31 | 2777 | 31 | 0 | 1 | 7 | 2 | 0 |\n| Malang Sarr | 20 | D | 30 | 2700 | 30 | 0 | 0 | 1 | 3 | 0 | ...\n- [Lens vs Nantes Prediction 8/05/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-09-05-2026-lens-nantes-prediction)\n  Snippet: ### Nantes\n\n\u274c Nantes face uncertainty regarding the availability of two players for their match against Lens: first-choice goalkeeper Anthony Lopes, who missed the last round due to an injury, and defender Deiver Machado, who was injured in the game against Marseille. Fabien Centonze and Kelvin Amian Adou remain sidelined and are still far from full recovery.\n\n## \ud83d\udfe8 Yellow Card Prediction [...] 1.28\n\n3\n\n2\n\n20\n\n15\n\n0\n\n4\n\nD\n\nEmpty\n\nThere are no events\n\nAdd the matches you are interested in or Subscribe to a team, tournament or player.\n\n## Latest news\n\n### Lens ...\n**Betting Odds:**\n- [RC Lens - FC Nantes prediction & tips 08.05.2026](https://www.transfermarkt.com/betting/tips/rc-lens-vs-fc-nantes-prediction-08-05-2026/)\n  Snippet: Top odds at 1xBet\n\n  1xBet\n\n  Total Goals\n\n  Under 3.5\n\n  There have been under 3.5 goals scored in 1 of RC Lens's last 4 matches.\n\n  There have been under 3.5 goals scored in 6 of FC Nantes's last 6 matches.\n\n  Top odds at 1xBet\n\nOur match prediction: RC Lens vs FC Nantes \u2014 main market and alternative outcome\nRC Lens are the clear favourites for this fixture, with best 1X2 odds showing Tip 1 at 1win priced 1.40, Tip X at 1win 5.38 and Tip 2 at 1win 8.50. Given Lens\u2019 home potency and Nantes\u2019 struggles on the road, a straight home win is our primary selection. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-07 20:33:02"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-07 20:31:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds heavily favor Lens (approx. 1.40 home / 5.38 draw / 8.50 away), aligning with season profiles: Lens strong at home (20-4-7; 64.5% win rate) vs Nantes poor away (5-8-19; 15.6%). Nantes also carry notable availability concerns (Anthony Lopes questionable; Machado injured; Centonze and Amian still sidelined), which further reduces upset potential."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:31:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Strong home advantage for Lens (season home win rate ~64.5%), Nantes extremely poor away record (away win rate ~15.6%). Market odds strongly favour Lens (best 1X2 prices around 1.40 for Lens), which implies ~70% chance after normalization. Nantes also have injury uncertainty to key players (possible absence of goalkeeper Anthony Lopes, Deiver Machado injured; other defenders still sidelined), weakening their already struggling road form. Recent scorelines suggest low-scoring outcomes, lowering upset probability. Combining form, injuries and market calibration yields a high-confidence pick for a Lens win."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes away @ Lens home",
+                    "home_win_probability": 0.741,
+                    "draw_probability": 0.183,
+                    "away_win_probability": 0.076,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has strong home advantage and overall season strength. Nantes face multiple injuries and suspensions (first-choice GK Anthony Lopes likely out; Deiver Machado also out; Centonze and Kelvin Amian Adou sidelined), reducing away effectiveness. Betting odds (approx. Lens win 1.40, draw 5.38, Nantes win 8.50) imply a clear home favoring, which is reflected in the calibrated probabilities."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens boast a strong home record (64.5% win rate) and comparatively healthy lineup. Nantes suffer from a poor away record (15.6% win rate), critical defensive/missing goalkeeper injuries, and low attacking efficiency. Market odds (1.40 on Lens, ~5.38 draw, ~8.50 Nantes) imply an ~68% win chance for Lens. Underlying bookmakers' and statistical signals concur with a home win being highly likely, though some small risk of a draw remains due to Ligue 1 draw frequency and late-season unpredictability."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home win rate of 64.5% this season and are clear favorites with betting odds of 1.40 for a home win. Nantes is struggling with injuries including a doubt over their first-choice goalkeeper Anthony Lopes, along with a poor away record of 15.6% win rate. The absence and potential absence of key players will likely impact Nantes' defensive stability, making a Lens victory highly probable."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "This prediction is based on the overwhelming statistical and situational disparity between the two clubs. Lens boasts a dominant season record with a 64.5% win rate, which is significantly amplified by their home advantage. Conversely, Nantes has struggled immensely, managing only a 15.6% win rate. The situation for Nantes is worsened by key defensive injuries, with Fabien Centonze and Kelvin Amian Adou confirmed to be sidelined. This heavily compromises an already vulnerable team. The betting market aligns strongly with this analysis, offering odds as low as 1.40 for a Lens victory, which translates to a normalized probability of approximately 70%. The combination of Lens's form, home advantage, and Nantes's defensive crisis makes a home win the most probable outcome."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home record at 64.5% win rate (20-4-7), while Nantes struggles away at 15.6% (5-8-19). The betting odds heavily favor Lens, with the best price for a home win at 1.40 (implied probability around 71%). Nantes has key injury uncertainties: first-choice goalkeeper Anthony Lopes and defender Deiver Machado are doubtful, with Fabien Centonze and Kelvin Amian Adou still out. These factors strongly tilt the probabilities toward a home win."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:32:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens have exceptional home form with 64.5% win rate (20-4-7) and are heavily favored by the betting market (1.40 odds for home win vs 8.50 for away win). Nantes struggle significantly away with only 15.6% win rate (5-8-19). Nantes also face injury concerns with first-choice goalkeeper Anthony Lopes potentially unavailable and defender Deiver Machado injured, plus Fabien Centonze and Kelvin Amian Adou remaining sidelined. The massive disparity in season records (Lens 20 home wins vs Nantes 5 away wins), combined with betting odds showing Lens as overwhelming favorites and Nantes' defensive injury crisis, all point strongly to a home victory. The draw probability is modest given Lens' attacking strength at home, though football always allows for defensive displays. Away win probability is minimal given all factors."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 20:33:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home record with a 64.5% win rate, while Nantes has a poor away record with only a 15.6% win rate. Additionally, Nantes is facing significant injury concerns, particularly in the defensive line with Anthony Lopes and Deiver Machado potentially out. The betting odds also heavily favor Lens, with a 1.40 price for a home win, indicating a high likelihood of a Lens victory."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

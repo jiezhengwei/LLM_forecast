@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-29\n    Target Date: 2026-05-30\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Arsenal @ Paris Saint-Germain                        | Scheduled    | Away: #1 100% (8-0-0) Pts:24 Form:WWWWW | Home: #11 50% (4-2-2) Pts:14 Form:LWWDD\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Arsenal (Away) @ Paris Saint-Germain (Home)\n**News & Injury Report:**\n- [Paris Saint-Germain FC vs. Arsenal FC Odds & Predictions (May 30, 2026) | Polymarket](https://polymarket.com/sports/ucl/ucl-psg-ars-2026-05-30)\n  Snippet: Resolution Source\n\nResolver\n\nParis Saint-Germain hold a narrow edge in the Champions League final market thanks to their completed domestic campaign and extended preparation window, allowing fuller squad recovery ahead of the May 30 showdown in Budapest. Arsenal remain hampered by key absences including Ben White and ongoing doubts over Jurrien Timber, while PSG monitor Ousmane Demb\u00e9l\u00e9\u2019s calf issue alongside the earlier loss of Achraf Hakimi. ...\n- [Arsenal lineup vs. PSG: Predicted XI for Champions League final ...](https://www.sportsmole.co.uk/football/arsenal/champions-league/predicted-lineups/timber-or-mosquera-zubimendi-or-mls-predicted-arsenal-xi-vs-psg_598306.html)\n  Snippet: Champions League\n\nMay 30, 2026 5.00pm\n\n Pusk\u00e1s Ar\u00e9na\n\nArsenal/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2F19%2F06%2Farselog.png)\n\nArsenal\n\n# Arsenal lineup vs. PSG: Predicted XI for Champions League final amid Jurrien Timber injury concern\n\nBy   Ben Knapton   |\n\nTimber or Mosquera? Zubimendi or MLS? Predicted Arsenal XI vs. PSG/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F05%2Ficonsportxalamy-3eeh25a-1-1-6a114ff26ec7a712952212.jpg \"Timber or Mosquera? Zubimendi or MLS? Predicted Arsenal XI vs. PSG\") ...\n**Betting Odds:**\n- [Paris Saint-Germain vs Arsenal Betting Pick | Champions League | 2026-05-30 |](https://www.goonersguide.com/football-pick-59418-Paris-Saint-Germain-vs-Arsenal.htm)\n  Snippet: | | Handicap BETS | | |  ---  | Over | H/C | Under |  | BET365 | | |  ---  | 2.00 | O/U 2.5 | 1.80 | | BETFRED | | | | 1.91 | O/U 2.5 | 1.80 | | CLOUDBET | | | | 2.04 | O/U 2.5 | 1.81 | | SPORTBET | | | | 1.99 | O/U 2.5 | 1.76 |  | Fixed Odds BETS | | |  ---  | PAR | DRAW | ARS |  | BET365 | | |  ---  | 2.30 | 3.30 | 3.10 | | BETFRED | | | | 2.25 | 3.30 | 3.00 | | CLOUDBET | | | | 2.35 | 3.25 | 3.15 | | SPORTBET | | | | 2.36 | 3.20 | 2.97 |  | Click the bookmaker name to visit the betting site | | |  ---  | [...] | | Handicap BETS | | |  ---  | Over | H/C | Under |  | BET365 | | |  ---  | ...\n- [PSG vs Arsenal Betting Pick | Champions League | 2026-05-30 |](https://www.goonersguide.com/football-pick-59404-PSG-vs-Arsenal.htm)\n  Snippet: PSG vs Arsenal Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | PSG | DRAW | ARS |  | BET365 |  | 2.25 | 3.30 | 3.20 | | BETFRED | | 2.20 | 3.25 | 3.30 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report.\n\nInstead you CAN see a list of odds and lines from recommended bookmakers and sportsbooks over on the right.\n\nA final result and link to a full match report will be posted here after the game is completed. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-29\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-29 19:23:21"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-29 19:21:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a tightly contested Champions League Final at a neutral venue. While Arsenal boasts a perfect 8-0-0 record and immaculate form in the competition, their strength is significantly undermined by critical defensive injuries, with Ben White confirmed out and Jurrien Timber doubtful. Paris Saint-Germain holds a crucial advantage, having concluded their domestic league, allowing for a longer period of rest and preparation. The betting markets reflect this dynamic, establishing PSG as slight favorites. The implied probability from averaged odds (approx. 41% for PSG win) suggests that Arsenal's injury woes and PSG's superior recovery time are expected to outweigh Arsenal's formidable season-long form."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:21:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting markets make PSG a narrow favorite (roughly 2.25\u20132.36 vs Arsenal 3.00\u20133.20 with draw ~3.20\u20133.30), which anchors PSG as the most likely 90-minute result. Arsenal\u2019s UCL league-stage form is elite (8-0-0), but they carry defensive availability concerns (Ben White out; Timber doubtful), while PSG have had extra preparation time and recovery runway. PSG also have issues (Hakimi out; Demb\u00e9l\u00e9 calf), keeping the match tight and supporting a relatively high draw probability in a final at a neutral venue."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:21:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (~2.25 PSG / ~3.30 draw / ~3.10 Arsenal) imply PSG slight edge, but calibration must account for other signals. Arsenal enter undefeated through the UCL campaign (8-0-0) and carry strong recent form (WWWWW), indicating high baseline strength and cohesion. PSG benefit from extra rest/ preparation and fewer fitness issues overall, but reported absences/ doubts on both sides (Arsenal: Ben White out, Timber doubtful; PSG: Demb\u00e9l\u00e9 calf concern and earlier loss of Hakimi) and the neutral final venue (Pusk\u00e1s Ar\u00e9na) reduce typical home advantage. Balancing market-implied probabilities with Arsenal's superior UCL form and squad quality \u2014 tempered by defensive injury risk and PSG's preparation \u2014 produces a near-even outlook with a small lean to Arsenal. Given the tight margins and injury uncertainties, confidence is Medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:22:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal away @ Paris Saint-Germain home",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG are priced as the slight favorite in the betting market (approx 2.25 for PSG, 3.30 for a draw, 3.20 for Arsenal). They have home advantage and a longer squad preparation window. Arsenal face injuries (Ben White out, Jurrien Timber doubtful) and Demb\u00e9l\u00e9 calf concerns, plus Hakimi's earlier absence, which dampen their odds of pulling an upset. Net effect: a close match with PSG holding a narrow edge."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:22:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting odds from multiple bookmakers (PSG win ~2.25-2.36, Draw ~3.20-3.30, Arsenal win ~2.97-3.30) imply PSG are slight favorites, with implied probabilities around 41-44% for PSG, 29-30% for draw, and 28-31% for Arsenal. PSG benefit from a longer preparation window and fuller squad recovery, while Arsenal are missing key defender Ben White and have doubts over Jurrien Timber. PSG's home record is less impressive than Arsenal's perfect away run, but the match is at a neutral venue (Budapest), slightly reducing Arsenal's away edge. PSG also have some injury concerns (Demb\u00e9l\u00e9, Hakimi), but their squad depth and rest advantage balance this. Overall, the market and team news suggest PSG are marginal favorites, but the match is close and a draw is a significant possibility."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:22:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Paris Saint-Germain has a slight edge due to their completed domestic campaign and preparation time. Arsenal's key absences, including Ben White and doubts over Jurrien Timber, weaken their defense. PSG's home advantage and the betting odds slightly favor them, despite their own injury concerns with Ousmane Demb\u00e9l\u00e9 and Achraf Hakimi."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:22:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG have home advantage and extra rest, but Arsenal have been dominant away (8-0-0). Key injuries: Arsenal missing Ben White and possibly Timber; PSG have Demb\u00e9l\u00e9 doubt and Hakimi out. Odds imply slight PSG edge (2.30 vs 3.10), but Arsenal's form is strong. Slight lean to PSG due to rest and home field."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:23:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is the Champions League FINAL in Budapest (neutral venue), so traditional home advantage is negated. Arsenal enters with a perfect UCL league stage record (8-0-0, 24 pts, WWWWW form) showing exceptional dominance, while PSG had a more inconsistent campaign (#11, 4-2-2, 14 pts, LWWDD form). However, betting markets (aggregated odds: PSG ~2.25-2.36, Draw ~3.20-3.30, Arsenal ~2.97-3.20) slightly favor PSG. Key factors: (1) PSG completed their domestic season early, providing extra rest and preparation time for squad recovery; (2) Arsenal faces significant injury concerns with Ben White ruled out and Jurrien Timber doubtful, weakening their defensive options; (3) PSG monitors Demb\u00e9l\u00e9's calf issue and lost Hakimi, but their injury situation appears less severe; (4) Arsenal's superior tournament form suggests quality, but finals are one-off matches where form can be less predictive. The betting markets' slight PSG lean (implied ~42-44% vs Arsenal's 31-33%) reflects the preparation advantage and Arsenal's defensive injuries. Given the neutral venue negates 'home' advantage listed, this is essentially a pick'em with PSG having marginal edge due to fitness/preparation. Assigning probabilities calibrated to betting odds with draw probability elevated for a cagey final."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-29 19:23:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Paris Saint-Germain has a completed domestic campaign and extended preparation, which allows for better squad recovery. Arsenal is hampered by key absences including Ben White and doubts over Jurrien Timber. PSG's home form is also slightly better, and the betting odds slightly favor PSG."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

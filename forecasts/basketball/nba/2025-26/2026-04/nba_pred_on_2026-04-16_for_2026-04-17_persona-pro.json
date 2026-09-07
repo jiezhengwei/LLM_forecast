@@ -1,0 +1,207 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-16\n    Target Date: 2026-04-17\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [4/17 - 7:30 PM EDT] Charlotte Hornets @ Orlando Magic | Away: 53.7% (44-38) vs Home: 54.9% (45-37)\n2. [4/17 - 10:00 PM EDT] Golden State Warriors @ Phoenix Suns | Away: 45.1% (37-45) vs Home: 54.9% (45-37)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Charlotte Hornets (Away) @ Orlando Magic (Home)\n**News & Injury Report:**\n- [Hornets vs Magic Game Overview, Stats, Injuries, Records - NBA Game on April 17, 2026](https://www.covers.com/sport/basketball/nba/matchup/377348)\n  Snippet: ## Orlando Starters Last Game\n\n| Pos. | Player | Min. | FGM-FGA | Points | Assists | Rebounds | Steals | Blocks | Fouls |\n ---  ---  ---  ---  --- |\n| F | F.Wagner | 29:17 | 5-11 | 12 | 3 | 4 | 0 | 0 | 4 |\n| F | P.Banchero | 36:03 | 7-22 | 18 | 4 | 5...\n- [Hornets vs. Magic (Apr 17, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401866758)\n  Snippet: Watch ESPN\nESPN Fantasy\n\n# Charlotte Hornets @ Orlando Magic\n\nCHA\n\nPrime Video\n\nORL\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  --- \n| 4/14 | vsMIA | W127-126 | -5.5 | 228.5 |\n| 4/12 | @NY | W110-96 | -14...\n**Vegas Odds & Lines:**\n- [Hornets vs Magic Odds, Betting Trends, and Line Movements - 04/16/2026](https://www.vegasinsider.com/nba/matchups/hornets-vs-magic/)\n  Snippet: View Less\n\n## Hornets @ Magic Betting Trends\n\n Bets\n Money\n\n|  | Spread | Total | Moneyline |\n ---  --- |\n| Charlotte Hornets     Hornets | 50-32 ATS | 31-51 O/U | 44-38 SU | Create Free Account |\n| Orlando Magic     Magic | 38-44 ATS | 44-38 O/U | 4...\n- [Hornets vs Magic Odds & Betting Lines For April 17, 2026 - NBA](https://www.covers.com/sport/basketball/nba/matchup/377348/odds)\n  Snippet: Orlando  8th East45-36\n\n Stats\n Picks\n Odds\n\n# Charlotte vs Orlando   Odds\n\n## Game Odds\n\nGame Odds Charlotte Hornets vs. Orlando Magic\n\n| Spread | Total | Moneyline |\n| Sports.OddsComparison.BettingLines.Models.BettingSide.SpreadBettingSideVm  Charl...\n\n----------------------------------------\n#### Matchup: Golden State Warriors (Away) @ Phoenix Suns (Home)\n**News & Injury Report:**\n- [Suns vs. Warriors Prediction: Preview, Injury Report, Advantages, X-Factors - Fadeaway World](https://fadeawayworld.net/nba/golden-state-warriors/suns-vs-warriors-prediction-preview-injury-report-advantages-x-factors)\n  Snippet: For the Warriors, the offensive burden shifts hard onto Brandin Podziemski (12.1 points, 4.6 rebounds, 3.6 assists) and Draymond Green (8.4 points, 5.7 rebounds, 5.2 assists) to manufacture enough structure to survive.\n\nThis one matters because the W...\n- [2025-2026  NBA Games: Warriors Suns Overview -](https://www.teamrankings.com/nba/matchup/warriors-suns-2026-04-17)\n  Snippet: ##### NBA\n\n##### MLB\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Bowls 2025-26\n\n##### Betting\n\n##### Main\n\n##### NCAA Tournament\n\n##### Betting\n\n##### Main\n\n# Golden State at Phoenix: Overview\n\nFriday Apr 1...\n**Vegas Odds & Lines:**\n- [2025-2026 NBA Games: Warriors Suns Overview -](https://www.teamrankings.com/nba/matchup/warriors-suns-2026-04-17)\n  Snippet: ##### NBA\n\n##### MLB\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Bowls 2025-26\n\n##### Betting\n\n##### Main\n\n##### NCAA Tournament\n\n##### Betting\n\n##### Main\n\n# Golden State at Phoenix: Overview\n\nFriday Apr 1...\n- [Warriors vs. Suns prediction, odds, time: 2026 NBA picks for Thursday, Feb. 5 - CBS Sports](https://www.cbssports.com/nba/news/warriors-suns-odds-prediction-time-2026-nba-picks-thursday-february-5/)\n  Snippet: The SportsLine Projection Model simulates every NBA game 10,000 times and has returned well over $10,000 in betting profit for $100 players on its top-rated NBA picks over the past eight-plus seasons. The model enters Week 16 of the 2025-26 NBA seaso...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-16\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-16 20:33:12"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-16 20:31:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Teams are very close on season record (CHA 44-38 vs ORL 45-37), but Orlando gets meaningful home-court edge and has the more stable core (Banchero/Wagner) in a playoff-style spot. With no clear injury advantage provided for Charlotte and no strong Vegas number shown in the context, the edge leans modestly to the home team."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "Medium",
+                    "reasoning": "Phoenix has the stronger season profile (45-37 vs 37-45) plus home court. The news context suggests Golden State is likely missing primary creators/scorers (offense shifting heavily to Podziemski and Draymond), which is a major downgrade on the road against a better team. Absent a posted spread/moneyline in the prompt, this is calibrated as a solid-but-not-certain Suns edge."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:31:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.54,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Teams are closely matched by record but Orlando has a slight home-court edge (Magic 45-37 at home vs Hornets 44-38 on road). No major injures reported in the supplied notes, and Vegas lines/snippets point toward Orlando as a modest favorite. Close matchup so edge goes to the home team."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.64,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "Medium",
+                    "reasoning": "Phoenix has the better overall/home record (45-37, 54.9% at home) while Golden State is below .500 on the road (37-45 overall). Vegas coverage and preview commentary indicate Suns advantage; Warriors appear reliant on secondary pieces and are inconsistent on the road. Combine team strength and home-court gives Suns a clear edge."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.56,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Orlando has a modest home-court edge with a higher home-win rate (54.9%) compared to Charlotte's away-win rate (53.7%). No major injury signals for Orlando; no clear edge for Charlotte."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "Phoenix holds a strong home-court advantage and a higher home-win rate (~54.9%) while Warriors show weaker road performance. No compelling injuries flagged; Vegas tendencies typically favor Suns at home."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.62,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have similar season win rates (Hornets 53.7%, Magic 54.9%), but Orlando has home-court advantage and a slightly better record at home. Vegas lines and betting trends suggest Orlando is favored, with the Magic likely giving points on the spread. No major injuries reported for Orlando's core, and their recent form is solid. Charlotte is strong ATS but less consistent outright. Probability reflects a modest but clear edge for Orlando."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.74,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "Phoenix has a significantly better season record (54.9% win rate vs. Warriors' 45.1%), and the Warriors are missing key offensive contributors, shifting the burden to less proven players. Home-court advantage and Vegas odds both favor the Suns. The Warriors' recent struggles and lack of depth further tilt the probability toward Phoenix. All signals (team strength, injuries, Vegas) align for a strong Suns edge."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Orlando has a slightly better home win rate and the game is at their home court. The Vegas odds suggest a slight edge for Orlando. No significant injuries reported for either team."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.65,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "Phoenix has a better home record and Golden State is missing key players, increasing the burden on their remaining roster. Vegas odds and analysis favor Phoenix, enhancing confidence in their victory."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have very similar regular season records (Hornets 44-38, Magic 45-37), but the Magic benefit from home-court advantage. With no major injury news pointing heavily toward Charlotte, Orlando holds a slight edge."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "The Suns have a substantially better season record (45-37 vs 37-45) and home-court advantage. Furthermore, injury reports suggest the Warriors' offensive burden is falling on secondary players like Brandin Podziemski and Draymond Green, indicating key absences for Golden State."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "Orlando has slight home-court advantage (54.9% home win rate vs 53.7% away for Charlotte) and better season record (45-37 vs 44-38). Vegas odds show Orlando as favorites with better ATS performance (38-44 vs 50-32) and moneyline trends. Both teams appear healthy based on available injury snippets showing starters playing recent games."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "Medium-High",
+                    "reasoning": "Phoenix has significant home-court advantage (54.9% home win rate vs 45.1% away for Golden State) and much better season record (45-37 vs 37-45). Injury snippets suggest Warriors' offensive burden shifts to secondary players like Podziemski and Green, indicating potential key absences. Vegas models referenced show professional betting systems favoring Phoenix, and home teams typically perform better in late-season matchups."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:32:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.52,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Low",
+                    "reasoning": "This is essentially a coin flip between two evenly matched teams. Orlando (45-37, 54.9%) has a slight edge over Charlotte (44-38, 53.7%) in record. Home court advantage provides approximately 2-3% boost. Charlotte has been excellent ATS (50-32) showing they've exceeded expectations, while Orlando has underperformed ATS (38-44). Both teams are playoff-bound and playing meaningful basketball. Charlotte just won a close game vs Miami (127-126) showing good form. Vegas line appears to be very tight, suggesting oddsmakers see this as nearly even. Orlando gets the slight nod at home, but this could easily go either way. The 52% probability reflects extreme uncertainty with minimal separation between these teams."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.71,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "Phoenix Suns (45-37, 54.9%) hold a significant advantage over Golden State Warriors (37-45, 45.1%). The 8-game difference in the standings is substantial. Injury reports indicate Warriors are severely depleted, with the offensive burden falling on Brandin Podziemski (12.1 PPG) and Draymond Green (8.4 PPG) - neither are primary scorers. This suggests Golden State is missing key offensive weapons, likely including Curry. Phoenix is playing at home and fighting for playoff positioning with a winning record. The Warriors' below-.500 record combined with apparent injury issues creates a clear mismatch. Phoenix's home court advantage plus superior roster health and record justifies a 71% win probability. This is a strong play for the home team."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:33:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Charlotte Hornets (away) @ Orlando Magic (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "Orlando Magic",
+                    "confidence": "Medium",
+                    "reasoning": "The Orlando Magic have a slight edge in their home win rate and recent form, with a 54.9% home win rate compared to the Hornets' 53.7% away win rate. The Magic also have a better ATS (Against the Spread) record, which suggests they are performing well against expectations."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Golden State Warriors (away) @ Phoenix Suns (home)",
+                    "home_win_probability": 0.65,
+                    "predicted_winner": "Phoenix Suns",
+                    "confidence": "High",
+                    "reasoning": "The Phoenix Suns have a strong home record with a 54.9% win rate, while the Golden State Warriors have struggled on the road with only a 45.1% away win rate. Additionally, key players for the Warriors may be carrying a heavier offensive load, which could impact their performance. Vegas odds and betting trends also favor the Suns at home."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-11\n    Target Date: 2026-05-12\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/12 - 8:00 PM EDT] Minnesota Timberwolves @ San Antonio Spurs | Away: 59.8% (49-33) vs Home: 75.6% (62-20)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Minnesota Timberwolves (Away) @ San Antonio Spurs (Home)\n**News & Injury Report:**\n- [Spurs vs Timberwolves Prediction Game 1: Odds, Player Stats, Injury Report & Best Picks](https://www.sportpreferred.com/nba/spurs-vs-timberwolves-prediction-game-1-odds-player-stats-injury-report-and-best-picks/15239)\n  Snippet: ### Perimeter Battle\n\n| Player | Role |\n --- |\n| De\u2019Aaron Fox | Speed, playmaking |\n| Anthony Edwards | Scoring threat |\n| Supporting Guards | Defensive matchups |\n\nIf Edwards plays, this matchup becomes much more balanced on the perimeter.\n\n## Key Player Stats\n\n### San Antonio Spurs Key Players\n\n| Player | Performance |\n --- |\n| Victor Wembanyama | Dominant scoring, rebounding, blocks |\n| De\u2019Aaron Fox | Playmaking and scoring leader |\n| Stephon Castle | Support scoring |\n\nWembanyama has been the centerpiece of the Spurs\u2019 success, impacting both ends of the court. ...\n- [2025-2026  NBA Games: Timberwolves Spurs Injury Report - TeamRankings.com](https://www.teamrankings.com/nba/matchup/timberwolves-spurs-2026-05-12/injuries)\n  Snippet: ##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n##### Betting\n\n##### Main\n\n# Minnesota at San Antonio: Injury Report\n\nTuesday May 12, 2026 12:00 pm -\nSan Antonio, TX\n\nOdds:\nN/A,\nTotal Points:\nN/A\n\n## Matchup Menu: MIN @ SA\n\n## Minnesota Injuries\n**Vegas Odds & Lines:**\n- [Minnesota Timberwolves vs San Antonio Spurs Odds - Tuesday May 12 2026](https://www.oddsshark.com/nba/minnesota-san-antonio-odds-may-12-2026-2522928)\n  Snippet: | MIN | Record | SAN |\n ---\n| 13-9 | All | 13-3 |\n| 8-3 | Home | 7-1 |\n| 5-6 | Away | 6-2 |\n| 7-2 | As Fav | 10-2 |\n| 6-7 | As Dog | 3-1 |\n| 11-11 | ATS | 10-6 |\n| 8-3 | ATS Home | 6-2 |\n| 3-8 | ATS Away | 4-4 |\n| 11-11 | O/U | 9-7 |\n| 5-6 | O/U Home | 6-2 |\n| 6-5 | O/U Away | 3-5 |\n\n| MIN | Record | SAN |\n ---\n| 18-12 | All | 26-5 |\n| 9-6 | Home | 14-1 |\n| 9-6 | Away | 12-4 |\n| 16-5 | As Fav | 24-3 |\n| 2-7 | As Dog | 2-2 |\n| 14-16 | ATS | 20-11 |\n| 5-10 | ATS Home | 11-4 |\n| 9-6 | ATS Away | 9-7 |\n| 15-15 | O/U | 9-22 |\n| 6-9 | O/U Home | 4-11 | ...\n- [Timberwolves vs Spurs Odds & Live Scores - May 12, 2026 | The Action Network](https://www.actionnetwork.com/nba-game/timberwolves-spurs-score-odds-may-12-2026/290436)\n  Snippet: Spurs logo\nTimberwolves logo\n\n### Straight-Up (ML) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Spurs logo Spurs | 5-2 | N/A | N/A | 50-14 | 12-7 |\n| Timberwolves logo Timberwolves | 5-3 | N/A | N/A | 41-19 | 8-14 |\n\nSpurs logo\nTimberwolves logo\n\n### Last 5 Matchups ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-11\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-11 16:08:24"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-11 16:07:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The San Antonio Spurs possess a significantly stronger season record (62-20, 75.6%) compared to the Minnesota Timberwolves (49-33, 59.8%). This disparity is amplified by the Spurs' exceptional performance at home. Key players for the Spurs, including the dominant Victor Wembanyama and De\u2019Aaron Fox, appear to be healthy. While no specific Vegas odds for this game are listed, historical data shows the Spurs are dominant as favorites (24-3 in one sample) and cover the spread consistently at home (11-4 ATS). Given the combination of superior team strength, a powerful home-court advantage, and a healthy roster, the probability of a Spurs victory is high."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:07:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "San Antonio owns the clearly stronger season profile (62-20, 75.6% win rate) and gets home court, while Minnesota is good but a tier below (49-33, 59.8%). The Spurs\u2019 core led by Victor Wembanyama plus De\u2019Aaron Fox projects as a high-ceiling two-way advantage, especially at home. Matchup notes indicate Minnesota\u2019s chances swing meaningfully with Anthony Edwards\u2019 availability; without confirmed Vegas ML/spread and with that injury/availability uncertainty, the lean remains Spurs but with medium confidence rather than high."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:07:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.66,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "San Antonio has a much stronger regular-season profile (62-20, ~75.6% win rate) and dominant home performance; Victor Wembanyama is a matchup-altering presence on both ends. Vegas-related data in the context implies the Spurs are favored at home. Minnesota is a high-quality team (49-33) and would be more competitive if Anthony Edwards plays \u2014 that uncertainty reduces confidence and could shift the edge toward Minnesota if he\u2019s fully available. Given home-court advantage, Spurs talent depth, and the available betting signals, San Antonio is the more likely winner but the projection is tempered by the Edwards availability question and typical playoff variance."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:07:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.7,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Strong home-court advantage for Spurs (home win rate ~75.6% vs Wolves' away win rate ~59.8%). No explicit Vegas odds available in the provided data; Edwards' availability could impact Wolves' perimeter strength, but Spurs still hold the edge due to superior home performance and Wembanyama's impact."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:07:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.68,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "San Antonio has a dominant home record (75.6%, 62-20), a stronger overall season record, and key players like Victor Wembanyama and De\u2019Aaron Fox healthy and performing at a high level. Minnesota is solid but less effective on the road and as an underdog. No major Spurs injuries are reported, and the implied Vegas lines and ATS records favor San Antonio. Home-court advantage and superior team strength make the Spurs clear favorites."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:08:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The San Antonio Spurs have a strong home record with a 75.6% win rate and key players like Victor Wembanyama and De\u2019Aaron Fox performing well. The Timberwolves' away performance is weaker, and the Spurs' overall season record is superior. No significant injuries reported for the Spurs, enhancing their chances."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:08:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "Spurs have a dominant home record (62-20, 75.6% win rate) and are strong favorites according to Vegas lines (e.g., 26-5 overall, 14-1 at home). Timberwolves have a weaker away record (49-33, 59.8% overall but likely worse on road). Key players like Wembanyama and Fox give Spurs a significant edge. No major injuries reported for Spurs."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:08:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.72,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "San Antonio has a significantly superior record (62-20, 75.6% win rate) compared to Minnesota (49-33, 59.8%). The Spurs are 13-3 overall in recent form and 7-1 at home, while the Timberwolves are 5-6 on the road. Victor Wembanyama is the dominant centerpiece for the Spurs, excelling in scoring, rebounding, and blocks. De'Aaron Fox provides elite playmaking and scoring. The Vegas odds show San Antonio as a clear favorite (50-14 as favorites vs Minnesota's 8-14 as underdogs). The Spurs' home court advantage is substantial (14-1 home record in recent stretch), and their ATS performance (20-11) suggests they're covering spreads consistently. The perimeter battle mentions Anthony Edwards as a key factor 'if he plays,' suggesting uncertainty about his availability, which would further tilt the advantage to San Antonio. The Spurs have won 5 of the last 7 head-to-head matchups. All factors point to a strong San Antonio victory at home."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-11 16:08:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Minnesota Timberwolves (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.75,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "High",
+                    "reasoning": "The San Antonio Spurs have a strong home record of 75.6% (62-20) and key player Victor Wembanyama is expected to dominate on both ends of the court. The Timberwolves, while having a good season, are playing away where they have a slightly lower win rate of 59.8% (49-33). Additionally, the Spurs' overall performance and home-court advantage make them the favored team in this matchup."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

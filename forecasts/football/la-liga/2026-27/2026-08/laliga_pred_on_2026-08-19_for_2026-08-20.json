@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-19",
+        "target_date_et": "2026-08-20",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-19\n\nTarget Date (ET): 2026-08-20\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882908\nMatchup: Alavés (away) @ Rayo Vallecano (home)\nHome: Rayo Vallecano\nAway: Alavés\nKickoff UTC: 2026-08-20T19:00Z\nKickoff ET: 2026-08-20 15:00 EDT\nVenue: Estadio de Vallecas\nRound: unavailable\nHome form: LLWWD\nAway form: WLWWD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Rayo Vallecano +125 (open +110); Draw +205 (open +205); Alavés +260 (open +285)\nTavily context:\n  - Title: PREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPlaymakerstats\n\n·\n\n1 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nRayo Vallecano and Alavés face off this Thursday at the Estadio Municipal de Butarque in La Liga. ...\n    URL: https://sports.yahoo.com/articles/preview-rayo-vallecano-vs-alav-190500035.html\n  - Title: Preview: Rayo Vallecano vs Alaves - prediction, team news, lineups - Sports Mole\n    Content: The most recent meeting between the sides came in May, when Rayo secured a 2-1 away victory to complete the league double over Alaves, with the only blemish a Copa del Rey win for Alaves.\n\nRayo Vallecano La Liga form:\n\nL\n\nAlaves La Liga form:\n\nW\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081144485-1-6a84860be87e9226352891.jpg)\n\n© Imago / Ricardo Larreina Amador ...\n    URL: https://www.sportsmole.co.uk/football/rayo-vallecano/preview/rayo-vallecano-vs-alaves-prediction-team-news-lineups_603229.html\n  - Title: Rayo Vallecano vs. Alaves prediction, odds, La Liga picks [8/20/2026]\n    Content: Moneyline: Alaves +270, Rayo Vallecano +130\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Rayo Vallecano vs. Alaves picks and best bet\n\nAfter matching our predictions against the best current odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Alaves @ +270 via BetRivers\n Total Goals: Over 2.5 @ +175 via Bet365\n\nAccording to our La Liga best bets, the top play to make on this game is Over 2.5 total goals. ...\n    URL: https://www.dimers.com/la-liga/news/rayo-vallecano-vs-alaves-prediction-08-20-2026-ac\n  - Title: Rayo Vallecano Alavés Odds 20.08.2026 | Tips.GG\n    Content: 250%Bonus\n\n Bonus\n\n 250%\n\n Bonus up to $4,000 + 250 Free Spins\n\n Sign Up & Activate Bonus\n\nNo, thanks\n\ntips.gg\n\nFootball\n\nBasketballEsportsCS2 (CS:GO)LoLDota 2ValorantRainbow 6Call of DutyRocket LeagueOverwatchArena of ValorPUBGWild Rift\n\nMatchesPredictionsTournamentsTeamsLog In:\n| Sportsbook | Rayo Vallecano will win | Draw | Alavés will win |\n ---  --- |\n| Vave | 2.31 | 3.10 | 3.50 |\n| Bet365 | 2.15 | 3.20 | 3.30 |\n| BC.Game | 2.22 | 3.05 | 3.45 |\n| Everygame | 2.20 | 2.90 | 3.45 |\n| Spinbetter | 2.23 | 3.12 | 3.54 |\n| Bovada | 1.74 | 3.00 | 2.40 |\n| Betfury | 2.16 | 3.05 | 3.70 | ...\n    URL: https://tips.gg/matches/football/20-08-2026/rayo-vallecano-vs-alaves/08-00/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-19\n\nTarget Date (ET): 2026-08-20\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882908\nMatchup: Alavés (away) @ Rayo Vallecano (home)\nHome: Rayo Vallecano\nAway: Alavés\nKickoff UTC: 2026-08-20T19:00Z\nKickoff ET: 2026-08-20 15:00 EDT\nVenue: Estadio de Vallecas\nRound: unavailable\nHome form: LLWWD\nAway form: WLWWD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Rayo Vallecano +125 (open +110); Draw +205 (open +205); Alavés +260 (open +285)\nTavily context:\n  - Title: PREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPREVIEW | Rayo Vallecano vs Alavés: team news, lineups, predictions (La Liga 20/08)\n\nPlaymakerstats\n\n·\n\n1 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nRayo Vallecano and Alavés face off this Thursday at the Estadio Municipal de Butarque in La Liga. ...\n    URL: https://sports.yahoo.com/articles/preview-rayo-vallecano-vs-alav-190500035.html\n  - Title: Preview: Rayo Vallecano vs Alaves - prediction, team news, lineups - Sports Mole\n    Content: The most recent meeting between the sides came in May, when Rayo secured a 2-1 away victory to complete the league double over Alaves, with the only blemish a Copa del Rey win for Alaves.\n\nRayo Vallecano La Liga form:\n\nL\n\nAlaves La Liga form:\n\nW\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081144485-1-6a84860be87e9226352891.jpg)\n\n© Imago / Ricardo Larreina Amador ...\n    URL: https://www.sportsmole.co.uk/football/rayo-vallecano/preview/rayo-vallecano-vs-alaves-prediction-team-news-lineups_603229.html\n  - Title: Rayo Vallecano vs. Alaves prediction, odds, La Liga picks [8/20/2026]\n    Content: Moneyline: Alaves +270, Rayo Vallecano +130\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Rayo Vallecano vs. Alaves picks and best bet\n\nAfter matching our predictions against the best current odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Alaves @ +270 via BetRivers\n Total Goals: Over 2.5 @ +175 via Bet365\n\nAccording to our La Liga best bets, the top play to make on this game is Over 2.5 total goals. ...\n    URL: https://www.dimers.com/la-liga/news/rayo-vallecano-vs-alaves-prediction-08-20-2026-ac\n  - Title: Rayo Vallecano Alavés Odds 20.08.2026 | Tips.GG\n    Content: 250%Bonus\n\n Bonus\n\n 250%\n\n Bonus up to $4,000 + 250 Free Spins\n\n Sign Up & Activate Bonus\n\nNo, thanks\n\ntips.gg\n\nFootball\n\nBasketballEsportsCS2 (CS:GO)LoLDota 2ValorantRainbow 6Call of DutyRocket LeagueOverwatchArena of ValorPUBGWild Rift\n\nMatchesPredictionsTournamentsTeamsLog In:\n| Sportsbook | Rayo Vallecano will win | Draw | Alavés will win |\n ---  --- |\n| Vave | 2.31 | 3.10 | 3.50 |\n| Bet365 | 2.15 | 3.20 | 3.30 |\n| BC.Game | 2.22 | 3.05 | 3.45 |\n| Everygame | 2.20 | 2.90 | 3.45 |\n| Spinbetter | 2.23 | 3.12 | 3.54 |\n| Bovada | 1.74 | 3.00 | 2.40 |\n| Betfury | 2.16 | 3.05 | 3.70 | ...\n    URL: https://tips.gg/matches/football/20-08-2026/rayo-vallecano-vs-alaves/08-00/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882908",
+                        "date_utc": "2026-08-20T19:00Z",
+                        "kickoff_et": "2026-08-20 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Rayo Vallecano",
+                        "away": "Alavés",
+                        "home_id": "101",
+                        "away_id": "96",
+                        "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                        "venue": "Estadio de Vallecas",
+                        "city": "Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLWWD",
+                        "form_away": "WLWWD",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+110",
+                            "home_current": "+125",
+                            "draw_open": "+205",
+                            "draw_current": "+205",
+                            "away_open": "+285",
+                            "away_current": "+260"
+                        },
+                        "odds_text": "DraftKings: Rayo Vallecano +125 (open +110); Draw +205 (open +205); Alavés +260 (open +285)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-19T11:45:39.066459-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-19T11:36:49.419573-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are the slight favorites playing at home. Although Alavés started the season with a win and Rayo with a defeat, Rayo completed a league double over Alavés in the previous season and have the home advantage at Estadio de Vallecas. Odds imply around a 42% chance for a home victory.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-19T11:36:57.715003-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.423,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.265,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are the favorites according to the betting odds, with an implied home win probability of around 42%. Despite Alavés winning their opening match and Rayo losing theirs, Rayo holds the home advantage and completed the league double over Alavés last season.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-19T11:37:15.310307-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano is favored by the betting markets, reflecting their strong home advantage at the Estadio de Vallecas. They also have a recent psychological edge, having completed the league double over Alavés in the previous season. Although Alavés began the current season with a victory while Rayo suffered a loss, Rayo's historical performance in this specific matchup and the advantage of playing at home are stronger factors, making them the more likely victor. However, the conflicting early-season form tempers the confidence from high to medium.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-19T11:37:25.972293-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano is favored by the structured 1X2 odds from DraftKings and other bookmakers. They also hold a strong recent head-to-head record against Alavés, having completed a league double over them in their most recent meetings. Despite Alavés' current away win record this season, Rayo's home advantage and recent historical dominance in this fixture make them the more likely winner.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-19T11:39:59.153834-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Rayo Vallecano a modest home favorite, with the draw still a significant outcome. Rayo also won both league meetings against Alavés last season and have home advantage at Vallecas, but Alavés opened the season with a win and appear competitive, keeping confidence moderate rather than high.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-19T11:40:06.320947-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make Rayo Vallecano a modest home favorite, with the draw also a significant possibility. Rayo have recent head-to-head positives against Alavés, including a league double last season, but early-season form is thin and Alavés opened with a win, keeping the edge narrow.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-19T11:40:27.701072-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market 1X2 pricing makes Rayo a narrow home favorite, but not dominant. The line movement (Rayo drifting from +110 to +125 while Alavés shortens from +285 to +260) suggests increasing support for the away side, keeping probabilities tight. With Rayo at Vallecas still holding the highest win likelihood but with draw/away outcomes close, the best single pick is a low-confidence home win.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-19T11:40:37.479305-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers make Rayo the slight favorite and home advantage at Vallecas is meaningful. Recent head-to-heads favor Rayo and their squad/stadium matchups have produced wins. Alavés arrive in good form and are dangerous on the road, so this is expected to be a competitive game — hence a moderate confidence on a Rayo 90-minute win.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-19T11:40:48.369021-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.423,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.265,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds favor the home side (Rayo Vallecano) with a modest home advantage and recent form in their favor; normalized probabilities account for sportsbook margins between home, draw, and away outcomes.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-19T11:40:51.790323-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are slight favorites according to both bookmaker odds and recent head-to-head results, having completed a league double over Alavés last season. Rayo's home form is mixed, but Alavés have also shown inconsistency away. The market consensus and expert previews lean toward a Rayo win, but the probabilities reflect a competitive fixture with a significant chance of a draw or Alavés upset.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-19T11:40:53.939271-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano has a strong home advantage and recent form suggests they are capable of securing a win. Despite Alavés having a decent away record, the odds and historical performance favor Rayo Vallecano.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-19T11:41:03.987134-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmaker consensus (Rayo ~+125/2.20, draw ~+205/3.05, Alavés ~+260/3.45) makes Rayo a modest home favorite. Rayo completed a league double over Alavés last season including a 2-1 win in May, and home advantage at Vallecas supports this edge. However, Alavés opened this season with a win while Rayo lost, and the odds drifted slightly toward Alavés, keeping this a fairly open match with meaningful draw and away probabilities.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-19T11:41:08.332295-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano are favored at home per bookmaker odds (~+125/2.15 implied ~46%), and they completed a league double over Alavés last season including a 2-1 away win. Home advantage at Vallecas plus favorable market pricing tilts this toward Rayo, though Alavés' strong early form makes it competitive.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-19T11:41:16.265995-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano are slight favorites at home at Estadio de Vallecas. The odds from multiple bookmakers converge around Rayo +120 to +130, implying roughly 43-44% home win probability. Rayo completed a league double over Alavés last season (including a 2-1 away win in May). Rayo's recent form (LLWWD) is mixed but they have home advantage in a compact stadium known for intense atmosphere. Alavés (WLWWD) won their opening match but face a tricky away fixture. The market is fairly tight, suggesting uncertainty. Probabilities calibrated from implied odds averaging across DraftKings and European books, with a slight home bias given venue advantage and head-to-head record.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-19T11:41:25.478493-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano hosts Alavés at Estadio de Vallecas. Recent head-to-head record strongly favors Rayo, who completed a league double over Alavés last season including a 2-1 away victory in May. The betting markets show Rayo as favorites with odds around +125-130, reflecting approximately 44% implied probability. Rayo's home form shows LLWWD with a 0-0-1 record this season, while Alavés has a stronger early-season record at 1-0-0 with WLWWD form. However, Rayo's historical dominance over Alavés and home advantage at Vallecas tips the balance. The market suggests this is a competitive fixture with Alavés at +260-285, indicating meaningful upset potential. Given Rayo's superior recent head-to-head performance and home venue advantage, a narrow home win is the most likely outcome, though the match could be close with significant draw and away win probabilities.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-19T11:41:28.673748-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano favored at home despite mixed recent form (LLWWD). Alavés shows stronger current form (WLWWD) but plays away. Historical context shows Rayo secured 2-1 away victory in May. Betting odds heavily favor home win (+125 at DraftKings), with draw at +205 and away win at +260, reflecting market confidence in Rayo. Multiple sources recommend Over 2.5 goals, suggesting offensive potential. Home advantage and odds alignment support Rayo victory as most likely outcome, though Alavés' recent form and away odds (+260-+270) warrant respect for upset possibility.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-19T11:41:46.145339-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano are home favorites in the market and have a modest edge, though Alavés arrive with slightly better recent away form.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-19T11:41:47.755779-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano have home advantage and are favored by odds, though their recent form is mixed. Alavés are in decent form but playing away. The match is expected to be competitive, but Rayo's home edge gives them a slight advantage.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-19T11:42:26.197778-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano is favored at home with +125 odds, reflecting a roughly 42% implied probability after adjusting for the sportsbook overround. Although Alavés won their opening match and Rayo lost theirs, Rayo's home advantage at Vallecas and historical success against Alavés give them the edge. The odds and market consensus point to a narrow home victory in what is expected to be an open game.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-19T11:42:30.909591-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano has a slightly better recent form and is playing at home, which gives them an edge. The odds also favor Rayo Vallecano, and they have a history of performing well against Alavés, as seen in their recent 2-1 away victory.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-19T11:43:34.922327-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Early-season odds and form metrics indicate a closely matched contest, but Rayo Vallecano holds a slight edge due to home advantage at Estadio de Vallecas. The home side's recent league head-to-head dominance over Alavés, combined with a +125 moneyline favorite status, suggests bookmakers lean toward a home result. Alavés enters with a win and solid recent form, making a draw or away upset plausible, but Rayo's familiarity with the venue and marginal market preference tilt the regulation-time probability in their favor. Expect an open match with goals, but the home side's venue advantage is the decisive factor over 90 minutes.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-19T11:44:17.133439-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rayo Vallecano hosts at Estadio de Vallecas where home advantage is historically significant, supporting the DraftKings pricing favoring them at +125. While Alavés enters with better recent away form (WLWWD vs Rayo's LLWWD), the betting market and home factor suggest a narrow home victory. Recent head-to-head history includes a Rayo away win earlier in the previous season. Early season volatility keeps confidence at medium.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-19T11:44:53.501309-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano owns a strong recent head-to-head edge after completing a league double over Alavés last season and benefits from home support at the Estadio de Vallecas. However, early-season form slightly favors the visitors, with Rayo coming off an opening-day loss (L, 0-0-1) while Alavés arrives with an opening win (W, 1-0-0) and solid away form (WLWWD). Market lines still price Rayo as the favorite (+125), but line movement toward Alavés (+260 from +285) signals market respect for the away side. The match projects as a tight, low-scoring affair, with a narrow lean to the home side driven by historical matchups and venue advantage.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-19T11:45:35.631251-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Rayo Vallecano holds home advantage and historically dominated recent H2H (completing the league double last season), but opened the campaign with a loss while Alavés won their opener. Market odds have shifted from Rayo +110 to +125, indicating money moving toward the visitors. Alavés shows better early form (WLWWD vs LLWWD), creating a tight contest despite Rayo's historical edge at Vallecas.",
+                    "event_id": "401882908"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-19T11:45:39.064017-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Alavés (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés has a slightly better recent form with a win in their last match, while Rayo Vallecano lost. However, Rayo Vallecano has home advantage and the bookmakers' odds are relatively close, suggesting a competitive match. The prediction is based on Alavés' better form and the fact that they have won the last H2H match.",
+                    "event_id": "401882908"
+                }
+            ]
+        }
+    ]
+}

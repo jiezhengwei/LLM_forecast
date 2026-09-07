@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-28",
+        "target_date_et": "2026-08-29",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879314\nMatchup: Nottingham Forest (away) @ Liverpool (home)\nHome: Liverpool\nAway: Nottingham Forest\nKickoff UTC: 2026-08-29T11:30Z\nKickoff ET: 2026-08-29 07:30 EDT\nVenue: Anfield\nRound: unavailable\nHome form: DDLDL\nAway form: LLDLD\nHome record: 0-1-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Liverpool -190 (open -195); Draw +360 (open +350); Nottingham Forest +475 (open +475)\nTavily context:\n  - Title: Liverpool vs Nottingham Forest: Predictions, Picks, Odds & Lineups\n    Content: Liverpool host Nottingham Forest at Anfield on Saturday, August 29 (7:30 AM ET / 6:30 AM CT / 4:30 AM PT).\n\nLiverpool will be without the injured Conor Bradley, Hugo Ekitiké, Joe Gomez, Jayden Danns and Giovanni Leoni, while the doubtful Curtis Jones carries a groin issue into the weekend. Mohamed Salah remains the central attacking threat, with Federico Chiesa and Andrew Robertson the other names most likely to feature further forward. ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-liverpool-vs-nottingham-forest-29-08-26-premier-league\n  - Title: Preview: Liverpool vs Nottingham Forest - prediction, team ...\n    Content: D\n\nLiverpool form (all competitions):\n\n D\n\nNottingham Forest Premier League form:\n\n L\n\nNottingham Forest form (all competitions):\n\n L\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372578-0010-1-6a8b486e5823c106611144.jpg)\n\n© Iconsport / SPI\n\nLiverpool continue to be without a number of long-term absentees, including centre-back Giovanni Leoni and right-back Conor Bradley, both of whom are recovering from knee injuries. ...\n    URL: https://www.sportsmole.co.uk/football/liverpool/preview/liverpool-vs-nottm-forest-prediction-team-news-lineups_603880.html\n  - Title: Liverpool vs Nottingham Forest Predictions, Picks & Odds - 29/08/2026\n    Content: Nottingham Forest travel to Merseyside in comparatively better spirits under new boss Oliver Glasner. Two wins from their last five outings represent a modest but encouraging start as Glasner reshapes a squad scarred by last season's managerial upheaval. Forest currently occupy fourteenth position. Glasner will be without Ryan Yates and Nicolo Savona, both expected to miss out through injury, yet the visitors carry genuine belief after their stunning result on this ground last season.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/liverpool-vs-nottingham-forest-predictions-picks-odds-29-08-2026\n  - Title: Liverpool vs Nottingham Forest Prediction, Betting Tips ...\n    Content: Sportsgambler\n\n# Liverpool vs Nottingham Forest Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n\nLiverpool FC logo\nNottingham Forest FC logo\n\n## Liverpool vs Nottingham Forest Predictions\n\n### Forest Asian Hcp +1 @ 1.97\n\nStake logo\n\nWe’re confident with our pick of Nottingham Forest +1 on the Asian Handicap and you can land odds of 1.97 that they draw or defeat Liverpool. Money is returned if the underdogs are beaten by one goal. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/liverpool-vs-nottingham-forest-prediction-lineups-odds-2026-08-29\n\nGame ID: 2\nSource event_id: 401879296\nMatchup: Everton (away) @ AFC Bournemouth (home)\nHome: AFC Bournemouth\nAway: Everton\nKickoff UTC: 2026-08-29T14:00Z\nKickoff ET: 2026-08-29 10:00 EDT\nVenue: Vitality Stadium\nRound: unavailable\nHome form: LDDWW\nAway form: WWLLD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: AFC Bournemouth +105 (open -115); Draw +250 (open +265); Everton +260 (open +295)\nTavily context:\n  - Title: Bournemouth vs Everton: Predictions, Picks, Odds & Lineups\n    Content: Bournemouth host Everton at Vitality Stadium on Saturday, August 29 (10:00 AM ET / 9:00 AM CT / 7:00 AM PT).\n\nBournemouth’s injury list is significant: the injured Julian Araujo, Eli Kroupi, Amine Adli and Veljko Milosavljevic are all out, the suspended Ryan Christie is unavailable, and Julio Soler, David Brooks, Alvaro Rodriguez and Juanlu Sanchez are all doubts. That leaves Antoine Semenyo, who scored 10 goals last season with 27 shots on target, as the focal point in attack. ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-bournemouth-vs-everton-29-08-26-premier-league\n  - Title: AFC Bournemouth vs Everton Predictions, Picks & Odds – 29/08/2026\n    Content: 46%Both teams score\n\n1.6Goals scored\n\n0.9Goals conceded\n\n| Statistic | AFC Bournemouth | Everton |\n ---\n| Last 5 results | 2W 2D 1L | · | 2W 2D 1L |\n| Avg goals scored | 1.8 | · | 1.6 |\n| Avg goals conceded | 1.5 | · | 0.9 |\n| Under 2.5 (last 5) | 3/5 | · | 2/5 |\n| H2H, last 5 meetings | 4 AFC Bournemouth · 0 Draws · 1 Everton |\n\nProbable lineup\n\n### Lineups: AFC Bournemouth vs Everton\n\n#### AFC Bournemouth\n\n4-2-3-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/afc-bournemouth-vs-everton-predictions-picks-odds-29-08-2026\n  - Title: Bournemouth vs Everton Prediction: 29.08.2026 Premier ...\n    Content: Yes approx. 2.10 | No approx. 1.70\n\nThe bookmakers make Bournemouth slight favourites at roughly 2.05 on average, reflecting home advantage and the head-to-head record. To be honest, these odds feel a touch generous for Everton given their recent form. A win for the visitors at 3.50–3.60 represents real value when you factor in Bournemouth’s poor attacking output and Everton’s current firepower. The Under 2.5 and BTTS No markets also look attractive given Bournemouth’s inability to score consistently in recent weeks.\n\n## Possible Starting Lineups\n\nImage 8 ...\n    URL: https://tips.gg/article/bournemouth-vs-everton-29-08-2026\n\nGame ID: 3\nSource event_id: 401879316\nMatchup: Hull City (away) @ Coventry City (home)\nHome: Coventry City\nAway: Hull City\nKickoff UTC: 2026-08-29T14:00Z\nKickoff ET: 2026-08-29 10:00 EDT\nVenue: Coventry Building Society Arena\nRound: unavailable\nHome form: WLWWW\nAway form: WWWWD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Coventry City -115 (open +100); Draw +250 (open +225); Hull City +340 (open +295)\nTavily context:\n  - Title: Coventry City vs Hull City - prediction, team news, lineups\n    Content: Hull City form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Faaa-cov-hull-6a8fd89674a31890592330.jpg)\n\n© Iconsport / Action Plus\n\nCoventry are still having to cope without striker Haji Wright who is nursing a thigh injury, while defenders Luke Woolfenden (knee) and Kaine Kesler-Hayden (hamstring) are also in the treatment room. ...\n    URL: https://www.sportsmole.co.uk/football/coventry-city/preview/coventry-vs-hull-city-prediction-team-news-lineups_603787.html\n  - Title: PREVIEW | Coventry City vs Hull City: team news, lineups, predictions ...\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nHull City have picked up 3 points and currently lie in 5th position. In their last game, Sergej Jakirovic's team drew 1-1 with Stoke City (Carabao Cup 2026/27).\n\nThe last meeting between the two teams ended in a 0-0 draw.\n\n## Predicted lineups\n\nCoventry City: Carl Rushworth, Milan van Ewijk, Aurèle Amenda, Bobby Thomas, Jay Dasilva, Matt Grimes, Caleb Yirenkyi, Frank Onyeka, Loum Tchaouna, Ellis Simms, Brandon Thomas-Asante ...\n    URL: https://sports.yahoo.com/articles/preview-coventry-city-vs-hull-141500962.html\n  - Title: Coventry City vs Hull City Betting Odds | England\n    Content: Money Line – Match · Coventry City1.925. Draw3.460. Hull City4.410 ; Handicap – Match · -0.51.934. +0.51.970 ; Total – Match. Over 2.751.990. Under 2.751.900.\n    URL: https://www.pinnacle.com/en/soccer/england-premier-league/coventry-city-vs-hull-city/1634444737\n  - Title: Coventry vs. Hull (Aug 29, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Brighton & Hove Albion | 1 | 1 | 0 | 0 | +4 | 3 |\n| Arsenal | 1 | 1 | 0 | 0 | +3 | 3 |\n| Brentford | 1 | 1 | 0 | 0 | +3 | 3 |\n| Everton | 1 | 1 | 0 | 0 | +2 | 3 |\n| Hull City | 1 | 1 | 0 | 0 | +2 | 3 |\n| Chelsea | 1 | 1 | 0 | 0 | +1 | 3 |\n| Ipswich Town | 1 | 1 | 0 | 0 | +1 | 3 |\n| Manchester City | 1 | 1 | 0 | 0 | +1 | 3 |\n| Leeds United | 1 | 1 | 0 | 0 | +1 | 3 |\n| Liverpool | 1 | 0 | 1 | 0 | 0 | 1 |\n| Newcastle United | 1 | 0 | 1 | 0 | 0 | 1 |\n| Fulham | 1 | 0 | 0 | 1 | -1 | 0 |\n| AFC Bournemouth | 1 | 0 | 0 | 1 | -1 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879316/hull-city-coventry-city\n\nGame ID: 4\nSource event_id: 401879312\nMatchup: Newcastle United (away) @ Tottenham Hotspur (home)\nHome: Tottenham Hotspur\nAway: Newcastle United\nKickoff UTC: 2026-08-29T16:30Z\nKickoff ET: 2026-08-29 12:30 EDT\nVenue: Tottenham Hotspur Stadium\nRound: unavailable\nHome form: WLWLD\nAway form: WDLWD\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Tottenham Hotspur +130 (open +105); Draw +275 (open +260); Newcastle United +190 (open +240)\nTavily context:\n  - Title: Tottenham vs Newcastle Prediction, Betting Tips, Lineups ...\n    Content: Dejan Kulusevski Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nPape Sarr Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-29\n\nMohammed Kudus Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nXavi Simons Cruciate ligame\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2027-02-20\n\nWilson Odobert Knee\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-11-28\n\nNewcastle  Injury Table\n\nType Name Info\n\nWilliam Osula Ankle ...\n    URL: https://www.sportsgambler.com/betting-tips/football/tottenham-vs-newcastle-prediction-lineups-odds-2026-08-29\n  - Title: Tottenham injury, suspension list and return dates for Newcastle clash: James Maddison, Pape Sarr and Mohammed Kudus latest - Sports Mole\n    Content: Premier League  Gameweek 2\n\nAug 29, 2026 5.30pm\n\n Tottenham Hotspur Stadium\n\n# Tottenham injury, suspension list and return dates for Newcastle clash: James Maddison, Pape Sarr and Mohammed Kudus latest\n\nBy   Joshua Cole   | , Last updated:\n\nMaddison, Sarr status, Kudus latest: Spurs injury, suspension list vs. Newcastle/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2025%2F08%2Fimago1061582746-1-688f70925f7b7200358465.jpg)\n\n© Imago ...\n    URL: https://www.sportsmole.co.uk/football/spurs/injury-news/injuries-and-suspensions/maddison-sarr-status-kudus-latest-spurs-injury-suspension-list-vs-newcastle_603767.html\n  - Title: Newcastle United - England. Premier League on 29.08.2026\n    Content: The main options for Tottenham Hotspur - Newcastle United: 1X2 result — home win, draw, or away win across regulation time. England. Premier\n    URL: https://ma-1xbet.com/en/line/football/88637-england-premier-league/746424828-tottenham-hotspur-tottenham-hotspur\n  - Title: Tottenham Hotspur vs Newcastle United Prediction\n    Content: The odds are: Tottenham Hotspur to win 2.25, draw 3.75, Newcastle United to win 2.90. The odds are Over 2.5 at 1.61 and Under 2.5 at 2.30. both\n    URL: https://betmines.com/match-preview/tottenham-hotspur-vs-newcastle-united-prediction-match-preview-and-analysis-premier-league-29-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879314\nMatchup: Nottingham Forest (away) @ Liverpool (home)\nHome: Liverpool\nAway: Nottingham Forest\nKickoff UTC: 2026-08-29T11:30Z\nKickoff ET: 2026-08-29 07:30 EDT\nVenue: Anfield\nRound: unavailable\nHome form: DDLDL\nAway form: LLDLD\nHome record: 0-1-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Liverpool -190 (open -195); Draw +360 (open +350); Nottingham Forest +475 (open +475)\nTavily context:\n  - Title: Liverpool vs Nottingham Forest: Predictions, Picks, Odds & Lineups\n    Content: Liverpool host Nottingham Forest at Anfield on Saturday, August 29 (7:30 AM ET / 6:30 AM CT / 4:30 AM PT).\n\nLiverpool will be without the injured Conor Bradley, Hugo Ekitiké, Joe Gomez, Jayden Danns and Giovanni Leoni, while the doubtful Curtis Jones carries a groin issue into the weekend. Mohamed Salah remains the central attacking threat, with Federico Chiesa and Andrew Robertson the other names most likely to feature further forward. ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-liverpool-vs-nottingham-forest-29-08-26-premier-league\n  - Title: Preview: Liverpool vs Nottingham Forest - prediction, team ...\n    Content: D\n\nLiverpool form (all competitions):\n\n D\n\nNottingham Forest Premier League form:\n\n L\n\nNottingham Forest form (all competitions):\n\n L\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372578-0010-1-6a8b486e5823c106611144.jpg)\n\n© Iconsport / SPI\n\nLiverpool continue to be without a number of long-term absentees, including centre-back Giovanni Leoni and right-back Conor Bradley, both of whom are recovering from knee injuries. ...\n    URL: https://www.sportsmole.co.uk/football/liverpool/preview/liverpool-vs-nottm-forest-prediction-team-news-lineups_603880.html\n  - Title: Liverpool vs Nottingham Forest Predictions, Picks & Odds - 29/08/2026\n    Content: Nottingham Forest travel to Merseyside in comparatively better spirits under new boss Oliver Glasner. Two wins from their last five outings represent a modest but encouraging start as Glasner reshapes a squad scarred by last season's managerial upheaval. Forest currently occupy fourteenth position. Glasner will be without Ryan Yates and Nicolo Savona, both expected to miss out through injury, yet the visitors carry genuine belief after their stunning result on this ground last season.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/liverpool-vs-nottingham-forest-predictions-picks-odds-29-08-2026\n  - Title: Liverpool vs Nottingham Forest Prediction, Betting Tips ...\n    Content: Sportsgambler\n\n# Liverpool vs Nottingham Forest Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n\nLiverpool FC logo\nNottingham Forest FC logo\n\n## Liverpool vs Nottingham Forest Predictions\n\n### Forest Asian Hcp +1 @ 1.97\n\nStake logo\n\nWe’re confident with our pick of Nottingham Forest +1 on the Asian Handicap and you can land odds of 1.97 that they draw or defeat Liverpool. Money is returned if the underdogs are beaten by one goal. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/liverpool-vs-nottingham-forest-prediction-lineups-odds-2026-08-29\n\nGame ID: 2\nSource event_id: 401879296\nMatchup: Everton (away) @ AFC Bournemouth (home)\nHome: AFC Bournemouth\nAway: Everton\nKickoff UTC: 2026-08-29T14:00Z\nKickoff ET: 2026-08-29 10:00 EDT\nVenue: Vitality Stadium\nRound: unavailable\nHome form: LDDWW\nAway form: WWLLD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: AFC Bournemouth +105 (open -115); Draw +250 (open +265); Everton +260 (open +295)\nTavily context:\n  - Title: Bournemouth vs Everton: Predictions, Picks, Odds & Lineups\n    Content: Bournemouth host Everton at Vitality Stadium on Saturday, August 29 (10:00 AM ET / 9:00 AM CT / 7:00 AM PT).\n\nBournemouth’s injury list is significant: the injured Julian Araujo, Eli Kroupi, Amine Adli and Veljko Milosavljevic are all out, the suspended Ryan Christie is unavailable, and Julio Soler, David Brooks, Alvaro Rodriguez and Juanlu Sanchez are all doubts. That leaves Antoine Semenyo, who scored 10 goals last season with 27 shots on target, as the focal point in attack. ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-bournemouth-vs-everton-29-08-26-premier-league\n  - Title: AFC Bournemouth vs Everton Predictions, Picks & Odds – 29/08/2026\n    Content: 46%Both teams score\n\n1.6Goals scored\n\n0.9Goals conceded\n\n| Statistic | AFC Bournemouth | Everton |\n ---\n| Last 5 results | 2W 2D 1L | · | 2W 2D 1L |\n| Avg goals scored | 1.8 | · | 1.6 |\n| Avg goals conceded | 1.5 | · | 0.9 |\n| Under 2.5 (last 5) | 3/5 | · | 2/5 |\n| H2H, last 5 meetings | 4 AFC Bournemouth · 0 Draws · 1 Everton |\n\nProbable lineup\n\n### Lineups: AFC Bournemouth vs Everton\n\n#### AFC Bournemouth\n\n4-2-3-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/afc-bournemouth-vs-everton-predictions-picks-odds-29-08-2026\n  - Title: Bournemouth vs Everton Prediction: 29.08.2026 Premier ...\n    Content: Yes approx. 2.10 | No approx. 1.70\n\nThe bookmakers make Bournemouth slight favourites at roughly 2.05 on average, reflecting home advantage and the head-to-head record. To be honest, these odds feel a touch generous for Everton given their recent form. A win for the visitors at 3.50–3.60 represents real value when you factor in Bournemouth’s poor attacking output and Everton’s current firepower. The Under 2.5 and BTTS No markets also look attractive given Bournemouth’s inability to score consistently in recent weeks.\n\n## Possible Starting Lineups\n\nImage 8 ...\n    URL: https://tips.gg/article/bournemouth-vs-everton-29-08-2026\n\nGame ID: 3\nSource event_id: 401879316\nMatchup: Hull City (away) @ Coventry City (home)\nHome: Coventry City\nAway: Hull City\nKickoff UTC: 2026-08-29T14:00Z\nKickoff ET: 2026-08-29 10:00 EDT\nVenue: Coventry Building Society Arena\nRound: unavailable\nHome form: WLWWW\nAway form: WWWWD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Coventry City -115 (open +100); Draw +250 (open +225); Hull City +340 (open +295)\nTavily context:\n  - Title: Coventry City vs Hull City - prediction, team news, lineups\n    Content: Hull City form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Faaa-cov-hull-6a8fd89674a31890592330.jpg)\n\n© Iconsport / Action Plus\n\nCoventry are still having to cope without striker Haji Wright who is nursing a thigh injury, while defenders Luke Woolfenden (knee) and Kaine Kesler-Hayden (hamstring) are also in the treatment room. ...\n    URL: https://www.sportsmole.co.uk/football/coventry-city/preview/coventry-vs-hull-city-prediction-team-news-lineups_603787.html\n  - Title: PREVIEW | Coventry City vs Hull City: team news, lineups, predictions ...\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nHull City have picked up 3 points and currently lie in 5th position. In their last game, Sergej Jakirovic's team drew 1-1 with Stoke City (Carabao Cup 2026/27).\n\nThe last meeting between the two teams ended in a 0-0 draw.\n\n## Predicted lineups\n\nCoventry City: Carl Rushworth, Milan van Ewijk, Aurèle Amenda, Bobby Thomas, Jay Dasilva, Matt Grimes, Caleb Yirenkyi, Frank Onyeka, Loum Tchaouna, Ellis Simms, Brandon Thomas-Asante ...\n    URL: https://sports.yahoo.com/articles/preview-coventry-city-vs-hull-141500962.html\n  - Title: Coventry City vs Hull City Betting Odds | England\n    Content: Money Line – Match · Coventry City1.925. Draw3.460. Hull City4.410 ; Handicap – Match · -0.51.934. +0.51.970 ; Total – Match. Over 2.751.990. Under 2.751.900.\n    URL: https://www.pinnacle.com/en/soccer/england-premier-league/coventry-city-vs-hull-city/1634444737\n  - Title: Coventry vs. Hull (Aug 29, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Brighton & Hove Albion | 1 | 1 | 0 | 0 | +4 | 3 |\n| Arsenal | 1 | 1 | 0 | 0 | +3 | 3 |\n| Brentford | 1 | 1 | 0 | 0 | +3 | 3 |\n| Everton | 1 | 1 | 0 | 0 | +2 | 3 |\n| Hull City | 1 | 1 | 0 | 0 | +2 | 3 |\n| Chelsea | 1 | 1 | 0 | 0 | +1 | 3 |\n| Ipswich Town | 1 | 1 | 0 | 0 | +1 | 3 |\n| Manchester City | 1 | 1 | 0 | 0 | +1 | 3 |\n| Leeds United | 1 | 1 | 0 | 0 | +1 | 3 |\n| Liverpool | 1 | 0 | 1 | 0 | 0 | 1 |\n| Newcastle United | 1 | 0 | 1 | 0 | 0 | 1 |\n| Fulham | 1 | 0 | 0 | 1 | -1 | 0 |\n| AFC Bournemouth | 1 | 0 | 0 | 1 | -1 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879316/hull-city-coventry-city\n\nGame ID: 4\nSource event_id: 401879312\nMatchup: Newcastle United (away) @ Tottenham Hotspur (home)\nHome: Tottenham Hotspur\nAway: Newcastle United\nKickoff UTC: 2026-08-29T16:30Z\nKickoff ET: 2026-08-29 12:30 EDT\nVenue: Tottenham Hotspur Stadium\nRound: unavailable\nHome form: WLWLD\nAway form: WDLWD\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Tottenham Hotspur +130 (open +105); Draw +275 (open +260); Newcastle United +190 (open +240)\nTavily context:\n  - Title: Tottenham vs Newcastle Prediction, Betting Tips, Lineups ...\n    Content: Dejan Kulusevski Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nPape Sarr Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-29\n\nMohammed Kudus Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nXavi Simons Cruciate ligame\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2027-02-20\n\nWilson Odobert Knee\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-11-28\n\nNewcastle  Injury Table\n\nType Name Info\n\nWilliam Osula Ankle ...\n    URL: https://www.sportsgambler.com/betting-tips/football/tottenham-vs-newcastle-prediction-lineups-odds-2026-08-29\n  - Title: Tottenham injury, suspension list and return dates for Newcastle clash: James Maddison, Pape Sarr and Mohammed Kudus latest - Sports Mole\n    Content: Premier League  Gameweek 2\n\nAug 29, 2026 5.30pm\n\n Tottenham Hotspur Stadium\n\n# Tottenham injury, suspension list and return dates for Newcastle clash: James Maddison, Pape Sarr and Mohammed Kudus latest\n\nBy   Joshua Cole   | , Last updated:\n\nMaddison, Sarr status, Kudus latest: Spurs injury, suspension list vs. Newcastle/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2025%2F08%2Fimago1061582746-1-688f70925f7b7200358465.jpg)\n\n© Imago ...\n    URL: https://www.sportsmole.co.uk/football/spurs/injury-news/injuries-and-suspensions/maddison-sarr-status-kudus-latest-spurs-injury-suspension-list-vs-newcastle_603767.html\n  - Title: Newcastle United - England. Premier League on 29.08.2026\n    Content: The main options for Tottenham Hotspur - Newcastle United: 1X2 result — home win, draw, or away win across regulation time. England. Premier\n    URL: https://ma-1xbet.com/en/line/football/88637-england-premier-league/746424828-tottenham-hotspur-tottenham-hotspur\n  - Title: Tottenham Hotspur vs Newcastle United Prediction\n    Content: The odds are: Tottenham Hotspur to win 2.25, draw 3.75, Newcastle United to win 2.90. The odds are Over 2.5 at 1.61 and Under 2.5 at 2.30. both\n    URL: https://betmines.com/match-preview/tottenham-hotspur-vs-newcastle-united-prediction-match-preview-and-analysis-premier-league-29-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879314",
+                        "date_utc": "2026-08-29T11:30Z",
+                        "kickoff_et": "2026-08-29 07:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Liverpool",
+                        "away": "Nottingham Forest",
+                        "home_id": "364",
+                        "away_id": "393",
+                        "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                        "venue": "Anfield",
+                        "city": "Liverpool",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DDLDL",
+                        "form_away": "LLDLD",
+                        "record_home": "0-1-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-195",
+                            "home_current": "-190",
+                            "draw_open": "+350",
+                            "draw_current": "+360",
+                            "away_open": "+475",
+                            "away_current": "+475"
+                        },
+                        "odds_text": "DraftKings: Liverpool -190 (open -195); Draw +360 (open +350); Nottingham Forest +475 (open +475)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879296",
+                        "date_utc": "2026-08-29T14:00Z",
+                        "kickoff_et": "2026-08-29 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "AFC Bournemouth",
+                        "away": "Everton",
+                        "home_id": "349",
+                        "away_id": "368",
+                        "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                        "venue": "Vitality Stadium",
+                        "city": "Bournemouth",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LDDWW",
+                        "form_away": "WWLLD",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "+105",
+                            "draw_open": "+265",
+                            "draw_current": "+250",
+                            "away_open": "+295",
+                            "away_current": "+260"
+                        },
+                        "odds_text": "Provider unavailable: AFC Bournemouth +105 (open -115); Draw +250 (open +265); Everton +260 (open +295)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401879316",
+                        "date_utc": "2026-08-29T14:00Z",
+                        "kickoff_et": "2026-08-29 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Coventry City",
+                        "away": "Hull City",
+                        "home_id": "388",
+                        "away_id": "306",
+                        "matchup": "Hull City (away) @ Coventry City (home)",
+                        "venue": "Coventry Building Society Arena",
+                        "city": "Coventry",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WLWWW",
+                        "form_away": "WWWWD",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+100",
+                            "home_current": "-115",
+                            "draw_open": "+225",
+                            "draw_current": "+250",
+                            "away_open": "+295",
+                            "away_current": "+340"
+                        },
+                        "odds_text": "Provider unavailable: Coventry City -115 (open +100); Draw +250 (open +225); Hull City +340 (open +295)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401879312",
+                        "date_utc": "2026-08-29T16:30Z",
+                        "kickoff_et": "2026-08-29 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Tottenham Hotspur",
+                        "away": "Newcastle United",
+                        "home_id": "367",
+                        "away_id": "361",
+                        "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                        "venue": "Tottenham Hotspur Stadium",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WLWLD",
+                        "form_away": "WDLWD",
+                        "record_home": "0-0-1",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+105",
+                            "home_current": "+130",
+                            "draw_open": "+260",
+                            "draw_current": "+275",
+                            "away_open": "+240",
+                            "away_current": "+190"
+                        },
+                        "odds_text": "Provider unavailable: Tottenham Hotspur +130 (open +105); Draw +275 (open +260); Newcastle United +190 (open +240)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-28T11:28:03.473793-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:10:21.025481-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are strong favorites at Anfield. Despite several minor injuries for both squads, Liverpool's quality and home advantage make them highly likely to secure all three points, as reflected in the market odds where they are heavily favored.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth are slight favorites at home, but they are dealing with a significant injury list, including the suspension of Ryan Christie. While Everton's away form has shown flashes of resilience, the home side is expected to edge a close contest.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City are favored at home with odds around -115. Although Hull City has had a solid start to their season, Coventry's home advantage makes them the most likely side to take the victory in this matchup.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested match with close odds. Tottenham are slight home favorites at +130, but Newcastle remains a dangerous opponent. Given the high-scoring nature of both teams and key injury concerns for Spurs, a home win is predicted with low confidence.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-28T11:10:39.310504-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool is a heavy favorite at home, backed by strong implied betting probabilities (-190 moneyline), despite missing several injured players. Nottingham Forest faces an uphill battle at Anfield.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth holds home-field advantage and is the favorite according to oddsmakers at +105. While Everton poses a threat given Bournemouth's injury list, the hosts remain the most probable winners in regulation.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City is favored at home with odds around -115, reflecting a higher than 50% probability of securing a win. Hull City carries some momentum but is projected to struggle away from home.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This shapes up to be a highly competitive match. Tottenham is given a slight edge due to playing at home (+130 odds), but Newcastle has the quality to keep it tight, resulting in a somewhat balanced probability distribution.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-28T11:11:12.203226-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are strong favorites at Anfield, as reflected in the betting odds. Despite several injuries and an inconsistent start to the season, their superior squad quality should be sufficient to secure a victory against a Nottingham Forest side that has also started poorly. While Forest achieved a good result here last season, repeating that is unlikely.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This match presents conflicting signals. Bournemouth has a strong head-to-head record and home advantage, making them slight betting favorites. However, they are facing a severe injury and suspension crisis. Everton started the season with a win and appears to be in better shape. Given these opposing factors, a draw is a highly plausible outcome.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "The betting markets have established Coventry City as a solid home favorite, despite them losing their opening game while Hull City won theirs. This implies a belief in Coventry's underlying quality and strong home form. Although Coventry is dealing with injuries to key players like Haji Wright, the market confidence is significant enough to predict a home victory.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is expected to be a tightly contested match between two top-half teams. Tottenham has the home advantage but is hampered by a notable list of injuries to key midfield and attacking players. Newcastle is a strong side capable of challenging any opponent on the road. The combination of Tottenham's depleted squad and Newcastle's quality makes a draw a very probable result.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:11:36.789438-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Liverpool, despite some squad injuries, retains key attacking threats and holds a strong home advantage at Anfield, which the odds heavily reflect. While Nottingham Forest showed encouraging signs under their new manager and pulled off an upset at Anfield last season, Liverpool's overall quality and a likely desire to bounce back from their opening home draw should secure a victory.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "AFC Bournemouth faces a significant injury crisis, affecting several key players and potentially impacting their squad depth. In contrast, Everton started the season with an impressive away win and boasts a better defensive record in recent games. While historical head-to-head favors Bournemouth, their current injury woes and home loss in the first game, coupled with Everton's strong start, suggest a tightly contested match where a draw is a very plausible outcome.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have shown good recent form, but Hull City has enjoyed a stronger start to the season with an away win and holds a higher league position. Coventry City, on the other hand, lost their first home game and is dealing with injuries to several important players. The last encounter between these two sides was a goalless draw, indicating a potentially tight affair. Hull's momentum and Coventry's injury concerns point towards a difficult fixture for the home side, making a draw a strong possibility.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Tottenham enters this clash with significant injuries, particularly in midfield, including key players like Mohammed Kudus being out and Pape Sarr doubtful. They also unexpectedly lost their first home game of the season. Newcastle United managed an away draw in their opening fixture and, despite some injury concerns of their own, appear relatively more stable. Given Spurs' injury list and their recent home stumble against a tough opponent like Newcastle, a draw is a highly probable outcome.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:13:41.894160-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are a clear market favorite at Anfield with the stronger squad baseline. Their injury list and Forest's potential to keep the match competitive reduce the edge slightly, but the most likely 90-minute result remains a Liverpool home win.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth have home advantage and a favorable recent head-to-head profile, but their injury and suspension absences are significant. Everton's early form keeps this close, so the home win is only a narrow preference.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry are priced as home favorites and should benefit from venue advantage, even with some injury concerns. Hull arrive in good form, which keeps draw and away-win risk meaningful, but Coventry remain the likeliest winner.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham retain a slight home-field and market edge, but injuries in attacking and midfield areas reduce confidence. Newcastle's solid form and healthier profile make this a close matchup with substantial away-win risk.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:14:02.244578-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear home favorites at Anfield, with the 1X2 market strongly favoring a home win. Their injury list lowers the ceiling somewhat, and Nottingham Forest have enough defensive resilience to keep the draw probability meaningful, but Liverpool still have the stronger squad and attacking match-winners.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth are slight home favorites, helped by venue and a strong recent head-to-head profile against Everton. However, Bournemouth have multiple injuries and suspension concerns, while Everton arrive with better early-season record indicators, making this a narrow and low-confidence home-leaning forecast.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry are priced as solid home favorites and should benefit from playing at the Coventry Building Society Arena. Hull enter in strong form and have started well, so the away and draw chances are not negligible, but the market and home advantage point to Coventry as the most likely 90-minute outcome.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham retain a small home-edge in a matchup where the betting market is fairly tight. Spurs' injury concerns in midfield and attack reduce confidence, while Newcastle's recent form and market support make the away win a serious threat. The most likely single outcome remains a narrow Tottenham home win, but only marginally.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-28T11:14:45.070452-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Market pricing makes Liverpool a clear favorite and Anfield home advantage is significant. Despite several absences, Liverpool still project as the stronger side in chance creation with Salah as the focal point, while Forest’s recent form is weaker and they face a difficult defensive workload away.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This looks close to a coin-flip match: Bournemouth have home edge but a heavy injury/suspension list, while Everton’s recent results are competitive and the odds have moved against Bournemouth. With both teams’ profiles suggesting volatility, a stalemate is the most likely single outcome in a near-even 1X2.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry are priced as the favorite at home and generally benefit from venue/territory control, but Hull’s strong recent form keeps the away win and draw live. Coventry injuries (notably in attack) reduce separation, so the home win is the top outcome but not dominant.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds suggest a tight matchup, but Newcastle’s steadier recent form and Tottenham’s injury concerns in midfield/attack tilt the balance slightly toward the visitors. Spurs’ home advantage keeps this close, with the draw also a meaningful outcome.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-28T11:15:02.452792-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor Liverpool at Anfield and despite several injury absences the home side retain superior attacking quality (Salah, Chiesa). Forest are resilient under Glasner but are clear underdogs; probability reflects home advantage tempered by Liverpool's injuries.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers make Bournemouth slight favorites at home, though their injury list is significant. Everton have shown good form recently; this forecast leans to a narrow Bournemouth edge while allowing a sizable draw/away chance.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry are favored at home with good recent form and home advantage. Hull have also been strong, so probabilities reflect a competitive game but a modest Coventry edge given squad status and home pitch.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market and form suggest a tight contest with Newcastle slightly favored despite being away. Tottenham's injury concerns and inconsistency increase upset risk; forecast gives Newcastle a narrow edge while keeping draw probability meaningful.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-28T11:15:22.504764-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are at home with stronger form and odds favor them despite notable injuries. Nottingham Forest have some absences as well, but the home advantage and familiarity of Anfield support a regulation-time win for Liverpool.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth are slight favorites at home, but Everton's solid start and travel considerations keep this contest tight. A narrow home win is projected given Bournemouth’s home edge.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry's strong home form suggests they can resist Hull's challenge at Coventry Building Society Arena. Hull may struggle to convert away chances, favoring a Coventry home victory in regulation time.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham face injury concerns in midfield, while Newcastle have shown resilience on the road. The odds tilt toward an away win for Newcastle, with Tottenham at risk of conceding late.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-28T11:15:27.827966-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool are strong favorites at Anfield despite some injury concerns, with Salah and Chiesa leading the attack. Nottingham Forest have improved under Glasner but remain inconsistent away from home and are missing key players. Bookmaker odds and recent form both heavily favor Liverpool, though Forest's resilience could keep the scoreline respectable.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth are slight favorites due to home advantage and a strong head-to-head record, but their injury list is significant. Everton's recent form is solid and they have value as underdogs, but Bournemouth's attacking options and home crowd give them a marginal edge. A draw is also a strong possibility given both teams' recent results.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry have a slight edge at home despite missing key players, while Hull City are in good form and unbeaten in their last five. The odds and recent results suggest a close contest, but Coventry's home advantage and attacking depth tip the balance in their favor. A draw or narrow away win is possible if Hull maintain their form.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have injury concerns and have shown mixed form. Tottenham are slight favorites at home, but Newcastle's away record and attacking threat make this a very even matchup. Bookmaker odds are close, and both sides are capable of scoring, making a draw the most likely outcome in a competitive fixture.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-28T11:15:36.812234-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool's strong home advantage at Anfield and Nottingham Forest's inconsistent form make Liverpool the favorites despite some injuries.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth's home advantage and Everton's recent form suggest a close match, but Bournemouth's injuries could impact their performance.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City's solid home form and Hull City's recent draw suggest a slight edge for Coventry, though Hull's unbeaten streak makes it competitive.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have key injuries, but Newcastle's recent form and Tottenham's injury list make this a very balanced match, with a slight edge to Newcastle.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-28T11:15:56.089923-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market makes Liverpool clear favorites at Anfield (-190). Liverpool's recent form has been shaky (DDLDL) and they carry several injuries (Bradley, Ekitike, Gomez, Leoni), but Forest's form is worse (LLDLD) and they're missing Yates and Savona. Salah remains the key attacking threat; home advantage and squad quality make Liverpool the most likely winner, though not with high certainty given their form dip.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth are slight home favorites (+105) with a strong recent H2H record (4 wins in last 5 meetings), but they face a lengthy injury/suspension list including Christie, Adli, and Kroupi, leaving Semenyo carrying the attack. Everton opened the season with a win and have solid defensive numbers (0.9 goals conceded avg). Close match; marginal home edge but low confidence.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Coventry are moderate home favorites per Pinnacle (1.93 vs 4.41 for Hull), and their overall form (WLWWW) is strong despite injuries to Wright, Woolfenden, and Kesler-Hayden. Hull arrive in excellent form (WWWWD) and won their opener, which narrows the gap. The last meeting was a 0-0 draw, suggesting a tight contest, but home advantage tilts this to Coventry.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Spurs are modest home favorites (+130) but the line has drifted toward Newcastle (from +240 to +190). Tottenham are hit hard by midfield injuries (Kulusevski, Sarr, Kudus, Simons, Odobert), while Newcastle's absentee list is lighter. Both sides show mixed form. Home advantage gives Spurs a slight edge, but this is close to a three-way coin flip with Newcastle a live threat.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-28T11:16:06.142018-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Liverpool",
+                    "confidence": "high",
+                    "reasoning": "Liverpool are strong favorites at home (-190) despite injuries, with Salah leading the attack. Forest have started slowly and Anfield remains a difficult venue.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "AFC Bournemouth",
+                    "confidence": "low",
+                    "reasoning": "Tight matchup with Bournemouth slight home favorites. Their significant injury list to attackers offsets home advantage, but H2H strongly favors them (4-0-1). Everton have solid defensive form.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Coventry City",
+                    "confidence": "medium",
+                    "reasoning": "Coventry favored at home with strong recent form, though Hull are unbeaten in their last five. Injuries to Coventry's Wright and defenders are a concern, keeping this competitive.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Tottenham Hotspur",
+                    "confidence": "low",
+                    "reasoning": "Home advantage gives Spurs a slight edge, but they have midfield injuries (Kudus, Sarr, Kulusevski, Simons). Newcastle are competitive and this is closely priced.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-28T11:16:26.654505-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear favourites at Anfield despite several injury absences including Bradley, Gomez, and Ekitiké. Salah remains a key threat and Liverpool's home advantage is significant. However, Liverpool's recent form has been mixed (DDLDL) and Forest showed resilience last season on this ground. The odds (Liverpool ~-190) imply roughly 65% home win probability but their patchy form and injury concerns temper confidence. Forest under Glasner have shown modest improvement but their away form (LLDLD) is poor. Adjusting slightly from the market-implied probability to account for Liverpool's form concerns.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight match. Bournemouth are slight favourites at home but carry significant injury concerns (Araujo, Christie suspended, multiple doubts). Everton arrive with a win from their opening fixture and solid defensive record (0.9 goals conceded on average). The H2H favours Bournemouth (4-0-1 over last 5), but Everton's current form (WWLLD) and firepower make them competitive. The odds have shifted dramatically with Bournemouth moving from -115 to +105, suggesting market reassessment. The match is essentially a coin flip; a narrow Bournemouth home win is marginally favoured due to home advantage.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Coventry are slight home favourites in what looks an evenly contested Championship/PL match. Coventry's strong recent form (WLWWW) and home record are positive indicators, though they're missing striker Haji Wright and two defenders. Hull have started well (WWWWD) with 3 points from their opener and drew in the Carabao Cup. The last H2H ended 0-0. Coventry's odds shifted from +100 to -115 suggesting late market movement in their favour. This is a low-confidence pick given how close the teams appear in quality.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham host Newcastle in a closely contested match with Spurs carrying notable injury concerns including Maddison, Kudus, Sarr, Kulusevski, Odobert and Simons. The odds have shifted significantly against Spurs (from -105 to +130), reflecting these absences. Newcastle drew their opener and have decent away form (WDLWD). The market now makes this essentially even money, but Spurs retain a marginal home advantage. Given Tottenham's depleted squad vs Newcastle's strength, this is very uncertain. The low confidence reflects the injury-hit Spurs side and the market's indecision.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-28T11:16:51.971915-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool at Anfield are strong favorites with odds of -190. Despite multiple injury absences including Bradley, Gomez, and potentially Curtis Jones, Liverpool retain attacking quality with Salah leading the line. Forest under new manager Glasner have shown modest improvement (2 wins in last 5) but their away form is poor (LLDLD) and they sit 14th. Liverpool's form is mixed (DDLDL) but Anfield advantage is significant. The odds reflect Liverpool's dominance, though Forest's shock result here last season adds slight caution. Liverpool's attacking threat versus Forest's struggles away makes a home win most likely, though not overwhelming given Liverpool's inconsistent form.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This is a tight match with Bournemouth slight favorites at +105 despite home advantage. Bournemouth have significant injuries (Araujo, Kroupi, Adli, Milosavljevic out, Christie suspended, plus four doubts including key players). Their attacking output has been poor recently. Everton show better current form with superior defensive stats (0.9 goals conceded vs 1.5) and have won their opening match. The H2H heavily favors Bournemouth (4-0-1 in last 5), providing home confidence. Bournemouth average 1.8 goals scored versus Everton's 1.6, but recent form suggests Everton offer value. The close odds (+105 home vs +260 away) reflect uncertainty. Given Bournemouth's home record advantage and betting market position, slight edge to home, but this is essentially a coin flip.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Coventry are marginal favorites at -115 at home. Both teams won their opening matches and show strong recent form - Coventry (WLWWW) and Hull (WWWWD). Hull sit 5th with good momentum, while Coventry have injury concerns with Wright (thigh), Woolfenden (knee), and Kesler-Hayden (hamstring) out. The last meeting was 0-0, suggesting tight contests. Odds have shifted with Coventry moving from +100 to -115, indicating late money on the home side. Hull's away form is solid and they're unbeaten in recent matches. The betting market is very tight (home -115, draw +250, away +340), reflecting genuine uncertainty. Home advantage and market position give Coventry a slight edge, but Hull's form and position make this highly competitive with draw also realistic.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Surprisingly, Newcastle are favorites at +190 versus Tottenham at +130 despite being away, indicating market skepticism about Spurs. Tottenham have significant injuries: Kulusevski (knee), Sarr (thigh doubtful for this match), Mohammed Kudus (thigh), Xavi Simons (ACL, long-term), and Odobert (knee). Newcastle also miss Osula (ankle). Spurs' form is mixed (WLWLD) with a loss in their opener, while Newcastle drew their opener (WDLWD). The odds suggesting Newcastle as favorites away from home is unusual and reflects Tottenham's injury crisis and inconsistency. However, at Tottenham Hotspur Stadium, home advantage still matters. The tight odds (essentially a pick'em) and both teams' inconsistent form makes this very difficult to call. Marginal edge to Tottenham at home given venue advantage, but confidence is very low.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-28T11:17:02.360256-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool are heavy favorites at -190 odds with home advantage at Anfield. Despite injury concerns (Bradley, Gomez, Ekitiké, Jones), they have Salah as central threat and superior squad depth. Nottingham Forest's 1-2-0 early record and away form (LLDLD) suggest vulnerability. Liverpool's recent form shows resilience with draws, indicating control. Forest's belief from last season's upset is noted but Liverpool's class should prevail in regulation time.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth slight favorites (+105 odds) with home advantage despite significant injury concerns (Araujo, Kroupi, Adli, Christie suspended). Everton in better form (1-0-0 record with wins) but average only 1.6 goals and concede 0.9. Bournemouth's last 5 shows 2W-2D-1L. Head-to-head favors Bournemouth (4-0-1). Under 2.5 likely given defensive solidity. Bournemouth edge at home but competitive match.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry slight favorites at -115 odds despite injuries (Wright, Woolfenden, Kesler-Hayden out). Home advantage at Coventry Building Society Arena significant. Coventry's form (WLWWW) shows recent strength with 3 wins in last 5. Hull strong in early season (1-0-0, 5th position, 1W drawn with Stoke) but away form (WWWWD) contains early draw. Last H2H ended 0-0. Competitive fixture with Coventry's home form giving edge.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham slight favorites at +130 odds with home advantage at Tottenham Hotspur Stadium. Both teams have injury concerns: Tottenham missing Maddison, Sarr, Kudus; Newcastle missing Osula. Tottenham's form (WLWLD) shows inconsistency; Newcastle (WDLWD) similarly mixed. Odds suggest close contest. Tottenham's home record and recent fixture at stadium favor slight home advantage. Newcastle's away record (0-1-0) suggests some vulnerability on road. Competitive match with marginal Spurs edge.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-28T11:20:45.088299-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear favorites at Anfield, with Nottingham Forest's away form weak, although Liverpool's injury list tempers confidence.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth have a narrow edge via odds and home advantage, but significant injuries and Everton's solid away form make the match close.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Coventry have strong recent home form and are odds-on, while Hull are competitive but less favored on the road.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Tottenham hold a marginal home edge, but injuries and Newcastle's shortened odds create a close contest with no high-confidence outcome.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-28T11:20:48.878798-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are strong at home and have superior squad depth despite injuries. Nottingham Forest have poor away form and are missing key players. Odds heavily favor Liverpool.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth have home advantage and a strong head-to-head record, but Everton are in good form. The match is close, with Bournemouth slight favorites.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Coventry have strong home form and are favored by odds, but Hull are also in good form. Slight edge to Coventry due to home advantage.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham have home advantage but are missing key players. Newcastle are in decent form. The match is evenly balanced, with Spurs slight favorites.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-28T11:21:34.980592-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool is heavily favored at Anfield despite some injury concerns. Nottingham Forest is struggling with poor recent form, making a home win the most likely outcome.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth has home advantage but is dealing with a significant injury list. Everton is competitive, making this a tight matchup, but the home edge gives Bournemouth a slight edge.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City is favored at home against Hull City. Despite missing Haji Wright, Coventry's home advantage and the betting odds leaning towards the hosts make a home win the most probable result.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham is favored at home despite a lengthy injury list in midfield and attack. Newcastle's away form is solid, but the odds and home-field advantage at the Tottenham Hotspur Stadium lean towards a home win.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-28T11:21:50.410788-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool, despite their recent form, are playing at home and have a strong attacking lineup. Nottingham Forest, although in better spirits, still face significant challenges, especially with key players out.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have shown mixed form recently, and the injury list for Bournemouth is quite significant. Everton, on the other hand, has been performing well away from home, making this a closely contested match.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City has a strong home record and is currently in good form. Hull City, while also in good form, might struggle against a solid Coventry defense and the home advantage.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Tottenham has several key players injured, which could affect their performance. Newcastle, while having a decent away record, may find it challenging to secure a win against a determined Tottenham side at home.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-28T11:23:09.165647-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool's home advantage and elite attacking threat (Salah, Chiesa) outweigh their defensive injury concerns. Nottingham Forest's poor recent form and missing key midfielders make a road victory difficult, aligning with odds that strongly favor the hosts for a narrow win.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth's extensive injury list and suspension severely weaken their squad depth and attacking output at home. Everton's improved defensive structure and solid recent form give the visitors a slight edge in what should be a tight, low-scoring contest.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Hull City arrives in excellent form and a strong league position, while Coventry City is missing key attacking and defensive personnel and has yet to secure a point. Hull's defensive solidity and momentum suggest they can capitalize on Coventry's vulnerabilities on the road.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.36,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham's severe injury crisis in midfield and attack heavily limits their creativity and control at home. Newcastle United's disciplined shape and recent form make them well-equipped to contain the hosts, leading to a tactical, evenly matched contest likely to end in a stalemate.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-28T11:24:04.680442-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool holds strong historical advantage at Anfield despite several defensive injuries. Nottingham Forest displays poor away form (LLDLD), making an upset unlikely despite Forest's recent managerial changes.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth favored by market and head-to-head records, but significant injury list reduces offensive reliability. Everton's improved defensive metrics offer draw value, creating a volatile fixture environment.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry's strong home form and betting favoritism suggest an edge, yet Hull's perfect recent form and injury absence of Coventry's main striker introduce significant risk of a stalemate.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Spurs maintain slight market favoritism due to home advantage, but critical midfield and attacking absences (Maddison, Kudus, etc.) severely weaken the squad against an organized Newcastle side.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-28T11:27:16.782072-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool possess superior individual quality and the fortress of Anfield, where they rarely drop points to mid-table sides. Nottingham Forest are under a new manager, missing key players, and arrive with poor form and low confidence. Even with Liverpool’s own injury list, the gulf in class and home advantage make a Reds victory the clear expectation.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Bournemouth own a dominant recent head-to-head record at the Vitality Stadium, but an extensive injury and suspension list significantly weakens their spine. Everton have begun the campaign with promising away form and firepower, and the market has reacted by shortening the visitors. The match projects as a tight, low-scoring affair where home advantage is only a slender edge.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry are priced as solid favorites owing to their traditionally strong home record and deeper squad, even after an opening home defeat and with attacking injuries. Hull enter in excellent early-season away form, but a step up in class against motivated hosts in a Midlands derby likely sees the Sky Blues restore home pride.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham’s market price has drifted significantly after an opening home defeat and a mounting injury crisis in midfield, causing Newcastle’s chances to be upgraded. However, Spurs still retain match-winners in forward areas and the structural benefits of home territory. A narrow home win remains marginally more probable than a draw or an away upset, though confidence is limited.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-28T11:27:56.703927-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool hold a significant quality advantage at Anfield despite injury absences. Nottingham Forest's poor form (LLDLD) and defensive vulnerabilities against a motivated Mohamed Salah tilt the probability heavily toward a home victory, aligning with market odds pricing Liverpool at -190.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth's strong head-to-head record (4 wins in last 5) and home advantage make them slight favorites despite significant injury and suspension issues affecting their squad depth. Everton's solid start to the season keeps the contest competitive, but Vitality Stadium form prevails.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City's strong home form (WLWWW) and superior squad depth position them as narrow favorites against a Hull City side that, while unbeaten in five (WWWWD), faces a step up in class at the Coventry Building Society Arena. Home advantage and tactical control should secure the points.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham's extensive injury crisis in midfield—missing Kulusevski, Kudus, and potentially Sarr—severely weakens their control and creativity against a structured Newcastle side. The market has shifted toward Newcastle (from +240 to +190), reflecting value on the away team exploiting Spurs' depleted engine room.",
+                    "event_id": "401879312"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-28T11:28:03.465097-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Liverpool (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Liverpool are strong favorites at home, with Nottingham Forest struggling in away form.",
+                    "event_id": "401879314"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Everton (away) @ AFC Bournemouth (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bournemouth have a slight edge at home, but Everton's recent form makes this a close match.",
+                    "event_id": "401879296"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Hull City (away) @ Coventry City (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Coventry City have been strong at home, while Hull City's away form is less consistent.",
+                    "event_id": "401879316"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Newcastle United (away) @ Tottenham Hotspur (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham Hotspur have home advantage, but Newcastle United's form makes this a closely contested match.",
+                    "event_id": "401879312"
+                }
+            ]
+        }
+    ]
+}

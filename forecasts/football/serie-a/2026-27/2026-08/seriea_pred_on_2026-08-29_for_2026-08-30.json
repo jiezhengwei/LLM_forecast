@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-29",
+        "target_date_et": "2026-08-30",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874755\nMatchup: Como (away) @ Napoli (home)\nHome: Napoli\nAway: Como\nKickoff UTC: 2026-08-30T16:30Z\nKickoff ET: 2026-08-30 12:30 EDT\nVenue: Stadio Diego Armando Maradona\nRound: unavailable\nHome form: WWWLD\nAway form: DWWWD\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Napoli +145 (open +135); Draw +190 (open +205); Como +200 (open +190)\nTavily context:\n  - Title: Napoli vs Como Prediction, Betting Tips, Lineups & Odds\n    Content: Udinese 1-1 Como\n\nConfirmed Lineups\n\n24 May Serie A\n\nCremonese 1-4 Como\n\nConfirmed Lineups\n\n17 May Serie A\n\nComo 1-0 Parma\n\nConfirmed Lineups\n\n10 May Serie A\n\nHellas Verona 0-1 Como\n\nConfirmed Lineups\n\n02 May Serie A\n\nComo 0-0 Napoli\n\nConfirmed Lineups\n\n26 Apr Serie A\n\nGenoa 0-2 Como\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nNapoli  Injury Table\n\nType Name Info\n\nMichael Folorunsho Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nPasquale Mazzocchi Knee\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nRafa Marin Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/napoli-vs-como-prediction-lineups-odds-2026-08-30\n  - Title: Napoli vs Como - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Napoli vs Como — Sun 30 August, 16:30 UTC\n\nSerie A Round 2\n\n Serie A Round 2\n Stadio Diego Armando Maradona\n\nNapoliNapoli\n\n‌\n‌\n\nComoComo\n\n# Napoli vs Como — Sun 30 August, 16:30 UTC\n\nSerie A Round 2\n\n Serie A Round 2\n Stadio Diego Armando Maradona\n\nNapoliNapoli\n\n‌\n‌\n\nComoComo\n\n## Napoli4-3-3\n\n## Predicted lineup\n\n## Como4-2-3-1\n\nNapoli\n\n4-3-3\n\n1Meret\n\n22Di Lorenzo\n\n13Rrahmani\n\n16Marín\n\n37Spinazzola\n\n99Anguissa\n\n68Lobotka\n\n8McTominay\n\n21Politano\n\n19Højlund\n\n27Santos\n\n9Douvikas\n\n20Baturina\n\n10Paz\n\n11Diao\n\n6Milla\n\n7Da Cunha\n\n3Valle\n\n99Chalobah\n\n4Ramón\n\n27Couto\n\n1Butez\n\nComo ...\n    URL: https://www.fotmob.com/en-GB/matches/napoli-vs-como/3bmv18\n  - Title: Napoli vs Como Preview & Match Analysis - August 30, 2026\n    Content: Polymarket traders make Napoli the favorite, pricing a home victory at 38%, while a Como win is priced at 31%. The draw carries a 32% implied probability. Those numbers suggest a highly competitive contest despite Napoli’s home-field advantage. The relatively small gap between the three outcomes may reflect some respect in the market for Como’s impressive 2025-26 campaign and its strong recent record against Napoli. Both league meetings between these clubs finished scoreless last season, while Como also eliminated Napoli from the Coppa Italia on penalties. ...\n    URL: https://ats.io/soccer/seriea/match-analysis-napoli-vs-como-8-30-2026\n  - Title: Napoli vs Como Prediction, Odds & Betting Tips | 30.08.2026 | Serie A\n    Content: Bet here\n\n## Additional predictions\n\nNapoli vs Como odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| Granawin logo  Granawin | 2.50 | 3.00 | 3.00 | 2.38 | 1.55 |\n| Megapari logo  Megapari | 2.50 | 3.00 | 3.10 | 2.30 | 1.61 |\n| Mostbet logo  Mostbet | 2.45 | 3.13 | 3.06 | 2.43 | 1.66 |\n| Roobet logo  Roobet | 2.50 | 3.00 | 3.10 | 2.30 | 1.61 |\n| Helabet logo  Helabet | 2.55 | 3.25 | 3.17 | 2.43 | 1.66 |\n| 20Bet logo  20Bet | 2.40 | 3.25 | 2.90 | 2.25 | 1.62 |\n| 22bet logo  22bet | 2.50 | 3.00 | 3.00 | 2.38 | 1.55 | ...\n    URL: https://www.mightytips.com/football-predictions/napoli-vs-como-prediction-30-08-2026\n\nGame ID: 2\nSource event_id: 401874938\nMatchup: Internazionale (away) @ Cagliari (home)\nHome: Cagliari\nAway: Internazionale\nKickoff UTC: 2026-08-30T18:45Z\nKickoff ET: 2026-08-30 14:45 EDT\nVenue: Unipol Domus\nRound: unavailable\nHome form: WWWWL\nAway form: WDDWW\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Cagliari +600 (open +550); Draw +330 (open +310); Internazionale -240 (open -220)\nTavily context:\n  - Title: PREVIEW | Cagliari vs Internazionale: team news, lineups, predictions (Serie A 30/08) | OneFootball\n    Content: ### Unavailable\n\n### Cagliari\n\n1. Yael Trepy - Unknown Injury\n\n### Internazionale\n\n### Last starting XIs\n\nCagliari ( vs Parma 2026-08-22): Elia Caprile, Zé Pedro, Alessandro Deiola, Juan Rodríguez, Adam Obert, Alessandro Romano, Harry Winks, Michel Adopo, Daniel Maldini, Jacopo Fazzini, Paul Mendy\n\nInternazionale ( vs Monza 2026-08-22): Josep Martínez, Yann Bisseck, Manuel Akanji, Alessandro Bastoni, Andy Diouf, Hakan Çalhanoglu, Nicolò Barella, Federico Dimarco, Piotr Zielinski, Lautaro Martínez, Francesco Esposito\n\n### Did you know...by playmaker stats ...\n    URL: https://onefootball.com/en/news/preview-cagliari-vs-internazionale-team-news-lineups-predictions-serie-a-3008-43358020\n  - Title: Cagliari vs Inter Milan Box Score - August 30, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nSerie A, Matchweek 2\n\nCagliari\n\n7th in Serie A\n\nCAG\n\nSun Aug 30\n\n18:45\n\nINT\n\nInter Milan\n\n2nd in Serie A\n\nTeam Leaders\n\nSerie A\n\nCAG\n\nCAG\n\nGoals\n\nA. Romano\n\nA. RomanoM, #4\n\n1GP\n\n1G\n\n2SOT\n\nAssists\n\nM. Adopo\n\nM. AdopoM, #8\n\n1GP\n\n1A\n\n90.7PAcc\n\nSaves\n\nE. Caprile\n\nE. CaprileGK, #1\n\n1GP\n\n2SV\n\n0GA\n\nINT\n\nINT\n\nGoals\n\nY. Bisseck\n\nY. BisseckD, #31\n\n1GP\n\n1G\n\n1SOT\n\nAssists\n\nA. Diouf\n\nA. DioufM, #17\n\n1GP\n\n2A\n\n94.3PAcc\n\nSaves\n\nJosep Martínez\n\nJosep MartínezGK, #1\n\n1GP\n\n2SV\n\n1GA\n\nInjury Report\n\nCAG\n\nCAG\n\nY. Trepy\n\nY. Trepy\n\nA\n\nOut\n\nMedical Condition\n\nS. Esposito ...\n    URL: https://www.nytimes.com/athletic/football/game/cagliari-vs-inter-milan/FLQu7CKLGtuJh6bR\n  - Title: Cagliari vs Inter Predictions, Picks & Odds - 30/08/2026\n    Content: Serie A · 2\n\n30 Aug 2026  Sardegna Arena  Louis Hecq\n\n### Cagliari vs Inter – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 7.50 | 4.40 | 1.44 | View Odds |\n| bc.game | 7.40 | 4.40 | 1.43 | View Odds |\n\nOur prediction\n\n2: Inter to win\n\n1.44 on StakeStake · Confidence High\n\nOdds recorded on 29 Aug 2026 at 01:05 · Odds are subject to change\n\nCompetition: Serie A\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 19:45 BST\n\nStadium: Sardegna Arena ...\n    URL: https://www.toffeeweb.com/int/cagliari-vs-inter-predictions-picks-odds-30-08-2026\n  - Title: Cagliari vs Inter Milan Live Score, H2H Stats & Odds\n    Content: ## About the Match\n\nReferee\n\n Referee\n\n-\n\n Stadium\n\n Stadium\n\nUnipol Domus\n\nLocation\n\n Location\n\nCagliari, Italy\n\nWeather Forecast\n\n Weather Forecast\n\nImage 408: USA30°\n\nIn Serie A of the Serie A, Cagliari is set to face Inter Milan in an exciting matchup. The game will take place on 30/08/2026 at 18:45 UTC.\n\n### Cagliari vs Inter Milan Best Odds ...\n    URL: https://oddspedia.com/football/cagliari-inter-milano-64773\n\nGame ID: 3\nSource event_id: 401874742\nMatchup: Genoa (away) @ Lazio (home)\nHome: Lazio\nAway: Genoa\nKickoff UTC: 2026-08-30T18:45Z\nKickoff ET: 2026-08-30 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WLWLL\nAway form: LWLLD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Lazio +100 (open -120); Draw +200 (open +215); Genoa +295 (open +340)\nTavily context:\n  - Title: Preview: Lazio vs Genoa - prediction, team news, lineups - Sports Mole\n    Content: Serie A  Gameweek 2\n\nAug 30, 2026 7.45pm\n\n Stadio Olimpico\n\n# Preview: Lazio vs Genoa - prediction, team news, lineups\n\nBy   Jonathan O'Shea   |\n\nLazio vs Genoa - prediction, team news, lineups/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1082030247-1-6a913b059e261160948436.jpg)\n\n© Imago / Gribaudi/ImagePhoto\n\nAfter claiming maximum points on Serie A’s opening matchday, Lazio will welcome Genoa to Stadio Olimpico on Sunday evening. ...\n    URL: https://www.sportsmole.co.uk/football/lazio/preview/lazio-vs-genoa-prediction-team-news-lineups_603903.html\n  - Title: Lazio vs Genoa: team news, lineups, predictions (Serie A ...\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPlaymakerstats\n\n·\n\n1 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nLazio host Genoa this Sunday at the Stadio Olimpico on Match Day two of the Serie A.\n\nLazio have picked up 3 points and currently lie in 8th position. In their last game, Gennaro Gattuso's team won 0-1 against Bologna (Serie A 2026/27).\n\nAdvertisement ...\n    URL: https://sports.yahoo.com/articles/preview-lazio-vs-genoa-team-190000404.html\n  - Title: Lazio vs Genoa Betting Odds – 30.08.2026\n    Content: Odds – 30.08.2026. As of now, the highest odds on Lazio is 1.93 by Spinbetter, and 4.48 on Genoa by Spinbetter.\n    URL: https://tips.gg/matches/football/30-08-2026/lazio-vs-genoa/07-45/odds\n  - Title: Lazio vs. Genoa (Aug 30, 2026) Odds and Spread - ESPN\n    Content: # Lazio v Genoa\n\nLAZ\n\nCBSSN\n\n+1\n\nGEN\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 8/24 | @BOL | W 1-0 | +0.5 | 2.5 |\n| 8/16 | vsMAN | L 2-0 | -1.5 | 2.5 |\n| 8/09 | @FRO | W 2-1 | -0.5 | 2.5 |\n| 5/23 | vsPIS | W 2-1 | -0.5 | 2.5 |\n| 5/17 | @ROMA | L 2-0 | +1.5 | 2.5 |\n\n## Betting 101\n\nESPN\n    URL: https://www.espn.com/soccer/odds/_/gameId/401874742\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874755\nMatchup: Como (away) @ Napoli (home)\nHome: Napoli\nAway: Como\nKickoff UTC: 2026-08-30T16:30Z\nKickoff ET: 2026-08-30 12:30 EDT\nVenue: Stadio Diego Armando Maradona\nRound: unavailable\nHome form: WWWLD\nAway form: DWWWD\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Napoli +145 (open +135); Draw +190 (open +205); Como +200 (open +190)\nTavily context:\n  - Title: Napoli vs Como Prediction, Betting Tips, Lineups & Odds\n    Content: Udinese 1-1 Como\n\nConfirmed Lineups\n\n24 May Serie A\n\nCremonese 1-4 Como\n\nConfirmed Lineups\n\n17 May Serie A\n\nComo 1-0 Parma\n\nConfirmed Lineups\n\n10 May Serie A\n\nHellas Verona 0-1 Como\n\nConfirmed Lineups\n\n02 May Serie A\n\nComo 0-0 Napoli\n\nConfirmed Lineups\n\n26 Apr Serie A\n\nGenoa 0-2 Como\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nNapoli  Injury Table\n\nType Name Info\n\nMichael Folorunsho Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nPasquale Mazzocchi Knee\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nRafa Marin Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/napoli-vs-como-prediction-lineups-odds-2026-08-30\n  - Title: Napoli vs Como - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Napoli vs Como — Sun 30 August, 16:30 UTC\n\nSerie A Round 2\n\n Serie A Round 2\n Stadio Diego Armando Maradona\n\nNapoliNapoli\n\n‌\n‌\n\nComoComo\n\n# Napoli vs Como — Sun 30 August, 16:30 UTC\n\nSerie A Round 2\n\n Serie A Round 2\n Stadio Diego Armando Maradona\n\nNapoliNapoli\n\n‌\n‌\n\nComoComo\n\n## Napoli4-3-3\n\n## Predicted lineup\n\n## Como4-2-3-1\n\nNapoli\n\n4-3-3\n\n1Meret\n\n22Di Lorenzo\n\n13Rrahmani\n\n16Marín\n\n37Spinazzola\n\n99Anguissa\n\n68Lobotka\n\n8McTominay\n\n21Politano\n\n19Højlund\n\n27Santos\n\n9Douvikas\n\n20Baturina\n\n10Paz\n\n11Diao\n\n6Milla\n\n7Da Cunha\n\n3Valle\n\n99Chalobah\n\n4Ramón\n\n27Couto\n\n1Butez\n\nComo ...\n    URL: https://www.fotmob.com/en-GB/matches/napoli-vs-como/3bmv18\n  - Title: Napoli vs Como Preview & Match Analysis - August 30, 2026\n    Content: Polymarket traders make Napoli the favorite, pricing a home victory at 38%, while a Como win is priced at 31%. The draw carries a 32% implied probability. Those numbers suggest a highly competitive contest despite Napoli’s home-field advantage. The relatively small gap between the three outcomes may reflect some respect in the market for Como’s impressive 2025-26 campaign and its strong recent record against Napoli. Both league meetings between these clubs finished scoreless last season, while Como also eliminated Napoli from the Coppa Italia on penalties. ...\n    URL: https://ats.io/soccer/seriea/match-analysis-napoli-vs-como-8-30-2026\n  - Title: Napoli vs Como Prediction, Odds & Betting Tips | 30.08.2026 | Serie A\n    Content: Bet here\n\n## Additional predictions\n\nNapoli vs Como odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| Granawin logo  Granawin | 2.50 | 3.00 | 3.00 | 2.38 | 1.55 |\n| Megapari logo  Megapari | 2.50 | 3.00 | 3.10 | 2.30 | 1.61 |\n| Mostbet logo  Mostbet | 2.45 | 3.13 | 3.06 | 2.43 | 1.66 |\n| Roobet logo  Roobet | 2.50 | 3.00 | 3.10 | 2.30 | 1.61 |\n| Helabet logo  Helabet | 2.55 | 3.25 | 3.17 | 2.43 | 1.66 |\n| 20Bet logo  20Bet | 2.40 | 3.25 | 2.90 | 2.25 | 1.62 |\n| 22bet logo  22bet | 2.50 | 3.00 | 3.00 | 2.38 | 1.55 | ...\n    URL: https://www.mightytips.com/football-predictions/napoli-vs-como-prediction-30-08-2026\n\nGame ID: 2\nSource event_id: 401874938\nMatchup: Internazionale (away) @ Cagliari (home)\nHome: Cagliari\nAway: Internazionale\nKickoff UTC: 2026-08-30T18:45Z\nKickoff ET: 2026-08-30 14:45 EDT\nVenue: Unipol Domus\nRound: unavailable\nHome form: WWWWL\nAway form: WDDWW\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Cagliari +600 (open +550); Draw +330 (open +310); Internazionale -240 (open -220)\nTavily context:\n  - Title: PREVIEW | Cagliari vs Internazionale: team news, lineups, predictions (Serie A 30/08) | OneFootball\n    Content: ### Unavailable\n\n### Cagliari\n\n1. Yael Trepy - Unknown Injury\n\n### Internazionale\n\n### Last starting XIs\n\nCagliari ( vs Parma 2026-08-22): Elia Caprile, Zé Pedro, Alessandro Deiola, Juan Rodríguez, Adam Obert, Alessandro Romano, Harry Winks, Michel Adopo, Daniel Maldini, Jacopo Fazzini, Paul Mendy\n\nInternazionale ( vs Monza 2026-08-22): Josep Martínez, Yann Bisseck, Manuel Akanji, Alessandro Bastoni, Andy Diouf, Hakan Çalhanoglu, Nicolò Barella, Federico Dimarco, Piotr Zielinski, Lautaro Martínez, Francesco Esposito\n\n### Did you know...by playmaker stats ...\n    URL: https://onefootball.com/en/news/preview-cagliari-vs-internazionale-team-news-lineups-predictions-serie-a-3008-43358020\n  - Title: Cagliari vs Inter Milan Box Score - August 30, 2026 - The Athletic\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nSerie A, Matchweek 2\n\nCagliari\n\n7th in Serie A\n\nCAG\n\nSun Aug 30\n\n18:45\n\nINT\n\nInter Milan\n\n2nd in Serie A\n\nTeam Leaders\n\nSerie A\n\nCAG\n\nCAG\n\nGoals\n\nA. Romano\n\nA. RomanoM, #4\n\n1GP\n\n1G\n\n2SOT\n\nAssists\n\nM. Adopo\n\nM. AdopoM, #8\n\n1GP\n\n1A\n\n90.7PAcc\n\nSaves\n\nE. Caprile\n\nE. CaprileGK, #1\n\n1GP\n\n2SV\n\n0GA\n\nINT\n\nINT\n\nGoals\n\nY. Bisseck\n\nY. BisseckD, #31\n\n1GP\n\n1G\n\n1SOT\n\nAssists\n\nA. Diouf\n\nA. DioufM, #17\n\n1GP\n\n2A\n\n94.3PAcc\n\nSaves\n\nJosep Martínez\n\nJosep MartínezGK, #1\n\n1GP\n\n2SV\n\n1GA\n\nInjury Report\n\nCAG\n\nCAG\n\nY. Trepy\n\nY. Trepy\n\nA\n\nOut\n\nMedical Condition\n\nS. Esposito ...\n    URL: https://www.nytimes.com/athletic/football/game/cagliari-vs-inter-milan/FLQu7CKLGtuJh6bR\n  - Title: Cagliari vs Inter Predictions, Picks & Odds - 30/08/2026\n    Content: Serie A · 2\n\n30 Aug 2026  Sardegna Arena  Louis Hecq\n\n### Cagliari vs Inter – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 7.50 | 4.40 | 1.44 | View Odds |\n| bc.game | 7.40 | 4.40 | 1.43 | View Odds |\n\nOur prediction\n\n2: Inter to win\n\n1.44 on StakeStake · Confidence High\n\nOdds recorded on 29 Aug 2026 at 01:05 · Odds are subject to change\n\nCompetition: Serie A\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 19:45 BST\n\nStadium: Sardegna Arena ...\n    URL: https://www.toffeeweb.com/int/cagliari-vs-inter-predictions-picks-odds-30-08-2026\n  - Title: Cagliari vs Inter Milan Live Score, H2H Stats & Odds\n    Content: ## About the Match\n\nReferee\n\n Referee\n\n-\n\n Stadium\n\n Stadium\n\nUnipol Domus\n\nLocation\n\n Location\n\nCagliari, Italy\n\nWeather Forecast\n\n Weather Forecast\n\nImage 408: USA30°\n\nIn Serie A of the Serie A, Cagliari is set to face Inter Milan in an exciting matchup. The game will take place on 30/08/2026 at 18:45 UTC.\n\n### Cagliari vs Inter Milan Best Odds ...\n    URL: https://oddspedia.com/football/cagliari-inter-milano-64773\n\nGame ID: 3\nSource event_id: 401874742\nMatchup: Genoa (away) @ Lazio (home)\nHome: Lazio\nAway: Genoa\nKickoff UTC: 2026-08-30T18:45Z\nKickoff ET: 2026-08-30 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WLWLL\nAway form: LWLLD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Lazio +100 (open -120); Draw +200 (open +215); Genoa +295 (open +340)\nTavily context:\n  - Title: Preview: Lazio vs Genoa - prediction, team news, lineups - Sports Mole\n    Content: Serie A  Gameweek 2\n\nAug 30, 2026 7.45pm\n\n Stadio Olimpico\n\n# Preview: Lazio vs Genoa - prediction, team news, lineups\n\nBy   Jonathan O'Shea   |\n\nLazio vs Genoa - prediction, team news, lineups/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1082030247-1-6a913b059e261160948436.jpg)\n\n© Imago / Gribaudi/ImagePhoto\n\nAfter claiming maximum points on Serie A’s opening matchday, Lazio will welcome Genoa to Stadio Olimpico on Sunday evening. ...\n    URL: https://www.sportsmole.co.uk/football/lazio/preview/lazio-vs-genoa-prediction-team-news-lineups_603903.html\n  - Title: Lazio vs Genoa: team news, lineups, predictions (Serie A ...\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPREVIEW | Lazio vs Genoa: team news, lineups, predictions (Serie A 30/08)\n\nPlaymakerstats\n\n·\n\n1 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nLazio host Genoa this Sunday at the Stadio Olimpico on Match Day two of the Serie A.\n\nLazio have picked up 3 points and currently lie in 8th position. In their last game, Gennaro Gattuso's team won 0-1 against Bologna (Serie A 2026/27).\n\nAdvertisement ...\n    URL: https://sports.yahoo.com/articles/preview-lazio-vs-genoa-team-190000404.html\n  - Title: Lazio vs Genoa Betting Odds – 30.08.2026\n    Content: Odds – 30.08.2026. As of now, the highest odds on Lazio is 1.93 by Spinbetter, and 4.48 on Genoa by Spinbetter.\n    URL: https://tips.gg/matches/football/30-08-2026/lazio-vs-genoa/07-45/odds\n  - Title: Lazio vs. Genoa (Aug 30, 2026) Odds and Spread - ESPN\n    Content: # Lazio v Genoa\n\nLAZ\n\nCBSSN\n\n+1\n\nGEN\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 8/24 | @BOL | W 1-0 | +0.5 | 2.5 |\n| 8/16 | vsMAN | L 2-0 | -1.5 | 2.5 |\n| 8/09 | @FRO | W 2-1 | -0.5 | 2.5 |\n| 5/23 | vsPIS | W 2-1 | -0.5 | 2.5 |\n| 5/17 | @ROMA | L 2-0 | +1.5 | 2.5 |\n\n## Betting 101\n\nESPN\n    URL: https://www.espn.com/soccer/odds/_/gameId/401874742\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874755",
+                        "date_utc": "2026-08-30T16:30Z",
+                        "kickoff_et": "2026-08-30 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Napoli",
+                        "away": "Como",
+                        "home_id": "114",
+                        "away_id": "2572",
+                        "matchup": "Como (away) @ Napoli (home)",
+                        "venue": "Stadio Diego Armando Maradona",
+                        "city": "Napoli",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWWLD",
+                        "form_away": "DWWWD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+135",
+                            "home_current": "+145",
+                            "draw_open": "+205",
+                            "draw_current": "+190",
+                            "away_open": "+190",
+                            "away_current": "+200"
+                        },
+                        "odds_text": "DraftKings: Napoli +145 (open +135); Draw +190 (open +205); Como +200 (open +190)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874938",
+                        "date_utc": "2026-08-30T18:45Z",
+                        "kickoff_et": "2026-08-30 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Cagliari",
+                        "away": "Internazionale",
+                        "home_id": "2925",
+                        "away_id": "110",
+                        "matchup": "Internazionale (away) @ Cagliari (home)",
+                        "venue": "Unipol Domus",
+                        "city": "Cagliari",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWWWL",
+                        "form_away": "WDDWW",
+                        "record_home": "1-0-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+550",
+                            "home_current": "+600",
+                            "draw_open": "+310",
+                            "draw_current": "+330",
+                            "away_open": "-220",
+                            "away_current": "-240"
+                        },
+                        "odds_text": "Provider unavailable: Cagliari +600 (open +550); Draw +330 (open +310); Internazionale -240 (open -220)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401874742",
+                        "date_utc": "2026-08-30T18:45Z",
+                        "kickoff_et": "2026-08-30 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lazio",
+                        "away": "Genoa",
+                        "home_id": "112",
+                        "away_id": "3263",
+                        "matchup": "Genoa (away) @ Lazio (home)",
+                        "venue": "Olimpico",
+                        "city": "Roma",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WLWLL",
+                        "form_away": "LWLLD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-120",
+                            "home_current": "+100",
+                            "draw_open": "+215",
+                            "draw_current": "+200",
+                            "away_open": "+340",
+                            "away_current": "+295"
+                        },
+                        "odds_text": "Provider unavailable: Lazio +100 (open -120); Draw +200 (open +215); Genoa +295 (open +340)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-29T08:10:19.490188-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:57:31.255743-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Napoli has the home advantage but the betting markets indicate a highly competitive matchup. Standard odds place Napoli's win probability near 38%, reflecting a close contest against Como.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan are strong favorites to secure an away win against Cagliari, supported by dominant historical performance, superior squad depth, and favorable bookmaker odds.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio comes off a positive away win on Matchday 1 and is expected to capitalize on home advantage at the Stadio Olimpico against a Genoa side seeking to find form.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-29T08:00:12.358685-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds suggest a highly competitive match despite Napoli's home advantage, with market probabilities closely split. Napoli is a slight favorite at 38% implied probability.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan is heavily favored by the odds (around -240 or 1.44 decimal), implying roughly a 65% chance of an away victory over Cagliari.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio comes off an opening win and holds the favorite status at home against Genoa, with odds placing their win probability around 49-50%.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-29T08:00:39.963815-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "The betting markets are extremely tight, with implied probabilities for all three outcomes hovering between 30% and 38%. This suggests a highly competitive match. Furthermore, both league meetings between these clubs finished as 0-0 draws last season, and Como also eliminated Napoli from the Coppa Italia. Despite Napoli's home advantage, Como's recent head-to-head success and strong form make a draw a very plausible outcome in a game that is difficult to call.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is a vastly superior team to Cagliari and a heavy favorite to win, even on the road. Betting odds reflect this significant gap in quality, with Inter priced at -240 (an implied probability of over 65% after removing the bookmaker's margin). While Cagliari has home advantage, the talent disparity between the two squads is substantial, making an Inter victory the most probable outcome.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio are the favorites playing at the Stadio Olimpico against a Genoa side that lost its opening match. Lazio began their campaign with an away victory and possesses a stronger squad. The betting odds, which price Lazio around +100 (an implied probability of nearly 50%), support this. While Lazio is the most likely winner, their overall form has been inconsistent, leaving a reasonable chance for a draw or an upset, hence the medium confidence.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-29T08:00:57.571917-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli is the home favorite according to betting markets and Polymarket, with probabilities around 38%. However, Como has shown strong resistance against Napoli in the previous season, securing two draws and eliminating them from the Coppa Italia on penalties. Napoli's home advantage and Como's strong 2025-26 campaign suggest a competitive match, but Napoli is slightly favored to win at home.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is a strong favorite according to all betting markets, with implied win probabilities around 65-70%. Despite Cagliari's decent recent form, Inter is a superior team and is expected to secure a comfortable away victory against the 7th placed team. The ESPN odds for Inter to win are at -240, reflecting strong market confidence.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium_high",
+                    "reasoning": "Lazio is playing at home and started the season with a win against Bologna. Betting odds place Lazio as a clear favorite with probabilities around 46-52%. Genoa's recent away form is weaker, and Lazio's home advantage makes them the likely winners at the Stadio Olimpico.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:01:48.388583-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Napoli are a narrow home favorite, but the market is tightly clustered. Home advantage and squad quality make a Napoli win the single most likely outcome, while Como's strong recent form and recent low-scoring head-to-head results keep draw and away-win chances significant.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.215,
+                    "away_win_probability": 0.655,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are a clear market favorite despite playing away, with substantially stronger squad quality and positive early-season form. Cagliari's home edge and opening win prevent this from being automatic, but Inter remain much more likely to take all three points.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio opened with an away win and now have home advantage at the Olimpico, while Genoa's recent form and early away profile are weaker. Lazio are favored, though not overwhelmingly, so the draw remains a meaningful secondary outcome.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:01:57.713931-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Napoli have home advantage and are slight market favorites, but the odds are tightly clustered and Como enter in strong form. Recent head-to-head context, including scoreless league meetings last season, points to a competitive, low-margin match.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are clear favorites by the betting market and have superior squad quality despite playing away. Cagliari won their opener, but Inter's price and recent form make the away win the most likely regulation-time result.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio are home favorites and opened the league campaign with an away win at Bologna, while Genoa's recent form is weaker. The market still gives Genoa and the draw meaningful chances, so the home win is favored but not overwhelming.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-29T08:02:27.593789-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market pricing makes Napoli only a narrow home favorite (1X2 close to 38/32/30 after accounting for vig), and recent H2H/Como resilience points to a tight game with meaningful draw/away chances. Napoli’s home edge and stronger baseline squad quality still provide the slimmest advantage in regulation time.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are priced as a strong road favorite (roughly mid-60% win probability after normalization), reflecting a clear quality gap. Cagliari’s upset path is limited and more likely comes via a low-scoring draw than a win; Inter’s ability to control territory and chance volume makes an away regulation win the most likely outcome.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio remain the most likely winner at home, but the notable odds drift from opening prices suggests increased uncertainty and elevates draw/away probabilities. With both teams early-season and potentially volatile, Lazio’s home advantage is tempered by the market move and Genoa’s capacity to keep games close.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-29T08:02:46.618655-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight favorites at home (market odds and home form WWWLD) while Como arrive in strong form and recent head-to-heads have been tight; market pricing and home advantage justify a modest edge for Napoli but a competitive match is likely.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bookmakers make Inter clear favorites (heavy negative/low odds for Inter); Inter’s superior squad depth and form versus Cagliari’s lower market probability make an away win the most likely 90-minute outcome.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio have home advantage and claimed maximum points on matchday one; odds slightly favor the hosts and Genoa are underdogs, so a Lazio win is the single most probable result though draws remain plausible.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-29T08:03:05.135627-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.389,
+                    "draw_probability": 0.293,
+                    "away_win_probability": 0.318,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Based on bookmaker-implied probabilities from odds: Napoli favored at home; after normalization Napoli ~38.9%, draw ~29.3%, Como ~31.8%.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.132,
+                    "draw_probability": 0.214,
+                    "away_win_probability": 0.654,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter as the away favorite in early-season form; after normalization Inter ~65.4% to win, draw ~21.4%, Cagliari ~13.2%.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.307,
+                    "away_win_probability": 0.233,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio favored at home; after normalization Lazio ~46.0% to win, draw ~30.7%, Genoa ~23.3%.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-29T08:03:08.747960-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds and prediction models suggest a very tight contest, with Napoli only a slight favorite at home. Como's strong recent form and their unbeaten record against Napoli last season (including a Coppa Italia elimination) narrow the gap. Napoli's home advantage and squad quality tip the balance, but the probabilities are close, reflecting Como's upward trajectory and Napoli's injury concerns.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy favorites per both market odds and predictive models, with a much stronger squad and recent form. Cagliari are at home and in decent form, but the quality gap is significant. Inter's away record and depth make them likely winners in regulation time.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio are favored at home, with market odds and recent form supporting their edge. Genoa's away form is poor, and Lazio started the season with a win. While Lazio's margin is not overwhelming, their home advantage and squad quality make them the most likely winners.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-29T08:03:12.850520-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli is favored due to home advantage and strong form, but Como's recent performances and past results against Napoli suggest a competitive match.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is significantly stronger and in better form, with odds heavily favoring them despite Cagliari's home advantage.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio's home advantage and recent victory give them the edge, but Genoa's potential for an upset keeps the probabilities balanced.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-29T08:03:26.380596-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Napoli are modest home favorites (+145), but the market and history suggest a very tight game: both league meetings last season ended 0-0 and Como eliminated Napoli from the Coppa Italia. Como's strong recent form (DWWWD) keeps all three outcomes closely priced. Slight edge to Napoli at the Maradona.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are heavy away favorites (-240, ~1.44 decimal at some books) with clearly superior squad quality and good form (WDDWW). Cagliari won their opener but face a significant class gap. Away win is the strong market and model expectation, though away trips to Sardinia can be tricky.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio opened with a 1-0 away win at Bologna and are moderate home favorites (+100) at the Olimpico. Genoa lost their opener and have poor recent form (LWLLD). The line has drifted slightly toward Genoa, but Lazio's home advantage and superior quality make them the most likely winner.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-29T08:03:35.286542-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Napoli",
+                    "confidence": "low",
+                    "reasoning": "Napoli favored at home per odds (+145), but Como's strong recent record includes two scoreless draws vs Napoli last season and a Coppa Italia elimination. Market sees a competitive contest, with Polymarket pricing just 38% home win. Home advantage tips edge to Napoli.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Internazionale",
+                    "confidence": "high",
+                    "reasoning": "Inter are strong favorites at -240, with quality throughout the squad and a good away form. Cagliari at +600 are heavy underdogs. Inter's superior talent should prevail despite Cagliari's home strength.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Lazio",
+                    "confidence": "low",
+                    "reasoning": "Lazio at home (+100) after an opening-day win over Bologna are slight favorites over Genoa (+295). Both sides have inconsistent form, but home advantage and better recent result favor Lazio.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-29T08:03:54.181828-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Napoli are home favorites at Maradona but the market is surprisingly tight. DraftKings has Napoli at +145 (~40.8% implied), draw at +190 (~34.5%), Como at +200 (~33.3%) before margin removal. Polymarket prices are nearly three-way even (38/32/31). Como had a strong 2025-26 campaign, went unbeaten in both league meetings with Napoli last season (two 0-0 draws) and even eliminated Napoli in the Coppa Italia on penalties. Como's recent form (DWWWD) is solid. Napoli's home form (WWWLD) is decent but the squad is dealing with some injury concerns. Napoli's superior squad depth and home advantage give them a slight edge, but this is a genuinely competitive fixture with significant draw/upset potential.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy favorites at around -240 (implied ~70.6% before margin). Cagliari are priced at +600 (~14.3% implied). Inter won their opener vs Monza and have strong quality throughout the lineup with Lautaro Martinez, Calhanoglu, Barella, Bastoni etc. Cagliari won their first match vs Parma but face a significant step up in quality. Inter's away form (WDDWW) and overall squad depth make them clear favorites. The only Cagliari injury noted is Trepy. Prediction sites strongly back Inter. Adjusting for home underdog boost and draw potential, Inter should win comfortably.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio are slight home favorites with odds around +100 (implied ~50%), though the opening line had them at -120, suggesting some line movement toward the draw/away side. Lazio won their opener 1-0 at Bologna under Gattuso and have home advantage at the Olimpico. Genoa drew their first match and have a mixed recent form (LWLLD). The odds suggest a competitive game — Genoa at +295 have a meaningful upset chance. Lazio's home advantage and solid start give them a marginal edge, but this is a low-confidence pick given the tightening odds and Genoa's ability to grind results.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-29T08:04:14.846427-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Napoli enters with strong form (WWWLD) and home advantage at Stadio Diego Armando Maradona. However, Como presents a genuine challenge with their DWWWD form and impressive 2025-26 campaign. Historical context shows both meetings last season ended 0-0, and Como eliminated Napoli from Coppa Italia on penalties, indicating tactical familiarity and defensive solidity. Market odds are remarkably close (Napoli +145, Draw +190, Como +200), reflecting competitive nature. Polymarket traders price it at 38% Napoli, 32% draw, 31% Como - very tight margins. Napoli has home advantage and slightly better form, but Como's recent record against them (three scoreless draws) suggests a low-scoring, competitive match. Napoli's attacking quality should eventually break through at home, but this will be closer than typical home favorites.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan are clear favorites with odds at -240, reflecting significant quality difference. Both teams won their opening fixtures (1-0-0 records), but Inter's WDDWW form against Cagliari's WWWWL suggests more consistency. Inter defeated Monza with strong performances from Bisseck (1 goal) and Diouf (2 assists), showcasing offensive depth. Cagliari's win over Parma featured Romano's goal, but they face a massive step up in opposition quality. Inter's squad depth, tactical sophistication, and recent form make them overwhelming favorites. The -240 odds and bookmaker consensus (around 1.44 for Inter win) indicate market expects comfortable away victory. Cagliari playing at Unipol Domus provides some home support, but the talent gap is substantial. Inter should control possession and create quality chances against Cagliari's defense.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lazio enters with momentum from a 1-0 away win at Bologna, sitting 8th with 3 points (1-0-0). Genoa struggles with 0-0-1 record after an opening day defeat. Form lines favor Lazio (WLWLL vs LWLLD), though both show inconsistency. Betting odds shifted significantly in Lazio's favor from opening -120 to current +100, while Genoa moved from +340 to +295, suggesting late money on Lazio. Home advantage at Olimpico is meaningful, and Gattuso's Lazio showed defensive organization against Bologna. Genoa's LWLLD form indicates vulnerability, especially away from home. The odds suggest a relatively competitive match (highest odds: Lazio 1.93, Genoa 4.48), but Lazio's home venue, better form, and opening win provide clear edge. Expect Lazio to control proceedings and secure three points, though Genoa may frustrate them at times.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-29T08:04:22.085823-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli favored at home with recent winning form (WWWLD). Como has defensive vulnerabilities despite decent recent results. DraftKings odds favor Napoli (+145). However, Como's historical strength against Napoli (two 0-0 draws last season, Coppa Italia penalty win) and market pricing (Polymarket 38% home vs 31% away) suggests a competitive match. Home advantage and superior current form give Napoli edge but not decisively.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale strong favorites with excellent form (WDDWW) and superior odds (DraftKings -240). Away team wins frequently in Serie A and Inter's record shows 1-0-0 start. Cagliari showing mixed form (WWWWL) with injuries (Yael Trepy out). Multiple prediction sources favor Inter win at 1.43-1.44 odds. Inter's quality and depth significantly outmatches Cagliari despite home field disadvantage for the latter.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio favored at home with recent winning momentum (beat Bologna 1-0, winning form). DraftKings odds favor Lazio (+100). Genoa struggling with poor form (LWLLD, including 1-2 home loss). Lazio's superior home form and recent positive results give them advantage. Odds suggest roughly 2:1 or better for Lazio win. However, Genoa's away record and potential Cup hangover make a close match possible, preventing high confidence despite the clear favorite status.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-29T08:05:04.022892-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Napoli holds a slight market edge at home, but Como is in strong away form and recent head-to-head meetings have been tight.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is a clear favorite based on odds and squad strength, despite Cagliari's home advantage.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lazio enters with an opening win and home advantage, while Genoa has struggled for consistent road form.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-29T08:05:07.472472-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli have home advantage and a strong squad, but Como have been in good form and the odds suggest a close contest. Napoli's home form is solid, but Como's recent results and the tight odds make this a competitive match. Slight edge to Napoli.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are clear favorites with strong odds and superior squad depth. Cagliari have started well but Inter's quality should prevail. Inter's away form is strong, and they are expected to win comfortably.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio have home advantage and started the season with a win, while Genoa have struggled recently. Lazio's odds are favorable, and they should have enough to secure a narrow victory.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-29T08:05:37.017640-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Polymarket and bookmakers suggest a highly competitive contest. Napoli has home-field advantage but Como's strong recent record against them makes this a tight matchup, slightly favoring a home win.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan is heavily favored by the sportsbooks and possesses a significantly stronger squad. Cagliari's solid start is noted, but Inter's quality should secure an away win.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio is favored at home after winning their opening match, while Genoa's recent form has been poor. The odds and current momentum point to a Lazio victory.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-29T08:05:47.916366-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Napoli has a strong home form and recent performances suggest they are in good shape. Como, while having a decent away record, faces a tough challenge against a solid Napoli side.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Internazionale has a strong away form and a better overall team. Cagliari, despite being at home, is not favored to win against the stronger Internazionale side.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lazio has a mixed home form but is generally a stronger team compared to Genoa. The odds and recent form suggest a likely home win, though there is a possibility of a draw.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-29T08:07:01.148118-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Polymarket and major bookmakers price this as a highly competitive fixture, with Napoli only marginally favored due to home advantage at the Maradona. Como's recent strong form and history of scoreless draws against Napoli suggest a tight, low-scoring affair, but Napoli's superior attacking depth and crowd support give them a slight edge in regulation time.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Inter arrives as a heavy favorite with significantly stronger squad depth, midfield control, and finishing quality, reflected in the -240 odds. While Cagliari opened the season with a win, Inter's tactical maturity and attacking options make them the clear favorite to secure three points away from home.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio enters off a solid opening victory and benefits from playing at the Stadio Olimpico, where they typically perform well. Genoa's poor recent form and defensive vulnerabilities away from home make an upset unlikely. Despite a slight market shift in odds, Lazio's home advantage and overall quality point toward a regulated home victory.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-29T08:07:43.199055-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite odds suggesting a tight contest with Napoli slightly favored, their home advantage at Stadio Diego Armando Maradona and superior squad depth give them the edge over Como in a closely matched fixture.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale enters as significant favorites with higher league ranking and elite talent, while Cagliari faces injury concerns and lacks the offensive firepower to challenge the away side at Unipol Domus.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio starts with momentum from their opening round victory and benefits from playing at Stadio Olimpico against a Genoa side showing inconsistent away form.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-29T08:09:39.343315-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are narrow favorites at home with an implied win probability near 38%, but Como proved stubborn last season with two scoreless league meetings and a Coppa Italia elimination of Napoli on penalties. Napoli’s superior squad depth and opening-day home win give them a slight edge in what should remain a tight, defensively contested match.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy and justified favorites, priced around -240 with an implied win probability near 65%. They opened with a comfortable victory and possess far greater squad depth than Cagliari, who are missing Yael Trepy and face a significant step up in competition after beating Parma in Round 1.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio carry positive early-season momentum after winning away at Bologna on Matchday 1, while Genoa started with an away defeat and bring patchy recent away form to the Olimpico. Market odds price Lazio near even money (~46% implied), reflecting respect for their home advantage and better start to the campaign despite some market drift toward Genoa.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-29T08:10:13.447525-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Napoli holds a marginal edge at home despite Como proving resilient in recent head-to-head encounters, including two scoreless draws last season and a Coppa Italia elimination. Market odds have tightened toward Como, reflecting their impressive form (DWWWD) and defensive solidity, but Napoli's superior squad depth and home advantage at Stadio Diego Armando Maradona provide a slight probability advantage.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Internazionale enters as heavy favorites with implied probability near 70%, reflecting their elite squad quality and status as Scudetto contenders. Despite Cagliari's strong home form (WWWWL) and opening day victory, Inter's dominant away record (WDDWW) and substantial market positioning (-240 odds) indicate a likely away victory at Unipol Domus.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Lazio secured a 1-0 away victory in their opener and holds home advantage against a Genoa side that failed to win their first match. Despite odds drifting slightly against Lazio from opening lines, their superior individual quality at the Olimpico and Genoa's patchy away form (LWLLD) favor a home win, though Lazio's inconsistent pre-season results (WLWLL) temper confidence.",
+                    "event_id": "401874742"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-29T08:10:19.485999-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Napoli (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Napoli has a strong home form and a good record against Como, while Como's away form is not as strong.",
+                    "event_id": "401874755"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Internazionale (away) @ Cagliari (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale has a strong away form and is favored by the odds, while Cagliari's home form is not as strong.",
+                    "event_id": "401874938"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Genoa (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio has a slight edge with a home advantage, but Genoa's form is not significantly worse, making the match competitive.",
+                    "event_id": "401874742"
+                }
+            ]
+        }
+    ]
+}

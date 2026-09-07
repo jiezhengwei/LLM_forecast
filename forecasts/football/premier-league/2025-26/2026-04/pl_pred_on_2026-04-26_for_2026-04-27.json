@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-26\n    Target Date: 2026-04-27\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Brentford @ Manchester United                        | Scheduled    | Away: 39.4% (13-9-11) vs Home: 48.5% (16-10-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Brentford (Away) @ Manchester United (Home)\n**News & Injury Report:**\n- [Manchester United XI vs Brentford: Confirmed team news, predicted lineup and injury latest for Premier League | The Standard](https://www.standard.co.uk/sport/football/man-utd-xi-vs-brentford-confirmed-team-news-predicted-lineup-injury-latest-premier-league-b1279800.html)\n  Snippet: Otherwise, United will be at full strength in the other two thirds.\n\nIn midfield, expect Kobbie Mainoo to partner Casemiro, and Bryan Mbeumo and Matheus Cunha to flank Bruno Fernandes with Benjamin Sesko up top.\n\nPredicted Man Utd XI (4-2-3-1): Lammens; Dalot, Mazraoui, Heaven, Shaw; Casemiro, Mainoo; Mbeumo, Fernandes, Cunha; Sesko\n\nDoubt: Yoro\n\nInjured: De Ligt, Dorgu\n\nVenue: Old Trafford\n\nDate and time: 8pm BST on Monday, April 27 2026\n\nHow to watch: Sky Sports\n\nMORE ABOUT\n\nBrentford ...\n- [Man United vs. Brentford: Predicted XI for Red Devils including Harry Maguire, Amad Diallo decisions - Sports Mole](https://www.sportsmole.co.uk/football/man-utd/top-four-race/predicted-lineups/maguire-amad-sesko-decisions-to-be-made-how-man-united-could-line-up-against-brentford_596445.html)\n  Snippet: Lisandro Martinez is still suspended, but Harry Maguire has now served his two-game ban, and the Englishman should return to the back four on Monday night.\n\nAyden Heaven could keep his spot in the side off the back of his strong performance against Chelsea, with Noussair Mazraoui potentially dropping out.\n\nFurther forward, Amad Diallo may be introduced back into the starting side, with Benjamin Sesko potentially dropping down to the bench - such a scenario would lead to Bryan Mbeumo going through the middle against his former club.\n\nManchester United possible starting lineup: ...\n**Betting Odds:**\n- [Manchester United - Brentford FC prediction & tips 27.04.2026](https://www.transfermarkt.com/betting/tips/manchester-united-vs-brentford-fc-prediction-27-04-2026/)\n  Snippet: Our betting tip for this Premier League clash favours a home victory for Manchester United at odds of 1.90 with 1win. The Red Devils' superior league position, home advantage, and need to secure Champions League qualification make them the logical choice despite their inconsistent recent form. United's home record of 10 wins, 3 draws, and 3 defeats demonstrates their strength at Old Trafford, particularly against mid-table opposition.\n\n## Our tips\n\nMelbet\n\nDouble Chance\n\nX2\n\nManchester United have drawn or lost 3 of their last 5 matches. ...\n- [Manchester United Brentford Odds 27 April 2026 (Premier League ...](https://www.sportytrader.com/en/odds/manchester-united-brentford-7664802/)\n  Snippet: usa_1\n  English (US)\n france_1\n  French\n brazil_1\n  Brazilian\n international_1\n  Spanish (Latam)\n spain_1\n  Spanish\n italy_1\n  Italian\n portugal_1\n  Portuguese\n netherlands_1\n  Dutch\n germany_1\n  German\n\nExclusive offer\n\nNew customers only | Commercial content | 18+ age limit | T&Cs apply\n\nExclusive offer from Stake\n\nBonus offered\n\n# Manchester United vs Brentford Betting Odds - Premier League, 27 April 2026\n\nPredictions\nOdds\nLive\n\nEngland - Premier League\n\nManchester United\n\n27/04/2026\n15:00\n\nBrentford\n\nExclusive Offer\n\nWelcome offer ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-26\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-26 20:35:48"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-26 20:34:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing around Man United ~1.90 to win implies a clear home edge, which aligns with United\u2019s stronger season win rate (48.5%) vs Brentford\u2019s (39.4%) and Old Trafford advantage. United are close to full strength in attack/midfield per team news, while defensive absences (De Ligt out, Martinez suspended, Yoro doubt) introduce some volatility and keep the draw/away chances meaningful. Brentford are capable away but rate slightly below United on baseline strength and situational factors."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:34:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market and context favour Manchester United: bookmaker pricing (~1.90) implies a clear home edge, United have a stronger season win rate at Old Trafford and are highly motivated to secure Champions League qualification. Team news suggests United will be near full strength (some doubts/injuries reported but Maguire available after a ban), while Brentford have a respectable away record but lower overall win rate (39.4%). Recent United inconsistency slightly reduces the home edge, and Brentford possess attacking threats (e.g., Bryan Mbeumo) who can cause problems, so a draw/away upset remains plausible. Balancing market odds, form, home advantage and injury uncertainty yields a ~53% home win probability, 24% draw and 23% away win."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United have stronger home form and a higher implied probability from observed odds (~1.90). United's confirmed vs likely starting lineup with Sesko up front, and injuries to De Ligt and Dorgu reduce defensive depth, while Brentford travel away with a slightly lower home-record advantage. Brentford's Yoro may be doubtful, which could impact midfield balance."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United have a solid home record (16-10-7) and strong motivation to secure Champions League qualification. Most of the team is at full strength aside from a couple of defensive doubts (De Ligt and Dorgu injured, Yoro a doubt), but Maguire is back. Brentford's away win rate is decent, but United's superior league position and Old Trafford advantage are key. Recent form is slightly shaky (draw/losses last 5), so risk of a draw isn't negligible, especially if United struggle to break down Brentford. The market has United as favorites at 1.90 odds, which calibrates the probability toward a home win but not overwhelmingly so."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United have a strong home record with a 48.5% win rate and are mostly at full strength despite some defensive absences. Brentford's away win rate of 39.4% is respectable but may not be enough against a motivated United side aiming for Champions League qualification. The betting odds also favor a home win, which aligns with their typical home performance against mid-table teams. Recent inconsistent form for Manchester United and some squad changes introduce uncertainty, reflected in the medium confidence level."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford @ Manchester United",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United are favored with betting odds around 1.90 for a home win. Despite injuries in defense (De Ligt missing, Martinez suspended), United's need for Champions League points and strong home record at Old Trafford give them the edge over Brentford."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United have home advantage and are pushing for Champions League spots, but recent form is inconsistent. Injuries (De Ligt, Dorgu) and a suspension to Martinez weaken the defence. Betting odds favour a home win (1.90), suggesting roughly 53% implied probability, but with key defenders out and Brentford's decent away record, the edge is reduced. I adjust the home win probability slightly downward to 0.50, with draw and away win both at 0.25."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United holds a clear advantage with a superior win rate (48.5% vs 39.4%) and home field advantage at Old Trafford where they have recorded 10 wins in 13 home matches. The betting markets favor United at 1.90 odds for a home win, implying approximately 52-53% probability. However, United's recent form shows inconsistency (drawn or lost 3 of last 5), which tempers confidence. Key injury concerns exist with De Ligt and Dorgu out, Martinez suspended, and Yoro doubtful - weakening their defensive options. Brentford faces United with their former player Mbeumo potentially starting, adding an interesting dynamic. United's need for Champions League qualification provides strong motivation. The combination of home advantage, superior season record, and betting market assessment supports a home win as most likely, but United's defensive injuries and recent inconsistency create meaningful draw (26%) and away win (22%) probabilities. This is not a dominant favorite scenario, hence medium confidence."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brentford (away) @ Manchester United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester United has a strong home record with 10 wins, 3 draws, and 3 losses at Old Trafford. Brentford, while having a decent away record, is less likely to win against a top team like Manchester United, especially with key players returning from suspension and the Red Devils' need to secure Champions League qualification."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

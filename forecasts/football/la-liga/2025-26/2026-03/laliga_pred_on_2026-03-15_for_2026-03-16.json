@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-15\n    Target Date: 2026-03-16\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Levante @ Rayo Vallecano                             | Scheduled    | Away: 18.5% (5-7-15) vs Home: 25.9% (7-10-10)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Levante (Away) @ Rayo Vallecano (Home)\n**News & Injury Report:**\n- [Rayo Vallecano vs Levante Preview: Team News & Prediction](https://www.thestatszone.com/rayo-vallecano-vs-levante-preview-team-news-prediction-176517)\n  Snippet: Predicted XI (4-2-3-1):Ryan; Toljan, Matturro, Matias Moreno, Manu Sanchez; Unai Vencedor, Oriol Rey; Eyong, Ivan Romero, Jose Luis Morales; Carlos Espi\n\nUnavailable:Dela (Suspended), Unai Elgezabal (Injured), Jon Olasagasti (Injured), Pablo Martinez...\n- [Rayo Vallecano vs. Levante prediction, odds, La Liga picks ...](https://www.dimers.com/news/rayo-vallecano-vs-levante-prediction-la-liga-monday-03-16-2026-ac)\n  Snippet: Dimers\n\nDimers\nsports\ntools\npro\nBetting\nmore\n\nall sports\n\n# Rayo Vallecano vs. Levante prediction, odds, La Liga picks [3/16/2026]\n\nprofile-img\n\nGet Rayo Vallecano vs Levante predictions for La Liga Monday.\n\nRayo Vallecano-Levante Predictions and Gam...\n**Betting Odds:**\n- [Rayo Vallecano vs Levante UD Odds - Monday March 16 2026](https://www.oddsshark.com/soccer/la-liga/rayo-vallecano-levante-odds-march-15-2026-2423459)\n  Snippet: Skip to main content \n\nSoccer\n\n# Rayo Vallecano vs Levante UD\n\nLevante\n\n5 - 7 - 15\n\nD-W-L-L-L-L\n\nRayo Vallecano\n\n7 - 10 - 10\n\nD-W-D-D-W-L\n\nMarch 16, 2026, 4:00 PM EDT  \n | Estadio de Vallecas\n\nPredicted Score\n\n1.1\n\nLEV\n\n1.7\n\nRVM\n\nMoneyline Consensus\n...\n- [Rayo Vallecano - Levante, 03/16/2026: prediction, odds and match ...](https://betmines.com/match-preview/rayo-vallecano-vs-levante-prediction-match-preview-and-analysis-la-liga-16-03-2026)\n  Snippet: The upcoming La Liga clash between Rayo Vallecano and Levante promises to be a decisive one for both sides. The home team are looking to extend their unbeaten run and move further away from the relegation zone, while the visitors desperately need poi...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-15\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-15 14:57:19"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-15 14:56:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo have the stronger season profile (7-10-10 vs Levante 5-7-15) and home advantage at Vallecas. Levante arrive in poor recent form (per odds context listing a run including multiple losses), while market/preview signals lean Rayo (projected score around 1.7\u20131.1). Rayo\u2019s high draw tendency (10 draws) keeps the draw probability elevated, but Levante\u2019s low win rate and squad absences (suspension/injuries noted in the preview) reduce away-win likelihood."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano have the clear edge: better recent form (D-W-D-D-W-L) vs Levante's poor run (D-W-L-L-L-L), plus home advantage at Vallecas. Season records show Rayo stronger at home than Levante away (Rayo home win rate ~25.9% vs Levante overall win rate 18.5%), and market previews/predicted scorelines (approx. Rayo 1.7 \u2013 Levante 1.1) favor the hosts. Rayo do have a few absences (suspension/injuries listed) but the squad depth and momentum still point to a home win; draws remain a realistic outcome given both teams' struggles, while an away win is least likely. Probabilities calibrated to available betting-market signals and form."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano hold the home advantage at Vallecas and have a relatively stronger home record (7-10-10) compared to Levante's away form (5-7-15). While injuries are noted, there isn\u2019t a decisive absence that decisively shifts the balance; market signals (home price) corroborate a home-favoring tilt."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano have a stronger home record (25.9% win rate) compared to Levante's away (18.5%), and their recent form is more solid (multiple unbeaten games with wins and draws). Levante are coming off poor form (L-L-L-L) and remain depleted with injuries and suspensions. Market odds and consensus predicted score (1.7 - 1.1 in favor of Rayo) suggest the home side's edge, but both teams struggle for consistency, justifying a sizable draw probability."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano have a decent home win rate and are in relatively better form with a recent unbeaten run compared to Levante's poor form. Additionally, injuries in Levante's squad and the home-court advantage for Rayo Vallecano further tilt the balance. Betting odds reflect a favorable outcome for Rayo, but the draw remains a substantial possibility due to the evenly contested nature of such mid-table matches."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano are at home and looking to extend their unbeaten run to move away from the relegation zone. Levante's away record is poor (5-7-15). The prediction from Oddshark indicates Rayo Vallecano win is more likely (1.7 RVM vs 1.1 LEV ratio roughly translates to higher win probability). Injury reports for Rayo Vallecano mention Dela (Suspended), Unai Elgezabal (Injured), and Jon Olasagasti (Injured), but predicted XI looks strong with experienced players. Taking all these factors into account, home win is slightly favored."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:56:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano has a stronger home record (25.9% win rate vs Levante's 18.5% overall) and is on an unbeaten run, while Levante is in poor form (L-L-L-L-D-W). Rayo's home advantage at Estadio de Vallecas is significant, and Levante's desperate need for points may leave them exposed defensively. The betting market consensus and predicted score (1.1-1.7) favor Rayo, though Levante's urgency and Rayo's missing players (Dela suspended, Elgezabal/Olasagasti injured) keep the draw probability elevated."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:57:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano holds a clear home advantage with a 25.9% win rate (7-10-10) compared to Levante's poor away form at 18.5% (5-7-15). The predicted score from OddsShark (1.7-1.1 in favor of Rayo) supports a home win. Rayo is on an unbeaten run and looking to distance themselves from relegation, while Levante is desperate for points after a poor run (L-L-L-L-W-D). Key absences for Rayo include Dela (suspended), Unai Elgezabal and Jon Olasagasti (injured), but they should field a competitive XI with Ryan in goal and attacking threats like Ivan Romero and Jose Luis Morales. Levante's dire away record (only 5 wins in 27 away matches) and recent form (6 losses in last stretch) make them vulnerable. Home advantage at Estadio de Vallecas is significant in La Liga. The betting markets favor Rayo as home favorites, which aligns with the statistical edge. However, given both teams' inconsistency (evidenced by high draw counts), a draw remains a realistic possibility at 28%. Levante's desperation could see them park the bus for a point."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:57:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano has a better home record and win rate compared to Levante's away record. Levante is struggling with a low away win rate of 18.5%. Additionally, key players for Rayo Vallecano are available, while Levante may be missing some important players due to injuries and suspensions."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

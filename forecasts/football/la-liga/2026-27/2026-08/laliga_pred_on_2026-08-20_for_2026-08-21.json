@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-20",
+        "target_date_et": "2026-08-21",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882914\nMatchup: Real Sociedad (away) @ Real Betis (home)\nHome: Real Betis\nAway: Real Sociedad\nKickoff UTC: 2026-08-21T19:00Z\nKickoff ET: 2026-08-21 15:00 EDT\nVenue: Estadio La Cartuja\nRound: unavailable\nHome form: WLWDW\nAway form: DLDDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Real Betis +110 (open +105); Draw +250 (open +235); Real Sociedad +255 (open +265)\nTavily context:\n  - Title: Real Betis vs Real Sociedad Prediction & Betting Tips - 21/08/2026\n    Content: 1.8Goals scored\n\n0.5Goals conceded\n\n#### Real Sociedad\n\nRecent form\n\nDDLWL\n\nWins1/5 (20%)\n\nDraws2/5 (40%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3Total goals\n\n83%Both teams score\n\n1.5Goals scored\n\n1.5Goals conceded\n\n### Real Betis vs Real Sociedad: Head-to-Head\n\nReal Betis 50 % Draws 25 % Real Sociedad 25 %\n\nAverage statistics (recent meetings)\n\n3.3Total goals\n\n50%Both teams score\n\n2.5Home goals\n\n0.8Away goals\n\n75%Over 2.5 goals\n\n25%Under 2.5 goals\n\nProbable lineup\n\n### Lineups: Real Betis vs Real Sociedad\n\n#### Real Betis\n\n4-3-3\n\nStarters ...\n    URL: https://thefootballfaithful.com/real-betis-vs-real-sociedad-prediction-betting-tips-21-08-2026\n  - Title: Real Betis vs Real Sociedad Preview – prediction, team news, lineups | LaLiga 2026-27\n    Content: Alvaro Odriozola is not going to be in action for Real Sociedad. He suffered a Cruciate ligament injury and might return in early November 2026.\n\n### Head-to-Head\n\nMatches Played: 120\n\nBetis (wins): 42\n\nSociedad (wins): 46\n\nDraws:32\n\n### Predicted Lineups\n\n#### Real Betis predicted XI (4-2-3-1)\n\nValles (GK); Ortiz, Bartra, Natan, Garcia; Bernal, Roca; Antony, Fornals, Riquelme; Hernandez\n\n#### Real Sociedad predicted XI (4-2-3-1)\n\nRemiro (GK); Aramburu, Martin, Beitia, Gomez; Sucic, Herrera; Kubo, Soler, Barrenetxea; Oyarzabal\n\n### Match Prediction ...\n    URL: https://khelnow.com/football/real-betis-vs-real-sociedad-preview-laliga-202608\n  - Title: Real Betis vs Real Sociedad Predictions, Picks & Odds - 21/08/2026\n    Content: Real Betis's home record against La Real is formidable, with convincing 3-1 and 3-0 victories in their last two meetings at this venue. Their points-per-match average of 1.58 last term comfortably outstrips Real Sociedad's 1.21, a gap that speaks to a genuine difference in quality. Backing the double chance, home or draw, at 2.05 looks a sensible route into this fixture. ...\n    URL: https://www.toffeeweb.com/real-betis-vs-real-sociedad-predictions-picks-odds-21-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882914\nMatchup: Real Sociedad (away) @ Real Betis (home)\nHome: Real Betis\nAway: Real Sociedad\nKickoff UTC: 2026-08-21T19:00Z\nKickoff ET: 2026-08-21 15:00 EDT\nVenue: Estadio La Cartuja\nRound: unavailable\nHome form: WLWDW\nAway form: DLDDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Real Betis +110 (open +105); Draw +250 (open +235); Real Sociedad +255 (open +265)\nTavily context:\n  - Title: Real Betis vs Real Sociedad Prediction & Betting Tips - 21/08/2026\n    Content: 1.8Goals scored\n\n0.5Goals conceded\n\n#### Real Sociedad\n\nRecent form\n\nDDLWL\n\nWins1/5 (20%)\n\nDraws2/5 (40%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3Total goals\n\n83%Both teams score\n\n1.5Goals scored\n\n1.5Goals conceded\n\n### Real Betis vs Real Sociedad: Head-to-Head\n\nReal Betis 50 % Draws 25 % Real Sociedad 25 %\n\nAverage statistics (recent meetings)\n\n3.3Total goals\n\n50%Both teams score\n\n2.5Home goals\n\n0.8Away goals\n\n75%Over 2.5 goals\n\n25%Under 2.5 goals\n\nProbable lineup\n\n### Lineups: Real Betis vs Real Sociedad\n\n#### Real Betis\n\n4-3-3\n\nStarters ...\n    URL: https://thefootballfaithful.com/real-betis-vs-real-sociedad-prediction-betting-tips-21-08-2026\n  - Title: Real Betis vs Real Sociedad Preview – prediction, team news, lineups | LaLiga 2026-27\n    Content: Alvaro Odriozola is not going to be in action for Real Sociedad. He suffered a Cruciate ligament injury and might return in early November 2026.\n\n### Head-to-Head\n\nMatches Played: 120\n\nBetis (wins): 42\n\nSociedad (wins): 46\n\nDraws:32\n\n### Predicted Lineups\n\n#### Real Betis predicted XI (4-2-3-1)\n\nValles (GK); Ortiz, Bartra, Natan, Garcia; Bernal, Roca; Antony, Fornals, Riquelme; Hernandez\n\n#### Real Sociedad predicted XI (4-2-3-1)\n\nRemiro (GK); Aramburu, Martin, Beitia, Gomez; Sucic, Herrera; Kubo, Soler, Barrenetxea; Oyarzabal\n\n### Match Prediction ...\n    URL: https://khelnow.com/football/real-betis-vs-real-sociedad-preview-laliga-202608\n  - Title: Real Betis vs Real Sociedad Predictions, Picks & Odds - 21/08/2026\n    Content: Real Betis's home record against La Real is formidable, with convincing 3-1 and 3-0 victories in their last two meetings at this venue. Their points-per-match average of 1.58 last term comfortably outstrips Real Sociedad's 1.21, a gap that speaks to a genuine difference in quality. Backing the double chance, home or draw, at 2.05 looks a sensible route into this fixture. ...\n    URL: https://www.toffeeweb.com/real-betis-vs-real-sociedad-predictions-picks-odds-21-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882914",
+                        "date_utc": "2026-08-21T19:00Z",
+                        "kickoff_et": "2026-08-21 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Betis",
+                        "away": "Real Sociedad",
+                        "home_id": "244",
+                        "away_id": "89",
+                        "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                        "venue": "Estadio La Cartuja",
+                        "city": "Sevilla",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WLWDW",
+                        "form_away": "DLDDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+105",
+                            "home_current": "+110",
+                            "draw_open": "+235",
+                            "draw_current": "+250",
+                            "away_open": "+265",
+                            "away_current": "+255"
+                        },
+                        "odds_text": "DraftKings: Real Betis +110 (open +105); Draw +250 (open +235); Real Sociedad +255 (open +265)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-20T11:07:56.730475-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:57:48.573604-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis is favored to win at home, backed by strong historical head-to-head performance against Real Sociedad at their venue, including comfortable wins in their last two meetings. Real Sociedad's recent form is lackluster, and with key absences, Real Betis is well-positioned to take all three points.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-20T10:58:03.830453-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.456,
+                    "draw_probability": 0.274,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis holds the advantage with stronger recent form (WLWDW) compared to Real Sociedad's struggles (DLDDL). The betting odds favor Betis at +110, implying roughly a 46% chance of a home victory. Coupled with Betis's strong recent head-to-head home record against La Real, a home win is the most probable outcome.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-20T10:58:20.946014-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis is favored by the betting odds and boasts a strong recent home record against Real Sociedad, winning their last two meetings at home convincingly. Betis also enters the season in better form (WLWDW) than Sociedad (DLDDL). Furthermore, Real Sociedad is missing key defender Alvaro Odriozola due to injury. While first matches of the season can be unpredictable, the combination of home advantage, form, and head-to-head performance points towards a Real Betis victory.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:58:29.310096-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.4563,
+                    "draw_probability": 0.2738,
+                    "away_win_probability": 0.2699,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters this match as favorites, supported by their formidable home record against Real Sociedad, including two dominant wins (3-1, 3-0) in their last two meetings at Estadio La Cartuja. Their superior points-per-match average from the previous season (1.58 vs 1.21) and better recent form (WLWDW vs DDLWL) further strengthen their position. DraftKings odds also indicate Real Betis as the most likely winner. Real Sociedad also faces an injury concern with Alvaro Odriozola.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T11:00:44.649987-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Real Betis a modest home favorite, and the available context points to stronger recent form, better prior home head-to-head results against Real Sociedad, and a slightly weaker Sociedad profile with an injury absence. The matchup is still fairly balanced, so the home edge is moderate rather than decisive.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T11:00:52.609959-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Real Betis a modest favorite, and the available context points to stronger recent form for Betis plus a favorable recent home head-to-head profile against Real Sociedad. Sociedad have drawn often but enter with weaker recent results and at least one noted defensive injury concern. The probabilities remain fairly balanced because both sides are capable La Liga teams and early-season uncertainty is high.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-20T11:01:29.479396-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market 1X2 pricing makes Betis the slight favorite at home, and recent form indicators also lean Betis (stronger last-five results and lower goals conceded). Head-to-head and recent home meetings at this venue have favored Betis, while Sociedad enter in weaker form and with at least one noted injury. Overall this profiles as a close match, but with Betis most likely to win in regulation.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-20T11:01:35.998151-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds and recent form favour Real Betis: Betis come in with strong pre-season/form (WLWDW) while Real Sociedad's form is inconsistent (DLDDL). Preview articles and head-to-head at this venue show Betis have had the upper hand recently, and squad notes (Sociedad injury to Odriozola) slightly weaken the visitors. Odds are competitive but tilt to the home side, so a Betis win is the most likely 90-minute result, with a meaningful chance of a draw and a smaller chance of an away victory.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-20T11:03:15.285471-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.456,
+                    "draw_probability": 0.274,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Betis are favorites at home per +110 odds. After converting to fair probabilities and normalizing to sum to 1, Betis lead (~45.6%), with draws ~27.4% and Sociedad ~27.0%. Home advantage, historical results at this venue, and Betis' typical home form support a home win forecast for regulation time (90 minutes).",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-20T11:03:17.959977-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have a strong recent home record against Real Sociedad, including convincing wins in their last two meetings at this venue. Their points-per-match average last season was significantly higher than Sociedad's, and Betis's home form is solid. Real Sociedad are missing a key defender (Odriozola) and have struggled for wins recently. The odds and head-to-head stats both favor Betis, though a draw remains a reasonable possibility given Sociedad's tendency to draw games.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-20T11:03:19.354019-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has a strong home record against Real Sociedad, with recent convincing victories. Their overall form and head-to-head statistics favor a home win. Real Sociedad's away form is less impressive, and they are missing key players due to injury.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-20T11:03:29.684753-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are moderate favorites per market odds (+110), backed by strong recent home form (WLWDW) and dominant recent home meetings vs Real Sociedad (3-1, 3-0 wins). Sociedad's poor form (DDLWL, only 1 win in 5) and higher points-per-match gap last season (1.58 vs 1.21) support Betis. However, the historical head-to-head is balanced and Sociedad retains quality players like Kubo and Oyarzabal, keeping draw and away probabilities meaningful.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-20T11:03:35.059422-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Betis are favored by the market (+110 vs +255) and hold a strong home record against Real Sociedad, including recent 3-1 and 3-0 wins at this venue. Betis show better recent form (WLWDW) and higher points-per-match, while Sociedad's away form is weak (DLDDL) and they are missing Odriozola to injury. Betis edge it at home but the outcome remains uncertain given Sociedad's overall head-to-head edge.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-20T11:03:41.902965-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters this fixture with solid recent form (WLWDW) and strong home record against Real Sociedad in recent meetings, including 3-1 and 3-0 wins at home. Their points-per-match average last season (1.58) was notably higher than Real Sociedad's (1.21). Betis's home form and head-to-head advantage at this venue favor them. Real Sociedad is dealing with an injury to Odriozola and has underwhelming recent form (DLDDL/DDLWL depending on source), winning only 1 of their last 5. The DraftKings odds imply roughly 48% for Betis, 28.5% draw, and 28% for Sociedad. Adjusting slightly for the head-to-head context and Sociedad's poor recent form, a home win is the most likely outcome.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-20T11:03:50.707731-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis holds a strong home advantage with recent head-to-head dominance at this venue (3-1 and 3-0 wins in last two home meetings). Their superior points-per-match average last season (1.58 vs 1.21) indicates better overall quality. Betis' recent form shows WLWDW with positive momentum, while Real Sociedad's DLDDL form reveals inconsistency and struggles to win. The historical head-to-head shows Betis winning 50% of recent meetings with high-scoring games (3.3 average goals, 75% over 2.5). The odds favor Betis slightly (+110), and Real Sociedad is missing Odriozola to injury. However, both teams have shown defensive vulnerabilities (83% both teams score stat), suggesting this won't be a comfortable win. The venue being Estadio La Cartuja (neutral) rather than Betis' usual home ground introduces slight uncertainty, but overall factors point to a home advantage.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-20T11:03:54.550329-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis shows stronger recent form (WLWDW vs DLDDL) and historically dominates this fixture at home with recent 3-1 and 3-0 victories. Head-to-head record favors Betis at home (50% win rate). However, Real Sociedad has defensive stability (1.5 goals conceded per game) and draws feature prominently in their recent form. Market odds (DraftKings +110 home) support a Betis lean. Expected high-scoring affair based on historical 3.3 goals average in recent meetings, though both teams' defensive records suggest moderate goal totals. Real Sociedad's injury to Odriozola weakens their depth.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-20T11:04:36.532402-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have home advantage and strong recent home form, including convincing wins in their last two home meetings with Real Sociedad. Real Sociedad's away form is poor, and the odds also favor Betis, though a draw is a meaningful secondary risk.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-20T11:04:38.095023-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have strong home form and a solid head-to-head record at this venue, while Real Sociedad have poor away form and key injuries. Odds slightly favor Betis, and recent meetings at home have been convincing wins for Betis.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-20T11:05:10.162882-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Real Betis",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters with strong home form and a formidable recent head-to-head record against Real Sociedad at this venue, including convincing 3-1 and 3-0 victories. Real Sociedad struggles with poor away form and key injuries. The betting odds and statistical trends favor the home side, making Real Betis the most likely outcome in regulation time.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-20T11:05:15.856309-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has a strong home record against Real Sociedad, with recent convincing victories at this venue. Additionally, their points-per-match average last season was significantly higher than Real Sociedad's, indicating a difference in quality. The recent form and head-to-head statistics also favor Real Betis, making a home win the most likely outcome.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-20T11:06:13.534773-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds and historical head-to-head data at this venue strongly favor Real Betis, who have won their last two meetings here convincingly. Betis also holds a superior points-per-match metric from last season and enters with better preseason form. Real Sociedad's defensive injury to Alvaro Odriozola further tilts the balance. While early-season fixtures carry inherent variance, the statistical and market indicators point to a narrow home victory.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-20T11:06:51.055457-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis hosts with favorable form (WLWDW) compared to Sociedad's struggle (DLDDL). Historical H2H data indicates a formidable home record for Betis at La Cartuja, alongside reported injury absences for Sociedad including Odriozola. While odds suggest a competitive fixture, Betis's home advantage and current momentum support a regulation-time victory.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-20T11:07:13.824284-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters with superior recent form (WLWDW) and a formidable home record against Real Sociedad, having won the last two home meetings by convincing margins. Real Sociedad’s away form is concerning (DLDDL) and they are without Alvaro Odriozola due to a cruciate ligament injury. The betting market prices Betis as the favorite (+110) and expert commentary highlights value in the home/draw double chance, reinforcing that a home win is the most probable 90-minute outcome.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-20T11:07:54.134811-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enters the match with superior recent form (WLWDW) compared to Real Sociedad's struggles (DLDDL). Betis holds a strong historical advantage at home against La Real, having won the last two meetings at this venue convincingly (3-1 and 3-0), and posted a higher points-per-match average last season (1.58 vs 1.21). Additionally, Real Sociedad will be without defender Alvaro Odriozola due to injury. While early-season variance and Sociedad's quality keep the confidence level at medium, the combination of home advantage, form, and squad availability favors a Betis victory.",
+                    "event_id": "401882914"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-20T11:07:56.727760-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Betis (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has a strong home record against Real Sociedad, with recent convincing victories. Their points-per-match average last term was higher than Real Sociedad's, indicating a difference in quality. The head-to-head record slightly favors Real Sociedad, but the home advantage and recent form suggest a Real Betis win.",
+                    "event_id": "401882914"
+                }
+            ]
+        }
+    ]
+}

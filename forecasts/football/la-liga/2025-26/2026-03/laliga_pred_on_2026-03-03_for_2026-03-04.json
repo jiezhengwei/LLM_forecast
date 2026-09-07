@@ -1,0 +1,142 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-03\n    Target Date: 2026-03-04\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule]\n    ----------------------------------------------------------------------------------------\nLa Liga Matchup                                              | Status                   \n----------------------------------------------------------------------------------------\n1. Real Oviedo @ Rayo Vallecano                              | Scheduled                \n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Real Oviedo (Away) @ Rayo Vallecano (Home)\n- [Rayo Vallecano vs Real Oviedo - prediction, team news, lineups](https://www.sportsmole.co.uk/football/rayo-vallecano/preview/rayo-vallecano-vs-real-oviedo-prediction-team-news-lineups_593059.html)\n  Snippet: As for Oviedo, Ovie Ejaria will miss the match due to an injury issue, while Rahim Alhassane remains a major doubt for the visitors.\n\nDavid Costas will also need to be assessed, having missed the cont...\n- [Rayo Vallecano-Real Oviedo - LaLiga 2025/2026 Statistical Preview](https://www.whoscored.com/matches/1914092/preview/spain-laliga-2025-2026-rayo-vallecano-real-oviedo)\n  Snippet: Spain\u00bbLaLiga - 2025/2026\n\u00bb\n\nRayo VallecanoRayo VallecanovsvsReal OviedoReal Oviedo\n\nKick off:\n:   18:00\n\nDate:\n:   Wed, 04-Mar-26\n\n Preview\n Head to Head\n Bet Builder\n Betting\n Match Centre\n Match Rep...\n- [Rayo Vallecano vs Real Oviedo Prediction, Betting Tips, Lineups ...](https://www.sportsgambler.com/betting-tips/football/rayo-vallecano-vs-real-oviedo-prediction-lineups-odds-2026-03-04/)\n  Snippet: ## Rayo Vallecano vs Real Oviedo Lineups & Team News\n\nCheck the Rayo vs Oviedo team news before you place your bets. We\u2019ll have the predicted and confirmed La Liga lineups for you plus all the latest ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-03\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-04 02:35:07"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-04 02:34:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano have the home-field edge and are typically the more established La Liga side, which matters in tight midweek fixtures. Real Oviedo travel with notable availability concerns (Ejaria out; Alhassane a major doubt; Costas needing assessment), which can reduce rotation options and defensive stability away from home. Draw probability remains meaningful given La Liga\u2019s lower-scoring tendencies and Rayo\u2019s often narrow margins, but the most likely result is a Rayo home win."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Home advantage at Vallecas and Rayo's typically stronger form at home make them favorites. Real Oviedo will be weakened by the confirmed absence of Ovie Ejaria, and Rahim Alhassane is a major doubt; defensive checks on David Costas add further uncertainty to Oviedo's lineup. Those personnel issues reduce Oviedo's creativity and squad stability, shifting probability toward a Rayo win, but incomplete injury confirmations and the possibility of a low-scoring draw keep confidence at medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano enjoy home advantage and are favored to win. Real Oviedo are missing key midfielder Ovie Ejaria and have Rahim Alhassane in doubt, with David Costas also to be assessed. These injuries reduce Oviedo's creativity and consistency, while Rayo's energy at home and current form tilt the balance in their favor, making a home win the most probable outcome."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Oviedo is missing key players such as Ovie Ejaria, and Rahim Alhassane is also doubtful, which may weaken their performance. Rayo Vallecano playing at home should have a slight edge."
+                }
+            ],
+            "model_name": "GPT-4 Turbo"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano has a stronger home form and several key injuries impact Real Oviedo, such as the absence of Ovie Ejaria. Additionally, Rahim Alhassane's doubtful status weakens their squad. The home advantage further tilts the prediction in favor of Rayo Vallecano."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano has home-court advantage. Real Oviedo has a few injury concerns (Ejaria, Alhassane). This gives Rayo a slight edge, although a draw is quite possible. The home win probability is slightly higher than the draw or away win probability."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:34:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Rayo Vallecano holds home advantage and faces an Oviedo squad with significant injury concerns. Ovie Ejaria is confirmed out, Rahim Alhassane is a major doubt, and David Costas requires assessment. This likely weakens Oviedo's midfield and defensive structure. Rayo, as a consistent top-flight side, should be favored at home against a promoted or lower-table team like Oviedo. The probability distribution reflects Rayo's edge but accounts for the potential for a tight, low-scoring La Liga match."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "model_name": "Claude 3.5",
+            "error": "Claude failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CYgdRT9TD3ZDzBSXm3NWs'}"
+        },
+        {
+            "forecast_timestamp": "2026-03-04 02:35:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Rayo Vallecano (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Rayo Vallecano has a strong home advantage, and Real Oviedo is dealing with key injuries to players like Ovie Ejaria and potential absence of Rahim Alhassane. This significantly weakens their away performance."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-30\n    Target Date: 2026-05-01\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Mallorca @ Girona                                    | Scheduled    | Away: 27.3% (9-8-16) vs Home: 27.3% (9-11-13)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Mallorca (Away) @ Girona (Home)\n**News & Injury Report:**\n- [Preview: Girona vs Mallorca - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/girona/preview/girona-vs-mallorca-prediction-team-news-lineups_596613.html)\n  Snippet: As for Mallorca, Lucas Bergstrom remains unavailable for selection through injury, while Antonio Raillo, Jan Salas, Marash Kumbulla, Mateo Joseph and Zito Luvumbo need to be assessed.\n\nThe team did not suffer any fresh issues against Alaves last time out, but there could be a change in a midfield area, with Manu Morlanes potentially coming in for Pablo Torre.\n\nVedat Muriqi has had an outstanding season, scoring 21 times in Spain's top flight this season, and there will be another spot in the final third of the field for the striker.\n\nGirona possible starting lineup: ...\n- [Girona vs Mallorca Prediction, Betting Tips, Lineups & Odds | 01 May 2026](https://www.sportsgambler.com/betting-tips/football/girona-vs-mallorca-prediction-lineups-odds-2026-05-01/)\n  Snippet: Spain Flag [...] | Jandro Garcia  -  -  -  -  - |\n| Ivan Cuellar  -  -  -  -  - |\n| Daniel Luna  -  -  -  -  - |\n| Cyle Larin  -  -  -  -  - | [...] | La Liga | | G | W | D | L | GF | GA | GD | GD | P |\n ---  ---  ---  ---  ---\n| 15 | Girona logo Girona | 33 | 9 | 11 | 13 | 36 | 50 | -14 | 36:50 | 38 |\n| 17 | Mallorca logo Mallorca | 33 | 9 | 8 | 16 | 41 | 51 | -10 | 41:51 | 35 |\n\nGirona logo\nMallorca logo ...\n**Betting Odds:**\n- [Girona FC vs RCD Mallorca Odds - Friday May 1 2026](https://www.oddsshark.com/soccer/la-liga/girona-mallorca-odds-may-3-2026-2425639)\n  Snippet: ## Form Last 10\n\n GIR  MAL\n\n| Date | Opp | Score | SU | Total | Venue | League |\n ---  ---  ---\n| Apr 25, 2026 | VCF | 1-2 | L | 2.50 | Away | Spain - La Liga |\n| Apr 21, 2026 | RBB | 2-3 | L | 2.50 | Home | Spain - La Liga |\n| Apr 10, 2026 | MAD | 1-1 | D | 3.75 | Away | Spain - La Liga |\n| Apr 6, 2026 | VIL | 1-0 | W | 2.75 | Home | Spain - La Liga |\n| Mar 21, 2026 | OSA | 0-1 | L | 2.75 | Away | Spain - La Liga |\n| Mar 14, 2026 | ATH | 3-0 | W | 2.50 | Home | Spain - La Liga |\n| Mar 7, 2026 | LEV | 1-1 | D | 2.50 | Away | Spain - La Liga | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-30\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-30 20:40:20"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-30 20:38:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Both sides are closely matched in season performance (Girona 9-11-13 vs Mallorca 9-8-16) and both have similar overall win rates, which keeps the draw/away upset firmly in play. Girona get the main edge from home advantage, but their negative goal difference and leaky defense (50 conceded) reduce confidence. Mallorca\u2019s attacking threat is real with Muriqi in top form (21 league goals), though Mallorca have multiple defensive/rotation doubts (Raillo, Kumbulla, others to be assessed), slightly increasing Girona\u2019s chances. With no clear market prices provided, probabilities are calibrated to a slight home lean in an otherwise balanced matchup."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Close table positions (Girona 38 pts vs Mallorca 35) and home advantage tip the balance to Girona. Girona have slightly better stability at home and are marginally higher in the standings. Mallorca present a real attacking threat through Vedat Muriqi (21 LaLiga goals) which keeps the away win probability meaningful. Mallorca also have several injury/assessment concerns (Lucas Bergstrom unavailable; Antonio Raillo, Jan Salas, Marash Kumbulla, Mateo Joseph and Zito Luvumbo to be assessed), which likely weakens their defensive options. Recent form is mixed for both sides, and available betting markets (snippets) show a tight line favoring the home side \u2014 used to calibrate probabilities. Given the small margin between teams and injury uncertainty, confidence is Medium."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win / Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Girona hosts with modest home form and Mallorca's GK Lucas Bergstr\u00f6m sidelined, plus other Mallorca injuries. Vedat Muriqi remains a dangerous attacker for Mallorca, but both teams show similar season win rates (~27%), keeping the balance. Home advantage and Girona's resilience at home tilt the odds modestly toward a Girona win, with a reasonable chance of a draw."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical win rates this season (27.3%), reflecting similar overall strength. Mallorca possess the division's standout striker in Vedat Muriqi (21 goals), giving them a clear route to goal, though several key players are doubtful (Bergstrom out, Raillo, Salas, Kumbulla, Joseph, Luvumbo questionable) which hurts depth and stability. Girona are at home, but home advantage is muted by their inconsistent recent form (2 wins from last 6 league matches). The betting odds from multiple sources also imply a very close contest, with no clear favorite (market odds roughly imply home win ~2.6, draw ~3.0, away win ~2.9, indicating near parity in probability). Given Girona's home-field and Mallorca's attacking edge versus injury concerns, this shapes up as a very even, low-scoring battle where the draw is notably live."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical win rates this season, indicating a close match. Girona's home win rate is 27.3%, similar to their overall win rate. The absence of Lucas Bergstrom and potential changes in Mallorca's midfield might slightly favor Girona. However, Girona's recent form includes a win against stronger opposition, giving them a slight edge at home. Betting odds suggest a balanced game, with no clear outlier, hence the balanced probabilities."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca @ Girona",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Girona has a slight edge at home and sits 3 points above Mallorca in the standings (15th vs 17th). Mallorca relies heavily on Vedat Muriqi for goals, but dealing with several key defensive injury doubts (like Antonio Raillo) tips the balance slightly toward a Girona victory or draw."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have similar win rates (27.3%) and records (Girona 9-11-13, Mallorca 9-8-16). Recent form favours Mallorca slightly (won vs Alaves, draw vs Rayo) but Girona has home advantage. Muriqi is a key threat for Mallorca, but both teams have injuries. Odds likely reflect a close match, making a draw plausible."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:40:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Both teams are struggling near the relegation zone with identical 27.3% win rates (9-8-16 for Mallorca away, 9-11-13 for Girona home). Girona sits 15th with 38 points, Mallorca 17th with 35 points - only 3 points separate them. Recent form favors neither: Girona has lost 3 of their last 5 (1-2 vs Valencia, 2-3 vs RB Bragantino, 0-1 vs Osasuna) with only 2 wins. Mallorca's Vedat Muriqi has been exceptional with 21 goals this season, providing significant attacking threat. However, Mallorca has multiple injury concerns with Lucas Bergstrom out and 5 players (Raillo, Salas, Kumbulla, Joseph, Luvumbo) needing assessment. Girona has home advantage but has conceded 50 goals in 33 games (1.52 per game), while Mallorca has conceded 51. Both teams have negative goal differences (-14 for Girona, -10 for Mallorca). The odds and team positions suggest a very tight match. Given home advantage in a crucial relegation battle and Mallorca's injury uncertainties, slight edge to Girona, but this is essentially a coin flip with draw being a realistic outcome. The 3-point gap makes this a six-pointer for both teams."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:40:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mallorca (away) @ Girona (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Girona and Mallorca have similar win rates this season, but Girona has a slight home advantage. Mallorca's key player Vedat Muriqi is in good form, but the team has several players who need to be assessed for fitness. The betting odds and recent form suggest a close match, with a slight edge to Girona at home."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

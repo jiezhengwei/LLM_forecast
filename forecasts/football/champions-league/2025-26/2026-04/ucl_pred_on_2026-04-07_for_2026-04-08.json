@@ -1,0 +1,244 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-07\n    Target Date: 2026-04-08\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Atl\u00e9tico Madrid @ Barcelona (1st Leg)                | Scheduled    | Away: #14 50% (4-1-3) Pts:13 Form:LLLWW | Home: #5 62% (5-1-2) Pts:16 Form:WWWWD\n2. Liverpool @ Paris Saint-Germain (1st Leg)            | Scheduled    | Away: #3 75% (6-0-2) Pts:18 Form:LLWDL | Home: #11 50% (4-2-2) Pts:14 Form:WWWWL\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Atl\u00e9tico Madrid (Away) @ Barcelona (Home)\n**News & Injury Report:**\n- [Barcelona injury, suspension list and return dates vs. Atletico Madrid](https://www.sportsmole.co.uk/football/barcelona/champions-league/injuries-and-suspensions/raphinha-bernal-de-jong-updates-barcelona-injury-suspension-list-vs-atletico_595137.html)\n  Snippet: Champions League\n\nApr 8, 2026 8.00pm\n\n Camp Nou\n\n# Barcelona injury, suspension list and return dates vs. Atletico Madrid: Raphinha, Marc Bernal, De Jong, Ronald Araujo latest\n\nBy   Ben Sully   | , Last updated:\n\nRaphinha, Bernal, De Jong updates: Ba...\n- [Preview: Barcelona vs Atletico Madrid - prediction, team news, lineups](https://www.sportsmole.co.uk/football/barcelona/champions-league/preview/barcelona-vs-atletico-prediction-team-news-lineups_595186.html)\n  Snippet: As for Atletico, Jan Oblak, Marc Pubill and Rodrigo Mendoza have returned to training and could be involved in the European fixture with Barcelona.\n\nHowever, Pablo Barrios remains sidelined with a thigh injury, while Jose Gimenez (knock) and Johnny C...\n**Betting Odds:**\n- [Barcelona vs Atletico Madrid Prediction - Champions League](https://www.sportytrader.com/en/betting-tips/barcelona-atletico-madrid-340361/)\n  Snippet: Our prediction for the Barcelona vs Atletico Madrid match is: Barcelona wins.\n\nProbabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 08/04/2026 between Barcelona and Atletico Madrid in Champions...\n- [Barcelona vs. Atl\u00e9tico Madrid - Odds - April 08, 2026](https://www.foxsports.com/soccer/champions-league-barcelona-vs-atletico-madrid-apr-07-2026-game-boxscore-710724?tab=odds)\n  Snippet: BAR 62%\n\n-195\n\nATM 18%\n\n+412\n\n## TEAM TO WIN\n\nA bet of $195 would total $295 if Barcelona wins, a bet of $100 would total $512 if Atl\u00e9tico Madrid wins, and a bet of $100 would total $473 if the teams draw\n\n-195\n\nBAR\n\n+412\n\nATM\n\n+373\n\nDRAW\n\nTEAM TO WI...\n\n----------------------------------------\n#### Matchup: Liverpool (Away) @ Paris Saint-Germain (Home)\n**News & Injury Report:**\n- [Liverpool XI vs PSG: Confirmed team news and predicted lineup](https://www.standard.co.uk/sport/football/liverpool-fc-xi-vs-psg-confirmed-team-news-predicted-lineup-injury-latest-champions-league-2026-b1277793.html)\n  Snippet: After hitting out at the manner in which his side capitulated at the Etihad Stadium, Slot would ideally like to ring the changes, but injuries means his options are rather limited.\n\nGiorgi Mamardashvili will keep his place in goal as Alisson Becker r...\n- [Liverpool XI vs PSG: Confirmed team news, predicted lineup, injury ...](https://sports.yahoo.com/articles/liverpool-xi-vs-psg-confirmed-150134048.html)\n  Snippet: After hitting out at the manner in which his side capitulated at the Etihad Stadium, Slot would ideally like to ring the changes, but injuries means his options are rather limited.\n\nGiorgi Mamardashvili will keep his place in goal as Alisson Becker r...\n**Betting Odds:**\n- [PSG vs Liverpool Prediction & Betting Tips - Champions League](https://www.sportytrader.com/en/betting-tips/psg-liverpool-340334/)\n  Snippet: Probabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 08/04/2026 between PSG and Liverpool in Champions League :\n\n The Sportytrader \u2b50 algorithm estimates a probability of 60.95% for a win of PSG...\n- [PSG vs Liverpool Predictions, Picks & Odds for Wednesday's ...](https://www.covers.com/soccer/psg-vs-liverpool-predictions-picks-wednesday-april-8-2026)\n  Snippet: ### PSG vs Liverpool opening odds\n\n Moneyline: PSG -141 | Liverpool +333\n Draw: +320\n Over/Under: Over 2.5 (-204) | Under 2.5 (+145)\n\n## How to watch PSG vs Liverpool\n\n|  |  |\n --- |\n| Location | Parc des Princes, Paris, France |\n| Date | Wednesday, ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-07 18:49:18"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-07 18:47:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing makes Barcelona a clear favorite at home (around -195), and Barca\u2019s recent UCL form is strong (WWWWD) versus Atleti\u2019s mixed run (LLLWW). Atl\u00e9tico have at least one confirmed absence (Barrios) with other fitness doubts noted, while Barcelona\u2019s squad has some injury/suspension noise but still projects as the stronger home side in a 1st-leg setup."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds favor PSG at Parc des Princes (around -141), implying a solid home edge in a 1st leg. Liverpool\u2019s league-stage record is better overall, but their recent form is shakier (LLWDL) and reports indicate limited rotation due to injuries, while PSG arrive with strong recent form (WWWWL). Net: PSG slight-to-moderate favorite with a meaningful draw chance."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:47:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market prices strongly favour Barcelona (books showing ~-195 / ~62%); Barcelona have superior home form (WWWWD) and a better group record. Atl\u00e9tico are inconsistent away and carry injury/fitness doubts despite some players returning to training. Possible Barcelona absences (Raphinha, De Jong, Ara\u00fajo updates) temper but do not overturn the gap. Calibration: odds + team form and injuries lead to ~62% home, ~20% draw, ~18% away."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market implies PSG favourite (around -141 / mid-50s% implied). PSG are in strong recent form at home (WWWWL) while Liverpool show excellent overall group record but mixed recent form (LLWDL) and potential selection/injury constraints. Goalkeeper/rotation noise in reports increases uncertainty. Combining market signals and form gives ~56% PSG win, ~23% draw, ~21% Liverpool win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:48:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Barcelona at Camp Nou with strong recent form (4W, 1D in last 5) gives them the edge. However, injuries to Raphinha, Marc Bernal, De Jong, and Ronald Araujo reduce attacking and defensive capabilities, tempering the edge. Atl\u00e9tico Madrid have a solid away record (4-1-3) and are capable on the counter, but the overall odds and home dominance tilt the balance toward Barcelona in this first leg. "
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG hold home-field advantage and have been favored in betting markets (odds imply a PSG win around 55-60%). Liverpool face injuries that limit options, reducing their edge away from Anfield. PSG\u2019s form at home and overall squad depth support a home victory, though Liverpool\u2019s resilience away keeps the draw and away-threat possibilities within reach."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:48:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona have a strong home record (5-1-2, recent form WWWWD) and are generally favored in betting odds (BAR 62%, -195). Injuries to Raphinha and Bernal are noted, with De Jong and Araujo status to monitor, but the squad remains deep. Atl\u00e9tico are weaker away (4-1-3, recent form LLLWW), and while Oblak and others have returned, they're still missing Barrios and likely Gimenez, weakening their defensive solidity. Markets price home win near 60%, in line with form and home advantage."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market and algorithmic odds converge around 60% chance for PSG home win. PSG are solid at home (4-2-2, recent form WWWWL), while Liverpool's away UCL form is strong (6-0-2), but injuries\u2014particularly in goal (Alisson out) and limited rotation\u2014are concerns. Liverpool's recent dip (LLWDL) and potential fatigue factor in. PSG are mostly at full strength. While Liverpool are dangerous on the road, home/market/fitness edge puts probability comfortably with PSG, though draw risk remains significant."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:48:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona is in good form at home (#5), while Atl\u00e9tico Madrid is struggling recently (Form: LLLWW). Despite some injuries, Barcelona's overall squad depth gives them an edge. Betting odds heavily favor Barcelona."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG has been strong at home (Form: WWWWL) and betting odds reflect their favorable status. Liverpool has key injuries, and a slightly weaker form coming into this matchup (Form: LLWDL). PSG's home advantage should make the difference."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:48:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona is favored at home (62% implied probability from betting odds). They have a strong home record (5-1-2). Atletico has some players returning from injury but Barrios is still out. Barcelona also has some injuries, but the odds and home advantage favor them. Foxsports odds provide a good probability for Barcelona. SportsTrader predicts Barcelona win."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG is favored at home. Liverpool has been inconsistent recently (LLWDL). PSG has a decent home record (4-2-2), and Liverpool's away record is good (6-0-2), but recent form and home advantage tips it towards PSG. The betting odds also strongly favor PSG at -141 (60.95% probability by SportyTrader). Injury issues limit Liverpool's options. Cover's.com provides similar odds, making a PSG win probable."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:48:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona has superior league position (#5 vs #14), better recent form (WWWWD vs LLLWW), and significant home advantage at Camp Nou. Betting odds strongly favor Barcelona (62% implied probability from Fox Sports). Atl\u00e9tico's recent form is poor with 3 consecutive losses, though they have some key players returning from injury (Oblak, Pubill, Mendoza). Barcelona's injuries (Raphinha, Bernal, De Jong, Araujo) are a concern but not enough to overcome the home advantage and form differential."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "PSG has home advantage and strong recent form (WWWWL), though Liverpool has the better league record (#3 vs #11). Betting algorithms favor PSG (60.95% per Sportytrader), though market odds show PSG -141 (implied ~58%). Liverpool's injury situation is significant (Alisson Becker out, limited options per reports) and they're coming off a poor performance at Etihad. PSG's home form and Liverpool's defensive vulnerabilities (with backup goalkeeper Mamardashvili) give PSG the edge, but Liverpool's quality makes this closer than the Barcelona match."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:49:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona holds significant advantages: superior UCL league stage record (62% vs 50%), stronger recent form (WWWWD vs LLLWW), and home advantage at Camp Nou. Betting markets heavily favor Barcelona with -195 odds (62% implied probability) vs Atl\u00e9tico's +412 (18% implied). Atl\u00e9tico is in poor recent form with 3 consecutive losses before 2 wins. Key injuries for Barcelona (Raphinha, De Jong, Araujo, Bernal) are concerning, but Atl\u00e9tico also has injuries (Barrios, Gimenez). This is a Champions League quarterfinal 1st leg, and Barcelona's home dominance combined with Atl\u00e9tico's poor away form (LLLWW) makes a home victory the most likely outcome. The 18% away win probability aligns with betting odds showing Atl\u00e9tico as heavy underdogs."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "This is a closely contested quarterfinal 1st leg. Liverpool has superior UCL league stage performance (75% win rate, #3 ranking vs PSG's 50%, #11 ranking) with 18 points vs 14. However, Liverpool's recent form is concerning (LLWDL) including capitulation at Etihad mentioned in reports, plus significant injury limitations with Alisson out. PSG shows stronger recent form (WWWWL) and has home advantage at Parc des Princes. Betting markets favor PSG at -141 (approximately 58-61% implied probability per algorithm estimates) vs Liverpool +333 (23-25% implied). The draw is priced at +320 (23-24% implied). Liverpool's injury crisis and poor recent form, combined with PSG's home advantage, tilts this toward the home side despite Liverpool's stronger overall UCL campaign. Confidence is medium due to Liverpool's quality when healthy and their superior league stage record."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-07 18:49:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Barcelona (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Barcelona has a strong home record and recent form, with key players like Raphinha, Bernal, and De Jong potentially returning. Atl\u00e9tico Madrid's away form is not as strong, and they have several key players injured or doubtful."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Liverpool (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "PSG has a strong home advantage and the betting odds favor them. Liverpool, however, has a good away record but is dealing with injuries, which could impact their performance. The draw probability is also significant given the quality of both teams."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

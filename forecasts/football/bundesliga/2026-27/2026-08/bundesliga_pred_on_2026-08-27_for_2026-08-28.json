@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Bundesliga 2026-2027",
+        "competition_key": "bundesliga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-27",
+        "target_date_et": "2026-08-28",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast German Bundesliga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884817\nMatchup: VfB Stuttgart (away) @ Bayern Munich (home)\nHome: Bayern Munich\nAway: VfB Stuttgart\nKickoff UTC: 2026-08-28T18:30Z\nKickoff ET: 2026-08-28 14:30 EDT\nVenue: Allianz Arena\nRound: unavailable\nHome form: WWWWD\nAway form: WLDWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Bayern Munich -425 (open -370); Draw +550 (open +425); VfB Stuttgart +750 (open +500)\nTavily context:\n  - Title: PREVIEW | Bayern München vs Stuttgart: team news, lineups, predictions (Bundesliga 28/08) - Yahoo Sports\n    Content: In their last match, Bayern München prevailed 1-2 against Borussia Dortmund (Franz Beckenbauer Supercup 2026). In their last fixture, Stuttgart won 0-4 against Hansa Rostock (DFB Pokal 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nThe last meeting between the two teams ended with Bayern München winning 3-0.\n\n## Unavailable\n\n## Bayern München\n\n Lennart Karl - Muscle Tear\n Tarek Buchmann - Syndesmotic Ligament Tear\n\n## Stuttgart\n\n Ramon Hendriks - Muscular problems\n Lorenz Assignon - Shoulder Injury\n Luca Antony Jaquez - Fitness\n Jeremy Arevalo - Back Problems ...\n    URL: https://sports.yahoo.com/articles/preview-bayern-m-nchen-vs-183500166.html\n  - Title: Bayern München vs VfB Stuttgart - live score, predicted lineups and H2H ...\n    Content: FührichMuscle injuryDoubtful\n\n  Nikolas Nartey\n\n  Muscle injury / A few weeks\n\nNarteyMuscle injuryA few weeks\n\n  Jeremy Arévalo\n\n  Back injury\n\nArévaloBack injury\n\n  Dan-Axel Zagadou\n\n  Hamstring injury / Early September 2026\n\nZagadouHamstring injuryEarly September 2026\n\n  Lorenz Assignon\n\n  Shoulder injury / Early September 2026\n\nAssignonShoulder injuryEarly September 2026\n\n  Dennis Seimen\n\n  Hamstring injury / Early October 2026\n\nSeimenHamstring injuryEarly October 2026\n\n  Justin Diehl\n\n  Thigh injury / Early October 2026\n\nDiehlThigh injuryEarly October 2026\n\n  Leo Sauer ...\n    URL: https://www.fotmob.com/matches/bayern-munchen-vs-vfb-stuttgart/3c6nc5\n  - Title: Bayern Munich vs Stuttgart Prediction - Bundesliga - 28/08/2026\n    Content: ## Bayern Munich v Stuttgart Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.25 | 7 | 9 |  |\n| 1xbet | 1.29 | 6.95 | 10.4 |  |\n| Melbet | 1.25 | 6.7 | 10 |  |\n| Betwinner | 1.25 | 6.7 | 10 |  |\n| 22bet | 1.25 | 6.7 | 10 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Bayern Munich and Stuttgart?\n\nOur prediction for the Bayern Munich vs Stuttgart match is: under 4.5 goals. ...\n    URL: https://www.sportytrader.com/en/betting-tips/bayern-munich-stuttgart-368436\n  - Title: FC Bayern München - VfB Stuttgart ai prediction 28.08.2026 Bundesliga\n    Content: ### VfB Stuttgart performance of the last 7 away matches\n\nVictories\n\n57%\n\nOver 2.5\n\n85%\n\n## Last Match Results\n\nBayern Munich's recent triumph over Borussia Dortmund with a 2:1 scoreline reinforces their current dominance. Meanwhile, VfB Stuttgart's 4:0 victory against Hansa Rostock highlights their ability to score goals, albeit against weaker opposition.\n\n## Best Odds and Our Betting Tip ...\n    URL: https://www.livetipsportal.com/en/sportsbetting-tips/bayern-munich-vs-vfb-stuttgart-bundesliga-12193582\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884817\nMatchup: VfB Stuttgart (away) @ Bayern Munich (home)\nHome: Bayern Munich\nAway: VfB Stuttgart\nKickoff UTC: 2026-08-28T18:30Z\nKickoff ET: 2026-08-28 14:30 EDT\nVenue: Allianz Arena\nRound: unavailable\nHome form: WWWWD\nAway form: WLDWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Bayern Munich -425 (open -370); Draw +550 (open +425); VfB Stuttgart +750 (open +500)\nTavily context:\n  - Title: PREVIEW | Bayern München vs Stuttgart: team news, lineups, predictions (Bundesliga 28/08) - Yahoo Sports\n    Content: In their last match, Bayern München prevailed 1-2 against Borussia Dortmund (Franz Beckenbauer Supercup 2026). In their last fixture, Stuttgart won 0-4 against Hansa Rostock (DFB Pokal 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nThe last meeting between the two teams ended with Bayern München winning 3-0.\n\n## Unavailable\n\n## Bayern München\n\n Lennart Karl - Muscle Tear\n Tarek Buchmann - Syndesmotic Ligament Tear\n\n## Stuttgart\n\n Ramon Hendriks - Muscular problems\n Lorenz Assignon - Shoulder Injury\n Luca Antony Jaquez - Fitness\n Jeremy Arevalo - Back Problems ...\n    URL: https://sports.yahoo.com/articles/preview-bayern-m-nchen-vs-183500166.html\n  - Title: Bayern München vs VfB Stuttgart - live score, predicted lineups and H2H ...\n    Content: FührichMuscle injuryDoubtful\n\n  Nikolas Nartey\n\n  Muscle injury / A few weeks\n\nNarteyMuscle injuryA few weeks\n\n  Jeremy Arévalo\n\n  Back injury\n\nArévaloBack injury\n\n  Dan-Axel Zagadou\n\n  Hamstring injury / Early September 2026\n\nZagadouHamstring injuryEarly September 2026\n\n  Lorenz Assignon\n\n  Shoulder injury / Early September 2026\n\nAssignonShoulder injuryEarly September 2026\n\n  Dennis Seimen\n\n  Hamstring injury / Early October 2026\n\nSeimenHamstring injuryEarly October 2026\n\n  Justin Diehl\n\n  Thigh injury / Early October 2026\n\nDiehlThigh injuryEarly October 2026\n\n  Leo Sauer ...\n    URL: https://www.fotmob.com/matches/bayern-munchen-vs-vfb-stuttgart/3c6nc5\n  - Title: Bayern Munich vs Stuttgart Prediction - Bundesliga - 28/08/2026\n    Content: ## Bayern Munich v Stuttgart Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.25 | 7 | 9 |  |\n| 1xbet | 1.29 | 6.95 | 10.4 |  |\n| Melbet | 1.25 | 6.7 | 10 |  |\n| Betwinner | 1.25 | 6.7 | 10 |  |\n| 22bet | 1.25 | 6.7 | 10 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Bayern Munich and Stuttgart?\n\nOur prediction for the Bayern Munich vs Stuttgart match is: under 4.5 goals. ...\n    URL: https://www.sportytrader.com/en/betting-tips/bayern-munich-stuttgart-368436\n  - Title: FC Bayern München - VfB Stuttgart ai prediction 28.08.2026 Bundesliga\n    Content: ### VfB Stuttgart performance of the last 7 away matches\n\nVictories\n\n57%\n\nOver 2.5\n\n85%\n\n## Last Match Results\n\nBayern Munich's recent triumph over Borussia Dortmund with a 2:1 scoreline reinforces their current dominance. Meanwhile, VfB Stuttgart's 4:0 victory against Hansa Rostock highlights their ability to score goals, albeit against weaker opposition.\n\n## Best Odds and Our Betting Tip ...\n    URL: https://www.livetipsportal.com/en/sportsbetting-tips/bayern-munich-vs-vfb-stuttgart-bundesliga-12193582\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401884817",
+                        "date_utc": "2026-08-28T18:30Z",
+                        "kickoff_et": "2026-08-28 14:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Bayern Munich",
+                        "away": "VfB Stuttgart",
+                        "home_id": "132",
+                        "away_id": "134",
+                        "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                        "venue": "Allianz Arena",
+                        "city": "München",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "WWWWD",
+                        "form_away": "WLDWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-370",
+                            "home_current": "-425",
+                            "draw_open": "+425",
+                            "draw_current": "+550",
+                            "away_open": "+500",
+                            "away_current": "+750"
+                        },
+                        "odds_text": "DraftKings: Bayern Munich -425 (open -370); Draw +550 (open +425); VfB Stuttgart +750 (open +500)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-27T08:24:51.503231-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:18:44.545553-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich enter this Bundesliga opener as heavy favorites at the Allianz Arena, fresh off a 2-1 DFL-Supercup victory against Borussia Dortmund. Stuttgart faces significant squad depth issues with multiple key players sidelined due to injuries, including Dan-Axel Zagadou and Lorenz Assignon. Bookmaker odds strongly support a Bayern Munich victory, with implied probabilities for a home win hovering around 75-80%.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-27T08:19:03.374085-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.759,
+                    "draw_probability": 0.135,
+                    "away_win_probability": 0.106,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich enter this match as heavy favorites with implied odds around 75-80% for a home victory. Stuttgart is dealing with several key injuries, and Bayern's recent 2-1 win over Dortmund in the Supercup indicates strong current form at the Allianz Arena.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-27T08:19:16.634000-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy favorites playing at their home fortress, the Allianz Arena. They enter the season with strong form (WWWWD) and a recent victory over Borussia Dortmund in the Supercup. The betting markets reflect this, with odds as short as -425 for a Bayern win. While Stuttgart also started their season with a cup win, it was against a lower-tier opponent, and they are contending with a more significant list of injuries. Bayern's historical dominance in this fixture, including winning the last meeting 3-0, further points to a comfortable home victory to open their Bundesliga campaign.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:27.451328-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.77,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is a dominant home team, reflected by strong betting odds that imply a high probability (~75-76%) of a home win. They have a strong recent form, including a 2-1 victory over Borussia Dortmund and a 3-0 win against VfB Stuttgart in their last head-to-head match. VfB Stuttgart is dealing with several significant injuries, which further weakens their chances against a top-tier opponent like Bayern at the Allianz Arena. All available data points strongly indicate a comfortable home victory for Bayern Munich.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:19:44.171094-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy home favorites in the 1X2 market, enter with stronger recent form, and have home advantage at Allianz Arena. Stuttgart have shown scoring form but face a major step up in opposition and have several injury concerns, making a Bayern regulation-time win the most likely outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:19:51.503641-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are strong home favorites, with market odds implying roughly a three-in-four chance of a home win after normalization. They enter in excellent recent form, won the most recent head-to-head 3-0, and recently beat Borussia Dortmund in the Supercup. Stuttgart also arrive in decent form, but their win came against weaker cup opposition and they have multiple injury concerns, making an away upset less likely at Allianz Arena.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-27T08:20:11.965429-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Bayern a strong home favorite (heavy negative moneyline) and recent form is excellent (WWWWD) with a recent Supercup win. Stuttgart arrive in decent form but with multiple injury concerns and a tougher step up in opponent quality; Bayern also won the last H2H 3-0. Upset chances exist early-season, but the most likely 90-minute result is a Bayern home win.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-27T08:20:23.249857-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites (market odds strongly favor home win), coming off a Supercup victory and showing strong early-season form (WWWWD). Home advantage at the Allianz and superior squad depth favor Bayern. Stuttgart have a good cup result but multiple injury concerns to key players and less depth, making an upset less likely. Recent H2H also favors Bayern (last meeting 3-0). Probabilities reflect bookmaker market skew, form, injuries and venue; stoppage-time goals are included in the 90-minute result.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-27T08:20:36.979102-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bayern Munich are strong favorites at home with favorable recent form and typical home advantage, even with some injuries. Stuttgart have some squad issues but can threaten. Regulation-time win for Bayern is the most probable outcome; draws and away wins are less likely.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-27T08:20:39.934113-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.77,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are strong favorites at home, with recent form showing a win over Borussia Dortmund and a dominant head-to-head record against Stuttgart. Stuttgart have several injury concerns and, despite a big cup win, face a significant step up in opposition quality. Bookmaker odds and recent results both strongly favor Bayern, making a home win the most likely outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-27T08:20:44.171469-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich has a strong home form and a history of winning against Stuttgart. Despite Stuttgart's recent victory, Bayern's superior squad depth and recent performance against Borussia Dortmund suggest a high likelihood of a home win.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-27T08:20:52.427801-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites at home (DraftKings -425, implying ~75% after removing vig). Bayern enter in strong form (WWWWD) including a Supercup win over Dortmund, while Stuttgart carry a lengthy injury list (Assignon, Zagadou, Seimen, Diehl, Arevalo, and more). The last H2H ended 3-0 to Bayern, and Allianz Arena advantage further tilts this toward a home win.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-27T08:20:58.253883-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Bayern Munich",
+                    "confidence": "high",
+                    "reasoning": "Bayern are strong favorites at home (-425), with excellent form (WWWWD) and a recent Supercup win over Dortmund. Stuttgart have significant injury concerns (Assignon, Zagadou, Führich, Nartey, Arévalo among others) and historically struggle at the Allianz Arena, having lost the last meeting 3-0. While Stuttgart can score, Bayern's home dominance makes a home win the most likely outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-27T08:21:15.704278-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are strong favorites at home at the Allianz Arena, with DraftKings odds implying roughly 76-80% home win probability, though the market has shifted from open (-370 to -425), indicating growing confidence in Bayern. Bayern recently beat Dortmund 2-1 in the Supercup, showing strong form (WWWWD). Stuttgart won 4-0 against Hansa Rostock in the DFB Pokal but that was against lower-tier opposition, and their form (WLDWD) is less consistent. Stuttgart have multiple injury concerns (Zagadou, Assignon, Seimen, Diehl, Führich doubtful). The last H2H meeting ended 3-0 to Bayern. Adjusting slightly downward from raw implied odds to account for variance and Stuttgart's goal-scoring ability, Bayern win is the clear predicted outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:24.390397-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy favorites at home in the Allianz Arena. The odds movement from -370 to -425 indicates strong backing for Bayern. Bayern recently won the Franz Beckenbauer Supercup against Dortmund 2-1, demonstrating strong form (WWWWD). Stuttgart has a mixed away record with 57% wins in their last 7 away matches but faces significant injury problems with key players like Hendriks, Assignon, Zagadou, Seimen, and Diehl unavailable. The last head-to-head meeting saw Bayern win convincingly 3-0. Bayern has only two injury concerns (Karl and Buchmann) compared to Stuttgart's extensive injury list. Stuttgart's strong form (WLDWD) and 4-0 win over Hansa Rostock came against lower-tier opposition. The venue advantage, superior squad depth, and home form strongly favor Bayern Munich for a regulation-time victory.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-27T08:21:27.554049-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is heavily favored with strong recent form (4W-1D), recent 2-1 victory over Dortmund, and 3-0 head-to-head advantage over Stuttgart. The betting odds strongly favor Bayern (-425 on DraftKings implies ~81% implied probability). Stuttgart has inconsistent form (2W-2L-1D) and multiple injury concerns (Hendriks, Assignon, Arevalo, Zagadou, Seimen, Diehl). While Stuttgart showed offensive capability with a 4-0 cup win, this was against lower-tier opposition. Bayern's home advantage at Allianz Arena and defensive stability make a home win the most probable outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-27T08:21:34.670512-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy favorites at home with strong recent form and a convincing 3-0 win in the last head-to-head. Stuttgart have notable defensive injury concerns, and the odds strongly favor a Bayern regulation-time victory.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-27T08:21:36.407402-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are strong at home and have superior squad depth. Stuttgart have several injuries and are less consistent. Historical head-to-head favors Bayern, and odds heavily favor a home win.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-27T08:21:53.987174-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is heavily favored by bookmakers and enters the match with strong momentum after winning the Supercup against Borussia Dortmund. Stuttgart has been dealt a significant blow with multiple key injuries in defense and midfield, including Zagadou and Assignon. Bayern's home advantage at the Allianz Arena and superior squad depth make them the clear favorites for a regulation-time victory.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-27T08:21:58.523303-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich has a strong home form and recently won against Borussia Dortmund, indicating their current dominance. VfB Stuttgart, while showing offensive capability in their last match, faces a significantly stronger opponent. The historical head-to-head record also heavily favors Bayern Munich.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-27T08:22:49.392117-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is the clear favorite playing at the Allianz Arena, with opening and current market odds strongly pricing in a home victory (implied probability ~75-80%). Their recent form includes a Supercup win over Dortmund, and they have historically dominated this fixture. Stuttgart faces a severe injury crisis in defense and midfield (Assignon, Seimen, Diehl, Zagadou, and Arevalo all sidelined), which drastically weakens their structural integrity and away resilience. Despite Stuttgart's convincing cup win over a lower-tier side, their depleted squad and the difficulty of visiting Bayern make a home win the most probable outcome across 90 minutes plus stoppage time.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-27T08:23:16.229112-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich holds a significant advantage hosting at the Allianz Arena with strong recent form (WWWWD). VfB Stuttgart contends with numerous key injuries including Assignon, Zagadou, and Nartey, weakening their away defense. Historical H2H data favors Bayern (last meeting 3-0), and market odds (-425) indicate an approximately 80% implied probability for a home victory.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-27T08:24:18.567640-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy favorites due to elite home form (WWWWD), a 3-0 head-to-head win in the last meeting, and a significantly healthier squad. Stuttgart’s injury list includes key players such as Assignon, Zagadou, Nartey, and Führich (doubtful), weakening their defensive and midfield core. While Stuttgart enter off a 4-0 cup win, it came against lower-league opposition. Market odds have moved sharply toward Bayern (-425), reflecting strong market confidence. Bayern’s early-season sharpness, reinforced by the Supercup victory over Dortmund, makes a home win the clear most likely outcome.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-27T08:24:48.780368-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich enter the match with strong momentum after defeating Borussia Dortmund 2-1 in the Franz Beckenbauer Supercup, while Stuttgart's 4-0 DFB Pokal win came against lower-tier Hansa Rostock. Bayern dominated the last head-to-head 3-0 at the Allianz Arena. Stuttgart faces a significant injury crisis with key defenders Dan-Axel Zagadou, Lorenz Assignon, and Ramon Hendriks unavailable, severely weakening their backline. The market odds (Bayern -425) reflect Bayern's substantial quality advantage at home, and their relatively healthier squad reinforces the expectation of a home victory.",
+                    "event_id": "401884817"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-27T08:24:51.496458-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "VfB Stuttgart (away) @ Bayern Munich (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich has a strong home form and recent victory over Borussia Dortmund, while Stuttgart's win against Hansa Rostock was against weaker opposition.",
+                    "event_id": "401884817"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2193 @@
+{
+    "meta_info": {
+        "competition": "Bundesliga 2026-2027",
+        "competition_key": "bundesliga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-04",
+        "target_date_et": "2026-09-05",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast German Bundesliga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884806\nMatchup: 1. FC Union Berlin (away) @ Bayer Leverkusen (home)\nHome: Bayer Leverkusen\nAway: 1. FC Union Berlin\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: BayArena\nRound: unavailable\nHome form: LWDLW\nAway form: DWWWD\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Bayer Leverkusen -220 (open -250); Draw +370 (open +380); 1. FC Union Berlin +450 (open +500)\nTavily context:\n  - Title: PREVIEW | Bayer Leverkusen vs 1. FC Union Berlin: team news, lineups, predictions (Bundesliga 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\n1. FC Union Berlin currently have 1 point and lie in 8th position. In their last fixture, Mauro Lustrinelli's team shared the spoils 3-3 with Eintracht Frankfurt (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended with 1. FC Union Berlin winning 1-0.\n\n## Predicted lineups\n\nBayer Leverkusen: Mark Flekken, Lucas Vázquez, Loic Badé, Edmond Tapsoba, Miguel Gutiérrez, Equi Fernández, Aleix García, Ibrahim Maza, Malik Tillman, Afonso Moreira, Patrik Schick ...\n    URL: https://sports.yahoo.com/articles/preview-bayer-leverkusen-vs-1-133500742.html\n  - Title: Leverkusen vs Union Berlin - live score, predicted lineups and H2H ...\n    Content: TV schedules\n\n# Bayer Leverkusen vs Union Berlin — Sat, September 5, 1:30 PM UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n BayArena\n\nLeverkusenBayer Leverkusen\n\n‌\n‌\n\nUnion BerlinUnion Berlin\n\n# Bayer Leverkusen vs Union Berlin — Sat, September 5, 1:30 PM UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n BayArena\n\nLeverkusenBayer Leverkusen\n\n‌\n‌\n\nUnion BerlinUnion Berlin\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Martin Terrier\n\n  Injured / Early September 2026\n\nTerrierInjuredEarly September 2026\n\n  Kennet Eichhorn\n\n  Illness / Late October 2026 ...\n    URL: https://www.fotmob.com/matches/union-berlin-vs-bayer-leverkusen/27d4by\n  - Title: Bayer Leverkusen vs Union Berlin Prediction - Bundesliga - 05/09/2026\n    Content: ## Bayer Leverkusen v Union Berlin Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.46 | 5 | 6 |  |\n| 1xbet | 1.51 | 5.03 | 6.4 |  |\n| Melbet | 1.46 | 4.84 | 6.15 |  |\n| Betwinner | 1.45 | 4.9 | 6.25 |  |\n| 22bet | 1.45 | 4.9 | 6.25 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Bayer Leverkusen and Union Berlin?\n\nOur prediction for the Bayer Leverkusen vs Union Berlin match is: BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/bayer-leverkusen-union-berlin-370252\n  - Title: Bayer Leverkusen vs Union Berlin football Betting Pick\n    Content: ## Bayer Leverkusen vs Union Berlin football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Bayer Leverkusen vs Union Berlin.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet :\n\n Take Bayer Leverkusen to win & over 1.5 goals at odds of 1.55 at 12Play Sports\n\n## German Bundesliga\n\n## 2026-09-05 - Bayer Leverkusen vs Union Berlin\n\n### A Sports Betting Pick by Niko ...\n    URL: https://www.goonersguide.com/football-pick-59864-Bayer-Leverkusen-vs-Union-Berlin.htm\n\nGame ID: 2\nSource event_id: 401884804\nMatchup: SV Elversberg (away) @ Borussia Mönchengladbach (home)\nHome: Borussia Mönchengladbach\nAway: SV Elversberg\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: BORUSSIA-PARK\nRound: unavailable\nHome form: LWWLW\nAway form: WWWLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Borussia Mönchengladbach -120 (open -150); Draw +275 (open +290); SV Elversberg +270 (open +320)\nTavily context:\n  - Title: Borussia Monchengladbach vs Elversberg Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Jens Castrop Shoulder\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nTomas Cvancara Groin\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nYukhym Konoplya Knee\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nElversberg  Injury Table\n\nType Name Info\n\nFrederik Schmahl Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nLuis Seifert Foot\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nTom Zimmerschied Low back ...\n    URL: https://www.sportsgambler.com/betting-tips/football/borussia-monchengladbach-vs-elversberg-prediction-lineups-odds-2026-09-05\n  - Title: Preview: Borussia Monchengladbach vs Elversberg\n    Content: Borussia Monchengladbach form (all competitions):\n\n W\n L\n\nElversberg Bundesliga form:\n\n W\n\nElversberg form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Felversberg-6a99dbb7e5139058476762.jpg)\n\n© Iconsport / , Eibner Pressefoto, Eibner-Pressefoto / Alamy / Alexander Neis\n\nGladbach's most important squad members are largely healthy, though full-back Jens Castrop and centre-back Leopold Querfeld are unavailable. ...\n    URL: https://www.sportsmole.co.uk/football/borussia-monchengladbach/preview/borussia-mbach-vs-elversberg-prediction-team-news-lineups_604373.html\n  - Title: Prediction Borussia Mönchengladbach vs Elversberg\n    Content: The odds are: Borussia Mönchengladbach to win 1.90, draw 3.70, Elversberg to win 4.00. The odds are Over 2.5 at 1.57 and Under 2.5 at 2.37.\n    URL: https://betmines.com/match-preview/borussia-monchengladbach-vs-elversberg-prediction-match-preview-and-analysis-bundesliga-05-09-2026\n\nGame ID: 3\nSource event_id: 401884800\nMatchup: SC Freiburg (away) @ SC Paderborn 07 (home)\nHome: SC Paderborn 07\nAway: SC Freiburg\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: Home Deluxe Arena\nRound: unavailable\nHome form: DWWDW\nAway form: WWWWL\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: SC Paderborn 07 +235 (open +205); Draw +260 (open +250); SC Freiburg -105 (open +110)\nTavily context:\n  - Title: PREVIEW | SC Paderborn 07 vs SC Freiburg: team news, lineups, predictions (Bundesliga 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nSC Freiburg have 3 points to their name this season and occupy 2nd position in the table. In their last match, Julian Schuster's team prevailed 4-1 against Werder Bremen (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended with SC Paderborn 07 winning 3-1.\n\n## Predicted lineups\n\nSC Paderborn 07: Nahuel Noll, Jano ter Horst, Tjark Scheller, Mattes Hansen, Laurin Curda, Santi Castaneda, Laurin Ulrich, Raphael Obermair, Stefano Marino, Gabriel Vidović, Marvin Pieringer ...\n    URL: https://sports.yahoo.com/articles/preview-sc-paderborn-07-vs-135500364.html\n  - Title: Preview: SC Paderborn vs Freiburg - prediction, team news, lineups\n    Content: As for Freiburg, defensive midfielder Patrick Osterhage has a muscle issue to contend with, and fellow middle-third option Rihito Yamamoto is expected to sit out in order to continue building fitness.\n\nWith that in mind, Maximilian Eggestein and Yannik Engelhardt will form Schuster's double pivot, platforming an attacking trio featuring Jan-Niklas Beste, Yuito Suzuki and Derry Scherhant, while Florent Muslija undergoes rehabilitation for an ACL injury.\n\nSC Paderborn possible starting lineup:\n\nNoll; Ter Horst, Hansen, Scheller; Curda, Castaneda, Ulrich, Obermair; Marino, Pieringer, Vidovic ...\n    URL: https://www.sportsmole.co.uk/football/paderborn/preview/sc-paderborn-vs-freiburg-prediction-team-news-lineups_604426.html\n  - Title: SC Paderborn vs SC Freiburg Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: ## The Pick :\n\nSC Paderborn 0-2 SC Freiburg\n\n## BEST BETTING TIP :\n\n Take SC Freiburg to win at odds of 2.10 with BetFred\n\nBEST BETTING SITE FOR YOUR LOCATION\n\nbet365\n\nFully authorized operator in Brazil. Bet legally using local Pix deposits and native Portuguese support.\n\nAposte na bet365.br\n\nMarketing Tools\n\nProducts\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nApply\n\nLog In\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais\n\nБългарски\n\nΕλληνικά\n\nPortuguês\n\nLog In\n\nApply\n\nMarketing Tools\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk ...\n    URL: https://www.goonersguide.com/football-pick-59867-SC-Paderborn-vs-SC-Freiburg.htm\n  - Title: SC Paderborn vs. SC Freiburg - Boxscore - Live Score - September 05, 2026 | FOX Sports\n    Content: Databricks\nSC Paderborn\nSC Freiburg\n\n## SC Paderborn vs SC Freiburg\n\nBenteler-Arena\n\n# SC Paderborn vs. SC Freiburg - Boxscore: Sep 5, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nSC Paderborn\n\n|  | | |\n ---\n| 8/29 | FSV Mainz 05 MAI (A) | D0-0 |\n| 8/23 | Default Logo PHO (A) | W4-2 |\n| 8/1 | Vfl Osnabruck OSN (A) | W2-0 |\n| 7/25 | Magdeburg MAG (H) | L2-0 |\n| 7/17 | Default Logo FAG (H) | W3-1 |\n\nFSV Mainz 05\nDefault Logo\nVfl Osnabruck\nMagdeburg\nDefault Logo\nSC Freiburg ...\n    URL: https://www.foxsports.com/soccer/bundesliga-sc-paderborn-vs-sc-freiburg-sep-05-2026-game-boxscore-912563?tab=boxscore\n\nGame ID: 4\nSource event_id: 401884807\nMatchup: Borussia Dortmund (away) @ TSG Hoffenheim (home)\nHome: TSG Hoffenheim\nAway: Borussia Dortmund\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: PreZero Arena\nRound: unavailable\nHome form: LWLWD\nAway form: WWLLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: TSG Hoffenheim +180 (open +175); Draw +270 (open +265); Borussia Dortmund +120 (open +120)\nTavily context:\n  - Title: Hoffenheim vs Borussia Dortmund Prediction, Betting Tips ...\n    Content: ### Injuries & Suspensions\n\nHoffenheim  Injury Table\n\nType Name Info\n\nTim Lemperle 2nd yellow (Red\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nAlexander Prass Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nBorussia Dortmund  Injury Table\n\nType Name Info\n\nSamuele Inacio Red card (direc\n\nPosition: Forward Matches: 1 Goals: - Assists: - Expected return: 2026-09-19\n\nJustin Lerma Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nRamy Bensebaini Rib ...\n    URL: https://www.sportsgambler.com/betting-tips/football/hoffenheim-vs-borussia-dortmund-prediction-lineups-odds-2026-09-05\n  - Title: TSG Hoffenheim vs Borussia Dortmund Predictions, Picks & Odds - 05/09/2026\n    Content: Borussia Dortmund finished fourth last season, yet their recent form raises questions. Three defeats in their last five competitive matches paint a concerning picture for a side with title ambitions. Pre-season offered further evidence of defensive fragility; they conceded eight goals in five outings, including a 2-1 Supercup loss to Bayern Munich. A 3-2 win over Arsenal showed character, but consistency has been elusive. Ramy Bensebaini is available after his Supercup red card suspension applies only to cup matches. [...] Goals should feature prominently at the PreZero Arena. ...\n    URL: https://www.toffeeweb.com/ng/tsg-hoffenheim-vs-borussia-dortmund-predictions-picks-odds-05-09-2026\n  - Title: TSG Hoffenheim vs Borussia Dortmund Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: ## The Pick :\n\nTSG Hoffenheim 1-2 Borussia Dortmund\n\n## BEST BETTING TIP :\n\n Take Borussia Dortmund to win at odds of 2.20 Cloudbet\n\nBEST BETTING SITE FOR YOUR LOCATION\n\n### PH\n\nWho is YOUR favourite bookmaker or Sportsbook ?\n\n## TSG Hoffenheim vs Borussia Dortmund Match Report :\n\nTSG Hoffenheim vs Borussia Dortmund Betting Odds guide ...\n    URL: https://www.goonersguide.com/football-pick-59863-TSG-Hoffenheim-vs-Borussia-Dortmund.htm\n  - Title: Hoffenheim vs Borussia Dortmund prediction – Odds & stats – 5 September 2026\n    Content: +2.5\nProbability: 67.34%\n\nBet365\nBet365\n\n| Hoffenheim |  | Borussia Dortmund |\n ---\n| Hoffenheim | stat | Borussia Dortmund |\n| 4 | Average goals per game | 3.33 |\n| 2 | Average goal scored | 2.33 |\n| 2 | Goals conceded per match | 1 |\n| 0 % | Matches with -2.5 goals | 33 % |\n| 100 % | Matches with +2.5 goals | 67 % |\n| 3.67 | Average goals home team 1/away team 2 | 3.17 |\n| 2.17 | Avg. goals home team 1/away team 2 | 2 |\n| 1.5 | Avg. goals conceded home team 1/away team 2 | 1.17 |\nStats based on the last 6 matches\n\nHoffenheim\nBorussia Dortmund\n\n## Hoffenheim vs Borussia Dortmund BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/hoffenheim-borussia-dortmund-8595831\n\nGame ID: 5\nSource event_id: 401884802\nMatchup: RB Leipzig (away) @ Werder Bremen (home)\nHome: Werder Bremen\nAway: RB Leipzig\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: Weserstadion\nRound: unavailable\nHome form: LWLLL\nAway form: WWLWL\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Werder Bremen +295 (open +220); Draw +300 (open +275); RB Leipzig -140 (open -105)\nTavily context:\n  - Title: Werder Bremen vs RB Leipzig - live score, predicted lineups and H2H stats\n    Content: Martín Demichelis\n\nDemichelis\n\n  Felix Agu\n\n  Calf injury / Mid September 2026\n\nAguCalf injuryMid September 2026\n\n  Niklas Stark\n\n  Thigh injury / Back in training\n\nStarkThigh injuryBack in training\n\n  Oskar Wójcik\n\n  Muscle injury / About 1-2 weeks\n\nWójcikMuscle injuryAbout 1-2 weeks\n\n  Jens Stage\n\n  Thigh injury / Late October 2026\n\nStageThigh injuryLate October 2026\n\n  Mitchell Weiser\n\n  Cruciate ligament injury / Back in training\n\nWeiserCruciate ligament injuryBack in training\n\n  Youri Regeer\n\n  Injured / Late September 2026\n\nRegeerInjuredLate September 2026\n\n  Keke Topp ...\n    URL: https://www.fotmob.com/matches/werder-bremen-vs-rb-leipzig/81p1es3\n  - Title: Werder Bremen vs RB Leipzig - prediction, team news, lineups\n    Content: Leipzig were productive on their travels at the end of 2025-26, finding the back of the net on 15 occasions in their final nine games on the road, scoring at least two goals five times.\n\nWerder Bremen Bundesliga form:\n\n L\n\nWerder Bremen form (all competitions):\n\n W\n L\n\nRB Leipzig Bundesliga form:\n\n W\n\nRB Leipzig form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Ffullkrug-6a99d2aed5535929217051.jpg)\n\n© Iconsport / PictureAlliance ...\n    URL: https://www.sportsmole.co.uk/football/werder-bremen/bundesliga-title-race/preview/werder-bremen-vs-rb-leipzig-prediction-team-news-lineups_604380.html\n  - Title: Werder Bremen vs RB Leipzig Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: Werder Bremen vs RB Leipzig German Bundesliga betting pick played on 2026-09-05\n\n# GERMAN BUNDESLIGA BETTING PICK - WERDER BREMEN V RB LEIPZIG\n\n1  Home   ::::\n\n2  German Football Betting Tips    ::\n\n3  2026-09-05 - Werder Bremen vs RB Leipzig    :: [...] ## Werder Bremen vs RB Leipzig football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Werder Bremen vs RB Leipzig.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet :\n\n Take RB Leipzig to win at odds of 1.75 at SportBet.One ...\n    URL: https://www.goonersguide.com/football-pick-59866-Werder-Bremen-vs-RB-Leipzig.htm\n  - Title: Werder Bremen vs RB Leipzig Prediction, Betting Tips, Lineups & Odds | 04 Apr 2026\n    Content: RB Leipzig are regarded as having a 54% chance of winning this Bundesliga clash in the eyes of the bookies. It means that their current betting odds are 1.86. For those wanting to oppose the market leader, you can get 3.70 about Werder Bremen.\n\nLeipzig are 1.87 when it comes to the Asian Handicap -0.5 which is the same as backing them on the 1x2 market. If you instead want to bet on Werder +0.5 at 1.93, you also get paid out if it’s a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/werder-bremen-vs-rb-leipzig-prediction-lineups-odds-2026-04-04\n\nGame ID: 6\nSource event_id: 401884801\nMatchup: Bayern Munich (away) @ Schalke 04 (home)\nHome: Schalke 04\nAway: Bayern Munich\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: Veltins Arena\nRound: unavailable\nHome form: LWWLW\nAway form: WWWWW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Schalke 04 +1100 (open +850); Draw +700 (open +550); Bayern Munich -700 (open -525)\nTavily context:\n  - Title: Schalke 04-Bayern Munich - Bundesliga 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nSchalke 04 logo\nBayern Munich logo\nSchalke 04 logo\nBayern Munich logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Bryan Lasme |  | Out | N/A |\n| Adrian Gantenbein |  | Out | N/A |\n| Ron Schallenberg |  | Out | 5.29 |\n| Kenan Karaman |  | Doubtful | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jamal Musiala |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1995405/preview/germany-bundesliga-2026-2027-schalke-04-bayern-munich\n  - Title: PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09) | OneFootball\n    Content: Open menu\n\nOneFootball's home page\n\nSearch\n\nSettings\n\nSign In\n\n# PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09) | OneFootball\n\nIcon: Playmakerstats\n\nPlaymakerstats\n\n·3 September 2026\n\n## PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09)\n\nArticle image:PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09)\n\nSchalke 04 host Bayern München this Saturday at the Veltins-Arena on Match Day two of the 1. Bundesliga. ...\n    URL: https://onefootball.com/en/news/preview-schalke-04-vs-bayern-muenchen-team-news-lineups-predictions-bundesliga-0509-43395996\n  - Title: Schalke 04 vs Bayern Munich Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: Schalke 04 vs Bayern Munich German Bundesliga betting pick played on 2026-09-05\n\n# GERMAN BUNDESLIGA BETTING PICK - SCHALKE 04 V BAYERN MUNICH\n\n1  Home   ::::\n\n2  German Football Betting Tips    ::\n\n3  2026-09-05 - Schalke 04 vs Bayern Munich    :: [...] ## Schalke 04 vs Bayern Munich football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Schalke 04 vs Bayern Munich.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet : ...\n    URL: https://www.goonersguide.com/football-pick-59868-Schalke-04-vs-Bayern-Munich.htm\n  - Title: Schalke 04 vs Bayern Munich Prediction & Betting Tips - Bundesliga\n    Content: ## Schalke 04 v Bayern Munich Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Image 12: Stake | 14 | 8.6 | 1.16 |  |\n| Image 13: 1xbet | 13.4 | 9.25 | 1.2 |  |\n| Image 14: Melbet | 12.5 | 8.9 | 1.16 |  |\n| Image 15: Betwinner | 12.5 | 8.9 | 1.16 |  |\n| Image 16: 22bet | 12.5 | 8.9 | 1.16 |  |\n\nCheck all Schalke 04 vs Bayern Munich odds\n\nPre-register for our Member Area: win €500!\n\n Sign me up\n\n## What is the prediction for the football match between Schalke 04 and Bayern Munich?\n\nOur prediction for the Schalke 04 vs Bayern Munich match is: over 3.5 goals. ...\n    URL: https://www.sportytrader.com/en/betting-tips/schalke-04-bayern-munich-370307\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884806\nMatchup: 1. FC Union Berlin (away) @ Bayer Leverkusen (home)\nHome: Bayer Leverkusen\nAway: 1. FC Union Berlin\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: BayArena\nRound: unavailable\nHome form: LWDLW\nAway form: DWWWD\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Bayer Leverkusen -220 (open -250); Draw +370 (open +380); 1. FC Union Berlin +450 (open +500)\nTavily context:\n  - Title: PREVIEW | Bayer Leverkusen vs 1. FC Union Berlin: team news, lineups, predictions (Bundesliga 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\n1. FC Union Berlin currently have 1 point and lie in 8th position. In their last fixture, Mauro Lustrinelli's team shared the spoils 3-3 with Eintracht Frankfurt (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended with 1. FC Union Berlin winning 1-0.\n\n## Predicted lineups\n\nBayer Leverkusen: Mark Flekken, Lucas Vázquez, Loic Badé, Edmond Tapsoba, Miguel Gutiérrez, Equi Fernández, Aleix García, Ibrahim Maza, Malik Tillman, Afonso Moreira, Patrik Schick ...\n    URL: https://sports.yahoo.com/articles/preview-bayer-leverkusen-vs-1-133500742.html\n  - Title: Leverkusen vs Union Berlin - live score, predicted lineups and H2H ...\n    Content: TV schedules\n\n# Bayer Leverkusen vs Union Berlin — Sat, September 5, 1:30 PM UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n BayArena\n\nLeverkusenBayer Leverkusen\n\n‌\n‌\n\nUnion BerlinUnion Berlin\n\n# Bayer Leverkusen vs Union Berlin — Sat, September 5, 1:30 PM UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n BayArena\n\nLeverkusenBayer Leverkusen\n\n‌\n‌\n\nUnion BerlinUnion Berlin\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Martin Terrier\n\n  Injured / Early September 2026\n\nTerrierInjuredEarly September 2026\n\n  Kennet Eichhorn\n\n  Illness / Late October 2026 ...\n    URL: https://www.fotmob.com/matches/union-berlin-vs-bayer-leverkusen/27d4by\n  - Title: Bayer Leverkusen vs Union Berlin Prediction - Bundesliga - 05/09/2026\n    Content: ## Bayer Leverkusen v Union Berlin Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.46 | 5 | 6 |  |\n| 1xbet | 1.51 | 5.03 | 6.4 |  |\n| Melbet | 1.46 | 4.84 | 6.15 |  |\n| Betwinner | 1.45 | 4.9 | 6.25 |  |\n| 22bet | 1.45 | 4.9 | 6.25 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Bayer Leverkusen and Union Berlin?\n\nOur prediction for the Bayer Leverkusen vs Union Berlin match is: BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/bayer-leverkusen-union-berlin-370252\n  - Title: Bayer Leverkusen vs Union Berlin football Betting Pick\n    Content: ## Bayer Leverkusen vs Union Berlin football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Bayer Leverkusen vs Union Berlin.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet :\n\n Take Bayer Leverkusen to win & over 1.5 goals at odds of 1.55 at 12Play Sports\n\n## German Bundesliga\n\n## 2026-09-05 - Bayer Leverkusen vs Union Berlin\n\n### A Sports Betting Pick by Niko ...\n    URL: https://www.goonersguide.com/football-pick-59864-Bayer-Leverkusen-vs-Union-Berlin.htm\n\nGame ID: 2\nSource event_id: 401884804\nMatchup: SV Elversberg (away) @ Borussia Mönchengladbach (home)\nHome: Borussia Mönchengladbach\nAway: SV Elversberg\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: BORUSSIA-PARK\nRound: unavailable\nHome form: LWWLW\nAway form: WWWLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Borussia Mönchengladbach -120 (open -150); Draw +275 (open +290); SV Elversberg +270 (open +320)\nTavily context:\n  - Title: Borussia Monchengladbach vs Elversberg Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Jens Castrop Shoulder\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nTomas Cvancara Groin\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nYukhym Konoplya Knee\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nElversberg  Injury Table\n\nType Name Info\n\nFrederik Schmahl Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nLuis Seifert Foot\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nTom Zimmerschied Low back ...\n    URL: https://www.sportsgambler.com/betting-tips/football/borussia-monchengladbach-vs-elversberg-prediction-lineups-odds-2026-09-05\n  - Title: Preview: Borussia Monchengladbach vs Elversberg\n    Content: Borussia Monchengladbach form (all competitions):\n\n W\n L\n\nElversberg Bundesliga form:\n\n W\n\nElversberg form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Felversberg-6a99dbb7e5139058476762.jpg)\n\n© Iconsport / , Eibner Pressefoto, Eibner-Pressefoto / Alamy / Alexander Neis\n\nGladbach's most important squad members are largely healthy, though full-back Jens Castrop and centre-back Leopold Querfeld are unavailable. ...\n    URL: https://www.sportsmole.co.uk/football/borussia-monchengladbach/preview/borussia-mbach-vs-elversberg-prediction-team-news-lineups_604373.html\n  - Title: Prediction Borussia Mönchengladbach vs Elversberg\n    Content: The odds are: Borussia Mönchengladbach to win 1.90, draw 3.70, Elversberg to win 4.00. The odds are Over 2.5 at 1.57 and Under 2.5 at 2.37.\n    URL: https://betmines.com/match-preview/borussia-monchengladbach-vs-elversberg-prediction-match-preview-and-analysis-bundesliga-05-09-2026\n\nGame ID: 3\nSource event_id: 401884800\nMatchup: SC Freiburg (away) @ SC Paderborn 07 (home)\nHome: SC Paderborn 07\nAway: SC Freiburg\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: Home Deluxe Arena\nRound: unavailable\nHome form: DWWDW\nAway form: WWWWL\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: SC Paderborn 07 +235 (open +205); Draw +260 (open +250); SC Freiburg -105 (open +110)\nTavily context:\n  - Title: PREVIEW | SC Paderborn 07 vs SC Freiburg: team news, lineups, predictions (Bundesliga 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nSC Freiburg have 3 points to their name this season and occupy 2nd position in the table. In their last match, Julian Schuster's team prevailed 4-1 against Werder Bremen (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended with SC Paderborn 07 winning 3-1.\n\n## Predicted lineups\n\nSC Paderborn 07: Nahuel Noll, Jano ter Horst, Tjark Scheller, Mattes Hansen, Laurin Curda, Santi Castaneda, Laurin Ulrich, Raphael Obermair, Stefano Marino, Gabriel Vidović, Marvin Pieringer ...\n    URL: https://sports.yahoo.com/articles/preview-sc-paderborn-07-vs-135500364.html\n  - Title: Preview: SC Paderborn vs Freiburg - prediction, team news, lineups\n    Content: As for Freiburg, defensive midfielder Patrick Osterhage has a muscle issue to contend with, and fellow middle-third option Rihito Yamamoto is expected to sit out in order to continue building fitness.\n\nWith that in mind, Maximilian Eggestein and Yannik Engelhardt will form Schuster's double pivot, platforming an attacking trio featuring Jan-Niklas Beste, Yuito Suzuki and Derry Scherhant, while Florent Muslija undergoes rehabilitation for an ACL injury.\n\nSC Paderborn possible starting lineup:\n\nNoll; Ter Horst, Hansen, Scheller; Curda, Castaneda, Ulrich, Obermair; Marino, Pieringer, Vidovic ...\n    URL: https://www.sportsmole.co.uk/football/paderborn/preview/sc-paderborn-vs-freiburg-prediction-team-news-lineups_604426.html\n  - Title: SC Paderborn vs SC Freiburg Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: ## The Pick :\n\nSC Paderborn 0-2 SC Freiburg\n\n## BEST BETTING TIP :\n\n Take SC Freiburg to win at odds of 2.10 with BetFred\n\nBEST BETTING SITE FOR YOUR LOCATION\n\nbet365\n\nFully authorized operator in Brazil. Bet legally using local Pix deposits and native Portuguese support.\n\nAposte na bet365.br\n\nMarketing Tools\n\nProducts\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nApply\n\nLog In\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais\n\nБългарски\n\nΕλληνικά\n\nPortuguês\n\nLog In\n\nApply\n\nMarketing Tools\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk ...\n    URL: https://www.goonersguide.com/football-pick-59867-SC-Paderborn-vs-SC-Freiburg.htm\n  - Title: SC Paderborn vs. SC Freiburg - Boxscore - Live Score - September 05, 2026 | FOX Sports\n    Content: Databricks\nSC Paderborn\nSC Freiburg\n\n## SC Paderborn vs SC Freiburg\n\nBenteler-Arena\n\n# SC Paderborn vs. SC Freiburg - Boxscore: Sep 5, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nSC Paderborn\n\n|  | | |\n ---\n| 8/29 | FSV Mainz 05 MAI (A) | D0-0 |\n| 8/23 | Default Logo PHO (A) | W4-2 |\n| 8/1 | Vfl Osnabruck OSN (A) | W2-0 |\n| 7/25 | Magdeburg MAG (H) | L2-0 |\n| 7/17 | Default Logo FAG (H) | W3-1 |\n\nFSV Mainz 05\nDefault Logo\nVfl Osnabruck\nMagdeburg\nDefault Logo\nSC Freiburg ...\n    URL: https://www.foxsports.com/soccer/bundesliga-sc-paderborn-vs-sc-freiburg-sep-05-2026-game-boxscore-912563?tab=boxscore\n\nGame ID: 4\nSource event_id: 401884807\nMatchup: Borussia Dortmund (away) @ TSG Hoffenheim (home)\nHome: TSG Hoffenheim\nAway: Borussia Dortmund\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: PreZero Arena\nRound: unavailable\nHome form: LWLWD\nAway form: WWLLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: TSG Hoffenheim +180 (open +175); Draw +270 (open +265); Borussia Dortmund +120 (open +120)\nTavily context:\n  - Title: Hoffenheim vs Borussia Dortmund Prediction, Betting Tips ...\n    Content: ### Injuries & Suspensions\n\nHoffenheim  Injury Table\n\nType Name Info\n\nTim Lemperle 2nd yellow (Red\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nAlexander Prass Other\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nBorussia Dortmund  Injury Table\n\nType Name Info\n\nSamuele Inacio Red card (direc\n\nPosition: Forward Matches: 1 Goals: - Assists: - Expected return: 2026-09-19\n\nJustin Lerma Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nRamy Bensebaini Rib ...\n    URL: https://www.sportsgambler.com/betting-tips/football/hoffenheim-vs-borussia-dortmund-prediction-lineups-odds-2026-09-05\n  - Title: TSG Hoffenheim vs Borussia Dortmund Predictions, Picks & Odds - 05/09/2026\n    Content: Borussia Dortmund finished fourth last season, yet their recent form raises questions. Three defeats in their last five competitive matches paint a concerning picture for a side with title ambitions. Pre-season offered further evidence of defensive fragility; they conceded eight goals in five outings, including a 2-1 Supercup loss to Bayern Munich. A 3-2 win over Arsenal showed character, but consistency has been elusive. Ramy Bensebaini is available after his Supercup red card suspension applies only to cup matches. [...] Goals should feature prominently at the PreZero Arena. ...\n    URL: https://www.toffeeweb.com/ng/tsg-hoffenheim-vs-borussia-dortmund-predictions-picks-odds-05-09-2026\n  - Title: TSG Hoffenheim vs Borussia Dortmund Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: ## The Pick :\n\nTSG Hoffenheim 1-2 Borussia Dortmund\n\n## BEST BETTING TIP :\n\n Take Borussia Dortmund to win at odds of 2.20 Cloudbet\n\nBEST BETTING SITE FOR YOUR LOCATION\n\n### PH\n\nWho is YOUR favourite bookmaker or Sportsbook ?\n\n## TSG Hoffenheim vs Borussia Dortmund Match Report :\n\nTSG Hoffenheim vs Borussia Dortmund Betting Odds guide ...\n    URL: https://www.goonersguide.com/football-pick-59863-TSG-Hoffenheim-vs-Borussia-Dortmund.htm\n  - Title: Hoffenheim vs Borussia Dortmund prediction – Odds & stats – 5 September 2026\n    Content: +2.5\nProbability: 67.34%\n\nBet365\nBet365\n\n| Hoffenheim |  | Borussia Dortmund |\n ---\n| Hoffenheim | stat | Borussia Dortmund |\n| 4 | Average goals per game | 3.33 |\n| 2 | Average goal scored | 2.33 |\n| 2 | Goals conceded per match | 1 |\n| 0 % | Matches with -2.5 goals | 33 % |\n| 100 % | Matches with +2.5 goals | 67 % |\n| 3.67 | Average goals home team 1/away team 2 | 3.17 |\n| 2.17 | Avg. goals home team 1/away team 2 | 2 |\n| 1.5 | Avg. goals conceded home team 1/away team 2 | 1.17 |\nStats based on the last 6 matches\n\nHoffenheim\nBorussia Dortmund\n\n## Hoffenheim vs Borussia Dortmund BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/hoffenheim-borussia-dortmund-8595831\n\nGame ID: 5\nSource event_id: 401884802\nMatchup: RB Leipzig (away) @ Werder Bremen (home)\nHome: Werder Bremen\nAway: RB Leipzig\nKickoff UTC: 2026-09-05T13:30Z\nKickoff ET: 2026-09-05 09:30 EDT\nVenue: Weserstadion\nRound: unavailable\nHome form: LWLLL\nAway form: WWLWL\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Werder Bremen +295 (open +220); Draw +300 (open +275); RB Leipzig -140 (open -105)\nTavily context:\n  - Title: Werder Bremen vs RB Leipzig - live score, predicted lineups and H2H stats\n    Content: Martín Demichelis\n\nDemichelis\n\n  Felix Agu\n\n  Calf injury / Mid September 2026\n\nAguCalf injuryMid September 2026\n\n  Niklas Stark\n\n  Thigh injury / Back in training\n\nStarkThigh injuryBack in training\n\n  Oskar Wójcik\n\n  Muscle injury / About 1-2 weeks\n\nWójcikMuscle injuryAbout 1-2 weeks\n\n  Jens Stage\n\n  Thigh injury / Late October 2026\n\nStageThigh injuryLate October 2026\n\n  Mitchell Weiser\n\n  Cruciate ligament injury / Back in training\n\nWeiserCruciate ligament injuryBack in training\n\n  Youri Regeer\n\n  Injured / Late September 2026\n\nRegeerInjuredLate September 2026\n\n  Keke Topp ...\n    URL: https://www.fotmob.com/matches/werder-bremen-vs-rb-leipzig/81p1es3\n  - Title: Werder Bremen vs RB Leipzig - prediction, team news, lineups\n    Content: Leipzig were productive on their travels at the end of 2025-26, finding the back of the net on 15 occasions in their final nine games on the road, scoring at least two goals five times.\n\nWerder Bremen Bundesliga form:\n\n L\n\nWerder Bremen form (all competitions):\n\n W\n L\n\nRB Leipzig Bundesliga form:\n\n W\n\nRB Leipzig form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Ffullkrug-6a99d2aed5535929217051.jpg)\n\n© Iconsport / PictureAlliance ...\n    URL: https://www.sportsmole.co.uk/football/werder-bremen/bundesliga-title-race/preview/werder-bremen-vs-rb-leipzig-prediction-team-news-lineups_604380.html\n  - Title: Werder Bremen vs RB Leipzig Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: Werder Bremen vs RB Leipzig German Bundesliga betting pick played on 2026-09-05\n\n# GERMAN BUNDESLIGA BETTING PICK - WERDER BREMEN V RB LEIPZIG\n\n1  Home   ::::\n\n2  German Football Betting Tips    ::\n\n3  2026-09-05 - Werder Bremen vs RB Leipzig    :: [...] ## Werder Bremen vs RB Leipzig football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Werder Bremen vs RB Leipzig.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet :\n\n Take RB Leipzig to win at odds of 1.75 at SportBet.One ...\n    URL: https://www.goonersguide.com/football-pick-59866-Werder-Bremen-vs-RB-Leipzig.htm\n  - Title: Werder Bremen vs RB Leipzig Prediction, Betting Tips, Lineups & Odds | 04 Apr 2026\n    Content: RB Leipzig are regarded as having a 54% chance of winning this Bundesliga clash in the eyes of the bookies. It means that their current betting odds are 1.86. For those wanting to oppose the market leader, you can get 3.70 about Werder Bremen.\n\nLeipzig are 1.87 when it comes to the Asian Handicap -0.5 which is the same as backing them on the 1x2 market. If you instead want to bet on Werder +0.5 at 1.93, you also get paid out if it’s a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/werder-bremen-vs-rb-leipzig-prediction-lineups-odds-2026-04-04\n\nGame ID: 6\nSource event_id: 401884801\nMatchup: Bayern Munich (away) @ Schalke 04 (home)\nHome: Schalke 04\nAway: Bayern Munich\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: Veltins Arena\nRound: unavailable\nHome form: LWWLW\nAway form: WWWWW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Schalke 04 +1100 (open +850); Draw +700 (open +550); Bayern Munich -700 (open -525)\nTavily context:\n  - Title: Schalke 04-Bayern Munich - Bundesliga 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nSchalke 04 logo\nBayern Munich logo\nSchalke 04 logo\nBayern Munich logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Bryan Lasme |  | Out | N/A |\n| Adrian Gantenbein |  | Out | N/A |\n| Ron Schallenberg |  | Out | 5.29 |\n| Kenan Karaman |  | Doubtful | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jamal Musiala |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1995405/preview/germany-bundesliga-2026-2027-schalke-04-bayern-munich\n  - Title: PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09) | OneFootball\n    Content: Open menu\n\nOneFootball's home page\n\nSearch\n\nSettings\n\nSign In\n\n# PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09) | OneFootball\n\nIcon: Playmakerstats\n\nPlaymakerstats\n\n·3 September 2026\n\n## PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09)\n\nArticle image:PREVIEW | Schalke 04 vs Bayern München: team news, lineups, predictions (Bundesliga 05/09)\n\nSchalke 04 host Bayern München this Saturday at the Veltins-Arena on Match Day two of the 1. Bundesliga. ...\n    URL: https://onefootball.com/en/news/preview-schalke-04-vs-bayern-muenchen-team-news-lineups-predictions-bundesliga-0509-43395996\n  - Title: Schalke 04 vs Bayern Munich Betting Pick | German Bundesliga | 2026-09-05 |\n    Content: Schalke 04 vs Bayern Munich German Bundesliga betting pick played on 2026-09-05\n\n# GERMAN BUNDESLIGA BETTING PICK - SCHALKE 04 V BAYERN MUNICH\n\n1  Home   ::::\n\n2  German Football Betting Tips    ::\n\n3  2026-09-05 - Schalke 04 vs Bayern Munich    :: [...] ## Schalke 04 vs Bayern Munich football Betting Pick\n\nGambling advice by Niko covering the German Bundesliga match Schalke 04 vs Bayern Munich.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nNiko's Recommended Bet : ...\n    URL: https://www.goonersguide.com/football-pick-59868-Schalke-04-vs-Bayern-Munich.htm\n  - Title: Schalke 04 vs Bayern Munich Prediction & Betting Tips - Bundesliga\n    Content: ## Schalke 04 v Bayern Munich Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Image 12: Stake | 14 | 8.6 | 1.16 |  |\n| Image 13: 1xbet | 13.4 | 9.25 | 1.2 |  |\n| Image 14: Melbet | 12.5 | 8.9 | 1.16 |  |\n| Image 15: Betwinner | 12.5 | 8.9 | 1.16 |  |\n| Image 16: 22bet | 12.5 | 8.9 | 1.16 |  |\n\nCheck all Schalke 04 vs Bayern Munich odds\n\nPre-register for our Member Area: win €500!\n\n Sign me up\n\n## What is the prediction for the football match between Schalke 04 and Bayern Munich?\n\nOur prediction for the Schalke 04 vs Bayern Munich match is: over 3.5 goals. ...\n    URL: https://www.sportytrader.com/en/betting-tips/schalke-04-bayern-munich-370307\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401884806",
+                        "date_utc": "2026-09-05T13:30Z",
+                        "kickoff_et": "2026-09-05 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Bayer Leverkusen",
+                        "away": "1. FC Union Berlin",
+                        "home_id": "131",
+                        "away_id": "598",
+                        "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                        "venue": "BayArena",
+                        "city": "Leverkusen",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWDLW",
+                        "form_away": "DWWWD",
+                        "record_home": "0-0-1",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-250",
+                            "home_current": "-220",
+                            "draw_open": "+380",
+                            "draw_current": "+370",
+                            "away_open": "+500",
+                            "away_current": "+450"
+                        },
+                        "odds_text": "DraftKings: Bayer Leverkusen -220 (open -250); Draw +370 (open +380); 1. FC Union Berlin +450 (open +500)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401884804",
+                        "date_utc": "2026-09-05T13:30Z",
+                        "kickoff_et": "2026-09-05 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Borussia Mönchengladbach",
+                        "away": "SV Elversberg",
+                        "home_id": "268",
+                        "away_id": "10388",
+                        "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                        "venue": "BORUSSIA-PARK",
+                        "city": "Mönchengladbach",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWWLW",
+                        "form_away": "WWWLW",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-150",
+                            "home_current": "-120",
+                            "draw_open": "+290",
+                            "draw_current": "+275",
+                            "away_open": "+320",
+                            "away_current": "+270"
+                        },
+                        "odds_text": "Provider unavailable: Borussia Mönchengladbach -120 (open -150); Draw +275 (open +290); SV Elversberg +270 (open +320)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401884800",
+                        "date_utc": "2026-09-05T13:30Z",
+                        "kickoff_et": "2026-09-05 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "SC Paderborn 07",
+                        "away": "SC Freiburg",
+                        "home_id": "3307",
+                        "away_id": "126",
+                        "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                        "venue": "Home Deluxe Arena",
+                        "city": "Paderborn",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "DWWDW",
+                        "form_away": "WWWWL",
+                        "record_home": "0-1-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+205",
+                            "home_current": "+235",
+                            "draw_open": "+250",
+                            "draw_current": "+260",
+                            "away_open": "+110",
+                            "away_current": "-105"
+                        },
+                        "odds_text": "Provider unavailable: SC Paderborn 07 +235 (open +205); Draw +260 (open +250); SC Freiburg -105 (open +110)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401884807",
+                        "date_utc": "2026-09-05T13:30Z",
+                        "kickoff_et": "2026-09-05 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "TSG Hoffenheim",
+                        "away": "Borussia Dortmund",
+                        "home_id": "7911",
+                        "away_id": "124",
+                        "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                        "venue": "PreZero Arena",
+                        "city": "Sinsheim",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWLWD",
+                        "form_away": "WWLLW",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+175",
+                            "home_current": "+180",
+                            "draw_open": "+265",
+                            "draw_current": "+270",
+                            "away_open": "+120",
+                            "away_current": "+120"
+                        },
+                        "odds_text": "Provider unavailable: TSG Hoffenheim +180 (open +175); Draw +270 (open +265); Borussia Dortmund +120 (open +120)",
+                        "game_id": 4
+                    },
+                    {
+                        "event_id": "401884802",
+                        "date_utc": "2026-09-05T13:30Z",
+                        "kickoff_et": "2026-09-05 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Werder Bremen",
+                        "away": "RB Leipzig",
+                        "home_id": "137",
+                        "away_id": "11420",
+                        "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                        "venue": "Weserstadion",
+                        "city": "Bremen",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWLLL",
+                        "form_away": "WWLWL",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+220",
+                            "home_current": "+295",
+                            "draw_open": "+275",
+                            "draw_current": "+300",
+                            "away_open": "-105",
+                            "away_current": "-140"
+                        },
+                        "odds_text": "Provider unavailable: Werder Bremen +295 (open +220); Draw +300 (open +275); RB Leipzig -140 (open -105)",
+                        "game_id": 5
+                    },
+                    {
+                        "event_id": "401884801",
+                        "date_utc": "2026-09-05T16:30Z",
+                        "kickoff_et": "2026-09-05 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Schalke 04",
+                        "away": "Bayern Munich",
+                        "home_id": "133",
+                        "away_id": "132",
+                        "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                        "venue": "Veltins Arena",
+                        "city": "Gelsenkirchen",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWWLW",
+                        "form_away": "WWWWW",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+850",
+                            "home_current": "+1100",
+                            "draw_open": "+550",
+                            "draw_current": "+700",
+                            "away_open": "-525",
+                            "away_current": "-700"
+                        },
+                        "odds_text": "Provider unavailable: Schalke 04 +1100 (open +850); Draw +700 (open +550); Bayern Munich -700 (open -525)",
+                        "game_id": 6
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-04T10:18:34.913756-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:00:31.141576-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are strong favorites at home at the BayArena with odds of around -220. They are expected to dominate possession and secure a win despite Union Berlin's decent defensive form.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach are moderately favored at home with odds around -120. While Elversberg are in decent form, Gladbach's home advantage and superior squad depth should help them edge the victory.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg are coming off a strong 4-1 win and are priced as favorites (-105) on the road. Paderborn's home setup could prove challenging, but Freiburg's top-tier quality makes an away win the most probable outcome.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "This is expected to be a high-scoring encounter. While Dortmund have struggled with consistency, they are still favored at +120 on the road to pick up three points against an open Hoffenheim side.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig are historically strong on the road and have a formidable squad. With Bremen missing a few players due to injuries and Leipzig priced as solid -140 favorites, the away team is highly likely to take the win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.81,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are heavy favorites (-700) against newly-promoted or struggling Schalke 04. Even on the road at the Veltins Arena, Bayern's elite squad should comfortably secure a multi-goal victory.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-04T10:00:51.245282-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.635,
+                    "draw_probability": 0.197,
+                    "away_win_probability": 0.168,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen is heavily favored at home with -220 odds. Union Berlin faces a tough challenge against a strong Leverkusen side despite their decent early form.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.504,
+                    "draw_probability": 0.246,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach is favored at -120 to win at home, though SV Elversberg's competitive away odds suggest they could pose a threat.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.274,
+                    "draw_probability": 0.255,
+                    "away_win_probability": 0.471,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg comes in as the road favorite (-105). Despite Paderborn's home advantage, Freiburg's strong start and superior squad quality give them the edge.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund is a slight road favorite (+120), but Hoffenheim at +180 indicates a potentially tight match with plenty of goals expected. We predict a narrow victory for Dortmund based on overall quality.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.233,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.537,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "RB Leipzig is favored at -140 on the road against a Werder Bremen side with poor recent form and significant injury concerns.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.077,
+                    "draw_probability": 0.115,
+                    "away_win_probability": 0.808,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich enters this match as massive -700 road favorites. Schalke 04 is unlikely to keep up with the overwhelming offensive firepower of Bayern.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-04T10:01:28.898936-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.635,
+                    "draw_probability": 0.197,
+                    "away_win_probability": 0.168,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are strong favorites at home, as reflected by the heavy betting odds (-220). While Union Berlin is in good form and won the last head-to-head, Leverkusen's superior quality and home-field advantage at BayArena are expected to be the deciding factors in this early-season matchup.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.504,
+                    "draw_probability": 0.247,
+                    "away_win_probability": 0.249,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach are the favorites at home against the newly promoted SV Elversberg. Despite Elversberg's impressive winning form, Gladbach possesses superior squad quality and the significant advantage of playing at BORUSSIA-PARK. The odds favor a home win, but suggest a potentially competitive match given Gladbach's own mixed form.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.274,
+                    "draw_probability": 0.256,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg is a well-established Bundesliga team that started the season with a dominant 4-1 victory. They are clear betting favorites (-105) even on the road against SC Paderborn. Freiburg's superior quality and excellent current form should be enough to secure the three points.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "This is expected to be a close match, as reflected by the tight betting odds. Borussia Dortmund are slight favorites (+120) and possess more top-end talent. While Hoffenheim is a difficult opponent at home and Dortmund's form has been inconsistent, Dortmund's quality gives them a narrow edge in a fixture that could go either way.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.233,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.537,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig is a Champions League-caliber team and a strong favorite (-140) against a Werder Bremen side that has started the season poorly (LWLLL form) and is reportedly dealing with several injuries. Leipzig's superior talent, form, and opponent's struggles make an away victory the most probable result.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.077,
+                    "draw_probability": 0.115,
+                    "away_win_probability": 0.808,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites, with lopsided odds around -700. As the perennial champions with a world-class squad in perfect form (WWWWW), they face a Schalke side that lost its opening match. The immense gap in quality makes a comfortable away win for Bayern the only logical expectation.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:01:54.163775-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.6353,
+                    "draw_probability": 0.1967,
+                    "away_win_probability": 0.168,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen is a strong home favorite based on the ESPN structured odds and multiple betting picks. Despite 1. FC Union Berlin's recent draw and a past win against Leverkusen, the market heavily favors a home victory for Leverkusen.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5039,
+                    "draw_probability": 0.2464,
+                    "away_win_probability": 0.2497,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach is favored by the betting odds, reflecting their home advantage. While SV Elversberg has shown strong recent form and a perfect away record in their single match, Gladbach's overall strength and Elversberg's injury concerns tip the balance slightly towards a home victory.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.2742,
+                    "draw_probability": 0.2552,
+                    "away_win_probability": 0.4706,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg is slightly favored by the odds and has a strong start to the season with a dominant 4-1 win and a perfect away record. Despite SC Paderborn 07 winning their last head-to-head, the current form and betting market lean towards an away victory for Freiburg.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3301,
+                    "draw_probability": 0.2498,
+                    "away_win_probability": 0.4201,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund is favored by the betting odds and specific betting picks, despite some recent inconsistencies in form and defensive concerns. Their 1-0-0 away record and overall quality should be enough to overcome Hoffenheim, who also have injury issues. Goals are expected in this match.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23302330233023302,
+                    "draw_probability": 0.2301230123012301,
+                    "away_win_probability": 0.536853685368537,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig is a clear favorite, demonstrated by the strong betting odds and their impressive offensive away record from last season, coupled with a winning start to the current campaign. Werder Bremen, on the other hand, is struggling with multiple injuries and a recent loss, making an away win for Leipzig highly probable.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.0769,
+                    "draw_probability": 0.1154,
+                    "away_win_probability": 0.8077,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is an exceptionally strong favorite, as reflected by the extremely high implied win probability from the betting odds. Their perfect recent form and strong start to the season, coupled with Schalke's numerous injuries and poor home record, make an away win for Bayern almost certain.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:06:50.826647-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Leverkusen are a heavy BayArena favorite, with current odds implying a clear home edge after removing vig. Union's strong recent form and last head-to-head win reduce certainty, but Leverkusen's squad quality and home advantage make a regulation home win the most likely result.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Gladbach are still modest home favorites, but the market has moved away from them and Elversberg arrive in strong form after winning their opener. Home-field advantage and Bundesliga experience narrowly outweigh the upset and draw risks.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg have been backed from near-even odds into away favorites and opened the league with an emphatic 4-1 win. Paderborn's home resilience and prior head-to-head success keep this competitive, but Freiburg carry the stronger overall profile.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Dortmund are only slight road favorites, reflecting their higher ceiling but also defensive volatility and some absences. Hoffenheim's attacking profile at home makes an upset or draw plausible, but Dortmund remain the likeliest 90-minute winner.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "The market has moved strongly toward Leipzig, and Werder enter with poor recent results plus several injury concerns. Leipzig's away scoring form and stronger squad make them clear favorites, though the road setting preserves some draw risk.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.81,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are overwhelming away favorites, with odds and recent form both pointing strongly toward them. Schalke's injuries and the large quality gap make a home result unlikely, although the draw remains the main path to an upset.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:07:29.297995-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bayer Leverkusen are strong favorites at BayArena, with the market implying a clear home edge. Union Berlin arrive in solid recent form and have shown they can be competitive, but Leverkusen's squad quality, home advantage, and attacking depth make the home win the most likely regulation-time result.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Borussia Mönchengladbach have home advantage and remain slight favorites, but the odds have moved toward SV Elversberg and the away side opened the season positively. Gladbach's injury concerns and Elversberg's form make this a relatively balanced match, though the home side still has the narrow edge.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg are favored after an impressive opening win and appear to have the stronger top-flight profile. Paderborn have home advantage and recent resilience, but the betting market and squad quality point toward Freiburg being more likely to win over 90 minutes.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Borussia Dortmund are slight away favorites due to superior overall quality, but Hoffenheim at home are dangerous and this fixture projects as high-scoring. Dortmund's defensive inconsistency and some absences reduce confidence, yet they remain the most likely winner.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "RB Leipzig have taken notable market support and enter with stronger form than Werder Bremen. Bremen have several injury concerns and a poor recent run, while Leipzig's away scoring profile gives them a clear edge despite being on the road.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.82,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites, supported by perfect recent form, superior squad strength, and very short market odds. Schalke's home venue gives them some chance of resistance, but Bayern are by far the most likely regulation-time winner.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-04T10:08:22.311583-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are priced as clear favorites (roughly two-thirds implied win probability) and have the stronger squad/attack at home. Union’s recent form is solid, which keeps the draw/away chances meaningful, but market and venue point to a Leverkusen regulation win most often.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach have the home-field edge and are favored by the odds despite a shortened price from open, suggesting some caution but still a home lean. Elversberg’s good recent results raise upset potential, yet the typical quality gap and Gladbach’s stronger baseline make the home win the most likely 90-minute outcome.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are slight away favorites in the market and come in with stronger recent performance indicators, pointing to better overall balance. Paderborn at home and the relatively close 1X2 pricing keep draw/home outcomes live, but Freiburg remain the most likely to take all three in regulation.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Dortmund are narrow favorites away, but not strongly, and both sides’ profiles suggest volatility (higher-scoring tendencies and defensive questions). That raises draw and home-win chances compared to a typical Dortmund mismatch, so the away win is the single most likely result but with limited confidence.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Leipzig are a clear market favorite and project as the stronger side, especially given Bremen’s poor recent form and squad availability concerns noted in context. Bremen at home keeps the draw from collapsing, but Leipzig’s win is the most common regulation outcome.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.82,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are an overwhelming favorite by the odds and come in with dominant recent form, making an away regulation win the most likely by a wide margin. Schalke’s home factor is not enough to offset the talent gap; draw/upset chances are comparatively small.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-04T10:08:43.504875-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are clear favorites at home (market odds and stronger squad depth). Union come in with good recent form but are the underdog on the road; bookmakers price Leverkusen significantly ahead. Expect Leverkusen to control and edge a regulation-time win.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach are modest favorites with home advantage and a generally stronger squad. Elversberg have shown form but are a newly promoted side; an upset is possible but home win is likeliest.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium-high",
+                    "reasoning": "Freiburg come in as the stronger side (recent 4-1 result noted) and are priced as favorites. Paderborn have home advantage but are underdogs on form and squad quality; Freiburg to win in regulation is the most likely outcome.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund have the stronger roster and scoring potential despite some inconsistency; odds slightly favor them. Hoffenheim can be dangerous at home, so a competitive match with an away win as the likeliest result.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium-high",
+                    "reasoning": "Market and form favour RB Leipzig, who are stronger offensively and start as favorites. Werder have home support but their form and squad issues make an upset less likely; Leipzig win in regulation is most probable.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.05,
+                    "draw_probability": 0.08,
+                    "away_win_probability": 0.87,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites (very short odds) with dominant recent form; Schalke are outclassed on paper. A Bayern regulation-time win is overwhelmingly likely.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-04T10:09:33.063655-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.6357,
+                    "draw_probability": 0.1966,
+                    "away_win_probability": 0.1677,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Leverkusen are favorites in the market (-220). Normalized odds imply ~63.6% home win probability. Leverkusen have stronger home form.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.504050405040504,
+                    "draw_probability": 0.24662466246624665,
+                    "away_win_probability": 0.24932493249324933,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Home side shows slight edge in odds (~-120) and balanced draw, with a narrow home win probability ~50.4% after normalization.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.2778,
+                    "away_win_probability": 0.5122,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Freiburg are slight away favorite (-105). After normalization, Freiburg win probability ~51.2%.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3304008797360792,
+                    "draw_probability": 0.24972508247525743,
+                    "away_win_probability": 0.4198740377886634,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund are modest favorites in this matchup. Normalized odds give Dortmund ~42.0% win probability.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23307669233076692,
+                    "draw_probability": 0.23007699230076992,
+                    "away_win_probability": 0.5368463153684632,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Leipzig are favorites (-140). After normalization, Leipzig win probability ~53.7%.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07685388766739956,
+                    "draw_probability": 0.11553068159104538,
+                    "away_win_probability": 0.8076154307415552,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites (-700). Normalized odds assign Bayern ~80.8% win probability.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-04T10:09:39.721929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are strong favorites at home, with odds and expert picks heavily favoring them. Their squad is largely healthy, and their home form is solid. Union Berlin are resilient but less likely to win away, and the market consensus is for a Leverkusen win.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach are slight favorites at home, but Elversberg's recent form is strong. Both teams have some injuries, but Gladbach's home advantage and market odds tip the balance in their favor, though a draw or away win is not out of the question.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg are in good form and are favored by both odds and expert picks. Paderborn are competitive at home but Freiburg's quality and recent results suggest they are more likely to take all three points.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund have had some defensive issues but remain the stronger side on paper. Hoffenheim are capable of scoring but Dortmund's attacking power and market odds make them the likelier winners, though a draw is possible.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig are clear favorites, with strong away form and a superior squad. Werder Bremen are struggling and have several injuries. The odds and expert consensus strongly favor Leipzig.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.06,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.84,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites, with a vastly superior squad and form. Schalke are missing key players and are heavy underdogs according to all available odds and expert analysis.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-04T10:09:55.436044-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen's strong home form and favorable odds suggest a high likelihood of victory against Union Berlin.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach's home advantage and slightly better odds make them favorites, but Elversberg's form suggests a competitive match.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg's recent form and favorable odds indicate a likely win, despite SC Paderborn's solid home performance.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund's superior squad and recent performance edge them as favorites, though Hoffenheim's home form could challenge.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig's strong away form and Werder Bremen's struggles make Leipzig the clear favorites.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich's dominant form and overwhelming odds make them the clear favorites against Schalke 04.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-04T10:10:17.069936-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are clear market favorites (-220) at the BayArena. Union have started well (3-3 draw with Frankfurt and strong recent form), but Leverkusen's superior squad quality at home makes them the likely winner, with some risk given Union's resilience and last H2H result.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Gladbach are modest favorites (-120) at home, but promoted Elversberg arrive in strong form (four wins in five). Gladbach have injuries (Castrop, Querfeld) and inconsistent form, so this is a low-confidence home lean.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Freiburg are slight road favorites after a 4-1 win over Bremen, and the market has moved toward them. Paderborn are unbeaten in recent matches and won the last H2H 3-1, keeping meaningful home/draw probability. Away win is the most likely single outcome but not by much.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Dortmund are modest away favorites (+120) but have shown defensive fragility and inconsistent recent results. Hoffenheim at the PreZero Arena have real upset potential, and both teams produce high-scoring games. Slight edge to Dortmund's quality.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Leipzig are clear favorites (-140, line moving further their way) against a Bremen side in poor form (four losses in five) and hit hard by injuries (Agu, Stage, Weiser, Regeer). Leipzig's strong away scoring record supports the away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.81,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites (-700) with a perfect recent record, while promoted Schalke face multiple absences (Schallenberg, Karaman doubtful). Even away from home, Bayern's overwhelming quality gap makes this the safest pick of the round.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-04T10:10:30.879549-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "Bayer Leverkusen",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are strong favorites at home (-220) with a deep, quality squad. Union Berlin can be stubborn but conceded three to Frankfurt last time. Home win most likely.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Borussia Mönchengladbach",
+                    "confidence": "low",
+                    "reasoning": "Gladbach favored at home (-120) but Elversberg are in strong form (WWWLW) as a newly promoted/competitive side. Close match with modest home edge.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "SC Freiburg",
+                    "confidence": "low",
+                    "reasoning": "Freiburg are slight favorites (-105) after a 4-1 win over Bremen and sit 2nd. Paderborn are dangerous at home but Freiburg's quality edges this.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "Borussia Dortmund",
+                    "confidence": "low",
+                    "reasoning": "Dortmund are marginal favorites (+120 vs +180). Both sides leak goals; expect an open game. Dortmund's overall quality gives a slight edge despite inconsistent form.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "RB Leipzig",
+                    "confidence": "medium",
+                    "reasoning": "Leipzig favored (-140) and travel well. Werder are in poor form (LWLLL) with several injuries. Leipzig's away scoring record supports an away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "Bayern Munich",
+                    "confidence": "high",
+                    "reasoning": "Bayern are heavy favorites (-700) with a perfect WWWWW form. Schalke, a lower-tier side here, face a huge quality gap. Away win is highly likely.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-04T10:10:58.829269-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bayer Leverkusen are heavy favorites at home at BayArena, reflected by odds around -220. The market has shifted slightly from open (from -250), suggesting some softening. Union Berlin's recent form (DWWWD) is respectable and they won the last H2H 1-0, which adds some uncertainty. However, Leverkusen's home quality and squad depth (Maza, Schick, García) should be decisive. Adjusted probabilities reflect the slight line movement toward Union Berlin but still strongly favor the home side.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a surprisingly tight market with Gladbach as modest favorites at -120. Elversberg have been in strong form (WWWLW) and are newly promoted/competitive sides often punch above expectations early in the season. Gladbach have injury concerns (Castrop, Querfeld). The odds at ~+270 for Elversberg suggest genuine competitiveness. Betmines odds show Gladbach at 1.90 (implying ~53%), Elversberg at 4.00. Slight lean to Gladbach as home side but low confidence given the closeness of the market.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are slight favorites at around -105 to +110 range opening, and multiple prediction sites favor them. Freiburg are in excellent form (WWWWL in last 5) and won 4-1 last round. Paderborn won the last H2H 3-1, but Freiburg's quality under Julian Schuster, with a strong attacking unit, should prevail at a newly promoted side. Odds imply roughly a coin-flip with Freiburg slight edge, which is reflected in probabilities.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "The market is very close with Hoffenheim +180 and Dortmund +120, suggesting near parity. Dortmund have a slight edge implied by odds but their recent form is mixed (WWLLW) with defensive concerns. Hoffenheim are averaging high goals per game. Dortmund have suspensions (Inacio) and injuries (Lerma, Bensebaini). Multiple tipsters favor Dortmund to win but acknowledge uncertainty. Slim lean toward Dortmund as slight market favorite but low confidence given the volatility of both sides.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "RB Leipzig are clear favorites at -140 (implying ~58% win probability). Werder are in poor form (LWLLL) with multiple injury concerns (Agu, Stark, Stage, Weiser, Regeer). Leipzig have strong recent away scoring form and won their opening Bundesliga fixture. Multiple prediction sites back Leipzig. The line moved from -105 to -140 showing market confidence growing in Leipzig. Strong lean to Leipzig away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.06,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.84,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are massive favorites at -700 (implied probability ~87.5%). Bayern are in perfect form (WWWWW) and are the dominant force in German football. Schalke at +1100 reflects their underdog status as a side that likely returned from a lower division. The only concern is Musiala being doubtful, but Bayern's squad depth is enormous. Bookmaker odds across all sources consistently show Bayern winning easily, with over 3.5 goals predicted. High confidence in a Bayern away win.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-04T10:11:25.452885-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bayer Leverkusen are strong favorites at home with odds of -220. Their recent form shows LWDLW, and they possess superior squad quality. Union Berlin drew 3-3 with Frankfurt in their last match, showing defensive vulnerabilities. Leverkusen's attacking options with Schick, Tillman, and Maza should exploit Union's defensive issues. The betting markets heavily favor a home win, though Union's decent away record (0-1-0) suggests they can be competitive.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach are narrow favorites at -120, playing at home with strong recent form (LWWLW). Elversberg had an excellent start with a win (1-0-0 record) and come in with strong form (WWWLW). However, as a newly promoted side, away matches at established Bundesliga venues will be challenging. Gladbach's home advantage and squad depth should prove decisive, though Elversberg's momentum makes this closer than typical promoted team fixtures.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are slight favorites at -105 despite being away, having thrashed Werder Bremen 4-1 in their opener. Their excellent pre-season form (WWWWL) and strong squad under Julian Schuster gives them the edge. Paderborn drew 0-0 with Mainz in their opener and are newly promoted. The historical result (Paderborn won 3-1 last meeting) is less relevant given squad changes. Freiburg's quality and momentum should see them through, though Paderborn at home will be competitive.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund are favorites at +120 in what appears to be a competitive match. Dortmund won their opener (1-0-0) but have shown inconsistency with three defeats in their last five competitive matches and defensive issues. Hoffenheim lost their opener (0-0-1) and have poor recent form (LWLWD). Despite Dortmund's defensive concerns, their superior attacking quality and squad depth should prevail. Hoffenheim have key absences including Tim Lemperle suspended. Both teams to score is likely, but Dortmund should edge it.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Leipzig are clear favorites at -140 and rightfully so. Bremen have terrible form (LWLLL) and were demolished 4-1 by Freiburg in their opener. Leipzig won their opener and have strong recent away form, scoring 15 goals in their last 9 away matches of last season. Bremen have significant injury problems including Felix Agu, Jens Stage, and Mitchell Weiser. Leipzig's quality, form, and Bremen's defensive vulnerabilities make this a strong away win prediction.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.82,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Bayern are overwhelming favorites at -700, the heaviest odds on the slate. Bayern have perfect form (WWWWW) and won their opener. Schalke, newly promoted, lost their opener (0-0-1) and face the reigning champions. The quality gap is enormous - Bayern have world-class talent throughout while Schalke are a promoted side adjusting to top-flight football. Bayern's attacking prowess should overwhelm Schalke's defense. Multiple goals expected for Bayern in a comfortable away victory.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-04T10:11:38.882899-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bayer Leverkusen favored at home with strong recent form (LWDLW). Union Berlin drew 3-3 in last match showing vulnerability. DraftKings odds heavily favor home (-220). However, Union's last head-to-head was a 1-0 away win, suggesting competitive matchup. BTTS prediction from sources indicates goals likely. Home advantage and quality squad support Leverkusen win but not dominant.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach slight favorites at home with odds around -120. Both teams show mixed recent form. Elversberg strong away record (WWWLW) but Gladbach home form (LWWLW) more balanced. Injury concerns on both sides with Castrop and Querfeld out for Gladbach, Frederik Schmahl returning for Elversberg. Prediction odds favor home around 1.90. Competitive match with slight home advantage.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg strong away form (WWWWL) and 2nd position in table with 3 points after 4-1 win vs Bremen. Paderborn at home with mixed form (DWWDW) and recent loss. Multiple sources predict Freiburg win (odds 2.10). Predicted lineup analysis shows Freiburg well-organized. Paderborn's recent form concerning though home record decent. Freiburg's quality and form advantage outweighs home factor.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Competitive match with mixed signals. Hoffenheim home odds +180, Dortmund +120 suggesting near parity. Dortmund defensive issues (8 goals conceded in 5 preseason matches) concerning despite 3-2 Arsenal win. Both teams show recent inconsistency - Dortmund 3 defeats in 5 (WWLLW), Hoffenheim (LWLWD). Goal-heavy prediction (67% chance +2.5 goals). Tim Lemperle suspension for Hoffenheim. Very close match with slight lean to home factor.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig clear favorites with -140 odds and strong away record (WWLWL). Leipzig productive on travels (15 goals in final 9 away games last season). Werder Bremen struggling with worst recent form (LWLLL) and multiple injuries including Stage, Agu, Wójcik out. Leipzig vs Bremen prediction shows 54% win probability for Leipzig (1.86 odds). Away team form, team quality, and injury disparity strongly favor Leipzig despite home disadvantage.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.05,
+                    "draw_probability": 0.08,
+                    "away_win_probability": 0.87,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich overwhelming favorites with -700 odds (implied 87.5% win probability). Bayern undefeated recent form (WWWWW) vs Schalke mixed (LWWLW). Massive quality gap between teams. Bayern 5-win streak vs Schalke injuries (Lasme, Gantenbein, Schallenberg out). Over 3.5 goals predicted. Bayern's perfect recent form, superior squad, and road record make dominant away win highly probable despite Schalke home factor. Jamal Musiala only questionable.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-04T10:12:47.229063-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Leverkusen are strong favorites at home per odds and squad quality; Union Berlin have been solid but the market gives a clear edge to Leverkusen.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Gladbach are narrow favorites, but Elversberg have started well and the odds are close; home advantage tips it slightly.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg are favored on the road and have better recent Bundesliga form, though Paderborn are competitive at home.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund's attacking quality gives them the edge, though Hoffenheim are capable, making an away win the most likely but not certain outcome.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "RB Leipzig are clear favorites and Werder Bremen have significant injury issues, supporting an away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites with strong form and squad quality, while Schalke face a major challenge.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-04T10:12:51.271478-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are strong at home and odds heavily favor them, but Union Berlin have shown resilience with a draw and a win in their recent matches.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Gladbach have home advantage and better form, but Elversberg are newly promoted and have started well, making this a close contest.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Freiburg have superior quality and recent form, but Paderborn are solid at home and have drawn their opening match.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund have more talent despite inconsistent form, and odds slightly favor them. Hoffenheim have injury concerns.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Leipzig are strong on the road and have better form, while Bremen have several injuries and lost their opener.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.77,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are overwhelming favorites with a perfect record, while Schalke are newly promoted and have key absences.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-04T10:13:20.883273-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen is exceptionally strong at the BayArena and heavily favored by the odds. Despite Union Berlin's decent recent form, Leverkusen's squad depth and home advantage should secure the three points.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach is favored at home, but Elversberg has shown strong away form. Gladbach's home advantage and superior Bundesliga experience give them the edge in what could be a closely contested match.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg has started the season strongly and is favored by the bookmakers despite playing on the road. Paderborn's recent draw suggests they may struggle to break down a well-organized Freiburg side.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund holds the quality edge and is slightly favored away from home. While Hoffenheim's attacking potential guarantees a competitive and likely high-scoring game, Dortmund's firepower should ultimately prevail.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig is in excellent form and heavily favored against a Werder Bremen side that is struggling with injuries and poor recent results. Leipzig's historical productivity on the road makes them the clear pick.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.82,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is overwhelmingly favored against Schalke 04, boasting perfect recent form and a massive squad advantage. A Bayern victory is highly probable given the stark disparity in quality between the two sides.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-04T10:13:41.113033-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen has a strong home form and the odds favor them. Union Berlin's recent form is good, but they are the underdogs in this match.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach has a better overall form and home advantage. However, SV Elversberg has shown some strong away form recently, making the game somewhat unpredictable.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg has a strong away record and is favored by the odds. SC Paderborn 07 has a mixed form, but their recent performances suggest they might struggle against a stronger Freiburg side.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund, despite some recent inconsistent form, is still a strong team and the odds favor them. TSG Hoffenheim has a mixed form, making an away win more likely.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig has a strong away form and is heavily favored by the odds. Werder Bremen's recent form is not as strong, making an away win the most probable outcome.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.05,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich is a dominant force in the league and is heavily favored to win. Schalke 04, while having a decent form, is unlikely to upset the strong Bayern side.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-04T10:14:57.191118-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are heavy favorites at home with strong market odds reflecting their squad depth and attacking quality. Despite Union Berlin's solid recent form and a previous H2H victory, Leverkusen's home dominance and superior firepower make a home victory the most probable outcome.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach holds a slight edge due to home advantage and narrower odds, but Elversberg's impressive away form and Gladbach's defensive absences make this highly competitive. A narrow home win is favored, but a draw remains a realistic possibility.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg's strong league position and consistent winning form make them clear favorites despite missing a couple of midfielders. Paderborn's home solidity is noted, but Freiburg's attacking capability and overall squad quality give them the advantage to secure an away victory.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund's underlying quality and squad depth give them a marginal edge, though recent defensive frailties and Hoffenheim's unpredictable home form keep the probability gap narrow. Both sides are expected to score, but Dortmund's offensive talent should edge a tight contest.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away win",
+                    "confidence": "high",
+                    "reasoning": "Werder Bremen's poor recent form and key injury concerns contrast sharply with RB Leipzig's strong away record and balanced squad. Leipzig's consistency on the road and superior attacking options make them strong favorites to secure a comfortable away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.06,
+                    "draw_probability": 0.09,
+                    "away_win_probability": 0.85,
+                    "predicted_outcome": "Away win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich's flawless recent form, overwhelming market odds, and massive squad depth indicate a straightforward away victory. Schalke's home effort and occasional upsets are unlikely to overcome Bayern's superior technical quality and clinical finishing.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-04T10:15:48.308031-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bayer Leverkusen are significant favorites according to odds (-220) and playing at home in BayArena. While Union Berlin showed resilience recently, Leverkusen's squad depth and home advantage outweigh the visitors.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach holds a slight edge as home team (-120) against Elversberg (+270). Both teams have some injury concerns, making a close contest likely, but the home advantage gives them the nod.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "SC Freiburg enters in strong form (4th place implication in context) and as favorites (-105). Paderborn struggles against higher-tier opposition. Historical H2H is less relevant than current league standing.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds suggest Dortmund (+120) are slight favorites despite recent defensive issues. High goal expectations favor an open game where Dortmund's attacking quality may prevail over Hoffenheim at home.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig are clear favorites (-140) compared to Werder Bremen (+295). Bremen's poor form (LWLLL) contrasts sharply with Leipzig's productive travel record, suggesting an away victory.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich dominate odds (-700) and form (WWWWW). Schalke is heavily outmatched with key absences. The disparity in class and momentum strongly points to a comfortable away win.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-04T10:17:03.829853-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are heavy favorites at BayArena with strong underlying squad depth, while Union Berlin are expected to struggle against elite opposition. Leverkusen will look to bounce back from an opening home defeat.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Mönchengladbach hold a notable quality edge at BORUSSIA-PARK and are priced as favorites. SV Elversberg have made a bright start but should find the step up in class difficult away from home.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg enter in strong form after a convincing opening victory and carry the betting edge. SC Paderborn 07 have been respectable but are likely overmatched against a more cohesive Freiburg side.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Borussia Dortmund possess superior talent and are favored by the market despite some defensive inconsistency. Hoffenheim’s home advantage is offset by squad absences and Dortmund’s higher ceiling.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig are clear favorites with strong away form and a deep squad. Werder Bremen are dealing with multiple injury issues and poor early-season form, making a home upset unlikely.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites with dominant squad quality and perfect early form. Schalke 04 face several absences and a significant talent gap, pointing to a straightforward away victory.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-04T10:17:54.489651-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leverkusen are strong home favorites at -220 (implied ~64% normalized). Despite Union's solid form (DWWWD) and a 1-0 win in the last meeting, Leverkusen's squad quality at BayArena and market consensus (multiple books around 1.45-1.51 for home win) support a home victory. Union remain dangerous on the counter, keeping draw/away chances non-trivial.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Gladbach are moderate home favorites (-120, ~50% normalized), but newly promoted Elversberg won their opener and have shown strong form (WWWLW). Gladbach lost their opener and have defensive absences (Castrop, Querfeld). Home advantage and squad depth tilt toward Gladbach, but the upset risk is elevated.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Freiburg opened with a 4-1 win over Werder Bremen and sit near the top with strong form (WWWWL). The market moved Freiburg from +110 to -105, signaling sharp support for the visitors. Paderborn are organized (0-0 at Mainz) but lack Freiburg's quality. An away win is most likely, though Paderborn's home resilience keeps the draw live.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Dortmund are slight road favorites (+120, ~42% normalized) in what profiles as a high-scoring game. Hoffenheim score freely at home (2 goals/game, 100% over 2.5 recently) but concede heavily. Dortmund's form is shaky (three losses in last five competitive matches, defensive fragility), so while their superior quality makes an away win the modal outcome, all three results are quite plausible.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Leipzig are clear favorites (-140, ~54% normalized) after winning their opener, while Bremen lost 4-1 to Freiburg and carry a long injury list (Agu, Stark, Stage, Weiser, Regeer among concerns). Leipzig scored 15 goals in their final nine away games last season. Bremen's home crowd and volatility keep the draw/away upset possible, but the visitors are the strong side.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern are overwhelming favorites (-700, ~81% normalized; other books as short as 1.16). Bayern's form is perfect (WWWWW) while Schalke, newly promoted with multiple absentees (Lasme, Gantenbein, Schallenberg; Karaman doubtful), are outclassed even at the Veltins Arena. Musiala's doubtful status barely dents Bayern's attacking depth. An away win is strongly expected.",
+                    "event_id": "401884801"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-04T10:18:34.904238-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ Bayer Leverkusen (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Bayer Leverkusen are heavy home favorites with a deep squad, and the market odds strongly back a home win. Union Berlin's good form and the recent 1-0 head-to-head win keep the away chance non-negligible, but Leverkusen's quality at the BayArena should prevail.",
+                    "event_id": "401884806"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "SV Elversberg (away) @ Borussia Mönchengladbach (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Gladbach are priced as favorites at home and should control possession, but Elversberg arrive with strong momentum after an opening win and several key Gladbach defenders are unavailable, making this tighter than the odds suggest.",
+                    "event_id": "401884804"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "SC Freiburg (away) @ SC Paderborn 07 (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "SC Freiburg have started the season impressively, including a 4-1 victory over Werder Bremen, and the odds price them as favorites. Paderborn are solid but lack the attacking firepower to overturn Freiburg's in-form side.",
+                    "event_id": "401884800"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Borussia Dortmund (away) @ TSG Hoffenheim (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Dortmund are favored by the market despite inconsistent preseason form and defensive concerns. Hoffenheim are missing Tim Lemperle through suspension, tilting the balance toward a narrow Dortmund victory in what should be an open game.",
+                    "event_id": "401884807"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "RB Leipzig (away) @ Werder Bremen (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "RB Leipzig are clear favorites with strong away scoring form, while Werder Bremen have multiple injuries and began the season with a heavy defeat. The market and form both point strongly to an away win.",
+                    "event_id": "401884802"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Bayern Munich (away) @ Schalke 04 (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Bayern Munich are overwhelming favorites with perfect form and vastly superior squad depth. Schalke's injury issues and likely defensive setup make a home upset extremely unlikely.",
+                    "event_id": "401884801"
+                }
+            ]
+        }
+    ]
+}

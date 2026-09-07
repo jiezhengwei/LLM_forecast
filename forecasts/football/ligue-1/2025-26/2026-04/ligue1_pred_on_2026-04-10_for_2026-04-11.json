@@ -1,0 +1,244 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-10\n    Target Date: 2026-04-11\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Nantes @ AJ Auxerre                                  | Scheduled    | Away: 14.8% (4-6-17) vs Home: 17.9% (5-8-15)\n2. Angers @ Stade Rennais                               | Scheduled    | Away: 32.1% (9-6-13) vs Home: 46.4% (13-8-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Nantes (Away) @ AJ Auxerre (Home)\n**News & Injury Report:**\n- [Auxerre vs Nantes Prediction, Betting Tips, Lineups & Odds | 11 Apr 2026](https://www.sportsgambler.com/betting-tips/football/auxerre-vs-nantes-prediction-lineups-odds-2026-04-11/)\n  Snippet: #### Previous Nantes Lineups\n\n### Injuries & Suspensions\n\n#### Auxerre Player Stats & Squad\n\n#### Manager: Christophe Pelissier\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  --- \n| Kevin Danois | 5 | M | 27 | 2294 | ...\n- [Auxerre vs Nantes Prediction and Betting Tips | April 11th 2026](https://www.sportskeeda.com/football/auxerre-vs-nantes-prediction-betting-tips-april-11th-2026)\n  Snippet: Of the two, Auxerre seem best equipped to claim the points this weekend. They looked decent enough against Le Havre in their last game and have been scoring some more goals recently.\n\nNantes, meanwhile, have been poor away all season and didn't look ...\n**Betting Odds:**\n- [AJ Auxerre vs Nantes Odds | RotoWire](https://www.rotowire.com/betting/soccer/game/aj-auxerre-vs-nantes-odds-2026-04-11-2568692)\n  Snippet: # AJ Auxerre vs Nantes Odds\n\nPick Your  \nSportsbook\n\nFanDuel FanDuel   BetMGM BetMGM   BetRivers BetRivers   Caesars Caesars   Hard Rock Hard Rock   theScore theScore\n\nAJA\n\nAJ Auxerre\n\nSaturday April 11, 2026 at 12:00 PM ET\n\nLoading Possible Bets...\n...\n- [Preview: Auxerre vs Nantes - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/preview/auxerre-vs-nantes-prediction-team-news-lineups_595418.html)\n  Snippet: Matthis Abline has been Nantes' primary attacking outlet, leading the side with five league goals alongside three assists, and the winger is set for another start down the right flank.\n\nTati will serve a suspension following last weekend's dismissal,...\n\n----------------------------------------\n#### Matchup: Angers (Away) @ Stade Rennais (Home)\n**News & Injury Report:**\n- [Rennes vs Angers Prediction, Betting Tips, Lineups & Odds | 11 Apr 2026](https://www.sportsgambler.com/betting-tips/football/rennes-vs-angers-prediction-lineups-odds-2026-04-11/)\n  Snippet: Jeremy Jacquet Shoulder \n\nPosition: Defender Matches: 19 Goals: - Assists: - Expected return: -\n\nAngers  Injury Table\n\nType Name Info\n\nYassin Belkhdim Yellow cards \n\nPosition: Midfielder Matches: 27 Goals: 2 Assists: 2 Expected return: -\n\nMelvin Zing...\n- [Rennes vs Angers Prediction 11/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-12-04-2026-stade-rennes-angers-prediction)\n  Snippet: ### Angers\n\n\u274c Angers have no significant injury concerns, at least none from their starting lineup ahead of the match against Rennes. The participation of Aruna Dhibiren is doubtful-he has had limited playing time and missed the last round. Defender ...\n**Betting Odds:**\n- [Stade Rennais - Angers SCO betting tip & best odds | 11.04.2026](https://www.futbol24.com/betting-tips/preview/11-04-2026-stade-rennais-angers-sco-betting-tip/)\n  Snippet: 9.3\n\nVery popular in Africa, lots of mobile-friendly features\n\nGo to 1win\n\nMore betting companies\n\n## Best Betting Odds\n\nThe odds for this match favor Stade Rennais significantly. The best available odds are for a home win at 1.44, while a draw stand...\n- [Rennes vs Angers prediction 11.04.2026 | Ligue 1 - MightyTips](https://www.mightytips.com/football-predictions/rennes-vs-angers-prediction-11042026/)\n  Snippet: ## Additional predictions\n\nRennes vs Angers odds\n\n|  | 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---  --- |\n| Boomerang-bet.com logo Boomerang-bet.com | 1.35 | 4.80 | 8.50 | 1.67 | 2.20 |\n| BillyBets logo BillyBets | 1.37 | 4.55 | 8.40 | 1.67 | 2.15 |...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-10\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-10 19:53:46"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-10 19:52:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Both sides have struggled to win all season (Auxerre 5-8-15, Nantes away 4-6-17), which increases draw likelihood. However, Auxerre get the home-edge and recent preview sentiment leans their way, while Nantes are also dealing with a suspension (Tati) that slightly lowers their upset chances."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.69,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Betting markets strongly favor Rennes (home win priced around 1.35\u20131.44), implying a high home-win baseline. Rennes also have the stronger season profile at home (13-8-7) versus Angers away, and Angers are not reported to have major starting XI absences; Rennes have a defensive injury (Jacquet) but the market still signals a clear gap."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:52:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre are the clearer pick: Nantes have been very poor on the road this season (away win rate ~14.8%, record shown 4-6-17), while Auxerre have been marginally better at home and have shown improved attacking output recently. Market previews also lean to Auxerre. Nantes also face squad issues (suspension mentioned for a key player), further reducing their away chances. Expect a tight game with a reasonably high draw component given both teams' low raw win rates."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Rennes are strong at home (home win rate ~46.4%, record 13-8-7) and bookmakers make them clear favorites (home odds ~1.35\u20131.44), implying a high probability of victory. Angers have no major injury news but are the inferior side overall and struggle to win away. Market odds and form both favour a Rennes win; a draw is possible but away upset probability is low."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:52:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre's home edge is modest but real; Nantes have key suspensions (Tati) and poor away form, giving Auxerre the upper hand with a reasonable chance of a draw."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Rennes are clear favourites at home per betting odds (roughly 1.44) and recent form, despite minor injuries; Angers carry a doubtful attacker but overall risk is skewed toward Rennes."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:52:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have struggled this season with Auxerre slightly better at home (17.9% win rate) than Nantes away (14.8%). Recent reports suggest Auxerre are improving in attack and playing at home is an edge. Nantes will be without key player Tati (suspension), further disadvantaging them. Market odds are close, indicating a balanced contest but Auxerre should be small favorites."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Rennes are strong at home with a 46.4% win rate, significantly better than Angers' away figure (32.1%). Bookmaker odds (home win ~1.35-1.44, draw ~4.6, away win ~8.5) make Rennes big favorites and there's no major injury concern for them. Angers have no major absences but are outclassed on season performance and venue. Everything points to a Rennes victory."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:52:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "AJ Auxerre has a slight home advantage with a better recent form compared to Nantes, who have struggled away. The betting odds slightly favor Auxerre and with no significant injury concerns reported, they are in a better position to claim the win."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Stade Rennais have a strong home record and are significantly favored by betting odds. Angers do not have significant injuries but face a high-performing Stade Rennais side at home. The calculated probabilities reflect this strong home advantage and the general market sentiment."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:53:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre's slightly better recent form and home advantage, combined with Nantes' poor away record, suggest a slight edge for Auxerre. Betting tips also lean towards Auxerre. Tati is suspended for Nantes. Kevin Danois is a key midfielder for Auxerre."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Stade Rennais has a significantly better home record and the betting odds strongly favor a home win (around 1.44). Angers has injury concerns, including Jeremy Jacquet being out. Rennais win rate is above 46% at home."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:53:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre has shown improved scoring form recently and faces a Nantes side with poor away record (14.8% win rate). Nantes has suspension issues (Tati suspended) and relies heavily on Abline (5 goals). Auxerre's home advantage (17.9% win rate vs Nantes' 14.8% away) and recent decent performance against Le Havre give them slight edge. Betting odds implied probability favors Auxerre."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Strong home advantage for Rennes (46.4% home win rate vs Angers' 32.1% away). Betting odds heavily favor Rennes (1.35-1.44 range for home win). Angers has no major injuries to starting lineup but faces significant quality gap. Rennes' superior season performance and home form make this the most predictable match of the set."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:53:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre holds a slight home advantage despite both teams having poor overall records (Auxerre 17.9% win rate vs Nantes 14.8%). Key factors: (1) Nantes has been particularly poor away from home all season, (2) Nantes will be without Tati due to suspension following last weekend's dismissal, weakening their lineup, (3) Auxerre has shown improved attacking form recently with more goals scored, (4) Betting odds favor Auxerre as home favorites. However, both teams are struggling near the bottom of the table, making this a tight contest. The relatively high draw probability reflects the quality gap is minimal and both teams' inconsistency."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Rennes is heavily favored in this matchup based on multiple factors: (1) Significant quality gap - Rennes has 46.4% win rate (13-8-7) versus Angers' 32.1% (9-6-13), (2) Strong home form for Rennes with 13 wins in 28 home matches, (3) Betting odds heavily favor Rennes with home win odds at 1.35-1.44, implying ~70% probability, (4) Angers has no major injury concerns but lacks the quality to compete with Rennes, (5) The betting market shows draw at 4.55-4.80 and away win at 8.40-8.50, indicating very low probability for Angers success. Rennes should control this match at home and secure three points comfortably."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-10 19:53:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nantes (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "AJ Auxerre has a slightly better home record and Nantes has been poor away this season. The betting odds and recent form also favor Auxerre, but their overall win rate is still low, making a draw a plausible outcome."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Stade Rennais has a strong home record and the betting odds heavily favor them. Angers, despite having no significant injury concerns, has a lower away win rate and is not expected to perform well against a strong Rennais side."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

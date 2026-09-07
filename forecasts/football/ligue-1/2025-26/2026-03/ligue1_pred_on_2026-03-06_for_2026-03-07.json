@@ -1,0 +1,303 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "forecast_type": "one-day-ahead",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-06\n    Target Date: 2026-03-07 (one-day-ahead forecast)\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Angers @ Nantes                                      | Scheduled    | Away: 33.3% (8-5-11) vs Home: 16.7% (4-5-15)\n2. Strasbourg @ AJ Auxerre                              | Scheduled    | Away: 41.7% (10-5-9) vs Home: 16.7% (4-6-14)\n3. Marseille @ Toulouse                                 | Scheduled    | Away: 54.2% (13-4-7) vs Home: 33.3% (8-7-9)\n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Angers (Away) @ Nantes (Home)\n- [Nantes vs Angers Prediction 7/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-08-03-2026-nantes-angers-prediction)\n  Snippet: ### Angers\n\n\u274c Angers have a relatively calm situation concerning injured players\u2014there are almost none. The only absence is goalkeeper Herv\u00e9 Koffi, who suffered a hand injury in the 23rd round against...\n- [Angers vs Nantes (07.03.2026) Lineups \u1409 Confirmed Starting Squads](https://oddsfan.com/football/event/angers-vs-nantes/lineups)\n  Snippet: Kelvin Amian\n\nKelvin Amian\n\ndefender\n\nLouis Leroux\n\nLouis Leroux\n\nmidfielder\n\nMatthis Abline\n\nMatthis Abline\n\nforward\n\nMohamed Kaba\n\nMohamed Kaba\n\nmidfielder\n\nMostafa Mohamed\n\nMostafa Mohamed\n\nforward...\n- [Nantes vs Angers Prediction, Stats, H2H - 07 Mar 2026 - Forebet](https://www.forebet.com/en/football/matches/nantes-angers-2316336)\n  Snippet: | injured and suspended    Player  Reason  Until  I. Kpene Ganago (F)  Unknown injury  -  B. Deuff (M)  Knock  -  D. Machado Mena (D)  Hamstring Injury  -  Player  Reason  Until  L. Rao-Lisoa (D)  Sus...\n\n----------------------------------------\n#### Matchup: Strasbourg (Away) @ AJ Auxerre (Home)\n- [Auxerre vs Strasbourg Preview 03/07/2026 - Forebet](https://www.forebet.com/en/football-match-previews/26267-strasbourg-seek-to-extend-undefeated-streak-against-struggling-auxerre-at-stade-de-labb-deschamps)\n  Snippet: Football is Mathematics\n\n \n\nMore\n\n  Previews    Trends    Top Trends    Livescore    Injured players    Team Comparison \n\nEnglish (EN)\n\nEspa\u00f1ol (ES)\n\nDeutsch (DE)\n\nItaliano (IT)\n\nFran\u00e7ais (FR)\n\n\u0420\u0443\u0441\u0441\u043a\u0438...\n- [Preview: Auxerre vs Strasbourg - prediction, team news, lineups](https://www.sportsmole.co.uk/football/aj-auxerre/preview/auxerre-vs-strasbourg-prediction-team-news-lineups_593236.html)\n  Snippet: For the visitors, Sam Amo-Ameyaw and Maxi Oyedele returned to the squad on Tuesday, though Emanuel Emegha continues to miss out with a muscle fibre tear.\n\nDiego Moreira, Valentin Barco and former Chel...\n- [AJ Auxerre - RC Strasbourg Alsace prediction & tips 07.03.2026](https://www.transfermarkt.com/betting/tips/aj-auxerre-vs-rc-strasbourg-prediction-07-03-2026/)\n  Snippet: | 10 | FC Lorient  FC Lorient | 33 | 24 | 8 | 9 | 7 | 34 | 38 | -4 |\n| 11 | Toulouse FC  Toulouse FC | 31 | 24 | 8 | 7 | 9 | 33 | 28 | 5 |\n| 12 | Angers SCO  Angers SCO | 29 | 24 | 8 | 5 | 11 | 22 | 3...\n\n----------------------------------------\n#### Matchup: Marseille (Away) @ Toulouse (Home)\n- [Toulouse vs Olympique Marseille Preview 03/07/2026 | Forebet](https://www.forebet.com/en/football-match-previews/26268-toulouse-seek-to-break-marseille-hoodoo-in-ligue-1-clash-at-stadium-de-toulouse)\n  Snippet: Midfielders: Pierre-Emile H\u00f8jbjerg, Quinten Timber, Mason Greenwood, Igor Paix\u00e3o, Arthur Vermeeren\n\n                                          Attackers: Amine Gouiri\n\n                                 ...\n- [Toulouse - Marseille : Predicted Lineups - Bulinews](https://bulinews.com/fixture/678771/toulouse-marseille)\n  Snippet: # Toulouse - Marseille\n\n| Toulouse | |\n --- |\n| Ligue 1  Rennes 1 - 0 Toulouse | |\n| 1 | G. Restes |\n| 19 | Djibril Sidib\u00e9 |\n| 4 | Charlie Cresswell  (45) |\n| 3 | Mark McKenzie |\n| 12 | Warren Kamanzi...\n- [Marseille predicted XI v Toulouse: Pierre-Emile Hojbjerg suspended ...](https://sports.yahoo.com/articles/marseille-predicted-xi-v-toulouse-081000752.html)\n  Snippet: Hojbjerg is suspended for the Coupe de France quarter-final, meaning that the captain\u2019s armband will likely return to defender Leonardo Balerdi. He isn\u2019t the only absentee that Habib Beye must contend...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-06\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-06 17:57:28"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-06 17:55:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Angers have the better season record (8-5-11 vs Nantes 4-5-15) and arrive with relatively few injuries (main concern: GK Herv\u00e9 Koffi out). Nantes\u2019 overall form is poor and they have multiple injury concerns listed, which reduces their ability to fully capitalize on home advantage. Draw risk remains meaningful given Nantes\u2019 low win conversion and likely tighter game state."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Strasbourg\u2019s season profile is significantly stronger (10-5-9) than Auxerre\u2019s (4-6-14), and Auxerre\u2019s win rate suggests persistent difficulty converting matches even at home. Strasbourg do have an attacking absence (Emanuel Emegha still out), which raises the draw probability, but the overall quality/form gap still makes Strasbourg the most likely winner."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille\u2019s record (13-4-7) indicates a higher baseline level than Toulouse (8-7-9), even accounting for away venue. Toulouse are competitive at home, which keeps both home-win and draw probabilities elevated, but Marseille\u2019s stronger overall performance and squad quality make them the likeliest outcome. Some uncertainty around Marseille availability/rotation (noted absences/suspension context in news) slightly reduces away-win confidence."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:55:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Season form favors Angers (away win rate ~33%) while Nantes have a poor home win rate (~17%). Nantes are also carrying injuries/suspensions to attacking and defensive options (Ganago uncertain, Machado hamstring, Rao-Lisoa suspended) while Angers report almost no absences aside from goalkeeper Herv\u00e9 Koffi. With Nantes' limited home form and squad issues, Angers are the likeliest winner, though home advantage and the possibility of a tight match keep draw probability meaningful."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Strasbourg have substantially better form (win rate ~41.7%) and are reported to be extending an undefeated run, while Auxerre's home record is weak (~16.7% win rate). Strasbourg have seen some returns to the squad (Amo-Ameyaw, Oyedele); the main absentee (Emegha) limits options but does not materially reduce the visitors' edge. Given the gap in form and Auxerre's struggles at home, a Strasbourg win is the most probable outcome."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille are the strongest side here by season metrics (win rate ~54%), but there are question marks around squad rotation and absences (reports of suspensions/rotation for H\u00f8jbjerg and other players depending on cup duties). Toulouse are solid at home (~33% win rate) and can make this competitive. Overall quality and form tilt the probabilities to Marseille, but potential rotation and Toulouse's home resilience keep this less certain than the Strasbourg match."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:56:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Angers away win rate is 33.3% while Nantes at home win rate is 16.7%. Key injury: Angers goalkeeper Herv\u00e9 Koffi is out, which dampens away strength, but Nantes\u2019 home advantage is modest. Net effect: away slightly favored with a meaningful draw risk."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Strasbourg travels with a solid away record (41.7% win). Auxerre struggles at home (16.7% win). Latest notes: Auxerre has at least one muscle injury (Emegha) while Strasbourg benefited from returns of Amo-Ameyaw and Oyedele. Away win favored but draw potential exists due to home resilience."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille hold a strong 54.2% away win profile; Toulouse's 33.3% home win is weaker. Marseille also face a suspension (Hojbjerg), which could temper control, but the away edge remains significant. Draw risk exists but is lower than the away likelihood."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:56:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Low",
+                    "reasoning": "Both teams have relatively weak season records; however, Nantes has a home advantage and Angers is missing their goalkeeper, leading to a slightly greater probability for a draw."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Strasbourg holds a significantly better win rate and is facing an Auxerre team struggling in the league. Strasbourg also welcomes back players from injury, boosting their squad strength."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille shows stronger recent form and overall win rate, despite missing a key player like Pierre-Emile H\u00f8jbjerg. Toulouse's moderate home record suggests Marseille has a better chance of securing an away win."
+                }
+            ],
+            "model_name": "GPT-4 Turbo"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:56:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Nantes has a low home win rate and is dealing with multiple player absences, whereas Angers is relatively injury-free. However, the absence of their key goalkeeper slightly balances the odds."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Strasbourg is in better form and has a higher win rate. Auxerre is underperforming at home despite Strasbourg missing a few players due to injuries."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille has a strong away record, but missing key players like Hojbjerg might impact their performance. Toulouse has shown some resilience at home, though overall they are weaker."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:56:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Nantes have home advantage. Angers have a nearly full squad except for their goalkeeper. Nantes' poor home record is balanced by Angers' slightly better away record. Injury to Nantes players I. Kpene Ganago, B. Deuff and D. Machado Mena may weaken them."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Auxerre's poor home record is countered by Strasbourg's relatively stronger away form. Emegha is out injured for Strasbourg. Recent form suggests a close match, potentially ending in a draw."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille have a significantly better away record than Toulouse's home record. However, Hojbjerg is suspended for Marseille. Marseille's recent form and overall quality edge Toulouse. The game being in Coupe de France likely means Marseille will be prioritizing this more."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:56:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Angers has significantly better season form (33.3% win rate vs Nantes' 16.7%). Nantes has multiple injuries including key forward Matthis Abline and midfielder Mohamed Kaba. Angers has minimal injury concerns, only missing backup goalkeeper Herv\u00e9 Koffi. Home advantage for Nantes is offset by their poor form and squad issues."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Strasbourg has far superior season record (41.7% win rate vs Auxerre's 16.7%) and is seeking to extend undefeated streak. Auxerre is struggling with key absences including Emanuel Emegha (muscle tear), Diego Moreira, and Valentin Barco. Strasbourg has returning players Sam Amo-Ameyaw and Maxi Oyedele strengthening their squad. The form gap is substantial."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille has strong away form (54.2% win rate) and better season performance overall. Toulouse has home advantage but faces Marseille's historical dominance in this matchup. Marseille has suspension concerns (Pierre-Emile H\u00f8jbjerg) but maintains squad depth with players like Amine Gouiri and Quinten Timber. Toulouse's defense showed vulnerability in recent matches."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "model_name": "Claude 3.5",
+            "error": "Claude failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CYmdLtWpMAb525ys2uAkL'}"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:57:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Angers (away) @ Nantes (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Nantes has a poor home record, and Angers, despite their away form, have a relatively calm injury situation. The absence of goalkeeper Herv\u00e9 Koffi for Angers might slightly impact their defense, but Nantes' recent form and home advantage are not strong enough to give them a clear edge."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Strasbourg (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Strasbourg has a strong away record, while AJ Auxerre is struggling at home. Strasbourg's key players returning to the squad and Auxerre's ongoing injury issues (e.g., Emanuel Emegha) make Strasbourg the clear favorite in this match."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Marseille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille has a strong away record, and despite the suspension of Pierre-Emile H\u00f8jbjerg, they still have a solid team. Toulouse's home form is average, and they do not have a significant advantage. The absence of key players for Marseille might slightly increase the chances of a draw, but Marseille remains the more likely winner."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

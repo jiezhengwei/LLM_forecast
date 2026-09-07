@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-21",
+        "target_date_et": "2026-08-22",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874931\nMatchup: Monza (away) @ Internazionale (home)\nHome: Internazionale\nAway: Monza\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: San Siro\nRound: unavailable\nHome form: DDWWW\nAway form: WLWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Internazionale -550 (open -525); Draw +550 (open +500); Monza +1100 (open +950)\nTavily context:\n  - Title: Inter vs Monza Serie A preview: Champions begin their Scudetto ...\n    Content: L. Martinez\n\n  14\n\n  E. Akinsanmiro\n 94\n\n  F. Esposito\n\n  10\n\n  G. Varela\n\n### Manager\n\n C. Chivu\n\n I. Juric\n\nInter head into the opener without Henrikh Mkhitaryan, who is suspended. Cristian Chivu has no probable lineup confirmed at this stage, and no injury absences have been listed. Further squad updates will be added closer to kick-off.\n\nMonza have no suspensions or injuries listed in the available data. Ivan Juric has a clean bill of health to work with ahead of his side's return to Serie A, though a confirmed lineup has not yet been released.\n\n### Form\n\nINT\n\nINT - Form\n\nKSC\n\nW1-2MCI ...\n    URL: https://www.goal.com/en/news/inter-monza-serie-a-preview/blta9f4374ebcb7a470\n  - Title: Preview: Inter Milan vs Monza - prediction, team news, lineups\n    Content: Not much has changed up front: last season's Capocannoniere with 17 league goals, captain Lautaro Martinez has previously scored five goals in six Serie A games against Monza.\n\nWhile the hosts will be missing Henrikh Mkhitaryan due to suspension, their visitors must travel without captain Matteo Pessina, who recently suffered a serious knee injury. ...\n    URL: https://www.sportsmole.co.uk/football/inter-milan/preview/inter-milan-vs-monza-prediction-team-news-lineups_603352.html\n  - Title: Inter Milan vs Monza Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Inter can be backed at 1.58 on the Half-Time Result and you’ll need them to have their noses in front by the break. Monza can be chanced at 9.50 and the draw is 2.80.\n\nThe odds suggest that Over 2.5 Goals is a strong probability in this exciting contest. Providing that at least one side fails to score, then the No pick on the Both Teams to Score market will be a winner at 1.56.\n\nThe best football betting sites definitely give customers lots of choice. When it comes to Serie A matches, choose from hundreds of markets until you find the most attractive odds.\n\nFull-Time Result\n\n1\n\n1.19\n\nX\n\n6.40 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/inter-milan-vs-monza-prediction-lineups-odds-2026-08-22\n  - Title: Inter Milan vs Monza prediction – Odds & stats – 22 August 2026\n    Content: +2.5\nProbability: 55.41%\n\nBet365\nBet365\n\n| Inter Milan |  | Monza |\n ---\n| Inter Milan | stat | Monza |\n| 2.83 | Average goals per game | 4 |\n| 1.67 | Average goal scored | 2.17 |\n| 1.17 | Goals conceded per match | 1.83 |\n| 50 % | Matches with -2.5 goals | 33 % |\n| 50 % | Matches with +2.5 goals | 67 % |\n| 3.33 | Average goals home team 1/away team 2 | 4.17 |\n| 2.5 | Avg. goals home team 1/away team 2 | 2.17 |\n| 0.83 | Avg. goals conceded home team 1/away team 2 | 2 |\nStats based on the last 6 matches\n\nInter Milan\nMonza\n\n## Inter Milan vs Monza BTTS tips\n\nYes\nProbability: 57.92% ...\n    URL: https://www.wincomparator.com/predictions/inter-milan-monza-8522039\n\nGame ID: 2\nSource event_id: 401874745\nMatchup: Como (away) @ Udinese (home)\nHome: Udinese\nAway: Como\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: Stadio Friuli\nRound: unavailable\nHome form: WLLWW\nAway form: WWWDW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Udinese +330 (open +310); Draw +245 (open +230); Como -125 (open -125)\nTavily context:\n  - Title: Udinese vs Como - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Udinese vs Como — Sat 22 August, 16:30 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Bluenergy Stadium\n\nUdineseUdinese\n\n‌\n‌\n\nComoComo\n\n# Udinese vs Como — Sat 22 August, 16:30 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Bluenergy Stadium\n\nUdineseUdinese\n\n‌\n‌\n\nComoComo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Christian Kabasele\n\n  Suspended / 29 August 2026\n\nKabaseleSuspended29 August 2026\n\n  Jurgen Ekkelenkamp\n\n  Broken leg / Early October 2026\n\nEkkelenkampBroken legEarly October 2026\n\n  Alessandro Zanoli\n\n  Cruciate ligament injury / Mid October 2026 ...\n    URL: https://www.fotmob.com/en-GB/matches/udinese-vs-como/2wwfjq\n  - Title: Udinese-Como - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Giorgi Chakvetadze |  | Out | N/A |\n| Alessandro Zanoli |  | Out | N/A |\n| Christian Kabasele |  | Out | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jayden Addai |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 5 | Como | 0 | 0 | 0 | 0 |\n| 19 | Udinese | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0) ...\n    URL: https://www.whoscored.com/matches/1980897/preview/italy-serie-a-2026-2027-udinese-como\n  - Title: Prediction Udinese vs Como: analysis, odds and betting tips\n    Content: The odds are: Udinese to win 4.50, draw 3.60, Como to win 1.80. The odds are Over 2.5 at 2.20 and Under 2.5 at 1.66. both teams to score are 2.\n    URL: https://betmines.com/match-preview/udinese-vs-como-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Udinese Como Odds 23.08.2026 | Tips.GG\n    Content: 0%Bonus\n\n Bonus\n\n 0%\n\n Deposit €10 and get your $15 free bet!\n\n Sign Up & Activate Bonus\n\nNo, thanks\n\ntips.gg\n\nFootball\n\nBasketballEsportsCS2 (CS:GO)LoLDota 2ValorantRainbow 6Call of DutyRocket LeagueOverwatchArena of ValorPUBGWild Rift\n\nMatchesPredictionsTournamentsTeamsLog In:\n| Sportsbook | Udinese will win | Draw | Como will win |\n ---  --- |\n| MegaPari | 4.80 | 3.70 | 1.86 |\n| Vave | 4.60 | 3.55 | 1.85 |\n\nAs of now, the highest odds on Udinese is 4.80 by MegaPari, and 1.86 on Como by MegaPari.\n\n## Top upcoming matches\n\nMatchesPredictionsLive ScoreTournamentsTeamsNews\n\nLoL ...\n    URL: https://tips.gg/matches/football/22-08-2026/udinese-vs-como/05-30/odds\n\nGame ID: 3\nSource event_id: 401874929\nMatchup: Napoli (away) @ Genoa (home)\nHome: Genoa\nAway: Napoli\nKickoff UTC: 2026-08-22T18:45Z\nKickoff ET: 2026-08-22 14:45 EDT\nVenue: Stadio Luigi Ferraris\nRound: unavailable\nHome form: WLLDD\nAway form: WWLDW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Genoa +350 (open +340); Draw +215 (open +210); Napoli -115 (open -125)\nTavily context:\n  - Title: Genoa vs Napoli - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Genoa vs Napoli — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Comunale Luigi Ferraris\n\nGenoaGenoa\n\n‌\n‌\n\nNapoliNapoli\n\n# Genoa vs Napoli — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Comunale Luigi Ferraris\n\nGenoaGenoa\n\n‌\n‌\n\nNapoliNapoli\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  David Neres Campos\n\n  Ankle injury / Doubtful\n\nCamposAnkle injuryDoubtful\n\n  Sam Beukema\n\n  Achilles tendon injury\n\nBeukemaAchilles tendon injury\n\n  Luca Marianucci\n\n  Ligament injury / Mid October 2026 ...\n    URL: https://www.fotmob.com/en-GB/matches/napoli-vs-genoa/3cdjj5\n  - Title: SSC Napoli vs Genoa Odds & Live Scores - August 22, 2026 | The Action Network\n    Content: ### Last 5 Matchups\n\n| date | opponent | score | spread | over/under | moneyline |\n ---  ---  --- |\n| May 24th | @LEC | L 0-1 | +0.5 L | U 1.5 | LEC +350 |\n| May 17th | ACM | L 1-2 | +0.5 L | O 2.5 | ACM +405 |\n| May 10th | @FIO | L 0-0 | +0.5 W  FIO +300 |\n| May 2nd | @ATA | L 0-0 | +1.5 W  ATA +550 |\n| Apr 26th | COM | L 0-2 | +1 L | U 2.5 | COM +480 |\n\n## Genoa vs. Napoli Injury Updates\n\nGenoa logo\n\n### GenoaInjuries\n\n Aaron Martin\n\n  DEF\n\n  Groin Strain\n\n  Out Indefinitely\n Hamed Junior Traore\n\n  MID\n\n  Traore is out\n\n  Out\n\nSSC Napoli logo\n\n### NapoliInjuries\n\n Frank Anguissa\n\n  MID ...\n    URL: https://www.actionnetwork.com/seriea-game/ssc-napoli-genoa/292028\n  - Title: Genoa vs Napoli Prediction - analysis, odds and betting tips\n    Content: 1X2 betting. The odds are: Genoa to win 4.50, draw 3.40, Napoli to win 1.90. The odds are Over 2.5 at 2.30 and Under 2.5 at 1.61. both teams to\n    URL: https://betmines.com/match-preview/genoa-vs-napoli-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Genoa vs Napoli Prediction, Stats, H2H - 22 Aug 2026\n    Content: Genoa\n\nIt2\n\n08/24\n\n2001\n\nGenoa\n\n0 - 2( - )\n\nNapoli\n\nIt2\n\nGenoa 0\n\n0%\n\nDraw 3\n\n50%\n\nNapoli 3\n\n50%\n\nView all\n\n{\"lg_-1\":[8,14,22,44],\"lg_-1_6\":[0,3,3,6],\"lg_6\":[7,9,20,36],\"lg_6_6\":[null,3,3,6],\"lg_22\":[1,5,2,8],\"lg_22_6\":[1,5,null,6]}Match Intro\n\nGenoa welcomes Napoli for a Serie A clash at Stadio Comunale Luigi Ferraris on August 22, 2026.\n\nThe hosts look to bounce back after suffering defeats in their last two home outings, aiming for a stronger performance this time around. ...\n    URL: https://www.forebet.com/en/football/matches/genoa-napoli-2496491\n\nGame ID: 4\nSource event_id: 401874747\nMatchup: Cagliari (away) @ Parma (home)\nHome: Parma\nAway: Cagliari\nKickoff UTC: 2026-08-22T18:45Z\nKickoff ET: 2026-08-22 14:45 EDT\nVenue: Ennio Tardini\nRound: unavailable\nHome form: WWLLL\nAway form: WWWLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Parma +145 (open +150); Draw +195 (open +195); Cagliari +195 (open +175)\nTavily context:\n  - Title: Preview: Parma vs Cagliari - prediction, team news, lineups\n    Content: Elsewhere, midfield pair Benjamin Cremaschi and Hans Nicolussi Caviglia are both sidelined by injury, Nesta Elphege is a doubt, while Swiss full-back Sascha Britschgi must serve a suspension.\n\nCagliari, meanwhile, have replaced Gaetano with Harry Winks; the latter made his competitive debut against Arezzo, alongside fellow new boy Daniel Maldini.\n\nFollowing that match, French forward Yael Trepy was involved in an accident and had to be placed in an induced coma, but he has reportedly begun to recover. ...\n    URL: https://www.sportsmole.co.uk/football/parma/preview/parma-vs-cagliari-prediction-team-news-lineups_603259.html\n  - Title: Parma vs Cagliari - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Parma vs Cagliari — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Ennio Tardini\n\nParmaParma\n\n‌\n‌\n\nCagliariCagliari\n\n# Parma vs Cagliari — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Ennio Tardini\n\nParmaParma\n\n‌\n‌\n\nCagliariCagliari\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sascha Britschgi\n\n  Suspended / 22 August 2026\n\nBritschgiSuspended22 August 2026\n\n  Benjamín Cremaschi\n\n  Meniscus injury / Mid October 2026\n\nCremaschiMeniscus injuryMid October 2026\n\n  Hans Nicolussi Caviglia ...\n    URL: https://www.fotmob.com/en-GB/matches/cagliari-vs-parma/2w2bcl\n  - Title: Parma vs Cagliari Prediction: Match Preview and Analysis - BetMines\n    Content: What are the 1X2 betting odds for Parma vs Cagliari in the Serie A? The odds are: Parma to win 2.55, draw 3.00, Cagliari to win 3.00.\n    URL: https://betmines.com/match-preview/parma-vs-cagliari-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Parma vs Cagliari prediction, preview & betting tips – 22/08/2026\n    Content: Bookmakers have made Parma slight favourites at odds of 29/20 (2.45) to secure three points on home turf.\n\nA draw is priced at 21/10 (3.10), while an away win for Cagliari is available at 187/100 (2.87) as an appealing option for visiting supporters.\n\nAnother option to look at is under 2.5 goals, which is set at 4/7 (1.57), while both teams to score (yes) is offered at 1/1 (2.00) odds.\n\nAlso, looking at the previous meeting between both sides, the option of Cagliari double chance is available at 8/15 (1.53) odds, and a first-half draw is at 1/1 (2.00).\n\n📈 Parma vs. Cagliari — Whispers' Tips ...\n    URL: https://footballwhispers.com/blog/parma-vs-cagliari-prediction-22-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874931\nMatchup: Monza (away) @ Internazionale (home)\nHome: Internazionale\nAway: Monza\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: San Siro\nRound: unavailable\nHome form: DDWWW\nAway form: WLWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Internazionale -550 (open -525); Draw +550 (open +500); Monza +1100 (open +950)\nTavily context:\n  - Title: Inter vs Monza Serie A preview: Champions begin their Scudetto ...\n    Content: L. Martinez\n\n  14\n\n  E. Akinsanmiro\n 94\n\n  F. Esposito\n\n  10\n\n  G. Varela\n\n### Manager\n\n C. Chivu\n\n I. Juric\n\nInter head into the opener without Henrikh Mkhitaryan, who is suspended. Cristian Chivu has no probable lineup confirmed at this stage, and no injury absences have been listed. Further squad updates will be added closer to kick-off.\n\nMonza have no suspensions or injuries listed in the available data. Ivan Juric has a clean bill of health to work with ahead of his side's return to Serie A, though a confirmed lineup has not yet been released.\n\n### Form\n\nINT\n\nINT - Form\n\nKSC\n\nW1-2MCI ...\n    URL: https://www.goal.com/en/news/inter-monza-serie-a-preview/blta9f4374ebcb7a470\n  - Title: Preview: Inter Milan vs Monza - prediction, team news, lineups\n    Content: Not much has changed up front: last season's Capocannoniere with 17 league goals, captain Lautaro Martinez has previously scored five goals in six Serie A games against Monza.\n\nWhile the hosts will be missing Henrikh Mkhitaryan due to suspension, their visitors must travel without captain Matteo Pessina, who recently suffered a serious knee injury. ...\n    URL: https://www.sportsmole.co.uk/football/inter-milan/preview/inter-milan-vs-monza-prediction-team-news-lineups_603352.html\n  - Title: Inter Milan vs Monza Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Inter can be backed at 1.58 on the Half-Time Result and you’ll need them to have their noses in front by the break. Monza can be chanced at 9.50 and the draw is 2.80.\n\nThe odds suggest that Over 2.5 Goals is a strong probability in this exciting contest. Providing that at least one side fails to score, then the No pick on the Both Teams to Score market will be a winner at 1.56.\n\nThe best football betting sites definitely give customers lots of choice. When it comes to Serie A matches, choose from hundreds of markets until you find the most attractive odds.\n\nFull-Time Result\n\n1\n\n1.19\n\nX\n\n6.40 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/inter-milan-vs-monza-prediction-lineups-odds-2026-08-22\n  - Title: Inter Milan vs Monza prediction – Odds & stats – 22 August 2026\n    Content: +2.5\nProbability: 55.41%\n\nBet365\nBet365\n\n| Inter Milan |  | Monza |\n ---\n| Inter Milan | stat | Monza |\n| 2.83 | Average goals per game | 4 |\n| 1.67 | Average goal scored | 2.17 |\n| 1.17 | Goals conceded per match | 1.83 |\n| 50 % | Matches with -2.5 goals | 33 % |\n| 50 % | Matches with +2.5 goals | 67 % |\n| 3.33 | Average goals home team 1/away team 2 | 4.17 |\n| 2.5 | Avg. goals home team 1/away team 2 | 2.17 |\n| 0.83 | Avg. goals conceded home team 1/away team 2 | 2 |\nStats based on the last 6 matches\n\nInter Milan\nMonza\n\n## Inter Milan vs Monza BTTS tips\n\nYes\nProbability: 57.92% ...\n    URL: https://www.wincomparator.com/predictions/inter-milan-monza-8522039\n\nGame ID: 2\nSource event_id: 401874745\nMatchup: Como (away) @ Udinese (home)\nHome: Udinese\nAway: Como\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: Stadio Friuli\nRound: unavailable\nHome form: WLLWW\nAway form: WWWDW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Udinese +330 (open +310); Draw +245 (open +230); Como -125 (open -125)\nTavily context:\n  - Title: Udinese vs Como - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Udinese vs Como — Sat 22 August, 16:30 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Bluenergy Stadium\n\nUdineseUdinese\n\n‌\n‌\n\nComoComo\n\n# Udinese vs Como — Sat 22 August, 16:30 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Bluenergy Stadium\n\nUdineseUdinese\n\n‌\n‌\n\nComoComo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Christian Kabasele\n\n  Suspended / 29 August 2026\n\nKabaseleSuspended29 August 2026\n\n  Jurgen Ekkelenkamp\n\n  Broken leg / Early October 2026\n\nEkkelenkampBroken legEarly October 2026\n\n  Alessandro Zanoli\n\n  Cruciate ligament injury / Mid October 2026 ...\n    URL: https://www.fotmob.com/en-GB/matches/udinese-vs-como/2wwfjq\n  - Title: Udinese-Como - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Giorgi Chakvetadze |  | Out | N/A |\n| Alessandro Zanoli |  | Out | N/A |\n| Christian Kabasele |  | Out | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jayden Addai |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 5 | Como | 0 | 0 | 0 | 0 |\n| 19 | Udinese | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0) ...\n    URL: https://www.whoscored.com/matches/1980897/preview/italy-serie-a-2026-2027-udinese-como\n  - Title: Prediction Udinese vs Como: analysis, odds and betting tips\n    Content: The odds are: Udinese to win 4.50, draw 3.60, Como to win 1.80. The odds are Over 2.5 at 2.20 and Under 2.5 at 1.66. both teams to score are 2.\n    URL: https://betmines.com/match-preview/udinese-vs-como-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Udinese Como Odds 23.08.2026 | Tips.GG\n    Content: 0%Bonus\n\n Bonus\n\n 0%\n\n Deposit €10 and get your $15 free bet!\n\n Sign Up & Activate Bonus\n\nNo, thanks\n\ntips.gg\n\nFootball\n\nBasketballEsportsCS2 (CS:GO)LoLDota 2ValorantRainbow 6Call of DutyRocket LeagueOverwatchArena of ValorPUBGWild Rift\n\nMatchesPredictionsTournamentsTeamsLog In:\n| Sportsbook | Udinese will win | Draw | Como will win |\n ---  --- |\n| MegaPari | 4.80 | 3.70 | 1.86 |\n| Vave | 4.60 | 3.55 | 1.85 |\n\nAs of now, the highest odds on Udinese is 4.80 by MegaPari, and 1.86 on Como by MegaPari.\n\n## Top upcoming matches\n\nMatchesPredictionsLive ScoreTournamentsTeamsNews\n\nLoL ...\n    URL: https://tips.gg/matches/football/22-08-2026/udinese-vs-como/05-30/odds\n\nGame ID: 3\nSource event_id: 401874929\nMatchup: Napoli (away) @ Genoa (home)\nHome: Genoa\nAway: Napoli\nKickoff UTC: 2026-08-22T18:45Z\nKickoff ET: 2026-08-22 14:45 EDT\nVenue: Stadio Luigi Ferraris\nRound: unavailable\nHome form: WLLDD\nAway form: WWLDW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Genoa +350 (open +340); Draw +215 (open +210); Napoli -115 (open -125)\nTavily context:\n  - Title: Genoa vs Napoli - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Genoa vs Napoli — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Comunale Luigi Ferraris\n\nGenoaGenoa\n\n‌\n‌\n\nNapoliNapoli\n\n# Genoa vs Napoli — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Comunale Luigi Ferraris\n\nGenoaGenoa\n\n‌\n‌\n\nNapoliNapoli\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  David Neres Campos\n\n  Ankle injury / Doubtful\n\nCamposAnkle injuryDoubtful\n\n  Sam Beukema\n\n  Achilles tendon injury\n\nBeukemaAchilles tendon injury\n\n  Luca Marianucci\n\n  Ligament injury / Mid October 2026 ...\n    URL: https://www.fotmob.com/en-GB/matches/napoli-vs-genoa/3cdjj5\n  - Title: SSC Napoli vs Genoa Odds & Live Scores - August 22, 2026 | The Action Network\n    Content: ### Last 5 Matchups\n\n| date | opponent | score | spread | over/under | moneyline |\n ---  ---  --- |\n| May 24th | @LEC | L 0-1 | +0.5 L | U 1.5 | LEC +350 |\n| May 17th | ACM | L 1-2 | +0.5 L | O 2.5 | ACM +405 |\n| May 10th | @FIO | L 0-0 | +0.5 W  FIO +300 |\n| May 2nd | @ATA | L 0-0 | +1.5 W  ATA +550 |\n| Apr 26th | COM | L 0-2 | +1 L | U 2.5 | COM +480 |\n\n## Genoa vs. Napoli Injury Updates\n\nGenoa logo\n\n### GenoaInjuries\n\n Aaron Martin\n\n  DEF\n\n  Groin Strain\n\n  Out Indefinitely\n Hamed Junior Traore\n\n  MID\n\n  Traore is out\n\n  Out\n\nSSC Napoli logo\n\n### NapoliInjuries\n\n Frank Anguissa\n\n  MID ...\n    URL: https://www.actionnetwork.com/seriea-game/ssc-napoli-genoa/292028\n  - Title: Genoa vs Napoli Prediction - analysis, odds and betting tips\n    Content: 1X2 betting. The odds are: Genoa to win 4.50, draw 3.40, Napoli to win 1.90. The odds are Over 2.5 at 2.30 and Under 2.5 at 1.61. both teams to\n    URL: https://betmines.com/match-preview/genoa-vs-napoli-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Genoa vs Napoli Prediction, Stats, H2H - 22 Aug 2026\n    Content: Genoa\n\nIt2\n\n08/24\n\n2001\n\nGenoa\n\n0 - 2( - )\n\nNapoli\n\nIt2\n\nGenoa 0\n\n0%\n\nDraw 3\n\n50%\n\nNapoli 3\n\n50%\n\nView all\n\n{\"lg_-1\":[8,14,22,44],\"lg_-1_6\":[0,3,3,6],\"lg_6\":[7,9,20,36],\"lg_6_6\":[null,3,3,6],\"lg_22\":[1,5,2,8],\"lg_22_6\":[1,5,null,6]}Match Intro\n\nGenoa welcomes Napoli for a Serie A clash at Stadio Comunale Luigi Ferraris on August 22, 2026.\n\nThe hosts look to bounce back after suffering defeats in their last two home outings, aiming for a stronger performance this time around. ...\n    URL: https://www.forebet.com/en/football/matches/genoa-napoli-2496491\n\nGame ID: 4\nSource event_id: 401874747\nMatchup: Cagliari (away) @ Parma (home)\nHome: Parma\nAway: Cagliari\nKickoff UTC: 2026-08-22T18:45Z\nKickoff ET: 2026-08-22 14:45 EDT\nVenue: Ennio Tardini\nRound: unavailable\nHome form: WWLLL\nAway form: WWWLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Parma +145 (open +150); Draw +195 (open +195); Cagliari +195 (open +175)\nTavily context:\n  - Title: Preview: Parma vs Cagliari - prediction, team news, lineups\n    Content: Elsewhere, midfield pair Benjamin Cremaschi and Hans Nicolussi Caviglia are both sidelined by injury, Nesta Elphege is a doubt, while Swiss full-back Sascha Britschgi must serve a suspension.\n\nCagliari, meanwhile, have replaced Gaetano with Harry Winks; the latter made his competitive debut against Arezzo, alongside fellow new boy Daniel Maldini.\n\nFollowing that match, French forward Yael Trepy was involved in an accident and had to be placed in an induced coma, but he has reportedly begun to recover. ...\n    URL: https://www.sportsmole.co.uk/football/parma/preview/parma-vs-cagliari-prediction-team-news-lineups_603259.html\n  - Title: Parma vs Cagliari - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Parma vs Cagliari — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Ennio Tardini\n\nParmaParma\n\n‌\n‌\n\nCagliariCagliari\n\n# Parma vs Cagliari — Sat 22 August, 18:45 UTC\n\nSerie A Round 1\n\n Serie A Round 1\n Stadio Ennio Tardini\n\nParmaParma\n\n‌\n‌\n\nCagliariCagliari\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sascha Britschgi\n\n  Suspended / 22 August 2026\n\nBritschgiSuspended22 August 2026\n\n  Benjamín Cremaschi\n\n  Meniscus injury / Mid October 2026\n\nCremaschiMeniscus injuryMid October 2026\n\n  Hans Nicolussi Caviglia ...\n    URL: https://www.fotmob.com/en-GB/matches/cagliari-vs-parma/2w2bcl\n  - Title: Parma vs Cagliari Prediction: Match Preview and Analysis - BetMines\n    Content: What are the 1X2 betting odds for Parma vs Cagliari in the Serie A? The odds are: Parma to win 2.55, draw 3.00, Cagliari to win 3.00.\n    URL: https://betmines.com/match-preview/parma-vs-cagliari-prediction-match-preview-and-analysis-serie-a-22-08-2026\n  - Title: Parma vs Cagliari prediction, preview & betting tips – 22/08/2026\n    Content: Bookmakers have made Parma slight favourites at odds of 29/20 (2.45) to secure three points on home turf.\n\nA draw is priced at 21/10 (3.10), while an away win for Cagliari is available at 187/100 (2.87) as an appealing option for visiting supporters.\n\nAnother option to look at is under 2.5 goals, which is set at 4/7 (1.57), while both teams to score (yes) is offered at 1/1 (2.00) odds.\n\nAlso, looking at the previous meeting between both sides, the option of Cagliari double chance is available at 8/15 (1.53) odds, and a first-half draw is at 1/1 (2.00).\n\n📈 Parma vs. Cagliari — Whispers' Tips ...\n    URL: https://footballwhispers.com/blog/parma-vs-cagliari-prediction-22-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874931",
+                        "date_utc": "2026-08-22T16:30Z",
+                        "kickoff_et": "2026-08-22 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Internazionale",
+                        "away": "Monza",
+                        "home_id": "110",
+                        "away_id": "4007",
+                        "matchup": "Monza (away) @ Internazionale (home)",
+                        "venue": "San Siro",
+                        "city": "Milano",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "DDWWW",
+                        "form_away": "WLWWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-525",
+                            "home_current": "-550",
+                            "draw_open": "+500",
+                            "draw_current": "+550",
+                            "away_open": "+950",
+                            "away_current": "+1100"
+                        },
+                        "odds_text": "DraftKings: Internazionale -550 (open -525); Draw +550 (open +500); Monza +1100 (open +950)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874745",
+                        "date_utc": "2026-08-22T16:30Z",
+                        "kickoff_et": "2026-08-22 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Udinese",
+                        "away": "Como",
+                        "home_id": "118",
+                        "away_id": "2572",
+                        "matchup": "Como (away) @ Udinese (home)",
+                        "venue": "Stadio Friuli",
+                        "city": "Udine",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WLLWW",
+                        "form_away": "WWWDW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+310",
+                            "home_current": "+330",
+                            "draw_open": "+230",
+                            "draw_current": "+245",
+                            "away_open": "-125",
+                            "away_current": "-125"
+                        },
+                        "odds_text": "Provider unavailable: Udinese +330 (open +310); Draw +245 (open +230); Como -125 (open -125)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401874929",
+                        "date_utc": "2026-08-22T18:45Z",
+                        "kickoff_et": "2026-08-22 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Genoa",
+                        "away": "Napoli",
+                        "home_id": "3263",
+                        "away_id": "114",
+                        "matchup": "Napoli (away) @ Genoa (home)",
+                        "venue": "Stadio Luigi Ferraris",
+                        "city": "Genova",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WLLDD",
+                        "form_away": "WWLDW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+340",
+                            "home_current": "+350",
+                            "draw_open": "+210",
+                            "draw_current": "+215",
+                            "away_open": "-125",
+                            "away_current": "-115"
+                        },
+                        "odds_text": "Provider unavailable: Genoa +350 (open +340); Draw +215 (open +210); Napoli -115 (open -125)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401874747",
+                        "date_utc": "2026-08-22T18:45Z",
+                        "kickoff_et": "2026-08-22 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Parma",
+                        "away": "Cagliari",
+                        "home_id": "115",
+                        "away_id": "2925",
+                        "matchup": "Cagliari (away) @ Parma (home)",
+                        "venue": "Ennio Tardini",
+                        "city": "Parma",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWLLL",
+                        "form_away": "WWWLD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+150",
+                            "home_current": "+145",
+                            "draw_open": "+195",
+                            "draw_current": "+195",
+                            "away_open": "+175",
+                            "away_current": "+195"
+                        },
+                        "odds_text": "Provider unavailable: Parma +145 (open +150); Draw +195 (open +195); Cagliari +195 (open +175)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-21T08:08:34.666020-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:55:28.486280-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are strong favorites playing at home. Despite missing Henrikh Mkhitaryan due to suspension, they possess superior squad depth and quality. Monza will also miss captain Matteo Pessina due to injury, which severely impacts their midfield stability.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Como are heavily backed by the betting markets in this matchup despite being the away side. Udinese have several missing players including Jurgen Ekkelenkamp, Christian Kabasele, and Alessandro Zanoli, which tilts the balance in Como's favor.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are expected to secure an away win here. While Genoa are a tough opponent at home, their recent forms and the historical head-to-head match stats heavily favor Napoli's superior quality in unlocking defenses.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Parma are slight favorites at home, but this matchup is highly competitive as Cagliari have brought in solid reinforcements like Harry Winks and Daniel Maldini. Parma also have key midfield injuries, making a narrow home win or draw the most likely outcome.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-21T07:55:44.422863-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.781,
+                    "draw_probability": 0.142,
+                    "away_win_probability": 0.077,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is heavily favored by oddsmakers (-550 moneyline), reflecting their strong squad quality and home-field advantage over Monza, giving them nearly an 80% implied probability of winning.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.216,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.515,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite playing away, Como is positioned as the betting favorite (-125). Oddsmakers predict they have more than a 50% chance of securing a victory over Udinese, who have high odds against them (+330).",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.207,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.498,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli comes in as the road favorite with odds of -115, signifying roughly a 50% implied probability of an away win against Genoa.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.376,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.312,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This matchup is closely contested, but Parma enters as slight home favorites (+145). The odds indicate a tight game where a home win is the most probable outcome, though drawing or an away win are strong possibilities.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-21T07:56:11.708484-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Inter, the reigning champions, are playing their season opener at home and are heavily favored by the bookmakers. Their star striker, Lautaro Martinez, has an excellent scoring record against Monza. While Inter will miss the suspended Henrikh Mkhitaryan, Monza will be without their captain, Matteo Pessina, due to a significant injury, which is a major blow for the away side.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Como is the clear favorite according to bookmakers, despite playing away. This is largely due to Udinese's significant personnel problems, with multiple players, including Christian Kabasele, Jurgen Ekkelenkamp, and Alessandro Zanoli, listed as out due to suspension or serious injury. Como's stronger recent form compared to Udinese's mixed results also supports an away victory.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli is the favorite based on squad quality and a strong head-to-head record against Genoa, having not lost in their last six encounters. While both teams have some injury concerns, Napoli is generally considered the superior side. Genoa's recent poor form at home further strengthens the case for an away win.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.37,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This match is expected to be very closely contested, as indicated by the tight betting odds from multiple sources. While Parma has the home advantage, they are missing several players through injury and suspension and have ended the previous season in poor form. Cagliari has better recent form but is playing away. Given these conflicting factors and the high probability assigned to a draw by bookmakers, a stalemate is the most logical prediction.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:56:37.701019-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are strong favorites playing at home against Monza, supported by very high implied win probabilities from bookmakers (e.g., -550 DraftKings, 1.19 Sportsgambler) and analytical sites (Wincomparator 73.57%). They are the champions and boast a prolific scorer in Lautaro Martinez, who has a strong record against Monza. Despite Henrikh Mkhitaryan's suspension and Monza missing their captain Matteo Pessina, Inter's overall strength and home advantage make them highly likely to secure a win.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Como enters this match as the favored side, consistently reflected across multiple bookmakers' odds (e.g., -125 from ESPN, 1.80 from Betmines). Udinese is hampered by several significant injuries and a suspension (Kabasele, Ekkelenkamp, Zanoli), which weakens their squad for the season opener. Como's recent form also appears strong, making an away win the most probable outcome despite Udinese's home advantage.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli is favored to win away against Genoa, as indicated by bookmakers' odds (e.g., -115 from ESPN, 1.90 from Betmines). Genoa enters the match with a significant list of injured players, including Aaron Martin and Hamed Junior Traore, which will likely impact their performance. While Napoli also has an injury concern with Frank Anguissa, their overall squad depth and form suggest they have the edge to secure an away victory.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "low",
+                    "reasoning": "Parma is marginally favored at home, with probabilities suggesting a tight contest. However, they face several key absences due to injury and suspension (Britschgi, Cremaschi, Caviglia). Cagliari, while also having an injured player in Yael Trepy, has reinforced its squad with new signings like Harry Winks and Daniel Maldini. The odds are very close across all three outcomes, indicating a highly unpredictable match, making a home win the slight favorite but with low confidence.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:57:53.130225-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are a very strong home favorite by the 1X2 market, with Monza also missing an important player in Matteo Pessina. Inter's superior squad quality and home advantage make the home win the clear most likely regulation-time result.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are priced as clear away favorites despite traveling, while Udinese have multiple listed absences including Christian Kabasele's suspension. The draw remains meaningful, but Como carry the strongest win probability.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli have the stronger squad and are favored by the market, though the away setting at Luigi Ferraris and some Napoli injury concerns keep the draw probability elevated. Napoli remain the most likely 90-minute winner.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma are only slight home favorites in a closely priced matchup, with the market also implying a relatively high draw chance. Cagliari's recent form and Parma's absences make this a low-confidence lean toward the home side.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:58:04.351376-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are very strong home favorites in the market, with odds implying a large quality gap. Monza appear relatively healthy but face a much stronger squad at San Siro, and Inter's attacking edge, led by Lautaro Martinez, supports a home-win forecast despite Mkhitaryan's suspension.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are clear away favorites across the listed 1X2 prices, while Udinese have several reported absences including defensive and midfield issues. The draw remains a meaningful risk in an opening-round away fixture, but the market and form indicators point toward Como.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are priced as road favorites and have the stronger overall squad profile, while Genoa enter with less convincing recent form. Napoli do have some injury concerns, which keeps the draw probability elevated, but the most likely 90-minute result is still an away win.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma are only slight home favorites, and the matchup is priced close to even with a relatively high draw risk. Parma's home advantage gives them a narrow edge, but injuries and suspensions on the home side plus Cagliari's competitive profile make this a low-confidence pick.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-21T07:59:04.771960-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.79,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy market favorites at San Siro (very short 1X2 price) and have stronger underlying squad quality; Monza need an upset away despite decent recent form. Inter missing Mkhitaryan slightly increases draw risk but not enough to flip the 1X2 lean.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are priced as clear away favorites, and Udinese have notable absences/suspensions flagged in previews, which undermines home advantage. Draw remains live given early-season variance, but Como have the higher win share.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are modest favorites on the road in the odds and profile as the stronger side overall, but Genoa at home plus some Napoli injury concerns elevate the draw probability. Net expectation still leans to a Napoli 90-minute win.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market pricing makes Parma only slight favorites, and both teams look capable of taking points; Parma’s injuries/suspension notes increase uncertainty and keep the draw close. Small edge to Parma via home field, but it is near-coinflip.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-21T07:59:15.441676-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy pre-match favourites (market and form). Despite the suspension of Mkhitaryan, Inter retain superior quality—Lautaro Martínez leading the attack—and San Siro home advantage is significant. Monza have injuries to key players (Pessina) and are clear underdogs in betting markets, so the most likely 90-minute outcome is an Inter win, with a small chance of a draw and a very low chance of an upset.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers give Como the edge and form entries show Como strong recently. Udinese have several defensive absences and uncertainty in selection. That shifts probability toward an away win, but the match is competitive enough to allow a meaningful chance of a draw or home upset.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight favourites in the market and have superior squad quality and recent form. Genoa can be stubborn at home, so draw probability is notable, but overall Napoli are the likeliest 90-minute winners given the betting market and squad depth.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets list Parma as slight favourites and home advantage at Ennio Tardini matters. Cagliari have good recent form but the odds indicate a fairly even contest. Expect a narrow Parma win most likely, with draws and Cagliari wins also reasonably probable.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-21T08:00:43.725340-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter favored at home; odds imply strong expectation despite Mkhitaryan suspension.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers show Como as marginally stronger away; Udinese at home but current form suggests a closer contest.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Napoli strong as an away side; Genoa opening match uncertainty; Napoli favored to win.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Parma as slight home favorite; home advantage cited in early-season fixtures.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-21T08:00:58.871829-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy favorites per all major bookmakers, with odds implying a win probability above 75%. They are at home, have strong recent form, and have dominated Monza in previous meetings. While Mkhitaryan is suspended, Inter's squad depth and Lautaro Martinez's scoring record against Monza further boost their chances. Monza are missing their captain and are newly promoted, making an upset unlikely.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are favored by bookmakers, with odds suggesting a win probability around 50%. Udinese are missing several key players due to injury and suspension, weakening their lineup. Como's recent form is strong, and their squad is relatively healthy. The draw is a real possibility, but Como's edge in quality and fitness tips the balance.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight favorites away from home, with odds and recent form supporting their advantage. Genoa have several injury concerns and have struggled in recent home matches. Napoli's squad is stronger overall, and their away form is solid. The draw is a significant risk, but Napoli's quality should see them through.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers rate this as a close match, with Parma slight favorites at home. Both teams have injury issues, but Parma's home advantage and marginally better odds give them a small edge. Cagliari's recent form is good, so a draw or away win is plausible, but Parma are the likeliest winners in a tight contest.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-21T08:01:04.182645-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are strong favorites with superior form and squad depth, despite the absence of Mkhitaryan. Monza's odds reflect their underdog status.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Como's recent form and odds suggest they are slightly favored, but Udinese's home advantage and potential for a draw make this a competitive fixture.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Napoli's strong away form and favorable odds make them the likely winners against a struggling Genoa side.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Parma's slight favoritism at home and Cagliari's recent form suggest a close match, but Parma's edge in odds gives them a slight advantage.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-21T08:01:21.973626-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy favorites (-550) at San Siro against newly promoted Monza. The reigning champions are missing only Mkhitaryan (suspended), while Monza lack captain Pessina. Lautaro Martinez has a strong scoring record against Monza. Market and form strongly favor a home win.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are away favorites (-125) with excellent recent form (WWWDW). Udinese are missing several players (Kabasele suspended, Ekkelenkamp and Zanoli long-term injuries). Como's continued investment and momentum make them the likelier winner, though away favorites carry inherent risk.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are away favorites (-115) with superior squad quality despite injuries to Neres (doubtful), Beukema, and Anguissa. Genoa's home form has been poor (defeats in recent home outings). Napoli should edge this, but season-opener uncertainty and Genoa's resilience keep the draw probability meaningful.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A tightly priced match with Parma slight home favorites (+145). Parma are missing Cremaschi, Nicolussi Caviglia, and Britschgi (suspended), while Cagliari come in with decent form and new signings Winks and Maldini. Home advantage tips it slightly to Parma, but this is close to a three-way coin flip.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-21T08:01:33.707765-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "Internazionale",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy favorites (-550) at San Siro against newly-promoted Monza. Champions with Lautaro Martinez, who has an excellent record vs Monza. Only Mkhitaryan suspended while Monza lack captain Pessina.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "Como",
+                    "confidence": "medium",
+                    "reasoning": "Como are favorites (-125) with strong form (WWWDW) and travel well. Udinese have several key absences including Kabasele, Ekkelenkamp, Zanoli and Chakvetadze. Away edge but competitive match.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Napoli",
+                    "confidence": "medium",
+                    "reasoning": "Napoli favored (-115) as recent champions with superior squad quality. Genoa have poor recent home form and injuries. Napoli have some absences (Neres doubtful, Anguissa) which tightens the margin against a difficult Ferraris venue.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Parma",
+                    "confidence": "low",
+                    "reasoning": "Very tight match with Parma slight home favorites (+145). Both sides have midfield injuries; Parma missing Cremaschi and Nicolussi Caviglia while Cagliari have solid form. Home advantage tips a close contest to Parma.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-21T08:01:54.784897-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy favorites at home against Monza, with odds implying around 80%+ probability. Adjusting for bookmaker margin, Inter's true win probability sits around 72%. Lautaro Martinez has historically been prolific against Monza (5 goals in 6 games). Inter lose Mkhitaryan to suspension but remain far superior. Monza are missing captain Pessina with a serious knee injury. The home form (DDWWW) is solid and San Siro provides a significant advantage. Odds across multiple providers consistently show Inter around 1.18-1.19, confirming strong favorite status.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como enter as favorites despite being the away side, reflecting their strong recent form (WWWDW) compared to Udinese's mixed form (WLLWW). ESPN odds imply Como at around -125, suggesting roughly 55-56% implied probability. Adjusting for margin, Como's true probability is around 48%. Udinese are missing Kabasele (suspended), Ekkelenkamp (broken leg), and Zanoli (cruciate injury). Como are missing only Addai. Multiple bookmakers price Como between 1.80-1.86, consistent with a moderate away favorite scenario. The match is relatively competitive but Como's form edge and Udinese's injury concerns tip the balance.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight away favorites, consistent with ESPN odds of -115 (open -125), implying approximately 53-55% probability. Adjusting for margin, Napoli's true win probability is around 50%. Napoli's recent form (WWLDW) is better than Genoa's (WLLDD). Genoa have struggled at home recently with defeats in their last two home outings. Key Genoa absentees include Beukema (Achilles), Traore (out), and Aaron Martin (groin). Napoli also have Anguissa doubtful. The Stadio Ferraris can be a tough venue but Napoli's quality advantage should prevail more often than not.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight match between two evenly-matched sides. ESPN odds price Parma at +145 and Cagliari at +195, suggesting Parma are slight home favorites. Adjusting for bookmaker margin from various sources (Parma ~2.45-2.55, draw ~3.00-3.10, Cagliari ~2.87-3.00), the probabilities are closely bunched. Parma's home form started poorly (WWLLL) but they have home advantage at Tardini. Cagliari's form (WWWLD) is actually better. Parma are missing Cremaschi (meniscus), Nicolussi Caviglia (injury), and Britschgi (suspended). Cagliari have new additions in Winks and Maldini. The home advantage slightly tips Parma as marginally favored, but this is a genuine three-way contest with low confidence.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-21T08:02:14.553833-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy favorites at home with odds around -550, reflecting their status as defending champions. Their form (DDWWW) is strong, and they host at San Siro. Monza must travel without captain Matteo Pessina due to serious knee injury. Inter's captain Lautaro Martinez scored 17 league goals last season and has 5 goals in 6 Serie A games against Monza historically. Despite missing Mkhitaryan to suspension, Inter's squad depth and home advantage make them overwhelming favorites to start their Scudetto defense with a win.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Como are favorites at -125 despite playing away, with superior recent form (WWWDW) compared to Udinese's (WLLWW). Udinese have significant absences with Christian Kabasele suspended, Jurgen Ekkelenkamp out with broken leg, and Alessandro Zanoli out with cruciate ligament injury. Como have only Jayden Addai listed as out. The odds favor Como at 1.80-1.86 versus Udinese at 4.50-4.80, suggesting bookmakers see Como as the stronger side. Como's excellent form and Udinese's injury problems point to an away win.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight favorites at -115 to -125 despite traveling to Genoa. Napoli's recent form (WWLDW) is stronger than Genoa's (WLLDD), with Genoa winless in their last four matches. Genoa have injuries to Aaron Martin and Hamed Junior Traore, while Napoli's David Neres is doubtful with ankle injury. Historical head-to-head shows Napoli with 50% win rate (3 wins) versus 0% for Genoa in last 6 meetings. Napoli are quality opponents and should have enough to claim three points on the road, though Genoa at home could make it competitive.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This is the most evenly matched fixture with very tight odds: Parma +145-150, Draw +195, Cagliari +175-195. Parma are slight home favorites at 2.45-2.55 versus Cagliari at 2.87-3.00. Parma's recent form (WWLLL) shows three straight losses, while Cagliari (WWWLD) have been more consistent. However, Parma have significant injury problems with Benjamin Cremaschi and Hans Nicolussi Caviglia out, plus Sascha Britschgi suspended. Cagliari dealt with Yael Trepy's accident but have added Harry Winks and Daniel Maldini. The home advantage gives Parma a slight edge in what should be a closely contested match.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-21T08:02:22.329568-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are strong favorites with dominant odds (-550), recent strong form (DDWWW), and key advantage with Lautaro Martinez's historical performance against Monza (5 goals in 6 games). Monza's injury to captain Pessina weakens their defensive setup. Inter's only concern is missing Mkhitaryan to suspension, but depth should cover.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds slightly favor Udinese at +330, but Como's superior form (WWWDW vs WLLWW) and away strength create uncertainty. Multiple injuries for Udinese (Kabasele suspended, Ekkelenkamp, Zanoli out) significantly hamper their defensive capability. This is a competitive match with genuine draw probability given the form differential and team composition.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Napoli favored in odds (-115) with stronger recent form (WWLDW). Genoa struggling with two consecutive home defeats and mixed form (WLLDD). Napoli's injury to Neres creates some concern, but their overall squad depth and attacking capability trump Genoa's defensive vulnerabilities. Betting markets and form analysis align on an away victory.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Competitive match with odds nearly balanced (Parma +145, Cagliari +195, Draw +195). Parma's recent form is poor (WWLLL), while Cagliari show better form (WWWLD). Multiple Parma injuries (Cremaschi, Nicolussi Caviglia, Britschgi suspended) weaken home advantage. High draw probability reflects the competitive nature. Parma slight edge only from home field advantage and historical slight favoritism.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-21T08:03:24.881904-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Inter are strong home favorites and odds-on despite Mkhitaryan suspension, while Monza are newly promoted and weakened without Pessina.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Como are road favorites and Udinese have multiple defensive/midfield absences including Kabasele, Ekkelenkamp, and Zanoli.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are favored away and have the stronger squad despite some injuries, but Genoa's home advantage keeps draw risk meaningful.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Parma are slight home favorites in a close matchup, though injuries and Cagliari's away form make it nearly a coin flip.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-21T08:03:27.918194-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are strong at home, have superior squad depth, and Monza are missing key players. Odds heavily favor Inter.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como have better form and are favored by odds, despite Udinese's home advantage. Udinese have key absences.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli have stronger squad and better recent form, but Genoa are at home. Odds slightly favor Napoli.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma are slight favorites at home, but both teams have similar form and injuries. Low confidence due to uncertainty.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-21T08:03:57.414542-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are the defending champions and heavy favorites at home against Monza. Despite missing Mkhitaryan to suspension, they still boast Lautaro Martinez and a vastly superior squad compared to their visitors.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are favored away from home, likely due to a stronger squad and Udinese missing key players like Kabasele and Ekkelenkamp. Como's recent form has also been highly impressive.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are slight favorites on the road against Genoa. Genoa are missing key players and have struggled in recent home outings, while Napoli possess a stronger overall squad despite some injury concerns.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly matched contest according to the odds. Parma have a slight edge playing at home, though both teams are dealing with notable injury and suspension issues. Home advantage gives Parma a marginal edge.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-21T08:04:20.456794-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Internazionale, being the home team and a strong side, is heavily favored to win this match. The odds and recent form also support this prediction.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Como has shown better recent form and the odds favor them slightly. Udinese, despite playing at home, has some key players out due to injuries and suspensions.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Napoli, with their strong away form and overall team quality, is expected to win. Genoa's recent form and injury concerns do not bode well for them in this match.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Parma, playing at home, has a slight edge over Cagliari. However, the odds and recent form suggest that both teams are fairly evenly matched, making this a close contest.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-21T08:05:33.728443-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are heavy favorites at San Siro with dominant opening odds and strong recent form. Despite missing Mkhitaryan to suspension, their squad depth and historical dominance over Monza, combined with Monza missing captain Pessina, strongly favor a home victory in the opener.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como arrives with superior away momentum and a healthier squad, while Udinese are missing multiple key defenders and midfielders to injury and suspension. Bookmaker odds clearly favor the visitors, and their consistent form suggests a road win, though Udinese's home advantage keeps a draw plausible.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli's superior squad quality and better recent form give them the edge despite missing Anguissa. Genoa's defensive injury crisis and poor home record make them vulnerable, but Serie A openers at the Luigi Ferraris are often tightly contested. Napoli should edge a narrow victory, but a draw remains a strong possibility.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a highly balanced matchup with nearly identical bookmaker odds. Parma's home advantage gives them a marginal edge, but they are missing key midfielders and a suspended defender. Cagliari's new signings and strong recent form make them very competitive. Expect a tight contest where home field advantage could be the deciding factor.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-21T08:06:06.620404-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale enters as heavy favorites with superior squad quality and home advantage at San Siro. Monza lacks key captain Matteo Pessina due to injury, while Inter's recent form (DDWWW) supports a victory despite Mkhitaryan's suspension.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Como is favored by bookmakers (-125) and shows better recent form (WWWDW). Udinese suffers significant defensive losses including Kabasele (suspension) and long-term injuries to Ekkelenkamp and Zanoli, weakening their home capability.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli holds a slight advantage based on odds and overall form (WWLDW). While Napoli faces injury concerns like Anguissa, they are expected to handle Genoa's inconsistent home defense (WLLDD). The match could go either way, but the visitors have the edge.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Parma is priced as the slight favorite (2.45) despite mid-season style injuries in midfield. Cagliari arrives in good form (WWWLD), but Parma's home advantage at Ennio Tardini and lower odds suggest a narrow home victory.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-21T08:07:26.588490-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.77,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are heavy favorites with dominant home form and superior squad depth. Monza will be without captain Matteo Pessina, and Inter’s Lautaro Martínez has a strong scoring record against them.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como are priced as favorites and enter with stronger recent form. Udinese face multiple key absences including suspensions and long-term injuries, weakening their chances at home.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli hold a clear talent edge and better form heading into the opener. Genoa are missing several players and have struggled in recent home outings, making an away win the most likely outcome.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma are slight home favorites but face significant injury and suspension issues. Cagliari bring solid away form and new additions, keeping this contest tight and uncertain.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-21T08:08:26.421089-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are defending champions with a strong squad despite Mkhitaryan's suspension. Monza are missing their captain Pessina and face a tough opener at San Siro. Inter's quality and home advantage make them heavy favorites.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Como enter as favorites with strong recent form (WWWDW) while Udinese struggle with multiple key injuries including Kabasele, Ekkelenkamp, and Zanoli. Como's momentum and Udinese's depleted squad favor the away side.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli possess superior squad depth and attacking talent compared to Genoa, who are dealing with injuries to Aaron Martin and Traore. Despite being away, Napoli's form (WWLDW) gives them the edge over Genoa's shaky home record.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma hold slight home advantage and are marginal favorites in the odds, but significant absences including Britschgi (suspended) and midfielders Cremaschi and Nicolussi Caviglia level the playing field against a Cagliari side with strong away form and new additions like Winks and Maldini. The match is tightly contested.",
+                    "event_id": "401874747"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-21T08:08:34.655435-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Monza (away) @ Internazionale (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are the reigning champions and are favored to win against the newly promoted Monza, who are expected to struggle in their return to Serie A.",
+                    "event_id": "401874931"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Como (away) @ Udinese (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Udinese are slight favorites at home against Como, who are also newly promoted and expected to face a tough season.",
+                    "event_id": "401874745"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Napoli (away) @ Genoa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Napoli are strong favorites on the road against Genoa, who are expected to struggle this season.",
+                    "event_id": "401874929"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Cagliari (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Parma are slight favorites at home against Cagliari, in a match between two mid-table teams.",
+                    "event_id": "401874747"
+                }
+            ]
+        }
+    ]
+}

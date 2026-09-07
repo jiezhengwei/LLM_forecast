@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-27",
+        "target_date_et": "2026-08-28",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882900\nMatchup: Elche (away) @ Racing Santander (home)\nHome: Racing Santander\nAway: Elche\nKickoff UTC: 2026-08-28T17:00Z\nKickoff ET: 2026-08-28 13:00 EDT\nVenue: El Sardineros\nRound: unavailable\nHome form: LDWDW\nAway form: LDDWL\nHome record: 0-1-1\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Racing Santander +110 (open +120); Draw +250 (open +245); Elche +255 (open +215)\nTavily context:\n  - Title: Racing Santander vs Elche - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Racing Santander vs Elche — Fri, August 28, 5:00 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Campos de Sport de El Sardinero\n\nRacing SantanderRacing Santander\n\n‌\n‌\n\nElcheElche\n\n# Racing Santander vs Elche — Fri, August 28, 5:00 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Campos de Sport de El Sardinero\n\nRacing SantanderRacing Santander\n\n‌\n‌\n\nElcheElche\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Pedro Felipe\n\n  Thigh injury / Mid September 2026\n\nFelipeThigh injuryMid September 2026\n\n  Adam Boayar\n\n  Muscle injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/racing-santander-vs-elche/2z2hfu\n  - Title: PREVIEW | Racing Santander vs Elche CF: team news, lineups, predictions (La Liga 28/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nElche CF have won 1 point to date and are placed in 18th position. In their last game, Martín Anselmi's team lost 0-5 against Barcelona (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Racing Santander winning 2-0.\n\n## Unavailable\n\n## Racing Santander\n\n## Elche CF\n\n## Last starting XIs\n\nRacing Santander ( vs Getafe CF 2026-08-23): Julen Agirrezabala, Alvaro Mantilla, Manu Hernando, Pablo Ramón, Jorge Salinas, Sergio Martinez, Gustavo Puerta, Andrés Martín, Sergio Canales, Iñigo Vicente, Asier Villalibre ...\n    URL: https://sports.yahoo.com/articles/preview-racing-santander-vs-elche-170500748.html\n  - Title: Prediction Racing Santander vs Elche: analysis, odds and betting tips\n    Content: The odds are: Racing Santander to win 2.10, draw 3.50, Elche to win 3.40. The odds are Over 2.5 at 1.80 and Under 2.5 at 2.00. both teams to\n    URL: https://betmines.com/match-preview/racing-santander-vs-elche-prediction-match-preview-and-analysis-la-liga-28-08-2026\n  - Title: Racing Santander vs. Elche - Odds - August 28, 2026 - FOX Sports\n    Content: A bet of $100 would total $218 if Racing Sant. wins, a bet of $100 would total $326 if Elche wins, and a bet of $100 would total $343 if the teams draw.\n    URL: https://www.foxsports.com/soccer/la-liga-racing-sant-vs-elche-aug-30-2026-game-boxscore-908977?tab=odds\n\nGame ID: 2\nSource event_id: 401882906\nMatchup: Villarreal (away) @ Alavés (home)\nHome: Alavés\nAway: Villarreal\nKickoff UTC: 2026-08-28T19:30Z\nKickoff ET: 2026-08-28 15:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: DWLWW\nAway form: DDWLL\nHome record: 1-1-0\nAway record: 0-2-0\nESPN structured 1X2 odds: Provider unavailable: Alavés +200 (open +190); Draw +255 (open +250); Villarreal +130 (open +135)\nTavily context:\n  - Title: Alavés vs Villarreal Prediction: 28 August 2026 La Liga\n    Content: Moneyline Alavés 3.11 | Villarreal 2.30\n   Draw 3.63\n\nPinnacle’s lines are the sharpest here and reflect the market consensus well. Villarreal at 2.30 offers genuine value when weighed against their attacking quality and the head-to-head record. The draw at 3.63 is tempting given Villarreal’s recent run of draws, but Alavés at home with Mariano Díaz in form means both teams scoring looks like the more reliable angle. We prefer the Villarreal win combined with BTTS as the primary value play in this fixture.\n\n## Possible Starting Lineups\n\n### Alavés Possible Starting Eleven\n\nImage 8 ...\n    URL: https://tips.gg/article/alaves-vs-villarreal-28-08-2026\n  - Title: PREVIEW | Alavés vs Villarreal CF: team news, lineups, predictions (La Liga 28/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nVillarreal CF have won 2 points to date and are placed in 9th position. In their last outing, Iñigo Pérez's team drew 2-2 against Atlético de Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Alavés\n\n## Villarreal CF\n\n## Last starting XIs\n\nAlavés ( vs Rayo Vallecano 2026-08-20): Antonio Sivera, Ángel Pérez, Nahuel Tenaglia, Ville Koski, Jonny Otto, Abde Rebbach, Mikel Ulacia, Pablo Ibáñez, Antonio Blanco, Toni Martínez, Lucas Boyé ...\n    URL: https://sports.yahoo.com/articles/preview-alav-vs-villarreal-cf-193500209.html\n  - Title: Alavés Villarreal Odds 28 August 2026 (LaLiga Betting)\n    Content: The best odds on Alavés are currently 3.15 at Betsson. The best odds on Villarreal are currently 2.42 at 888Starz. win between €21.5 - €36. €215 - €360.\n    URL: https://www.sportytrader.com/en/odds/alaves-villarreal-8586433\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882900\nMatchup: Elche (away) @ Racing Santander (home)\nHome: Racing Santander\nAway: Elche\nKickoff UTC: 2026-08-28T17:00Z\nKickoff ET: 2026-08-28 13:00 EDT\nVenue: El Sardineros\nRound: unavailable\nHome form: LDWDW\nAway form: LDDWL\nHome record: 0-1-1\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Racing Santander +110 (open +120); Draw +250 (open +245); Elche +255 (open +215)\nTavily context:\n  - Title: Racing Santander vs Elche - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Racing Santander vs Elche — Fri, August 28, 5:00 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Campos de Sport de El Sardinero\n\nRacing SantanderRacing Santander\n\n‌\n‌\n\nElcheElche\n\n# Racing Santander vs Elche — Fri, August 28, 5:00 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Campos de Sport de El Sardinero\n\nRacing SantanderRacing Santander\n\n‌\n‌\n\nElcheElche\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Pedro Felipe\n\n  Thigh injury / Mid September 2026\n\nFelipeThigh injuryMid September 2026\n\n  Adam Boayar\n\n  Muscle injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/racing-santander-vs-elche/2z2hfu\n  - Title: PREVIEW | Racing Santander vs Elche CF: team news, lineups, predictions (La Liga 28/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nElche CF have won 1 point to date and are placed in 18th position. In their last game, Martín Anselmi's team lost 0-5 against Barcelona (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Racing Santander winning 2-0.\n\n## Unavailable\n\n## Racing Santander\n\n## Elche CF\n\n## Last starting XIs\n\nRacing Santander ( vs Getafe CF 2026-08-23): Julen Agirrezabala, Alvaro Mantilla, Manu Hernando, Pablo Ramón, Jorge Salinas, Sergio Martinez, Gustavo Puerta, Andrés Martín, Sergio Canales, Iñigo Vicente, Asier Villalibre ...\n    URL: https://sports.yahoo.com/articles/preview-racing-santander-vs-elche-170500748.html\n  - Title: Prediction Racing Santander vs Elche: analysis, odds and betting tips\n    Content: The odds are: Racing Santander to win 2.10, draw 3.50, Elche to win 3.40. The odds are Over 2.5 at 1.80 and Under 2.5 at 2.00. both teams to\n    URL: https://betmines.com/match-preview/racing-santander-vs-elche-prediction-match-preview-and-analysis-la-liga-28-08-2026\n  - Title: Racing Santander vs. Elche - Odds - August 28, 2026 - FOX Sports\n    Content: A bet of $100 would total $218 if Racing Sant. wins, a bet of $100 would total $326 if Elche wins, and a bet of $100 would total $343 if the teams draw.\n    URL: https://www.foxsports.com/soccer/la-liga-racing-sant-vs-elche-aug-30-2026-game-boxscore-908977?tab=odds\n\nGame ID: 2\nSource event_id: 401882906\nMatchup: Villarreal (away) @ Alavés (home)\nHome: Alavés\nAway: Villarreal\nKickoff UTC: 2026-08-28T19:30Z\nKickoff ET: 2026-08-28 15:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: DWLWW\nAway form: DDWLL\nHome record: 1-1-0\nAway record: 0-2-0\nESPN structured 1X2 odds: Provider unavailable: Alavés +200 (open +190); Draw +255 (open +250); Villarreal +130 (open +135)\nTavily context:\n  - Title: Alavés vs Villarreal Prediction: 28 August 2026 La Liga\n    Content: Moneyline Alavés 3.11 | Villarreal 2.30\n   Draw 3.63\n\nPinnacle’s lines are the sharpest here and reflect the market consensus well. Villarreal at 2.30 offers genuine value when weighed against their attacking quality and the head-to-head record. The draw at 3.63 is tempting given Villarreal’s recent run of draws, but Alavés at home with Mariano Díaz in form means both teams scoring looks like the more reliable angle. We prefer the Villarreal win combined with BTTS as the primary value play in this fixture.\n\n## Possible Starting Lineups\n\n### Alavés Possible Starting Eleven\n\nImage 8 ...\n    URL: https://tips.gg/article/alaves-vs-villarreal-28-08-2026\n  - Title: PREVIEW | Alavés vs Villarreal CF: team news, lineups, predictions (La Liga 28/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nVillarreal CF have won 2 points to date and are placed in 9th position. In their last outing, Iñigo Pérez's team drew 2-2 against Atlético de Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Alavés\n\n## Villarreal CF\n\n## Last starting XIs\n\nAlavés ( vs Rayo Vallecano 2026-08-20): Antonio Sivera, Ángel Pérez, Nahuel Tenaglia, Ville Koski, Jonny Otto, Abde Rebbach, Mikel Ulacia, Pablo Ibáñez, Antonio Blanco, Toni Martínez, Lucas Boyé ...\n    URL: https://sports.yahoo.com/articles/preview-alav-vs-villarreal-cf-193500209.html\n  - Title: Alavés Villarreal Odds 28 August 2026 (LaLiga Betting)\n    Content: The best odds on Alavés are currently 3.15 at Betsson. The best odds on Villarreal are currently 2.42 at 888Starz. win between €21.5 - €36. €215 - €360.\n    URL: https://www.sportytrader.com/en/odds/alaves-villarreal-8586433\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882900",
+                        "date_utc": "2026-08-28T17:00Z",
+                        "kickoff_et": "2026-08-28 13:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Racing Santander",
+                        "away": "Elche",
+                        "home_id": "87",
+                        "away_id": "3751",
+                        "matchup": "Elche (away) @ Racing Santander (home)",
+                        "venue": "El Sardineros",
+                        "city": "Santander",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDWDW",
+                        "form_away": "LDDWL",
+                        "record_home": "0-1-1",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+120",
+                            "home_current": "+110",
+                            "draw_open": "+245",
+                            "draw_current": "+250",
+                            "away_open": "+215",
+                            "away_current": "+255"
+                        },
+                        "odds_text": "DraftKings: Racing Santander +110 (open +120); Draw +250 (open +245); Elche +255 (open +215)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882906",
+                        "date_utc": "2026-08-28T19:30Z",
+                        "kickoff_et": "2026-08-28 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Alavés",
+                        "away": "Villarreal",
+                        "home_id": "96",
+                        "away_id": "102",
+                        "matchup": "Villarreal (away) @ Alavés (home)",
+                        "venue": "Mendizorrotza",
+                        "city": "Vitoria-Gasteiz",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DWLWW",
+                        "form_away": "DDWLL",
+                        "record_home": "1-1-0",
+                        "record_away": "0-2-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+190",
+                            "home_current": "+200",
+                            "draw_open": "+250",
+                            "draw_current": "+255",
+                            "away_open": "+135",
+                            "away_current": "+130"
+                        },
+                        "odds_text": "Provider unavailable: Alavés +200 (open +190); Draw +255 (open +250); Villarreal +130 (open +135)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-27T08:25:18.140307-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:16:28.190660-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander is favored at home (odds around +110) against an Elche side that recently suffered a heavy 0-5 defeat to Barcelona. With Racing Santander also having won the last head-to-head meeting 2-0, they hold the upper hand in this match.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal is the market favorite (priced around +130) despite playing away from home. While Alavés is competitive at Mendizorrotza, Villarreal's superior squad quality and offensive talent give them the edge to secure all three points.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-27T08:16:39.818138-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander is the home favorite with implied odds around 46%. Elche is coming off a demoralizing 0-5 loss to Barcelona and struggles as the away side, making Racing Santander the logical choice for a home victory.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Villarreal comes in as the slight away favorite (+130). Despite Alavés' strong form and home advantage, Villarreal has superior attacking quality and the betting lines lean towards an away victory, though a draw remains a strong possibility given Villarreal's recent results.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-27T08:16:59.561898-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander is playing at home, has slightly better recent form, and won the last head-to-head meeting 2-0. The betting markets also strongly favor them. Elche is coming off a demoralizing 0-5 loss to Barcelona and has only one win in their last five matches. While it's early in the season, all indicators point towards a victory for the home side.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "This is a difficult match to predict, pitting Alavés' strong early-season form and home advantage against Villarreal's superior squad quality. Betting markets favor Villarreal despite their two opening draws and winless away form. Villarreal's draw against Atlético de Madrid shows their capability. However, Alavés is unbeaten with four points. Given Villarreal's tendency to draw and the last head-to-head being a draw, that result is a strong possibility. Still, the market's confidence in Villarreal's talent gives them the slight edge to secure their first win.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:17:16.590782-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander enters the match with better recent form (LDWDW) compared to Elche (LDDWL) and secured a 2-0 victory in their last head-to-head encounter. Elche is also dealing with player injuries (Pedro Felipe, Adam Boayar). Market odds strongly favor Racing Santander to win at home, despite both teams having an identical 0-1-1 season record.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal is favored by market odds, reflecting their overall squad quality. However, Alavés boasts a strong home form (DWLWW) and a positive home record (1-1-0). Villarreal has shown a tendency for draws on the road (0-2-0 record) and their last head-to-head encounter ended in a 1-1 draw. Despite Alavés' home advantage and Mariano Díaz's form, Villarreal's quality is expected to marginally prevail, though a draw remains a significant possibility.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:18:23.816628-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.455,
+                    "draw_probability": 0.275,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Racing Santander are a modest home favorite in the market, with odds shortening from the open while Elche have drifted. Home advantage, slightly stronger recent form, and Elche coming off a heavy defeat to Barcelona tilt the forecast toward Racing, though the gap is narrow and both teams have started 0-1-1.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.315,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.415,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Villarreal are the market favorite despite playing away, and their attacking quality plus a recent 2-2 draw with Atlético support the edge. Alavés are unbeaten through two matches and have home advantage, while the last head-to-head was a draw, so the away-win lean is only moderate.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:18:34.142047-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander are modest market favorites at home, with odds movement slightly supporting them versus Elche. Both teams have started with similar records, but Racing have home advantage, a recent head-to-head win, and Elche enter off a heavy defeat to Barcelona. The draw and away win remain live outcomes, but Racing have the strongest single-result profile.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are the market favorites despite being away, reflecting stronger overall squad quality and attacking upside. Alavés are unbeaten through two and should be competitive at Mendizorrotza, while Villarreal have drawn both league matches so far, keeping the draw probability meaningful. Still, the odds and matchup profile lean toward a narrow Villarreal win.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-27T08:19:05.025588-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds and line movement slightly favor Racing Santander at home (price shortened from +120 to +110). Both teams have similar early records, but Elche’s recent heavy loss (0-5 vs Barcelona) and Racing’s home advantage at El Sardineros tilt the most likely 90-minute outcome toward a narrow home win, with the draw the main alternative.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are the clear market favorite despite being away (+130), implying stronger overall quality; they’ve also shown resilience with early draws (including 2-2 vs Atlético). Alavés at Mendizorrotza raises draw/upset chances, but the balance of probabilities in regulation time still leans to a Villarreal win.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-27T08:19:18.826480-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices give a clear lean toward Racing Santander at home and recent form (LDWDW) is stronger than Elche's mixed results (LDDWL). Racing won the last meeting 2-0 and will host at El Sardinero; injuries reported for Elche and modest home momentum tilt the expectation to a Racing win, with a draw remaining a plausible outcome.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and previews favor Villarreal as the stronger side despite the away status; Villarreal have attacking quality and recent results (DDWLL) include competitive draws, while Alavés have shown mixed home form. Market-implied probabilities and head-to-head history make an away win the most likely 90-minute outcome, though a draw is fairly likely.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-27T08:19:37.474847-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander is the slight favorite per odds (+110). Home advantage and a head-to-head edge (Racing Santander won the last meeting) support a home win, while Elche have started poorly.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are the away favorites (+130) with stronger attacking potential. Alavés at home are capable but face a tougher test, and head-to-head is relatively balanced; odds tilt toward Villarreal.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-27T08:19:41.875657-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander have home advantage and won the last head-to-head against Elche 2-0. Elche are coming off a heavy 0-5 defeat to Barcelona and have injury concerns. Bookmaker odds and recent form slightly favor Racing Santander, though both teams have similar early-season records. The probability distribution reflects Racing's edge at home, but the draw remains a significant possibility given both teams' inconsistency.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are favored by both market odds and recent analysis, with their attacking quality and positive head-to-head record against Alavés. Alavés are strong at home and in good form, but Villarreal's squad depth and recent performances (including a draw against Atlético Madrid) give them the edge. The draw is possible given Villarreal's recent results, but away win is the most likely outcome.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-27T08:19:45.253476-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander has a slightly better form and home advantage. Elche's recent heavy loss to Barcelona and their away form suggest they might struggle.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown competitive form, with Villarreal's recent draws and Alavés' strong home performance. A draw seems likely given the balanced odds and recent performances.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-27T08:19:57.339414-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newly promoted Racing Santander are in solid form (LDWDW) at El Sardinero and won the last H2H 2-0. Elche are reeling from a 0-5 loss to Barcelona and sit near the bottom. Market odds (+110 home) imply roughly 46% home win probability after removing vig, making Racing the modest favorite.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Villarreal are the market favorite (+130, ~41% de-vigged) on superior squad quality despite an inconsistent start, coming off a strong 2-2 draw with Atlético. Alavés are competitive at Mendizorrotza (DWLWW form), keeping this close, but Villarreal's edge in attacking talent tilts the pick to the away win with low confidence.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-27T08:20:03.947708-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Racing Santander",
+                    "confidence": "low",
+                    "reasoning": "Racing Santander are home favorites per the odds (+110) and beat Elche 2-0 in their last meeting. Elche have struggled, losing 0-5 to Barcelona and sitting 18th with just one point. Home advantage at El Sardinero tips this slightly toward Racing.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "Villarreal",
+                    "confidence": "low",
+                    "reasoning": "Villarreal are favorites per market odds (+130 vs Alavés +200), reflecting their superior attacking quality despite an inconsistent start. The last meeting was a 1-1 draw and Alavés have decent home form, but Villarreal's overall strength makes them slight favorites.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-27T08:20:14.199817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Racing Santander enter as slight favorites at home with odds around +110, implying roughly 48% implied probability before margin removal. Both teams have similar records (0-1-1) and mixed recent form. Elche suffered a heavy 0-5 loss to Barcelona last round, which may indicate defensive vulnerabilities, but could also be a statistical outlier. The last head-to-head ended in a 2-0 Racing Santander win. Home advantage at El Sardinero and Elche's poor recent form tip the balance slightly toward Racing Santander, but the match is competitive. Probabilities adjusted slightly from market implied odds to reflect genuine uncertainty.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Villarreal are favored at around +130 (away) despite Alavés having a better record (1-1-0 vs 0-2-0). Villarreal's recent form shows two draws and two losses, suggesting inconsistency, but their attacking quality and head-to-head record (last meeting 1-1 draw) support some confidence. Alavés are at home with Mariano Díaz reportedly in form, giving them a credible threat. Pinnacle sharp lines favor Villarreal at 2.30, and the market consensus aligns with a Villarreal edge. The outcome is genuinely uncertain given Villarreal's draw-heavy recent run and Alavés's home record.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-27T08:20:27.649576-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander shows stronger recent form (LDWDW) compared to Elche (LDDWL), with Elche suffering a heavy 0-5 defeat to Barcelona in their last match. The odds favor Racing Santander at +110 (implied ~48%), while Elche is at +255 (implied ~28%). Racing won the last meeting 2-0. Both teams have identical records (0-1-1), but home advantage and momentum favor Racing. Elche has injury concerns with Pedro Felipe and Adam Boayar. The betting market shows Racing as favorites, and their home form at El Sardineros should give them the edge in what could be a tight contest.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal is favored at +130 (implied ~43%) despite playing away, reflecting their superior quality. Alavés has the better record (1-1-0 vs 0-2-0) and strong recent form (DWLWW), including wins in their last two matches. However, Villarreal's away form (DDWLL) shows vulnerability. The last meeting ended 1-1, suggesting competitive balance. Market consensus via Pinnacle shows Villarreal at 2.30 offering value. Villarreal's attacking quality and head-to-head record support an away win, though Alavés' home advantage and Mariano Díaz's form make this competitive. Both teams scoring is likely given recent trends, but Villarreal's class should edge this match.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-27T08:20:33.524897-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander has superior home form (LDWDW) compared to Elche's away form (LDDWL). DraftKings odds favor Racing at +110. Context indicates Racing won their last head-to-head 2-0. However, both teams are evenly matched on paper with identical 0-1-1 records. Elche suffered a heavy 0-5 loss to Barcelona, which may impact confidence. The odds and recent form suggest a slight Racing edge, but the match remains competitive.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Alavés shows stronger home form (DWLWW) with 1-1-0 record at home. Villarreal has 0-2-0 away record but has drawn twice recently (2-2 vs Atlético Madrid), suggesting stability. Last head-to-head ended 1-1. The odds are mixed: Alavés at +200 (implying ~33% probability) vs Villarreal at +130 (implying ~43% probability). Analysis suggests Villarreal has attacking quality and value at +130, but home advantage and Mariano Díaz's form support Alavés. Slight preference for home win given venue advantage, but confidence is low due to competitive matchup and Villarreal's recent draws.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-27T08:21:11.517694-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander are at home and priced as favorites. Elche's heavy loss to Barcelona and Racing's 2-0 win in the last H2H support a home win, though both teams have mixed early form.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are favored on the moneyline and have stronger attacking quality, but Alavés are solid at home and Villarreal have drawn both away games, so the away win is a moderate lean with draw risk.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-27T08:21:13.965246-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander have home advantage and slightly better form, while Elche have lost heavily recently. Odds favor a home win, but Elche are not without hope.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal have superior squad quality and recent draws against top teams, while Alavés have mixed form. Away win is slightly favored by odds and analysis.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-27T08:21:31.432105-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander has a strong home form and won the last head-to-head meeting 2-0. Elche is struggling, coming off a heavy 5-0 defeat to Barcelona, making the home side the clear favorite.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal is favored by the sportsbooks and possesses superior attacking quality, despite their recent run of draws. Alavés is solid at home but Villarreal's overall squad depth gives them the edge in this matchup.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-27T08:21:41.005308-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander has a slight edge in recent form and is playing at home. Elche's poor performance, especially the 0-5 loss to Barcelona, suggests they are struggling. The odds also slightly favor Racing Santander, indicating a higher likelihood of a home win.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal has a stronger team on paper and their attacking quality, along with the head-to-head record, suggests they are more likely to win. Alavés, despite being at home, has shown mixed results, and the odds also slightly favor Villarreal.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-27T08:22:55.436481-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander holds home advantage at El Sardineros and is favored by the betting market. Elche arrives after a heavy 0-5 defeat to Barcelona and shows defensive frailties. Despite minor injury concerns for Racing, their recent 2-0 H2H victory and slightly stronger early-season metrics point to a narrow home win as the most probable regulation-time result.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Although Villarreal's 0-2-0 record suggests early struggles, market odds and analytical consensus favor the away side due to superior attacking quality and favorable head-to-head history. Alavés has been resilient at Mendizorrotza, but Villarreal's competitive 2-2 draw against Atlético Madrid indicates they are creating sufficient chances to secure a road victory in a tightly contested fixture.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-27T08:23:33.113178-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander hosts at El Sardineros with superior recent form (LDWDW) compared to Elche, who suffered a heavy defeat against Barcelona. While odds are competitive, the home advantage and current momentum suggest a narrow edge to the home side in regulation time.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Betting markets favor Villarreal as favorites (+130) despite their mixed away form. Analyst consensus notes Villarreal's attacking quality and H2H history, tipping the scale slightly towards an away win even with Alavés playing at home.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-27T08:24:38.126534-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander are favored at home with market odds moving in their favor. Elche are struggling after a 0-5 loss to Barcelona and have key injuries, while Racing won the last head-to-head 2-0.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal are unbeaten with two draws and possess superior attacking quality, making them slight favorites despite Alavés's solid home form. The market prices Villarreal around +130, and the last meeting ended in a draw, keeping the draw probability elevated.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-27T08:25:12.070881-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander holds home advantage and won the last H2H meeting 2-0. While both sides have started the season slowly (0-1-1 records), Elche is coming off a demoralizing 0-5 defeat to Barcelona. Market odds (+110 home, +255 away) reflect a slight edge for the hosts, supported by their marginally better recent form (LDWDW vs LDDWL). Elche's defensive frailties and key injuries (Pedro Felipe, Adam Boayar) further tilt the balance toward a narrow home victory.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villarreal enters as the betting favorite (+130) despite drawing their first two matches, including a credible 2-2 result against Atlético Madrid. Alavés has started stronger (1-1-0) with solid home form (DWLWW), but Villarreal's superior squad quality and attacking threat give them the edge. The probability of a draw remains significant given Villarreal's recent tendency to share points and Alavés' resilience at Mendizorrotza, but the Yellow Submarine's class should ultimately prevail in a competitive fixture.",
+                    "event_id": "401882906"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-27T08:25:18.131096-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Racing Santander (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Racing Santander has a slight edge based on their home form and head-to-head record against Elche. The odds also favor Racing Santander, with DraftKings giving them +110 compared to Elche's +255. However, Elche's away record is not significantly worse than Racing Santander's home record, so there is some uncertainty.",
+                    "event_id": "401882900"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Villarreal (away) @ Alavés (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Alavés and Villarreal have similar recent forms, with Alavés having a slight edge at home. The odds are relatively close, with Villarreal at 2.30 and Alavés at 3.11. Given the closeness in odds and recent performance, a draw seems like the most likely outcome, but there is considerable uncertainty due to the similar quality of both teams.",
+                    "event_id": "401882906"
+                }
+            ]
+        }
+    ]
+}

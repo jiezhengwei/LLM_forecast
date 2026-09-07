@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-30\n    Target Date: 2026-05-01\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Lecce @ Pisa                                         | Scheduled    | Away: 20.6% (7-8-19) vs Home: 5.9% (2-12-20)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Lecce (Away) @ Pisa (Home)\n**News & Injury Report:**\n- [Pisa vs Lecce Prediction, Betting Tips, Lineups & Odds | 01 May 2026](https://www.sportsgambler.com/betting-tips/football/pisa-vs-lecce-prediction-lineups-odds-2026-05-01/)\n  Snippet: #### Previous Lecce Lineups\n\n### Injuries & Suspensions\n\n#### Pisa Player Stats & Squad\n\n#### Manager: Oscar Hiljemark\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Simone Canestrelli | 5 | M | 33 | 2842 | 32 | 2 | 1 | 0 | 4 | 0 |\n| Antonio Caracciolo | 8 | D | 32 | 2803 | 31 | 2 | 2 | 0 | 8 | 0 |\n| Michel Aebischer | 20 | M | 32 | 2652 | 30 | 2 | 1 | 1 | 7 | 0 |\n| Samuele Angori | 3 | D | 31 | 2304 | 27 | 7 | 0 | 2 | 2 | 0 | ...\n- [Preview: Pisa vs Lecce - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/pisa/preview/pisa-vs-lecce-prediction-team-news-lineups_596626.html)\n  Snippet: In defence, Arturo Calabresi was dropped for Rosen Bozhinov at Stadio Tardini, but Hiljemark could reverse that switch this weekend.\n\nMeanwhile, Lecce are set to bring Tiago Gabriel straight back into their starting XI, after the much-admired defender served a suspension in Verona.\n\nMedon Berisha, Kialonda Gaspar and Sadik Fofana are all sidelined by injury, while winger Riccardo Sottil is still struggling with a back problem. ...\n**Betting Odds:**\n- [Pisa SC vs Lecce Prediction - Serie A - 01/05/2026](https://www.sportytrader.com/en/betting-tips/sc-pisa-lecce-345983/)\n  Snippet: ## Pisa SC v Lecce Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 3.2 | 3.05 | 2.5 |  |\n| Melbet | 3.1 | 3 | 2.53 |  |\n| Betwinner | 3.1 | 3 | 2.53 |  |\n| Bet365 | 3.2 | 3 | 2.45 |  |\n| Roobet | 3.1 | 2.98 | 2.48 |  |\n\nStake\nMelbet\nBetwinner\nBet365\nRoobet\n\n## What is the prediction for the football match between Pisa SC and Lecce?\n\nOur prediction for the Pisa SC vs Lecce match is: Lecce to win & BTTS-No. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-30\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-30 20:40:10"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-30 20:38:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds make Lecce slight favorites (implied ~0.30 H / ~0.32 D / ~0.38 A after normalization). Pisa\u2019s season profile (2-12-20) suggests low win conversion and a strong draw tendency, while Lecce\u2019s overall record is notably better. Lecce do carry some injury concerns (Berisha, Gaspar, Fofana out; Sottil struggling), which keeps the draw probability elevated despite the away edge."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:38:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market favors Lecce (best odds imply ~39% chance) and Lecce have a marginally stronger record than Pisa; Pisa have an extremely poor home win record (2 home wins) but a high draw rate (12 home draws), so draw probability is elevated. Lecce have some injuries (Berisha, Gaspar, Fofana, Sottil struggling) though Tiago Gabriel returns from suspension \u2014 a slight downgrade to Lecce but not enough to overturn market edge. Balancing market odds, team form, home advantage (weak for Pisa) and injuries yields a modest lean to an away win with significant chance of a draw."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:15",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.315,
+                    "away_win_probability": 0.385,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting odds (Pisa home 3.2, draw 3.05, Lecce away 2.5) imply away win as the market's favoured result. Normalized implied probabilities are approximately: Home ~30%, Draw ~31.5%, Away ~38.5%. Lecce have some injuries (Berisha, Gaspar, Fofana out) but Tiago Gabriel returns to the lineup; Pisa's home record appears weak from the context. Market odds calibrate the expectation toward an away win, with a modest edge reflected in the probabilities."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market odds imply about 30-32% for Pisa, 31% draw, and roughly 39-41% for Lecce. Pisa's home form has been very poor (2-12-20, 5.9% win rate), while Lecce are more competitive (20.6% win rate away) despite their own issues. Lecce have some injuries but welcome back key defender Tiago Gabriel. Pisa have no major squad boosts. Statistical record and odds both favor Lecce, though a draw is not unlikely given both teams' struggle to win consistently. Lecce's defensive return tips probability their way."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce have a significantly better season win rate than Pisa. Pisa's home win rate is particularly low at 5.9%. Despite their injuries, Lecce's key defender Tiago Gabriel returns, strengthening their squad. However, injury troubles persist for Lecce, slightly tempering their advantage. The betting odds suggest a slight edge to Lecce, supporting the predicted outcome of an away win."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce is favored in the betting markets with implied odds of around 39% for an away victory. Pisa has had an incredibly difficult season with only 2 wins in 34 matches, making them a vulnerable home side. With key defender Tiago Gabriel returning from suspension for Lecce, the visitors have a slight edge."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Pisa has a terrible home record (5.9% win rate, only 2 wins in 34 matches) while Lecce, despite a modest away record (20.6%), is far stronger overall. Betting odds favor Lecce (away win around 2.50) over Pisa (home win around 3.20), aligning with the form disparity. Lecce also returns a key defender (Tiago Gabriel) from suspension, while Pisa has no major injury boosts. However, Pisa\u2019s recent lineup tinkering could offer some resistance, so a draw is plausible."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:39:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce shows significantly stronger form with a 20.6% win rate (7-8-19) compared to Pisa's dismal 5.9% (2-12-20). The betting odds heavily favor Lecce as the away team, with Lecce at 2.45-2.53 compared to Pisa at 3.1-3.2, indicating the market sees Lecce as clear favorites despite playing away. Lecce will have Tiago Gabriel returning from suspension, strengthening their defense. Pisa's home record appears very weak with only 2 wins in 34 matches. While Lecce has injury concerns with Berisha, Gaspar, Fofana, and potentially Sottil, their overall squad quality and form appear superior. The draw probability remains significant given Serie A's tendency for draws and both teams' inconsistency. Converting the betting odds to implied probabilities: Pisa ~31%, Draw ~33%, Lecce ~41% (before margin removal). Adjusting for Pisa's extremely poor home form and Lecce's stronger overall season performance, I weight the away win more heavily at 45%."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-30 20:40:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Pisa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lecce has a significantly better win rate this season (20.6% vs 5.9%). Pisa's home form is very poor, and Lecce is bringing back key defender Tiago Gabriel. The betting odds also favor Lecce to win, with the highest odds at 2.53."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

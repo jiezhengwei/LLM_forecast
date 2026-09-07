@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-06",
+        "target_date_et": "2026-09-07",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-06\n\nTarget Date (ET): 2026-09-07\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882891\nMatchup: Celta Vigo (away) @ Getafe (home)\nHome: Getafe\nAway: Celta Vigo\nKickoff UTC: 2026-09-07T17:00Z\nKickoff ET: 2026-09-07 13:00 EDT\nVenue: Estadio Coliseum\nRound: unavailable\nHome form: LLWWL\nAway form: DLLDW\nHome record: 1-0-2\nAway record: 0-2-2\nESPN structured 1X2 odds: DraftKings: Getafe +145 (open +160); Draw +185 (open +180); Celta Vigo +240 (open +200)\nTavily context:\n  - Title: Getafe vs Celta Vigo - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Getafe vs Celta Vigo — Mon 7 September, 17:00 UTC\n\nLaLiga Round 4\n\n LaLiga Round 4\n Estadio Coliseum\n\nGetafeGetafe\n\n‌\n‌\n\nCelta VigoCelta Vigo\n\n# Getafe vs Celta Vigo — Mon 7 September, 17:00 UTC\n\nLaLiga Round 4\n\n LaLiga Round 4\n Estadio Coliseum\n\nGetafeGetafe\n\n‌\n‌\n\nCelta VigoCelta Vigo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Andrés García\n\n  Thigh injury / Mid September 2026\n\nGarcíaThigh injuryMid September 2026\n\n  Abdel Abqar\n\n  Muscle injury / Mid September 2026\n\nAbqarMuscle injuryMid September 2026\n\n  Mario Martín ...\n    URL: https://www.fotmob.com/en-GB/matches/getafe-vs-celta-vigo/2qs2ma\n  - Title: Getafe vs Celta Vigo: Scores, Results Lineups, H2H & Odds\n    Content: Attackers: Williot Swedberg, Ferran Jutglà.\n\nSubs: Altay Bayindir, Carl Starfelt, Abdoulaye Faye, Javi Rodríguez, Sebastian Caceres, Javier Galán, Stefan Bajcetic, Hugo Burcio, Hugo González, Jones El-Abdellaoui, Hugo Álvarez, Couhaib Driouech, Iago Aspas, Pablo Durán.\n\nMissing Players: Aleix Febas, Borja Iglesias.\n\n### Event Details:\n\nName: Getafe vs. Celta Vigo\n\nDate: Monday, September 7, 2026\n\nTime: 17:00\n\nLocation: Estadio Coliseum\n\nCapacity: 17393\n\nSee More\n\nImage 94\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/celta-vigo-getafe-140-158-11\n  - Title: Getafe vs Celta de Vigo Predictions, Picks & Odds\n    Content: Celta de Vigo travel to Madrid in 17th place, their recent form reading poorly with just one win in five matches. Claudio Giráldez will hope new signings Couhaib Driouech, who contributed nine goals and eight assists at PSV last season, and loan arrival Hugo Cuenca can inject fresh impetus. Celta have historically found the Coliseum a difficult venue, and reversing that trend will require their build-up play to function under intense defensive pressure.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/getafe-vs-celta-de-vigo-predictions-picks-odds-07-09-2026\n  - Title: Getafe vs Celta Vigo Prediction - LaLiga - 07/09/2026\n    Content: Limited Offer. Currently at Stake\n\n## Getafe v Celta Vigo Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 2.46 | 2.9 | 3.35 |  |\n| 1xbet | 2.54 | 2.98 | 3.5 |  |\n| Melbet | 2.45 | 2.86 | 3.38 |  |\n| Betwinner | 2.45 | 2.86 | 3.38 |  |\n| 22bet | 2.45 | 2.87 | 3.36 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Getafe and Celta Vigo?\n\nOur prediction for the Getafe vs Celta Vigo match is: Under 2.5 goals ...\n    URL: https://www.sportytrader.com/en/betting-tips/getafe-celta-vigo-370870\n\nGame ID: 2\nSource event_id: 401882893\nMatchup: Real Sociedad (away) @ Elche (home)\nHome: Elche\nAway: Real Sociedad\nKickoff UTC: 2026-09-07T19:30Z\nKickoff ET: 2026-09-07 15:30 EDT\nVenue: Estadio Martínez Valero\nRound: unavailable\nHome form: LLDDW\nAway form: DWLLD\nHome record: 0-1-2\nAway record: 1-1-2\nESPN structured 1X2 odds: Provider unavailable: Elche +185 (open +155); Draw +255 (open +235); Real Sociedad +140 (open +165)\nTavily context:\n  - Title: Elche vs Real Sociedad Predictions, Picks & Odds\n    Content: Absent\n\n Arsen Zakharyan (injury)\n Álvaro Odriozola (injury)\n J. Gorrotxategi (Muscle injury, expected return early September 2026.)\n Pablo Marín (Muscle injury, expected return early September 2026.)\n Mamadou Sarr (Injury.)\n\nLow confidence\n\nBoth lineups carry a speculated tag here, so treat the tactical picture as provisional rather than settled. That said, Elche's 4-4-2 sets up as a compact, direct shape built to press on home turf, with Rafa Mir and André Silva offering a physical double threat up front. [...] Bench ...\n    URL: https://www.toffeeweb.com/int/elche-vs-real-sociedad-predictions-picks-odds-07-09-2026\n  - Title: Elche vs Real Sociedad - prediction, team news, lineups\n    Content: The last five encounters have seen Real Sociedad win four and draw once, with their most recent meeting ending in a 3-1 victory for the visitors at the Anoeta Stadium.\n\nElche La Liga form:\n\n DLL\n\nReal Sociedad La Liga form:\n\nLLWD\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Foyarzabal-6-6a96ff9c1e164853371783.jpg)\n\n© Imago / AFLOSPORT\n\nThomas Lemar, on loan from Atletico Madrid, is a doubt for Monday’s fixture with a physical complaint and could miss out. ...\n    URL: https://www.sportsmole.co.uk/football/elche/preview/elche-vs-real-sociedad-prediction-team-news-lineups_604548.html\n  - Title: Elche vs Real Sociedad Prediction - LaLiga - 07/09/2026\n    Content: ## Elche v Real Sociedad Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 2.9 | 3.5 | 2.41 |  |\n| 1xbet | 3.09 | 3.51 | 2.46 |  |\n| Melbet | 2.96 | 3.4 | 2.37 |  |\n| Betwinner | 2.96 | 3.4 | 2.37 |  |\n| 22bet | 2.98 | 3.38 | 2.37 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Elche and Real Sociedad?\n\nOur prediction for the Elche vs Real Sociedad match is: Real Sociedad draw no bet. ...\n    URL: https://www.sportytrader.com/en/betting-tips/elche-real-sociedad-370875\n  - Title: Elche vs Real Sociedad Betting Odds | Spain - La Liga Odds - Pinnacle\n    Content: La Liga Elche vs. Real Sociedad Monday, September 7, 2026 at 12:30 Favourite. Real Sociedad +0.251.800 -0.252.130 See more Total – Match Over 2.51.854 Under 2.\n    URL: https://www.pinnacle.com/en/soccer/spain-la-liga/elche-vs-real-sociedad/1634713377\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-06\n\nTarget Date (ET): 2026-09-07\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882891\nMatchup: Celta Vigo (away) @ Getafe (home)\nHome: Getafe\nAway: Celta Vigo\nKickoff UTC: 2026-09-07T17:00Z\nKickoff ET: 2026-09-07 13:00 EDT\nVenue: Estadio Coliseum\nRound: unavailable\nHome form: LLWWL\nAway form: DLLDW\nHome record: 1-0-2\nAway record: 0-2-2\nESPN structured 1X2 odds: DraftKings: Getafe +145 (open +160); Draw +185 (open +180); Celta Vigo +240 (open +200)\nTavily context:\n  - Title: Getafe vs Celta Vigo - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Getafe vs Celta Vigo — Mon 7 September, 17:00 UTC\n\nLaLiga Round 4\n\n LaLiga Round 4\n Estadio Coliseum\n\nGetafeGetafe\n\n‌\n‌\n\nCelta VigoCelta Vigo\n\n# Getafe vs Celta Vigo — Mon 7 September, 17:00 UTC\n\nLaLiga Round 4\n\n LaLiga Round 4\n Estadio Coliseum\n\nGetafeGetafe\n\n‌\n‌\n\nCelta VigoCelta Vigo\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Andrés García\n\n  Thigh injury / Mid September 2026\n\nGarcíaThigh injuryMid September 2026\n\n  Abdel Abqar\n\n  Muscle injury / Mid September 2026\n\nAbqarMuscle injuryMid September 2026\n\n  Mario Martín ...\n    URL: https://www.fotmob.com/en-GB/matches/getafe-vs-celta-vigo/2qs2ma\n  - Title: Getafe vs Celta Vigo: Scores, Results Lineups, H2H & Odds\n    Content: Attackers: Williot Swedberg, Ferran Jutglà.\n\nSubs: Altay Bayindir, Carl Starfelt, Abdoulaye Faye, Javi Rodríguez, Sebastian Caceres, Javier Galán, Stefan Bajcetic, Hugo Burcio, Hugo González, Jones El-Abdellaoui, Hugo Álvarez, Couhaib Driouech, Iago Aspas, Pablo Durán.\n\nMissing Players: Aleix Febas, Borja Iglesias.\n\n### Event Details:\n\nName: Getafe vs. Celta Vigo\n\nDate: Monday, September 7, 2026\n\nTime: 17:00\n\nLocation: Estadio Coliseum\n\nCapacity: 17393\n\nSee More\n\nImage 94\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/celta-vigo-getafe-140-158-11\n  - Title: Getafe vs Celta de Vigo Predictions, Picks & Odds\n    Content: Celta de Vigo travel to Madrid in 17th place, their recent form reading poorly with just one win in five matches. Claudio Giráldez will hope new signings Couhaib Driouech, who contributed nine goals and eight assists at PSV last season, and loan arrival Hugo Cuenca can inject fresh impetus. Celta have historically found the Coliseum a difficult venue, and reversing that trend will require their build-up play to function under intense defensive pressure.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/getafe-vs-celta-de-vigo-predictions-picks-odds-07-09-2026\n  - Title: Getafe vs Celta Vigo Prediction - LaLiga - 07/09/2026\n    Content: Limited Offer. Currently at Stake\n\n## Getafe v Celta Vigo Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 2.46 | 2.9 | 3.35 |  |\n| 1xbet | 2.54 | 2.98 | 3.5 |  |\n| Melbet | 2.45 | 2.86 | 3.38 |  |\n| Betwinner | 2.45 | 2.86 | 3.38 |  |\n| 22bet | 2.45 | 2.87 | 3.36 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Getafe and Celta Vigo?\n\nOur prediction for the Getafe vs Celta Vigo match is: Under 2.5 goals ...\n    URL: https://www.sportytrader.com/en/betting-tips/getafe-celta-vigo-370870\n\nGame ID: 2\nSource event_id: 401882893\nMatchup: Real Sociedad (away) @ Elche (home)\nHome: Elche\nAway: Real Sociedad\nKickoff UTC: 2026-09-07T19:30Z\nKickoff ET: 2026-09-07 15:30 EDT\nVenue: Estadio Martínez Valero\nRound: unavailable\nHome form: LLDDW\nAway form: DWLLD\nHome record: 0-1-2\nAway record: 1-1-2\nESPN structured 1X2 odds: Provider unavailable: Elche +185 (open +155); Draw +255 (open +235); Real Sociedad +140 (open +165)\nTavily context:\n  - Title: Elche vs Real Sociedad Predictions, Picks & Odds\n    Content: Absent\n\n Arsen Zakharyan (injury)\n Álvaro Odriozola (injury)\n J. Gorrotxategi (Muscle injury, expected return early September 2026.)\n Pablo Marín (Muscle injury, expected return early September 2026.)\n Mamadou Sarr (Injury.)\n\nLow confidence\n\nBoth lineups carry a speculated tag here, so treat the tactical picture as provisional rather than settled. That said, Elche's 4-4-2 sets up as a compact, direct shape built to press on home turf, with Rafa Mir and André Silva offering a physical double threat up front. [...] Bench ...\n    URL: https://www.toffeeweb.com/int/elche-vs-real-sociedad-predictions-picks-odds-07-09-2026\n  - Title: Elche vs Real Sociedad - prediction, team news, lineups\n    Content: The last five encounters have seen Real Sociedad win four and draw once, with their most recent meeting ending in a 3-1 victory for the visitors at the Anoeta Stadium.\n\nElche La Liga form:\n\n DLL\n\nReal Sociedad La Liga form:\n\nLLWD\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Foyarzabal-6-6a96ff9c1e164853371783.jpg)\n\n© Imago / AFLOSPORT\n\nThomas Lemar, on loan from Atletico Madrid, is a doubt for Monday’s fixture with a physical complaint and could miss out. ...\n    URL: https://www.sportsmole.co.uk/football/elche/preview/elche-vs-real-sociedad-prediction-team-news-lineups_604548.html\n  - Title: Elche vs Real Sociedad Prediction - LaLiga - 07/09/2026\n    Content: ## Elche v Real Sociedad Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 2.9 | 3.5 | 2.41 |  |\n| 1xbet | 3.09 | 3.51 | 2.46 |  |\n| Melbet | 2.96 | 3.4 | 2.37 |  |\n| Betwinner | 2.96 | 3.4 | 2.37 |  |\n| 22bet | 2.98 | 3.38 | 2.37 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Elche and Real Sociedad?\n\nOur prediction for the Elche vs Real Sociedad match is: Real Sociedad draw no bet. ...\n    URL: https://www.sportytrader.com/en/betting-tips/elche-real-sociedad-370875\n  - Title: Elche vs Real Sociedad Betting Odds | Spain - La Liga Odds - Pinnacle\n    Content: La Liga Elche vs. Real Sociedad Monday, September 7, 2026 at 12:30 Favourite. Real Sociedad +0.251.800 -0.252.130 See more Total – Match Over 2.51.854 Under 2.\n    URL: https://www.pinnacle.com/en/soccer/spain-la-liga/elche-vs-real-sociedad/1634713377\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882891",
+                        "date_utc": "2026-09-07T17:00Z",
+                        "kickoff_et": "2026-09-07 13:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Getafe",
+                        "away": "Celta Vigo",
+                        "home_id": "2922",
+                        "away_id": "85",
+                        "matchup": "Celta Vigo (away) @ Getafe (home)",
+                        "venue": "Estadio Coliseum",
+                        "city": "Getafe",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLWWL",
+                        "form_away": "DLLDW",
+                        "record_home": "1-0-2",
+                        "record_away": "0-2-2",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+160",
+                            "home_current": "+145",
+                            "draw_open": "+180",
+                            "draw_current": "+185",
+                            "away_open": "+200",
+                            "away_current": "+240"
+                        },
+                        "odds_text": "DraftKings: Getafe +145 (open +160); Draw +185 (open +180); Celta Vigo +240 (open +200)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882893",
+                        "date_utc": "2026-09-07T19:30Z",
+                        "kickoff_et": "2026-09-07 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Elche",
+                        "away": "Real Sociedad",
+                        "home_id": "3751",
+                        "away_id": "89",
+                        "matchup": "Real Sociedad (away) @ Elche (home)",
+                        "venue": "Estadio Martínez Valero",
+                        "city": "Elche",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLDDW",
+                        "form_away": "DWLLD",
+                        "record_home": "0-1-2",
+                        "record_away": "1-1-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+155",
+                            "home_current": "+185",
+                            "draw_open": "+235",
+                            "draw_current": "+255",
+                            "away_open": "+165",
+                            "away_current": "+140"
+                        },
+                        "odds_text": "Provider unavailable: Elche +185 (open +155); Draw +255 (open +235); Real Sociedad +140 (open +165)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-06T08:45:15.279625-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-06T08:36:06.500237-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Getafe is historically strong and highly defensive at the Estadio Coliseum. Celta Vigo has typically struggled at this venue, making a narrow home victory the most probable result in what is expected to be a low-scoring match.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad enters as the favorite and has dominated recent head-to-head encounters against Elche, winning four of the last five matchups. Despite having several players out with injuries, their squad depth gives them the edge to secure an away win.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-06T08:36:16.803718-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.387,
+                    "draw_probability": 0.333,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe are marginal favorites entering this fixture at Estadio Coliseum. Celta Vigo have historically struggled at this venue and are in poor form, having recorded zero wins in their opening four matches. The odds reflect Getafe as the likeliest winner, though a draw remains highly possible given both sides' recent inconsistencies.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.334,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.397,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad arrive as slight away favorites against Elche. Elche are yet to secure a victory in the league this season with two losses and a draw, while Real Sociedad have a strong head-to-head record against them (winning 4 of the last 5 encounters). However, the away side is missing a few key players to injury, leading to lower confidence.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-06T08:36:39.055586-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe holds a significant home advantage, playing at the Estadio Coliseum where Celta Vigo has historically performed poorly. Betting markets consistently favor Getafe, reflecting their slightly better start to the season compared to a winless Celta. While both teams have shown inconsistent form, Getafe's home turf and Celta's struggles on the road make a home victory the most probable outcome.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad is favored by the betting markets and possesses a stronger squad on paper, reinforced by a dominant head-to-head record with four wins in the last five meetings. However, their confidence is rated as low due to a combination of poor recent form and a significant list of injuries. Elche is also struggling and winless, but Sociedad's injury crisis could level the playing field, making a draw a strong possibility.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-06T08:36:53.752798-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.387,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.283,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams are in poor early-season form, with Getafe holding a slight home advantage (1-0-2 record) and Celta Vigo having a historically difficult time at the Estadio Coliseum. Celta's recent form (1 win in 5) and position in 17th place suggest struggles. Odds suggest a tight contest, with Getafe marginally favored. While a draw is plausible given the expected low-scoring nature, Getafe's home ground and Celta's overall poor form give the hosts a slight edge.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.332,
+                    "draw_probability": 0.271,
+                    "away_win_probability": 0.397,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Sociedad has a dominant head-to-head record against Elche, winning four of their last five encounters, including a recent 3-1 victory. Elche has started the season poorly, especially at home (0-1-2 record) and has no wins in their last five. Despite some reported injury concerns for Real Sociedad, their historical performance against Elche and the current form disparity make them clear favorites.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-06T08:38:00.507919-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.388,
+                    "draw_probability": 0.332,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market prices make Getafe a modest home favorite, and Celta enter with weaker early-season results and poor recent away profile. The Coliseum setting and likely low-scoring matchup support Getafe slightly, but the draw risk is substantial.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.333,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.398,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are the market favorite and have a strong recent head-to-head edge over Elche. Elche are winless early, but Real Sociedad injury questions and away status keep the advantage modest with meaningful draw risk.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-06T08:38:10.071628-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe are at home, have the stronger early form and record, and the betting market has moved toward them while Celta Vigo have drifted. Celta's winless away/start profile and Getafe's typically difficult, low-margin home environment point to a narrow home edge, though the draw remains a significant risk.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are slight market favorites and have a favorable recent head-to-head profile against Elche, while Elche are still searching for a first league win. However, Sociedad's injury list and inconsistent recent form reduce confidence, and Elche's home setup makes a draw or narrow home result plausible.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-06T08:38:36.813817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing and line movement favor Getafe (home price shortened while Celta drifted). Getafe’s recent form and record are stronger than Celta’s winless away start, and this matchup profile points to a tight, low-scoring game where home edge and defensive pressure at the Coliseum increase the home-win likelihood over the away win.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds imply Real Sociedad as the stronger side and the away price has shortened notably versus open, signaling increased market confidence in the visitors. Elche’s early-season results are weaker, while Real Sociedad have recent H2H advantage and are more likely to control the game even away, with the draw a meaningful secondary outcome.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-06T08:38:43.576192-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe are favored by market odds and have slightly better early-season form and a stronger home record; Celta arrive with mixed form and key absences, and historically struggle at the Coliseum. Betting markets and team news point to a Getafe edge, though Celta’s new signings and volatility at this stage keep the outcome uncertain.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Markets and head-to-head favor Real Sociedad despite inconsistent recent form; Elche are compact at home but have struggled for wins. Injury doubts and speculative lineups reduce certainty, so while Sociedad are the likeliest winner, a draw or home upset remains plausible.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-06T08:39:45.863761-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds favor Getafe (+145). Home form is modest but better than Celta Vigo's away form (0-2-2).",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are slight road favorites (+140) against Elche, whose home form is weaker.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-06T08:39:50.084712-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe have a solid home record and are slight favorites according to both market odds and recent form. Celta Vigo have struggled at the Coliseum historically and are missing key players. Both teams have inconsistent form, but Getafe's defensive solidity at home and Celta's away struggles tilt the balance toward a home win, though a draw is also plausible given the low-scoring expectations.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have dominated recent head-to-heads and are favored by both odds and underlying squad strength, despite some injury doubts. Elche's home form is poor and their attack has struggled, while Sociedad's away record is slightly better and their squad depth gives them an edge. The most likely outcome is an away win, but a draw remains a significant possibility.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-06T08:39:52.652855-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe has a slightly better recent form and home advantage. Celta Vigo struggles at the Coliseum historically, and Getafe's odds have shortened, indicating market confidence.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad has a strong head-to-head record against Elche and better overall form. Despite Elche's home advantage, Real Sociedad's recent performances suggest they are more likely to win.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-06T08:40:03.384972-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make Getafe a modest home favorite (~40% implied). Celta arrive in poor form (0-2-2) and have historically struggled at the Coliseum, while Getafe's compact defensive setup often produces tight, low-scoring home matches. Odds movement also shifted toward Getafe from open. Still, the margin is thin, so draw probability remains substantial.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are slight favorites per bookmaker consensus (~40% implied) and have dominated the recent head-to-head, winning four of the last five meetings. However, La Real carry several injury absences and inconsistent form, while newly promoted Elche are competitive at home, keeping this a close call with meaningful draw risk.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-06T08:40:09.780283-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Getafe",
+                    "confidence": "low",
+                    "reasoning": "Getafe are home favorites per odds (+145) and historically strong at the Coliseum, where Celta have struggled. Celta's poor form (one win in five) and difficult away record support a narrow home lean, though tight low-scoring matchups keep this close.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Real Sociedad",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are favorites (+140) and have dominated recent H2H, winning four of the last five including a 3-1 away victory. Elche's weak home form and Sociedad's better squad depth favor the visitors despite some injury concerns.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-06T08:40:20.564253-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe host Celta Vigo at the Estadio Coliseum. Getafe's home record and the implied odds from DraftKings (+145 home, +185 draw, +240 away) suggest a slight edge for the home side. Getafe have historically been tough to beat at home with their defensive style. Celta arrive in poor form (1W in last 5) and 17th in the table. However, the odds are quite close across all three outcomes. Getafe's home advantage and Celta's struggles away from home give Getafe a marginal edge, but this is a low-confidence match.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored by the market (implied ~+140 away vs +185 home) and have a strong H2H record against Elche, winning 4 of the last 5 meetings. Elche are newly promoted/struggling (0-1-2 record) while Real Sociedad, despite inconsistent form (DWLLD), carry better quality. Pinnacle and multiple bookmakers have Real Sociedad as favorites. Key absences for Real Sociedad (Lemar doubt, Odriozola, Zakharyan) temper confidence somewhat, but the quality gap and historical H2H favor the visitors.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-06T08:40:35.086564-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Getafe hosts Celta Vigo at the Coliseum with both sides struggling for form. Getafe's 1-0-2 record shows mixed results, with recent form LLWWL indicating inconsistency. Celta Vigo (0-2-2, DLLDW) has only one win in their last five matches and sits in 17th place. Historical context suggests Celta finds the Coliseum a difficult venue. The market favors Getafe at +145 (implying ~41% probability), though it has drifted from +160, while Celta has shortened from +200 to +240, suggesting betting support for the home side. Getafe has some injury concerns (García, Abqar out mid-September) but maintains home advantage. With both teams struggling but Getafe at home and Celta's poor road form, a narrow home win is most likely, though this is a tight contest with significant draw potential.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad travels to Elche with a superior head-to-head record, winning four of the last five meetings including a 3-1 victory in their most recent encounter. Despite both teams showing inconsistent form (Elche 0-1-2, Real Sociedad 1-1-2), the quality gap favors the visitors. The market reflects this with Real Sociedad at +140 (shortened from +165), implying roughly 42% probability of an away win. Multiple sources predict a Real Sociedad result, with one specifically recommending 'Real Sociedad draw no bet'. While Real Sociedad has injury concerns (Zakharyan, Odriozola, Gorrotxategi, Marín out), Elche also faces absences and their 0-1-2 home record suggests vulnerability. The tactical matchup of Elche's compact 4-4-2 against Real Sociedad's quality should favor the visiting side's technical ability. Away win is the most likely outcome, though home advantage keeps this from being a high-confidence prediction.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-06T08:40:40.972841-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe home advantage at Estadio Coliseum with better implied odds (+145 vs +240). Celta Vigo in poor form (1W-2D-2L) and historically struggle at this venue. Getafe's recent record shows resilience despite mixed form. Injury concerns for both teams (Getafe missing García and Abqar; Celta missing Febas and Iglesias). Market consensus favors home win. Moderate confidence due to relatively balanced recent form and draw possibility given defensive setups mentioned.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad strong historical record against Elche (4W-1D in last 5 meetings, including 3-1 recent win). Odds favor away win (+140 vs +185 for home). Real Sociedad's superior pedigree and form advantage over struggling Elche (0W-1D-2L). However, Elche playing at home provides some resilience, and injuries to Real Sociedad players (Zakharyan, Odriozola, potential Lemar absence) create uncertainty. Context suggests draw possibility remains meaningful. Medium confidence reflects Real Sociedad advantage tempered by home field dynamics and injury concerns.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-06T08:41:24.294269-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are slight home favorites on market odds and Celta Vigo have been poor away, though Getafe's own home record is mixed.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have a strong recent head-to-head edge over Elche and are clear market favorites, with Elche winless at home in the early going.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-06T08:41:26.805472-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe have home advantage and better recent form (LLWWL) compared to Celta's away struggles (DLLDW). Celta have historically found the Coliseum difficult. Odds slightly favor Getafe, and Celta have key absences.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have a stronger squad and historical dominance over Elche (4 wins in last 5). Despite Elche's home form, Real Sociedad's away record is decent. Odds favor the away side, and Elche have injury concerns.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-06T08:41:47.235619-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe is favored by the sportsbooks and has a stronger recent home form compared to Celta Vigo's poor away record. The implied probabilities from the odds lean towards a home win, with Getafe holding the edge at Estadio Coliseum.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad is the favorite according to the betting odds and historical H2H dominance against Elche. Despite some injury concerns, Sociedad's overall squad quality and Elche's struggles at home make the away side the most likely winner in regulation time.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-06T08:41:55.208685-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe has a strong home record and recent form, while Celta Vigo's away form is not as impressive. The odds also slightly favor Getafe, and the historical performance at the venue supports a home win.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Sociedad has a strong recent form and a favorable head-to-head record against Elche. The odds and team news also suggest that Real Sociedad is in a better position to secure a win, despite playing away.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-06T08:42:53.619242-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe benefits from home advantage at Estadio Coliseum and enters with a slightly superior record (1-0-2 vs 0-2-2) and more stable recent form. Celta Vigo is missing key attacking personnel like Borja Iglesias and has struggled on the road. Betting markets and tactical previews point toward a tight, low-scoring contest where Getafe's defensive structure and home resilience give them the edge.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad is the slight favorite due to historical head-to-head dominance and higher squad quality, as reflected in the +140 odds. However, their current form is inconsistent and they are dealing with multiple injuries in midfield and defense. Elche will likely employ a compact, direct setup at home to absorb pressure. The narrow odds and Sociedad's current vulnerabilities suggest a highly competitive match where a narrow away victory is marginally most likely, but a draw remains a strong possibility.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-06T08:43:30.337204-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe benefits from home advantage at the Estadio Coliseum where Celta Vigo has historically struggled. Celta enters in poor form (1 win in 5 matches) and occupies 17th place, increasing the likelihood of a home victory despite the closely priced odds.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad holds a dominant head-to-head record (4 wins in last 5) and is favored by betting markets, though both teams display inconsistent recent form and significant key player injuries create uncertainty regarding the final 90-minute result.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-06T08:44:17.677245-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe hold home advantage against a Celta side that is winless away and has collected only one victory in its last five matches. Market odds have moved toward a Getafe win, and Celta have historically struggled at the Coliseum. Key attacking absences for Celta and Getafe's stronger home record tip the balance toward a low-scoring home victory.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have dominated recent head-to-head meetings and remain market favorites despite several injury absences including Zakharyan, Odriozola, and Sarr. Elche's odds have shortened after an unbeaten run in their last two, but Sociedad's superior squad quality and recent 3-1 win in this fixture support an away win as the most likely regulation-time result.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-06T08:44:57.551065-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe are market favorites at home (+145, steamed in from +160) and Celta Vigo arrive in poor form (0 wins in 4, DLLDW) sitting near the bottom of the table. Celta have historically struggled at the Coliseum and are missing Borja Iglesias and Aleix Febas, blunting an already misfiring attack. Getafe's own injury list (Abqar, Andrés García, Mario Martín) and their low-scoring, grind-it-out style keep the draw live and cap confidence, but home advantage plus Celta's travel woes and attacking absences tilt the edge to Getafe.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad have been backed from +165 to +140 and own the head-to-head (4 wins and a draw in the last 5 meetings), making them narrow favorites despite playing away. However, both sides are in poor form — Elche winless (LLDDW) and Sociedad just 1 win in 4 — and Sociedad carry a heavy injury list (Zakharyan, Odriozola, Gorrotxategi, Marín, Sarr, with Lemar a doubt). Elche's compact 4-4-2 with Rafa Mir and André Silva offers a physical home threat, so an upset or draw is quite plausible; the market lean and H2H dominance only narrowly favor Sociedad, hence low confidence.",
+                    "event_id": "401882893"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-06T08:45:15.259220-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe holds a home-field edge at the Coliseum and the market has moved toward them (now +145 from +160), while Celta Vigo's poor start and difficult away record point to a narrow Getafe victory in a low-scoring contest.",
+                    "event_id": "401882891"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Real Sociedad (away) @ Elche (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are the betting favorites and have dominated the recent head-to-head, while Elche's winless early-season form leaves them as underdogs despite home support.",
+                    "event_id": "401882893"
+                }
+            ]
+        }
+    ]
+}

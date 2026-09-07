@@ -1,0 +1,1888 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-28",
+        "target_date_et": "2026-08-29",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876477\nMatchup: Lens (away) @ Strasbourg (home)\nHome: Strasbourg\nAway: Lens\nKickoff UTC: 2026-08-29T15:15Z\nKickoff ET: 2026-08-29 11:15 EDT\nVenue: Stade de la Meinau\nRound: unavailable\nHome form: LWWDL\nAway form: WWWWL\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Strasbourg +255 (open +245); Draw +250 (open +225); Lens +110 (open +110)\nTavily context:\n  - Title: Strasbourg vs Lens: team news, lineups, predictions (Ligue 1 29/08)\n    Content: The last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Strasbourg\n\n## Lens\n\nKyllian Antonio - Red Card Suspension\n\n## Last starting XIs\n\nStrasbourg ( vs Marseille 2026-08-21): Filip Jorgensen, Guéla Doué, Andrew Omobamidele, Lucas Hogsberg, Genesis Antwi, Diogo Sousa, Samir El Mourabet, Sam Amo-Ameyaw, Sebastian Nanasi, Gessime Yassine, Sékou Mara\n\nLens ( vs Auxerre 2026-08-22): Robin Risser, Maik Nawrocki, Ismaëlo Ganiou, Saud Abdulhamid, Michaël Cuisance, Yacine Titraoui, Matthieu Udol, Florian Thauvin, Abdallah Sima, Franjo Ivanovic, Nolan Jeanne ...\n    URL: https://sports.yahoo.com/articles/preview-strasbourg-vs-lens-team-152000560.html\n  - Title: Strasbourg vs Lens - live score, predicted lineups and H2H stats\n    Content: Maxi Oyedele\n\n  Injured / Early September 2026\n\nOyedeleInjuredEarly September 2026\n\n  Ben Chilwell\n\n  Muscle injury / Doubtful\n\nChilwellMuscle injuryDoubtful\n\n  Ismaël Doukouré\n\n  Injured / Early September 2026\n\nDoukouréInjuredEarly September 2026\n\n  Samir El Mourabet\n\n  Suspended / August 29, 2026\n\nEl MourabetSuspendedAugust 29, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026\n\n  Martial Godo\n\n  Muscle injury / Doubtful\n\nGodoMuscle injuryDoubtful\n\n  Jonathan Gradit\n\n  Broken leg / Back in training ...\n    URL: https://www.fotmob.com/matches/lens-vs-strasbourg/2t6vlu\n  - Title: Strasbourg vs Lens Prediction, Odds & Betting Tips | 29.08.2026 | Ligue 1\n    Content: RC Lens\n\nRC Lens\n\nRC Lens\n\n1\n\n3.70\n\nHelabet\n\nX\n\n3.64\n\nHelabet\n\n2\n\n2.12\n\nHelabet\n\nContents\n\nStrasbourg hosts Lens this Saturday in a matchup that’s always worth watching. Last time these teams met, neither could break the deadlock. They fought to a gritty 1-1 draw back in February. Now, both squads are hungry to grab some momentum. Lens rolls in with the confidence of their recent run of solid results in this fixture, hoping they can quiet the Strasbourg supporters. But Strasbourg loves playing at home. They’ve turned their stadium into a tough place for visitors. ...\n    URL: https://www.mightytips.com/football-predictions/strasbourg-vs-lens-prediction-29-08-2026\n  - Title: Strasbourg vs Lens Prediction, Betting Tips, Lineups & Odds\n    Content: Sportsgambler\n\n# Strasbourg vs Lens Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n\nRC Strasbourg Alsace logo\nRC Lens logo\n\n## Strasbourg vs Lens Predictions\n\n### Over 2.5 Goals @ 1.64\n\nStake logo\n\nStrasbourg and Lens are set for a relatively high-scoring clash, with Over 2.5 looking like the best pick when it comes to the Total Goals market. There are odds of 1.64 for this outcome and that looks worth taking. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/strasbourg-vs-lens-prediction-lineups-odds-2026-08-29\n\nGame ID: 2\nSource event_id: 401876484\nMatchup: Angers (away) @ AJ Auxerre (home)\nHome: AJ Auxerre\nAway: Angers\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade de l'Abbé-Deschamps\nRound: unavailable\nHome form: LWWWL\nAway form: LDDLL\nHome record: 0-0-1\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: AJ Auxerre -105 (open -120); Draw +250 (open +250); Angers +290 (open +330)\nTavily context:\n  - Title: Auxerre vs Angers SCO Predictions, Picks & Odds - 29/08/2026\n    Content: 1.1Goals scored\n\n1.4Goals conceded\n\n#### Angers SCO\n\nRecent form\n\nLDLLL\n\nWins0/5 (0%)\n\nDraws1/5 (20%)\n\nLosses4/5 (80%)\n\nSeason statistics (5)\n\n2.4Total goals\n\n48%Both teams score\n\n1Goals scored\n\n1.4Goals conceded\n\n| Statistic | Auxerre | Angers SCO |\n ---\n| Last 5 results | 3W 2L | · | 1D 4L |\n| Avg goals scored | 1.1 | · | 1.0 |\n| Avg goals conceded | 1.4 | · | 1.4 |\n| Under 2.5 (last 5) | 1/5 | · | 3/5 |\n| H2H, last 4 meetings | 2 Auxerre · 0 Draws · 2 Angers SCO |\n\nProbable lineup\n\n### Lineups: Auxerre vs Angers SCO\n\n#### Auxerre\n\n4-3-3\n\nStarters ...\n    URL: https://www.toffeeweb.com/ng/auxerre-vs-angers-sco-predictions-picks-odds-29-08-2026\n  - Title: PREVIEW | Auxerre vs Angers: team news, lineups, predictions (Ligue 1 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nAngers have won 0 points to date and are placed in 14th position. Last time out, Stéphane Gilli's team slipped to a 0-2 defeat against Lille (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Auxerre winning 3-1.\n\n## Unavailable\n\n## Auxerre\n\n## Angers\n\n## Last starting XIs\n\nAuxerre ( vs Lens 2026-08-22): Mamadou Diop, Lamine Sy, Christ Makosso, Sinaly Diomandé, Clément Akpa, Arthur Piedfort, Kévin Danois, Naouirou Ahamada, Romain Faivre, Danny Namaso, Aristide Zossou ...\n    URL: https://sports.yahoo.com/articles/preview-auxerre-vs-angers-team-190500906.html\n  - Title: Auxerre vs Angers SCO Prediction, Stats & Betting Tips, Aug 29, 2026 | MyGameOdds\n    Content: under 64%\n\nLigue 1 - France\n\nAuxerreAuxerre–\n\nAngers SCOAngers SCO–\n\nWinner\n\n1X 71%\n\nBTTS\\\\\n\nYes 50%\n\nCorrect Score\n\n1-1 12%\n\nOver/Under 2.5 goals\n\nunder 53%\n\nOver/Under 3.5 goals\n\nunder 64%\n\nFull Time\n\n144%\n\nX27%\n\n229%\n\nGoals Over/Under\n\n| <1.5 | >1.5 | <2.5 | >2.5 | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---  ---  --- |\n| FT | 28% | 72% | 53% | 47% | 64% | 36% | 86% | 14% |\n\nGoals Over/Under\n\n| <1.5 | >1.5 | <2.5 | >2.5 |\n ---  --- |\n| FT | 28% | 72% | 53% | 47% |\n\n| <3.5 | >3.5 | <4.5 | >4.5 |\n ---  --- |\n| FT | 64% | 36% | 86% | 14% |\n\nTeam Goals Over/Under ...\n    URL: https://mygameodds.com/predictions/ligue-1-france/53142\n  - Title: Auxerre vs Angers Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n    Content: There are two Asian Handicap options and they are Auxerre -0.5 at 1.88 or alternatively Angers +0.5. Either go for the favourites to win or opt for the latter and get the draw on your side at 1.90.\n\nIf you’re anticipating that two goals or less will be netted throughout the contest, then Under 2.5 Goals is a definite runner. Both Teams to Score is a two-way market and, when it comes to latest odds, there’s not much to separate Yes and No. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/auxerre-vs-angers-prediction-lineups-odds-2026-08-29\n\nGame ID: 3\nSource event_id: 401876483\nMatchup: Toulouse (away) @ Brest (home)\nHome: Brest\nAway: Toulouse\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade Francis-Le Blé\nRound: unavailable\nHome form: DDLLL\nAway form: LWWDL\nHome record: 0-1-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Brest +170 (open +155); Draw +240 (open +230); Toulouse +160 (open +170)\nTavily context:\n  - Title: Brest vs Toulouse Predictions, Picks & Odds - 29/08/2026\n    Content: 53%Both teams score\n\n1.3Goals scored\n\n1.7Goals conceded\n\n#### Toulouse\n\nRecent form\n\nLWWLW\n\nWins3/5 (60%)\n\nDraws0/5 (0%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n2.7Total goals\n\n52%Both teams score\n\n1.3Goals scored\n\n1.4Goals conceded\n\n| Statistic | Brest | Toulouse |\n ---\n| Last 5 results | 1D 4L | · | 3W 2L |\n| Avg goals scored | 1.3 | · | 1.3 |\n| Avg goals conceded | 1.7 | · | 1.4 |\n| Under 2.5 (last 5) | 1/5 | · | 2/5 |\n| H2H, last 4 meetings | 2 Brest · 0 Draws · 2 Toulouse |\n\nProbable lineup\n\n### Lineups: Brest vs Toulouse\n\n#### Brest\n\n4-2-3-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/brest-vs-toulouse-predictions-picks-odds-29-08-2026\n  - Title: PREVIEW | Brest vs Toulouse: team news, lineups, predictions (Ligue 1 29/08) | OneFootball\n    Content: ## OneFootball Videos\n\nToulouse have 0 points to their name this season and occupy 15th position in the table. In their last fixture, Jens Berthel Askou's team suffered a 0-2 reverse against Lyon (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Toulouse winning 2-0.\n\n### Unavailable\n\n### Brest\n\n### Toulouse\n\n### Last starting XIs\n\nBrest ( vs Le Mans 2026-08-22): Egil Selvik, Kenny Lala, Lucas Tousart, Raphael Le Guen, Bradley Locko, Joris Chotard, Joseph Nonge, Romain Del Castillo, Kamory Doumbia, Pathé Mboup, Ludovic Ajorque ...\n    URL: https://onefootball.com/en/news/preview-brest-vs-toulouse-team-news-lineups-predictions-ligue-1-2908-43351390\n  - Title: Brest vs Toulouse Prediction: 29.08.2026 Ligue 1 Preview\n    Content: Yes N/A | No N/A\n\nThe moneyline is almost perfectly priced at 2.65 each way across multiple bookmakers, reflecting genuine uncertainty. Pinnacle, typically the sharpest book, offers Brest at 2.74 and Toulouse at 2.66, a slight lean toward Toulouse. Given the head-to-head trend, Toulouse’s better season winrate, and Brest’s inconsistency at home, the value sits with Toulouse at prices around 2.65-2.77. The draw at 3.38-3.50 is also worth consideration given both teams’ tendency to drop points in recent weeks.\n\nImage 8: Brest. Source: Official Facebook\nBrest. Source: Official Facebook ...\n    URL: https://tips.gg/article/brest-vs-toulouse-29-08-2026\n  - Title: Brest vs Toulouse Betting Odds – 29.08.2026\n    Content: Betting odds on the match Brest vs Toulouse (live odds line):. Sportsbook, Brest will win, Draw, Toulouse will win. Vave, 2.70, 3.40, 2.65.\n    URL: https://tips.gg/matches/football/29-08-2026/brest-vs-toulouse/07-45/odds\n\nGame ID: 4\nSource event_id: 401876482\nMatchup: Troyes (away) @ Lorient (home)\nHome: Lorient\nAway: Troyes\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade du Moustoir - Yves Allainmat\nRound: unavailable\nHome form: DLWDL\nAway form: DLWWW\nHome record: 0-1-0\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Lorient -115 (open -115); Draw +260 (open +245); Troyes +320 (open +310)\nTavily context:\n  - Title: Lorient vs Troyes Predictions, Picks & Odds - 29/08/2026\n    Content: 3.1Total goals\n\n53%Both teams score\n\n1.7Goals scored\n\n1.4Goals conceded\n\n#### Troyes\n\nRecent form\n\nD\n\nWins0/1 (0%)\n\nDraws1/1 (100%)\n\nLosses0/1 (0%)\n\nSeason statistics (1)\n\n2.7Total goals\n\n52%Both teams score\n\n1.8Goals scored\n\n0.9Goals conceded\n\n| Statistic | Lorient | Troyes |\n ---\n| Last 5 results | 2W 2D 1L | · | 1D |\n| Avg goals scored | 1.7 | · | 1.8 |\n| Avg goals conceded | 1.4 | · | 0.9 |\n| Under 2.5 (last 5) | 2/5 | · | 1/1 |\n| H2H, last 2 meetings | 2 Lorient · 0 Draws · 0 Troyes |\n\nProbable lineup\n\n### Lineups: Lorient vs Troyes\n\n#### Lorient\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/lorient-vs-troyes-predictions-picks-odds-29-08-2026\n  - Title: FC Lorient vs Troyes: team news, lineups, predictions (Ligue 1 29/08)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nTroyes have 1 point to their name this season and occupy 10th position in the table. In their last fixture, Stéphane Dumont's team shared the spoils 0-0 with Paris FC (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with FC Lorient winning 1-0.\n\n## Unavailable\n\n## FC Lorient\n\n## Troyes\n\n## Last starting XIs\n\nFC Lorient ( vs Nice 2026-08-22): Yvon Mvogo, Dembo Sylla, Montassar Talbi, Nathaniel Adjei, Théo Le Bris, Arthur Ebong, Noah Cadiou, Kan-Guy Kouassi, Gabin Bernardeau, Mamadou Kone, Jean-Victor Makengo ...\n    URL: https://sports.yahoo.com/articles/preview-fc-lorient-vs-troyes-190000939.html\n  - Title: Lorient vs Troyes Prediction, Odds & Betting Tips 08/29/2026\n    Content: Lorient vs Troyes H2H Stats. Lorient vs Troyes Current Odds. France Ligue 1. 1 X 2. Goals O/U. Handicap. Lorient. Troyes. 1.877 4.42. Draw 3.62.\n    URL: https://betimate.com/en/news/previews/lorient-vs-troyes-prediction-odds-betting-tips-08292026-2696169\n  - Title: Lorient vs Troyes Betting Odds – 29.08.2026 - Tips.GG\n    Content: Betting odds on the match Lorient vs Troyes (live odds line):. Sportsbook, Lorient will win, Draw, Troyes will win. Vave, 1.88, 3.55, 4.40.\n    URL: https://tips.gg/matches/football/29-08-2026/lorient-vs-troyes/07-45/odds\n\nGame ID: 5\nSource event_id: 401876481\nMatchup: Le Havre AC (away) @ Lyon (home)\nHome: Lyon\nAway: Le Havre AC\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Groupama Stadium\nRound: unavailable\nHome form: LWDWL\nAway form: LWLDD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Lyon -205 (open -210); Draw +350 (open +330); Le Havre AC +550 (open +500)\nTavily context:\n  - Title: Lyon vs Le Havre - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Lyon vs Le Havre — Sat, August 29, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Groupama Stadium\n\nLyonLyon\n\n‌\n‌\n\nLe HavreLe Havre\n\n# Lyon vs Le Havre — Sat, August 29, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Groupama Stadium\n\nLyonLyon\n\n‌\n‌\n\nLe HavreLe Havre\n\n## Injured and suspended players\n\n  Khalis Merah\n\n  Sprained ankle / Mid August 2026\n\nMerahSprained ankleMid August 2026\n\n  Pavel Sulc\n\n  Knee injury / Mid August 2026\n\nSulcKnee injuryMid August 2026\n\n  Mads Bidstrup\n\n  Knee injury / A few weeks\n\nBidstrupKnee injuryA few weeks\n\n  Stephan Zagadou ...\n    URL: https://www.fotmob.com/matches/le-havre-vs-lyon/354y61\n  - Title: Lyon vs Le Havre Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Le Havre have 1 victory, 3 defeats and 6 draws, with an average of 1.2 goals from 4.1 shots on goal and 11.1 attempts. Didier Digard's team have averaged 47.7% possession, 357.9 passes, 3.9 corners awarded and 5.3 corners against, while they’ve conceded 1.3 goals from 4.7 shots on goal and 12.6 attempts.\n\nIssa Soumare and Mbwana Samatta have top scored with 2 goals, while Yanis Zouaoui is next on 1. Issa Soumare has managed 3 assists in the last 10 games, while Mory Diaw has 2 clean sheets to his name.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lyon-vs-le-havre-prediction-lineups-odds-2026-08-29\n  - Title: Olympique Lyon - Havre AC prediction & tips 29.08.2026\n    Content: Betting tip restated: Back Olympique Lyon to win (Best available 1.54 at 1win). This remains our primary Today's Betting Tip given form, home advantage and H2H trends. If you prefer promotional edges, check the Odds Boost page for enhanced prices and Today's Odds Boosts that can improve returns on selected markets. Bet responsibly and shop the odds at multiple Sports Betting Sites to secure the best value before kick-off.\n\n## Current Standing [...] ## Lyon Look the Safer Backing — Betting Tips Today and Why ...\n    URL: https://www.transfermarkt.com/betting/tips/olympique-lyon-vs-havre-ac-prediction-29-08-2026\n  - Title: Lyon vs. Le Havre AC (Aug 29, 2026) Odds and Spread\n    Content: # Lyon v Le Havre AC\n\nLYON\nHAC\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 8/22 | @TOU | W 2-0 | +0.5 | 2.5 |\n| 8/18 | @FEN | L 1-1 | +0.5 | 2.5 |\n| 8/11 | vsSPP | W 3-0 | -1.5 | 3.5 |\n| 8/04 | @SPP | L 2-1 | -0.5 | 2.5 |\n| 5/17 | vsRCL | L 4-0 | -1.5 | 3.5 |\n\n## Betting 101\n\nESPN\n    URL: https://www.espn.com/soccer/odds/_/gameId/401876481\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876477\nMatchup: Lens (away) @ Strasbourg (home)\nHome: Strasbourg\nAway: Lens\nKickoff UTC: 2026-08-29T15:15Z\nKickoff ET: 2026-08-29 11:15 EDT\nVenue: Stade de la Meinau\nRound: unavailable\nHome form: LWWDL\nAway form: WWWWL\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Strasbourg +255 (open +245); Draw +250 (open +225); Lens +110 (open +110)\nTavily context:\n  - Title: Strasbourg vs Lens: team news, lineups, predictions (Ligue 1 29/08)\n    Content: The last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Strasbourg\n\n## Lens\n\nKyllian Antonio - Red Card Suspension\n\n## Last starting XIs\n\nStrasbourg ( vs Marseille 2026-08-21): Filip Jorgensen, Guéla Doué, Andrew Omobamidele, Lucas Hogsberg, Genesis Antwi, Diogo Sousa, Samir El Mourabet, Sam Amo-Ameyaw, Sebastian Nanasi, Gessime Yassine, Sékou Mara\n\nLens ( vs Auxerre 2026-08-22): Robin Risser, Maik Nawrocki, Ismaëlo Ganiou, Saud Abdulhamid, Michaël Cuisance, Yacine Titraoui, Matthieu Udol, Florian Thauvin, Abdallah Sima, Franjo Ivanovic, Nolan Jeanne ...\n    URL: https://sports.yahoo.com/articles/preview-strasbourg-vs-lens-team-152000560.html\n  - Title: Strasbourg vs Lens - live score, predicted lineups and H2H stats\n    Content: Maxi Oyedele\n\n  Injured / Early September 2026\n\nOyedeleInjuredEarly September 2026\n\n  Ben Chilwell\n\n  Muscle injury / Doubtful\n\nChilwellMuscle injuryDoubtful\n\n  Ismaël Doukouré\n\n  Injured / Early September 2026\n\nDoukouréInjuredEarly September 2026\n\n  Samir El Mourabet\n\n  Suspended / August 29, 2026\n\nEl MourabetSuspendedAugust 29, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026\n\n  Martial Godo\n\n  Muscle injury / Doubtful\n\nGodoMuscle injuryDoubtful\n\n  Jonathan Gradit\n\n  Broken leg / Back in training ...\n    URL: https://www.fotmob.com/matches/lens-vs-strasbourg/2t6vlu\n  - Title: Strasbourg vs Lens Prediction, Odds & Betting Tips | 29.08.2026 | Ligue 1\n    Content: RC Lens\n\nRC Lens\n\nRC Lens\n\n1\n\n3.70\n\nHelabet\n\nX\n\n3.64\n\nHelabet\n\n2\n\n2.12\n\nHelabet\n\nContents\n\nStrasbourg hosts Lens this Saturday in a matchup that’s always worth watching. Last time these teams met, neither could break the deadlock. They fought to a gritty 1-1 draw back in February. Now, both squads are hungry to grab some momentum. Lens rolls in with the confidence of their recent run of solid results in this fixture, hoping they can quiet the Strasbourg supporters. But Strasbourg loves playing at home. They’ve turned their stadium into a tough place for visitors. ...\n    URL: https://www.mightytips.com/football-predictions/strasbourg-vs-lens-prediction-29-08-2026\n  - Title: Strasbourg vs Lens Prediction, Betting Tips, Lineups & Odds\n    Content: Sportsgambler\n\n# Strasbourg vs Lens Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n\nRC Strasbourg Alsace logo\nRC Lens logo\n\n## Strasbourg vs Lens Predictions\n\n### Over 2.5 Goals @ 1.64\n\nStake logo\n\nStrasbourg and Lens are set for a relatively high-scoring clash, with Over 2.5 looking like the best pick when it comes to the Total Goals market. There are odds of 1.64 for this outcome and that looks worth taking. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/strasbourg-vs-lens-prediction-lineups-odds-2026-08-29\n\nGame ID: 2\nSource event_id: 401876484\nMatchup: Angers (away) @ AJ Auxerre (home)\nHome: AJ Auxerre\nAway: Angers\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade de l'Abbé-Deschamps\nRound: unavailable\nHome form: LWWWL\nAway form: LDDLL\nHome record: 0-0-1\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: AJ Auxerre -105 (open -120); Draw +250 (open +250); Angers +290 (open +330)\nTavily context:\n  - Title: Auxerre vs Angers SCO Predictions, Picks & Odds - 29/08/2026\n    Content: 1.1Goals scored\n\n1.4Goals conceded\n\n#### Angers SCO\n\nRecent form\n\nLDLLL\n\nWins0/5 (0%)\n\nDraws1/5 (20%)\n\nLosses4/5 (80%)\n\nSeason statistics (5)\n\n2.4Total goals\n\n48%Both teams score\n\n1Goals scored\n\n1.4Goals conceded\n\n| Statistic | Auxerre | Angers SCO |\n ---\n| Last 5 results | 3W 2L | · | 1D 4L |\n| Avg goals scored | 1.1 | · | 1.0 |\n| Avg goals conceded | 1.4 | · | 1.4 |\n| Under 2.5 (last 5) | 1/5 | · | 3/5 |\n| H2H, last 4 meetings | 2 Auxerre · 0 Draws · 2 Angers SCO |\n\nProbable lineup\n\n### Lineups: Auxerre vs Angers SCO\n\n#### Auxerre\n\n4-3-3\n\nStarters ...\n    URL: https://www.toffeeweb.com/ng/auxerre-vs-angers-sco-predictions-picks-odds-29-08-2026\n  - Title: PREVIEW | Auxerre vs Angers: team news, lineups, predictions (Ligue 1 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nAngers have won 0 points to date and are placed in 14th position. Last time out, Stéphane Gilli's team slipped to a 0-2 defeat against Lille (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Auxerre winning 3-1.\n\n## Unavailable\n\n## Auxerre\n\n## Angers\n\n## Last starting XIs\n\nAuxerre ( vs Lens 2026-08-22): Mamadou Diop, Lamine Sy, Christ Makosso, Sinaly Diomandé, Clément Akpa, Arthur Piedfort, Kévin Danois, Naouirou Ahamada, Romain Faivre, Danny Namaso, Aristide Zossou ...\n    URL: https://sports.yahoo.com/articles/preview-auxerre-vs-angers-team-190500906.html\n  - Title: Auxerre vs Angers SCO Prediction, Stats & Betting Tips, Aug 29, 2026 | MyGameOdds\n    Content: under 64%\n\nLigue 1 - France\n\nAuxerreAuxerre–\n\nAngers SCOAngers SCO–\n\nWinner\n\n1X 71%\n\nBTTS\\\\\n\nYes 50%\n\nCorrect Score\n\n1-1 12%\n\nOver/Under 2.5 goals\n\nunder 53%\n\nOver/Under 3.5 goals\n\nunder 64%\n\nFull Time\n\n144%\n\nX27%\n\n229%\n\nGoals Over/Under\n\n| <1.5 | >1.5 | <2.5 | >2.5 | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---  ---  --- |\n| FT | 28% | 72% | 53% | 47% | 64% | 36% | 86% | 14% |\n\nGoals Over/Under\n\n| <1.5 | >1.5 | <2.5 | >2.5 |\n ---  --- |\n| FT | 28% | 72% | 53% | 47% |\n\n| <3.5 | >3.5 | <4.5 | >4.5 |\n ---  --- |\n| FT | 64% | 36% | 86% | 14% |\n\nTeam Goals Over/Under ...\n    URL: https://mygameodds.com/predictions/ligue-1-france/53142\n  - Title: Auxerre vs Angers Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n    Content: There are two Asian Handicap options and they are Auxerre -0.5 at 1.88 or alternatively Angers +0.5. Either go for the favourites to win or opt for the latter and get the draw on your side at 1.90.\n\nIf you’re anticipating that two goals or less will be netted throughout the contest, then Under 2.5 Goals is a definite runner. Both Teams to Score is a two-way market and, when it comes to latest odds, there’s not much to separate Yes and No. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/auxerre-vs-angers-prediction-lineups-odds-2026-08-29\n\nGame ID: 3\nSource event_id: 401876483\nMatchup: Toulouse (away) @ Brest (home)\nHome: Brest\nAway: Toulouse\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade Francis-Le Blé\nRound: unavailable\nHome form: DDLLL\nAway form: LWWDL\nHome record: 0-1-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Brest +170 (open +155); Draw +240 (open +230); Toulouse +160 (open +170)\nTavily context:\n  - Title: Brest vs Toulouse Predictions, Picks & Odds - 29/08/2026\n    Content: 53%Both teams score\n\n1.3Goals scored\n\n1.7Goals conceded\n\n#### Toulouse\n\nRecent form\n\nLWWLW\n\nWins3/5 (60%)\n\nDraws0/5 (0%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n2.7Total goals\n\n52%Both teams score\n\n1.3Goals scored\n\n1.4Goals conceded\n\n| Statistic | Brest | Toulouse |\n ---\n| Last 5 results | 1D 4L | · | 3W 2L |\n| Avg goals scored | 1.3 | · | 1.3 |\n| Avg goals conceded | 1.7 | · | 1.4 |\n| Under 2.5 (last 5) | 1/5 | · | 2/5 |\n| H2H, last 4 meetings | 2 Brest · 0 Draws · 2 Toulouse |\n\nProbable lineup\n\n### Lineups: Brest vs Toulouse\n\n#### Brest\n\n4-2-3-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/brest-vs-toulouse-predictions-picks-odds-29-08-2026\n  - Title: PREVIEW | Brest vs Toulouse: team news, lineups, predictions (Ligue 1 29/08) | OneFootball\n    Content: ## OneFootball Videos\n\nToulouse have 0 points to their name this season and occupy 15th position in the table. In their last fixture, Jens Berthel Askou's team suffered a 0-2 reverse against Lyon (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with Toulouse winning 2-0.\n\n### Unavailable\n\n### Brest\n\n### Toulouse\n\n### Last starting XIs\n\nBrest ( vs Le Mans 2026-08-22): Egil Selvik, Kenny Lala, Lucas Tousart, Raphael Le Guen, Bradley Locko, Joris Chotard, Joseph Nonge, Romain Del Castillo, Kamory Doumbia, Pathé Mboup, Ludovic Ajorque ...\n    URL: https://onefootball.com/en/news/preview-brest-vs-toulouse-team-news-lineups-predictions-ligue-1-2908-43351390\n  - Title: Brest vs Toulouse Prediction: 29.08.2026 Ligue 1 Preview\n    Content: Yes N/A | No N/A\n\nThe moneyline is almost perfectly priced at 2.65 each way across multiple bookmakers, reflecting genuine uncertainty. Pinnacle, typically the sharpest book, offers Brest at 2.74 and Toulouse at 2.66, a slight lean toward Toulouse. Given the head-to-head trend, Toulouse’s better season winrate, and Brest’s inconsistency at home, the value sits with Toulouse at prices around 2.65-2.77. The draw at 3.38-3.50 is also worth consideration given both teams’ tendency to drop points in recent weeks.\n\nImage 8: Brest. Source: Official Facebook\nBrest. Source: Official Facebook ...\n    URL: https://tips.gg/article/brest-vs-toulouse-29-08-2026\n  - Title: Brest vs Toulouse Betting Odds – 29.08.2026\n    Content: Betting odds on the match Brest vs Toulouse (live odds line):. Sportsbook, Brest will win, Draw, Toulouse will win. Vave, 2.70, 3.40, 2.65.\n    URL: https://tips.gg/matches/football/29-08-2026/brest-vs-toulouse/07-45/odds\n\nGame ID: 4\nSource event_id: 401876482\nMatchup: Troyes (away) @ Lorient (home)\nHome: Lorient\nAway: Troyes\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Stade du Moustoir - Yves Allainmat\nRound: unavailable\nHome form: DLWDL\nAway form: DLWWW\nHome record: 0-1-0\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Lorient -115 (open -115); Draw +260 (open +245); Troyes +320 (open +310)\nTavily context:\n  - Title: Lorient vs Troyes Predictions, Picks & Odds - 29/08/2026\n    Content: 3.1Total goals\n\n53%Both teams score\n\n1.7Goals scored\n\n1.4Goals conceded\n\n#### Troyes\n\nRecent form\n\nD\n\nWins0/1 (0%)\n\nDraws1/1 (100%)\n\nLosses0/1 (0%)\n\nSeason statistics (1)\n\n2.7Total goals\n\n52%Both teams score\n\n1.8Goals scored\n\n0.9Goals conceded\n\n| Statistic | Lorient | Troyes |\n ---\n| Last 5 results | 2W 2D 1L | · | 1D |\n| Avg goals scored | 1.7 | · | 1.8 |\n| Avg goals conceded | 1.4 | · | 0.9 |\n| Under 2.5 (last 5) | 2/5 | · | 1/1 |\n| H2H, last 2 meetings | 2 Lorient · 0 Draws · 0 Troyes |\n\nProbable lineup\n\n### Lineups: Lorient vs Troyes\n\n#### Lorient\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/lorient-vs-troyes-predictions-picks-odds-29-08-2026\n  - Title: FC Lorient vs Troyes: team news, lineups, predictions (Ligue 1 29/08)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nTroyes have 1 point to their name this season and occupy 10th position in the table. In their last fixture, Stéphane Dumont's team shared the spoils 0-0 with Paris FC (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with FC Lorient winning 1-0.\n\n## Unavailable\n\n## FC Lorient\n\n## Troyes\n\n## Last starting XIs\n\nFC Lorient ( vs Nice 2026-08-22): Yvon Mvogo, Dembo Sylla, Montassar Talbi, Nathaniel Adjei, Théo Le Bris, Arthur Ebong, Noah Cadiou, Kan-Guy Kouassi, Gabin Bernardeau, Mamadou Kone, Jean-Victor Makengo ...\n    URL: https://sports.yahoo.com/articles/preview-fc-lorient-vs-troyes-190000939.html\n  - Title: Lorient vs Troyes Prediction, Odds & Betting Tips 08/29/2026\n    Content: Lorient vs Troyes H2H Stats. Lorient vs Troyes Current Odds. France Ligue 1. 1 X 2. Goals O/U. Handicap. Lorient. Troyes. 1.877 4.42. Draw 3.62.\n    URL: https://betimate.com/en/news/previews/lorient-vs-troyes-prediction-odds-betting-tips-08292026-2696169\n  - Title: Lorient vs Troyes Betting Odds – 29.08.2026 - Tips.GG\n    Content: Betting odds on the match Lorient vs Troyes (live odds line):. Sportsbook, Lorient will win, Draw, Troyes will win. Vave, 1.88, 3.55, 4.40.\n    URL: https://tips.gg/matches/football/29-08-2026/lorient-vs-troyes/07-45/odds\n\nGame ID: 5\nSource event_id: 401876481\nMatchup: Le Havre AC (away) @ Lyon (home)\nHome: Lyon\nAway: Le Havre AC\nKickoff UTC: 2026-08-29T18:45Z\nKickoff ET: 2026-08-29 14:45 EDT\nVenue: Groupama Stadium\nRound: unavailable\nHome form: LWDWL\nAway form: LWLDD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Lyon -205 (open -210); Draw +350 (open +330); Le Havre AC +550 (open +500)\nTavily context:\n  - Title: Lyon vs Le Havre - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Lyon vs Le Havre — Sat, August 29, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Groupama Stadium\n\nLyonLyon\n\n‌\n‌\n\nLe HavreLe Havre\n\n# Lyon vs Le Havre — Sat, August 29, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Groupama Stadium\n\nLyonLyon\n\n‌\n‌\n\nLe HavreLe Havre\n\n## Injured and suspended players\n\n  Khalis Merah\n\n  Sprained ankle / Mid August 2026\n\nMerahSprained ankleMid August 2026\n\n  Pavel Sulc\n\n  Knee injury / Mid August 2026\n\nSulcKnee injuryMid August 2026\n\n  Mads Bidstrup\n\n  Knee injury / A few weeks\n\nBidstrupKnee injuryA few weeks\n\n  Stephan Zagadou ...\n    URL: https://www.fotmob.com/matches/le-havre-vs-lyon/354y61\n  - Title: Lyon vs Le Havre Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Le Havre have 1 victory, 3 defeats and 6 draws, with an average of 1.2 goals from 4.1 shots on goal and 11.1 attempts. Didier Digard's team have averaged 47.7% possession, 357.9 passes, 3.9 corners awarded and 5.3 corners against, while they’ve conceded 1.3 goals from 4.7 shots on goal and 12.6 attempts.\n\nIssa Soumare and Mbwana Samatta have top scored with 2 goals, while Yanis Zouaoui is next on 1. Issa Soumare has managed 3 assists in the last 10 games, while Mory Diaw has 2 clean sheets to his name.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lyon-vs-le-havre-prediction-lineups-odds-2026-08-29\n  - Title: Olympique Lyon - Havre AC prediction & tips 29.08.2026\n    Content: Betting tip restated: Back Olympique Lyon to win (Best available 1.54 at 1win). This remains our primary Today's Betting Tip given form, home advantage and H2H trends. If you prefer promotional edges, check the Odds Boost page for enhanced prices and Today's Odds Boosts that can improve returns on selected markets. Bet responsibly and shop the odds at multiple Sports Betting Sites to secure the best value before kick-off.\n\n## Current Standing [...] ## Lyon Look the Safer Backing — Betting Tips Today and Why ...\n    URL: https://www.transfermarkt.com/betting/tips/olympique-lyon-vs-havre-ac-prediction-29-08-2026\n  - Title: Lyon vs. Le Havre AC (Aug 29, 2026) Odds and Spread\n    Content: # Lyon v Le Havre AC\n\nLYON\nHAC\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 8/22 | @TOU | W 2-0 | +0.5 | 2.5 |\n| 8/18 | @FEN | L 1-1 | +0.5 | 2.5 |\n| 8/11 | vsSPP | W 3-0 | -1.5 | 3.5 |\n| 8/04 | @SPP | L 2-1 | -0.5 | 2.5 |\n| 5/17 | vsRCL | L 4-0 | -1.5 | 3.5 |\n\n## Betting 101\n\nESPN\n    URL: https://www.espn.com/soccer/odds/_/gameId/401876481\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876477",
+                        "date_utc": "2026-08-29T15:15Z",
+                        "kickoff_et": "2026-08-29 11:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Strasbourg",
+                        "away": "Lens",
+                        "home_id": "180",
+                        "away_id": "175",
+                        "matchup": "Lens (away) @ Strasbourg (home)",
+                        "venue": "Stade de la Meinau",
+                        "city": "Strasbourg",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWWDL",
+                        "form_away": "WWWWL",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+245",
+                            "home_current": "+255",
+                            "draw_open": "+225",
+                            "draw_current": "+250",
+                            "away_open": "+110",
+                            "away_current": "+110"
+                        },
+                        "odds_text": "DraftKings: Strasbourg +255 (open +245); Draw +250 (open +225); Lens +110 (open +110)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401876484",
+                        "date_utc": "2026-08-29T18:45Z",
+                        "kickoff_et": "2026-08-29 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "AJ Auxerre",
+                        "away": "Angers",
+                        "home_id": "172",
+                        "away_id": "7868",
+                        "matchup": "Angers (away) @ AJ Auxerre (home)",
+                        "venue": "Stade de l'Abbé-Deschamps",
+                        "city": "Auxerre",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWWWL",
+                        "form_away": "LDDLL",
+                        "record_home": "0-0-1",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-120",
+                            "home_current": "-105",
+                            "draw_open": "+250",
+                            "draw_current": "+250",
+                            "away_open": "+330",
+                            "away_current": "+290"
+                        },
+                        "odds_text": "Provider unavailable: AJ Auxerre -105 (open -120); Draw +250 (open +250); Angers +290 (open +330)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401876483",
+                        "date_utc": "2026-08-29T18:45Z",
+                        "kickoff_et": "2026-08-29 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Brest",
+                        "away": "Toulouse",
+                        "home_id": "6997",
+                        "away_id": "179",
+                        "matchup": "Toulouse (away) @ Brest (home)",
+                        "venue": "Stade Francis-Le Blé",
+                        "city": "Brest",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DDLLL",
+                        "form_away": "LWWDL",
+                        "record_home": "0-1-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+155",
+                            "home_current": "+170",
+                            "draw_open": "+230",
+                            "draw_current": "+240",
+                            "away_open": "+170",
+                            "away_current": "+160"
+                        },
+                        "odds_text": "Provider unavailable: Brest +170 (open +155); Draw +240 (open +230); Toulouse +160 (open +170)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401876482",
+                        "date_utc": "2026-08-29T18:45Z",
+                        "kickoff_et": "2026-08-29 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lorient",
+                        "away": "Troyes",
+                        "home_id": "273",
+                        "away_id": "170",
+                        "matchup": "Troyes (away) @ Lorient (home)",
+                        "venue": "Stade du Moustoir - Yves Allainmat",
+                        "city": "Lorient",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DLWDL",
+                        "form_away": "DLWWW",
+                        "record_home": "0-1-0",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "-115",
+                            "draw_open": "+245",
+                            "draw_current": "+260",
+                            "away_open": "+310",
+                            "away_current": "+320"
+                        },
+                        "odds_text": "Provider unavailable: Lorient -115 (open -115); Draw +260 (open +245); Troyes +320 (open +310)",
+                        "game_id": 4
+                    },
+                    {
+                        "event_id": "401876481",
+                        "date_utc": "2026-08-29T18:45Z",
+                        "kickoff_et": "2026-08-29 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lyon",
+                        "away": "Le Havre AC",
+                        "home_id": "167",
+                        "away_id": "3236",
+                        "matchup": "Le Havre AC (away) @ Lyon (home)",
+                        "venue": "Groupama Stadium",
+                        "city": "Lyon",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWDWL",
+                        "form_away": "LWLDD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-210",
+                            "home_current": "-205",
+                            "draw_open": "+330",
+                            "draw_current": "+350",
+                            "away_open": "+500",
+                            "away_current": "+550"
+                        },
+                        "odds_text": "Provider unavailable: Lyon -205 (open -210); Draw +350 (open +330); Le Havre AC +550 (open +500)",
+                        "game_id": 5
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-28T11:25:57.152456-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:10:19.637344-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens comes in with solid form and a favorable head-to-head record. Despite playing away, the sportsbooks favor Lens to take all three points against a Strasbourg squad dealing with key doubts and suspensions.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AJ Auxerre is favored at home, where they historically match up well against Angers. Angers' poor away form suggests the hosts should secure the win.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight matchup with near-equal odds. Toulouse has a minor edge on the moneyline and better historical head-to-head performance, pointing to a narrow away win.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is strong at Stade du Moustoir and odds favor them heavily against Troyes, who have historically struggled to secure away wins in this matchup.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a heavy favorite at Groupama Stadium against a Le Havre team that struggles to find the back of the net on the road. Home advantage and overall squad depth should make this a comfortable win for Lyon.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-28T11:10:46.392410-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens is favored on the road with odds around +110. Despite a recent draw in their last head-to-head meeting, Lens boasts stronger recent form compared to Strasbourg's inconsistencies, giving the visitors a solid edge.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre enters as the clear favorite at home (-105). Angers has been struggling significantly with a string of losses and a very poor away form, pointing toward an expected Auxerre victory.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested matchup, but Toulouse is slightly favored (+160 vs Brest's +170). Brest's poor recent form (1 draw, 4 losses) gives Toulouse a narrow advantage, although a draw remains a strong possibility.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is favored at home with -115 odds. Given Lorient's stronger attacking statistics and the built-in home advantage against Troyes, they are well-positioned to secure all three points.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a heavy home favorite at -205. With superior squad depth, stronger recent momentum, and the benefit of playing at Groupama Stadium, Lyon should comfortably handle Le Havre.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-28T11:11:27.661933-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lens is in superior form (WWWWL) compared to Strasbourg (LWWDL) and is the betting favorite. Strasbourg is also facing key suspensions and injuries, including to Samir El Mourabet. While Strasbourg has a home advantage and the last meeting was a draw, the current form and team news strongly favor an away win for Lens.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "There is a significant disparity in form between the two clubs. Auxerre is at home and has won 3 of their last 5, while Angers is winless in their last 5 matches (LDDLL). The betting odds heavily favor Auxerre (-105), and they won the last head-to-head meeting 3-1. All factors point towards a comfortable home victory.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tightly contested matchup according to the betting odds, with Toulouse as a marginal favorite. Brest is in very poor form (DDLLL) and winless in their last five games. Toulouse's form is considerably better (LWWDL) and they won the most recent head-to-head encounter. Despite Brest playing at home, Toulouse's recent performance gives them a slight edge in what could be a close game.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is the clear betting favorite at home and has won the last two head-to-head meetings against Troyes. While Troyes has strong recent form (DLWWW), Lorient's home advantage and historical dominance in this fixture make them the more likely winner. Both teams started the season with a draw, but Lorient is better positioned to secure a win here.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a heavy favorite in this matchup, reflecting their superior quality, home advantage, and better form. Lyon started the season with a win, while Le Havre has been struggling (LWLDD). The betting odds (-205 for Lyon) indicate a high probability of a home win, which is the most logical outcome given the circumstances.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:11:54.761266-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.2699,
+                    "draw_probability": 0.2738,
+                    "away_win_probability": 0.4563,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Lens is favored by bookmakers and has shown strong away form with a 1-0-0 record this season. Strasbourg, despite playing at home, has a poor 0-0-1 home record and is grappling with several key player injuries and suspensions, including Samir El Mourabet. While their last head-to-head ended in a 1-1 draw, Lens's current momentum and Strasbourg's squad issues suggest an away victory.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.4736,
+                    "draw_probability": 0.2774,
+                    "away_win_probability": 0.249,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium-high",
+                    "reasoning": "AJ Auxerre is the favorite based on odds and their last encounter, which Auxerre won 3-1. Angers is in very poor form, having secured 0 points this season and registering 0 wins, 1 draw, and 4 losses in their last five matches. Auxerre's stronger recent performance and home advantage at Stade de l'Abbé-Deschamps make them the clear favorite to win.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.3531,
+                    "draw_probability": 0.2803,
+                    "away_win_probability": 0.3666,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Toulouse is a slight favorite by the betting odds and has a more favorable recent form with 3 wins in their last 5 matches, compared to Brest's 1 draw and 4 losses. The last head-to-head also saw Toulouse win 2-0. Although Brest has the home advantage, Toulouse's better recent performance and direct H2H history lean towards an away victory.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.510951095109511,
+                    "draw_probability": 0.2706270627062706,
+                    "away_win_probability": 0.21842184218421842,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium-high",
+                    "reasoning": "Lorient is a strong favorite according to betting odds and boasts a perfect head-to-head record against Troyes in their last two meetings, including a 1-0 win. While both teams have a 0-1-0 record this season, Lorient's overall form is more consistent, and their home advantage at Stade du Moustoir makes a home win the most probable outcome.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.6412641264126413,
+                    "draw_probability": 0.21202120212021203,
+                    "away_win_probability": 0.1467146714671467,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a strong favorite with significant odds (-205) and has started the season with a solid 1-0-0 home record. Le Havre AC, conversely, has a 0-0-1 away record and has shown poor overall form recently (1 win, 3 defeats, 6 draws in their last 10 games). Despite some reported injuries for Lyon, their superior form, home advantage, and the bookmakers' strong backing make a home win highly probable.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:13:43.170283-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are the market favorite despite being away, with stronger recent form and a winning start. Strasbourg's home edge and Lens suspension risk keep draw/home chances meaningful, but Lens remain the likelier 90-minute winner.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are favored at home and Angers enter with poor recent results and no early-season points. Market movement is not overwhelmingly one-sided, so the draw remains a significant outcome.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is close to a coin-flip matchup, but prices and recent form lean slightly toward Toulouse. Brest's home advantage and the balanced head-to-head record make confidence low.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are clear home favorites, have the stronger head-to-head signal, and Troyes showed limited attacking output in their opening draw. Troyes' recent broader form prevents this from being a high-confidence pick.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are the strongest favorite on the slate, with home advantage, a positive recent league result, and a large quality/market edge over Le Havre. Le Havre's draw tendency keeps the upset risk from being negligible.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:13:55.345784-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are the market favorite and arrive in stronger form, while Strasbourg have early-season absences and a less convincing start. Strasbourg's home advantage and the recent 1-1 head-to-head keep the draw and home upset live, but Lens are the most likely 90-minute winner.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are favored by the odds and have the stronger recent profile, including a recent head-to-head win. Angers' poor form and winless start reduce their away-win chances, though the draw remains a meaningful risk in a likely moderate-scoring matchup.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "The market is nearly even, with only a slight lean toward Toulouse. Brest have home advantage but weak recent form, while Toulouse have shown better overall results and won the last meeting. The margins are thin, so confidence is low.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are clear home favorites across the market and have recent head-to-head success against Troyes. Troyes' unbeaten opening result gives them some upset potential, but Lorient's home edge and stronger pricing support a home win.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are the strongest favorite on the slate, backed by home advantage, superior squad strength, and a positive recent league result. Le Havre can be competitive defensively, but the odds and matchup profile point clearly toward Lyon winning in regulation time.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-28T11:14:45.380472-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.274,
+                    "away_win_probability": 0.456,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Lens as a clear but not overwhelming favorite, and Lens enter with stronger recent form (WWWWL) than Strasbourg (LWWDL). Strasbourg also have a key suspension (El Mourabet), while Lens' suspension looks less impactful to overall win expectancy; recent H2H includes a draw, keeping draw probability meaningful.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.486,
+                    "draw_probability": 0.271,
+                    "away_win_probability": 0.243,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are priced as favorites and have notably better recent form than Angers (Angers trending heavily toward losses). Auxerre’s home edge plus the recent H2H reference (Auxerre win last meeting) supports the home-win lean, with the draw as the main alternative.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.353,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.367,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds suggest a near coin-flip with a slight Toulouse edge. Brest’s recent form is weak (DDLLL) while Toulouse have been more positive overall despite the last match loss; that nudges the pick toward Toulouse, but pricing indicates high uncertainty and keeps draw/home-win chances close.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.509,
+                    "draw_probability": 0.264,
+                    "away_win_probability": 0.227,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are established favorites at home and have the better multi-match form sample, while Troyes’ information is limited early-season (recently a draw). H2H trend also favors Lorient, supporting a home-win projection with a moderate draw chance.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.641,
+                    "draw_probability": 0.212,
+                    "away_win_probability": 0.147,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strongly favored by the market and have a clear home-strength edge against a Le Havre side priced as a sizeable underdog. The probability distribution reflects a dominant Lyon win expectation, with the draw the most plausible upset outcome.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-28T11:15:01.815323-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.274,
+                    "away_win_probability": 0.456,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers heavily favour Lens and their recent form (WWWWL) is strong; Strasbourg have suspension issues and mixed home form. Market implies Lens roughly 45–46% to win in regulation.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.486,
+                    "draw_probability": 0.271,
+                    "away_win_probability": 0.243,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are favored by the odds and have better recent form; Angers have struggled (no wins in recent matches). Odds imply a near-50% chance for a home victory.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.353,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.367,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market is tight but leans slightly to Toulouse; H2H and Toulouse's better recent results give them a small edge over inconsistent Brest at home.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.509,
+                    "draw_probability": 0.264,
+                    "away_win_probability": 0.227,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are marginal favorites in the betting lines and have steadier form; Troyes have been more variable, so the market-backed home win is likeliest.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.641,
+                    "draw_probability": 0.212,
+                    "away_win_probability": 0.147,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are clear favorites in the odds, playing at home with stronger form and squad depth; bookmakers price Lyon well above 60% implied probability for a 90-minute win.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-28T11:16:15.024937-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are favorites in the market; Strasbourg home field provides resilience, resulting in a higher chance for Lens to win.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre favored at home; Angers have started poorly, giving Auxerre the edge.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Balanced fixture with Toulouse capable; slight lean toward Toulouse given form and head-to-head tendencies.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient marginal favorite at home; Troyes have shown resilience, but Lorient hold the edge.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong favorites at home; Le Havre face a challenging away fixture early in the season.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-28T11:16:24.184824-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enters with stronger recent form (WWWL) and is favored by bookmakers (+110 vs +255 for Strasbourg). Strasbourg is missing key midfielder El Mourabet due to suspension, and Lens has a positive H2H trend. Strasbourg's home advantage and Lens's red card suspension for Antonio balance the odds somewhat, but Lens's overall squad depth and momentum tip the scales.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has a much better recent record (LWWWL) compared to Angers (LDDLL), and is favored by odds (-105 vs +290). Auxerre also won the last H2H 3-1. Angers has struggled to score and win, while Auxerre's home advantage and more consistent attack make them clear favorites.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are inconsistent, but Toulouse has a better recent win rate and won the last H2H 2-0. Bookmakers price this as a near pick'em, but slight value leans toward Toulouse given Brest's poor home form and Toulouse's more reliable attack. The draw is also a strong possibility.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is favored at home (-115) and has won both recent H2H meetings. Troyes is newly promoted and has only managed a draw so far, while Lorient's attack has been more productive. Lorient's home advantage and H2H edge make them the likely winners.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a heavy favorite (-205) with a strong home record and superior squad. Le Havre has struggled away and lacks attacking firepower. Lyon's recent form and home advantage, combined with Le Havre's limited threat, make a home win highly probable.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-28T11:16:35.289621-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lens has shown strong away form with a recent winning streak, while Strasbourg has been inconsistent. The odds favor Lens slightly, and Strasbourg's key suspension weakens their lineup.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has a better recent form and home advantage. Angers has struggled significantly, with no wins in their last five matches, making Auxerre the likely winner.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have shown inconsistency, and the odds are evenly matched. Toulouse's recent win against Brest suggests a close contest, making a draw a plausible outcome.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lorient has a strong home record and has won previous encounters against Troyes. The odds and recent form favor Lorient, making them the likely winners.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a strong team at home with a good start to the season. Le Havre has struggled away, and the odds heavily favor Lyon, making them the clear favorites.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-28T11:16:53.755729-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are clear market favorites at +110 with strong recent form (WWWWL), while Strasbourg are missing El Mourabet through suspension and have key injuries (Panichelli, Doukouré). Strasbourg's home strength keeps this competitive, but Lens's momentum and the odds point to an away win.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.485,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.245,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are solid favorites at home against an Angers side in poor form (4 losses in last 5, no wins). Auxerre won the last meeting 3-1 and have decent recent results, making a home win the most likely outcome, though low-scoring draws remain a real risk.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Very evenly priced match, but Toulouse have better recent form (3 wins in last 5) versus Brest's winless run (1D 4L). Sharper books lean slightly toward Toulouse despite Brest's home advantage. This is essentially a coin flip with a marginal away edge.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.265,
+                    "away_win_probability": 0.225,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are clear home favorites (~1.88) and won both recent H2H meetings against newly promoted Troyes. Troyes showed defensive solidity in their 0-0 draw with Paris FC, but Lorient's home advantage and scoring rate make the home win the most probable result.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are heavy favorites at -205 at home, coming off a 2-0 away win over Toulouse. Le Havre have been draw-prone and low-scoring (1 win in last 10 with heavy draw tendency). Despite some Lyon injuries (Merah, Sulc), the quality gap and home advantage strongly favor Lyon.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-28T11:17:04.406064-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lens are slight favorites per odds (+110 vs +255) with strong away form (WWWW), while Strasbourg have suspensions (El Mourabet) and injuries. H2H recently drawn. Close call leaning Lens.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre favored at home (-105), Angers in poor form (LDDLL, 0 points) and lost last H2H 3-1. Auxerre stronger.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Very tight match, odds nearly even. Toulouse have better recent form and won last H2H 2-0, while Brest are struggling with poor home form (DDLLL).",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient favored at home (-115) and won both prior H2H meetings including 1-0 last time. Home advantage decisive.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon strong home favorites (-205) with good home form and quality edge over struggling Le Havre. Le Havre poor scoring output.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-28T11:17:26.799921-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enter with strong recent form (WWWWL) and are favored by bookmakers at around +110 implied ~47-48%. Strasbourg have mixed form (LWWDL) and lose Samir El Mourabet to suspension. The last meeting ended 1-1, and Lens are the superior side on current form. Odds across providers consistently favor Lens. Strasbourg's home advantage provides some offset, but Lens's quality and momentum edge them as favorites.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are slight favorites at around -105 to -120. Angers are in poor form (LDDLL/LDLLL) with 0 points and a recent 0-2 loss to Lille. Auxerre won the last H2H 3-1. While Auxerre's own form is mixed (LWWWL), they are the stronger side at home against a struggling Angers team. Model probabilities align with bookmaker implied odds giving Auxerre a moderate edge.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly contested match per the odds (Brest +170, Toulouse +160). Brest have been inconsistent (DDLLL) while Toulouse have better recent form (LWWDL) despite a 0-2 loss to Lyon last time out. Toulouse won the last meeting 2-0. Sharp book Pinnacle slightly favors Toulouse. Given Brest's poor home form this season and Toulouse's slightly better win rate, Toulouse edge as marginal favorites, but confidence is low given near-even pricing.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are modest favorites at around -115, consistent with H2H dominance (2-0 in last two meetings including a 1-0 win last time). Lorient's form (DLWDL) is decent at home, and Troyes have limited Ligue 1 data this season (just a 0-0 draw with Paris FC). Odds across providers show Lorient at roughly 1.88 with Troyes at 4.40, making Lorient clear favorites. Lorient's home advantage and H2H record support a home win prediction.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are heavy favorites at -205, implying roughly 67% win probability. Lyon are playing at the Groupama Stadium, won 2-0 against Toulouse last time, and have a 1-0-0 home record this season. Le Havre have poor form (LWLDD) and are significant underdogs at +550. Multiple sources back Lyon to win. Accounting for some regression from implied market odds, Lyon's home advantage and quality make them strong favorites here.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-28T11:17:56.612102-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enters with strong away form (1-0-0 record) and excellent overall form (WWWWL). Strasbourg's home struggles are evident with poor recent form (LWWDL) and a 0-0-1 record. The odds favor Lens at +110, reflecting their superior position. Last meeting was a 1-1 draw, but Lens has momentum. Strasbourg will be without suspended Samir El Mourabet, while Lens only misses Kyllian Antonio. Despite Strasbourg's home advantage at Stade de la Meinau, Lens's quality and form give them the edge.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has significantly better form (LWWWL) compared to Angers' dismal run (LDDLL, 0 wins from 5). Both teams have identical 0-0-1 records this season, but Auxerre's recent three wins show stronger momentum. Head-to-head splits 2-2 in last 4 meetings, with Auxerre winning 3-1 in the most recent encounter. Angers has struggled badly with 4 losses in last 5 and averages only 1 goal scored. Odds favor Auxerre at -105 to -120. Home advantage at Stade de l'Abbé-Deschamps should prove decisive against struggling Angers.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is an extremely tight matchup with odds nearly perfectly balanced (Brest +170, Toulouse +160). Brest's terrible form (DDLLL, 0-1-0 record) contrasts with Toulouse's mixed but better form (LWWDL, 0-0-1). Head-to-head is split 2-2, with Toulouse winning the last meeting 2-0. Both teams average similar goals scored (1.3 each) but Brest concedes more (1.7 vs 1.4). The draw at +240-250 offers value given Brest's recent draw and both teams' inconsistency. Pinnacle's slight lean toward Toulouse and the uncertainty reflected in pricing suggests a closely contested match likely to end level.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient holds home advantage and a perfect 2-0 head-to-head record against Troyes, including a 1-0 win in their last meeting. Both teams have identical 0-1-0 records this season (each with 1 point from a draw). Lorient's form (DLWDL) shows more wins than Troyes' limited sample (D from just 1 match). Lorient averages 1.7 goals scored vs 1.4 conceded, while Troyes has limited data (1.8 scored, 0.9 conceded from one match). Odds favor Lorient at -115, reflecting home advantage and historical dominance. Lorient's experience and home form at Stade du Moustoir should prove decisive.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is heavily favored at -205 to -210, reflecting their superior quality and home advantage at Groupama Stadium. Lyon has a 1-0-0 record with a recent 2-0 win at Toulouse, while Le Havre sits at 0-0-1 with poor away form (LWLDD). Lyon's form (LWDWL) shows three wins in last five compared to Le Havre's struggles. Le Havre averages only 1.2 goals from limited attempts and has multiple injuries/suspensions. Lyon's attacking prowess and defensive solidity at home should overwhelm a weak Le Havre side. The odds and form differential strongly support a comfortable Lyon victory.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-28T11:18:07.901385-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg has strong home advantage and recent form shows competitive play. Lens arrives with excellent away form (WWWWL) but faces a difficult fixture. The DraftKings odds favor Strasbourg (+255), and home teams typically benefit from venue advantage in early season fixtures. Previous meeting ended 1-1, suggesting competitive balance but home advantage tips the scales toward Strasbourg.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Angers are in severe distress with 0 points, 0 wins in 5 matches (4 losses, 1 draw), and currently in 14th place. Auxerre shows significantly better form with 3 wins in last 5. Historical H2H favors Auxerre (2-2 record, but Auxerre won 3-1 last meeting). MyGameOdds models show 71% for home win. Angers' poor form and defensive fragility (1.4 goals conceded) make this a clear home advantage scenario.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Toulouse shows superior form (3 wins in last 5) compared to Brest (1 draw, 4 losses). Toulouse have 0 points this season but showed strength in last 5 games before current match. Brest's home record is weak (DDLLL), conceding 1.7 goals per game. Multiple sources note odds are nearly even (2.65 each way) with Pinnacle favoring Toulouse slightly (2.66 vs 2.74). H2H shows split 2-2 with Toulouse winning 2-0 last meeting. Toulouse's superior overall form and Brest's home struggles favor the away side.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient shows stronger recent form (2W 2D 1L in last 5) compared to Troyes (limited data - 1D from 1 match). H2H strongly favors Lorient (2 wins, 0 draws, 0 losses). Lorient's home scoring (1.7 goals) exceeds Troyes' conceding rate (0.9 goals). ESPN odds favor Lorient (-115) with clear home advantage. Lorient's solid home record and superior historical performance against Troyes supports a home victory despite limited Troyes sample size.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon shows dominant form with recent 2-0 win versus Toulouse and 3-0 win versus SPP. ESPN odds heavily favor Lyon (-205, best available 1.54). Multiple sources recommend backing Lyon due to form, home advantage, and H2H trends. Le Havre are significantly weaker (1 victory, 3 defeats, 6 draws across recent matches) with low goal output (1.2 goals average). Lyon's strong home record (LWDWL with 1 win recent) contrasts sharply with Le Havre's fragility. Substantial form gap and odds gap support confident Lyon prediction.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-28T11:19:27.066656-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens are clear odds-on away favorites with strong recent form, while Strasbourg are missing key players and have home struggles, though the last H2H draw keeps draw probability meaningful.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre are home favorites and won the last H2H 3-1, while Angers are winless and coming off a home loss.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "A close match, but Toulouse's stronger recent form and H2H edge give them a slight away lean over an out-of-form Brest side.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are home favorites and have won recent meetings with Troyes, though Troyes' unbeaten start adds some draw risk.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong home favorites with superior odds and recent form, while Le Havre are away underdogs with poor recent away results.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-28T11:19:31.990042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens have strong away form (WWWWL) and are favored by odds (+110). Strasbourg have a loss at home and key suspensions. Historical meetings have been close, but Lens' recent form gives them the edge.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre have better form (LWWWL) and are at home. Angers have poor away form (LDDLL) and have lost their last two matches. Odds favor Auxerre (-105). Historical H2H is split, but current form suggests home win.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar form and odds are close. Brest have poor home form (DDLLL) while Toulouse have mixed away form (LWWDL). Historical H2H is even. A draw is plausible given the uncertainty.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient are favored by odds (-115) and have decent home form (DLWDL). Troyes have only one draw so far and are away. Historical H2H favors Lorient (2 wins). Lorient should edge this.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon are strong at home with a win in their only home game. Le Havre have poor away form (LWLDD) and are heavy underdogs (+550). Lyon's attacking quality and home advantage make them clear favorites.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-28T11:20:13.344517-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens is in strong form with four wins in their last five matches, while Strasbourg has been inconsistent. The odds heavily favor Lens, making them the most likely winner in regulation time.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has a solid home record and faces an Angers side struggling with poor form, having managed only one draw and four losses in their last five. Auxerre's odds and recent performances point to a home win.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Toulouse has slightly better recent form and odds compared to a Brest team that has drawn or lost their last five matches. It is a tight matchup, but Toulouse holds a slight edge on the road.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is favored at home against Troyes, backed by better recent form and head-to-head history. The odds reflect Lorient as clear favorites to secure all three points.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a strong favorite at home against Le Havre, reflected by the heavy favorite odds. Lyon's superior squad depth, home advantage, and recent momentum make a home win highly probable.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-28T11:20:33.924200-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lens has a strong away form with 4 wins in the last 5 matches, and Strasbourg is missing key players due to injuries and suspensions. The recent H2H record also slightly favors Lens.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has a better recent form and home advantage, while Angers has struggled with 4 losses in their last 5 matches. The H2H record also shows that Auxerre has won 2 of the last 4 meetings.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Toulouse has a stronger recent form with 3 wins in the last 5 matches, and Brest has been inconsistent at home. The H2H record also shows that Toulouse has won 2 of the last 4 meetings.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient has a better recent form and home advantage, while Troyes has only managed 1 draw in their last match. The H2H record also shows that Lorient has won both of the last 2 meetings.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Lyon has a strong home advantage and better recent form, while Le Havre has struggled with 3 defeats in their last 5 matches. The odds and H2H record also strongly favor Lyon.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-28T11:22:03.473060-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enters with superior recent form (WWWWL) and an unbeaten start, while Strasbourg faces a key suspension and defensive vulnerabilities. Bookmakers price Lens as slight favorites (+110), reflecting their attacking consistency and tactical discipline. Although Strasbourg's home advantage keeps the match competitive, Lens's current momentum and squad depth give them the edge in a tightly contested fixture.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre holds a clear advantage in current form and home support, with Angers struggling defensively and winless in their last five outings. Market odds and movement toward Auxerre reflect confidence in a home victory. While Angers may adopt a low-block approach to salvage a point, Auxerre's attacking quality and recent head-to-head success should secure a narrow home win.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This matchup features two sides with nearly identical market pricing and inconsistent early-season records. Brest's poor recent home form contrasts with Toulouse's slightly better win rate and favorable head-to-head trends. The tight odds and statistical parity suggest a highly competitive, low-margin contest where a narrow away victory edges out a stalemate by the smallest margin.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is priced as a clear favorite at home, supported by bookmakers and recent head-to-head results. Troyes has shown flashes of competitiveness but lacks the consistency to overcome a motivated Lorient side on their own turf. The home advantage and market confidence point toward a controlled Lorient victory in a match likely decided by transitional play or set pieces.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon enters as strong favorites at Groupama Stadium, backed by heavy market pricing (-205) and a confident opening victory. Le Havre's defensive resilience has kept them in games but severely limits their scoring threat away from home. Lyon's superior squad depth, home advantage, and offensive firepower should comfortably overcome Le Havre's organized but low-scoring approach.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-28T11:22:50.214897-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enters with stronger recent form (WWWWL) compared to Strasbourg's inconsistency (LWWDL). Although Strasbourg benefits from home advantage at Stade de la Meinau, odds (+110) and momentum favor the visitors. Suspensions for key players in both squads add volatility, keeping confidence medium.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AJ Auxerre holds a significant form advantage (LWWWL) over Angers (LDDLL) with no points collected by Angers. Betting odds clearly favor Auxerre (-105). The historical H2H record also favors the home side, suggesting a straightforward home victory.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This fixture is highly balanced with near-even odds (Brest +170, Toulouse +160). Toulouse possesses better recent form (3W in last 5) compared to Brest's slump, while H2H is split evenly. The tight margins warrant a lean toward the visitors but with low confidence due to uncertainty.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient is slight favorite (-115) playing at home after a narrow defeat to Nice, whereas Troyes remains unbeaten recently but lacks goal output. Despite Troyes' defensive solidity, Lorient's home status and previous H2H success provide enough edge for a narrow home win.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon commands strong odds (-205) reflecting a clear quality and home advantage at Groupama Stadium. Le Havre has struggled with consistency away from home. The statistical gap and betting market confidence strongly indicate a decisive home victory for Lyon.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-28T11:25:04.868091-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens carries superior recent form (WWWWL) and won its opener, while Strasbourg lost its first match and is missing several players including suspended Samir El Mourabet. The market prices Lens as the favorite, and their momentum supports an away victory.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre has better recent form than Angers, who are winless in their last five matches. Auxerre also won the most recent head-to-head 3-1 and are priced as solid home favorites, giving them the edge at Stade de l'Abbé-Deschamps.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Toulouse has stronger recent form (LWWDL) compared to a Brest side winless in its last five (DDLLL). Toulouse also won the last meeting 2-0, and the odds show a near coin-flip with a slight lean toward the visitors, making an away win the value pick.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient has won the last two meetings against Troyes and is a firm home favorite in the betting markets. Troyes are still looking for their first win after an opening-day draw, while Lorient’s head-to-head dominance at home supports a home victory.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon opened the season with a 2-0 win and are heavy home favorites against a Le Havre side that lost its opener. Lyon’s superior squad quality, home advantage at Groupama Stadium, and dominant market price make a home win the clear call.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-28T11:25:44.297669-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lens enters with superior form (WWW) compared to Strasbourg's mixed results and carries momentum from a winning start to the season. Strasbourg faces significant availability issues including suspensions to Samir El Mourabet and injuries to multiple key players, undermining their home advantage despite the passionate Stade de la Meinau crowd.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Auxerre holds a clear advantage with better recent form and the benefit of playing at Stade de l'Abbé-Deschamps. Angers are struggling with poor form (LDDLL) and failed to secure points in their opener, while Auxerre won the last head-to-head encounter convincingly 3-1.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Toulouse arrives with significantly stronger form (3 wins in last 5) compared to Brest's struggles (1 draw, 4 losses). Toulouse also triumphed 2-0 in the last meeting between these sides. While Brest hosts, their current inability to secure victories makes Toulouse the slight favorite.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lorient benefits from home advantage at Stade du Moustoir and holds a psychological edge having won the last meeting 1-0. While Troyes shows decent away form, Lorient's stability and superior squad quality position them as favorites to secure the three points.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Lyon is a heavy favorite with dominant home support at Groupama Stadium and began the season with a convincing 2-0 victory. Le Havre's struggling form (LWLDD) and inferior squad depth make an upset unlikely against a Lyon side that typically dominates this fixture.",
+                    "event_id": "401876481"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-28T11:25:57.145821-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lens (away) @ Strasbourg (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have similar forms and recent head-to-head results, suggesting a closely matched game. Strasbourg has a slight home advantage, but Lens' recent form gives them confidence.",
+                    "event_id": "401876477"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Angers (away) @ AJ Auxerre (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "AJ Auxerre has a better home form and recent head-to-head record against Angers, who has been struggling with losses. The odds also slightly favor the home team.",
+                    "event_id": "401876484"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Toulouse (away) @ Brest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Brest and Toulouse have similar forms, and the head-to-head record is also evenly split. The odds are close, indicating a tight match with a high likelihood of a draw.",
+                    "event_id": "401876483"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Troyes (away) @ Lorient (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Troyes has a slightly better away form compared to Lorient's home form, and the head-to-head record in recent meetings favors Troyes. The odds are relatively balanced, but Troyes has a slight edge.",
+                    "event_id": "401876482"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Le Havre AC (away) @ Lyon (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Lyon has a strong home form and a favorable head-to-head record against Le Havre AC. The odds strongly favor Lyon, indicating a likely home win.",
+                    "event_id": "401876481"
+                }
+            ]
+        }
+    ]
+}

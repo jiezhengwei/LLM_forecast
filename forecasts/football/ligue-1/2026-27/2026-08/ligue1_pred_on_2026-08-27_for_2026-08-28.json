@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-27",
+        "target_date_et": "2026-08-28",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876476\nMatchup: Paris Saint-Germain (away) @ Lille (home)\nHome: Lille\nAway: Paris Saint-Germain\nKickoff UTC: 2026-08-28T18:45Z\nKickoff ET: 2026-08-28 14:45 EDT\nVenue: Decathlon Arena - Stade Pierre-Mauroy\nRound: unavailable\nHome form: WLWDW\nAway form: DLWWL\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Lille +350 (open +340); Draw +295 (open +285); Paris Saint-Germain -135 (open -130)\nTavily context:\n  - Title: Lille vs PSG: team news, lineups, predictions (Ligue 1 28/08)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nPSG have won 1 point to date and are placed in 8th position. In their last outing, Luis Enrique's team drew 2-2 against Rennes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with PSG winning 3-0.\n\n## Unavailable\n\n## Lille\n\n## PSG\n\n Nuno Mendes - Indirect Card Suspension\n\n## Last starting XIs\n\nLille ( vs Angers 2026-08-23): Berke Ozer, Tiago Santos, Nathan Ngoy, Alexsandro Ribeiro, Romain Perraud, Ngal'ayel Mukau, Nabil Bentaleb, Ethan Mbappé, Hákon Haraldsson, Basar Onal, Olivier Giroud ...\n    URL: https://sports.yahoo.com/articles/preview-lille-vs-psg-team-185000486.html\n  - Title: Lille vs PSG - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Lille vs Paris Saint-Germain — Fri, August 28, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Decathlon Arena - Stade Pierre-Mauroy\n\nLilleLille\n\n‌\n‌\n\nPSGParis Saint-Germain\n\n# Lille vs Paris Saint-Germain — Fri, August 28, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Decathlon Arena - Stade Pierre-Mauroy\n\nLilleLille\n\n‌\n‌\n\nPSGParis Saint-Germain\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Tanguy Nianzou Kouassi\n\n  Muscle injury\n\nKouassiMuscle injury\n\n  Loun Srdanovic\n\n  Thigh injury / Early September 2026\n\nSrdanovicThigh injuryEarly September 2026 ...\n    URL: https://www.fotmob.com/matches/lille-vs-paris-saint-germain/2tqnus\n  - Title: LOSC Lille vs Paris Saint Germain Predictions, Picks & Odds - 28/08/2026\n    Content: PSG arrive in seventh, their early form reading two wins, two draws, and a defeat. Luis Enrique's side claimed the UEFA Super Cup on August 12, beating Aston Villa 2-1, though Nuno Mendes is suspended following a red card in the Champions' Trophy. Summer signing Lucas Digne could slot in at left-back. New arrival Ferran Torres from Barcelona adds further depth to a squad chasing a sixth consecutive Ligue 1 title and a historic third straight Champions League crown.\n\n### Recommended Bets\n\n| Stake | bc.game |\n --- |\n| LOSC Lille to win | 4.70 | 4.50 |\n| BTTS Yes | 1.02 | 1.67 | ...\n    URL: https://www.toffeeweb.com/int/losc-lille-vs-paris-saint-germain-predictions-picks-odds-28-08-2026\n  - Title: Lille v PSG 28/08/2026, Odds\n    Content: Lille v PSG 28/08/2026 Odds ; +333+280-143 ; +333+290-133 ; +340+290 -145.\n    URL: https://www.flashscoreusa.com/game/soccer/lille-pfDZL71o/psg-CjhkPw0k/odds?mid=\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-27\n\nTarget Date (ET): 2026-08-28\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876476\nMatchup: Paris Saint-Germain (away) @ Lille (home)\nHome: Lille\nAway: Paris Saint-Germain\nKickoff UTC: 2026-08-28T18:45Z\nKickoff ET: 2026-08-28 14:45 EDT\nVenue: Decathlon Arena - Stade Pierre-Mauroy\nRound: unavailable\nHome form: WLWDW\nAway form: DLWWL\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Lille +350 (open +340); Draw +295 (open +285); Paris Saint-Germain -135 (open -130)\nTavily context:\n  - Title: Lille vs PSG: team news, lineups, predictions (Ligue 1 28/08)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nPSG have won 1 point to date and are placed in 8th position. In their last outing, Luis Enrique's team drew 2-2 against Rennes (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended with PSG winning 3-0.\n\n## Unavailable\n\n## Lille\n\n## PSG\n\n Nuno Mendes - Indirect Card Suspension\n\n## Last starting XIs\n\nLille ( vs Angers 2026-08-23): Berke Ozer, Tiago Santos, Nathan Ngoy, Alexsandro Ribeiro, Romain Perraud, Ngal'ayel Mukau, Nabil Bentaleb, Ethan Mbappé, Hákon Haraldsson, Basar Onal, Olivier Giroud ...\n    URL: https://sports.yahoo.com/articles/preview-lille-vs-psg-team-185000486.html\n  - Title: Lille vs PSG - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Lille vs Paris Saint-Germain — Fri, August 28, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Decathlon Arena - Stade Pierre-Mauroy\n\nLilleLille\n\n‌\n‌\n\nPSGParis Saint-Germain\n\n# Lille vs Paris Saint-Germain — Fri, August 28, 6:45 PM UTC\n\nLigue 1 Round 2\n\n Ligue 1 Round 2\n Decathlon Arena - Stade Pierre-Mauroy\n\nLilleLille\n\n‌\n‌\n\nPSGParis Saint-Germain\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Tanguy Nianzou Kouassi\n\n  Muscle injury\n\nKouassiMuscle injury\n\n  Loun Srdanovic\n\n  Thigh injury / Early September 2026\n\nSrdanovicThigh injuryEarly September 2026 ...\n    URL: https://www.fotmob.com/matches/lille-vs-paris-saint-germain/2tqnus\n  - Title: LOSC Lille vs Paris Saint Germain Predictions, Picks & Odds - 28/08/2026\n    Content: PSG arrive in seventh, their early form reading two wins, two draws, and a defeat. Luis Enrique's side claimed the UEFA Super Cup on August 12, beating Aston Villa 2-1, though Nuno Mendes is suspended following a red card in the Champions' Trophy. Summer signing Lucas Digne could slot in at left-back. New arrival Ferran Torres from Barcelona adds further depth to a squad chasing a sixth consecutive Ligue 1 title and a historic third straight Champions League crown.\n\n### Recommended Bets\n\n| Stake | bc.game |\n --- |\n| LOSC Lille to win | 4.70 | 4.50 |\n| BTTS Yes | 1.02 | 1.67 | ...\n    URL: https://www.toffeeweb.com/int/losc-lille-vs-paris-saint-germain-predictions-picks-odds-28-08-2026\n  - Title: Lille v PSG 28/08/2026, Odds\n    Content: Lille v PSG 28/08/2026 Odds ; +333+280-143 ; +333+290-133 ; +340+290 -145.\n    URL: https://www.flashscoreusa.com/game/soccer/lille-pfDZL71o/psg-CjhkPw0k/odds?mid=\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876476",
+                        "date_utc": "2026-08-28T18:45Z",
+                        "kickoff_et": "2026-08-28 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lille",
+                        "away": "Paris Saint-Germain",
+                        "home_id": "166",
+                        "away_id": "160",
+                        "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                        "venue": "Decathlon Arena - Stade Pierre-Mauroy",
+                        "city": "Lille",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "WLWDW",
+                        "form_away": "DLWWL",
+                        "record_home": "1-0-0",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+340",
+                            "home_current": "+350",
+                            "draw_open": "+285",
+                            "draw_current": "+295",
+                            "away_open": "-130",
+                            "away_current": "-135"
+                        },
+                        "odds_text": "DraftKings: Lille +350 (open +340); Draw +295 (open +285); Paris Saint-Germain -135 (open -130)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-27T08:25:25.855291-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:18:56.355131-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite an opening 2-2 draw for Paris Saint-Germain against Rennes, the visitors remain strong favorites with odds around -135. Lille started their season well, but PSG's superior squad quality and recent head-to-head dominance (including a 3-0 win in their last meeting) make them the likely victors, even with Nuno Mendes suspended.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-27T08:19:15.670256-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.212,
+                    "draw_probability": 0.241,
+                    "away_win_probability": 0.547,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain are the clear favorites entering this match, with DraftKings odds of -135 suggesting an implied win probability of approximately 54.7%. Although Lille has the home advantage and started their season with a win, PSG's superior squad depth makes them well-positioned to secure all three points on the road.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-27T08:19:33.971276-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.211,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.547,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain are the clear favorites according to betting markets, reflecting their status as the dominant team in the league and their pursuit of a sixth consecutive title. The last head-to-head meeting was a convincing 3-0 victory for PSG. While Lille has the home advantage and started their season with a win, contrasting with PSG's opening draw against Rennes, the overwhelming talent and depth of the Parisian squad make them the most probable victors. The absence of Nuno Mendes due to suspension is a minor setback but is unlikely to alter the expected result given PSG's deep roster.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-27T08:19:45.411099-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain are strong favorites according to market odds and historical performance, aiming for a sixth consecutive Ligue 1 title. Despite an early season draw (0-1-0 record in Ligue 1) and the suspension of Nuno Mendes, PSG's squad depth and quality are expected to overcome Lille. Lille has started their home campaign with a win (1-0-0 home record), but the last head-to-head resulted in a 3-0 PSG victory, underscoring PSG's dominance in this fixture.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:26.352533-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.212,
+                    "draw_probability": 0.241,
+                    "away_win_probability": 0.547,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are clear market favorites and retain the stronger overall squad despite Nuno Mendes being suspended. Lille's home advantage and solid recent form keep the upset and draw probabilities meaningful, but PSG's attacking depth and historical edge make an away win the most likely 90-minute result.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-27T08:20:31.704118-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain are market favorites despite being away, with the available 1X2 odds implying a clear edge over Lille. Lille have home advantage and good recent form, while PSG have started with only a draw in the league and are missing Nuno Mendes through suspension, which raises draw/home-upset risk. Still, PSG's squad quality, attacking depth, and strong recent head-to-head profile make an away win the most likely regulation-time result.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-27T08:20:55.539462-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make PSG the clear favorite (implied probability a bit above 50% after normalization), reflecting superior squad quality and recent head-to-head edge (last meeting 3-0 PSG). Lille’s solid recent form and home venue keep the upset/draw live, and PSG’s left-side disruption (Nuno Mendes suspended) slightly raises the draw/home chances, but PSG still project most likely to win in 90 minutes.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-27T08:21:06.356327-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets make PSG slight favorites and their squad quality remains superior despite an inconsistent start. Lille have strong home form and won their opener, so upset and draw are realistic (raises home/draw chances), but PSG's attacking depth and recent head-to-head edge tilt expectation to an away win. Small defensive questions and Nuno Mendes suspension reduce PSG's margin, so confidence is moderate.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-27T08:21:19.465976-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are favored in the pre-match odds and squad depth; Lille's home form is decent, but PSG's attacking quality and head-to-head edge suggest an away win within 90 minutes.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-27T08:21:22.186349-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are strong favorites based on both recent head-to-head results and squad depth, despite being away from home. Bookmaker odds and recent form suggest PSG are more likely to win, with Lille having a decent start but lacking the same quality. PSG's recent Super Cup win and new signings further boost their chances, though Lille's home advantage and solid form give them a non-negligible chance. The draw is also a reasonable possibility given early-season unpredictability, but PSG's quality tips the balance.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-27T08:21:25.155221-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain has a strong squad despite some suspensions and injuries. Their recent form includes a UEFA Super Cup win, and they have historically performed well against Lille. The odds favor PSG, and their squad depth with new signings like Ferran Torres adds to their advantage. Lille's home form is decent, but PSG's overall quality and past head-to-head results suggest an away win is likely.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:34.035409-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are clear favorites (-135) despite a slow league start (draw vs Rennes), reflecting their superior squad depth bolstered by Ferran Torres and their five consecutive Ligue 1 titles. Lille won their opener against Angers and are strong at home, but PSG won the last head-to-head meeting 3-0. Nuno Mendes' suspension is a minor setback with Digne available. Market odds imply roughly 55% PSG win, 24% draw, 21% Lille win after removing vig.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-27T08:21:38.514655-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Paris Saint-Germain",
+                    "confidence": "medium",
+                    "reasoning": "PSG are strong favorites per market odds (-135), reflecting their superior squad depth and status as reigning champions chasing a sixth straight title. They won the last meeting 3-0. Despite Nuno Mendes's suspension, their depth (Digne, Ferran Torres) covers it. Lille are solid at home with good form, but PSG's overall quality makes an away win the most likely outcome.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-27T08:21:48.353779-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are heavy favorites despite a mixed early-season start (drew 2-2 with Rennes in Round 1). The odds across multiple books consistently favor PSG at around -135 to -145, implying roughly 57-59% implied probability, which after removing vig suggests ~48-50% true probability. Lille are a quality side at home (Decathlon Arena) and the +350 odds reflect genuine upset potential, but PSG's squad depth — including UEFA Super Cup winners, new signing Ferran Torres, and continued dominance — gives them the edge. Nuno Mendes is suspended (red card in Champions' Trophy), which is a notable absence at left-back but PSG have cover. The last head-to-head ended 3-0 to PSG. Lille's home form is solid (WLWDW overall, 1W in league this season) but PSG's quality should prevail. Slight deflation of PSG probability from raw odds to account for Lille's home advantage and Nuno Mendes absence impact.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-27T08:21:56.406043-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are favorites despite playing away at Lille's Decathlon Arena. The odds heavily favor PSG at -135, reflecting their superior squad quality and ambitions for a sixth consecutive Ligue 1 title. PSG won the last meeting 3-0 and have won 2 of their last 5 matches. However, PSG will be without suspended left-back Nuno Mendes following his red card in the Champions' Trophy, requiring tactical adjustment with likely replacement Lucas Digne. Lille have strong home form (WLWDW overall, 1-0-0 home record this season) and recently defeated Angers. PSG's mixed early form (0-1-0 away, drawing 2-2 with Rennes last time out) and the suspension create some uncertainty. The venue advantage and Lille's solid defensive organization under their experienced squad including Olivier Giroud make this competitive, but PSG's attacking firepower with new signing Ferran Torres and overall quality should prevail in a close contest.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-27T08:22:00.038383-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille playing at home with strong recent form (WLWDW), though PSG are the favorites historically and won their last meeting 3-0. PSG are missing Nuno Mendes due to suspension and have inconsistent early form (DLWWL, only 1 point from 2 matches). Market odds favor Lille (+350) slightly over PSG (-135) adjusted for home advantage. Lille's home form and PSG's current struggles and key absence suggest a competitive match with slight home advantage. The 42% home win probability reflects Lille's home strength versus PSG's recent poor start, while acknowledging PSG's historical dominance.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-27T08:22:24.542572-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are favored by market odds and have a stronger squad, but playing away at Lille with Nuno Mendes suspended adds some uncertainty. Lille are capable at home, yet PSG are the most likely result in regulation.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-27T08:22:26.243425-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG have superior squad depth and recent head-to-head dominance (3-0 win last meeting). Despite Lille's home advantage and solid start, PSG's attacking quality and motivation to bounce back from a draw should secure a narrow victory. Odds also favor PSG (-135).",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-27T08:22:48.760834-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG is favored by the sportsbooks despite early season inconsistencies, reflecting their superior squad depth and historical dominance over Lille. While Lille has home advantage and a solid recent home record, PSG's attacking quality makes them the most likely to secure the 90-minute win.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-27T08:22:53.644394-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Paris Saint-Germain, despite their recent form, have a strong squad and a history of dominance in Ligue 1. They also won the last meeting 3-0. Lille, while playing at home, may struggle to match PSG's quality and depth, especially with key players like Nuno Mendes suspended.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-27T08:23:17.856295-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.56,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds and team strength heavily favor PSG, reflecting their status as title contenders with superior squad depth and attacking options like Ferran Torres. While Lille provides a competitive home environment and PSG are missing Nuno Mendes to suspension, PSG's offensive quality and recent head-to-head dominance make an away victory the most statistically likely result.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-27T08:23:48.170824-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmaker odds favor PSG (-135 implied ~55% chance) despite Lille's home advantage at Stade Pierre-Mauroy. PSG's superior squad depth and recent H2H success (3-0 win) outweigh the absence of Nuno Mendes, though their current 7th-place standing and mixed away form (DLWWL) increase the likelihood of a close contest. A draw remains plausible, but PSG's attacking options including Ferran Torres tip the scale toward an away win.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-27T08:25:01.788450-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG are priced as strong favorites (-135) after lifting the UEFA Super Cup and holding a dominant recent H2H edge (3-0 last meeting). Lille opened with a home win and should be competitive at the Decathlon Arena, but PSG's superior depth and firepower—despite Nuno Mendes' suspension and an opening draw at Rennes—tilt the 90-minute result toward the away side. The draw probability remains elevated given Lille's solid defensive setup and PSG's midweek exertions.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-27T08:25:22.472680-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG enter as decisive favorites despite the away fixture, reflecting their superior talent and status as reigning champions pursuing a sixth consecutive Ligue 1 title. Luis Enrique's side recently claimed the UEFA Super Cup and possesses significant attacking depth, including new arrival Ferran Torres. While Lille enjoy home advantage at the Decathlon Arena and show respectable early form (WLWDW), the odds (-135 for PSG) and recent head-to-head dominance (3-0 victory last meeting) favor the visitors. PSG will be without Nuno Mendes due to suspension, though veteran Lucas Digne provides capable cover at left-back. Lille's defensive organization may keep the match competitive, but PSG's quality should prevail over 90 minutes.",
+                    "event_id": "401876476"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-27T08:25:25.838482-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Paris Saint-Germain (away) @ Lille (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "PSG have a strong squad and are chasing a sixth consecutive Ligue 1 title. They have won the last meeting between the two teams 3-0. Lille's home form is WLWDW and PSG's away form is DLWWL. PSG's recent form and head-to-head record give them an edge in this match.",
+                    "event_id": "401876476"
+                }
+            ]
+        }
+    ]
+}

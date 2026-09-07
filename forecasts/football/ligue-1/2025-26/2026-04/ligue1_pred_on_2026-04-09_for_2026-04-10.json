@@ -1,0 +1,244 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-09\n    Target Date: 2026-04-10\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. AS Monaco @ Paris FC                                 | Scheduled    | Away: 53.6% (15-4-9) vs Home: 25.0% (7-11-10)\n2. Metz @ Marseille                                     | Scheduled    | Away: 10.7% (3-6-19) vs Home: 53.6% (15-4-9)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: AS Monaco (Away) @ Paris FC (Home)\n**News & Injury Report:**\n- [Paris vs Monaco prediction: teams form analysis, possible lineups on April 10, 2026 \u2013 Ratingbet.com](https://ratingbet.com/predictions/paris-vs-monaco-prediction-teams-form-analysis-possible-lineups-on-april-10-2026/)\n  Snippet: Monaco play in a 1-3-4-1-2 formation (probable line-up): Hradecky - Faes, Kehrer, Zakaria - Adingra, Bamba, Kamara, Teze - Golovin - Balogun, Akliouche. Injured: Vanderson, Minamino, Salisu, and Caio\n\nPlace a bet on the upcoming match and follow the ...\n- [Paris FC vs Monaco Prediction, Betting Tips, Lineups & Odds | 10 Apr 2026](https://www.sportsgambler.com/betting-tips/football/paris-fc-vs-monaco-prediction-lineups-odds-2026-04-10/)\n  Snippet: Pierre-Yves Hamel Calf \n\nPosition: Forward Matches: 2 Goals: - Assists: - Expected return: -\n\nMonaco  Injury Table\n\nType Name Info\n\nSebastien Pocognoli Red card (direc \n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-04-10\n\nK...\n**Betting Odds:**\n- [Paris FC - AS Monaco FC betting tip & best odds | 10.04.2026](https://www.futbol24.com/betting-tips/preview/10-04-2026-paris-fc-as-monaco-fc-betting-tip/)\n  Snippet: More betting companies\n\n## Best Betting Odds for the Match\n\nThe best odds for this match can be found with various bookmakers. The odds for an AS Monaco away win are currently at 1.99, while the draw offers 3.91 and a Paris FC home win at 3.89. Our e...\n- [Paris FC - AS Monaco FC prediction & tips 10.04.2026](https://www.transfermarkt.com/betting/tips/paris-fc-vs-as-monaco-prediction-10-04-2026/)\n  Snippet: ## Best Odds and Betting Recommendations\n\nBased on our extensive experience working with leading bookmakers and analysing betting markets across the industry, Monaco's away victory represents excellent value at odds of 1.99 with 1win. The visitors' e...\n\n----------------------------------------\n#### Matchup: Metz (Away) @ Marseille (Home)\n**News & Injury Report:**\n- [Marseille vs Metz Prediction, Betting Tips, Lineups & Odds | 10 Apr 2026](https://www.sportsgambler.com/betting-tips/football/marseille-vs-metz-prediction-lineups-odds-2026-04-10/)\n  Snippet: ## Marseille vs Metz Lineups & Team News\n\nStay ahead of the game by checking the Marseille vs Metz team news before betting. Stay informed with our predicted and confirmed Ligue 1 lineups and the latest injury reports.\n\n Olympique Marseille Team Page...\n- [Preview: Marseille vs Metz - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/marseille/preview/marseille-vs-metz-prediction-team-news-lineups_595302.html)\n  Snippet: In more positive news, top scorer Mason Greenwood is expected to return after a short layoff that also coincided with a suspension for accumulated bookings.\n\nFor Metz, Joseph Mangondo remains sidelined with a knee injury that has kept him out all sea...\n**Betting Odds:**\n- [Marseille vs Metz prediction \u2013 Odds & stats \u2013 10 April 2026](https://www.wincomparator.com/predictions/marseille-metz-7680869/)\n  Snippet: Marseille vs Metz 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake Stake\n\n1.25\n\n6.6\n\n11\n\n\u20ac1000\n\nMelbet Melbet\n\n1.25\n\n6.15\n\n11\n\n150%\n\nBetwinner Betwinner\n\n1.25\n\n6.15\n\n11\n\n\u20ac130\n\nBet365 Bet365\n\n1.25\n\n6\n\n11\n\nSee the offer\n\nBC Game BC Game\n\n1.24\n\n6\n\n...\n- [Marseille vs Metz prediction, preview & betting tips \u2013 10/04/2026](https://footballwhispers.com/blog/marseille-vs-metz-prediction-10-04-2026/)\n  Snippet: ## Marseille vs Metz form guide & betting tips\n\n| Team A | vs | Team B |\n --- \n| L-W-W-L-L | League Form | L-L-L-D-D |\n| 9 | Points | 2 |\n| 7th | Form Table | 18th |\n| 7 | Goals For | 3 |\n| 6 | Goals Against | 2 |\n| D-W-L-W-W | Form (all comps) | L-L...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-09\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-09 20:23:03"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-09 20:20:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing makes Monaco the favorite (away win ~1.99 implies ~49\u201350% after vig normalization). Season strength gap is large (Monaco 15-4-9 vs Paris FC 7-11-10), but Paris FC's high draw rate plus Monaco injuries (Vanderson, Minamino, Salisu, Caio) nudges probability mass from away-win into the draw."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Odds are heavily tilted to Marseille (1.25 home win; ~76\u201377% implied after normalization). Marseille have a major record/form edge over Metz (Metz 3-6-19) and get a boost with Greenwood expected back, while Metz remain weakened (e.g., Mangondo sidelined). Upset chance exists but is small; draw is the main alternative to a home win."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:21:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (Monaco ~1.99, draw ~3.91, Paris ~3.89) imply a clear edge for Monaco; normalised odds give near-50% for an away win. Monaco's season and away form are considerably better (away win rate ~53.6% vs Paris home win rate ~25.0%). Injuries to Vanderson, Minamino, Salisu and Caio weaken Monaco slightly, which prevents a stronger probability, but Paris' poor home record and the market still favouring Monaco justify a clear away-win lean. Balanced by injury uncertainty -> medium confidence."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Bookmakers make Marseille heavy favourites (approx 1.24\u20131.30), implying a very high home-win probability. Marseille's home form (53.6% win rate) and expected return of key attacker Mason Greenwood strengthen their position. Metz have very poor away returns (around 10.7%) and injury issues (e.g., Joseph Mangondo). The strong market consensus and clear form gap produce a high-confidence home-win forecast."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:21:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.253,
+                    "draw_probability": 0.252,
+                    "away_win_probability": 0.495,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Odds calibrate to an away-favoring result (Monaco 1.99, draw 3.91, Paris FC 3.89). Monaco has stronger away form (53.6% win rate away) vs Paris FC's home form (25.0%). Key Monaco injuries (Vanderson, Minamino, Salisu, Caio) reduce width but Monaco remain favored; Paris FC lacks standout home strength."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.767,
+                    "draw_probability": 0.145,
+                    "away_win_probability": 0.088,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille odds ~1.25 for victory imply a high probability; Marseille benefits from strong home form (53.6% win rate at home) and a likely return of Mason Greenwood. Metz are hampered by injuries (Mangondo out), and away performance is weak (10.7% win rate away). Odds heavily favor Marseille."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:21:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Monaco have been much stronger this season (15-4-9, 53.6% win rate) compared to Paris FC (7-11-10, 25.0% win rate). Although Monaco are missing Vanderson, Minamino, Salisu, and Caio, the likely starting XI remains robust, and their away record is one of the best in Ligue 1. Market odds (1.99 away, 3.91 draw, 3.89 home) heavily favor Monaco, supporting the probability edge. Paris FC's main forward Hamel is out but has had limited impact. The draw isn't negligible but Monaco's quality and depth are decisive."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille's home strength (15-4-9, 53.6% win rate) paired with Metz's poor away record (3-6-19, 10.7% win rate) and table position (18th) create a lopsided fixture. Odds (1.25 home, 6.2 draw, 11 away) indicate an overwhelming favorite. Marseille's top scorer, Mason Greenwood, returns, while Metz are missing Joseph Mangondo (long-term injury). Metz have the league's worst form, with recent results confirming their struggles. The draw is possible but very unlikely given the quality difference and lineups."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:21:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Monaco has a significantly higher win rate this season compared to Paris FC. Despite some key injuries, the betting odds favor Monaco with odds of 1.99 for an away win. Paris FC's injuries, including Pierre-Yves Hamel, further decrease their chances."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille's strong home record and the significant disparity in team form and league position favor them heavily. Key player returns for Marseille, such as Mason Greenwood, add to their advantage. Metz's poor away performance and odds of 11 for an away win underscore their unfavorable position."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:21:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Monaco is the stronger team based on season record, despite playing away. The betting odds strongly favor Monaco (1.99) compared to a draw (3.91) or Paris FC win (3.89). Monaco has several injuries (Vanderson, Minamino, Salisu, Caio, Pocognoli), which could impact their performance, but not enough to offset the clear advantage based on form and odds. The odds suggest roughly a 50% chance of Monaco winning, 25% of a draw, and 25% chance of a Paris FC win. Adjusting slightly for injuries."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille is heavily favored at home. Betting odds indicate a strong probability of a home win (odds around 1.25). Metz has a poor away record. Greenwood's return for Marseille is a boost. Metz has a key injury (Mangondo). The form table (Marseille 7th, Metz 18th) and recent form (Marseille L-W-W-L-L vs Metz L-L-L-D-D) also support a Marseille win. The odds suggest roughly a 72% chance of Marseille winning, 16% of a draw, and 12% chance of a Metz win."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:22:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Monaco has significantly better season performance (53.6% win rate vs Paris FC's 25.0%). Betting odds strongly favor Monaco (1.99 for away win vs 3.89 for home win). Monaco's injuries (Vanderson, Minamino, Salisu, Caio) are concerning but their probable lineup remains strong with Balogun, Golovin, and Kamara. Paris FC has key forward Pierre-Yves Hamel injured. Monaco's recent form and superior squad depth should overcome Paris FC's home advantage."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Massive disparity in team quality and form. Marseille has 53.6% home win rate vs Metz's 10.7% away win rate. Betting odds extremely lopsided (1.25 for Marseille win vs 11 for Metz win). Marseille gets top scorer Mason Greenwood back from suspension/injury. Metz has Joseph Mangondo out long-term. Marseille's recent form (L-W-W-L-L) is inconsistent but far superior to Metz's terrible form (L-L-L-D-D). Home advantage at Stade V\u00e9lodrome against relegation-threatened Metz creates overwhelming favorite scenario."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:22:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Monaco's superior form (53.6% win rate, 15-4-9) compared to Paris FC (25.0%, 7-11-10) is decisive. Betting odds strongly favor Monaco at 1.99 for away win vs 3.89 for home win, implying ~50% probability for Monaco victory. Despite injuries to Vanderson, Minamino, Salisu and Caio, Monaco maintains a strong lineup with Balogun and Akliouche leading attack. Paris FC has struggled at home and faces a suspension to Pocognoli. The market odds (1.99 away, 3.91 draw, 3.89 home) translate to implied probabilities of approximately 50% away, 26% draw, 24% home, which aligns with Monaco's quality advantage."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille is heavily favored with identical season records to Monaco (53.6%, 15-4-9) facing the league's worst traveling team Metz (10.7%, 3-6-19). Betting odds are overwhelming: 1.25 for Marseille win vs 11.0 for Metz win, implying ~80% home win probability. Mason Greenwood returns for Marseille after suspension, boosting their attacking threat. Recent form shows Marseille gaining momentum while Metz is in terrible form (L-L-L-D-D) with only 2 points from last 5 matches. Metz has Joseph Mangondo out with long-term knee injury. The 1.25 odds suggest bookmakers see this as near-certain Marseille victory. Home advantage plus quality gap makes this a clear home win."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:23:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Monaco (away) @ Paris FC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "AS Monaco has a strong away record with a 53.6% win rate, while Paris FC's home record is only 25.0%. Additionally, the betting odds favor an AS Monaco win at 1.99, which is a strong indicator of their likelihood to win. Key injuries for Monaco include Vanderson, Minamino, Salisu, and Caio, but they still have a robust lineup. Paris FC's Pierre-Yves Hamel is also out, which may impact their offensive capabilities."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Metz (away) @ Marseille (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille has a strong home record with a 53.6% win rate, while Metz's away record is very poor at 10.7%. The betting odds heavily favor Marseille at 1.25, indicating a high probability of a home win. Top scorer Mason Greenwood is expected to return for Marseille, which will boost their attacking power. Metz's Joseph Mangondo remains sidelined, further weakening their already struggling team."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

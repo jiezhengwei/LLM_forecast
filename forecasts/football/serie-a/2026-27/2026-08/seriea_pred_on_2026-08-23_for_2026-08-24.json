@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-23",
+        "target_date_et": "2026-08-24",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874927\nMatchup: Lazio (away) @ Bologna (home)\nHome: Bologna\nAway: Lazio\nKickoff UTC: 2026-08-24T16:30Z\nKickoff ET: 2026-08-24 12:30 EDT\nVenue: Renato Dall'Ara\nRound: unavailable\nHome form: DWWDL\nAway form: LWLLL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Bologna +110 (open +100); Draw +210 (open +215); Lazio +245 (open +250)\nTavily context:\n  - Title: Bologna vs Lazio Prediction, Betting Tips, Lineups & Odds\n    Content: Lazio 2-1 Pisa\n\nConfirmed Lineups\n\n17 May Serie A\n\nRoma 2-0 Lazio\n\nConfirmed Lineups\n\n13 May Coppa Italia\n\nLazio 0-2 Inter Milan\n\nConfirmed Lineups\n\n09 May Serie A\n\nLazio 0-3 Inter Milan\n\nConfirmed Lineups\n\n04 May Serie A\n\nCremonese 1-2 Lazio\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBologna  Injury Table\n\nType Name Info\n\nMartin Vitik Muscle\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-24\n\nLazio  Injury Table\n\nType Name Info\n\nNicolo Rovella Red card (direc\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nKenneth Taylor Yellow cards ...\n    URL: https://www.sportsgambler.com/betting-tips/football/bologna-vs-lazio-prediction-lineups-odds-2026-08-24\n  - Title: Bologna vs Lazio Predictions, Picks & Odds - 24/08/2026\n    Content: Bologna's double chance pick at home is rooted in Lazio's fragile early season condition. Gennaro Gattuso's side were dumped out of the Coppa Italia in their first competitive outing, losing 2-0 in what the manager himself called \"a punch in the face.\" That kind of start breeds uncertainty, and the squad has lost defensive pillars Mario Gila and Ivan Provedel without fully integrating replacements. ...\n    URL: https://www.toffeeweb.com/ng/bologna-vs-lazio-predictions-picks-odds-24-08-2026\n  - Title: Bologna vs Lazio prediction, preview & betting tips – 24/08/2026\n    Content: ## Whispers predicts: Bologna 1-1 Lazio\n\nHeading into the Bologna and Lazio game, we are predicting a 1-1 draw as the outcome of this clash.\n\nLazio enter this fixture as slight favourites based on recent head-to-head meetings, but most of the games have been low-scoring affairs.\n\nBased on recent performance trends, bookmakers have priced Bologna at 23/20 (2.15) to secure a home victory.\n\nA draw is currently offered at odds of 11/5 (3.20), while an away win for Lazio stands at 12/5 (3.40). ...\n    URL: https://footballwhispers.com/blog/bologna-vs-lazio-prediction-24-08-2026\n  - Title: Bologna vs Lazio Predictions, Picks & Odds - 24/08/2026\n    Content: The double chance 1X selection is rooted in Bologna's home advantage and Lazio's visible fragility. Gennaro Gattuso's side were knocked out of the Coppa Italia in humiliating fashion, losing 2-0 in their first competitive outing. That result exposed defensive vulnerabilities made worse by the departures of Mario Gila and Ivan Provedel. The home win price at 2.13 reflects Bologna's status as slight favourites, and rightly so. [...] Lazio arrive in disarray. ...\n    URL: https://www.toffeeweb.com/int/bologna-vs-lazio-predictions-picks-odds-24-08-2026\n\nGame ID: 2\nSource event_id: 401874928\nMatchup: Fiorentina (away) @ AS Roma (home)\nHome: AS Roma\nAway: Fiorentina\nKickoff UTC: 2026-08-24T18:45Z\nKickoff ET: 2026-08-24 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WWWWW\nAway form: WDWDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: AS Roma -165 (open -215); Draw +285 (open +300); Fiorentina +400 (open +500)\nTavily context:\n  - Title: Roma vs Fiorentina Prediction, Betting Tips, Lineups & Odds\n    Content: Confirmed Lineups\n\n22 May Serie A\n\nFiorentina 1-1 Atalanta\n\nConfirmed Lineups\n\n17 May Serie A\n\nJuventus 0-2 Fiorentina\n\nConfirmed Lineups\n\n10 May Serie A\n\nFiorentina 0-0 Genoa\n\nConfirmed Lineups\n\n04 May Serie A\n\nRoma 4-0 Fiorentina\n\nConfirmed Lineups\n\n26 Apr Serie A\n\nFiorentina 0-0 Sassuolo\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nRoma  Injury Table\n\nType Name Info\n\nWesley Red card (direc\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nWesley Ankle\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-24\n\nLorenzo Pellegrini Thigh ...\n    URL: https://www.sportsgambler.com/betting-tips/football/roma-vs-fiorentina-prediction-lineups-odds-2026-08-24\n  - Title: Roma vs Fiorentina Predictions, Picks & Odds - 24/08/2026\n    Content: 57%Both teams score\n\n1.8Goals scored\n\n1.3Goals conceded\n\n| Statistic | Roma | Fiorentina |\n ---\n| Last 5 results | 3W 2L | · | 2W 2D 1L |\n| Avg goals scored | 2.0 | · | 1.8 |\n| Avg goals conceded | 2.6 | · | 1.3 |\n| Under 2.5 (last 5) | 1/5 | · | 2/5 |\n| H2H, last 6 meetings | 3 Roma · 1 Draws · 2 Fiorentina |\n\nProbable lineup\n\n### Lineups: Roma vs Fiorentina\n\n#### Roma\n\n3-4-2-1\n\nStarters\n\n1. 1 Svilar\n2. 2 Mancini\n3. 3 Ndicka\n4. 4 Hermoso\n5. 5 Celik\n6. 6 Cristante\n7. 7 Kone\n8. 8 Wesley\n9. 9 Soule\n10. 10 Dybala\n11. 11 Malen\n\nAbsent ...\n    URL: https://www.toffeeweb.com/int/roma-vs-fiorentina-predictions-picks-odds-24-08-2026\n  - Title: AS Roma v Fiorentina 24/08/2026, Odds\n    Content: 1X2 Over/Under Both teams to score. Double chance. Odds. 1X2. 1.58. 4.10. 5.50 ... Odds and betting version 25+ Odds and betting version 18+. Gamble Responsibly\n    URL: https://www.flashscore.com/match/football/as-roma-zVqqL0ma/fiorentina-Q3A3IbXH/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874927\nMatchup: Lazio (away) @ Bologna (home)\nHome: Bologna\nAway: Lazio\nKickoff UTC: 2026-08-24T16:30Z\nKickoff ET: 2026-08-24 12:30 EDT\nVenue: Renato Dall'Ara\nRound: unavailable\nHome form: DWWDL\nAway form: LWLLL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Bologna +110 (open +100); Draw +210 (open +215); Lazio +245 (open +250)\nTavily context:\n  - Title: Bologna vs Lazio Prediction, Betting Tips, Lineups & Odds\n    Content: Lazio 2-1 Pisa\n\nConfirmed Lineups\n\n17 May Serie A\n\nRoma 2-0 Lazio\n\nConfirmed Lineups\n\n13 May Coppa Italia\n\nLazio 0-2 Inter Milan\n\nConfirmed Lineups\n\n09 May Serie A\n\nLazio 0-3 Inter Milan\n\nConfirmed Lineups\n\n04 May Serie A\n\nCremonese 1-2 Lazio\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBologna  Injury Table\n\nType Name Info\n\nMartin Vitik Muscle\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-24\n\nLazio  Injury Table\n\nType Name Info\n\nNicolo Rovella Red card (direc\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nKenneth Taylor Yellow cards ...\n    URL: https://www.sportsgambler.com/betting-tips/football/bologna-vs-lazio-prediction-lineups-odds-2026-08-24\n  - Title: Bologna vs Lazio Predictions, Picks & Odds - 24/08/2026\n    Content: Bologna's double chance pick at home is rooted in Lazio's fragile early season condition. Gennaro Gattuso's side were dumped out of the Coppa Italia in their first competitive outing, losing 2-0 in what the manager himself called \"a punch in the face.\" That kind of start breeds uncertainty, and the squad has lost defensive pillars Mario Gila and Ivan Provedel without fully integrating replacements. ...\n    URL: https://www.toffeeweb.com/ng/bologna-vs-lazio-predictions-picks-odds-24-08-2026\n  - Title: Bologna vs Lazio prediction, preview & betting tips – 24/08/2026\n    Content: ## Whispers predicts: Bologna 1-1 Lazio\n\nHeading into the Bologna and Lazio game, we are predicting a 1-1 draw as the outcome of this clash.\n\nLazio enter this fixture as slight favourites based on recent head-to-head meetings, but most of the games have been low-scoring affairs.\n\nBased on recent performance trends, bookmakers have priced Bologna at 23/20 (2.15) to secure a home victory.\n\nA draw is currently offered at odds of 11/5 (3.20), while an away win for Lazio stands at 12/5 (3.40). ...\n    URL: https://footballwhispers.com/blog/bologna-vs-lazio-prediction-24-08-2026\n  - Title: Bologna vs Lazio Predictions, Picks & Odds - 24/08/2026\n    Content: The double chance 1X selection is rooted in Bologna's home advantage and Lazio's visible fragility. Gennaro Gattuso's side were knocked out of the Coppa Italia in humiliating fashion, losing 2-0 in their first competitive outing. That result exposed defensive vulnerabilities made worse by the departures of Mario Gila and Ivan Provedel. The home win price at 2.13 reflects Bologna's status as slight favourites, and rightly so. [...] Lazio arrive in disarray. ...\n    URL: https://www.toffeeweb.com/int/bologna-vs-lazio-predictions-picks-odds-24-08-2026\n\nGame ID: 2\nSource event_id: 401874928\nMatchup: Fiorentina (away) @ AS Roma (home)\nHome: AS Roma\nAway: Fiorentina\nKickoff UTC: 2026-08-24T18:45Z\nKickoff ET: 2026-08-24 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WWWWW\nAway form: WDWDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: AS Roma -165 (open -215); Draw +285 (open +300); Fiorentina +400 (open +500)\nTavily context:\n  - Title: Roma vs Fiorentina Prediction, Betting Tips, Lineups & Odds\n    Content: Confirmed Lineups\n\n22 May Serie A\n\nFiorentina 1-1 Atalanta\n\nConfirmed Lineups\n\n17 May Serie A\n\nJuventus 0-2 Fiorentina\n\nConfirmed Lineups\n\n10 May Serie A\n\nFiorentina 0-0 Genoa\n\nConfirmed Lineups\n\n04 May Serie A\n\nRoma 4-0 Fiorentina\n\nConfirmed Lineups\n\n26 Apr Serie A\n\nFiorentina 0-0 Sassuolo\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nRoma  Injury Table\n\nType Name Info\n\nWesley Red card (direc\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nWesley Ankle\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-24\n\nLorenzo Pellegrini Thigh ...\n    URL: https://www.sportsgambler.com/betting-tips/football/roma-vs-fiorentina-prediction-lineups-odds-2026-08-24\n  - Title: Roma vs Fiorentina Predictions, Picks & Odds - 24/08/2026\n    Content: 57%Both teams score\n\n1.8Goals scored\n\n1.3Goals conceded\n\n| Statistic | Roma | Fiorentina |\n ---\n| Last 5 results | 3W 2L | · | 2W 2D 1L |\n| Avg goals scored | 2.0 | · | 1.8 |\n| Avg goals conceded | 2.6 | · | 1.3 |\n| Under 2.5 (last 5) | 1/5 | · | 2/5 |\n| H2H, last 6 meetings | 3 Roma · 1 Draws · 2 Fiorentina |\n\nProbable lineup\n\n### Lineups: Roma vs Fiorentina\n\n#### Roma\n\n3-4-2-1\n\nStarters\n\n1. 1 Svilar\n2. 2 Mancini\n3. 3 Ndicka\n4. 4 Hermoso\n5. 5 Celik\n6. 6 Cristante\n7. 7 Kone\n8. 8 Wesley\n9. 9 Soule\n10. 10 Dybala\n11. 11 Malen\n\nAbsent ...\n    URL: https://www.toffeeweb.com/int/roma-vs-fiorentina-predictions-picks-odds-24-08-2026\n  - Title: AS Roma v Fiorentina 24/08/2026, Odds\n    Content: 1X2 Over/Under Both teams to score. Double chance. Odds. 1X2. 1.58. 4.10. 5.50 ... Odds and betting version 25+ Odds and betting version 18+. Gamble Responsibly\n    URL: https://www.flashscore.com/match/football/as-roma-zVqqL0ma/fiorentina-Q3A3IbXH/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874927",
+                        "date_utc": "2026-08-24T16:30Z",
+                        "kickoff_et": "2026-08-24 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Bologna",
+                        "away": "Lazio",
+                        "home_id": "107",
+                        "away_id": "112",
+                        "matchup": "Lazio (away) @ Bologna (home)",
+                        "venue": "Renato Dall'Ara",
+                        "city": "Bologna",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "DWWDL",
+                        "form_away": "LWLLL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+100",
+                            "home_current": "+110",
+                            "draw_open": "+215",
+                            "draw_current": "+210",
+                            "away_open": "+250",
+                            "away_current": "+245"
+                        },
+                        "odds_text": "DraftKings: Bologna +110 (open +100); Draw +210 (open +215); Lazio +245 (open +250)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874928",
+                        "date_utc": "2026-08-24T18:45Z",
+                        "kickoff_et": "2026-08-24 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "AS Roma",
+                        "away": "Fiorentina",
+                        "home_id": "104",
+                        "away_id": "109",
+                        "matchup": "Fiorentina (away) @ AS Roma (home)",
+                        "venue": "Olimpico",
+                        "city": "Roma",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWWWW",
+                        "form_away": "WDWDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-215",
+                            "home_current": "-165",
+                            "draw_open": "+300",
+                            "draw_current": "+285",
+                            "away_open": "+500",
+                            "away_current": "+400"
+                        },
+                        "odds_text": "Provider unavailable: AS Roma -165 (open -215); Draw +285 (open +300); Fiorentina +400 (open +500)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-23T11:44:41.134995-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:35:19.795942-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "HOME_WIN",
+                    "confidence": "medium",
+                    "reasoning": "Bologna is favored at home with Lazio reportedly entering the season in a state of disarray. Under Gennaro Gattuso, Lazio suffered a demoralizing 2-0 defeat in the Coppa Italia, and they are currently missing key defensive pillars such as Provedel and Gila. Bologna's home advantage and more stable squad preparation give them the upper hand.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "HOME_WIN",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enter this home fixture as heavy favorites with bookmaker odds indicating a high probability of success (around -165). Roma is in superb form with five consecutive wins, and they dominated their previous home encounter against Fiorentina with a 4-0 victory. Fiorentina is a tough opponent but struggles to secure results away at the Olimpico.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-23T11:35:35.356305-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna is favored at home against a Lazio side struggling with early-season form and defensive absences following their Coppa Italia exit. The odds imply roughly a 44% chance of a home victory.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma comes into the match in excellent form and holds strong home favorite odds at -165. The betting markets indicate about a 60% probability that Roma secures all three points.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-23T11:35:57.878935-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are the betting favorites at home against a Lazio side described as being in 'disarray'. Lazio's recent 2-0 Coppa Italia loss, combined with the departure of key defensive players and poor end-of-season form, contrasts with Bologna's more stable situation. While a draw is a plausible opening-day result, Bologna's home advantage gives them the edge.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma carries strong momentum into the new season, having won its last five matches of the previous campaign. They are significant betting favorites playing at their home stadium, the Olimpico. Fiorentina is a solid opponent, but Roma's superior form and potent attack, featuring Dybala and Malen, make a home victory the most likely result.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:36:12.405458-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.4374,
+                    "draw_probability": 0.2963,
+                    "away_win_probability": 0.2663,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are the home team and are considered slight favorites by bookmakers. Lazio enters the season in a fragile state, having been knocked out of the Coppa Italia in their first competitive outing and losing key defensive players. Multiple sources highlight Lazio's 'disarray' and 'fragile early season condition'.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5752,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.1848,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma is heavily favored by all available odds and recent performance indicators. They achieved a dominant 4-0 victory against Fiorentina in a recent Serie A match and generally maintain strong home form.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:41.305791-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bologna are slight home favorites in the market and have the steadier recent form, while Lazio arrive with weaker form and reported squad disruption. The pricing is still close, with draw risk elevated for a likely tight Serie A opener.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear home favorites, have a strong recent form line, and recently beat Fiorentina heavily in the head-to-head sample. Fiorentina are competitive enough to keep draw and upset chances meaningful, but the market and venue point to Roma.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:50.045678-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are slight market favorites at home and enter with stronger recent form than Lazio. Lazio's poor run, reported defensive instability, and midfield suspensions/injuries reduce their away-win outlook, though the pricing and low-scoring matchup profile keep the draw meaningfully live.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear home favorites in the available odds and have excellent recent form, including a strong recent head-to-head result against Fiorentina. Fiorentina are competitive enough to keep draw risk relevant, but Roma's home advantage and attacking form make the home win the most likely regulation-time outcome.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-23T11:38:28.427725-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Bologna a slight home favorite (home shorter than Lazio, with a meaningful draw chance). Bologna’s recent form is steadier (DWWDL) than Lazio’s (LWLLL), and Lazio also carries disciplinary/availability concerns in midfield. With home advantage at Renato Dall’Ara and Lazio’s shaky recent results, Bologna are the most likely 90-minute outcome, though a low-scoring draw remains a strong secondary result.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear favorites at home by the 1X2 odds, and their recent form is excellent (WWWWW). Fiorentina are competitive but less consistent (WDWDL) and recently suffered a heavy away loss to Roma in the prior meeting (4-0), which supports the home edge. The main risk is Roma’s defensive/availability uncertainty, keeping the draw probability material, but Roma remain the likeliest regulation-time winner.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-23T11:38:40.372544-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers price Bologna as slight favourites and Bologna's recent form (DWWDL) is noticeably better than Lazio's poor run (LWLLL). Lazio enter with defensive uncertainty and personnel issues noted in previews; Bologna have home advantage at Renato Dall'Ara. Expect a narrow Bologna win or draw, with the balance favouring the home side.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma show dominant recent form and are clear favourites in the market. Home advantage at the Olimpico and Roma's attacking consistency make a home victory the most likely result. Fiorentina are capable but less consistent; an upset or draw remains possible but less probable.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-23T11:39:07.012316-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.4375,
+                    "draw_probability": 0.296,
+                    "away_win_probability": 0.2665,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Based on opening odds showing Bologna as slight favorites at home; normalized to account for vig, Bologna ~0.4375, draw ~0.2960, Lazio ~0.2665.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5756,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.1844,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma favored at home per odds (-165); after normalization, home ~0.5756, draw ~0.2400, Fiorentina ~0.1844.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-23T11:39:09.577218-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are slight favorites at home, supported by both bookmaker odds and recent form. Lazio are in disarray after a poor Coppa Italia exit and have lost key defensive players, while Bologna's home form is solid. Multiple sources highlight Lazio's defensive fragility and lack of integration for new signings. The draw is a significant risk given the low-scoring history between these teams, but Bologna's stability and home advantage tip the balance.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Roma are in excellent form with five consecutive home wins and a dominant 4-0 victory over Fiorentina in their last meeting. Bookmaker odds and statistical models heavily favor Roma, who have a stronger squad and home advantage. Fiorentina have struggled to score against top teams and have a less consistent away record. Roma's attacking options and recent head-to-head superiority make them clear favorites.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-23T11:39:11.672830-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna has a slight edge due to home advantage and Lazio's recent struggles, including defensive issues and poor form.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma's strong home form and superior squad depth make them favorites against Fiorentina, who have been inconsistent.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-23T11:39:25.887594-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bologna are modest favorites at home (+110), backed by solid recent form (DWWDL) versus Lazio's poor run (LWLLL). Lazio arrive in disarray after a 2-0 Coppa Italia exit under Gattuso, missing Rovella through suspension and having lost defensive pillars Gila and Provedel. Bologna's only notable absence is Vitik. Home advantage and Lazio's fragility favor Bologna, though many H2H meetings have been tight, low-scoring affairs, keeping draw probability meaningful.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear favorites (-165) with a perfect WWWWW recent form and a strong home record, including a 4-0 win over Fiorentina in their last home meeting. Roma have some defensive absences (Wesley suspended/injured, Pellegrini injured), but Fiorentina's mixed form (WDWDL) and Roma's attacking quality at the Olimpico support a home win. Fiorentina's solid defense (1.3 conceded avg) gives them some draw/upset chance, but Roma remain the likely winners.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-23T11:39:32.745972-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Bologna",
+                    "confidence": "low",
+                    "reasoning": "Bologna are slight home favorites per odds (+110 vs +245). Lazio arrive in disarray with defensive departures (Gila, Provedel), a Coppa Italia exit, and Rovella suspended. Home advantage and Lazio's fragility tip this toward Bologna, though a draw is plausible given low-scoring H2H history.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "AS Roma",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear favorites at home (-165) with strong recent form (WWWWW) and a recent 4-0 win over Fiorentina. Despite some defensive concerns and injuries (Pellegrini, Wesley), the Olimpico advantage and favorable H2H make Roma the pick.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-23T11:39:44.373920-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are slight favorites at home with odds around +110. Lazio are in disarray entering the new season: they were eliminated from the Coppa Italia losing 2-0 in their first competitive match, lost defensive pillars Mario Gila and Ivan Provedel, and Nicola Rovella is suspended. Lazio's recent form (LWLLL) is poor. Bologna's home form (DWWDL) is solid. Multiple sources predict a Bologna home win or draw. The opening and current odds imply roughly 44-45% for Bologna, consistent with this assessment. Slight lean to Bologna home win.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are heavy favorites at home (-165 current, opened -215). Roma enter on excellent form (WWWWW) while Fiorentina are inconsistent (WDWDL). The H2H record over last 6 meetings favors Roma (3 wins vs 2 Fiorentina). Roma put 4-0 past Fiorentina at home in May 2026. Roma's attacking output is strong (avg 2.0 goals scored in last 5). While Roma have some injury concerns (Wesley, Pellegrini), their overall quality and home advantage make them strong favorites. Odds imply roughly 60% for Roma which aligns with the assessment.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-23T11:40:08.441116-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna holds a meaningful home advantage against a Lazio side in visible disarray. Lazio's terrible away form (LWLLL) and early Coppa Italia exit (0-2 loss) expose deep vulnerabilities, compounded by the departures of defensive pillars Mario Gila and Ivan Provedel. Manager Gattuso called their opener 'a punch in the face,' reflecting squad uncertainty. Bologna's recent form (DWWDL) shows resilience, and midfielder Nicolo Rovella's red card suspension further weakens Lazio's midfield control. The betting market reflects Bologna as slight favorites (+110 vs +245), and multiple sources predict a tight, low-scoring affair with Bologna double chance heavily favored. Martin Vitik's injury for Bologna is a concern, but Lazio's fragility and poor away record make a home win or draw most likely. Bologna's home venue advantage at Renato Dall'Ara tips the balance toward a narrow home victory.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Roma enters with exceptional form (WWWWW), showing strong momentum and attacking potency (averaging 2.0 goals scored recently). Playing at the Olimpico provides a significant home advantage. Fiorentina's mixed away form (WDWDL) and recent 4-0 defeat to Roma in their last head-to-head meeting (May 2026) suggest vulnerability in this matchup. The betting odds heavily favor Roma (-165 vs +400), reflecting the market's confidence in a home victory. However, Roma has defensive concerns, conceding an average of 2.6 goals in recent matches, and Wesley faces both a red card suspension and ankle injury. Lorenzo Pellegrini's thigh injury also weakens Roma's midfield options. Fiorentina has shown defensive solidity (1.3 goals conceded average) and drawn twice in their last five. Despite these factors, Roma's superior form, home advantage, and psychological edge from the recent 4-0 victory make them clear favorites for all three points.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-23T11:40:14.177243-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna playing at home with recent positive form (DWWDL). Lazio entering in poor condition after Coppa Italia elimination (2-0 loss) and defensive vulnerabilities from key departures (Gila, Provedel). Multiple sources highlight Bologna's home advantage and Lazio's fragility. Odds reflect Bologna as slight favorites (+110). However, Lazio has shown competitive capability historically against Bologna. Moderate confidence due to early season uncertainty and Lazio's potential to improve from their poor start.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Roma in exceptional form with 5-game winning streak (WWWWW) at home. Fiorentina showing inconsistency (WDWDL). Head-to-head favors Roma (3 wins in last 6 meetings). Roma's strong recent offensive output (2.0 goals/game avg) versus Fiorentina's conceding 1.3 goals/game. Injury concerns for Roma (Wesley suspension, Pellegrini) are manageable. Betting odds strongly favor Roma (-165). Recent clash saw Roma dominate 4-0. High confidence in Roma victory despite away team's competitive qualities.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-23T11:40:31.390175-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna have home advantage and odds support them as slight favorites, while Lazio enter in poor form with defensive absences and a Coppa Italia loss. The main risk is a low-scoring draw, but home win is the best single selection.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Roma are in excellent home form and are clear favorites at Stadio Olimpico. Fiorentina have been inconsistent and Roma's pricing implies a strong home edge, despite some Roma injuries.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-23T11:40:33.524817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna have home advantage and Lazio are in poor form with key defensive absences and a recent Coppa Italia exit. Odds slightly favor Bologna, and Lazio's away form is weak.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Roma are strong at home with excellent form, while Fiorentina have been inconsistent. Roma's odds are heavily favored, and they have a good recent head-to-head record.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-23T11:41:02.836747-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna holds a distinct home advantage and faces a Lazio side in disarray following a humiliating Coppa Italia exit and the departure of key defensive pillars. The odds and context heavily favor the home side.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "AS Roma is in excellent form and heavily favored at home against Fiorentina, having recently dominated them 4-0. The market odds and Roma's strong squad depth point to a comfortable home victory.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-23T11:41:21.323726-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna has a home advantage and Lazio is currently in a fragile state, having been knocked out of the Coppa Italia and showing defensive vulnerabilities. Bologna's recent form and the odds provided by bookmakers support a home win or draw.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "AS Roma has a strong home record and recent form, with a 3-1-2 head-to-head advantage over Fiorentina. The odds and recent performances indicate a high likelihood of a home win, although a draw is also a possibility given Fiorentina's ability to score.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-23T11:42:26.412498-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna holds a slight edge due to better recent form and home advantage, while Lazio enters the match with defensive vulnerabilities following key summer departures and a rocky start to the season. Market odds and contextual analysis favor Bologna, though Lazio's underlying quality keeps a draw plausible.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma's exceptional recent form (five consecutive wins) and a dominant 4-0 victory over Fiorentina earlier in the season strongly point to a home win. Despite missing Wesley and Pellegrini, Roma's potent attacking lineup and home advantage at the Stadio Olimpico give them a clear advantage over an inconsistent Fiorentina side.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-23T11:42:56.386602-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna benefits from home advantage at Renato Dall'Ara, while Lazio arrives with poor early-season away form (LWLLL) and critical defensive absences. Despite close odds, Bologna's stability versus Lazio's disarray favors a home result.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters the match with exceptional current home form (WWWW) and a dominant recent head-to-head record against Fiorentina. Their momentum and home crowd support outweigh Fiorentina's inconsistent away trends.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-23T11:44:05.110042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna holds home advantage and faces a Lazio side in early-season disarray. Lazio are missing key contributors through suspension (Nicolo Rovella, potential accumulation for Kenneth Taylor) and have suffered defensive departures (Mario Gila, Ivan Provedel) that leave them vulnerable. Bologna's solid home form (DWWDL) and favorable market pricing (+110) support a home win in a likely competitive fixture.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma enters with dominant home form (WWWWW) and strong market favoritism (-165) against a Fiorentina side that has been less convincing on the road (WDWDL). While Roma has some injury concerns (Lorenzo Pellegrini, Wesley), their depth and historical home superiority in this matchup tip the scales toward a Roma victory in regulation.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-23T11:44:36.394726-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna benefits from home advantage and Lazio's fragile early-season state. Lazio enters following a humiliating Coppa Italia exit and the loss of key defensive players Gila and Provedel, alongside suspensions for Rovella. Bologna's solid recent home form (DWWDL) contrasts with Lazio's poor away record (LWLLL). While a draw is possible given historical tight contests, Bologna's stability gives them the edge.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters with exceptional form (WWWWW) and strong home advantage at the Olimpico. Despite defensive absences including Wesley's suspension and Pellegrini's injury, Roma's attacking prowess (averaging 2.0 goals recently) and recent 4-0 H2H victory over Fiorentina demonstrate dominance. Fiorentina's decent form (WDWDL) is overshadowed by Roma's momentum and superior squad depth.",
+                    "event_id": "401874928"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-23T11:44:41.131399-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lazio (away) @ Bologna (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna has a slight edge based on home advantage and Lazio's fragile early season condition. Lazio's recent Coppa Italia exit exposed defensive vulnerabilities, and they have lost key players without integrating replacements.",
+                    "event_id": "401874927"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Fiorentina (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma is favored to win at home, with a strong recent form and a favorable head-to-head record against Fiorentina. Roma's lineup is expected to be stronger, and they have a good home record.",
+                    "event_id": "401874928"
+                }
+            ]
+        }
+    ]
+}

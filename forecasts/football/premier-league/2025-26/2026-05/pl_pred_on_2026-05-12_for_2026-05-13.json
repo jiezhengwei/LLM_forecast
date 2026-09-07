@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-12\n    Target Date: 2026-05-13\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Crystal Palace @ Manchester City                     | Scheduled    | Away: 31.4% (11-11-13) vs Home: 62.9% (22-8-5)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Crystal Palace (Away) @ Manchester City (Home)\n**News & Injury Report:**\n- [Manchester City vs Crystal Palace Prediction, Betting Tips, Lineups & Odds | 14 May 2026](https://www.sportsgambler.com/betting-tips/football/manchester-city-vs-crystal-palace-prediction-lineups-odds-2026-05-13/)\n  Snippet: ## Manchester City vs Crystal Palace Lineups & Team News\n\nStay ahead of the game by checking the City vs Palace team news before betting. Get the predicted and confirmed Premier League lineups plus the latest injury updates from us.\n\n Manchester City Team Page    Crystal Palace Team Page\n\n### Manchester City Predicted Lineup 4-2-3-1\n\n### Crystal Palace Predicted Lineup 4-4-2\n\n### Manchester City Predicted Lineup 4-2-3-1\n\n25 Gianluigi Donnarumma\n\n27 Matheus Nunes   15 Marc Guehi   6 Nathan Ake   33 Nico O'Reilly\n\n20 Bernardo Silva   4 Tijjani Reijnders ...\n- [Man City vs. C Palace (May 13, 2026) Live Score - ESPN](https://www.espn.com/soccer/match/_/gameId/740902/crystal-palace-manchester-city)\n  Snippet: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Arsenal | 36 | 24 | 7 | 5 | +42 | 79 |\n| Manchester City | 35 | 22 | 8 | 5 | +40 | 74 |\n| Manchester United | 36 | 18 | 11 | 7 | +15 | 65 |\n| Liverpool | 36 | 17 | 8 | 11 | +12 | 59 |\n| Aston Villa | 36 | 17 | 8 | 11 | +4 | 59 |\n| AFC Bournemouth | 36 | 13 | 16 | 7 | +4 | 55 |\n| Brighton & Hove Albion | 36 | 14 | 11 | 11 | +10 | 53 |\n| Brentford | 36 | 14 | 9 | 13 | +3 | 51 |\n| Chelsea | 36 | 13 | 10 | 13 | +6 | 49 |\n| Everton | 36 | 13 | 10 | 13 | 0 | 49 |\n| Fulham | 36 | 14 | 6 | 16 | -6 | 48 |\n| Sunderland | 36 | 12 | 12 | 12 | -9 | 48 | ...\n**Betting Odds:**\n- [Manchester City vs Crystal Palace Betting Pick | English Premier | 2026-05-13 |](https://www.goonersguide.com/football-pick-59299-Manchester-City-vs-Crystal-Palace.htm)\n  Snippet: Manchester City vs Crystal Palace Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | MCI | DRAW | CRY |  | BET365 |  | 1.20 | 7.50 | 12.00 | | BETFRED | | 1.20 | 6.50 | 13.00 | | CLOUDBET | | 1.19 | 7.85 | 12.00 | | SPORTBET | | 1.14 | 6.74 | 14.36 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report. ...\n- [Manchester City vs Crystal Palace Prediction - Premier League - 13/05/2026](https://www.sportytrader.com/en/betting-tips/manchester-city-crystal-palace-348621/)\n  Snippet: There's only really one game that Crystal Palace cares about at present. The Eagles have qualified for the Conference League final and that looks to be their best chance of securing European football next season. They have a key role to play in who wins this season's Premier League. City will want to beat them here but then dream of Palace taking points off Arsenal when they play them in their final league game of the season.\n\nLimited Offer. Currently at Stake\n\n## Manchester City v Crystal Palace Best Betting Odds ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-12 17:36:59"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-12 17:35:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City are at home in a must-win game for their Premier League title chase, possessing superior team strength (62.9% win rate). Conversely, Crystal Palace's primary focus is reportedly on an upcoming Conference League final, suggesting their motivation for this league fixture may be diminished. The betting odds heavily favor Manchester City (average odds of 1.19), which translates to an implied probability of approximately 80% for a home win after removing the bookmaker's margin. This aligns with the massive disparity in situational motivation and quality between the two sides."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Betting market heavily favors Man City (\u22481.20 home price across books), implying ~79\u201380% home win after vig normalization. City also show a much stronger season profile (22-8-5, 62.9% win rate) and significant home advantage, while Palace are notably weaker overall (11-11-13) and may rotate/manage minutes with a Conference League final in focus. Draw is the main upset route, but Palace away win is priced as a low-probability outcome."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favor Manchester City (bookmakers imply ~79\u201380% for a City win). City's home record this season is excellent (62.9% win rate at home, 22-8-5) and they are contesting the title, creating high motivation to win. Crystal Palace have been modest away (31.4% win rate) and may prioritise their Conference League final, which reduces their likelihood of upsetting City. No major injuries reported that would materially blunt City's advantage in available reports. Given the strong consensus in the betting market plus home advantage and season form, a City win is the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (Away) @ Manchester City (Home)",
+                    "home_win_probability": 0.798,
+                    "draw_probability": 0.131,
+                    "away_win_probability": 0.071,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Odds heavily favor Manchester City at home (implied home ~0.80). City possess a strong home win rate (~62.9%) vs Palace's weaker away form (~31.4%), and the fixture context (City at home with lineup advantage) reinforces a Home Win expectation."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City are at home with a strong 62.9% win rate and are still in the title race, while Crystal Palace have a much lower away win rate (31.4%) and are likely to rotate or rest players ahead of their Conference League final. The betting odds (City ~1.20, Draw ~7.50, Palace ~12.00) strongly favor City, indicating a high probability of a home win. No major injury concerns for City, and their motivation is high. Palace's focus is likely elsewhere, further reducing their upset potential."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City has a strong home win rate of 62.9% and is in contention for the Premier League title. Crystal Palace is likely to prioritize their upcoming Conference League final, potentially resting key players. The betting odds heavily favor Manchester City, with odds around 1.20 for a home win, indicating a strong market expectation for a City victory."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City are strong at home (62.9% win rate) and fighting for the title, while Crystal Palace have a poor away record (31.4% win rate) and may be distracted by their Conference League final. Betting odds heavily favor City (1.20)."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City has a strong 62.9% win rate (22-8-5) at home and is in a crucial title race, currently 5 points behind Arsenal with a game in hand. The betting odds heavily favor City (1.20 for home win vs 12.00-14.36 for away win), reflecting approximately 83% implied probability for a City victory. Crystal Palace has a poor away record of 31.4% (11-11-13) and according to news sources, they are prioritizing their Conference League final over league matches. City needs this win to maintain pressure on Arsenal for the title. The massive gap in quality, form, and motivation strongly favors a Manchester City victory. The odds of 1.20 suggest bookmakers see this as near-certain, though I've adjusted slightly to account for football's inherent unpredictability and the possibility of Palace showing up unexpectedly."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-12 17:36:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Crystal Palace (away) @ Manchester City (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester City has a strong home record with a 62.9% win rate, and Crystal Palace's away record is only 31.4%. Additionally, the betting odds heavily favor Manchester City, with most bookmakers offering very low odds for a home win. There are no significant injury reports that would affect the outcome."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

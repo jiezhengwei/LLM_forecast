@@ -1,0 +1,244 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-06\n    Target Date: 2026-04-07\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Bayern Munich @ Real Madrid (1st Leg)                | Scheduled    | Away: #2 88% (7-0-1) Pts:21 Form:WWWDW | Home: #9 62% (5-0-3) Pts:15 Form:LWWWW\n2. Arsenal @ Sporting CP (1st Leg)                      | Scheduled    | Away: #1 100% (8-0-0) Pts:24 Form:LLWWD | Home: #7 62% (5-1-2) Pts:16 Form:WWWLD\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Bayern Munich (Away) @ Real Madrid (Home)\n**News & Injury Report:**\n- [Real Madrid vs Bayern Prediction 7/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-07-04-2026-real-madrid-bayern-munich-prediction)\n  Snippet: \u274c Among Real Madrid's injured players are Dani Ceballos (calf injury), Thibaut Courtois (hip injury), Ferland Mendy (hamstring injury), and Rodrygo (knee injury).\n\n### Bayern Munich [...] ### Bayern Munich\n\n\ud83c\udfa4 Bayern head coach Vincent Kompany shared ...\n- [Real Madrid vs Bayern Munich Prediction, Stats, H2H - 07 Apr 2026](https://www.forebet.com/en/football/matches/real-madrid-bayern-munich-2451545)\n  Snippet: | injured and suspended    Player  Reason  Until  T. Courtois (G)  Muscle Tear  05/01/2026  F. Mendy (D)  Muscle Injury  -  R. Silva de Goes (F)  Cruciate Ligament Tear  09/30/2026  R. Asencio del Rosario (D)  Calf Problems  -  D. Ceballos Fern\u00e1ndez ...\n**Betting Odds:**\n- [Real Madrid vs Bayern Munich Prediction - Champions League](https://www.sportytrader.com/en/betting-tips/real-madrid-bayern-munich-340133/)\n  Snippet: Our prediction for the Real Madrid vs Bayern Munich match is: Real Madrid or Draw.\n\nProbabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 07/04/2026 between Real Madrid and Bayern Munich in Cham...\n- [Real Madrid vs Bayern Munich Prediction, Stats, H2H - 07 Apr 2026](https://www.forebet.com/en/football/matches/real-madrid-bayern-munich-2451545)\n  Snippet: Score\n\n                          Quarter-finals\n\n                           UCL\n\n                          Real Madrid Bayern Munich\n\n                          71%\n\n                          1X2-1\n\n                          2 - 1\n\n                   ...\n\n----------------------------------------\n#### Matchup: Arsenal (Away) @ Sporting CP (Home)\n**News & Injury Report:**\n- [Sporting CP vs Arsenal Prediction, Stats, H2H - 07 Apr 2026 - Forebet](https://www.forebet.com/en/football/matches/sporting-cp-arsenal-2451544)\n  Snippet: | injured and suspended    Player  Reason  Until  R. Chaby Mangas (D)  Unknown injury  -  G. Kochorashvili (M)  Unknown injury  -  G. Quenda (F)  Metatarsal Fracture  -  L. Lira dos Santos (F)  Ankle Sprain  -  G. Cipriano Catamo (F)  Muscle Injury  ...\n- [Sporting vs Arsenal Prediction 7/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-07-04-2026-sporting-lisbon-arsenal-prediction)\n  Snippet: ## Latest news\n\n### Sporting\n\n\ud83d\udce3 Following their 4-2 victory over Santa Clara, Sporting's head coach Rui Borges stated: \"We controlled the game from start to finish. We gradually improved and created numerous chances. Santa Clara scored their second g...\n**Betting Odds:**\n- [Sporting CP vs Arsenal prediction 07.04.2026 | Champions League](https://www.mightytips.com/football-predictions/sporting-cp-vs-arsenal-prediction-07-04-2026/)\n  Snippet: Best Odds:\n\nZoccer\n\nZoccer\n\n100% Welcome bonus up to \u20ac100\n\n## Additional predictions\n\nSporting CP vs Arsenal odds\n\n|  | 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---  --- |\n| Boomerang-bet.com logo Boomerang-bet.com | 39/10 | 8/3 | 17/23 | 9/10 | 10/1...\n- [Sporting CP - Arsenal, 04/07/2026: prediction, odds and match time](https://betmines.com/match-preview/sporting-cp-vs-arsenal-prediction-match-preview-and-analysis-champions-league-07-04-2026)\n  Snippet: Arsenal, on the other hand, will look to exploit any defensive gaps with their quick transitions and high pressing. Their consistency in scoring away from home makes them a constant threat, and their Champions League record this season shows they can...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-06\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-06 16:31:58"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-06 16:30:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Real Madrid have strong home UCL knockout pedigree and arrive in good form (LWWWW), and market/preview signals lean 'Real or Draw' with some models heavily favoring the home side. However, Bayern\u2019s league-stage strength (#2, 7-0-1) keeps the away-win live, and Real\u2019s injury list (notably Courtois, Mendy, Rodrygo, plus Ceballos) lowers their win edge and increases volatility in a tight first-leg."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting odds strongly price Arsenal as the favorite away (approx. 1.74 for Arsenal vs ~4.9 Sporting), aligning with Arsenal\u2019s dominant UCL league-stage record (#1, 8-0-0). Sporting\u2019s solid home profile and recent form (WWWLD) plus typical first-leg caution elevate the draw probability, but Arsenal\u2019s overall quality and UCL consistency still make an away win the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:30:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern enter on superior UCL form (7-0-1, top seed) and excellent recent results; Real have stronger home history but several notable absences reported (Courtois, Mendy, Rodrygo, Ceballos) that weaken Real defensively and in attack. Home advantage and Real's late-run form temper Bayern's edge, and some market tips favour Real or draw, but overall probability-weighted model gives Bayern the lead for the first leg."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Arsenal are unbeaten in the UCL stage (8-0-0) and have strong away scoring form, giving them the clear statistical edge. Sporting are in good domestic/UCL home form and have some squad injuries, making this a competitive tie; markets are mixed but lean to Arsenal\u2019s quality. Probabilities reflect Arsenal as favorites but allow substantial weight to Sporting home strength and draw outcomes."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:30:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid at home but facing significant injuries (Courtois, Mendy, Ceballos, Rodrygo); Bayern's strong away form and 88% away strength weigh in. Betting odds favor Real Madrid or a draw, but the balance tilts slightly toward the home side due to home advantage and Bayern's away pressure."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal have a perfect away record (8-0-0) and are less burdened by injuries, while Sporting CP field multiple injuries in key positions. The combination strongly favors Arsenal to win, with a reasonable chance of a draw being low."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid have a strong home record (4 straight home wins in recent form) and remain favorites despite injuries to Ceballos, Courtois, Mendy, and Rodrygo. Bayern are in better UCL form overall (21 points, 88%, unbeaten in last five), but key market odds (Forebet 1X2-1: 71%) favor Real Madrid, and their Champions League pedigree at home is significant. Injury to Courtois is mitigated somewhat by their depth. The probability of a draw is non-negligible due to Bayern's quality and UCL resilience."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal boast a perfect away UCL record this campaign (8-0-0 group & knockout combined), and their form is strong. Sporting CP are in good form domestically but have several injuries to key forwards and midfielders (Quenda, Catamo, Lira dos Santos, etc). Market odds heavily favor Arsenal (best odds for Arsenal win ~1.74 vs Sporting ~4.0), and analytically Arsenal's ability to score and manage European away fixtures makes them strong favorites."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid plays at home, typically a strength, but they are missing key players like Courtois and Mendy, which significantly weakens their defense. Bayern Munich has a strong Champions League record this season, but Real Madrid's home advantage gives them a slight edge."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal has a perfect Champions League record this season, showcasing their away strength. Sporting CP's recent form is decent, but Arsenal's attacking power and consistency make them strong favorites despite playing away."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid has home advantage and a slightly better recent form (LWWWW vs WWWDW for Bayern). Injury reports indicate key players missing for Real Madrid (Courtois, Mendy, Rodrygo, Ceballos), which slightly decreases their win probability. However, the betting odds suggest a Real Madrid win or draw is likely. Forebet predicts a 2-1 win for Real Madrid with 71% likelihood. Given these factors, I give Real Madrid a slightly higher probability of winning while acknowledging the injuries and Bayern's strength."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Arsenal has a perfect away record in the UCL league stage (8-0-0) and stronger recent form compared to Sporting CP (LLWWD vs WWWLD). Sporting CP has a few injuries (Chaby Mangas, Kochorashvili, Quenda, Lira dos Santos, Catamo) which further weakens their chances. The betting odds (17/23 for Arsenal win, 39/10 for Sporting win) heavily favour an Arsenal victory. While Sporting has home advantage, Arsenal's superior form and away record give them a higher probability of winning. The high odds on the away win give confidence in this outcome."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid has significant home advantage at Santiago Bernab\u00e9u and strong recent form (LWWWW), but key injuries to Courtois, Mendy, Rodrygo, and Ceballos weaken their squad. Bayern Munich has superior league stage performance (88% win rate, 7-0-1) and better overall form (WWWDW). Betting odds and algorithm predictions from sources suggest Real Madrid or Draw (1X) as the safer bet, with Forebet showing 71% probability for Real Madrid win. However, Bayern's away dominance and Madrid's injury crisis make this closer than typical. The slight edge goes to Madrid due to home advantage in first leg of knockout stage."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium-High",
+                    "reasoning": "Arsenal has been perfect in UCL group stage (100% record, 8-0-0) and possesses superior quality despite recent mixed form (LLWWD). Sporting CP has home advantage and decent form (WWWLD), but faces multiple injuries including Chaby Mangas, Kochorashvili, Quenda, Lira dos Santos, and Catamo. Betting odds show Arsenal as clear favorites (17/23 decimal equivalent ~1.74), with analysis highlighting Arsenal's away scoring consistency and quick transitions. Sporting's defensive gaps due to injuries will be exploited by Arsenal's high pressing system. The away win probability reflects Arsenal's tournament dominance versus Sporting's home resilience."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Real Madrid (#9, 62% win rate, 15 pts) face Bayern Munich (#2, 88% win rate, 21 pts) in a highly competitive first leg. Bayern's superior UCL form (7-0-1, WWWDW) contrasts sharply with Real Madrid's inconsistent record (5-0-3, LWWWW). However, Real Madrid have significant injury concerns with Courtois (GK), Mendy (LB), Rodrygo (F), and Ceballos all sidelined, weakening their defensive stability and attacking options. The betting market shows Forebet giving Real Madrid 71% probability for 1X2-1 outcome (2-1 prediction), and SportyTrader recommends 'Real Madrid or Draw' (1X). This suggests home advantage is valued despite injuries. Bayern's exceptional form makes them dangerous, but Real Madrid's home fortress and UCL pedigree in knockout stages cannot be dismissed. The match is essentially a coin flip with slight edge to Real Madrid at home, though Bayern's form warrants significant respect. Quarter-final first legs often end cautiously, increasing draw probability."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Arsenal (#1, 100% win rate, 24 pts) are the standout team in the UCL league stage with a perfect 8-0-0 record, though recent form shows LLWWD indicating some slip. Sporting CP (#7, 62% win rate, 16 pts, form: WWWLD) are solid but clearly inferior. Sporting have multiple injury concerns including Quenda (metatarsal fracture), Catamo (muscle injury), and others. Betting odds from MightyTips show Arsenal as favorites with odds around 17/23 (0.74 decimal = 57% implied probability), while Sporting are at 39/10 (4.9 decimal = 20% implied probability), and draw at 8/3 (3.67 decimal = 27% implied probability). BetMines highlights Arsenal's 'consistency in scoring away from home' and ability to exploit defensive gaps. Despite Arsenal's recent domestic inconsistency (LL in form), their UCL dominance and overall quality should prevail. Sporting's home advantage and recent good form (WWWLD) keeps them competitive, but Arsenal's attacking prowess and tactical discipline give them the edge. First leg caution may increase draw probability slightly."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-06 16:31:58",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Real Madrid has several key players injured, including Courtois and Ceballos, which weakens their defense and midfield. Bayern Munich, despite being the away team, has a strong recent form and a solid UCL record. The betting odds also suggest a close match with a slight edge to Real Madrid or a draw."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Arsenal (away) @ Sporting CP (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Arsenal has an impressive 100% win record in the UCL this season, and their recent form, despite some losses, is generally strong. Sporting CP, while having a decent home record, faces a tough challenge against Arsenal's consistent away performance. The betting odds and recent form indicate a higher likelihood of an Arsenal win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

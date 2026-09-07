@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-21\n    Target Date: 2026-05-22\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Atalanta @ Fiorentina                                | Scheduled    | Away: 40.5% (15-13-9) vs Home: 24.3% (9-14-14)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Atalanta (Away) @ Fiorentina (Home)\n**News & Injury Report:**\n- [Fiorentina vs Atalanta Prediction 22/05/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-24-05-2026-fiorentina-atalanta-prediction)\n  Snippet: ## Latest news\n\n### Fiorentina\n\n\ud83d\udeab The hosts are dealing with a few squad issues: Luca Ranieri is suspended for this match, while Moise Kean, Tariq Lamptey, and Fabiano Parisi are sidelined with injuries. Parisi, in particular, faces an extended spell on the sidelines.\n\n\ud83d\udccc Ranieri and Parisi are both first-choice defenders, so their absence could leave Fiorentina vulnerable at the back. Without Kean, La Viola have also struggled to find the back of the net as frequently.\n\n### Atalanta ...\n- [Fiorentina vs Atalanta Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/fiorentina-vs-atalanta-prediction-lineups-odds-2026-05-22)\n  Snippet: Atalanta have won 3, lost 3 and drawn 4, averaging 13.7 attempts, 4.0 shots on goal and 1.3 goals. The Bergamo side average 55.2% possession, 507.4 passes, 5.6 corners in their favour and 3.3 corners against, while 1.1 goals have been conceded from 3.9 shots on goal and 11.7 attempts.\n\nGianluca Scamacca has recorded 4 goals, Nikola Krstovic 3, with Davide Zappacosta and Giacomo Raspadori both managing 2. Charles De Ketelaere has had 2 assists, with Marco Carnesecchi notching 3 clean sheets in the previous 10 games.\n\n### Predicted & Confirmed Lineups ...\n**Betting Odds:**\n- [Fiorentina vs. Atalanta - Odds - May 22, 2026 | FOX Sports](https://www.foxsports.com/soccer/serie-a-fiorentina-vs-atalanta-may-22-2026-game-boxscore-625571?tab=odds)\n  Snippet: +178\n\nFIO\n\n+138\n\nATA\n\n+247\n\nDRAW\n\nTEAM TO WIN BREAKDOWN\n\nWhile the majority of bets favor Atalanta, only 52% of the money is on Atalanta.\n\nFIO\n\n24%\n\n% OF BETS PLACED\n\nATA\n\n68%\n\nFIO\n\n37%\n\n% OF MONEY WAGERED\n\nATA\n\n52%\n\n## TOTAL\n\nThe combined final score of both teams is set at 2.5\n\n-149\n\nOVER 2.5\n\n+113\n\nUNDER 2.5\n\nTOTAL BREAKDOWN\n\nBets and money are in the vast majority towards the Over.\n\nOVER\n\n85%\n\n% OF BETS PLACED\n\nUNDER\n\n15%\n\nOVER\n\n85%\n\n% OF MONEY WAGERED\n\nUNDER\n\n15%\n\nPROPS\n\n## PLAYER FIRST GOAL SCORER ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-21\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-21 16:18:24"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-21 16:16:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "The prediction leans towards Atalanta primarily due to Fiorentina's significant injury and suspension crisis. Fiorentina will be without two first-choice defenders (Luca Ranieri, Fabiano Parisi) and a key forward (Moise Kean), severely weakening their defensive structure and goal-scoring threat. Atalanta has a much stronger season record (40.5% win rate vs. Fiorentina's 24.3%). The betting markets have correctly installed Atalanta as the favorite (+138), and Fiorentina's defensive vulnerabilities should be the deciding factor in an away victory for Atalanta."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:17:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing makes Atalanta the away favorite (approx. implied after vig: ATA ~0.39, FIO ~0.34, Draw ~0.27). Season-level results also point to a stronger Atalanta (15-13-9; 40.5% win rate) versus Fiorentina (9-14-14; 24.3% win rate). Fiorentina are weakened by key absences: Ranieri suspended plus Parisi/Lamptey injured (defensive depth hit) and Kean out (attacking output reduced), which increases Atalanta\u2019s edge despite playing away."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:17:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market and form favor Atalanta: betting flow shows majority of bets and money on Atalanta (68% of bets, 52% of money) and odds make them the slight favorite. Atalanta have a stronger season win rate (40.5% vs Fiorentina 24.3%) and possess more reliable attacking options (Scamacca, Krstovic, Raspadori), while Fiorentina are missing key defenders (Ranieri suspended, Parisi injured) and striker Moise Kean is sidelined \u2014 weakening both their defensive stability and goal threat at home. Recent Atalanta metrics (possession, chances) suggest they can control the game; public markets also push Over 2.5 indicating an open match. Given those factors, an away win is the likeliest outcome, but suspension/injury uncertainty and Atalanta\u2019s mixed recent form keep confidence at medium and leave a meaningful draw probability."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:17:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.337,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.393,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds favor the away side (Atalanta +138) and normalization of those odds yields a higher probability for an away win. Fiorentina face multiple injuries and a suspension (Ranieri) reducing defensive solidity, while Atalanta boast quality attackers (Scamacca, Krstovic) and solid attacking metrics. Home advantage is present but dampened by Fiorentina's absences; market data aligns with an away-win expectation."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:17:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina are missing two first-choice defenders (Ranieri, Parisi) and striker Kean, which weakens both their defense and attack. Atalanta have a stronger season record (40.5% win rate vs Fiorentina's 24.3%), and their recent form is solid with key attackers in good shape. Betting odds slightly favor Atalanta, and the market is backing them with the majority of bets and money. Fiorentina's home advantage and Atalanta's tendency to draw keep the draw probability relatively high, but Atalanta are deserved favorites."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:17:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina is missing key defensive players Ranieri and Parisi, which could leave them vulnerable at the back. Additionally, the absence of Moise Kean affects their attacking capabilities. Atalanta has a stronger recent form and higher betting odds favoring them, with 68% of bets placed on them. The betting market also shows a slight preference for Atalanta, with 52% of the money wagered on them. These factors contribute to a higher probability of an Atalanta win."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:18:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina missing key defenders Ranieri (suspended) and Parisi (injured), plus striker Kean out. Atalanta have solid recent form and betting odds favor them (away win +138, implied ~42% but with 52% of money). Atalanta's away record (40.5% win rate) is strong relative to Fiorentina's home record (24.3%). Draw also possible given Atalanta's inconsistency."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:18:11",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Atalanta enters with a superior season record (40.5% win rate, 15-13-9) compared to Fiorentina's struggling 24.3% (9-14-14). The betting market strongly favors Atalanta with 68% of bets and +138 odds vs Fiorentina's +178, indicating clear away preference. Fiorentina faces critical defensive absences: Luca Ranieri (suspended) and Fabiano Parisi (injured) are both first-choice defenders, leaving the backline vulnerable. Additionally, striker Moise Kean's absence impacts their already limited attacking output. Atalanta's recent form shows consistency with Scamacca (4 goals) and Krstovic (3 goals) providing scoring options. The over 2.5 goals line (-149) with 85% of money suggests an open, attacking game. While Fiorentina has home advantage, their poor form combined with key defensive injuries and Atalanta's superior squad depth and attacking threat tilts this toward an away win. The draw probability remains significant given Serie A's tendency for tight matches and Fiorentina's defensive setup compensating for absences."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-21 16:18:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atalanta (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina is dealing with significant defensive injuries and a suspension, which could make them vulnerable. Atalanta, despite their mixed recent form, has a strong attacking record and the betting market also slightly favors them. The odds and team news suggest a higher likelihood of an away win."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-30",
+        "target_date_et": "2026-08-31",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874945\nMatchup: AS Roma (away) @ Lecce (home)\nHome: Lecce\nAway: AS Roma\nKickoff UTC: 2026-08-31T16:30Z\nKickoff ET: 2026-08-31 12:30 EDT\nVenue: Via Del Mare\nRound: unavailable\nHome form: WLWWL\nAway form: WWWWW\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Lecce +600 (open +475); Draw +310 (open +265); AS Roma -225 (open -180)\nTavily context:\n  - Title: Preview: Lecce vs Roma - prediction, team news, lineups - Sports Mole\n    Content: L\n W\n\nRoma Serie A form:\n\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1080707555-1-6a89623d6780f600972305.jpg)\n\n© Imago / IPA Sport\n\nMalen and Dybala face fresh competition this season, in the shape of summer signing Santiago Castro, yet their partnership should continue on Monday.\n\nFellow new boys Rodrigo Mora and Konstantinos Koulierakis both featured against Fiorentina, but Nahuel Molina stayed on the bench, with rookie wing-back Emanuele Lulli starting instead. ...\n    URL: https://www.sportsmole.co.uk/football/lecce/preview/lecce-vs-roma-prediction-team-news-lineups_604024.html\n  - Title: PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08)\n    Content: OneFootball's home page\n\n# PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08) | OneFootball\n\nIcon: Playmakerstats\n\n·29 August 2026\n\n## PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08)\n\nLecce and Roma go head-to-head at Stadio Comunale Via del Mare this Monday in the Serie A.\n\nLecce have picked up 3 points and currently lie in 3rd position. Last time out, Eusebio Di Francesco's team triumphed 0-2 against Venezia (Serie A 2026/27).\n\n## OneFootball Videos ...\n    URL: https://onefootball.com/en/news/preview-lecce-vs-roma-team-news-lineups-predictions-serie-a-3108-43363081\n  - Title: Lecce vs Roma Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: ## Lecce vs Roma Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nRoma Heavy Favourites in Eyes of the Bookies\n\nWith a 70% prospect of triumphing according to the 1x2 odds, Roma are favourites to come out on top in this Serie A clash and they’re available at 1.43 with the bookmakers. The market implies that Lecce are the most unlikely to win at 7.50. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lecce-vs-roma-prediction-lineups-odds-2026-08-31\n  - Title: Prediction Lecce vs Roma: analysis, odds and betting tips | BetMines\n    Content: The odds are: Lecce to win 7.50, draw 4.10, Roma to win 1.48. The odds are Over 2.5 at 2.00 and Under 2.5 at 1.80. The odds for both teams to\n    URL: https://betmines.com/match-preview/lecce-vs-roma-prediction-match-preview-and-analysis-serie-a-31-08-2026\n\nGame ID: 2\nSource event_id: 401874970\nMatchup: Bologna (away) @ Atalanta (home)\nHome: Atalanta\nAway: Bologna\nKickoff UTC: 2026-08-31T18:45Z\nKickoff ET: 2026-08-31 14:45 EDT\nVenue: New Balance Arena\nRound: unavailable\nHome form: WWDDL\nAway form: LDWWD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Atalanta -115 (open -120); Draw +250 (open +260); Bologna +285 (open +270)\nTavily context:\n  - Title: Atalanta vs Bologna - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atalanta vs Bologna — Mon, August 31, 6:45 PM UTC\n\nSerie A Round 2\n\n Serie A Round 2\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nBolognaBologna\n\n# Atalanta vs Bologna — Mon, August 31, 6:45 PM UTC\n\nSerie A Round 2\n\n Serie A Round 2\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nBolognaBologna\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Giorgio Scalvini\n\n  Ankle injury / Early September 2026\n\nScalviniAnkle injuryEarly September 2026\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Charles De Ketelaere ...\n    URL: https://www.fotmob.com/matches/atalanta-vs-bologna/2sl6d8\n  - Title: Atalanta vs Bologna - live score, predicted lineups and H2H stats\n    Content: Honest Ahanor\n\n  Muscle injury / Early September 2026\n\nAhanorMuscle injuryEarly September 2026\n\n  Isak Hien\n\n  Hamstring injury / Early October 2026\n\nHienHamstring injuryEarly October 2026\n\n  Thomas Kristensen\n\n  Thigh injury / Doubtful\n\nKristensenThigh injuryDoubtful\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Nicolò Casale\n\n  Ankle injury / Early September 2026\n\nCasaleAnkle injuryEarly September 2026\n\n  Oussama El Azzouzi\n\n  Thigh injury / Late September 2026\n\nEl AzzouziThigh injuryLate September 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌ ...\n    URL: https://www.fotmob.com/en-GB/matches/atalanta-vs-bologna/2sl6d8\n  - Title: Atalanta vs Bologna Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: Most Corners\n\n1\n\n1.65\n\nX\n\n7.00\n\n2\n\n2.55\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nFull-Time Result Atalanta 1.89\n\nBoth Team To Score No 2.02\n\nPlayer Shots Giacomo Raspadori Over 1.5 1.60\n\nOur bet builder selections include Atalanta on the 1x2, No on the BTTS market and Giacomo Raspadori (Atalanta) to cover the 1.5 Player Shots line. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/atalanta-vs-bologna-prediction-lineups-odds-2026-08-31\n  - Title: Atalanta vs Bologna Prediction: Match Preview and Analysis\n    Content: What are the 1X2 betting odds for Atalanta vs Bologna in the Serie A? The odds are: Atalanta to win 1.85, draw 3.75, Bologna to win 4.00. The\n    URL: https://betmines.com/match-preview/atalanta-vs-bologna-prediction-match-preview-and-analysis-serie-a-31-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874945\nMatchup: AS Roma (away) @ Lecce (home)\nHome: Lecce\nAway: AS Roma\nKickoff UTC: 2026-08-31T16:30Z\nKickoff ET: 2026-08-31 12:30 EDT\nVenue: Via Del Mare\nRound: unavailable\nHome form: WLWWL\nAway form: WWWWW\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Lecce +600 (open +475); Draw +310 (open +265); AS Roma -225 (open -180)\nTavily context:\n  - Title: Preview: Lecce vs Roma - prediction, team news, lineups - Sports Mole\n    Content: L\n W\n\nRoma Serie A form:\n\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1080707555-1-6a89623d6780f600972305.jpg)\n\n© Imago / IPA Sport\n\nMalen and Dybala face fresh competition this season, in the shape of summer signing Santiago Castro, yet their partnership should continue on Monday.\n\nFellow new boys Rodrigo Mora and Konstantinos Koulierakis both featured against Fiorentina, but Nahuel Molina stayed on the bench, with rookie wing-back Emanuele Lulli starting instead. ...\n    URL: https://www.sportsmole.co.uk/football/lecce/preview/lecce-vs-roma-prediction-team-news-lineups_604024.html\n  - Title: PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08)\n    Content: OneFootball's home page\n\n# PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08) | OneFootball\n\nIcon: Playmakerstats\n\n·29 August 2026\n\n## PREVIEW | Lecce vs Roma: team news, lineups, predictions (Serie A 31/08)\n\nLecce and Roma go head-to-head at Stadio Comunale Via del Mare this Monday in the Serie A.\n\nLecce have picked up 3 points and currently lie in 3rd position. Last time out, Eusebio Di Francesco's team triumphed 0-2 against Venezia (Serie A 2026/27).\n\n## OneFootball Videos ...\n    URL: https://onefootball.com/en/news/preview-lecce-vs-roma-team-news-lineups-predictions-serie-a-3108-43363081\n  - Title: Lecce vs Roma Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: ## Lecce vs Roma Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nRoma Heavy Favourites in Eyes of the Bookies\n\nWith a 70% prospect of triumphing according to the 1x2 odds, Roma are favourites to come out on top in this Serie A clash and they’re available at 1.43 with the bookmakers. The market implies that Lecce are the most unlikely to win at 7.50. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/lecce-vs-roma-prediction-lineups-odds-2026-08-31\n  - Title: Prediction Lecce vs Roma: analysis, odds and betting tips | BetMines\n    Content: The odds are: Lecce to win 7.50, draw 4.10, Roma to win 1.48. The odds are Over 2.5 at 2.00 and Under 2.5 at 1.80. The odds for both teams to\n    URL: https://betmines.com/match-preview/lecce-vs-roma-prediction-match-preview-and-analysis-serie-a-31-08-2026\n\nGame ID: 2\nSource event_id: 401874970\nMatchup: Bologna (away) @ Atalanta (home)\nHome: Atalanta\nAway: Bologna\nKickoff UTC: 2026-08-31T18:45Z\nKickoff ET: 2026-08-31 14:45 EDT\nVenue: New Balance Arena\nRound: unavailable\nHome form: WWDDL\nAway form: LDWWD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Atalanta -115 (open -120); Draw +250 (open +260); Bologna +285 (open +270)\nTavily context:\n  - Title: Atalanta vs Bologna - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atalanta vs Bologna — Mon, August 31, 6:45 PM UTC\n\nSerie A Round 2\n\n Serie A Round 2\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nBolognaBologna\n\n# Atalanta vs Bologna — Mon, August 31, 6:45 PM UTC\n\nSerie A Round 2\n\n Serie A Round 2\n New Balance Arena\n\nAtalantaAtalanta\n\n‌\n‌\n\nBolognaBologna\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Giorgio Scalvini\n\n  Ankle injury / Early September 2026\n\nScalviniAnkle injuryEarly September 2026\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Charles De Ketelaere ...\n    URL: https://www.fotmob.com/matches/atalanta-vs-bologna/2sl6d8\n  - Title: Atalanta vs Bologna - live score, predicted lineups and H2H stats\n    Content: Honest Ahanor\n\n  Muscle injury / Early September 2026\n\nAhanorMuscle injuryEarly September 2026\n\n  Isak Hien\n\n  Hamstring injury / Early October 2026\n\nHienHamstring injuryEarly October 2026\n\n  Thomas Kristensen\n\n  Thigh injury / Doubtful\n\nKristensenThigh injuryDoubtful\n\n  Kamaldeen Sulemana\n\n  Knee injury / Early October 2026\n\nSulemanaKnee injuryEarly October 2026\n\n  Nicolò Casale\n\n  Ankle injury / Early September 2026\n\nCasaleAnkle injuryEarly September 2026\n\n  Oussama El Azzouzi\n\n  Thigh injury / Late September 2026\n\nEl AzzouziThigh injuryLate September 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌ ...\n    URL: https://www.fotmob.com/en-GB/matches/atalanta-vs-bologna/2sl6d8\n  - Title: Atalanta vs Bologna Prediction, Betting Tips, Lineups & Odds | 31 Aug 2026\n    Content: Most Corners\n\n1\n\n1.65\n\nX\n\n7.00\n\n2\n\n2.55\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nFull-Time Result Atalanta 1.89\n\nBoth Team To Score No 2.02\n\nPlayer Shots Giacomo Raspadori Over 1.5 1.60\n\nOur bet builder selections include Atalanta on the 1x2, No on the BTTS market and Giacomo Raspadori (Atalanta) to cover the 1.5 Player Shots line. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/atalanta-vs-bologna-prediction-lineups-odds-2026-08-31\n  - Title: Atalanta vs Bologna Prediction: Match Preview and Analysis\n    Content: What are the 1X2 betting odds for Atalanta vs Bologna in the Serie A? The odds are: Atalanta to win 1.85, draw 3.75, Bologna to win 4.00. The\n    URL: https://betmines.com/match-preview/atalanta-vs-bologna-prediction-match-preview-and-analysis-serie-a-31-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874945",
+                        "date_utc": "2026-08-31T16:30Z",
+                        "kickoff_et": "2026-08-31 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Lecce",
+                        "away": "AS Roma",
+                        "home_id": "113",
+                        "away_id": "104",
+                        "matchup": "AS Roma (away) @ Lecce (home)",
+                        "venue": "Via Del Mare",
+                        "city": "Lecce",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WLWWL",
+                        "form_away": "WWWWW",
+                        "record_home": "1-0-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+475",
+                            "home_current": "+600",
+                            "draw_open": "+265",
+                            "draw_current": "+310",
+                            "away_open": "-180",
+                            "away_current": "-225"
+                        },
+                        "odds_text": "DraftKings: Lecce +600 (open +475); Draw +310 (open +265); AS Roma -225 (open -180)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874970",
+                        "date_utc": "2026-08-31T18:45Z",
+                        "kickoff_et": "2026-08-31 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Atalanta",
+                        "away": "Bologna",
+                        "home_id": "105",
+                        "away_id": "107",
+                        "matchup": "Bologna (away) @ Atalanta (home)",
+                        "venue": "New Balance Arena",
+                        "city": "Bergamo",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWDDL",
+                        "form_away": "LDWWD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-120",
+                            "home_current": "-115",
+                            "draw_open": "+260",
+                            "draw_current": "+250",
+                            "away_open": "+270",
+                            "away_current": "+285"
+                        },
+                        "odds_text": "Provider unavailable: Atalanta -115 (open -120); Draw +250 (open +260); Bologna +285 (open +270)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-30T09:58:49.219907-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:50:17.255950-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Roma enter this matchup as heavy favorites with bookmakers pricing them around -225, giving them an implied probability of over 65%. Given Roma's strong current form and Lecce's underdog status, an away win is highly anticipated.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are the favored side playing at home, with odds hovering around -115 to -120 indicating a roughly 51% chance of victory. While Bologna represents a solid side, Atalanta's home advantage and superior squad depth make a home win the most likely result.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-30T09:50:27.268015-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.126,
+                    "draw_probability": 0.232,
+                    "away_win_probability": 0.642,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters the match with excellent form (WWWWW) and are heavily favored by bookmakers at odds of -225 (1.43 to 1.48). Lecce, on the other hand, faces steep odds of +600, making an away win highly probable.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.511,
+                    "draw_probability": 0.252,
+                    "away_win_probability": 0.237,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta is playing at home and holds favorable odds (-115 or around 1.85) to win the match. While Bologna is a competitive side, Atalanta's strong start and home advantage give them the edge, though the probability is around 51%.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-30T09:50:46.493256-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters this match with perfect recent form (WWWWW) and is a heavy favorite according to multiple betting markets, with implied win probabilities around 70%. While Lecce also won their opening match and have the home advantage, Roma's superior squad quality and strong momentum make them the clear choice for a victory.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta holds a significant home-field advantage and started their season with a win, whereas Bologna suffered a loss. The betting odds consistently favor an Atalanta victory. However, Atalanta is dealing with a notable list of injuries to key players, which introduces a level of uncertainty and lowers the confidence from high to medium.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:51:01.526678-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma are strong favorites based on consistent bookmaker odds (implied win probability around 64-70%) and excellent recent form (WWWWW). Lecce's form is mixed, and they are considered the most unlikely to win by bookmakers.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are favored by bookmakers with an implied win probability of around 50-51%. Their home form is generally good (WWDDL) and they won their first match of the season. Bologna has a mixed form (LDWWD) and lost their first away game this season. Both teams have reported injuries.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:53:02.388842-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are clear market favorites, with odds implying roughly a mid-60% away-win chance after removing margin. Their stronger form and squad quality outweigh Lecce's home advantage, though Serie A away-match variance keeps the draw probability meaningful.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are moderate home favorites in the 1X2 market, with normalized odds close to a 50% home-win probability. Home advantage and stronger market support point to Atalanta, but Bologna are competitive enough to leave substantial draw and away-upset risk.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:53:09.006844-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium-high",
+                    "reasoning": "Roma are strong away favorites in the market, with odds shortening from open, and arrive with excellent recent form. Lecce have home advantage and opened with a win, but the quality gap and betting consensus point clearly toward Roma over 90 minutes.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are moderate home favorites, supported by market pricing and home advantage. Bologna are competitive enough to keep the draw and away-win probabilities meaningful, but Atalanta have the stronger overall win profile for regulation time.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-30T09:53:37.767087-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Market pricing makes Roma a clear favorite (short away price vs long home price), and Roma’s recent form is stronger (WWWWW) than Lecce’s mixed run (WLWWL). Lecce at home can keep games competitive, but Roma’s higher baseline quality and momentum point most often to an away win, with the draw the main alternative.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are modest home favorites in the odds and come in with the stronger recent form line (WWDDL vs Bologna’s LDWWD), giving them the edge at home. Bologna are capable of taking points, and Atalanta’s injury notes add uncertainty, so the draw remains a meaningful outcome, but Atalanta still project as the most likely 90-minute winner.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-30T09:53:50.481769-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Roma enter as clear favorites with five straight wins and strong attacking options (Malen, Dybala, Castro), while Lecce are less consistent despite a win last match. Market odds heavily favor Roma and form/quality gap suggests a high probability of a Roma victory in 90 minutes.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are slight favorites at home and have been solid recently; Bologna have shown resilience but are the underdogs on the road. Injuries (e.g., Scalvini) slightly temper Atalanta's edge, so a home win is likeliest but with moderate uncertainty.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-30T09:54:05.567246-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Roma are heavy favorites with strong form and opening-season momentum; Lecce at home can threaten but Roma's attack edges secure a 90-minute win.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta favored to win at home according to odds (-115); Bologna's away results are less convincing, so home advantage likely decides the match within 90 regulation minutes.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-30T09:54:08.174992-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Roma are heavy favorites according to both bookmaker odds and recent form, with a strong away record and a superior squad. Lecce, while coming off a win, are significant underdogs and have less squad depth. The implied probabilities from multiple sources consistently give Roma a 65-70% chance to win, with draw and Lecce win much less likely. Roma's attacking options and recent signings further strengthen their position.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are favored at home, with odds and betting tips supporting their win probability around 50-55%. Both teams have some injury concerns, but Atalanta's home form and squad depth give them the edge. Bologna are competitive and could force a draw, but Atalanta's attacking options and home advantage make them the likelier winners.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-30T09:54:10.268649-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma is in excellent form with a strong winning streak and is heavily favored by bookmakers. Lecce's odds of winning are significantly lower, indicating a high likelihood of a Roma victory.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta has a solid home record and is slightly favored by the odds. Bologna's recent form is mixed, making Atalanta the more likely winner, though a draw is also a possibility.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-30T09:54:21.937239-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma enter in perfect form (WWWWW) and are heavy market favorites at -225, with implied probability around 65-70%. Lecce won their opener but have inconsistent form (WLWWL), and odds have drifted further toward Roma since opening. Roma's attacking options (Dybala, Malen, new signing Castro) give them a clear edge away at Via del Mare.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Atalanta are moderate home favorites at roughly 1.85-1.89, implying just over 50% win probability. Both sides carry injury concerns (Scalvini, Sulemana, De Ketelaere for Atalanta; Casale, El Azzouzi for Bologna), but Atalanta won their opener while Bologna lost theirs. Home advantage tips this close matchup toward Atalanta, though with meaningful draw and away risk.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-30T09:54:29.068035-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are heavy favorites at around -225, with market implying roughly 70% win chance. Roma's strong form (WWWWW) and superior squad depth with new signings favor them on the road against a Lecce side that, while in decent form, is the least likely to win per bookmakers.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Atalanta are modest home favorites at around -115, implying roughly 52% win probability. Despite multiple injuries (Scalvini, Ahanor, Sulemana, Hien), Atalanta's home advantage at New Balance Arena and slightly better recent form give them the edge over Bologna, though this is a close matchup.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-30T09:54:40.680251-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma enter this match with a perfect 5-game winning streak and a 1-0 start to the season, while Lecce's recent form is inconsistent (WLWWL). The market odds strongly favor Roma at around -225 (DraftKings), implying roughly 69% implied probability after removing the overround. Betting sites converge around 67-70% for Roma. Lecce did win their opening match against Venezia, but Roma's overall squad quality, momentum, and away record support the visitor. The odds have drifted from Roma -180 open to -225, suggesting increased confidence in Roma. Adjusting for a slight house edge and some uncertainty, Roma win probability is set at 66%.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are slight favorites at -115 (essentially a coin flip with a small edge), having won their opening match and showing strong home form historically. Bologna have a mixed recent run (LDWWD) and lost their Serie A opener, though they have competitive quality. Multiple injury concerns on both sides (Scalvini, De Ketelaere for Atalanta; Hien, El Azzouzi, Sulemana for Bologna) add uncertainty. The market is tight, with Atalanta at ~1.85 and Bologna at ~4.00 on other sites, suggesting a moderately competitive match. Atalanta's home advantage and slightly better current form tips the balance in their favor.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-30T09:54:52.907493-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Roma arrive in excellent form with 5 consecutive wins (WWWWW) and are heavily favored by bookmakers at -225 (implied 69% win probability). Lecce's form is inconsistent (WLWWL) and despite a home advantage, the market consensus strongly favors the visitors. Roma's attacking partnership of Malen and Dybala, plus new signing Santiago Castro, gives them significant firepower. The odds have moved further in Roma's favor from open to current, suggesting sharp money on the away side. Roma's quality and momentum should overcome Lecce's home advantage.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are slight favorites at -115 and have a stronger recent record (1-0-0) compared to Bologna's winless start (0-0-1). While Atalanta have some injury concerns including Giorgio Scalvini, Kamaldeen Sulemana, and Charles De Ketelaere, they're playing at home in the New Balance Arena. Bologna also have multiple injuries including Thomas Kristensen (doubtful), Nicolò Casale, and Oussama El Azzouzi. The betting market suggests a close contest with relatively tight odds, but Atalanta's home advantage and superior form give them the edge. Both teams have defensive concerns which could lead to goals, but Atalanta should have enough quality to secure victory.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-30T09:54:58.065981-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "AS Roma",
+                    "confidence": "high",
+                    "reasoning": "AS Roma arrive with perfect form (WWWWW) while Lecce show inconsistency (WLWWL). Market odds heavily favor Roma (-225), reflecting their superior current form. Roma's attacking depth with Dybala, Malen, and summer signing Castro provides significant firepower against Lecce's recent mixed performances. Despite Lecce's home advantage at Via Del Mare, Roma's offensive momentum and tactical depth suggest a convincing away victory.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Atalanta",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta maintain stronger recent form (WWDDL) compared to Bologna's inconsistency (LDWWD). Home advantage at New Balance Arena favors Atalanta, supported by market odds (1.85). However, both teams show defensive vulnerabilities with multiple injury concerns limiting attacking options. Bologna's defensive struggles and Atalanta's relatively recent mixed performances suggest a competitive match with Atalanta's home field advantage likely decisive, though a draw remains plausible given team form variation.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-30T09:55:37.893835-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma are heavy market favourites and arrive in strong away form. Lecce's home win odds are very long, so the most likely outcome is an away win, with a draw as the main alternative.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Atalanta are moderate home favourites and Bologna have several injury concerns, but the odds are close. The home side has the highest single outcome probability, though a draw or away win is also plausible.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-30T09:55:40.546036-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Roma are in excellent form with five consecutive wins, while Lecce have mixed results. Odds heavily favor Roma (around -225), and Roma's squad depth and attacking quality should prove decisive. Lecce may be competitive at home, but Roma's superior class and momentum make an away win the most likely outcome.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are strong at home and have a better overall squad, despite some injuries. Bologna have been inconsistent, and Atalanta's attacking threat should create chances. The odds slightly favor Atalanta, and home advantage gives them the edge. However, Bologna's resilience could earn a draw, so confidence is moderate.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-30T09:55:55.092620-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma is in exceptional form with five consecutive wins and boasts a strong attacking lineup including Dybala and Malen. Lecce has been inconsistent, and the betting odds heavily favor Roma, reflecting their superior squad depth and current momentum.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta has a slight edge playing at home despite dealing with a few injuries. Bologna is also missing key players and has struggled with consistency on the road. The odds and home-field advantage point towards a narrow home victory or a closely contested match leaning towards Atalanta.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-30T09:56:02.872607-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma has a strong away form with five consecutive wins, and the odds heavily favor them. Lecce's recent form is less consistent, and they are facing a tough opponent in Roma.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta has a solid home form and is favored by the bookmakers. Bologna's away form is mixed, and Atalanta has a better overall record. Injuries to key players like Scalvini and Sulemana may impact Bologna's performance.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-30T09:56:55.942637-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters with a perfect start and strong attacking reinforcements, heavily favored by bookmakers. Lecce's inconsistent recent form and significant underdog pricing reflect a clear quality gap, making a Roma victory the most probable outcome.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta holds a home advantage and started the season with a win, while Bologna suffered an opening defeat. Despite notable injuries on both sides, Atalanta's offensive profile and favorable market pricing suggest a home victory, though the competitive nature of the fixture warrants moderate confidence.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-30T09:57:27.969130-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "AS Roma enters with a perfect five-match winning streak and is established as the clear favorite (-225 odds). Despite Lecce's recent home victory against Venezia, Roma's superior squad depth and offensive options like Dybala favor an away win.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta holds home advantage and is the slight favorite (-115) with consistent recent form. However, significant injuries to key players like Scalvini and Ahanor increase uncertainty, making this a tighter contest where a narrow home victory is the most likely outcome.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-30T09:58:18.765761-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "AS Roma carries perfect form (WWWWW) and heavy market favoritism (-225), reflecting superior squad depth and summer additions such as Santiago Castro and Konstantinos Koulierakis. Lecce opened with a win but remain significant underdogs at Via Del Mare against a Roma side that has outscored opponents convincingly.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta are priced as favorites after winning their home opener, but their outlook is clouded by multiple key injuries including Giorgio Scalvini, Isak Hien, Kamaldeen Sulemana, and Charles De Ketelaere. Bologna have started slowly on the road (0-0-1) and face an uphill battle at the New Balance Arena, making a narrow Atalanta win the most probable result.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-30T09:58:44.167746-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Roma enter the fixture in superb form (WWWWW) and are heavy betting favorites (-225 odds), reflecting a significant quality advantage over Lecce. Despite Lecce winning their opener, Roma's attacking firepower led by Dybala and reinforced by summer signing Santiago Castro makes them clear favorites to secure the away victory.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta hold a moderate odds edge (-115) at the New Balance Arena against a Bologna side that lost their opening match. While Atalanta face defensive absences including Scalvini, their superior home record and Bologna's early-season struggles suggest a narrow home win is the most likely outcome.",
+                    "event_id": "401874970"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-30T09:58:49.216141-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AS Roma (away) @ Lecce (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma has a strong form with 5 wins in their last 5 matches, while Lecce has a mixed form with 2 wins and 3 losses. The odds also heavily favor AS Roma.",
+                    "event_id": "401874945"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Bologna (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atalanta has a slightly better form with 2 wins, 2 draws, and 1 loss in their last 5 matches compared to Bologna's 2 wins, 1 draw, and 2 losses. The odds also favor Atalanta.",
+                    "event_id": "401874970"
+                }
+            ]
+        }
+    ]
+}

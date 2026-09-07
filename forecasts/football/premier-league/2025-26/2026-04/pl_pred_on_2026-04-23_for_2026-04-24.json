@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-23\n    Target Date: 2026-04-24\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Nottingham Forest @ Sunderland                       | Scheduled    | Away: 27.3% (9-9-15) vs Home: 36.4% (12-10-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Nottingham Forest (Away) @ Sunderland (Home)\n**News & Injury Report:**\n- [Sunderland vs Nottingham Forest Predictions, Picks & Odds for Friday's Premier League Match](https://www.covers.com/soccer/sunderland-vs-nottingham-forest-predictions-picks-odds-premier-league-friday-april-24-2026)\n  Snippet: ## How to watch Sunderland vs Nottingham Forest\n\n|  |  |\n --- |\n| Location | Stadium of Light, Sunderland, England |\n| Date | Friday, April 24, 2026 |\n| Time | 3:00 p.m. ET |\n| TV | USA Network |\n| Weather | 57F and partly cloudy. |\n| Sunderland Recent EPL form | L-W-W-L-W |\n| Nottingham Forest Recent EPL form | W-D-W-D-D |\n\n## Sunderland vs Nottingham Forest key injuries ...\n- [Sunderland vs Nottingham Forest Prediction, Betting Tips, Lineups & Odds | 24 Apr 2026](https://www.sportsgambler.com/betting-tips/football/sunderland-vs-nottingham-forest-prediction-lineups-odds-2026-04-24/)\n  Snippet: | Angus Gunn | 18 | G | 1 | 45 | 0 | 14 | 0 | 0 | 0 | 0 |\n| Jota Silva  F | 1 | 12 | 0 | 1 | 0 | 0 | 0 | 0 |\n| Omar Richards  -  -  -  -  - |\n| Jimmy Sinclair  -  -  -  -  - |\n| Eric da Silva Moreira  -  -  -  -  - |\n| David Carmo  -  -  -  -  - |\n| Cuiabano  -  -  -  -  - |\n| Tyler Bindon  -  -  -  -  - |\n| Willy Boly  -  -  -  -  - | [...] Nottingham Forest predicted lineup (4-2-3-1): Matz Sels (GK), Ola Aina, Nikola Milenkovic, Morato, Neco Williams, Ibrahim Sangare, Elliot Anderson, Dilane Bakwa, Morgan Gibbs-White, Omari Hutchinson, Chris Wood. ...\n**Betting Odds:**\n- [Sunderland FC vs Nottingham Forest Odds - Friday April 24 2026](https://www.oddsshark.com/soccer/epl/sunderland-nottingham-odds-april-25-2026-2423014)\n  Snippet: Skip to main content\n\nSoccer\n\n# Sunderland FC vs Nottingham Forest\n\nNottingham\n\n9 - 9 - 15\n\nW-D-W-D-D-L\n\nSunderland\n\n12 - 10 - 11\n\nL-W-W-L-W-D\n\nApril 24, 2026, 3:00 PM EDT\n | Stadium of Light\n\nPredicted Score\n\n1.6\n\nNOF\n\n1.2\n\nSUN\n\nMoneyline Consensus\n\nLine History\n\nNOF\n\n+155\n\nNOF\n\n-122\n\n+239\n\nDraw\n\nSUN\n\n+187\n\nSUN\n\n+106\n\nTotal Consensus\n\nBest Over\n\n+114\n\no2.5\n\n0%\n\nBest Under\n\n-130\n\nu2.5\n\nOur Prediction\n\nNottingham Forest will Win and the Total  will go Over.\n\nCalifornia\n\n## Where to Bet in California\n\nOur Experience\n\nBonus Offer\n\nRatings\n\nLinks\n\n#1\n\n4.5\n\n/5\n\n4.5\n\n/5\n\nPlay $5\n\nGet ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-23 18:13:08"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-23 18:11:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "Market signals lean slightly to Nottingham Forest (consensus has Forest favored in some listings and a higher projected goal output ~1.6 vs ~1.2), but Sunderland\u2019s home advantage and better season win rate (12-10-11 vs 9-9-15) keep the home-win and draw probabilities elevated. Recent form is fairly even (SUN: L-W-W-L-W; NOF: W-D-W-D-D), pointing to a tight match with a meaningful draw chance; conflicting/volatile price snapshots reduce confidence."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:11:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Sunderland has the stronger season record and home advantage (36.4% win rate at home vs Forest's 27.3% overall), but recent form and the betting market tilt toward Nottingham Forest. Sunderland's recent form (L-W-W-L-W) is solid at home, while Forest's sequence (W-D-W-D-D) shows resilience and fewer losses. Available market consensus and a preview-predicted score (NOF 1.6 vs SUN 1.2) favour Forest, so I shift probability toward an away win while keeping a sizable draw probability given the Premier League's draw frequency and Sunderland's home edge. No major, market-moving injuries are reported in the provided snippets. Overall a moderately confident lean to an away win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds context suggests a close match with a slight tilt toward the away team. Sunderland at home provides some advantage, but Nottingham Forest's recent away form (W-D-W-D-D) and overall season record indicate a plausible away win. Draws are plausible but less likely given the current signals."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Sunderland have a slightly better season win rate at home (36.4%) compared to Forest's away win rate (27.3%), and home advantage at the Stadium of Light is significant. However, Nottingham Forest's recent form (W-D-W-D-D) is more consistent and positive than Sunderland's (L-W-W-L-W), and the market odds are relatively tight with no clear favorite (Sunderland +187, Forest +155, Draw +239). Key injuries are minimal for both sides, and lineups are nearly full-strength. The statistical and betting signals suggest a very evenly-matched contest, making a draw slightly the most probable individual outcome."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "While Sunderland has a slightly better home win rate and a favorable recent form, Nottingham Forest's recent unbeaten run, reflected in W-D-W-D-D, suggests they are in good form. Additionally, the betting market slightly favors Nottingham Forest, as indicated by the odds shift. Nevertheless, the closely matched win probabilities for both teams imply that a draw remains a significant possibility."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Sunderland's home record is slightly better than Nottingham Forest's away record (36.4% vs 27.3%). Recent form indicates Sunderland has been more erratic (L-W-W-L-W) compared to Nottingham Forest (W-D-W-D-D), suggesting a draw is possible. The moneyline odds slightly favor Nottingham Forest, but the prediction leans towards a Sunderland win at home due to slightly better home record, and the odds being relatively close suggesting higher home win probability than Forest away record. Injury reports indicate multiple players are out. Factoring in home advantage, Sunderland is given slightly higher win probability than Nottingham Forest. The predicted outcome leans towards a home win, albeit with a relatively high draw probability."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "Both teams have similar records and recent form is close; Sunderland's home record (36.4% win rate) gives slight edge, but Nottingham Forest's recent form (W-D-W-D-D) is slightly better than Sunderland's (L-W-W-L-W). Key injuries for Nottingham Forest (Angus Gunn, Jota Silva, etc.) may weaken them, but betting odds favor Nottingham Forest (+155) and their predicted score is 1.6 vs 1.2. Adjusting for home advantage, probabilities are nearly balanced, with a slight lean to Nottingham Forest due to better form and odds."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:12:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a closely matched fixture between two mid-table sides. Sunderland has a slightly better season record (36.4% win rate vs 27.3%) and home advantage at the Stadium of Light. However, recent form heavily favors Nottingham Forest (W-D-W-D-D) over Sunderland (L-W-W-L-W), with Forest showing more consistency and avoiding defeats in their last 5 matches. The betting odds strongly favor Forest with moneyline around +155 (implied ~39% probability) compared to Sunderland at +187 (implied ~35% probability), with draw at +239 (implied ~30%). The consensus prediction expects Nottingham Forest to win 1.6-1.2. Forest appears to have fewer injury concerns based on the available lineup information. Given Forest's superior recent form, the betting market favoring them despite playing away, and predicted low-scoring nature (total 2.5), I'm giving Forest a slight edge. However, home advantage and Sunderland's decent home record (12-10-11) keeps this very close. The low confidence reflects the tight margins - any of the three outcomes is plausible in this evenly-matched encounter."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:13:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Nottingham Forest (away) @ Sunderland (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Sunderland has a slightly better home record (36.4%) compared to Nottingham Forest's away record (27.3%). Recent form also favors Sunderland with a W-W-L-W-W pattern, while Nottingham Forest has a mixed W-D-W-D-D. The betting odds also suggest a slight edge for Sunderland, with a +106 moneyline for the home win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

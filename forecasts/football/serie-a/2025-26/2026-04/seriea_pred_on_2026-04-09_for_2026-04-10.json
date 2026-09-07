@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-09\n    Target Date: 2026-04-10\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Pisa @ AS Roma                                       | Scheduled    | Away: 6.5% (2-12-17) vs Home: 54.8% (17-3-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Pisa (Away) @ AS Roma (Home)\n**News & Injury Report:**\n- [Roma vs Pisa Prediction, Betting Tips, Lineups & Odds | 10 Apr 2026](https://www.sportsgambler.com/betting-tips/football/roma-vs-pisa-prediction-lineups-odds-2026-04-10/)\n  Snippet: Manu Kone Other \n\nPosition: Midfielder Matches: 26 Goals: 2 Assists: 2 Expected return: 2026-04-18\n\nArtem Dovbyk Other \n\nPosition: Forward Matches: 13 Goals: 3 Assists: 1 Expected return: 2026-05-01\n\nPaulo Dybala Other \n\nPosition: Forward Matches: 17...\n- [Roma vs Pisa Prediction 10/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-12-04-2026-roma-pisa-prediction)\n  Snippet: \ud83d\udeab The team is facing significant squad issues: Kouadio Kone is doubtful due to a muscle injury, while Gianluca Mancini (muscle injury) and Wesley (hamstring injury) are confirmed absentees. Additionally, Artem Dovbyk (muscle injury, out for the seaso...\n**Betting Odds:**\n- [Roma vs Pisa Prediction, Odds & Betting Tips | 10.04.2026 | Serie A](https://www.mightytips.com/football-predictions/roma-vs-pisa-prediction-10-04-2026/)\n  Snippet: clock\nwinrate\n\n60% winrate\n\nwins\n\n4 wins in a row\n\nFootball betting expert with a background in data science and statistical modeling.\n\nBest Odds:\n\nZoccer\n\nZoccer\n\n200% Welcome bonus up to \u20ac100\n\n## Additional predictions\n\nAS Roma vs Pisa odds\n\n|  | 1...\n- [Pisa vs Roma Odds & Live Scores - April 10, 2026 | The Action Network](https://www.actionnetwork.com/seriea-game/pisa-roma/284000)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Roma logo Roma | 4-2-1 | 1-2-1 | 3-0 | 4-2-1 | N/A |\n| Pisa logo Pisa | 14-15-2 | 5-10-1 | 9-5-1 | 2-2 | 12-13-2 |\n\nRoma l...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-09\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-09 20:07:27"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-09 20:06:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Roma have a major underlying edge at home (home-side season win rate shown at ~54.8%) versus Pisa\u2019s very low away win rate (~6.5%). Squad absences for Roma (notably doubts/outs reported including Kone, Mancini, Wesley and Dovbyk, with Dybala also flagged) reduce upside and increase draw risk, but Pisa\u2019s poor away profile keeps Roma a clear favorite."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:06:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Roma are heavy favourites: strong home record (17-3-11) and recent winning run cited in previews. Pisa are extremely poor away (season away win rate ~6.5%, record shown 2-12-17), indicating very low likelihood of an away victory. Bookmakers' markets and tipsters point to Roma (~60% implied) \u2014 I up-weight Roma further because Pisa's away form is abysmal and Roma still possess squad depth despite injuries (Gianluca Mancini and Wesley out, Kouadio Kone doubtful; Artem Dovbyk long-term). The main downside is Roma's absences which slightly raise draw probability, but on balance the probability of a Roma home win is high."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:06:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Roma benefits from strong home form (Roma's home win rate ~54.8%) while Pisa struggles away (away win rate ~6.5%). Notable injuries/doubts on both sides reduce ceiling but Roma's overall edge at home remains the primary driver of the forecast; a draw is possible but less likely than a Roma win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:06:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Roma have a strong home record (54.8% win rate), and are on a 4-game winning run. Despite notable absentees such as Dovbyk, Dybala, Kouadio Kone, Mancini, and Wesley, their squad depth remains superior to Pisa. Pisa are struggling with only a 6.5% away win rate and have won just 2 away matches all season. Betting markets and win-rate trends heavily favor Roma at home; draw risk exists due to Roma\u2019s injuries, but Pisa\u2019s form makes an away win highly unlikely."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:06:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "AS Roma has a significantly superior home win rate of 54.8% compared to Pisa's 6.5% away win rate. Despite key injuries such as Manu Kone and Artem Dovbyk affecting Roma, their recent form has been strong with a 60% win rate and four consecutive victories. Pisa's struggles in the away games further tilt the probabilities in Roma's favor. Betting market odds support a higher probability for Roma's victory."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:06:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "AS Roma has a strong home record (54.8% win rate), while Pisa struggles away (6.5% win rate). Roma also seems to have won 4 games in a row. However, Roma has some key injuries, including Gianluca Mancini and Wesley, and doubts over Kouadio Kone, which weakens their squad. Given the home advantage, Roma is still favored, but the injuries reduce their win probability."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:07:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Massive disparity in team strength: Roma has 54.8% win rate (17-3-11) vs Pisa's 6.5% (2-12-17). Roma is on a 4-game winning streak with 60% winrate mentioned. Pisa has terrible away form. Roma's injuries (Dovbyk, Mancini, Wesley) are significant but not catastrophic - they still have core players available. Betting odds strongly favor Roma (implied probability around 75% for home win). Pisa's 9-5-1 ATS away record shows some resilience but not enough to overcome Roma's home advantage and superior quality."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:07:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "AS Roma has a strong 54.8% season win rate (17-3-11) at home, while Pisa has been extremely poor away with only a 6.5% win rate (2-12-17). Despite Roma facing injury concerns with Manu Kone (doubtful, muscle), Gianluca Mancini (out, muscle), Wesley (out, hamstring), and Artem Dovbyk (out for season, muscle), their squad depth should be sufficient against struggling Pisa. The betting odds suggest a 60% winrate for Roma with 4 wins in a row noted. Pisa's away record (2-12-17) indicates severe struggles on the road. The historical strength disparity is massive - Roma is a top-tier Serie A club while Pisa is newly promoted and languishing near the bottom. Even with injuries to key players like Dovbyk and potential absence of Dybala impact, Roma's home fortress and Pisa's terrible away form (only 2 wins in 31 away matches) strongly favor a home victory. The draw probability accounts for potential Roma complacency or injury impact, but an away win is highly unlikely given Pisa's abysmal away record."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:07:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Pisa (away) @ AS Roma (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "AS Roma has a strong home record with a 54.8% win rate, and Pisa's away record is very poor at 6.5%. Additionally, key players for Roma like Paulo Dybala are available, while Pisa is facing significant squad issues with several key players out due to injuries. The betting odds also favor AS Roma heavily, indicating a high likelihood of a home win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

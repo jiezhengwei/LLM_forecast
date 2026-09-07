@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-22",
+        "target_date_et": "2026-08-23",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879297\nMatchup: Aston Villa (away) @ Brighton & Hove Albion (home)\nHome: Brighton & Hove Albion\nAway: Aston Villa\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: American Express Stadium\nRound: unavailable\nHome form: DLLWL\nAway form: LWWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Brighton & Hove Albion +120 (open +120); Draw +255 (open +260); Aston Villa +220 (open +195)\nTavily context:\n  - Title: Brighton vs Aston Villa - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brighton & Hove Albion vs Aston Villa — Sun, August 23, 1:00 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n American Express Stadium\n Peter Bankes\n\nBrightonBrighton & Hove Albion\n\n‌\n‌\n\nAston VillaAston Villa\n\n# Brighton & Hove Albion vs Aston Villa — Sun, August 23, 1:00 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n American Express Stadium\n Peter Bankes\n\nBrightonBrighton & Hove Albion\n\n‌\n‌\n\nAston VillaAston Villa\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Evan Ferguson\n\n  Ankle injury / Early October 2026 ...\n    URL: https://www.fotmob.com/matches/brighton-vs-aston-villa/3gku1s\n  - Title: Brighton v Aston Villa predicted line-ups + FPL team news\n    Content: Last updated: 14 Aug, 2026 8:07am\n\n| Player | Club | Factors |\n ---\n| No Change | Avatar of Haaland Haaland | MCI |  |\n| No Change | Avatar of João Pedro João Pedro | CHE |  |\n| No Change | Avatar of Calvert-Lewin Calvert-Lewin | LEE |  |\n| No Change | Avatar of Isak Isak | LIV |  |\n| No Change | Avatar of Thiago Thiago | BRE |  |\n| No Change | Avatar of Brobbey Brobbey | SUN |  |\n| No Change | Avatar of Igor Jesus Igor Jesus | NFO |  |\n| No Change | Avatar of McBurnie McBurnie | HUL |  |\n\nLast updated: 13 Aug, 2026 9:19am\n\nA, B, C Current Form\n\nVs Favourable Fixtures ...\n    URL: https://www.fantasyfootballscout.co.uk/2026/08/21/brighton-v-aston-villa-predicted-line-ups-fpl-team-news\n  - Title: Brighton vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Latest 1x2 Odds Suggest Brighton Victory\n\nAt betting odds of 2.23, the bookies make Brighton probable winners and there’s a 45% likelihood that the favourites triumph in this Premier League encounter. Aston Villa are the 3.00 underdogs, while the draw can also be backed as an alternative.\n\nBrighton -0.25 on the Asian Handicap can be backed at 1.91. It means your stake is split between 0 and -0.5, with a full payout if they beat Villa. Half your stake is refunded if we see a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/brighton-vs-aston-villa-prediction-lineups-odds-2026-08-23\n  - Title: Aston Villa Betting Odds: 2026-2027 Season | 7bet\n    Content: ## Matchday 1 – Brighton & Hove Albion vs Aston Villa (23 August 2026)\n\nIn Matchweek 1 of the 2026/27 Premier League season, Aston Villa will face Brighton & Hove Albion away from home. The match will take place at the American Express Stadium on 23 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Brighton | Draw | Aston Villa |\n| 7/6 | 12/5 | 19/10 |\n\nPREMIER LEAGUE BETTING\n\n### Matchday 2 – Aston Villa vs Arsenal (31 August 2026) ...\n    URL: https://7bet.co.uk/blog/aston-villa-odds\n\nGame ID: 2\nSource event_id: 401879320\nMatchup: AFC Bournemouth (away) @ Manchester City (home)\nHome: Manchester City\nAway: AFC Bournemouth\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: Etihad Stadium\nRound: unavailable\nHome form: LLDWW\nAway form: DDWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Manchester City -210 (open -230); Draw +400 (open +400); AFC Bournemouth +500 (open +475)\nTavily context:\n  - Title: Man City XI vs Bournemouth: Confirmed team news, predicted lineup and injury latest for Premier League\n    Content: Mateo Kovacic appeared back to his best in the Community Shield, though Elliot Anderson will have a point to prove after he made a subdued debut.\n\nIt remains to be seen whether Grealish will be involved in any capacity as his future remains up in the air. He impressed after replacing Doku last time out but it is not yet clear whether he is in Maresca’s plans.\n\nMan City predicted XI vs Bournemouth (4-2-3-1): Donnarumma; Khusanov, Dias, Gvardiol, O’Reilly; Kovacic, Anderson; Foden, Cherki, Semenyo; Haaland\n\nInjured: Doku, Nunes\n\nTime and date: 2pm BST on Sunday, August 23\n\nTV: Sky Sports ...\n    URL: https://www.standard.co.uk/sport/football/man-city-xi-vs-bournemouth-confirmed-team-news-predicted-lineup-injury-latest-premier-league-b1294075.html\n  - Title: Man City vs. Bournemouth line-ups: Premier League 2026-27 predicted XIs\n    Content: Man City (4-2-3-1)\n\nGianluigi Donnarumma, Nico O'Reilly, Josko Gvardiol, Rúben Dias, Abdukodir Khusanov, Elliot Anderson, Mateo Kovavic, Antoine Semenyo, Phil Foden, Rayan Cherki, Erling Haaland\n\nCity endured a bruising beginning to Maresca's reign with the comprehensive defeat to Arsenal in the Community Shield. There is a great deal of changing taking place at the Etihad right now but there a few names that are certain to be on the teamsheet for City's opening Premier League fixture. ...\n    URL: https://www.espn.com/soccer/story/_/id/49660203/man-city-v-bournemouth-premier-league-2026-27-season\n  - Title: Manchester City vs Bournemouth Betting Pick | English Premier | 2026-08-23 |\n    Content: Manchester City vs Bournemouth Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- | ...\n    URL: https://www.goonersguide.com/football-pick-59788-Manchester-City-vs-Bournemouth.htm\n  - Title: Manchester City vs Bournemouth Prediction - Premier League - 23/08/2026\n    Content: Bournemouth finished sixth in the Premier League last season. That has seen the Cherries qualify for their first ever campaign in Europe and they'll be playing in the Europa League. They also have a new coach with Marco Rosa joining them and last season did concede 34 away league goals.\n\nLimited Offer. Currently at Stake\n\n## Manchester City v Bournemouth Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.48 | 5 | 6 |  |\n| 1xbet | 1.53 | 5.08 | 6.15 |  |\n| Melbet | 1.47 | 4.88 | 5.9 |  |\n| Betwinner | 1.47 | 4.88 | 5.9 |  |\n| 22bet | 1.47 | 4.88 | 5.9 |  | ...\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-city-bournemouth-367378\n\nGame ID: 3\nSource event_id: 401879319\nMatchup: Liverpool (away) @ Newcastle United (home)\nHome: Newcastle United\nAway: Liverpool\nKickoff UTC: 2026-08-23T15:30Z\nKickoff ET: 2026-08-23 11:30 EDT\nVenue: St. James' Park\nRound: unavailable\nHome form: LWDWL\nAway form: DLDLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Newcastle United +270 (open +190); Draw +300 (open +270); Liverpool -110 (open +120)\nTavily context:\n  - Title: PREVIEW | Newcastle vs Liverpool: team news, lineups, predictions (Premier League 23/08)\n    Content: Last time out, Newcastle drew 1-1 against Strasbourg (Pre-season 2026/27). Last time out, Liverpool triumphed 2-0 against Como 1907 (Pre-season 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nThe last meeting between the two teams ended with Liverpool winning 4-1.\n\n## Predicted lineups\n\nNewcastle: Lukas Hornicek, Amar Dedić, Sven Botman, Malick Thiaw, Lewis Hall, Jacob Ramsey, Anthony Elanga, Aladji Bamba, Yoane Wissa, Harvey Barnes, Will Osula ...\n    URL: https://sports.yahoo.com/articles/preview-newcastle-vs-liverpool-team-154000552.html\n  - Title: Liverpool XI vs Newcastle: Confirmed team news and predicted lineup\n    Content: Predicted Liverpool XI: Alisson; Frimpong, Araujo, Van Dijk, Kerkez; Gravenberch, Szoboszlai; Ngumoha, Wirtz, Gakpo; Isak\n\nInjured: Ekitike, Bradley, Leoni, Gomez\n\nDoubts: Endo\n\nTime and date: 4.30pm BST on Sunday, August 23, 2026\n\nHow to watch: Sky Sports\n\nVenue: St James’ Park\n\nMORE ABOUT\n\nliverpool team news\n\nRonald Araujo\n\nJeremy Jacquet\n    URL: https://www.standard.co.uk/sport/football/liverpool-fc-xi-vs-newcastle-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1294081.html\n  - Title: Newcastle vs Liverpool Prediction - 23 Aug 2026\n    Content: ### Betting odds: Liverpool respected, Newcastle not ignored\n\nThe current betting odds tell a simple story: Liverpool are favourites, but Newcastle are dangerous enough to keep the price away from being too short. A home win at 3.955 is not a wild number, especially at St. James’ Park. The draw at 3.95 suggests bookmakers expect goals rather than a slow, locked match. The away win at 1.9 makes Liverpool the most trusted 1x2 option.\n\n Newcastle win: 3.955\n Draw: 3.95\n Liverpool win: 1.9 ...\n    URL: https://nerdytips.com/match-details/newcastle-vs-liverpool-prediction-1294731\n  - Title: Newcastle United vs Liverpool Betting Pick | English Premier | 2026-08-23 |\n    Content: Newcastle United vs Liverpool Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | NEW | DRAW | LIV |  | BET365 |  | 4.00 | 3.80 | 1.90 | | BETFRED | | 3.50 | 4.00 | 1.91 | | CLOUDBET | | 3.70 | 3.90 | 1.92 | | SPORTBET | | 3.51 | 4.03 | 1.85 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report.\n\nInstead you CAN see a list of odds and lines from recommended bookmakers and sportsbooks over on the right. ...\n    URL: https://www.goonersguide.com/football-pick-59789-Newcastle-United-vs-Liverpool.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879297\nMatchup: Aston Villa (away) @ Brighton & Hove Albion (home)\nHome: Brighton & Hove Albion\nAway: Aston Villa\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: American Express Stadium\nRound: unavailable\nHome form: DLLWL\nAway form: LWWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Brighton & Hove Albion +120 (open +120); Draw +255 (open +260); Aston Villa +220 (open +195)\nTavily context:\n  - Title: Brighton vs Aston Villa - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brighton & Hove Albion vs Aston Villa — Sun, August 23, 1:00 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n American Express Stadium\n Peter Bankes\n\nBrightonBrighton & Hove Albion\n\n‌\n‌\n\nAston VillaAston Villa\n\n# Brighton & Hove Albion vs Aston Villa — Sun, August 23, 1:00 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n American Express Stadium\n Peter Bankes\n\nBrightonBrighton & Hove Albion\n\n‌\n‌\n\nAston VillaAston Villa\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Evan Ferguson\n\n  Ankle injury / Early October 2026 ...\n    URL: https://www.fotmob.com/matches/brighton-vs-aston-villa/3gku1s\n  - Title: Brighton v Aston Villa predicted line-ups + FPL team news\n    Content: Last updated: 14 Aug, 2026 8:07am\n\n| Player | Club | Factors |\n ---\n| No Change | Avatar of Haaland Haaland | MCI |  |\n| No Change | Avatar of João Pedro João Pedro | CHE |  |\n| No Change | Avatar of Calvert-Lewin Calvert-Lewin | LEE |  |\n| No Change | Avatar of Isak Isak | LIV |  |\n| No Change | Avatar of Thiago Thiago | BRE |  |\n| No Change | Avatar of Brobbey Brobbey | SUN |  |\n| No Change | Avatar of Igor Jesus Igor Jesus | NFO |  |\n| No Change | Avatar of McBurnie McBurnie | HUL |  |\n\nLast updated: 13 Aug, 2026 9:19am\n\nA, B, C Current Form\n\nVs Favourable Fixtures ...\n    URL: https://www.fantasyfootballscout.co.uk/2026/08/21/brighton-v-aston-villa-predicted-line-ups-fpl-team-news\n  - Title: Brighton vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Latest 1x2 Odds Suggest Brighton Victory\n\nAt betting odds of 2.23, the bookies make Brighton probable winners and there’s a 45% likelihood that the favourites triumph in this Premier League encounter. Aston Villa are the 3.00 underdogs, while the draw can also be backed as an alternative.\n\nBrighton -0.25 on the Asian Handicap can be backed at 1.91. It means your stake is split between 0 and -0.5, with a full payout if they beat Villa. Half your stake is refunded if we see a draw. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/brighton-vs-aston-villa-prediction-lineups-odds-2026-08-23\n  - Title: Aston Villa Betting Odds: 2026-2027 Season | 7bet\n    Content: ## Matchday 1 – Brighton & Hove Albion vs Aston Villa (23 August 2026)\n\nIn Matchweek 1 of the 2026/27 Premier League season, Aston Villa will face Brighton & Hove Albion away from home. The match will take place at the American Express Stadium on 23 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Brighton | Draw | Aston Villa |\n| 7/6 | 12/5 | 19/10 |\n\nPREMIER LEAGUE BETTING\n\n### Matchday 2 – Aston Villa vs Arsenal (31 August 2026) ...\n    URL: https://7bet.co.uk/blog/aston-villa-odds\n\nGame ID: 2\nSource event_id: 401879320\nMatchup: AFC Bournemouth (away) @ Manchester City (home)\nHome: Manchester City\nAway: AFC Bournemouth\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: Etihad Stadium\nRound: unavailable\nHome form: LLDWW\nAway form: DDWWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Manchester City -210 (open -230); Draw +400 (open +400); AFC Bournemouth +500 (open +475)\nTavily context:\n  - Title: Man City XI vs Bournemouth: Confirmed team news, predicted lineup and injury latest for Premier League\n    Content: Mateo Kovacic appeared back to his best in the Community Shield, though Elliot Anderson will have a point to prove after he made a subdued debut.\n\nIt remains to be seen whether Grealish will be involved in any capacity as his future remains up in the air. He impressed after replacing Doku last time out but it is not yet clear whether he is in Maresca’s plans.\n\nMan City predicted XI vs Bournemouth (4-2-3-1): Donnarumma; Khusanov, Dias, Gvardiol, O’Reilly; Kovacic, Anderson; Foden, Cherki, Semenyo; Haaland\n\nInjured: Doku, Nunes\n\nTime and date: 2pm BST on Sunday, August 23\n\nTV: Sky Sports ...\n    URL: https://www.standard.co.uk/sport/football/man-city-xi-vs-bournemouth-confirmed-team-news-predicted-lineup-injury-latest-premier-league-b1294075.html\n  - Title: Man City vs. Bournemouth line-ups: Premier League 2026-27 predicted XIs\n    Content: Man City (4-2-3-1)\n\nGianluigi Donnarumma, Nico O'Reilly, Josko Gvardiol, Rúben Dias, Abdukodir Khusanov, Elliot Anderson, Mateo Kovavic, Antoine Semenyo, Phil Foden, Rayan Cherki, Erling Haaland\n\nCity endured a bruising beginning to Maresca's reign with the comprehensive defeat to Arsenal in the Community Shield. There is a great deal of changing taking place at the Etihad right now but there a few names that are certain to be on the teamsheet for City's opening Premier League fixture. ...\n    URL: https://www.espn.com/soccer/story/_/id/49660203/man-city-v-bournemouth-premier-league-2026-27-season\n  - Title: Manchester City vs Bournemouth Betting Pick | English Premier | 2026-08-23 |\n    Content: Manchester City vs Bournemouth Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- | ...\n    URL: https://www.goonersguide.com/football-pick-59788-Manchester-City-vs-Bournemouth.htm\n  - Title: Manchester City vs Bournemouth Prediction - Premier League - 23/08/2026\n    Content: Bournemouth finished sixth in the Premier League last season. That has seen the Cherries qualify for their first ever campaign in Europe and they'll be playing in the Europa League. They also have a new coach with Marco Rosa joining them and last season did concede 34 away league goals.\n\nLimited Offer. Currently at Stake\n\n## Manchester City v Bournemouth Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.48 | 5 | 6 |  |\n| 1xbet | 1.53 | 5.08 | 6.15 |  |\n| Melbet | 1.47 | 4.88 | 5.9 |  |\n| Betwinner | 1.47 | 4.88 | 5.9 |  |\n| 22bet | 1.47 | 4.88 | 5.9 |  | ...\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-city-bournemouth-367378\n\nGame ID: 3\nSource event_id: 401879319\nMatchup: Liverpool (away) @ Newcastle United (home)\nHome: Newcastle United\nAway: Liverpool\nKickoff UTC: 2026-08-23T15:30Z\nKickoff ET: 2026-08-23 11:30 EDT\nVenue: St. James' Park\nRound: unavailable\nHome form: LWDWL\nAway form: DLDLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Newcastle United +270 (open +190); Draw +300 (open +270); Liverpool -110 (open +120)\nTavily context:\n  - Title: PREVIEW | Newcastle vs Liverpool: team news, lineups, predictions (Premier League 23/08)\n    Content: Last time out, Newcastle drew 1-1 against Strasbourg (Pre-season 2026/27). Last time out, Liverpool triumphed 2-0 against Como 1907 (Pre-season 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nThe last meeting between the two teams ended with Liverpool winning 4-1.\n\n## Predicted lineups\n\nNewcastle: Lukas Hornicek, Amar Dedić, Sven Botman, Malick Thiaw, Lewis Hall, Jacob Ramsey, Anthony Elanga, Aladji Bamba, Yoane Wissa, Harvey Barnes, Will Osula ...\n    URL: https://sports.yahoo.com/articles/preview-newcastle-vs-liverpool-team-154000552.html\n  - Title: Liverpool XI vs Newcastle: Confirmed team news and predicted lineup\n    Content: Predicted Liverpool XI: Alisson; Frimpong, Araujo, Van Dijk, Kerkez; Gravenberch, Szoboszlai; Ngumoha, Wirtz, Gakpo; Isak\n\nInjured: Ekitike, Bradley, Leoni, Gomez\n\nDoubts: Endo\n\nTime and date: 4.30pm BST on Sunday, August 23, 2026\n\nHow to watch: Sky Sports\n\nVenue: St James’ Park\n\nMORE ABOUT\n\nliverpool team news\n\nRonald Araujo\n\nJeremy Jacquet\n    URL: https://www.standard.co.uk/sport/football/liverpool-fc-xi-vs-newcastle-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1294081.html\n  - Title: Newcastle vs Liverpool Prediction - 23 Aug 2026\n    Content: ### Betting odds: Liverpool respected, Newcastle not ignored\n\nThe current betting odds tell a simple story: Liverpool are favourites, but Newcastle are dangerous enough to keep the price away from being too short. A home win at 3.955 is not a wild number, especially at St. James’ Park. The draw at 3.95 suggests bookmakers expect goals rather than a slow, locked match. The away win at 1.9 makes Liverpool the most trusted 1x2 option.\n\n Newcastle win: 3.955\n Draw: 3.95\n Liverpool win: 1.9 ...\n    URL: https://nerdytips.com/match-details/newcastle-vs-liverpool-prediction-1294731\n  - Title: Newcastle United vs Liverpool Betting Pick | English Premier | 2026-08-23 |\n    Content: Newcastle United vs Liverpool Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | NEW | DRAW | LIV |  | BET365 |  | 4.00 | 3.80 | 1.90 | | BETFRED | | 3.50 | 4.00 | 1.91 | | CLOUDBET | | 3.70 | 3.90 | 1.92 | | SPORTBET | | 3.51 | 4.03 | 1.85 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report.\n\nInstead you CAN see a list of odds and lines from recommended bookmakers and sportsbooks over on the right. ...\n    URL: https://www.goonersguide.com/football-pick-59789-Newcastle-United-vs-Liverpool.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879297",
+                        "date_utc": "2026-08-23T13:00Z",
+                        "kickoff_et": "2026-08-23 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Brighton & Hove Albion",
+                        "away": "Aston Villa",
+                        "home_id": "331",
+                        "away_id": "362",
+                        "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                        "venue": "American Express Stadium",
+                        "city": "Falmer",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DLLWL",
+                        "form_away": "LWWWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+120",
+                            "home_current": "+120",
+                            "draw_open": "+260",
+                            "draw_current": "+255",
+                            "away_open": "+195",
+                            "away_current": "+220"
+                        },
+                        "odds_text": "DraftKings: Brighton & Hove Albion +120 (open +120); Draw +255 (open +260); Aston Villa +220 (open +195)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879320",
+                        "date_utc": "2026-08-23T13:00Z",
+                        "kickoff_et": "2026-08-23 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Manchester City",
+                        "away": "AFC Bournemouth",
+                        "home_id": "382",
+                        "away_id": "349",
+                        "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                        "venue": "Etihad Stadium",
+                        "city": "Manchester",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LLDWW",
+                        "form_away": "DDWWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-230",
+                            "home_current": "-210",
+                            "draw_open": "+400",
+                            "draw_current": "+400",
+                            "away_open": "+475",
+                            "away_current": "+500"
+                        },
+                        "odds_text": "Provider unavailable: Manchester City -210 (open -230); Draw +400 (open +400); AFC Bournemouth +500 (open +475)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401879319",
+                        "date_utc": "2026-08-23T15:30Z",
+                        "kickoff_et": "2026-08-23 11:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Newcastle United",
+                        "away": "Liverpool",
+                        "home_id": "361",
+                        "away_id": "364",
+                        "matchup": "Liverpool (away) @ Newcastle United (home)",
+                        "venue": "St. James' Park",
+                        "city": "Newcastle-upon-Tyne",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWDWL",
+                        "form_away": "DLDLW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+190",
+                            "home_current": "+270",
+                            "draw_open": "+270",
+                            "draw_current": "+300",
+                            "away_open": "+120",
+                            "away_current": "-110"
+                        },
+                        "odds_text": "Provider unavailable: Newcastle United +270 (open +190); Draw +300 (open +270); Liverpool -110 (open +120)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-22T08:26:42.905355-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:16:04.999979-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton & Hove Albion holds a solid home advantage at the American Express Stadium and is backed by the market as the favorite. Despite Aston Villa's quality, Brighton is expected to secure a narrow victory in their opening Premier League match.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City enters this home fixture as strong favorites. Despite some transition and adjustments, playing at the Etihad Stadium and having Erling Haaland leading the line gives them a substantial advantage over a solid Bournemouth side.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool is favored by the bookmakers at around a 50% probability despite being away at St. James' Park. Newcastle represents a tough challenge, but Liverpool's superior squad quality is predicted to carry them to a victory.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-22T08:16:16.676762-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton enters as the slight favorite at home with odds around +120 (45% implied probability). Given it's the opening match of the season for both sides and Aston Villa's strong form from the prior campaign, this is expected to be closely contested, but the odds marginally favor a home victory.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is a heavy favorite with odds around -210, translating to a substantial implied probability of victory. Despite undergoing some squad changes and coming off a Community Shield defeat, their quality at the Etihad makes them clear favorites against Bournemouth.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool comes into this match as road favorites with odds generally around -110 (roughly 52% implied win probability). While St. James' Park is historically a tough venue, bookmakers favor the Reds' loaded attack to secure the full three points.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-22T08:16:44.332764-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are consistent favorites across multiple betting markets, reflecting their strong home form at the American Express Stadium. While Aston Villa's recent form is impressive and Brighton is missing key striker Evan Ferguson, the home advantage and market consensus point towards a Brighton victory in the season opener.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City possesses a vastly superior squad and a formidable home record at the Etihad Stadium. Despite being under a new manager and coming off a Community Shield loss, their talent level is expected to be decisive against Bournemouth. Betting markets heavily favor a City victory, with implied probabilities around 65%.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Betting markets show a significant odds shift in favor of Liverpool, making them strong favorites with an implied probability over 50%, even while playing away at the notoriously difficult St. James' Park. This strong market sentiment suggests high confidence in Liverpool's current squad strength to overcome a tough Newcastle side on opening day.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:17:00.504162-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton & Hove Albion is consistently favored by bookmakers, with DraftKings odds implying the highest win probability for the home side after adjusting for vigorish. SportsGambler also explicitly states a 45% likelihood for a Brighton victory. Despite a potential injury to Evan Ferguson for Brighton, the home advantage and market sentiment point to a home win.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is the overwhelming favorite according to all betting odds, with implied win probabilities around 65% or higher. While Bournemouth had a strong previous season qualifying for Europe, they also conceded 34 away league goals. Manchester City's quality and home advantage are expected to lead to a comfortable victory, despite their recent Community Shield defeat.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium-high",
+                    "reasoning": "Liverpool is favored by bookmakers across the board, with ESPN structured odds translating to a 50% implied win probability for the away side after adjusting for vigorish. While Newcastle United can be a strong opponent at St. James' Park, Liverpool's historical performance against them (including a 4-1 win in their last meeting) and overall squad strength make them the more likely winner.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:18:04.683008-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Brighton are slight home favorites in the 1X2 market and have the Amex home edge, but Aston Villa's recent form is stronger and the prices indicate a close match. A draw or Villa result remains very plausible.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.649,
+                    "draw_probability": 0.191,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are clear market favorites at the Etihad, with a Haaland-led attack and home advantage outweighing Bournemouth's strong recent form. City's transition notes and injuries keep the upset risk meaningful but secondary.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.259,
+                    "draw_probability": 0.239,
+                    "away_win_probability": 0.502,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool have shortened into clear away favorites and their projected lineup carries substantial attacking quality. Newcastle's St. James' Park advantage keeps the home and draw probabilities significant, but Liverpool have the highest 90-minute win chance.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:18:15.676758-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are narrow home favorites in the 1X2 market, with pricing implying a modest edge at the Amex. Aston Villa have enough quality and slightly stronger listed recent form to keep the away-win chance meaningful, but home advantage and market support tilt the forecast toward Brighton.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are clear odds-on favorites at the Etihad, with Haaland and a strong predicted XI providing a major attacking edge. Bournemouth appear competitive and had strong recent form, but City’s home advantage and market-implied superiority make a home win the most likely regulation-time result.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are market favorites despite playing at St. James’ Park, and the odds movement strongly favors them compared with the opener. Newcastle’s home venue keeps the upset and draw probabilities significant, but Liverpool’s projected lineup and attacking quality make an away win the leading outcome.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-22T08:18:52.941354-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Brighton slight favorites at home (notably shorter than Villa), and the line has held around Brighton +120 while Villa drifted from the opener, indicating more support for the home side. Villa’s recent form looks stronger, but home advantage and the current 1X2 consensus tip this toward a narrow Brighton win with a meaningful draw chance.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "City are heavy favorites per the 1X2 market (around -210), which typically implies a clear gap in win probability even after accounting for the bookmaker margin. At the Etihad, City’s baseline win expectation is high, and Bournemouth’s upset probability remains comparatively low with the draw as the main alternative.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite St. James’ Park being a strong venue, the market favors Liverpool (roughly -110) and Newcastle’s price has lengthened from the opener, suggesting decreasing confidence in a home win. This projects Liverpool as the most likely winner, with a substantial draw probability in what is still a high-variance away fixture.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-22T08:19:16.537237-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.433678,
+                    "draw_probability": 0.268628,
+                    "away_win_probability": 0.297694,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Brighton slight favourites (~45% implied) after normalization. Home advantage at the American Express Stadium and bookmakers favouring Brighton drive the edge, but Brighton carry mixed form and key injury concerns (e.g., Evan Ferguson) while Villa arrive in better recent form, so the margin is modest.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.649109,
+                    "draw_probability": 0.191639,
+                    "away_win_probability": 0.159252,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are clear favourites in the odds (around -210 moneyline). Home advantage, squad quality and recent form create a strong probability of a City regulation-time win. Bournemouth are capable but priced as clear underdogs, so the model assigns a high probability to a City home victory.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.258952,
+                    "draw_probability": 0.239301,
+                    "away_win_probability": 0.501747,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds slightly favour Liverpool (moneyline around -110) after normalization. Liverpool's squad strength and status as away favourites tip the prediction toward an away win, but Newcastle's St. James' Park home advantage and competitive squad keep this a close call, so confidence is moderate.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-22T08:19:48.994621-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.434,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.297,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Based on 1X2 odds showing Brighton as the favorite; after converting to implied probabilities and normalizing to sum to 1, Brighton has the highest likelihood to win.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.649,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.191,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "City are heavy favorites according to odds; after normalization, home win has the highest probability.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.259,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.501,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool currently favored by odds against Newcastle; after normalization, away win has the edge.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-22T08:19:52.935612-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are slight favorites according to both bookmaker odds and expert previews, with home advantage and a relatively healthy squad despite the absence of Evan Ferguson. Aston Villa's away form is solid, but Brighton's odds (around 2.20-2.23) and the consensus among betting sites suggest a higher probability for a home win. The draw is a viable alternative, but Villa's underdog status and Brighton's edge at home tip the balance.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at home, with odds between 1.47 and 1.53, reflecting a strong probability of victory. Bournemouth had a good previous season but conceded many away goals and are facing a much stronger City side. City's squad remains formidable despite some injuries, and their home record is typically excellent. The probability distribution reflects City's dominance and the consensus among bookmakers.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favored away from home, with odds around 1.90-1.92, indicating a clear edge but not overwhelming dominance. Newcastle are respected at home and capable of causing problems, but Liverpool's squad quality and recent head-to-head results (including a 4-1 win) support the away win prediction. The draw is a significant risk, but Liverpool's edge is reflected in the probabilities.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-22T08:19:55.402889-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton is favored by bookmakers and has a slight edge in home advantage. Aston Villa's away form is decent, but Brighton's odds suggest they are more likely to win.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is heavily favored with strong odds and a superior squad. Bournemouth's away form is decent, but City is expected to dominate at home.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool is favored to win, but Newcastle's home advantage and competitive odds suggest a challenging match. Liverpool's recent form gives them the edge.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-22T08:20:09.738389-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds make Brighton modest home favorites (~45% implied). Villa arrive in better recent form (LWWWD vs Brighton's DLLWL), and the line has drifted slightly toward Villa, keeping this a fairly open contest. Brighton's home edge gives them the slight lead, but the margin is thin.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are strong home favorites (~-210, roughly 65% implied) despite a rocky Community Shield loss under Maresca. Bournemouth are a capable side coming off a sixth-place finish but with a new coach and defensive vulnerabilities away from home. City's squad quality at the Etihad makes a home win the clear pick.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are away favorites (~1.90, roughly 50% implied) and won the last meeting 4-1. The line has moved notably toward Liverpool from opening. Newcastle at St. James' Park remain dangerous with genuine home upset potential, and injuries on both sides add variance, but Liverpool's squad depth makes them the most likely winner.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-22T08:20:19.185796-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Brighton & Hove Albion",
+                    "confidence": "low",
+                    "reasoning": "Brighton are home favorites per market odds (+120), with home advantage at the Amex. Villa arrive in strong form (LWWWD) but odds and venue slightly favor Brighton. Close matchup with modest edge to hosts.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Manchester City",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are strong home favorites (-210) at the Etihad with a formidable squad. Despite Bournemouth's decent form and European qualification, City's quality and home advantage make them clear favorites.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "Liverpool",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are market favorites (-110) despite playing away at St. James' Park. They won the last meeting 4-1 and have Isak leading the line. Newcastle are dangerous at home but the odds and recent form favor Liverpool.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-22T08:20:37.191458-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton are slight favorites at home per the odds (around +120 / 2.23 implied ~45% win probability). The market has shifted toward Brighton since open with Villa drifting from +195 to +220, suggesting money on the home side. Brighton at the American Express Stadium are typically strong, and Aston Villa's away form (LWWWD) is decent but this is an opener. Evan Ferguson is out injured for Brighton which hurts their attack, but Villa have injury concerns too. The Asian handicap at -0.25 for Brighton suggests a marginal home edge. Calibrating across multiple bookmakers, home win at ~43% feels appropriate.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are strong favorites at home (-210 US odds, implying ~68% win probability). However, City are in transition under Maresca following a bruising Community Shield loss to Arsenal, with Doku and Nunes injured. Bournemouth finished 6th last season and are a quality side with Europa League football this season, though they historically struggle away at the big six. The odds from multiple bookmakers cluster around 1.47-1.53 for City, suggesting roughly 62-68% win probability. Adjusting slightly downward for City's current uncertainty (new manager bedding in, key injuries), 62% home win feels right. Bournemouth away conceded 34 goals on the road last season.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are the favorites at roughly -110 to +120 range per ESPN odds, implying approximately 48-52% win probability for Liverpool. Multiple bookmakers show Liverpool around 1.85-1.92 (52-54%), suggesting a slight Liverpool edge. Notably, the odds have shifted significantly since open with Newcastle drifting from +190 to +270, indicating strong market movement toward Liverpool. Liverpool's predicted XI is formidable with Isak, Wirtz, Gakpo, and Frimpong. Newcastle at St James' Park are dangerous and the last major meeting ended 4-1 to Liverpool. Newcastle's form (LWDWL) is inconsistent. The draw at 3.80-4.00 is slightly underweighted given the quality of both sides on opening day.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-22T08:20:57.376925-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are favored at home with odds of +120 compared to Aston Villa at +220. The betting markets suggest a 45% likelihood of Brighton winning. Brighton's home advantage at the American Express Stadium is significant for the season opener. Both teams have mixed recent form (Brighton DLLWL, Villa LWWWD), but the bookmakers and market odds consistently favor Brighton. The draw at +255/+260 is the longest price, suggesting an open game with a likely winner. Brighton's odds have remained stable while Villa's have drifted from +195 to +220, indicating betting confidence in the home side.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are strong favorites at -210/-230 despite recent managerial change to Maresca. The odds imply roughly 68% probability for a City win. City have quality players like Haaland, Foden, and new signings including Cherki and Semenyo expected to feature. Bournemouth at +500 are significant underdogs, though they finished 6th last season and qualified for Europa League. However, they conceded 34 away goals last season and face a City side at the Etihad in the season opener. Despite City's loss to Arsenal in the Community Shield, their home dominance and superior squad quality make them clear favorites. The betting line has shortened slightly from -230 to -210, but City remain heavily backed.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favorites at -110 despite playing away at St. James' Park, a traditionally difficult venue. The odds have shifted significantly in Liverpool's favor from opening +120 to -110, indicating strong betting confidence. Newcastle at +270 (opened at +190) have drifted substantially, suggesting market concerns about their form or squad. Liverpool won the last meeting 4-1. The away win at 1.9 makes Liverpool the most trusted option in the 1x2 market. Liverpool's squad includes quality players like Isak, Wirtz, Gakpo, and Van Dijk. The draw at +300 is valued higher than usual, but the market clearly favors Liverpool despite Newcastle's home advantage. Liverpool's recent form (DLDLW) ending with a win and a 2-0 victory over Como suggests positive momentum.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-22T08:21:03.910197-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Brighton win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are favored by bookmakers (implied 45% win probability from betting odds). Aston Villa show slightly better recent form (LWWWD vs DLLWL), but this is opening day of the season. Brighton have home advantage at American Express Stadium. Betting odds consensus (DraftKings +120 Brighton, +220 Villa) supports a slight home edge. First-match unpredictability warrants medium confidence.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Manchester City win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are strong favorites despite recent Community Shield loss to Arsenal. Odds reflect -210 moneyline (67% implied probability). Bournemouth finished 6th last season but conceded 34 away goals. Man City's predicted lineup includes Haaland, Foden, and Cherki in strong attacking positions. Home advantage at Etihad is significant. Bournemouth's new manager Marco Rosa adds transition risk. High confidence in City victory.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Liverpool win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are slight favorites (implied 45% from odds of -110). Last meeting ended 4-1 Liverpool win, establishing recent dominance. Newcastle show inconsistent form (LWDWL) while Liverpool's away form is mixed (DLDLW). Betting odds support Liverpool as most trusted 1x2 option at 1.9. However, St. James' Park is a difficult venue and Newcastle draw odds (3.80-4.00) suggest competitive match. Medium confidence reflects competitive nature despite Liverpool favoritism.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-22T08:22:20.385729-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.433,
+                    "draw_probability": 0.269,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Brighton are slight home favorites per market odds, but Aston Villa's strong away form keeps the match close. Home advantage gives Brighton a narrow edge.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.649,
+                    "draw_probability": 0.191,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are strong home favorites at the Etihad. Bournemouth are competitive but the talent and home advantage gap points clearly to a City win.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.259,
+                    "draw_probability": 0.239,
+                    "away_win_probability": 0.502,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear away favorites by market odds, though St James' Park can be difficult. The probability edge supports a Liverpool victory without being overwhelming.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-22T08:22:23.511252-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are slight favorites at home with odds around +120, and their form is decent. Aston Villa have been inconsistent, and the home advantage at the Amex could be decisive.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy favorites at home with odds around -210. Despite a Community Shield loss, they have a strong squad and Bournemouth are likely to struggle at the Etihad.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favorites with odds around -110, and they have a strong squad. Newcastle are competitive at home but Liverpool's quality should prevail, though a draw is possible.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-22T08:22:52.282124-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton is favored at home according to the betting odds, despite Aston Villa's strong recent form. The odds imply a roughly 44% chance of a home win, making Brighton the most likely outcome in a competitive opening fixture.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy favorites at home against Bournemouth. The betting odds and implied probabilities strongly favor City, who possess a significant squad advantage and home-field edge at the Etihad Stadium.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear favorites on the road at St. James' Park, reflected by the negative moneyline odds. While Newcastle is a tough opponent at home, Liverpool's superior squad depth and tactical setup give them the edge to secure the away victory.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-22T08:23:03.975068-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Brighton is favored by the bookmakers, and their recent form suggests they have a slight edge over Aston Villa. The home advantage at American Express Stadium also plays a role in this prediction.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester City, despite a recent mixed form, is still a strong team with significant home advantage. Bournemouth's away form and the overall quality of Manchester City's squad suggest a high probability of a home win.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool is favored to win based on their stronger squad and recent form. Newcastle, while having a home advantage, has shown inconsistent performance, making an away win more likely.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-22T08:24:33.214356-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are slight favorites per betting markets (+120) but will miss key striker Evan Ferguson due to injury, significantly weakening their attack. Aston Villa arrives with solid recent form (LWWWD). The Asian handicap of Brighton -0.25 indicates a tightly contested match, likely decided by a narrow margin. I give the hosts a slight edge at the Amex Stadium despite the missing forward.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester City are heavy favorites at home (-210), reflecting their historical dominance at the Etihad and superior squad depth. Although transitioning under new manager Maresca, the expected XI features world-class talent across all lines. Bournemouth qualified for Europe last season but conceded 34 away goals, making a City victory the most statistically probable outcome despite early-season adjustments.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool enter as clear favorites (-110) bolstered by a strong predicted lineup and recent head-to-head dominance. Newcastle's home advantage at St. James' Park keeps the draw and home win probabilities competitive, but Liverpool's superior squad depth, counter-attacking pace, and defensive solidity give them the edge. Bookmakers price the draw similarly to Newcastle, suggesting a potential upset, but the visitors' quality should ultimately prevail.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-22T08:25:04.199017-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers list Brighton as favorites (+120 odds, ~45% win probability). While Villa shows better recent away form, Brighton's home advantage at the American Express Stadium and market expectations favor a home result in this Round 1 fixture.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are significant favorites (-210 odds, approx 67% implied probability). Despite squad changes and a new management setup, City's home strength at the Etihad Stadium and superior squad depth compared to Bournemouth strongly predict a home victory.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool enter as favorites (-110 odds, ~52% implied probability) with a historical dominance over Newcastle (previous meeting ended 4-1). Although playing away, Liverpool's current form and odds indicate they are likely to secure all three points at St. James' Park.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-22T08:26:05.872259-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are narrow market favorites at the Amex on opening weekend and benefit from home support, though Aston Villa's solid away form (LWWWD) and the tight odds suggest a closely fought match.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy home favorites with superior squad depth despite preseason injury doubts and a new manager, while Bournemouth's away defensive vulnerabilities and managerial transition limit upset potential.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are market favorites at around even money and hold a strong recent head-to-head record, but Newcastle's home strength at St. James' Park keeps them dangerous enough to prevent a heavily one-sided contest.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-22T08:26:37.346320-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are slight favorites in the betting markets and hold home advantage at the American Express Stadium, though Aston Villa enter with superior recent form (LWWWD vs DLLWL).",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City possess superior squad depth and home advantage at the Etihad, with heavy odds favoritism reflecting the expectation of a dominant performance against a Bournemouth side adjusting to new management and European competition.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favored by bookmakers and have dominated recent head-to-head encounters, but Newcastle's strong home record at St. James' Park ensures a competitive fixture.",
+                    "event_id": "401879319"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-22T08:26:42.902338-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Aston Villa (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton has a slight edge based on their recent form and home advantage, but the match is closely contested.",
+                    "event_id": "401879297"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AFC Bournemouth (away) @ Manchester City (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is favored to win against Bournemouth given their stronger squad and home field advantage.",
+                    "event_id": "401879320"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Liverpool (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "The match is expected to be closely contested with a high likelihood of a draw based on the teams' recent forms and head-to-head history.",
+                    "event_id": "401879319"
+                }
+            ]
+        }
+    ]
+}

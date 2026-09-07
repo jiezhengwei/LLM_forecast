@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Bundesliga 2026-2027",
+        "competition_key": "bundesliga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-05",
+        "target_date_et": "2026-09-06",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast German Bundesliga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884803\nMatchup: Mainz (away) @ Hamburg SV (home)\nHome: Hamburg SV\nAway: Mainz\nKickoff UTC: 2026-09-06T13:30Z\nKickoff ET: 2026-09-06 09:30 EDT\nVenue: Volksparkstadion\nRound: unavailable\nHome form: LWDWW\nAway form: DWWLW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Odds unavailable\nTavily context:\n  - Title: PREVIEW | Hamburger SV vs Mainz: team news, lineups, predictions (Bundesliga 06/09)\n    Content: ## OneFootball Videos\n\nMainz have 1 point to their name this season and occupy 11th position in the table. In their last game, Urs Fischer's team drew 0-0 with SC Paderborn 07 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n### Predicted lineups\n\nHamburger SV: Daniel Heuer Fernandes, Nicolás Capaldo, Seb Bornauw, Jordan Torunarigha, Bakery Jatta, Nicolai Remberg, Sambi Lokonga, Louis Lemke, Martin Adeline, Patson Daka, Albert Gronbaek ...\n    URL: https://onefootball.com/en/news/preview-hamburger-sv-vs-mainz-team-news-lineups-predictions-bundesliga-0609-43400767\n  - Title: PREVIEW | Hamburger SV vs Mainz: team news, lineups, predictions (Bundesliga 06/09) - Yahoo Sports\n    Content: Hamburger SV currently have 0 points and lie in 14th position. In their last fixture, Merlin Polzin's team suffered a 2-0 reverse against Borussia Dortmund (1. Bundesliga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nMainz have 1 point to their name this season and occupy 11th position in the table. In their last game, Urs Fischer's team drew 0-0 with SC Paderborn 07 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-hamburger-sv-vs-mainz-133500105.html\n  - Title: Hamburger SV vs FSV Mainz 05 Predictions, Picks & Odds\n    Content: Bundesliga · 2\n\n06 Sep 2026  Volksparkstadion  Louis Hecq\n\n### Hamburger SV vs FSV Mainz 05 – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 2.94 | 3.65 | 2.49 | View Odds |\n| Stake | 2.70 | 3.55 | 2.40 | View Odds |\n| bc.game | 2.78 | 3.45 | 2.40 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or FSV Mainz 05\n\n2.49 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 04 Sep 2026 at 21:55 · Odds are subject to change\n\nCompetition: Bundesliga\n\nStage: Regular Season, 2\n\nDate: 06 Sep 2026\n\nTime: 14:30 BST\n\nStadium: Volksparkstadion ...\n    URL: https://www.toffeeweb.com/int/hamburger-sv-vs-fsv-mainz-05-predictions-picks-odds-06-09-2026\n  - Title: Prediction Hamburger SV vs FSV Mainz 05 - Bundesliga\n    Content: 1X2 betting odds for Hamburger SV. The odds are: Hamburger SV to win 2.90, draw 3.50, FSV Mainz 05 to win 2.35. The odds are Over 2.5 at 1.72\n    URL: https://betmines.com/match-preview/hamburger-sv-vs-fsv-mainz-05-prediction-match-preview-and-analysis-bundesliga-06-09-2026\n\nGame ID: 2\nSource event_id: 401884805\nMatchup: FC Augsburg (away) @ Eintracht Frankfurt (home)\nHome: Eintracht Frankfurt\nAway: FC Augsburg\nKickoff UTC: 2026-09-06T15:30Z\nKickoff ET: 2026-09-06 11:30 EDT\nVenue: Deutsche Bank Park\nRound: unavailable\nHome form: DWDLL\nAway form: WWLWW\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Eintracht Frankfurt -110 (open -115); Draw +290 (open +280); FC Augsburg +230 (open +235)\nTavily context:\n  - Title: PREVIEW | Eintracht Frankfurt vs FC Augsburg: team news, lineups, predictions (Bundesliga 06/09)\n    Content: Eintracht Frankfurt currently have 1 point and lie in 9th position. In their last outing, Adi Hutter's team drew 3-3 against 1. FC Union Berlin (1. Bundesliga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nFC Augsburg have 3 points to their name this season and occupy 3rd position in the table. In their last game, Manuel Baum's team won 3-0 against Schalke 04 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups ...\n    URL: https://sports.yahoo.com/articles/preview-eintracht-frankfurt-vs-fc-154000796.html\n  - Title: Eintracht Frankfurt vs FC Augsburg Predictions, Picks & Odds - 06/09/2026\n    Content: #### Eintracht Frankfurt\n\n4-3-3\n\nStarters\n\n1. 1 Kauã Santos\n2. 2 Elias Baum\n3. 3 Robin Koch\n4. 4 Otávio\n5. 5 Kosugi\n6. 6 Noël Aséko\n7. 7 Raphael Onyedika\n8. 8 Mario Götze\n9. 9 Jonathan Burkardt\n10. 10 Omar Marmoush\n11. 11 Can Uzun\n\nBench\n\n Jens Grahl\n Jean Bahoya\n Malik Pimpong\n Oscar Højlund\n Farès Chaïbi\n Robin Koch\n Timothy Chandler\n\nAbsent\n\n Jessic Ngankam (injury)\n Hugo Larsson (injury)\n Ritsu Doan (injury)\n Nnamdi Collins (injury)\n Ansgar Knauff (injury)\n J. Ngankam (Thigh injury (expected return mid-September 2026))\n T. Chandler (Thigh/Hamstring injury)\n\n#### FC Augsburg\n\n3-4-2-1 ...\n    URL: https://www.toffeeweb.com/ng/eintracht-frankfurt-vs-fc-augsburg-predictions-picks-odds-06-09-2026\n  - Title: Eintracht Frankfurt vs Augsburg Betting Pick | German Bundesliga | 2026-09-06 |\n    Content: Eintracht Frankfurt vs Augsburg Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | Ein | DRAW | Aug |  | BET365 |  | 1.90 | 3.90 | 3.50 | | BETFRED | | 1.95 | 4.00 | 3.40 | | 12PLAY | | 1.86 | 3.88 | 3.39 | | CLOUDBET | | 1.89 | 4.00 | 3.50 | | SPORTBET | | 1.89 | 3.99 | 3.45 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report. ...\n    URL: https://www.goonersguide.com/football-pick-59870-Eintracht-Frankfurt-vs-Augsburg.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884803\nMatchup: Mainz (away) @ Hamburg SV (home)\nHome: Hamburg SV\nAway: Mainz\nKickoff UTC: 2026-09-06T13:30Z\nKickoff ET: 2026-09-06 09:30 EDT\nVenue: Volksparkstadion\nRound: unavailable\nHome form: LWDWW\nAway form: DWWLW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Odds unavailable\nTavily context:\n  - Title: PREVIEW | Hamburger SV vs Mainz: team news, lineups, predictions (Bundesliga 06/09)\n    Content: ## OneFootball Videos\n\nMainz have 1 point to their name this season and occupy 11th position in the table. In their last game, Urs Fischer's team drew 0-0 with SC Paderborn 07 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n### Predicted lineups\n\nHamburger SV: Daniel Heuer Fernandes, Nicolás Capaldo, Seb Bornauw, Jordan Torunarigha, Bakery Jatta, Nicolai Remberg, Sambi Lokonga, Louis Lemke, Martin Adeline, Patson Daka, Albert Gronbaek ...\n    URL: https://onefootball.com/en/news/preview-hamburger-sv-vs-mainz-team-news-lineups-predictions-bundesliga-0609-43400767\n  - Title: PREVIEW | Hamburger SV vs Mainz: team news, lineups, predictions (Bundesliga 06/09) - Yahoo Sports\n    Content: Hamburger SV currently have 0 points and lie in 14th position. In their last fixture, Merlin Polzin's team suffered a 2-0 reverse against Borussia Dortmund (1. Bundesliga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nMainz have 1 point to their name this season and occupy 11th position in the table. In their last game, Urs Fischer's team drew 0-0 with SC Paderborn 07 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-hamburger-sv-vs-mainz-133500105.html\n  - Title: Hamburger SV vs FSV Mainz 05 Predictions, Picks & Odds\n    Content: Bundesliga · 2\n\n06 Sep 2026  Volksparkstadion  Louis Hecq\n\n### Hamburger SV vs FSV Mainz 05 – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 2.94 | 3.65 | 2.49 | View Odds |\n| Stake | 2.70 | 3.55 | 2.40 | View Odds |\n| bc.game | 2.78 | 3.45 | 2.40 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or FSV Mainz 05\n\n2.49 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 04 Sep 2026 at 21:55 · Odds are subject to change\n\nCompetition: Bundesliga\n\nStage: Regular Season, 2\n\nDate: 06 Sep 2026\n\nTime: 14:30 BST\n\nStadium: Volksparkstadion ...\n    URL: https://www.toffeeweb.com/int/hamburger-sv-vs-fsv-mainz-05-predictions-picks-odds-06-09-2026\n  - Title: Prediction Hamburger SV vs FSV Mainz 05 - Bundesliga\n    Content: 1X2 betting odds for Hamburger SV. The odds are: Hamburger SV to win 2.90, draw 3.50, FSV Mainz 05 to win 2.35. The odds are Over 2.5 at 1.72\n    URL: https://betmines.com/match-preview/hamburger-sv-vs-fsv-mainz-05-prediction-match-preview-and-analysis-bundesliga-06-09-2026\n\nGame ID: 2\nSource event_id: 401884805\nMatchup: FC Augsburg (away) @ Eintracht Frankfurt (home)\nHome: Eintracht Frankfurt\nAway: FC Augsburg\nKickoff UTC: 2026-09-06T15:30Z\nKickoff ET: 2026-09-06 11:30 EDT\nVenue: Deutsche Bank Park\nRound: unavailable\nHome form: DWDLL\nAway form: WWLWW\nHome record: 0-1-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Eintracht Frankfurt -110 (open -115); Draw +290 (open +280); FC Augsburg +230 (open +235)\nTavily context:\n  - Title: PREVIEW | Eintracht Frankfurt vs FC Augsburg: team news, lineups, predictions (Bundesliga 06/09)\n    Content: Eintracht Frankfurt currently have 1 point and lie in 9th position. In their last outing, Adi Hutter's team drew 3-3 against 1. FC Union Berlin (1. Bundesliga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nFC Augsburg have 3 points to their name this season and occupy 3rd position in the table. In their last game, Manuel Baum's team won 3-0 against Schalke 04 (1. Bundesliga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups ...\n    URL: https://sports.yahoo.com/articles/preview-eintracht-frankfurt-vs-fc-154000796.html\n  - Title: Eintracht Frankfurt vs FC Augsburg Predictions, Picks & Odds - 06/09/2026\n    Content: #### Eintracht Frankfurt\n\n4-3-3\n\nStarters\n\n1. 1 Kauã Santos\n2. 2 Elias Baum\n3. 3 Robin Koch\n4. 4 Otávio\n5. 5 Kosugi\n6. 6 Noël Aséko\n7. 7 Raphael Onyedika\n8. 8 Mario Götze\n9. 9 Jonathan Burkardt\n10. 10 Omar Marmoush\n11. 11 Can Uzun\n\nBench\n\n Jens Grahl\n Jean Bahoya\n Malik Pimpong\n Oscar Højlund\n Farès Chaïbi\n Robin Koch\n Timothy Chandler\n\nAbsent\n\n Jessic Ngankam (injury)\n Hugo Larsson (injury)\n Ritsu Doan (injury)\n Nnamdi Collins (injury)\n Ansgar Knauff (injury)\n J. Ngankam (Thigh injury (expected return mid-September 2026))\n T. Chandler (Thigh/Hamstring injury)\n\n#### FC Augsburg\n\n3-4-2-1 ...\n    URL: https://www.toffeeweb.com/ng/eintracht-frankfurt-vs-fc-augsburg-predictions-picks-odds-06-09-2026\n  - Title: Eintracht Frankfurt vs Augsburg Betting Pick | German Bundesliga | 2026-09-06 |\n    Content: Eintracht Frankfurt vs Augsburg Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | Ein | DRAW | Aug |  | BET365 |  | 1.90 | 3.90 | 3.50 | | BETFRED | | 1.95 | 4.00 | 3.40 | | 12PLAY | | 1.86 | 3.88 | 3.39 | | CLOUDBET | | 1.89 | 4.00 | 3.50 | | SPORTBET | | 1.89 | 3.99 | 3.45 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report. ...\n    URL: https://www.goonersguide.com/football-pick-59870-Eintracht-Frankfurt-vs-Augsburg.htm\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401884803",
+                        "date_utc": "2026-09-06T13:30Z",
+                        "kickoff_et": "2026-09-06 09:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Hamburg SV",
+                        "away": "Mainz",
+                        "home_id": "127",
+                        "away_id": "2950",
+                        "matchup": "Mainz (away) @ Hamburg SV (home)",
+                        "venue": "Volksparkstadion",
+                        "city": "Hamburg Norderstedt",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWDWW",
+                        "form_away": "DWWLW",
+                        "record_home": "0-0-1",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "Bet 365",
+                            "home_open": null,
+                            "home_current": null,
+                            "draw_open": null,
+                            "draw_current": null,
+                            "away_open": null,
+                            "away_current": null
+                        },
+                        "odds_text": "Odds unavailable",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401884805",
+                        "date_utc": "2026-09-06T15:30Z",
+                        "kickoff_et": "2026-09-06 11:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Eintracht Frankfurt",
+                        "away": "FC Augsburg",
+                        "home_id": "125",
+                        "away_id": "3841",
+                        "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                        "venue": "Deutsche Bank Park",
+                        "city": "Frankfurt",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "DWDLL",
+                        "form_away": "WWLWW",
+                        "record_home": "0-1-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "-110",
+                            "draw_open": "+280",
+                            "draw_current": "+290",
+                            "away_open": "+235",
+                            "away_current": "+230"
+                        },
+                        "odds_text": "Provider unavailable: Eintracht Frankfurt -110 (open -115); Draw +290 (open +280); FC Augsburg +230 (open +235)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-05T04:58:32.934369-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:49:35.868503-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz are entering this fixture as slight favorites according to sportsbooks, despite being the away side. Both teams are early in the season, with Mainz securing a point in their opener and Hamburg searching for their first points after a loss to Dortmund. The odds reflect Mainz's slight edge in overall quality.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are strong at home and are favored by bookmakers around -110 (1.90 decimal odds). While FC Augsburg started their campaign with a solid 3-0 win, Frankfurt's squad quality and home field advantage at Deutsche Bank Park make them the most likely victors in this matchup.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-05T04:49:53.430427-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.326,
+                    "draw_probability": 0.271,
+                    "away_win_probability": 0.403,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Mainz is positioned as the slight favorite with away odds around +135 to +149 (2.35 to 2.49 in decimal), translating to roughly a 40% implied win probability. Hamburg SV has home advantage but lost their opening fixture, whereas Mainz managed a draw, giving the visitors a narrow edge.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.493,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.267,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are clear favorites on their home turf with odds around -110 (1.90), giving them an implied win probability of nearly 50%. Despite FC Augsburg's strong 3-0 victory in their opening match, the betting markets heavily support a Frankfurt home win.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-05T04:50:15.950457-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "The betting markets slightly favor Mainz, with average odds around 2.41 compared to 2.83 for Hamburg SV. Mainz started the season with a draw, securing a point, while Hamburg suffered a loss in their opening match. While Hamburg has the home advantage and the last head-to-head was a draw, the combination of Mainz's better start and the favorable odds from multiple bookmakers suggests they have a slight edge in this early-season fixture.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Despite Augsburg's strong 3-0 win in their opening match compared to Frankfurt's draw, the betting markets heavily favor Eintracht Frankfurt at home. Odds from multiple providers are consistently around 1.90-1.95 for a Frankfurt win, implying a probability of approximately 50%. This strong market consensus indicates that Frankfurt's overall team quality and significant home advantage are considered more impactful than the single result from the first round of the season.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:26.574783-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz has started the season with 1 point compared to Hamburg SV's 0 points, and their away form is strong (DWWLW). Betting odds consistently favor Mainz or a draw, with Mainz's win odds being lower than Hamburg SV's across multiple bookmakers. The last meeting between the two teams was a 1-1 draw, but current momentum and market sentiment lean towards Mainz.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "While FC Augsburg has started the season strong with 3 points from a 3-0 win, Eintracht Frankfurt, despite drawing their first game, is consistently favored by betting odds. ESPN and other bookmakers place Eintracht Frankfurt as clear favorites with significantly lower odds for a home win. This suggests that despite Augsburg's current form, the market expects Frankfurt's home advantage and perceived squad strength to prevail.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:51:40.018362-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Mainz are a slight market lean despite playing away, and Hamburg opened with a loss. Home advantage and the teams' recent 1-1 head-to-head keep this close, but Mainz rate marginally more likely to take the points.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are clear home favorites in available odds and have the stronger baseline at Deutsche Bank Park. Augsburg's strong opening win raises upset risk, while Frankfurt injuries and recent defensive volatility prevent higher confidence.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:51:48.253738-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Mainz are slight market favorites despite playing away, while Hamburg opened with a loss and are still seeking their first points. The matchup looks fairly balanced, with draw risk elevated by the prior 1-1 meeting and Mainz's recent low-scoring draw, but Mainz rate narrowly more likely to take the regulation-time win.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are clear home favorites across the available odds and have attacking quality at Deutsche Bank Park, even after a 3-3 draw to start the season. Augsburg's 3-0 opening win and strong recent form keep the upset probability meaningful, but the home edge and market pricing point to Frankfurt as the most likely 90-minute outcome.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-05T04:52:28.162608-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing from available 1X2 odds leans slightly to Mainz, with Hamburg not strongly favored despite home advantage. Early-season results (HSV 0-0-1; Mainz 0-1-0) and recent form are fairly similar, but Mainz look marginally more reliable and the most likely single outcome is an away win, with a draw also plausible.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Consensus odds make Frankfurt the most likely winner at home, though not overwhelmingly. Augsburg come in with stronger recent form and a convincing last win, which lifts their upset chances and the draw rate, but Frankfurt's home edge and higher baseline quality keep the home win as the most probable 90-minute result.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-05T04:52:42.089582-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market previews and recent form point to a tight match, but Mainz arrive with steadier early-season results and bookmakers slightly favor them. Hamburg have home advantage but struggled in their opening fixture and face a Mainz side that have been difficult to break down. Expect a narrow Mainz win in regulation, though a draw is plausible.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and situational factors favor Eintracht at Deutsche Bank Park despite Augsburg's strong start. Eintracht's squad depth and home advantage give them the edge, but Augsburg's recent form means an upset or draw is well within reach.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-05T04:52:56.605981-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Home advantage at Volksparkstadion; Mainz away form modest; last meeting ended 1-1; both teams recent results suggest a balanced match with a slight home edge.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Augsburg away form WWLWW; Frankfurt at home have been inconsistent (0-1-0); Augsburg's away strength and recent performance point to an away win, with a draw unlikely.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-05T04:52:59.064710-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz have started the season slightly better than Hamburg SV, with a draw and a win in their last two away games, while Hamburg SV lost their only home match so far. Bookmaker odds and expert previews slightly favor Mainz, with most tipping a double chance for Mainz or a draw. The last head-to-head ended in a draw, but Mainz's current form and squad stability give them a slight edge.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are favored by bookmakers and have a strong home record historically, despite a recent draw. Augsburg are in good form but face a tougher opponent away. Frankfurt's squad depth and home advantage, combined with market odds, make them the likelier winner, though Augsburg's form keeps the draw and away win probabilities significant.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-05T04:53:00.993220-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have had a mixed start to the season, with Hamburg losing their last match and Mainz drawing. The odds suggest a close match, and the previous encounter ended in a draw. Therefore, a draw is the most likely outcome.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt has a strong home advantage and a solid lineup despite some injuries. Augsburg's recent form is good, but Frankfurt's odds and home performance suggest they are more likely to win.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-05T04:53:12.223887-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmaker odds (approx 2.85/3.55/2.42) make Mainz slight favorites away. Hamburg have 0 points after a 2-0 loss to Dortmund, while Mainz drew 0-0 with Paderborn and have better recent form. Still a tight matchup with high draw likelihood, so confidence is low.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds (approx 1.90/3.95/3.45) favor Frankfurt at home despite notable injuries (Larsson, Doan, Knauff). Augsburg arrive in strong form after a 3-0 win over Schalke, which tempers Frankfurt's edge, but home advantage and squad quality make Frankfurt the most likely winner.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-05T04:53:18.842847-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Hamburg SV",
+                    "confidence": "low",
+                    "reasoning": "Market odds are close to even (Hamburg ~2.70-2.94, Mainz ~2.35-2.49), reflecting an evenly matched contest. Home advantage at Volksparkstadion gives Hamburg a slight edge despite poor early form, while Mainz have looked solid defensively with a recent clean sheet. A tight game is likely.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Eintracht Frankfurt",
+                    "confidence": "medium",
+                    "reasoning": "ESPN odds favor Frankfurt (-110) at home with strong attacking options (Marmoush, Burkardt, Uzun, Gotze). Despite Augsburg's good early form and a 3-0 win over Schalke, Frankfurt's home strength and superior squad depth make them favorites, though multiple injuries add some uncertainty.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-05T04:53:30.140627-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Hamburg SV are winless (0-0-1) after a 2-0 loss to Borussia Dortmund and sit 14th with 0 points. Mainz have 1 point from a 0-0 draw with Paderborn and sit 11th. The market odds (Hamburg ~2.90, Draw ~3.50, Mainz ~2.35-2.49) suggest a slight lean toward Mainz. Hamburg's recent form includes wins but also a heavy loss, while Mainz have shown defensive solidity. The last H2H ended 1-1. Given Hamburg's early-season struggles on their return to the Bundesliga and Mainz's slight market edge, a narrow Mainz win or draw is most likely. Predicting away win at marginal edge.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt have 1 point from a 3-3 draw with Union Berlin and sit 9th, while Augsburg are in excellent form with 3 points from a 3-0 win over Schalke and sit 3rd. However, Frankfurt are strong at Deutsche Bank Park and their squad (Marmoush, Götze, Burkardt) is capable of performing well. Market odds (Frankfurt ~1.90, Draw ~3.90-4.00, Augsburg ~3.40-3.50) heavily favor Frankfurt at home despite Augsburg's early form. Frankfurt's home advantage and squad quality are significant, and the ESPN odds also show Frankfurt as favorites. Predicting home win with medium confidence.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-05T04:53:42.130760-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Hamburg SV have struggled early in the season with 0 points from their opening match, sitting in 14th position after a 2-0 loss to Dortmund. Mainz, while drawing 0-0 with Paderborn, have collected a point and sit in 11th. The betting markets favor Mainz as away favorites (2.35-2.49 odds for Mainz win vs 2.90-2.94 for Hamburg), indicating professional sentiment leans toward the visitors. Hamburg's home form shows mixed results (LWDWW), while Mainz come in with better recent form (DWWLW). The last meeting ended 1-1, suggesting tight contests between these sides. Given Hamburg's poor start, Mainz's superior form, and market sentiment, a narrow Mainz victory appears most likely.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are home favorites with odds around 1.89-1.95, significantly shorter than Augsburg's 3.40-3.50. Frankfurt sit in 9th with 1 point after an entertaining 3-3 draw with Union Berlin, showing offensive capability. Augsburg are in 3rd place with 3 points following a convincing 3-0 win over Schalke, displaying excellent form (WWLWW). However, Frankfurt's home advantage at Deutsche Bank Park is significant, and despite Augsburg's strong recent form, the market and home field favor the hosts. Frankfurt have attacking threats and will be motivated to secure their first win. The last meeting ended 1-1, but home advantage should tip the balance toward Frankfurt in what could be a competitive match.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-05T04:53:47.522906-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Hamburg SV has poor form (0 points, 14th place) after a 2-0 loss to Dortmund, while Mainz also struggles (1 point, 11th place) with a recent 0-0 draw. The last meeting ended 1-1, suggesting a similar defensive, low-scoring outcome. Hamburg's home advantage provides slight edge for home win, but both teams' poor form and defensive nature suggest draw is most likely. Moderate confidence due to early season volatility.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "FC Augsburg is in strong form (3 points, 3rd place) with a 3-0 victory last match, while Frankfurt (1 point, 9th place) drew 3-3 last game showing defensive vulnerabilities. However, Frankfurt has home advantage at Deutsche Bank Park, and ESPN odds favor home win (-110). The last meeting was 1-1, indicating competitive balance. Frankfurt's recent 3-3 draw suggests attacking potential but also instability. Augsburg's superior form and league position create uncertainty, but home odds and historical data slightly favor Frankfurt. Medium confidence reflects competitive matchup.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-05T04:54:49.440165-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.335,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.395,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz are slight favorites on early betting odds. Hamburg opened with a loss and Mainz with a draw, while the last H2H was 1-1; the away/draw double chance is favored, with a narrow edge to Mainz.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.484,
+                    "draw_probability": 0.237,
+                    "away_win_probability": 0.279,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frankfurt are moderate home favorites according to the market despite Augsburg's strong start. Home advantage and odds support Frankfurt, though Augsburg's form keeps the away probability meaningful.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-05T04:54:52.173420-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are early in the season with mixed form. Hamburg lost their opener, while Mainz drew. Odds suggest a close match, with away win slightly favored by some bookmakers. Historical meetings have been draws, but Mainz's away form is decent. Low confidence due to uncertainty.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frankfurt are at home and despite a draw in their opener, they have a strong squad. Augsburg won their first match but face a tougher opponent. Odds favor Frankfurt significantly. Medium confidence based on home advantage and squad quality.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-05T04:55:16.186433-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz is favored by bookmakers and has shown resilient form, while Hamburg SV suffered a 2-0 defeat in their last outing and holds a lower implied win probability based on current odds.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt is the clear favorite at home according to betting markets. Despite Augsburg's strong start and recent 3-0 win, Frankfurt's home advantage at Deutsche Bank Park and superior attacking options give them the edge.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-05T04:55:23.861802-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown mixed form, with Hamburg SV losing their last game and Mainz drawing. The last meeting between the two teams ended in a draw, and the odds from various bookmakers also suggest a close match with a slight edge towards a draw or away win.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt has a strong home record and recently drew against a tough opponent. FC Augsburg, while in good form, is playing away and may find it challenging to secure a win. The odds and recent form suggest a slight advantage for Eintracht Frankfurt to win at home.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-05T04:56:10.475222-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds slightly favor Mainz away (approx. 2.40-2.50) over Hamburg (approx. 2.80-2.90), reflecting Mainz's solid defensive structure and Hamburg's early-season defensive frailties. While the recent head-to-head ended 1-1 and Hamburg's home advantage at Volksparkstadion provides a slight boost, Mainz's current form and away resilience give them the narrow edge for a regulation-time victory.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frankfurt are clear favorites at home with odds around 1.90, driven by their superior squad depth, historical home dominance at Deutsche Bank Park, and Augsburg's vulnerability on the road despite Augsburg's strong start. Frankfurt's attacking talent and home advantage outweigh their recent defensive lapses and key injury list, making a home win the most probable regulation-time result.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-05T04:57:06.181234-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Mainz arrives with stronger recent form (DWWLW) compared to Hamburg (LWDWW), who suffered a heavy 2-0 opening defeat. While playing at Volksparkstadion offers home advantage, betting odds and head-to-head history (last meeting 1-1) lean slightly toward the visitors. Hamburg's early-season struggle (0 points) reduces confidence in a home victory.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are favorites at Deutsche Bank Park with odds around 1.90, supported by home advantage. However, significant injury absences in midfield and attack (Doan, Ngankam) weaken the lineup. Augsburg's impressive start (3rd place, 3 points, 3-0 win vs Schalke) makes this competitive. The home win remains the statistical probability despite the risk of a draw or upset.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-05T04:57:53.970111-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Hamburg SV lost their opener 2-0 to Dortmund and sit 14th with 0 points, while Mainz earned a point in a 0-0 draw at Paderborn and sit 11th. Market odds favor Mainz (away ~2.40) over Hamburg (home ~2.80), reflecting skepticism about the promoted side against an established Bundesliga team. The last meeting was a 1-1 draw, supporting a close contest, but Mainz is slightly more likely to prevail in 90-minute regulation time.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are moderate home favorites (~1.90) despite defensive frailty shown in a 3-3 opening draw and a lengthy injury list. Augsburg arrives in strong form after a 3-0 win over Schalke, yet Frankfurt’s superior squad depth and home advantage at Deutsche Bank Park tip the balance. The match should be competitive, but Frankfurt is the most probable 90-minute regulation-time winner.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-05T04:58:18.049284-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds consistently make Mainz a slight favorite despite playing away (home ~2.70-2.94, draw ~3.45-3.65, away ~2.35-2.49), implying roughly a 39-40% chance of an away win. Hamburg sit 14th with 0 points after a 2-0 loss to Dortmund, while Mainz have 1 point from a 0-0 draw with Paderborn and the stronger recent form string (DWWLW vs LWDWW). The last head-to-head ended 1-1, keeping the draw live. With no side showing convincing attacking output early in the season and the odds tightly bunched, this is a low-confidence lean toward Mainz on the road.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds across bookmakers make Eintracht Frankfurt a clear home favorite (~1.86-1.95, draw ~3.90-4.00, away ~3.40-3.50; ESPN: Frankfurt -110, Augsburg +230), implying just under a 50% home win probability after margin removal. Frankfurt's home advantage at Deutsche Bank Park and an attacking lineup featuring Götze, Burkardt, Marmoush and Uzun support the favorite status despite a lengthy injury list (Doan, Larsson, Knauff, Collins, Ngankam). Augsburg arrive in excellent form (WWLWW, 3-0 over Schalke, 3rd place) and the last meeting finished 1-1, so the upset and draw risks are real, keeping confidence at medium rather than high.",
+                    "event_id": "401884805"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-05T04:58:32.910837-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Mainz (away) @ Hamburg SV (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Hamburg SV are newly promoted and lost their opener 2-0 at Dortmund, while Mainz are an established Bundesliga side that earned a point in a 0-0 draw with Paderborn. Market odds price Mainz as slight favorites (around 2.35-2.49) and the X2 double chance is a popular pick. Mainz's superior top-flight experience and Hamburg's defensive frailty against Dortmund tilt the balance toward an away win, though a draw remains plausible given the last meeting finished 1-1.",
+                    "event_id": "401884803"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "FC Augsburg (away) @ Eintracht Frankfurt (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Eintracht Frankfurt are priced as clear home favorites (around 1.90) and showed attacking potency in a 3-3 opening draw with Union Berlin. FC Augsburg won their opener 3-0 against Schalke and arrive in good form, but Frankfurt's stronger squad and home advantage at Deutsche Bank Park give them the edge. Augsburg's improved form keeps draw and away probabilities meaningful, but the home side is the most likely winner.",
+                    "event_id": "401884805"
+                }
+            ]
+        }
+    ]
+}

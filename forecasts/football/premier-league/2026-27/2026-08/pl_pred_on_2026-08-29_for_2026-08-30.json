@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-29",
+        "target_date_et": "2026-08-30",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879317\nMatchup: Brighton & Hove Albion (away) @ Chelsea (home)\nHome: Chelsea\nAway: Brighton & Hove Albion\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Stamford Bridge\nRound: unavailable\nHome form: WWLWL\nAway form: WWDLL\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Chelsea -125 (open +100); Draw +300 (open +270); Brighton & Hove Albion +300 (open +250)\nTavily context:\n  - Title: Chelsea FC XI vs Brighton: Confirmed team news, predicted lineup and injury latest for Premier League | The Standard\n    Content: Chelsea potential lineup vs Brighton (3-4-2-1): Penders; Fofana, Lacroix, Acheampong; Gusto, Caicedo, James, Chavarria; Palmer, Rogers; Joao Pedro\n\nDoubt: Caicedo, Fernandez\n\nInjured: Palestra, Henderson\n\nTime and date: 2pm BST on Sunday, August 30, 2026\n\nVenue: Stamford Bridge\n\nHow to watch: Sky Sports\n\nMORE ABOUT\n\nMoises Caicedo\n\nXabi Alonso\n\nchelsea team news\n\nchelsea injuries\n    URL: https://www.standard.co.uk/sport/football/chelsea-fc-xi-vs-brighton-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1294953.html\n  - Title: Chelsea vs Brighton & Hove Albion Predictions, Picks & Odds\n    Content: X2: Double Chance Draw or Brighton & Hove Albion\n\n4.00 on BetfredBetfred · Confidence Medium\n\nOdds recorded on 29 Aug 2026 at 05:08 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 14:00 BST\n\nStadium: Stamford Bridge\n\n## Chelsea vs Brighton & Hove Albion Preview ...\n    URL: https://www.toffeeweb.com/chelsea-vs-brighton-hove-albion-predictions-picks-odds-30-08-2026\n  - Title: Chelsea vs Brighton Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: 12\n\n1.26\n\nX2\n\n1.98\n\n Stake Logo\n\nDraw No Bet\n\n1\n\n1.33\n\n2\n\n2.95\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.75\n\n2.00\n\n2 Hcp +0.75\n\n1.80\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n2.25\n\nOver 2.5\n\n1.63\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.58\n\nNo\n\n2.28\n\n Stake Logo\n\nJoão Pedro Favourite to Find the Net First\n\nJoão Pedro is available at 2.25 when it comes to Anytime Goalscorer. The favourite is now priced at odds of 4.60 to find the net first.\n\nPlayer Goals\n\nJoão Pedro (Chelsea)\n\nFirst\n\n4.60\n\nAnytime\n\n2.25\n\n Stake Logo\n\nDanny Welbeck (Chelsea)\n\nFirst\n\n5.30\n\nAnytime\n\n2.50\n\n Stake Logo ...\n    URL: https://www.sportsgambler.com/betting-tips/football/chelsea-vs-brighton-prediction-lineups-odds-2026-08-30\n  - Title: Chelsea vs Brighton Betting Pick | English Premier | 2026-08-30 |\n    Content: Chelsea vs Brighton Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Handicap BETS |  | Over | H/C | Under |  | BET365 |  | 1.61 | O/U 2.5 | 2.30 | | BETFRED | | 1.57 | O/U 2.5 | 2.25 | | CLOUDBET | | 1.61 | O/U 2.5 | 2.30 |  | Fixed Odds BETS |  | CHE | DRAW | BHA |  | BET365 |  | 1.83 | 4.00 | 4.00 | | BETFRED | | 1.83 | 3.75 | 4.00 | | CLOUDBET | | 1.80 | 4.05 | 4.05 |  | Click the bookmaker name to visit the betting site |  | ...\n    URL: https://www.goonersguide.com/football-pick-59836-Chelsea-vs-Brighton.htm\n\nGame ID: 2\nSource event_id: 401879315\nMatchup: Brentford (away) @ Leeds United (home)\nHome: Leeds United\nAway: Brentford\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Elland Road\nRound: unavailable\nHome form: WWLWD\nAway form: WWDDL\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Leeds United +160 (open +150); Draw +245 (open +240); Brentford +170 (open +175)\nTavily context:\n  - Title: Leeds vs Brentford Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Leeds  Injury Table\n\nType Name Info\n\nMateo Joseph Ankle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-30\n\nGabriel Gudmundsson Thigh\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nWilfried Gnonto Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nIlia Gruev Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nBrentford  Injury Table\n\nType Name Info\n\nSepp van den Berg Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-10-10 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/leeds-vs-brentford-prediction-lineups-odds-2026-08-30\n  - Title: Leeds vs Brentford - live score, predicted lineups and H2H stats\n    Content: Keith Andrews\n\nAndrews\n\n  Gabriel Gudmundsson\n\n  Hamstring injury / Doubtful\n\nGudmundssonHamstring injuryDoubtful\n\n  Ilia Gruev\n\n  Meniscus injury / Mid September 2026\n\nGruevMeniscus injuryMid September 2026\n\n  Mateo Joseph\n\n  Knee injury / Early January 2027\n\nJosephKnee injuryEarly January 2027\n\n  Wilfried Gnonto\n\n  Hamstring injury / Doubtful\n\nGnontoHamstring injuryDoubtful\n\n  Sepp van den Berg\n\n  Groin injury / Mid September 2026\n\nvan den BergGroin injuryMid September 2026\n\n  Antoni Milambo\n\n  Cruciate ligament injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/leeds-vs-brentford/2sso1t\n  - Title: Leeds vs Brentford Prediction - Premier League - 30/08/2026\n    Content: Brentford just missed out on European qualification last season. The Bees finished ninth in the Premier League, only missing out on eighth on goal difference Only two points were earned from their final three league fixtures. This season has gone well so far with a 3-0 home win over Spurs. Midweek saw them win at Birmingham in the Carabao Cup.\n\nLimited Offer. Currently at Stake\n\n## Leeds v Brentford Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/leeds-brentford-368992\n  - Title: Leeds United vs Brentford Betting Pick | English Premier | 2026-08-30 |\n    Content: ## The Pick :\n\nLeeds United 1-1 Brentford\n\n## BEST BETTING TIP :\n\nI'll back the Draw at 3.50 with BetFred\n\nBEST BETTING SITE FOR YOUR LOCATION\n\nbet365\n\nFully authorized operator in Brazil. Bet legally using local Pix deposits and native Portuguese support.\n\nAposte na bet365.br\n\nMarketing Tools\n\nProducts\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nApply\n\nLog In\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais\n\nБългарски\n\nΕλληνικά\n\nPortuguês\n\nLog In\n\nApply\n\nMarketing Tools\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais ...\n    URL: https://www.goonersguide.com/football-pick-59837-Leeds-United-vs-Brentford.htm\n\nGame ID: 3\nSource event_id: 401879313\nMatchup: Fulham (away) @ Sunderland (home)\nHome: Sunderland\nAway: Fulham\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Stadium of Light\nRound: unavailable\nHome form: LWWDD\nAway form: WLWDL\nHome record: 0-0-1\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Sunderland +140 (open +160); Draw +230 (open +225); Fulham +200 (open +175)\nTavily context:\n  - Title: Sunderland vs Fulham Prediction: 30 August 2026 Premier ...\n    Content: ### Sunderland Possible Starting Eleven\n\nImage 9\n\n   GK: Robin Roefs\n   DF: Trai Hume, Dan Ballard, Reinildo Isnard Mandava, Luke O’Nien\n   MF: Granit Xhaka, Noah Sadiki, Enzo Le Fée, Habib Diarra\n   FW: Chemsdine Talbi, Wilson Isidor\n\nSunderland look set to line up in their preferred 4-2-3-1 shape, with Xhaka and Sadiki forming the double pivot. Xhaka is the key figure here. His passing range and ability to dictate tempo give Sunderland their best chance of controlling the match. Enzo Le Fée operates just ahead of them in the ten role, linking play between midfield and attack. ...\n    URL: https://tips.gg/article/sunderland-vs-fulham-30-08-2026\n  - Title: Sunderland-Fulham - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nSunderland logo\nFulham logo\nSunderland logo\nFulham logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Tom Cairney |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 12 | Fulham | 0 | 0 | 1 | 0 |\n| 14 | Sunderland | 0 | 0 | 1 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\nSunderland have Won only 2 of their last 7 EPL matches.\n\ndraw ...\n    URL: https://www.whoscored.com/matches/1983564/preview/england-premier-league-2026-2027-sunderland-fulham\n  - Title: Sunderland vs Fulham Prediction - Premier League - 30/08/2026\n    Content: Despite losing their first match of the season to Chelsea, Fulham’s new-look forward line looked vibrant and promising at home last week. The Cottagers will look to build on that performance here, and history is on their side, as they are unbeaten in their last five matches across all competitions against their upcoming opponents (W4 D1). Let’s get into the key stats!\n\nLimited Offer. Currently at Stake\n\n## Sunderland v Fulham Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/sunderland-fulham-369002\n  - Title: Prediction Sunderland vs Fulham: analysis, odds and betting tips\n    Content: The odds are: Sunderland to win 2.40, draw 3.20, Fulham to win 3.10. The odds are Over 2.5 at 2.00 and Under 2.5 at 1.80. The most likely\n    URL: https://betmines.com/match-preview/sunderland-vs-fulham-prediction-match-preview-and-analysis-premier-league-30-08-2026\n\nGame ID: 4\nSource event_id: 401879293\nMatchup: Ipswich Town (away) @ Manchester United (home)\nHome: Manchester United\nAway: Ipswich Town\nKickoff UTC: 2026-08-30T15:30Z\nKickoff ET: 2026-08-30 11:30 EDT\nVenue: Old Trafford\nRound: unavailable\nHome form: LWWDW\nAway form: WWWDD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Manchester United -240 (open -235); Draw +400 (open +380); Ipswich Town +600 (open +550)\nTavily context:\n  - Title: Manchester United XI vs Ipswich: Confirmed team news, predicted lineup, injury latest for Premier League - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nNew signing Baleba has joined from Brighton, but is injured after picking up an ankle injury during a pre-season training camp in Austria and will not be seen on a pitch for \"two or three weeks\".\n\nTom Heaton, Matthijs de Ligt, Mason Mount and Manuel Ugarte will also miss United's first home fixture.\n\nManchester United predicted XI: Lammens; Mazraoui, Maguire, Heaven, Shaw; Mainoo, Tielemans; Mbeumo, Fernandes, Rashford; Cunha\n\nDoubts: Mount\n\nInjured: Amad Diallo, De Ligt, Baleba, Heaton, Ugarte\n\nTime and date: 4.30pm BST on Sunday, August 30, 2026 ...\n    URL: https://sports.yahoo.com/articles/manchester-united-xi-vs-ipswich-101638794.html\n  - Title: Preview: Manchester United vs Ipswich Town\n    Content: Manchester United Premier League form:\n\n L\n\nIpswich Town Premier League form:\n\n W\n\nIpswich Town form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081194307-6a833d359a831646891248.jpg)\n\n© Imago / SOPA Images\n\nManchester United began the new season with a number of injury concerns, with several players expected to remain sidelined for the foreseeable future. ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/preview/man-utd-vs-ipswich-prediction-team-news-lineups_603909.html\n  - Title: Manchester United vs Ipswich Town Predictions, Picks & ...\n    Content: Premier League · 2\n\n30 Aug 2026  Old Trafford  Louis Hecq\n\n### Manchester United vs Ipswich Town – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 1.38 | 5.00 | 8.00 | View Odds |\n| bc.game | 1.41 | 4.80 | 7.00 | View Odds |\n\nOur prediction\n\n1: Manchester United to win\n\n1.38 on StakeStake · Confidence Medium\n\nOdds recorded on 29 Aug 2026 at 00:37 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 16:30 BST\n\nStadium: Old Trafford ...\n    URL: https://www.toffeeweb.com/int/manchester-united-vs-ipswich-town-predictions-picks-odds-30-08-2026\n  - Title: Manchester United vs Ipswich Town Prediction - Premier League - 30/08/2026\n    Content: Gary O’Neil’s men will arrive at Old Trafford this weekend brimming with confidence after edging Sunderland to victory in their first match back in the top flight. The Tractor Boys made significant investment over the summer, bolstering their squad in an attempt to survive the drop - can they follow up on their MD1 triumph with another big performance this weekend? Let’s get into the key stats!\n\nLimited Offer. Currently at Stake\n\n## Manchester United v Ipswich Town Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-united-ipswich-town-369036\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879317\nMatchup: Brighton & Hove Albion (away) @ Chelsea (home)\nHome: Chelsea\nAway: Brighton & Hove Albion\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Stamford Bridge\nRound: unavailable\nHome form: WWLWL\nAway form: WWDLL\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Chelsea -125 (open +100); Draw +300 (open +270); Brighton & Hove Albion +300 (open +250)\nTavily context:\n  - Title: Chelsea FC XI vs Brighton: Confirmed team news, predicted lineup and injury latest for Premier League | The Standard\n    Content: Chelsea potential lineup vs Brighton (3-4-2-1): Penders; Fofana, Lacroix, Acheampong; Gusto, Caicedo, James, Chavarria; Palmer, Rogers; Joao Pedro\n\nDoubt: Caicedo, Fernandez\n\nInjured: Palestra, Henderson\n\nTime and date: 2pm BST on Sunday, August 30, 2026\n\nVenue: Stamford Bridge\n\nHow to watch: Sky Sports\n\nMORE ABOUT\n\nMoises Caicedo\n\nXabi Alonso\n\nchelsea team news\n\nchelsea injuries\n    URL: https://www.standard.co.uk/sport/football/chelsea-fc-xi-vs-brighton-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1294953.html\n  - Title: Chelsea vs Brighton & Hove Albion Predictions, Picks & Odds\n    Content: X2: Double Chance Draw or Brighton & Hove Albion\n\n4.00 on BetfredBetfred · Confidence Medium\n\nOdds recorded on 29 Aug 2026 at 05:08 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 14:00 BST\n\nStadium: Stamford Bridge\n\n## Chelsea vs Brighton & Hove Albion Preview ...\n    URL: https://www.toffeeweb.com/chelsea-vs-brighton-hove-albion-predictions-picks-odds-30-08-2026\n  - Title: Chelsea vs Brighton Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: 12\n\n1.26\n\nX2\n\n1.98\n\n Stake Logo\n\nDraw No Bet\n\n1\n\n1.33\n\n2\n\n2.95\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.75\n\n2.00\n\n2 Hcp +0.75\n\n1.80\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n2.25\n\nOver 2.5\n\n1.63\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.58\n\nNo\n\n2.28\n\n Stake Logo\n\nJoão Pedro Favourite to Find the Net First\n\nJoão Pedro is available at 2.25 when it comes to Anytime Goalscorer. The favourite is now priced at odds of 4.60 to find the net first.\n\nPlayer Goals\n\nJoão Pedro (Chelsea)\n\nFirst\n\n4.60\n\nAnytime\n\n2.25\n\n Stake Logo\n\nDanny Welbeck (Chelsea)\n\nFirst\n\n5.30\n\nAnytime\n\n2.50\n\n Stake Logo ...\n    URL: https://www.sportsgambler.com/betting-tips/football/chelsea-vs-brighton-prediction-lineups-odds-2026-08-30\n  - Title: Chelsea vs Brighton Betting Pick | English Premier | 2026-08-30 |\n    Content: Chelsea vs Brighton Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Handicap BETS |  | Over | H/C | Under |  | BET365 |  | 1.61 | O/U 2.5 | 2.30 | | BETFRED | | 1.57 | O/U 2.5 | 2.25 | | CLOUDBET | | 1.61 | O/U 2.5 | 2.30 |  | Fixed Odds BETS |  | CHE | DRAW | BHA |  | BET365 |  | 1.83 | 4.00 | 4.00 | | BETFRED | | 1.83 | 3.75 | 4.00 | | CLOUDBET | | 1.80 | 4.05 | 4.05 |  | Click the bookmaker name to visit the betting site |  | ...\n    URL: https://www.goonersguide.com/football-pick-59836-Chelsea-vs-Brighton.htm\n\nGame ID: 2\nSource event_id: 401879315\nMatchup: Brentford (away) @ Leeds United (home)\nHome: Leeds United\nAway: Brentford\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Elland Road\nRound: unavailable\nHome form: WWLWD\nAway form: WWDDL\nHome record: 1-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Leeds United +160 (open +150); Draw +245 (open +240); Brentford +170 (open +175)\nTavily context:\n  - Title: Leeds vs Brentford Prediction, Betting Tips, Lineups & Odds | 30 Aug 2026\n    Content: Leeds  Injury Table\n\nType Name Info\n\nMateo Joseph Ankle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-30\n\nGabriel Gudmundsson Thigh\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nWilfried Gnonto Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-09-05\n\nIlia Gruev Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nBrentford  Injury Table\n\nType Name Info\n\nSepp van den Berg Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-10-10 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/leeds-vs-brentford-prediction-lineups-odds-2026-08-30\n  - Title: Leeds vs Brentford - live score, predicted lineups and H2H stats\n    Content: Keith Andrews\n\nAndrews\n\n  Gabriel Gudmundsson\n\n  Hamstring injury / Doubtful\n\nGudmundssonHamstring injuryDoubtful\n\n  Ilia Gruev\n\n  Meniscus injury / Mid September 2026\n\nGruevMeniscus injuryMid September 2026\n\n  Mateo Joseph\n\n  Knee injury / Early January 2027\n\nJosephKnee injuryEarly January 2027\n\n  Wilfried Gnonto\n\n  Hamstring injury / Doubtful\n\nGnontoHamstring injuryDoubtful\n\n  Sepp van den Berg\n\n  Groin injury / Mid September 2026\n\nvan den BergGroin injuryMid September 2026\n\n  Antoni Milambo\n\n  Cruciate ligament injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/leeds-vs-brentford/2sso1t\n  - Title: Leeds vs Brentford Prediction - Premier League - 30/08/2026\n    Content: Brentford just missed out on European qualification last season. The Bees finished ninth in the Premier League, only missing out on eighth on goal difference Only two points were earned from their final three league fixtures. This season has gone well so far with a 3-0 home win over Spurs. Midweek saw them win at Birmingham in the Carabao Cup.\n\nLimited Offer. Currently at Stake\n\n## Leeds v Brentford Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/leeds-brentford-368992\n  - Title: Leeds United vs Brentford Betting Pick | English Premier | 2026-08-30 |\n    Content: ## The Pick :\n\nLeeds United 1-1 Brentford\n\n## BEST BETTING TIP :\n\nI'll back the Draw at 3.50 with BetFred\n\nBEST BETTING SITE FOR YOUR LOCATION\n\nbet365\n\nFully authorized operator in Brazil. Bet legally using local Pix deposits and native Portuguese support.\n\nAposte na bet365.br\n\nMarketing Tools\n\nProducts\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nApply\n\nLog In\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais\n\nБългарски\n\nΕλληνικά\n\nPortuguês\n\nLog In\n\nApply\n\nMarketing Tools\n\nSports\n\nCasino\n\nAbout Us\n\nHelp\n\nContact Us\n\nEnglish\n\nEspañol\n\nDeutsch\n\nItaliano\n\nDansk\n\nSvenska\n\nFrançais ...\n    URL: https://www.goonersguide.com/football-pick-59837-Leeds-United-vs-Brentford.htm\n\nGame ID: 3\nSource event_id: 401879313\nMatchup: Fulham (away) @ Sunderland (home)\nHome: Sunderland\nAway: Fulham\nKickoff UTC: 2026-08-30T13:00Z\nKickoff ET: 2026-08-30 09:00 EDT\nVenue: Stadium of Light\nRound: unavailable\nHome form: LWWDD\nAway form: WLWDL\nHome record: 0-0-1\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Sunderland +140 (open +160); Draw +230 (open +225); Fulham +200 (open +175)\nTavily context:\n  - Title: Sunderland vs Fulham Prediction: 30 August 2026 Premier ...\n    Content: ### Sunderland Possible Starting Eleven\n\nImage 9\n\n   GK: Robin Roefs\n   DF: Trai Hume, Dan Ballard, Reinildo Isnard Mandava, Luke O’Nien\n   MF: Granit Xhaka, Noah Sadiki, Enzo Le Fée, Habib Diarra\n   FW: Chemsdine Talbi, Wilson Isidor\n\nSunderland look set to line up in their preferred 4-2-3-1 shape, with Xhaka and Sadiki forming the double pivot. Xhaka is the key figure here. His passing range and ability to dictate tempo give Sunderland their best chance of controlling the match. Enzo Le Fée operates just ahead of them in the ten role, linking play between midfield and attack. ...\n    URL: https://tips.gg/article/sunderland-vs-fulham-30-08-2026\n  - Title: Sunderland-Fulham - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nSunderland logo\nFulham logo\nSunderland logo\nFulham logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Tom Cairney |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 12 | Fulham | 0 | 0 | 1 | 0 |\n| 14 | Sunderland | 0 | 0 | 1 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\nSunderland have Won only 2 of their last 7 EPL matches.\n\ndraw ...\n    URL: https://www.whoscored.com/matches/1983564/preview/england-premier-league-2026-2027-sunderland-fulham\n  - Title: Sunderland vs Fulham Prediction - Premier League - 30/08/2026\n    Content: Despite losing their first match of the season to Chelsea, Fulham’s new-look forward line looked vibrant and promising at home last week. The Cottagers will look to build on that performance here, and history is on their side, as they are unbeaten in their last five matches across all competitions against their upcoming opponents (W4 D1). Let’s get into the key stats!\n\nLimited Offer. Currently at Stake\n\n## Sunderland v Fulham Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/sunderland-fulham-369002\n  - Title: Prediction Sunderland vs Fulham: analysis, odds and betting tips\n    Content: The odds are: Sunderland to win 2.40, draw 3.20, Fulham to win 3.10. The odds are Over 2.5 at 2.00 and Under 2.5 at 1.80. The most likely\n    URL: https://betmines.com/match-preview/sunderland-vs-fulham-prediction-match-preview-and-analysis-premier-league-30-08-2026\n\nGame ID: 4\nSource event_id: 401879293\nMatchup: Ipswich Town (away) @ Manchester United (home)\nHome: Manchester United\nAway: Ipswich Town\nKickoff UTC: 2026-08-30T15:30Z\nKickoff ET: 2026-08-30 11:30 EDT\nVenue: Old Trafford\nRound: unavailable\nHome form: LWWDW\nAway form: WWWDD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: Provider unavailable: Manchester United -240 (open -235); Draw +400 (open +380); Ipswich Town +600 (open +550)\nTavily context:\n  - Title: Manchester United XI vs Ipswich: Confirmed team news, predicted lineup, injury latest for Premier League - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nNew signing Baleba has joined from Brighton, but is injured after picking up an ankle injury during a pre-season training camp in Austria and will not be seen on a pitch for \"two or three weeks\".\n\nTom Heaton, Matthijs de Ligt, Mason Mount and Manuel Ugarte will also miss United's first home fixture.\n\nManchester United predicted XI: Lammens; Mazraoui, Maguire, Heaven, Shaw; Mainoo, Tielemans; Mbeumo, Fernandes, Rashford; Cunha\n\nDoubts: Mount\n\nInjured: Amad Diallo, De Ligt, Baleba, Heaton, Ugarte\n\nTime and date: 4.30pm BST on Sunday, August 30, 2026 ...\n    URL: https://sports.yahoo.com/articles/manchester-united-xi-vs-ipswich-101638794.html\n  - Title: Preview: Manchester United vs Ipswich Town\n    Content: Manchester United Premier League form:\n\n L\n\nIpswich Town Premier League form:\n\n W\n\nIpswich Town form (all competitions):\n\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1081194307-6a833d359a831646891248.jpg)\n\n© Imago / SOPA Images\n\nManchester United began the new season with a number of injury concerns, with several players expected to remain sidelined for the foreseeable future. ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/preview/man-utd-vs-ipswich-prediction-team-news-lineups_603909.html\n  - Title: Manchester United vs Ipswich Town Predictions, Picks & ...\n    Content: Premier League · 2\n\n30 Aug 2026  Old Trafford  Louis Hecq\n\n### Manchester United vs Ipswich Town – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 1.38 | 5.00 | 8.00 | View Odds |\n| bc.game | 1.41 | 4.80 | 7.00 | View Odds |\n\nOur prediction\n\n1: Manchester United to win\n\n1.38 on StakeStake · Confidence Medium\n\nOdds recorded on 29 Aug 2026 at 00:37 · Odds are subject to change\n\nCompetition: Premier League\n\nStage: Regular Season, 2\n\nDate: 30 Aug 2026\n\nTime: 16:30 BST\n\nStadium: Old Trafford ...\n    URL: https://www.toffeeweb.com/int/manchester-united-vs-ipswich-town-predictions-picks-odds-30-08-2026\n  - Title: Manchester United vs Ipswich Town Prediction - Premier League - 30/08/2026\n    Content: Gary O’Neil’s men will arrive at Old Trafford this weekend brimming with confidence after edging Sunderland to victory in their first match back in the top flight. The Tractor Boys made significant investment over the summer, bolstering their squad in an attempt to survive the drop - can they follow up on their MD1 triumph with another big performance this weekend? Let’s get into the key stats!\n\nLimited Offer. Currently at Stake\n\n## Manchester United v Ipswich Town Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-united-ipswich-town-369036\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879317",
+                        "date_utc": "2026-08-30T13:00Z",
+                        "kickoff_et": "2026-08-30 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Chelsea",
+                        "away": "Brighton & Hove Albion",
+                        "home_id": "363",
+                        "away_id": "331",
+                        "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                        "venue": "Stamford Bridge",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWLWL",
+                        "form_away": "WWDLL",
+                        "record_home": "1-0-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+100",
+                            "home_current": "-125",
+                            "draw_open": "+270",
+                            "draw_current": "+300",
+                            "away_open": "+250",
+                            "away_current": "+300"
+                        },
+                        "odds_text": "DraftKings: Chelsea -125 (open +100); Draw +300 (open +270); Brighton & Hove Albion +300 (open +250)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879315",
+                        "date_utc": "2026-08-30T13:00Z",
+                        "kickoff_et": "2026-08-30 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Leeds United",
+                        "away": "Brentford",
+                        "home_id": "357",
+                        "away_id": "337",
+                        "matchup": "Brentford (away) @ Leeds United (home)",
+                        "venue": "Elland Road",
+                        "city": "Leeds",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWLWD",
+                        "form_away": "WWDDL",
+                        "record_home": "1-0-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+150",
+                            "home_current": "+160",
+                            "draw_open": "+240",
+                            "draw_current": "+245",
+                            "away_open": "+175",
+                            "away_current": "+170"
+                        },
+                        "odds_text": "Provider unavailable: Leeds United +160 (open +150); Draw +245 (open +240); Brentford +170 (open +175)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401879313",
+                        "date_utc": "2026-08-30T13:00Z",
+                        "kickoff_et": "2026-08-30 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Sunderland",
+                        "away": "Fulham",
+                        "home_id": "366",
+                        "away_id": "370",
+                        "matchup": "Fulham (away) @ Sunderland (home)",
+                        "venue": "Stadium of Light",
+                        "city": "Sunderland",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWWDD",
+                        "form_away": "WLWDL",
+                        "record_home": "0-0-1",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+160",
+                            "home_current": "+140",
+                            "draw_open": "+225",
+                            "draw_current": "+230",
+                            "away_open": "+175",
+                            "away_current": "+200"
+                        },
+                        "odds_text": "Provider unavailable: Sunderland +140 (open +160); Draw +230 (open +225); Fulham +200 (open +175)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401879293",
+                        "date_utc": "2026-08-30T15:30Z",
+                        "kickoff_et": "2026-08-30 11:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Manchester United",
+                        "away": "Ipswich Town",
+                        "home_id": "360",
+                        "away_id": "373",
+                        "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                        "venue": "Old Trafford",
+                        "city": "Manchester",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWWDW",
+                        "form_away": "WWWDD",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-235",
+                            "home_current": "-240",
+                            "draw_open": "+380",
+                            "draw_current": "+400",
+                            "away_open": "+550",
+                            "away_current": "+600"
+                        },
+                        "odds_text": "Provider unavailable: Manchester United -240 (open -235); Draw +400 (open +380); Ipswich Town +600 (open +550)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-29T08:15:16.549990-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:57:24.353008-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enter this match at Stamford Bridge as the clear favorites with bookmakers pricing them around -125. Brighton are a strong opponent with a positive recent record, but home field advantage and overall squad depth should see Chelsea secure a narrow victory.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly matched contest according to bookmaker odds, with Leeds United at +160 and Brentford at +170. Both squads have shown good form early on, and while a draw is a highly plausible outcome, home advantage gives Leeds the slimmest of edges.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are slight favorites at home (+140) compared to Fulham (+200). Although Fulham have a strong head-to-head record in recent seasons against the hosts, playing at the Stadium of Light tilts the advantage marginally towards Sunderland.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are heavy favorites at Old Trafford despite suffering from several key injuries (including De Ligt and Ugarte). Ipswich Town started the season with a strong victory, but facing United away remains a massive challenge, and the home side is highly expected to claim all three points.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-29T07:57:41.832844-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.526,
+                    "draw_probability": 0.237,
+                    "away_win_probability": 0.237,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea is the home favorite at Stamford Bridge with odds of -125. Despite both teams winning their opening match, Chelsea's home advantage and superior squad depth should give them the edge over Brighton.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.368,
+                    "draw_probability": 0.278,
+                    "away_win_probability": 0.354,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "The odds are very closely matched, with Leeds at +160 and Brentford at +170. Leeds has home advantage at Elland Road but suffers from several injury concerns, while Brentford arrives confident after a strong start to the season. A tight, hard-fought draw is a likely outcome.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.396,
+                    "draw_probability": 0.288,
+                    "away_win_probability": 0.316,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland is slightly favored at home (+140) against Fulham (+200). Both teams lost their opening fixtures and will be eager to bounce back. The atmosphere at the Stadium of Light should slightly tip the balance in Sunderland's favor in what is expected to be a competitive match.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.673,
+                    "draw_probability": 0.191,
+                    "away_win_probability": 0.136,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong favorites at -240 despite missing a few key players due to injury. Returning to Old Trafford after an opening day loss, United will look to assert dominance against a newly confident Ipswich Town side, making a home win the most probable result.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-29T07:58:09.659119-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea has a strong home advantage at Stamford Bridge and is the clear betting favorite. Despite some potential injury doubts, their squad quality appears superior. Both teams started the season with a win, but Chelsea's odds have shortened, suggesting growing confidence from the market in a home victory.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested match, as reflected by the close betting odds. Leeds United's home advantage at Elland Road provides a slight edge, making them the narrow favorites. While Brentford started the season impressively, this game is expected to be very close, where any result is possible.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are slight favorites playing at the Stadium of Light. Both teams are seeking their first points after opening day defeats. While Fulham has a strong recent head-to-head record against Sunderland, the betting markets favor the home side, suggesting their current team is considered more likely to win this specific encounter.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites playing at Old Trafford against a newly promoted Ipswich Town. Despite losing their opening match and having several injuries, the talent gap between the two squads is substantial. United will be highly motivated to secure their first win of the season, and anything other than a home victory would be a major upset.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:58:33.497735-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.523,
+                    "draw_probability": 0.2405,
+                    "away_win_probability": 0.2365,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea, despite some injury doubts including key players like Caicedo and Fernandez, holds the home advantage and is consistently favored by bookmakers. Their home form from last season was strong (WWLWL), and they won their first home game this season. Brighton has shown potential, and some predictions suggest they could secure a draw or win, but Chelsea's overall strength makes a home victory the most probable outcome.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.3681,
+                    "draw_probability": 0.2775,
+                    "away_win_probability": 0.3544,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "This is expected to be a very tight match, reflected in the close odds. Leeds has the home advantage, but Brentford started the season strongly with a 3-0 win over Tottenham and a Carabao Cup victory. Leeds has several injury concerns, including key attacking players. While the odds slightly favor Leeds at home, Brentford's current form and Leeds' injury woes make an away win or draw highly plausible. However, the fractional advantage still goes to the home side.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Draw",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland is slightly favored by the bookmakers due to their home advantage, with Granit Xhaka being a key figure for them. However, Fulham has a strong historical head-to-head record against Sunderland (W4 D1 in their last five encounters across all competitions) and showed promising attacking play in their opening match despite a loss. Both teams lost their first game this season. Given Fulham's historical dominance and promising form, a draw is a highly probable outcome.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.6774,
+                    "draw_probability": 0.1925,
+                    "away_win_probability": 0.1301,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Despite Manchester United losing their opening league match and facing significant injury concerns (including De Ligt, Mount, Ugarte), they are overwhelmingly favored by all bookmakers. Ipswich, while confident after winning their first game back in the top flight, is a newly promoted team. Manchester United's superior squad depth and quality, combined with the home advantage at Old Trafford, make a home win the most likely result.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:00:25.830169-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are a clear market favorite at Stamford Bridge and have strong attacking options, but Brighton's competitiveness and Chelsea midfield doubts keep the draw and away-win risks meaningful.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds make this nearly level, with Leeds getting a slight home-field edge at Elland Road. Brentford's strong recent results and Leeds injury concerns make this a low-confidence lean.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are a modest home favorite and have drawn market support, but Fulham's attacking signs and favorable recent head-to-head record keep the match relatively balanced.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong odds-on favorites at Old Trafford with a clear squad-quality advantage. Ipswich arrive in good form, but United's home edge outweighs their injury concerns.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T08:00:41.354143-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are clear home favorites in the market and have home advantage at Stamford Bridge. Brighton are competitive and capable of scoring, while Chelsea have some midfield injury doubts, but the pricing and squad strength still lean toward a Chelsea regulation-time win.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is priced very evenly, with Leeds only a marginal home favorite. Leeds have several attacking and midfield injury concerns, while Brentford arrive in good early-season form, so the home edge is slight and the draw/away outcomes remain very live.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are narrow market favorites at home and appear to have a settled midfield structure, but Fulham have favorable recent head-to-head history and enough attacking quality to make this close. Home advantage gives Sunderland a small edge.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are strong favorites at Old Trafford despite several injuries. Ipswich have started well and should not be dismissed, but United's superior squad depth, attacking options, and home advantage make a regulation-time home win the most likely result.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-29T08:01:26.066329-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market 1X2 pricing makes Chelsea a clear but not dominant favorite at Stamford Bridge. Chelsea's recent form is solid and home advantage matters, while Brighton are live underdogs but priced closer to draw/away than to win outright. Potential midfield doubts for Chelsea add some draw/upset risk, keeping confidence moderate.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds indicate a near coin-flip with a slight lean away, and Leeds have notable injury doubts/absences that can reduce attacking depth. Brentford's underlying squad quality (and recent strong results noted in previews) supports a narrow away edge, but Elland Road home advantage and the tight market keep this low confidence.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Book prices lean Sunderland at home, suggesting they are slightly more likely to take all three points, but the gap to Fulham/draw is small. Fulham's recent performances and favorable recent H2H notes increase the chance of a draw or away result, so Sunderland is a marginal pick with low confidence.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are a strong home favorite by the market, with Ipswich a sizable underdog at Old Trafford. Even with United injuries, squad strength and home advantage drive a high home-win probability; the main risk is a low-scoring draw rather than a true away win.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-29T08:01:47.012425-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are slight favourites at Stamford Bridge with stronger squad depth and early good form; bookmakers price them as favourites. Brighton are dangerous on the break but travel and Chelsea’s home advantage plus probable starting XI tilt the match toward a Chelsea win. Minor doubts/injuries to Caicedo/Fernandez temper confidence.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.36,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Tight matchup: Brentford are marginal favourites in markets but Leeds are strong at Elland Road. Both teams have mixed form and injury concerns; statistical balance and recent previews favour a close contest, so a draw is the most likely single outcome.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.36,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This looks evenly matched: Sunderland have home advantage but Fulham’s recent head-to-head edge and attacking threat make this tight. Market odds are close. Given uncertainty around lineups and form, a draw is the safest forecast but confidence is limited.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are clear favourites at Old Trafford despite some injuries; bookmakers strongly favour the home side. Ipswich earned a win recently but are big underdogs traveling to a top opponent. Home advantage, squad quality and historical context point to a United win.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-29T08:03:02.273912-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Chelsea are strong at home with favorable odds and solid home form, while Brighton are capable but slightly behind at Stamford Bridge.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leeds as home side look the more likely winner with Brentford a credible threat; edges lean slightly toward Leeds.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Balanced fixture with both sides capable of scoring; a tight result is most plausible.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Man United are clear home favorites; Ipswich face a tough test, making a United win the most likely outcome.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-29T08:03:06.888602-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored by both bookmakers and expert previews, with odds implying a win probability above 50%. Despite some injury doubts (Caicedo, Fernandez), Chelsea's home advantage at Stamford Bridge and a strong recent home record give them the edge. Brighton are competitive but less consistent away, and the market consensus leans toward a Chelsea win, though a draw is not out of the question.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers rate this as a very close match, with Leeds and Brentford both having similar win probabilities and the draw priced attractively. Both teams have some injury concerns, and recent form is mixed. Expert picks and previews suggest a draw is a strong possibility, with a 1-1 scoreline commonly predicted. Margins are tight, so confidence is low.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Sunderland have home advantage but Fulham's recent head-to-head record is strong, and both teams have shown inconsistency. Bookmaker odds are close, with Sunderland slightly favored but Fulham's unbeaten run in this fixture and expert previews pointing to a likely draw. The match is expected to be competitive and low-scoring.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites at Old Trafford, with bookmakers and expert previews strongly backing them despite some injury absences. Ipswich are newly promoted and, while in good form, are significant underdogs. United's squad depth and home advantage make a home win the clear expectation.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-29T08:03:11.291066-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea's home form and odds favor them, despite some injury concerns. Brighton's away form is inconsistent.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar form and injury issues. Odds suggest a close match with a slight edge towards a draw.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland's home advantage and Fulham's mixed away form make this a tight contest, but Sunderland has a slight edge.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United's strong home form and Ipswich's lower league status make United clear favorites.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-29T08:03:28.549124-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are clear favorites at Stamford Bridge per market odds (-125), though doubts over Caicedo and Fernandez add uncertainty. Brighton's mixed away form and Chelsea's home strength support a moderate home edge, but Brighton have historically troubled Chelsea, keeping draw and away probabilities meaningful.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Markets price this as nearly a coin flip (Leeds +160, Brentford +170). Leeds have home advantage at Elland Road but carry several injuries (Gudmundsson, Gnonto, Gruev), while Brentford opened with a strong 3-0 win over Spurs. Slight home edge, but this is a highly uncertain match with real draw potential.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are modest home favorites (+140), backed by home advantage and Xhaka's midfield control. However, Fulham are unbeaten in the last five meetings between the sides and showed promise despite an opening loss. Tight match with a slim home edge; draw is a live outcome.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong favorites at Old Trafford (-240) despite injury absences (Baleba, De Ligt, Ugarte). Ipswich arrive confident after beating Sunderland, but the quality gap and home advantage make a United win the most probable outcome by a wide margin.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-29T08:03:39.002535-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Chelsea",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favorites at home per odds (-125), with strong form. Brighton are tricky opponents but Chelsea's home advantage and depth make them likely winners despite some doubts over Caicedo and Fernandez.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Leeds United",
+                    "confidence": "low",
+                    "reasoning": "Very tight match per odds (Leeds +160, Brentford +170). Leeds have multiple injuries (Gnonto, Gruev, Joseph) while Brentford are in good form with a 3-0 win over Spurs. Home advantage gives Leeds a slight edge but this is essentially a coin flip.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Sunderland",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are slight home favorites (+140). Fulham are unbeaten in last five H2H meetings and their new forward line looked promising. Home advantage tips it toward Sunderland but this is a close contest.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Manchester United",
+                    "confidence": "high",
+                    "reasoning": "United are heavy favorites at home (-240) despite injuries. Ipswich are newly promoted and although they beat Sunderland, the quality gap at Old Trafford should be decisive.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-29T08:04:02.115293-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favorites at home at Stamford Bridge. Market odds have moved from +100 to -125 for Chelsea, suggesting significant money on the home side. Brighton arrive with a mixed WWDLL form. Chelsea's predicted lineup with Joao Pedro up front (listed as anytime scorer favorite at 2.25) looks strong. Welbeck also listed as a Chelsea player suggests notable attacking additions. The Asian handicap of -0.75 for Chelsea and over 2.5 goals odds of 1.63 imply an open game with Chelsea expected to edge it. Multiple sources list Chelsea win probability around 55-60% implied. Some key Chelsea doubts (Caicedo, Fernandez) could weigh slightly, but home advantage and squad quality favor Chelsea.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight contest with odds suggesting near parity. Leeds are slight home favorites at +160 vs Brentford +170. Brentford arrive in good form having beaten Spurs 3-0 in their opener and also won midweek in the Carabao Cup. Leeds have several injury concerns (Joseph, Gnonto, Gruev, Gudmundsson). Brentford also have van den Berg and Milambo injured. One tipster predicts 1-1 draw. The even odds and injury situations on both sides make this difficult to call; a slight lean to Leeds at home at Elland Road but low confidence.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds have shifted in Sunderland's favor (from +160 to +140), suggesting market movement toward the home side. However, Fulham have a strong recent H2H record (unbeaten in last 5 against Sunderland, W4 D1). Sunderland lost their opener, Fulham also lost theirs but looked vibrant in attack. Xhaka's presence gives Sunderland midfield quality and home advantage at Stadium of Light matters. Betmines odds (Sunderland 2.40, Draw 3.20, Fulham 3.10) suggest a tight match. Slight lean to Sunderland home given odds movement and home advantage, but low confidence given Fulham's superior H2H record.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are strong favorites at home at Old Trafford with odds around -240. Market implies roughly 65-70% win probability for United. Despite United losing their opener and carrying injury concerns (De Ligt, Ugarte, Heaton, Baleba, Diallo), they have quality in Fernandes, Rashford, Mbeumo, Cunha, Mainoo. Ipswich won their opener against Sunderland but are newly promoted/returning to top flight and face a significant step up in quality. Old Trafford home advantage and United's squad depth make them clear favorites. Ipswich at +600 reflects their underdog status. Moderate confidence in a United home win.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-29T08:04:27.028582-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favorites at home with odds of -125. The predicted lineup features João Pedro leading the attack for Chelsea at Stamford Bridge. Brighton have injury concerns and Chelsea's recent form (WWLWL) shows strength despite some inconsistency. Both teams won their opening fixtures (1-0-0 records), but Chelsea's home advantage and market positioning suggest they're more likely to take three points. The odds movement from +100 to -125 for Chelsea indicates strong backing. Over 2.5 goals is favored at 1.63, suggesting an attacking match, but Chelsea's quality should see them through.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight matchup with balanced odds (Leeds +160, Draw +245, Brentford +170). Both teams won their opening fixtures (1-0-0 records). Leeds have multiple injury concerns including Mateo Joseph, Gnonto, and Gruev. Brentford had an impressive 3-0 win over Spurs in their opener and nearly qualified for Europe last season. However, Leeds at Elland Road traditionally pose problems. The betting tip of 1-1 draw at 3.50 suggests a closely contested match. Given the narrow margins and injuries on both sides, this could go either way, but slight edge to Leeds at home despite Brentford's strong form.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both teams lost their opening fixtures (0-0-1 records). Sunderland are slight favorites at +140 vs Fulham at +200. However, context notes that Fulham are unbeaten in their last five matches against Sunderland (W4 D1), which is significant. Fulham's new forward line showed promise despite losing to Chelsea. Sunderland have won only 2 of their last 7 EPL matches according to context. Tom Cairney is out for Fulham. The odds suggest a tight match (Over 2.5 at 2.00), and while Fulham's historical advantage is notable, Sunderland's home advantage in their Stadium of Light debut gives them a slight edge in what should be a competitive fixture.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong favorites at -240, playing at Old Trafford. Despite both teams having contrasting opening results (United 0-0-1, Ipswich 1-0-0), the quality gap is significant. Ipswich won their opening match against Sunderland but face a massive step up in competition. United have multiple injuries (Amad Diallo, De Ligt, Baleba, Heaton, Ugarte, Mount) but still possess superior quality with Fernandes, Rashford, and new signings. The odds of 1.38 for United win reflect strong confidence. Ipswich's first season back in the top flight after promotion makes this a difficult away fixture. United should secure three points despite their injury concerns.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-29T08:04:37.056285-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored at home with better recent form (WWLWL vs WWDLL). DraftKings odds favor Chelsea at -125. However, injury concerns with Caicedo and Fernandez in doubt provide some uncertainty. Brighton's away record is weaker. Chelsea's home advantage at Stamford Bridge and stronger starting XI give them the edge, though not overwhelming given the quality of Brighton's squad.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.38,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Multiple injury concerns for Leeds (Joseph, Gudmundsson, Gnonto, Gruev) weaken their home advantage. Brentford have impressed early in the season with a 3-0 win over Spurs and Carabao Cup victory. Betting tips suggest a draw is likely (1-1 prediction at 3.50). Odds are relatively even across outcomes. Brentford's form and Leeds' injury problems create conditions for a competitive match likely to end level.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland have home advantage but inconsistent recent form (LWWDD). Fulham are unbeaten in last five matches against Sunderland (W4 D1) and had a promising performance in their previous match despite losing to Chelsea. Fulham's forward line looked vibrant. Sunderland odds of +140 slightly favor home win, but Fulham's superior recent head-to-head record and attacking form create significant uncertainty. This is a competitive fixture with limited confidence in any outcome.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavily favored with -240 odds. Despite injury concerns (De Ligt, Mount, Ugarte, Heaton), United's quality and home advantage at Old Trafford are significant. Ipswich have just returned to the Premier League and beat Sunderland in MD1, showing competitive ability, but this is a major step up. United's 0-0-1 record includes a loss but they're expected to dominate at home. Betting tips strongly favor United (1.38 odds). The gap in squad quality and home advantage support a comfortable United victory.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-29T08:08:57.359597-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are strong home favorites and the market implies around 53% home win after removing the vig. Brighton have enough quality to make this tricky, but Chelsea's squad and Stamford Bridge form point to a home win.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is a close matchup with Leeds missing key attackers Joseph and Gnonto, while Brentford arrive after a strong 3-0 win. A draw tip at 3.50 fits a tight game, though Elland Road gives Leeds some home edge.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are slight home favorites, but Fulham's recent head-to-head record is strong and both teams lost their opener. This is close, with Sunderland's home advantage just enough to lean their way.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are heavy home favorites, with the market implying around 67% home win after removing the vig. Despite injuries, their squad depth should be too much for Ipswich at Old Trafford.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-29T08:09:00.751992-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are at home and have a strong squad, but Brighton are in good form. Odds favor Chelsea, but the match could be competitive.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Leeds have home advantage and decent form, but Brentford are also strong. The odds are close, suggesting a tight match.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams lost their opening matches and are evenly matched. The odds are close, and a draw seems plausible.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites at home, despite some injuries. Ipswich are newly promoted and less experienced at this level.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-29T08:09:37.417400-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea is favored at home with odds around -125. Despite some injury doubts in midfield, their home advantage at Stamford Bridge and overall squad depth give them the edge over Brighton.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "A tightly contested matchup with very similar odds for both teams. Leeds is dealing with key attacking injuries, while Brentford is in strong early form, making a closely fought draw a highly plausible outcome.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland is slightly favored at the Stadium of Light. Although Fulham has a strong historical record against them and a vibrant attack, Sunderland's home advantage and midfield control give them a narrow edge.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United is heavily favored at Old Trafford against newly promoted Ipswich Town. Despite some defensive and midfield injury concerns, United's superior attacking quality and home advantage make them clear favorites to secure the three points.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-29T08:09:50.929828-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea has a strong home form and a slightly better record in recent matches. Despite some injury concerns, their lineup is still robust. Brighton, while capable, has a mixed away form.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown similar form and records. Leeds has some key players doubtful, which could impact their performance. Brentford's recent form suggests they can compete well, making a draw a likely outcome.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland has a balanced form and a strong home advantage. Fulham, despite a promising start, has a mixed away form. The home team's tactical setup and player quality give them a slight edge.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United, despite some injuries, has a strong squad and a significant home advantage. Ipswich, while performing well, is an underdog against a top Premier League side like Manchester United.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-29T08:11:12.957687-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are clear favorites at Stamford Bridge with odds around -125, reflecting their home advantage and squad depth despite missing Caicedo and Fernandez. Brighton's recent form (WWDLL) and away status make an upset less likely, though Chelsea's midfield absences could lead to a tighter match than expected.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Leeds are weakened by significant injuries to key attackers and midfielders, while Brentford enter with strong recent results including a win over Spurs. The market odds reflect a tightly contested fixture, and multiple predictors favor a stalemate due to Leeds' defensive vulnerabilities and Brentford's efficient counter-attacking style.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are narrow favorites at the Stadium of Light, benefiting from home support and a balanced predicted lineup. Fulham hold a strong recent head-to-head record and possess a promising attack, making this highly competitive. The slight edge goes to the hosts due to venue familiarity, but a draw remains a very plausible result.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are overwhelming favorites at Old Trafford with odds around -240, reflecting their superior squad quality and home advantage. Although United are missing several key players to injury, Ipswich's promotion status and away fixture make an upset highly unlikely in this round.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-29T08:12:15.308982-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enters as favorites with -125 odds and strong home form (WWLWL). Although they face injury doubts regarding Caicedo and Fernandez, their squad depth at Stamford Bridge gives them the edge over Brighton's mixed away form (WWDLL). Bookmakers imply a ~56% home win probability, supporting this forecast.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams come into this match with significant injury concerns; Leeds is missing key defender Gudmundsson and forward Joseph, while Brentford lacks Van den Berg. Betting tips explicitly suggest a 1-1 draw, and odds are extremely tight (+160/+245/+170), indicating parity between two recently successful sides.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Odds are evenly matched with Sunderland slight favorites (+140 vs +200) due to home advantage. However, historical H2H stats favor Fulham, and both teams are entering the fixture coming off their first-round results (Fulham vibrancy vs Sunderland struggles). Expert previews lean toward a stalemate given the uncertainty and league positioning.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester United faces heavy favorites odds (-240) reflecting their brand and Old Trafford advantage, despite key injuries. Ipswich Town, while confident after a win, is facing a superior opponent with more resources. The odds distribution supports a decisive home victory despite United's injury list.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-29T08:14:31.159663-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are strongly favored at Stamford Bridge with market support shifting to -125, and their attacking talent should edge a Brighton side that has defensive vulnerabilities on the road; however, Chelsea's midfield injury doubts keep confidence only medium.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Leeds are significantly weakened by injuries to Gnonto, Gruev and Joseph, while Brentford have begun the season in excellent form with a 3-0 demolition of Spurs, giving the Bees a narrow edge in a tightly-contested affair.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland's home advantage and the presence of Granit Xhaka in midfield tilt the balance against a Fulham side missing Tom Cairney and coming off an opening defeat, though Fulham's strong recent H2H record tempers the probability.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United's superior squad depth and home dominance at Old Trafford make them heavy favorites despite an opening-day loss and several injuries, while Ipswich's away challenge is expected to fall short against top-tier quality.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-29T08:15:09.795537-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea hold a significant odds advantage (-125) at Stamford Bridge with strong opening day form and superior squad depth featuring players like Palmer and Caicedo. Brighton's mixed away form and defensive vulnerabilities make a home win the most likely outcome despite their competitive squad.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The odds suggest a tight contest with Leeds (+160) holding a marginal edge over Brentford (+170). Both teams won their openers, but Leeds' home advantage at Elland Road tips the balance slightly despite key injuries to Gnonto and Gruev. The match could easily go either way or end level.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are narrow favorites (+140) at the Stadium of Light, though Fulham boasts a strong historical record against them (unbeaten in last five). Both sides lost their opening fixtures, making this unpredictable. Sunderland's home support and midfield pivot of Xhaka provide a slight advantage in what should be a closely fought encounter.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites (-240) at Old Trafford despite their opening day defeat. Ipswich Town, while buoyed by a winning start, face a significant step up in quality against United's squad depth. The hosts' superior talent and home advantage should see them secure their first win of the season comfortably.",
+                    "event_id": "401879293"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-29T08:15:16.542055-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Brighton & Hove Albion (away) @ Chelsea (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Chelsea has a strong home form and is favored by the odds, despite some injury concerns.",
+                    "event_id": "401879317"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Brentford (away) @ Leeds United (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown good form and have similar records, suggesting a closely matched game.",
+                    "event_id": "401879315"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Fulham (away) @ Sunderland (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland has a slight edge at home, and Fulham has had mixed results in away games.",
+                    "event_id": "401879313"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Ipswich Town (away) @ Manchester United (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United is heavily favored at home, with Ipswich Town being the newly promoted side.",
+                    "event_id": "401879293"
+                }
+            ]
+        }
+    ]
+}

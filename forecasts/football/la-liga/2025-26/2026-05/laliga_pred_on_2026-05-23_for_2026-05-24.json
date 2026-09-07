@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-23\n    Target Date: 2026-05-24\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Atl\u00e9tico Madrid @ Villarreal                         | Scheduled    | Away: 56.8% (21-6-10) vs Home: 56.8% (21-6-10)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Atl\u00e9tico Madrid (Away) @ Villarreal (Home)\n**News & Injury Report:**\n- [Villarreal vs Atl\u00e9tico Madrid Prediction, Betting Tips, Lineups & Odds | 24 May 2026](https://www.sportsgambler.com/betting-tips/football/villarreal-vs-atletico-madrid-prediction-lineups-odds-2026-05-24)\n  Snippet: | # | Team | G | W | D | L | +/- | P |\n ---  ---  ---  --- |\n| 1 | Barcelona | 37 | 31 | 1 | 5 | 94:33 | 94 |\n| 2 | Real Madrid | 37 | 26 | 5 | 6 | 73:33 | 83 |\n| 3 | Villarreal | 37 | 21 | 6 | 10 | 67:45 | 69 |\n| 4 | Atl\u00e9tico Madrid | 37 | 21 | 6 | 10 | 61:39 | 69 |\n| 5 | Real Betis | 37 | 14 | 15 | 8 | 57:47 | 57 |\n| 6 | Celta Vigo | 37 | 13 | 12 | 12 | 52:48 | 51 |\n| 7 | Getafe | 37 | 14 | 6 | 17 | 31:38 | 48 |\n| 8 | Rayo Vallecano | 37 | 11 | 14 | 12 | 39:43 | 47 |\n| 9 | Valencia | 37 | 12 | 10 | 15 | 43:54 | 46 |\n| 10 | Real Sociedad | 37 | 11 | 12 | 14 | 58:60 | 45 | ...\n- [Preview: Villarreal vs Atletico Madrid - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/atletico-madrid/preview/villarreal-vs-atletico-prediction-team-news-lineups_597991.html)\n  Snippet: As for Atletico, Rodrigo Mendoza, Nahuel Molina and Johnny Cardoso are definitely out of the match due to injury problems, while Jose Gimenez, Julian Alvarez, Nico Gonzalez and Pablo Barrios are major doubts.\n\nMarcos Llorente will be back in the squad after serving a suspension against Girona last time out, but Robin Le Normand will serve a one-game ban this weekend.\n\nThis match will mark Antoine Griezmann's farewell, as the experienced attacker prepares to leave Atletico to make the move to MLS outfit Orlando City.\n\nVillarreal possible starting lineup: ...\n**Betting Odds:**\n- [Villarreal vs Atl\u00e9tico Madrid Prediction | La Liga 24/05/2026](https://eaglepredict.com/predictions/match/villarreal-vs-atletico-madrid-prediction-la-liga-24-05-2026)\n  Snippet: ### \ud83d\udc49 Prediction: Under 9.5 Corners\n\nOur analysis of Villarreal vs Atl\u00e9tico Madrid suggests there is good value in the corners market.\n\nWith low attacking activity expected from both sides, our best betting tip is under 9.5 corners. If the total stays at 9 or fewer, you will win your bet.\n\n### \ud83d\udc49 Our prediction is: Draw\n\nThis matchup between Villarreal and Atl\u00e9tico Madrid has all the makings of a hard-fought stalemate, so our top tip for the match is to bet on the draw on the 1X2 market. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-23 21:06:55"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-23 21:05:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal holds a significant advantage playing at home against a severely depleted Atl\u00e9tico Madrid side. The teams are evenly matched in the league table, both with 69 points, but Atl\u00e9tico is facing a major injury and suspension crisis. They are confirmed to be without Rodrigo Mendoza, Nahuel Molina, and Johnny Cardoso due to injury, and Robin Le Normand is suspended. Additionally, key players like Jose Gimenez and Julian Alvarez are major doubts. While one betting analysis points towards a draw, the sheer volume of high-profile absences for Atl\u00e9tico makes a Villarreal home win the most probable outcome. Atl\u00e9tico's defensive resilience under Simeone makes a draw the second most likely result, but an away win is highly improbable under these circumstances."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Teams are level on points and season records, suggesting a near coin-flip matchup. Villarreal get a meaningful home-edge in a tight, low-margin game. Atl\u00e9tico have notable absences/uncertainty (Molina and Cardoso out; Gimenez/Alvarez/Barrios among doubts; Le Normand suspended), which slightly lowers away-win chances. Market-tip sources lean draw, so draw probability is elevated, but Villarreal at home still grades as the single most likely result by a small margin."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Season form and points are effectively identical (both 21-6-10, 69 pts), so baseline is balanced. Home advantage nudges the outcome toward Villarreal. Atletico travel with multiple confirmed injuries (Rodrigo Mendoza, Nahuel Molina, Johnny Cardoso) and several key doubts (Gim\u00e9nez, Juli\u00e1n \u00c1lvarez, Nico Gonz\u00e1lez, Pablo Barrios) which weakens their defensive and attacking options; Marcos Llorente returns but cannot fully offset absences. Market previews and tipsters lean toward a low-scoring stalemate (draw), which increases the draw probability; however, Villarreal\u2019s home edge and Atletico\u2019s personnel issues tip marginally in favor of a Villarreal win. Expected low attacking volume (corners/goal chances) keeps draw probability sizable. Overall pick: home win with medium confidence."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villarreal benefits from home, while Atl\u00e9tico Madrid face several injury/doubt concerns (Molina, Mendoza, Cardoso out; Llorente back). Teams are closely matched in season metrics, but home advantage tilts the balance toward Villarreal as the home side; nonetheless, a drawn game remains plausible given parity."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.36,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams are level on points and have identical season records (21-6-10, 56.8% win rate). Atl\u00e9tico Madrid are missing several key players due to injuries and suspensions (Mendoza, Molina, Cardoso out; Gimenez, Alvarez, Gonzalez, Barrios doubtful; Le Normand suspended), and this is Griezmann's farewell match, which could affect team focus. Villarreal are at home and likely to field a stronger lineup. Betting market consensus and expert previews lean toward a draw, with low attacking activity expected. All factors point to a tightly contested match with a high probability of a stalemate."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical season records and are tied in the league standings. Atl\u00e9tico Madrid is missing several key players due to injuries and suspensions, including Rodrigo Mendoza and Nahuel Molina. Additionally, Antoine Griezmann's farewell match might affect team dynamics. The betting market also suggests a draw, indicating a balanced matchup with low attacking activity expected."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical records (21-6-10) and are level on points. Villarreal have home advantage, but Atl\u00e9tico are motivated by Griezmann's farewell. Key injuries and suspensions for Atl\u00e9tico (Gimenez, Alvarez, Nico Gonzalez, Barrios doubts; Le Normand suspended) weaken them. Betting odds suggest a draw. Balanced probabilities."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.38,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "This is a highly competitive matchup between two teams tied on 69 points, both with identical 21-6-10 records competing for 3rd place in La Liga. The league table shows both teams are evenly matched with Villarreal holding the edge on goal difference (67:45 vs 61:39). Key factors: (1) Atl\u00e9tico Madrid has significant injury concerns with Rodrigo Mendoza, Nahuel Molina, Johnny Cardoso definitely out, plus major doubts over Jose Gimenez, Julian Alvarez, Nico Gonzalez, and Pablo Barrios. Robin Le Normand is also suspended. (2) This is Antoine Griezmann's farewell match as he prepares to leave for MLS, which could impact team focus and emotional dynamics. (3) Betting predictions strongly favor a draw outcome. (4) Both teams have similar attacking outputs (Villarreal 67 goals, Atl\u00e9tico 61 goals over 37 matches). (5) The prediction source suggests low attacking activity and under 9.5 corners, indicating a tight, cautious affair. (6) Home advantage gives Villarreal a slight edge, but Atl\u00e9tico's quality when healthy balances this out. Given the injuries to Atl\u00e9tico, the evenly matched records, home advantage for Villarreal, and betting market signals pointing to a draw, the most likely outcome is a hard-fought stalemate with draw probability at 38%, home win at 32%, and away win at 30%."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 21:06:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Atl\u00e9tico Madrid (away) @ Villarreal (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have similar season records and win rates, indicating a closely matched contest. Atl\u00e9tico Madrid has several key players either injured or doubtful, which could impact their performance. Additionally, the betting market and expert predictions are leaning towards a draw, suggesting a balanced and potentially low-scoring match."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

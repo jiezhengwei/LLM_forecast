@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-06-09\n    Target Date: 2026-06-10\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [6/10 - 8:30 PM EDT] San Antonio Spurs @ New York Knicks | Away: 75.6% (62-20) vs Home: 64.6% (53-29)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: San Antonio Spurs (Away) @ New York Knicks (Home)\n**News & Injury Report:**\n- [Spurs vs. Knicks (Jun 10, 2026) Live Score - ESPN](https://www.espn.com/nba/game/_/gameId/401859966/spurs-knicks)\n  Snippet: # San Antonio Spurs @ New York Knicks\n\nSA\n\nABC\n\nNY\n\n## Matchup Predictor\n\nSan Antonio Spurs\nNew York Knicks\n\nSA\n\nNY\n\nAccording to ESPN Analytics\n\n## Game Information\n\nNew York, NY\n\nMadison Square Garden\nMadison Square Garden\n\n## Season Leaders\n\nVictor Wembanyama\nJalen Brunson\nVictor Wembanyama\nKarl-Anthony Towns\nStephon Castle\nJalen Brunson\n\n## Injury Report\n\n| Name | Status | Est. Return |\n ---\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | Jul 2 |\n\n## Team Stats\n\n119.8\n\nPoints\n\n116.5\n\n105.0\n\nPoints Against\n\n100.4\n\n48%\n\nField Goal %\n\n48%\n\n47.0\n\nRebounds\n\n45.6\n\n28.1\n\nAssists\n\n27.4\n\n5.5 ...\n- [Spurs vs Knicks Jun 10, 2026 Odds 2025 | RotoWire](https://www.rotowire.com/betting/nba/game/new-york-knicks-vs-san-antonio-spurs-odds-2026-06-10-2956305)\n  Snippet: # Spurs vs Knicks Odds\n\nSAS\n\nSpurs\n\n107.5 Pts\n\nKnicks\n\n109.0 Pts\n\nNYK\n\nWednesday June 10, 2026 at 8:30 PM ET\n\nLoading Possible Bets...\n\nSAS\n\nSpurs Injury Report\n\nLoading Spurs Injuries...\n\nNYK\n\nKnicks Injury Report\n\nLoading Knicks Injuries\n\nSAS\n\nSpurs Lineup\n\n PG\n\n  De'Aaron Fox\n SG\n\n  Stephon Castle\n SF\n\n  Devin Vassell\n PF\n\n  Julian Champagnie\n C\n\n  Victor Wembanyama\n\nInactives\n\nNone reported yet.\n\nNYK\n\nKnicks Lineup\n\n PG\n\n  Jalen Brunson\n SG\n\n  Josh Hart\n SF\n\n  Mikal Bridges\n PF\n\n  OG Anunoby\n C\n\n  Karl-Anthony Towns\n\nInactives\n\nNone reported yet.\n\nSAS\n\nSpurs News\n\n#3 SF ...\n**Vegas Odds & Lines:**\n- [Spurs vs Knicks Odds, Betting Trends, and Line Movements - 06/07/2026](https://www.vegasinsider.com/nba/matchups/knicks-vs-spurs)\n  Snippet: View Less\n\n## Spurs @ Knicks Betting Trends\n\n Bets\n Money\n\n|  | Spread | Total | Moneyline |\n ---  --- |\n| San Antonio Spurs   505   Spurs | 46-35 ATS  43% | 36-46 O/U  54% | 62-20 SU  40% | Create Free Account |\n| New York Knicks   506   Knicks | 44-39 ATS  57% | 39-44 O/U  46% | 53-29 SU  60% |\n| Open | NYK -1.5 | o216.5 | -115 |\n| Consensus | NYK -2.5 | o215.5 | -130 |\n|  Matchup |\n|  | Spread | Total | Moneyline |\n| San Antonio Spurs   505   Spurs | 46-35 ATS  44% | 36-46 O/U  56% | 62-20 SU  70% | Create Free Account | ...\n- [Spurs vs. Knicks (Jun 10, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401859966)\n  Snippet: # San Antonio Spurs @ New York Knicks\n\nSA\n\nABC\n\nNY\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 6/08 | @NY | W115-111 | +1.5 | 215.5 |\n| 6/05 | vsNY | L105-104 | -6.5 | 217.5 |\n| 6/03 | vsNY | L105-95 | -4.5 | 217.5 |\n| 5/30 | @OKC | W111-103 | +3.5 | 211.5 |\n| 5/28 | vsOKC | W118-91 | -3.5 | 218.5 |\n\n## Betting 101\n\n## Matchup Predictor\n\nSan Antonio Spurs\nNew York Knicks\n\nSA\n\nNY\n\nAccording to ESPN Analytics\n\n## Injury Report\n\n| Name | Status |\n --- |\n| David Jones GarciaD. Jones GarciaF | OFSAnkle | |\n\n## NBA Finals\n\n| TEAMODDS | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-06-09\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-06-09 19:10:40"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-06-09 19:09:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Low",
+                    "reasoning": "This appears to be a pivotal NBA Finals game with the series likely tied. The Vegas consensus line favors the New York Knicks (-2.5 spread, -130 moneyline), which implies a home win probability of approximately 56.5%. This slight edge is primarily due to the significant home-court advantage at Madison Square Garden. While the Spurs have a superior regular-season record (62-20 vs 53-29), the teams are very evenly matched, as evidenced by their recent head-to-head results. With both teams reportedly at full strength, the home-court advantage in a close matchup is the deciding factor, but confidence remains low given the quality of the opponent."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:09:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas is the main calibrator: Knicks around -2.5 with ~-130 moneyline implies ~56\u201357% home win probability. Both teams appear close to full strength (no major rotation injuries noted), so the market edge plus home-court at MSG drives NYK slightly. Spurs have the better season win rate, but the matchup has been tight recently and NYK\u2019s stronger defense profile (lower points allowed) supports the modest home favoritism."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:09:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.56,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas consensus favors NYK (spread ~-2.5, moneyline ~-130 \u2192 implied home win ~56%). No significant injuries reported for either side. Knicks have home-court and a stout defense (PtsAgainst ~100.4) and a lineup with Jalen Brunson, Karl-Anthony Towns and defensive wings (Bridges/Anunoby). Spurs are elite offensively (Pts ~119.8) and beat the Knicks recently (6/08), led by Victor Wembanyama \u2014 making this tight. Given the market edge to NYK, home advantage, and balanced Knicks roster, I forecast a slight edge to the Knicks at ~56% (Spurs ~44%)."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.6,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "High",
+                    "reasoning": "Knicks hold home-court advantage in a closely priced game (Vegas open -1.5, consensus -2.5). Knicks have a stronger home win rate and solid defensive profile; no critical injuries reported. Spurs are capable offensively but face a tougher defensive environment and a more favorable matchup for Knicks on their home floor."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "The Knicks are slight favorites per Vegas (consensus NYK -2.5, moneyline -130), and both teams are healthy with no key injuries reported. The Spurs have a better season record (62-20 vs 53-29) and a higher win rate, but the Knicks have home-court advantage at Madison Square Garden and have played the Spurs close in recent games. The projected points (Knicks 109.0, Spurs 107.5) and the spread suggest a close contest, but the market leans Knicks. Given the home advantage and Vegas calibration, Knicks are modest favorites."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:16",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "The New York Knicks have a strong home record and are slightly favored by Vegas odds with a spread of -2.5. The Spurs have a better overall season record, but the Knicks' home-court advantage and recent performance against the Spurs suggest a close game. No significant injuries reported for either team."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.55,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas line favors Knicks by -2.5, home court advantage, and Knicks have strong recent form. However, Spurs have superior season record (62-20) and are competitive in the series (recent win as underdog). Close game expected."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.58,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "This appears to be Game 5 of the NBA Finals. The Spurs have the superior regular season record (75.6% vs 64.6%) and better offensive/defensive efficiency (119.8 PPG vs 105.0 PA compared to Knicks' 116.5 PPG vs 100.4 PA). However, several critical factors favor the Knicks: (1) Vegas consensus line has NYK -2.5 with -130 moneyline, implying ~56-58% win probability for the home team; (2) Home court advantage at Madison Square Garden in a Finals clinching scenario is significant; (3) The recent series history shows momentum shift - Spurs just won Game 4 on the road (115-111), but Knicks won Games 2 and 3 at home; (4) Public betting shows 60% money on Knicks spread and 46% on under, indicating sharp money trusts the home team; (5) Both teams appear relatively healthy with only David Jones Garcia (backup F) out for Spurs. The Spurs' star Victor Wembanyama and new acquisition De'Aaron Fox provide elite talent, but the Knicks' experienced core (Brunson, Towns, Bridges, Anunoby) at home in an elimination game situation tilts the probability slightly in their favor. The narrow Vegas spread (-2.5) indicates this is essentially a pick'em with slight home edge."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-06-09 19:10:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "San Antonio Spurs (away) @ New York Knicks (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "New York Knicks",
+                    "confidence": "Medium",
+                    "reasoning": "The New York Knicks have a slight edge in the Vegas odds, with a spread of NYK -2.5. Additionally, the Knicks have a strong home record (64.6% win rate at home), and they are playing in Madison Square Garden, which can be a significant home-court advantage. The Spurs, despite having a better overall season record, are on the road, which slightly reduces their probability of winning."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

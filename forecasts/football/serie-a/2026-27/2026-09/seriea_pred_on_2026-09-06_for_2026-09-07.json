@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-06",
+        "target_date_et": "2026-09-07",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-06\n\nTarget Date (ET): 2026-09-07\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874943\nMatchup: Lecce (away) @ Cagliari (home)\nHome: Cagliari\nAway: Lecce\nKickoff UTC: 2026-09-07T16:30Z\nKickoff ET: 2026-09-07 12:30 EDT\nVenue: Unipol Domus\nRound: unavailable\nHome form: LLWWW\nAway form: LWLWW\nHome record: 1-0-1\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Cagliari +100 (open +115); Draw +215 (open +190); Lecce +285 (open +240)\nTavily context:\n  - Title: Cagliari vs Lecce - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Cagliari vs Lecce — Mon, September 7, 4:00 PM UTC\n\nSerie A Round 3\n\n Serie A Round 3\n Unipol Domus\n\nCagliariCagliari\n\n‌\n‌\n\nLecceLecce\n\n# Cagliari vs Lecce — Mon, September 7, 4:00 PM UTC\n\nSerie A Round 3\n\n Serie A Round 3\n Unipol Domus\n\nCagliariCagliari\n\n‌\n‌\n\nLecceLecce\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Yael Trepy\n\n  Physical discomfort / About 1-2 weeks\n\nTrepyPhysical discomfortAbout 1-2 weeks\n\n  Riyad Idrissi\n\n  Cruciate ligament injury / Early November 2026\n\nIdrissiCruciate ligament injuryEarly November 2026\n\n  Antonino Gallo ...\n    URL: https://www.fotmob.com/matches/cagliari-vs-lecce/2szdhl\n  - Title: Cagliari-Lecce - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nCagliari logo\nLecce logo\nCagliari logo\nLecce logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Riyad Idrissi |  | Out | N/A |\n| Yael Trepy |  | Out | N/A |\n| Yerry Mina |  | Doubtful | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Willem Geubbels |  | Out | 5.82 |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1980895/preview/italy-serie-a-2026-2027-cagliari-lecce\n  - Title: Cagliari vs Lecce Predictions, Picks & Odds - 07/09/2026\n    Content: Lecce arrive in Sardinia occupying 10th place, though their away form paints a less convincing picture. The visitors have lost three of their last five matches, and consistency on the road remains a persistent concern. While they did manage two wins in that stretch, the pattern of alternating results suggests vulnerability. Securing early-season points is crucial for their ambitions, but Lecce will need a significant improvement in their travelling performances to take anything from this contest.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/cagliari-vs-lecce-predictions-picks-odds-07-09-2026\n  - Title: Cagliari vs Lecce Prediction - Serie A - 07/09/2026\n    Content: The Sardinians lost their first home league game of this campaign but ended last term with three wins from their last four matches here.\n\nLecce were thrashed at home 4-0 by Roma last Monday, which nearly erased the positives from their matchday one victory, a 2-0 away win at Venezia. Getting back to winning ways could be the focus, and being on the road may help their cause, as Lecce have won their last three away league games.\n\nLimited Offer. Currently at Stake\n\n## Cagliari v Lecce Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/cagliari-lecce-370853\n\nGame ID: 2\nSource event_id: 401874962\nMatchup: Lazio (away) @ Udinese (home)\nHome: Udinese\nAway: Lazio\nKickoff UTC: 2026-09-07T18:45Z\nKickoff ET: 2026-09-07 14:45 EDT\nVenue: Stadio Friuli\nRound: unavailable\nHome form: WWDWL\nAway form: WWLWL\nHome record: 1-1-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Udinese +185 (open +165); Draw +205 (open +195); Lazio +150 (open +155)\nTavily context:\n  - Title: Udinese vs Lazio Predictions, Picks & Odds - 07/09/2026 - ToffeeWeb\n    Content: 2.8Total goals\n\n58%Both teams score\n\n1.4Goals scored\n\n1.4Goals conceded\n\n#### Lazio\n\nRecent form\n\nWWLLL\n\nWins2/5 (40%)\n\nDraws0/5 (0%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n3.1Total goals\n\n46%Both teams score\n\n2.1Goals scored\n\n1Goals conceded\n\n| Statistic | Udinese | Lazio |\n ---\n| Last 5 results | 4W 1D | · | 2W 3L |\n| Avg goals scored | 1.4 | · | 2.1 |\n| Avg goals conceded | 1.4 | · | 1.0 |\n| Under 2.5 (last 5) | 3/5 | · | 4/5 |\n| H2H, last 4 meetings | 1 Udinese · 3 Draws · 0 Lazio |\n\nProbable lineup\n\n### Lineups: Udinese vs Lazio\n\n#### Udinese\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/udinese-vs-lazio-predictions-picks-odds-07-09-2026\n  - Title: Preview: Udinese vs Lazio - prediction, team news, lineups\n    Content: Lazio form (all competitions):\n\n L\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1082155770-1-6a953382ec4ad686595944.jpg)\n\n© Imago / Xinhua\n\nOnce again, Udinese will be missing Nicolo Zaniolo and Matteo Palma, who recently joined Giorgi Chakvetadze and long-term absentee Alessandro Zanoli on the sidelines.\n\nIn better news for the Bianconeri, experienced defender Christian Kabasele returned from a ban on Wednesday, and even without Zaniolo they have plenty of competition up front. ...\n    URL: https://www.sportsmole.co.uk/football/udinese/preview/udinese-vs-lazio-prediction-team-news-lineups_604528.html\n  - Title: Udinese vs Lazio Prediction, Betting Tips, Lineups & Odds | 07 Sep 2026\n    Content: The bookies have chalked up the draw at 3.10 on the 1x2 betting, with Lazio available to bet at odds of 2.55. Udinese are 2.85 to claim victory in this Serie A encounter.\n\nFor those wanting some insurance backing Lazio, taking the -0.25 Asian Handicap option means a half stake return if it’s a draw. There’s 2.15 that they manage to beat Udinese on this market.\n\nUnder 2.5 Goals is a short-priced option for those expecting two goals or less. When it comes to Both Teams to Score wagering, you’re able to land 1.87 for the BTTS Yes pick and the same applies to the BTTS No outcome. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/udinese-vs-lazio-prediction-lineups-odds-2026-09-07\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-06\n\nTarget Date (ET): 2026-09-07\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874943\nMatchup: Lecce (away) @ Cagliari (home)\nHome: Cagliari\nAway: Lecce\nKickoff UTC: 2026-09-07T16:30Z\nKickoff ET: 2026-09-07 12:30 EDT\nVenue: Unipol Domus\nRound: unavailable\nHome form: LLWWW\nAway form: LWLWW\nHome record: 1-0-1\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Cagliari +100 (open +115); Draw +215 (open +190); Lecce +285 (open +240)\nTavily context:\n  - Title: Cagliari vs Lecce - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Cagliari vs Lecce — Mon, September 7, 4:00 PM UTC\n\nSerie A Round 3\n\n Serie A Round 3\n Unipol Domus\n\nCagliariCagliari\n\n‌\n‌\n\nLecceLecce\n\n# Cagliari vs Lecce — Mon, September 7, 4:00 PM UTC\n\nSerie A Round 3\n\n Serie A Round 3\n Unipol Domus\n\nCagliariCagliari\n\n‌\n‌\n\nLecceLecce\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Yael Trepy\n\n  Physical discomfort / About 1-2 weeks\n\nTrepyPhysical discomfortAbout 1-2 weeks\n\n  Riyad Idrissi\n\n  Cruciate ligament injury / Early November 2026\n\nIdrissiCruciate ligament injuryEarly November 2026\n\n  Antonino Gallo ...\n    URL: https://www.fotmob.com/matches/cagliari-vs-lecce/2szdhl\n  - Title: Cagliari-Lecce - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nCagliari logo\nLecce logo\nCagliari logo\nLecce logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Riyad Idrissi |  | Out | N/A |\n| Yael Trepy |  | Out | N/A |\n| Yerry Mina |  | Doubtful | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Willem Geubbels |  | Out | 5.82 |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1980895/preview/italy-serie-a-2026-2027-cagliari-lecce\n  - Title: Cagliari vs Lecce Predictions, Picks & Odds - 07/09/2026\n    Content: Lecce arrive in Sardinia occupying 10th place, though their away form paints a less convincing picture. The visitors have lost three of their last five matches, and consistency on the road remains a persistent concern. While they did manage two wins in that stretch, the pattern of alternating results suggests vulnerability. Securing early-season points is crucial for their ambitions, but Lecce will need a significant improvement in their travelling performances to take anything from this contest.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/cagliari-vs-lecce-predictions-picks-odds-07-09-2026\n  - Title: Cagliari vs Lecce Prediction - Serie A - 07/09/2026\n    Content: The Sardinians lost their first home league game of this campaign but ended last term with three wins from their last four matches here.\n\nLecce were thrashed at home 4-0 by Roma last Monday, which nearly erased the positives from their matchday one victory, a 2-0 away win at Venezia. Getting back to winning ways could be the focus, and being on the road may help their cause, as Lecce have won their last three away league games.\n\nLimited Offer. Currently at Stake\n\n## Cagliari v Lecce Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/cagliari-lecce-370853\n\nGame ID: 2\nSource event_id: 401874962\nMatchup: Lazio (away) @ Udinese (home)\nHome: Udinese\nAway: Lazio\nKickoff UTC: 2026-09-07T18:45Z\nKickoff ET: 2026-09-07 14:45 EDT\nVenue: Stadio Friuli\nRound: unavailable\nHome form: WWDWL\nAway form: WWLWL\nHome record: 1-1-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Udinese +185 (open +165); Draw +205 (open +195); Lazio +150 (open +155)\nTavily context:\n  - Title: Udinese vs Lazio Predictions, Picks & Odds - 07/09/2026 - ToffeeWeb\n    Content: 2.8Total goals\n\n58%Both teams score\n\n1.4Goals scored\n\n1.4Goals conceded\n\n#### Lazio\n\nRecent form\n\nWWLLL\n\nWins2/5 (40%)\n\nDraws0/5 (0%)\n\nLosses3/5 (60%)\n\nSeason statistics (5)\n\n3.1Total goals\n\n46%Both teams score\n\n2.1Goals scored\n\n1Goals conceded\n\n| Statistic | Udinese | Lazio |\n ---\n| Last 5 results | 4W 1D | · | 2W 3L |\n| Avg goals scored | 1.4 | · | 2.1 |\n| Avg goals conceded | 1.4 | · | 1.0 |\n| Under 2.5 (last 5) | 3/5 | · | 4/5 |\n| H2H, last 4 meetings | 1 Udinese · 3 Draws · 0 Lazio |\n\nProbable lineup\n\n### Lineups: Udinese vs Lazio\n\n#### Udinese\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/int/udinese-vs-lazio-predictions-picks-odds-07-09-2026\n  - Title: Preview: Udinese vs Lazio - prediction, team news, lineups\n    Content: Lazio form (all competitions):\n\n L\n W\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fimago1082155770-1-6a953382ec4ad686595944.jpg)\n\n© Imago / Xinhua\n\nOnce again, Udinese will be missing Nicolo Zaniolo and Matteo Palma, who recently joined Giorgi Chakvetadze and long-term absentee Alessandro Zanoli on the sidelines.\n\nIn better news for the Bianconeri, experienced defender Christian Kabasele returned from a ban on Wednesday, and even without Zaniolo they have plenty of competition up front. ...\n    URL: https://www.sportsmole.co.uk/football/udinese/preview/udinese-vs-lazio-prediction-team-news-lineups_604528.html\n  - Title: Udinese vs Lazio Prediction, Betting Tips, Lineups & Odds | 07 Sep 2026\n    Content: The bookies have chalked up the draw at 3.10 on the 1x2 betting, with Lazio available to bet at odds of 2.55. Udinese are 2.85 to claim victory in this Serie A encounter.\n\nFor those wanting some insurance backing Lazio, taking the -0.25 Asian Handicap option means a half stake return if it’s a draw. There’s 2.15 that they manage to beat Udinese on this market.\n\nUnder 2.5 Goals is a short-priced option for those expecting two goals or less. When it comes to Both Teams to Score wagering, you’re able to land 1.87 for the BTTS Yes pick and the same applies to the BTTS No outcome. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/udinese-vs-lazio-prediction-lineups-odds-2026-09-07\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874943",
+                        "date_utc": "2026-09-07T16:30Z",
+                        "kickoff_et": "2026-09-07 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Cagliari",
+                        "away": "Lecce",
+                        "home_id": "2925",
+                        "away_id": "113",
+                        "matchup": "Lecce (away) @ Cagliari (home)",
+                        "venue": "Unipol Domus",
+                        "city": "Cagliari",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LLWWW",
+                        "form_away": "LWLWW",
+                        "record_home": "1-0-1",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+115",
+                            "home_current": "+100",
+                            "draw_open": "+190",
+                            "draw_current": "+215",
+                            "away_open": "+240",
+                            "away_current": "+285"
+                        },
+                        "odds_text": "DraftKings: Cagliari +100 (open +115); Draw +215 (open +190); Lecce +285 (open +240)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874962",
+                        "date_utc": "2026-09-07T18:45Z",
+                        "kickoff_et": "2026-09-07 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Udinese",
+                        "away": "Lazio",
+                        "home_id": "118",
+                        "away_id": "112",
+                        "matchup": "Lazio (away) @ Udinese (home)",
+                        "venue": "Stadio Friuli",
+                        "city": "Udine",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWDWL",
+                        "form_away": "WWLWL",
+                        "record_home": "1-1-0",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+165",
+                            "home_current": "+185",
+                            "draw_open": "+195",
+                            "draw_current": "+205",
+                            "away_open": "+155",
+                            "away_current": "+150"
+                        },
+                        "odds_text": "Provider unavailable: Udinese +185 (open +165); Draw +205 (open +195); Lazio +150 (open +155)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-06T08:51:59.993913-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-06T08:43:00.508774-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari is the home favorite with odds of +100. Despite Lecce's mixed away form, playing at the Unipol Domus gives Cagliari a strong advantage to secure the three points.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lazio enters as slight away favorites at +150. Given Udinese's resilience at home, this is expected to be a tight matchup, but Lazio's squad depth gives them a marginal edge.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-06T08:43:12.039594-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari enters this matchup as the favorite at home with implied odds of around 47% to win. Lecce has shown vulnerability on the road, losing three of their last five away matches, giving the Sardinians a solid chance to secure all three points at the Unipol Domus.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lazio is a slight road favorite at +150, translating to roughly a 37% win probability. Udinese is dealing with several key absences, including Nicolo Zaniolo, which could tip the scales slightly in favor of the visitors in what is expected to be a tightly contested match.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-06T08:43:33.365808-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari is playing at home, where they ended the previous season with a strong record. They are also the bookmakers' favorite, as indicated by the +100 odds. While Lecce has also started the season reasonably well, analysis points towards potential inconsistency in their away performances. The combination of home advantage and favorable odds supports a Cagliari victory.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is a very tightly matched game, as reflected by the close betting odds. Although Lazio is the slight favorite and has a perfect away record this season, Udinese has a strong recent head-to-head record against them, with three of the last four meetings ending in a draw and Udinese winning the other. Given Udinese's solid home form and this historical precedent, a draw is the most probable outcome.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-06T08:43:51.227098-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are favored by the bookmakers with +100 odds. Despite a mixed start at home this season (1 win, 1 loss), they finished last season with strong home form. Lecce's overall away form is a concern, and they suffered a recent heavy home defeat. While Lecce did win their first away game this season, Cagliari's home advantage and odds position them as the more likely winner.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio are slight favorites according to bookmakers and have an excellent away record this season (2 wins, 0 losses). Udinese, however, have strong recent home form and are undefeated against Lazio in their last four head-to-head encounters, with three of those being draws. Despite Udinese's injuries, their home advantage and historical performance against Lazio suggest a closely contested match. Lazio's current form and offensive strength give them a narrow edge.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-06T08:44:29.871343-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.464,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.241,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are clear home favorites in the current 1X2 market, with odds moving toward the home side from open. Both teams are 1-0-1, but Cagliari's home edge at Unipol Domus and Lecce's recent heavy loss to Roma outweigh Lecce's decent away notes. Draw risk remains meaningful in an early-season lower-table matchup.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.325,
+                    "draw_probability": 0.304,
+                    "away_win_probability": 0.371,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Lazio are narrow market favorites and have opened the season with two away wins, while Udinese have several listed absences. However, the price gap is small, Udinese are unbeaten through two league matches, and recent head-to-head meetings have leaned draw-heavy, making this a low-confidence away selection.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-06T08:44:38.017011-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are favored by the market and have home advantage at Unipol Domus. The odds movement has strengthened toward Cagliari, while Lecce remain a less convincing away side despite some recent road positives. With both teams having similar early records, the home edge and market support make Cagliari the most likely 90-minute result, though the draw remains a meaningful risk.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Lazio are slight market favorites and have opened the season with a strong away record, giving them a narrow edge. However, Udinese are unbeaten through two matches, have home advantage, and recent head-to-head trends include several draws, which keeps the forecast close. Lazio are the marginal pick, but confidence is low due to Udinese's resilience and the relatively balanced odds.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-06T08:45:05.301028-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Cagliari as a modest home favorite and that aligns with typical home-edge at Unipol Domus. Recent form is comparable, but Lecce’s away consistency remains a question and Cagliari’s win probability stays highest even with minor availability doubts.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds narrowly favor Lazio, supported by their strong early away results and better overall scoring/conceding profile. However, Udinese are solid at home and recent H2H trends skew draw-heavy, so the away win call comes with elevated draw risk.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-06T08:45:14.999853-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers list Cagliari as the slight favorite and home advantage at Unipol Domus plus Cagliari's recent run of wins support a home edge. Both sides have mixed form, and Lecce have been inconsistent away despite some recent successes, so a tight home victory is the likeliest outcome but a draw/away surprise remain plausible.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and season context favor Lazio marginally: they arrive unbeaten in the campaign and offer greater attacking output, while Udinese have injury absences and an inconsistent attack. Recent H2H has produced draws, so a share is plausible, but Lazio look likeliest to edge this one away from home.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-06T08:45:35.116495-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.464,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.241,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari is the slight favorite per typical odds (+100) and benefits from home advantage; Lecce's away form is less convincing.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.325,
+                    "draw_probability": 0.304,
+                    "away_win_probability": 0.371,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio is the away favorite around +150, with Udinese solid at home but Lazio's edge in regulation suggests an away win.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-06T08:45:39.846490-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari have shown strong home form, winning three of their last four at Unipol Domus, despite a recent home loss. Lecce's away record is mixed, with two wins in their last five away matches but also three losses, and they were recently thrashed at home by Roma. Both teams have some injury concerns, but Cagliari's home advantage and Lecce's inconsistency on the road tilt the balance toward the hosts. Bookmaker odds also slightly favor Cagliari.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Udinese are unbeaten at home this season and have a solid recent record, but are missing key players like Zaniolo. Lazio have been inconsistent but possess a higher scoring average and have won both away games so far. The last four head-to-heads have been tight, with three draws and one Udinese win, suggesting a close contest. Bookmaker odds slightly favor Lazio, but the high draw probability reflects the balanced matchup.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-06T08:45:45.483893-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari has shown strong home form recently, winning three of their last four home matches. Lecce's inconsistency on the road, coupled with their recent heavy defeat, suggests they may struggle to secure points in this fixture.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have shown mixed form, but Lazio's slightly better away record and Udinese's missing key players could give Lazio a slight edge. However, the close odds and recent head-to-head draws suggest a tight contest.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-06T08:45:56.870810-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds have moved toward Cagliari (from +115 to +100), reflecting home advantage and Lecce's heavy 4-0 loss to Roma last round. Lecce have won recent away games, but Cagliari finished last season strong at home and the odds imply roughly 46% home win probability. Home win is the most likely single outcome, though not with high certainty.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lazio are slight market favorites (+150) despite playing away, backed by a 2-0-0 record and strong attacking averages. Udinese are solid at home with good recent form, and head-to-head history favors draws (3 of last 4). This is a tight three-way market with Lazio marginally most likely, so confidence is low.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-06T08:46:03.194720-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Cagliari",
+                    "confidence": "low",
+                    "reasoning": "Cagliari are favored at home per bookmaker odds (+100 vs Lecce +285). Home advantage at Unipol Domus and Lecce's inconsistent away form favor Cagliari, though Lecce have won three straight away games historically. Close matchup with a slight home edge.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Lazio",
+                    "confidence": "low",
+                    "reasoning": "Lazio are marginal favorites per odds (+150 vs Udinese +185) with a 2-0-0 away record and higher scoring output. Udinese have solid home form but missing key players like Zaniolo. H2H recently favors draws/Udinese, keeping this a tight contest with a slight edge to Lazio.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-06T08:46:17.768400-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are slight favorites at home per the odds (around +100), which implies roughly 42% win probability after adjusting for vig. The odds have shifted from +115 to +100, suggesting market movement toward Cagliari. Both sides are 1-0-1 on the season. Lecce were hammered 4-0 by Roma last week but did win away at Venezia on matchday one. Cagliari lost their first home game but have ended last season in good home form. Lecce's away form in recent months has been patchy (three losses in last five), though they did win their last three away league games. Cagliari play at home in Sardinia with the advantage of the crowd. The odds movement toward Cagliari and home advantage give them a modest edge.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lazio are slight favorites per the odds (around +150 / 2.55 implied ~39%), while Udinese are at +185 (~35%) and the draw at +205 (~33%). Lazio are 2-0 on the season and have conceded only 1 goal per game on average. However, their recent broader form is mixed (WWLLL over last 5 including all competitions). Udinese are 1-1-0 but missing key players including Zaniolo and Palma. H2H history shows 3 draws and 1 Udinese win in the last 4 meetings with no Lazio wins, which tempers confidence in a Lazio victory. The odds are close and this is a genuinely competitive match. Slight lean to Lazio given their stronger season record and attacking output (2.1 goals/game), but confidence is low given the tight odds and favorable H2H for Udinese/Draw.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-06T08:46:34.389954-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari has shown strong recent form with WWWLL overall and a 1-0-1 home record this season. They finished last season with three wins from their last four home matches, indicating good home momentum. Lecce's away form is concerning, having lost three of their last five matches with inconsistent road performances. The odds have shifted in Cagliari's favor (from +115 to +100), suggesting market confidence in the home side. Despite Lecce winning their last three away league games according to one source, their overall pattern shows vulnerability on the road. Cagliari's missing players (Idrissi, Trepy, possibly Mina) are a concern, but Lecce is also missing Willem Geubbels. The home advantage and Cagliari's recent strong form give them the edge in what should be a competitive match.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio enters with a perfect 2-0-0 record this season despite recent mixed form (WWLWL). Their away record appears strong, and they average 2.1 goals scored per match this season compared to just 1.0 conceded, showing offensive potency and defensive solidity. Udinese has a 1-1-0 record with WWDWL form and will be missing key players including Nicolo Zaniolo, Matteo Palma, Giorgio Chakvetadze, and Alessandro Zanoli. The odds favor Lazio at +150 despite playing away, which is notable. The H2H shows 3 draws in the last 4 meetings with 1 Udinese win, suggesting tight contests, but Lazio's superior current form and attacking output (2.1 goals/game vs Udinese's 1.4) gives them the edge. Both teams have defensive issues (Udinese concedes 1.4/game), but Lazio's better overall season statistics and fewer injury concerns make them slight favorites despite being on the road.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-06T08:46:41.123536-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are favored at home with recent positive form (3W in last 4). Despite losing their first home game this season, they have strong recent home form. Lecce show inconsistency away from home (lost 3 of last 5 away matches) and suffered a heavy 4-0 home loss to Roma last week. However, Lecce have won their last 3 away league games, providing some contradiction. Odds favor Cagliari (-115 to +100), and home advantage typically matters in Serie A. Moderate confidence due to Lecce's recent away form streak and Cagliari's recent home struggles.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly matched encounter with contradictory signals. Udinese show strong recent form (4W1D in last 5) but Lazio paradoxically have a better season record (2-0 vs 1-1-0) despite poor recent form (2W3L). H2H history favors draws (3 of last 4 meetings). Both teams average 1.4 goals conceded in recent form, suggesting defensive stability. Under 2.5 goals appears likely (3/5 for Udinese, 4/5 for Lazio). Betting odds show Lazio slightly favored (+150) despite poor form. The contradictions and historical draw tendency suggest low confidence in any prediction, with draw appearing as slight favorite given H2H patterns.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-06T08:47:22.135834-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are favored at home and their odds shortened from the opener. They also ended last season with three wins in four home games, while Lecce are less reliable despite some away wins.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Lazio are narrow road favorites with a perfect away record early in the season, but Udinese are unbeaten at home and H2H meetings have featured several draws, making this close.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-06T08:47:24.827792-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari have home advantage and recent form is decent (LLWWW). Lecce have been inconsistent away, losing three of last five. Odds slightly favor Cagliari (+100).",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are evenly matched. Udinese have strong home form but Lazio have won both away games. Odds are close, with Lazio slight favorite. Draw is plausible.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-06T08:47:53.333446-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari is favored at home with odds around +100. Despite a mixed start, their historical home strength and Lecce's inconsistent away form give the hosts a slight edge in what projects to be a tight contest.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Lazio enters with a perfect 2-0-0 away record and is favored by the sportsbooks, but Udinese's strong home form and a history of draws in this fixture keep the match highly competitive. Lazio's slight edge in quality gives them a narrow advantage.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-06T08:48:01.941071-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari has a strong home record and is looking to bounce back from their first home loss of the season. Lecce's away form is inconsistent, with alternating wins and losses, which suggests they might struggle against a motivated Cagliari side.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio has shown better recent form and a stronger scoring ability compared to Udinese. Although Udinese has some key players missing, Lazio's away record and overall performance suggest they have a slight edge in this match.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-06T08:48:58.673859-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari holds a distinct home advantage at Unipol Domus, having secured three wins in their last four home fixtures last season. Although Lecce boasts three consecutive away victories, their recent 4-0 defeat to Roma exposes defensive vulnerabilities. With key Cagliari defenders like Yerry Mina listed as doubtful, the match should remain competitive, but home field edge and market odds give Cagliari the slight advantage.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.38,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Historical encounters heavily favor draws, with three of the last four meetings between these clubs ending level. Udinese enters in strong recent form (4 wins in 5 matches) and will be bolstered by Kabasele's return, while Lazio's perfect away start is tempered by inconsistent results in their last five overall games. Tactical caution and defensive organization from both sides, coupled with recent trends favoring low-scoring games, make a stalemate the most probable outcome.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-06T08:49:34.284327-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari enters with strong recent home form (3 wins in last 4) and slight bookmaker favoritism (+100 odds) despite defensive doubts with Mina doubtful. Lecce shows inconsistent away results and lacks key forward Geubbels, though they are undefeated in their last three away games. Home advantage tips the scale slightly.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Lazio is the clear betting favorite (+150) backed by superior squad depth, especially while Udinese misses key attacker Zaniolo and others. Although historical H2H favors draws/Udinese, Lazio's recent away success and Udinese's injury list increase the likelihood of an away victory.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-06T08:51:03.212594-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are narrow favorites at home (+100) and ended last term with three wins from their final four home matches. Lecce enter off a demoralizing 4-0 home defeat to Roma and have been inconsistent on the road. Although Cagliari are missing Idrissi and Trepy, Lecce's defensive frailty and Cagliari's home advantage tip the balance toward a home win.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio have started the season with a perfect 2-0-0 away record and boast the superior attack, averaging 2.1 goals per game. Udinese are unbeaten at home (1-1-0) but are missing several key players including Zaniolo and Zanoli. While the recent head-to-head record favors Udinese (one win and three draws in the last four meetings), Lazio's stronger squad depth, current away form, and market trajectory support an away victory.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-06T08:51:36.741533-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market favors Cagliari (odds shortened from +115 to +100), and they closed last season with three wins in their final four home matches despite losing their home opener this campaign. Lecce were thrashed 4-0 by Roma last time out and their away form is inconsistent (three losses in their last five per one preview), though three straight away league wins and Cagliari's defensive doubts (Yerry Mina doubtful, Idrissi and Trepy out) keep the draw and away win live. Home edge plus market movement make Cagliari the pick, but not emphatically.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is close to a three-way coin flip. Lazio are narrow market favorites (around +150/2.55) and opened this season 2-0-0 away, but their broader recent form is poor (3 losses in last 5, no draws). Udinese are in strong form (4W 1D last 5) and the H2H trend is notable: three of the last four meetings ended in draws with no Lazio win. Udinese do miss Zaniolo, Palma, Chakvetadze, and Zanoli, which tempers the home upset case. Lazio's superior attack (2.1 goals/game) and perfect away start give them a slight edge, but the draw is a very plausible alternative, hence low confidence.",
+                    "event_id": "401874962"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-06T08:51:59.989077-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lecce (away) @ Cagliari (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Cagliari are priced as slight home favorites (+100) and have strong recent home form, while Lecce come off a heavy home defeat and face several injury absences. Lecce's away record is respectable, but Cagliari's home advantage and superior available squad tilt the balance.",
+                    "event_id": "401874943"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Lazio (away) @ Udinese (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lazio have started the season with two away wins and are narrow betting favorites. Udinese are unbeaten at home but are missing key attackers including Nicolo Zaniolo and Matteo Palma, and the recent head-to-head record is draw-heavy, keeping the away win probability only modestly above the draw.",
+                    "event_id": "401874962"
+                }
+            ]
+        }
+    ]
+}

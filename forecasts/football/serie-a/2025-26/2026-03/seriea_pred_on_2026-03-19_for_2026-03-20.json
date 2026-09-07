@@ -1,0 +1,244 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-19\n    Target Date: 2026-03-20\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Napoli @ Cagliari                                    | Scheduled    | Away: 62.1% (18-5-6) vs Home: 24.1% (7-9-13)\n2. Udinese @ Genoa                                      | Scheduled    | Away: 34.5% (10-6-13) vs Home: 27.6% (8-9-12)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Napoli (Away) @ Cagliari (Home)\n**News & Injury Report:**\n- [Cagliari vs Napoli Prediction and Betting Tips | March 20th 2026](https://www.sportskeeda.com/football/cagliari-vs-napoli-prediction-betting-tips-march-20th-2026)\n  Snippet: Adam Obert was sent off last week and will serve a suspension here. Andrea Belotti, Riyad Idrissi, and Mattia Felici are confirmed absentees, while Gennaro Borrelli is also expected to sit this one out.\n\nI Partenopei have seen their last four Serie A...\n- [Cagliari - Napoli, 03/20/2026: prediction, odds and match time](https://betmines.com/match-preview/cagliari-vs-napoli-prediction-match-preview-and-analysis-serie-a-20-03-2026)\n  Snippet: Several players remain sidelined, including Riyad Idrissi, Gennaro Borrelli, Andrea Belotti, and Mattia Felici. However, Gianluca Gaetano and Michael Folorunsho, both on loan from Napoli, are expected to feature and could play key roles against their...\n**Betting Odds:**\n- [SSC Napoli vs Cagliari Odds & Live Scores - March 20, 2026](https://www.actionnetwork.com/seriea-game/ssc-napoli-cagliari/283642)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Cagliari logo Cagliari | 18-10-1 | 7-6-1 | 11-4 | 3-3 | 15-7-1 |\n| Napoli logo Napoli | 2-5 | 2-1 | 0-4 | 2-3 | 0-2 |\n\nCag...\n- [Cagliari vs Napoli Prediction, Betting Tips, Lineups & Odds | 20 Mar ...](https://www.sportsgambler.com/betting-tips/football/cagliari-vs-napoli-prediction-lineups-odds-2026-03-20/)\n  Snippet: Bookies Make Napoli Most Likely Winners\n\nNapoli are the skinniest price to succeed in this Serie A clash, with the favourites afforded a 65% probability based on their 1.55 betting odds with the bookies. The market suggests that Cagliari are least li...\n\n----------------------------------------\n#### Matchup: Udinese (Away) @ Genoa (Home)\n**News & Injury Report:**\n- [Genoa vs Udinese Prediction and Betting Tips | March 20th 2026](https://www.sportskeeda.com/football/genoa-vs-udinese-prediction-betting-tips-march-20th-2026)\n  Snippet: Adam Buksa picked up a calf injury against Juventus and will miss this match. Alessandro Zanoli, Jordan Zemura, and Nicol\u00f2 Bertola continue to be sidelined.\n\nIl Grifone have been in good touch recently, and considering their better record in this fix...\n- [Genoa vs Udinese prediction, preview & betting tips \u2013 20/03/2026](https://footballwhispers.com/blog/genoa-vs-udinese-prediction-20-03-2026/)\n  Snippet: ## Genoa vs Udinese key stats\n\n Genoa have won four of their last five home matches in Serie A, including a statement 2-1 victory over Roma in their most recent outing at the Marassi.\n The Gialloblu have dominated recent head-to-head meetings, stayin...\n**Betting Odds:**\n- [Genoa CFC - Udinese Calcio betting tip & best odds | 20.03.2026](https://www.futbol24.com/betting-tips/preview/20-03-2026-genoa-cfc-udinese-calcio-betting-tip/)\n  Snippet: ## Best Betting Odds for Genua vs Udinese\n\nThe betting landscape for this Serie A clash offers several opportunities. The best odds for a home win are provided by 1win at 2.25, making it an attractive option for those looking to back Genua. For those...\n- [Genoa - Udinese, 03/20/2026: prediction, odds and match time](https://betmines.com/match-preview/genoa-vs-udinese-prediction-match-preview-and-analysis-serie-a-20-03-2026)\n  Snippet: Historically, Genoa have had the upper hand in this matchup, and their recent form suggests they could extend that dominance. Udinese\u2019s defensive vulnerabilities and lack of late-game concentration could once again prove costly. The home side\u2019s momen...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-19 15:28:57"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-19 15:27:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.64,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Market prices Napoli as clear favorites (around 1.55, ~65% implied). Season-strength gap is large (Napoli 62.1% win rate vs Cagliari 24.1%). Cagliari also miss multiple attackers (Belotti, Felici, Idrissi, Borrelli) and are without Obert (suspension), reducing both goal threat and stability."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Odds lean Genoa (best home win price cited ~2.25, ~44% implied), and recent home form is strong (reported 4 wins in last 5 at Marassi). Udinese are a capable away side (34.5% away win rate), keeping the away and draw probabilities meaningful. Genoa injuries (e.g., Buksa out) slightly temper confidence, but home momentum and matchup edge still point to Genoa."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:27:15",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (Away) @ Cagliari (Home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Bookmakers price Napoli as clear favourites (~1.55, ~65% implied). Napoli have a strong away win rate this season (62.1% away). Cagliari's home win rate is poor (24.1%) and they are missing key attackers (Andrea Belotti, Riyad Idrissi, Mattia Felici) plus Adam Obert suspended, weakening their goal threat and defensive stability. Market odds, season form, and Cagliari injuries strongly favour an Napoli win; a draw remains possible but unlikely."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (Away) @ Genoa (Home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa arrive in good home form (four wins in five at Marassi) and bookmakers offer ~2.25 for a home win (implied ~44%), aligning with a modest favourite status. Udinese's away win rate is moderate (34.5%) and they lose attacker Adam Buksa to a calf injury, reducing their attacking options. Head-to-head and Genoa momentum tilt the balance to the home side, but Udinese remain capable of a result, so probabilities reflect a competitive fixture."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:27:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli hold strong away form (Napoli away win rate ~62.1%). Cagliari are missing multiple key players (Belotti, Idrissi, Felici, Borrelli, suspension). Betting signals and odds point to Napoli as the favorite with roughly a 65% implied win probability."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Historical signals show Udinese ~34.5% away win rate vs Genoa ~27.6% home win rate. Genoa's injury list (Buksa, Zanoli, Zemura, Bertola) and recent form suggest Udinese have the edge, though Genoa's home form keep draws plausible and prevent a clear home victory."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:27:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli have a vastly superior season record and are heavy favorites with an implied 65% probability per the bookmakers. Cagliari are missing several key players, including Obert (suspended), Belotti, Idrissi, and Borrelli (all injured). Napoli's recent form and squad depth make them much more likely to triumph, and market odds confirm this assessment."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa have won four of their last five home matches and historically perform well against Udinese at the Marassi. While Genoa have some injuries (notably Buksa out), Udinese have a weaker away record. Betting odds slightly favor Genoa (with implied probabilities just over 40%), and their home momentum should edge this in their favor, though the draw probability remains significant given the mid-table nature of both sides."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:27:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Cagliari are missing key players like Andrea Belotti, Adam Obert, and have a poor home win rate of 24.1%. Napoli are the favorites with a strong away win rate of 62.1% and betting odds imply a 65% chance of winning."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa are in good recent form, winning four of their last five home matches and have historically done well against Udinese. Udinese's poor defense and loss of key players like Adam Buksa further tilt the odds in Genoa's favor."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:28:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Cagliari has a poor home record (24.1% win rate) and several key players are injured or suspended (Obert, Belotti, Idrissi, Felici, Borrelli). Napoli, despite recent form, is still a stronger team with a 62.1% away win rate. The betting odds also heavily favor Napoli (65% probability of winning)."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa has a good home record recently, winning four of their last five home matches. Udinese has defensive vulnerabilities. Genoa historically has the upper hand in this matchup. Adam Buksa is injured for Genoa, but Genoa's recent home form is more compelling. Best odds for Genoa win are quoted at 2.25."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:28:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli's superior season record (62.1% win rate vs Cagliari's 24.1%) and market odds (65% implied probability for Napoli) strongly favor the away side. Cagliari faces significant squad issues with Adam Obert suspended and key attackers Belotti, Idrissi, Felici, and Borrelli all absent. Napoli's loaned players Gaetano and Folorunsho are available and motivated against their parent club. Cagliari's poor ATS record as a favorite (3-3) and Napoli's strong overall form further support this prediction."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa's strong recent home form (4 wins in last 5, including victory over Roma) and historical dominance in this matchup create a significant advantage. Udinese's defensive vulnerabilities and poor away record (34.5% win rate) are concerning. Genoa's injury to Adam Buksa is mitigated by their depth and momentum. Betting odds (best home win odds at 2.25, ~44% implied probability) slightly undervalue Genoa's home edge, but the probability is adjusted upward based on form and matchup history. Udinese's season record is marginally better overall, but Genoa's home/away split and current momentum are decisive."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:28:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli enter as strong favorites with 62.1% win rate (18-5-6) vs Cagliari's poor 24.1% (7-9-13). Betting odds give Napoli 65% implied probability at 1.55. Cagliari face significant injury concerns with Belotti, Idrissi, Felici out, plus Adam Obert suspended after red card. Napoli's superior squad quality and Cagliari's multiple key absences make an away win highly probable. Historical dominance and current form heavily favor the visitors."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Two evenly matched mid-table teams with similar records (Genoa 27.6% vs Udinese 34.5%), but Genoa hold strong home advantage having won 4 of last 5 home Serie A matches, including victory over Roma. Best odds at 2.25 for home win suggest roughly 44% probability. Genoa dominate recent head-to-head meetings and have momentum. Udinese missing Adam Buksa (calf injury) plus Zanoli, Zemura, and Bertola. Genoa's recent form at Marassi and Udinese's defensive vulnerabilities tip scales toward home win, though tight enough to warrant medium confidence."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-19 15:28:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Napoli (away) @ Cagliari (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli has a significantly better win rate and form compared to Cagliari. Cagliari is also dealing with several key absences, including Adam Obert, Andrea Belotti, Riyad Idrissi, and Mattia Felici. The betting odds also heavily favor Napoli, giving them a 65% chance of winning."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Genoa (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Genoa has been in good form at home, winning four of their last five matches. Udinese, on the other hand, has defensive vulnerabilities and is missing key players like Adam Buksa, Alessandro Zanoli, Jordan Zemura, and Nicol\u00f2 Bertola. The betting odds slightly favor Genoa, but the match could also end in a draw given the relatively even form of both teams."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,973 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-26",
+        "target_date_et": "2026-08-27",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-26\n\nTarget Date (ET): 2026-08-27\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882924\nMatchup: Osasuna (away) @ Celta Vigo (home)\nHome: Celta Vigo\nAway: Osasuna\nKickoff UTC: 2026-08-27T18:30Z\nKickoff ET: 2026-08-27 14:30 EDT\nVenue: Balaidos\nRound: unavailable\nHome form: DWDLW\nAway form: DLLLL\nHome record: 0-1-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Celta Vigo -105 (open +100); Draw +240 (open +240); Osasuna +310 (open +255)\nTavily context:\n  - Title: Celta Vigo vs. Osasuna (Aug 27, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Real Betis | 2 | 2 | 0 | 0 | +2 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Real Madrid | 1 | 1 | 0 | 0 | +1 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882924/osasuna-celta-vigo\n  - Title: Celta Vigo vs Osasuna - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Celta Vigo vs Osasuna — Sun, August 16, 7:30 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nOsasunaOsasuna\n\n# Celta Vigo vs Osasuna — Sun, August 16, 7:30 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nOsasunaOsasuna\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Matías Vecino\n\n  Knee injury / Late August 2026\n\nVecinoKnee injuryLate August 2026\n\n  Javi Galán\n\n  Thigh injury / Late August 2026\n\nGalánThigh injuryLate August 2026\n\n  Raúl Moro ...\n    URL: https://www.fotmob.com/matches/osasuna-vs-celta-vigo/2rhvxv\n  - Title: Celta Vigo vs Osasuna Predictions, Tips & Odds\n    Content: The betting market prices Celta Vigo as clear favourites at 1.95, with a draw at 3.30 and Osasuna at 3.90. Double chance 1X sits at 1.27, reflecting strong confidence in a home result or stalemate. The statistical model projects a 50% probability for a home win and 50% for a draw, with BTTS hovering near evens at 1.88, signalling expectations of attacking play from both camps. ...\n    URL: https://oddslot.com/football/match/la-liga/celta-vigo/osasuna/27-aug-2026\n  - Title: Prediction Celta de Vigo vs Osasuna: analysis, odds and betting tips\n    Content: The odds are: Celta de Vigo to win 2.00, draw 3.30, Osasuna to win 4.00. The odds are Over 2.5 at 2.10 and Under 2.5 at 1.72. The odds for both\n    URL: https://betmines.com/match-preview/celta-de-vigo-vs-osasuna-prediction-match-preview-and-analysis-la-liga-27-08-2026\n\nGame ID: 2\nSource event_id: 401882921\nMatchup: Athletic Club (away) @ Barcelona (home)\nHome: Barcelona\nAway: Athletic Club\nKickoff UTC: 2026-08-27T19:00Z\nKickoff ET: 2026-08-27 15:00 EDT\nVenue: Spotify Camp Nou\nRound: unavailable\nHome form: WWLWL\nAway form: LLDLL\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Barcelona -330 (open -285); Draw +500 (open +330); Athletic Club +800 (open +450)\nTavily context:\n  - Title: Barcelona vs Athletic Club predicted lineup · 27 Aug 2026\n    Content: 23\n\nKoundé\n\n5\n\nParedes\n\n3\n\nBalde\n\n15\n\nChristensen\n\n6\n\nGavi\n\n8\n\nPedri\n\n16\n\nFermín\n\n10\n\nYamal\n\n17\n\nGordon\n\n20\n\nOlmo\n\nConfidence rings appear once 20fans have predicted.\n\n4 predictions\n\nPredict Barcelona's XI\n\n→No predictions yet\n\nPredict Athletic Club's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nBarcelona\n\n4\n\n MIDCasadóTransfer negotiationsOut\n FWDBisiwuInactiveOut\n MIDJongKnee InjuryOut\n FWDBardghjiKnee InjuryOut\n\nAthletic Club\n\n5\n\n DEFEguíluzKnee InjuryOut\n DEFVivianHamstring InjuryOut\n MIDPradosInactiveOut\n DEFGorosabelMuscle InjuryOut\n FWDSerranoCoach's decisionOut ...\n    URL: https://starting11.com/fixtures/barcelona-vs-athletic-club\n  - Title: Barcelona vs Athletic Club - live score, predicted lineups ...\n    Content: TV schedules\n\n# Barcelona vs Athletic Club — Thu, August 27, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Spotify Camp Nou\n\nBarcelonaBarcelona\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n# Barcelona vs Athletic Club — Thu, August 27, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Spotify Camp Nou\n\nBarcelonaBarcelona\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n## Injured and suspended players\n\n  Frenkie De Jong\n\n  Meniscus injury / Early October 2026\n\nDe JongMeniscus injuryEarly October 2026\n\n  Daniel Vivian\n\n  Muscle injury / Doubtful\n\nVivianMuscle injuryDoubtful\n\n  Andoni Gorosabel\n\n  Muscle injury / Doubtful ...\n    URL: https://www.fotmob.com/matches/athletic-club-vs-barcelona/2diy4x\n  - Title: FC Barcelona vs Athletic Club Predictions, Picks & Odds\n    Content: La Liga\n\nFC Barcelona FC Barcelona\n\n27 Aug 2026 20:00\n\nAthletic Club Athletic Club\n\nPrediction:\n\nFC Barcelona to win 1.40\n\nView oddsBetfred >\n\nPick your prediction\n\n FC BarcelonaDraw Athletic Club\n\n# FC Barcelona vs Athletic Club Predictions, Picks & Odds – 27/08/2026\n\nLa Liga · 1\n\n27 Aug 2026  Camp Nou  Louis Hecq\n\n### FC Barcelona vs Athletic Club – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betfred | 1.40 | 5.00 | 7.00 | View odds |\n| Smarkets | 1.33 | 4.10 | 5.80 | View Odds |\n\nOur prediction\n\n1: FC Barcelona to win ...\n    URL: https://www.toffeeweb.com/fc-barcelona-vs-athletic-club-predictions-picks-odds-27-08-2026\n  - Title: Barcelona vs Athletic Bilbao Prediction 27.08.2026\n    Content: The analysis of 18 bookmakers shows: Barcelona has a 71% probability of winning, while their opponent Athletic Bilbao has a 12% chance, and\n    URL: https://tips.gg/matches/football/27-08-2026/barcelona-vs-athletic-bilbao/08-00/predictions\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-26\n\nTarget Date (ET): 2026-08-27\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882924\nMatchup: Osasuna (away) @ Celta Vigo (home)\nHome: Celta Vigo\nAway: Osasuna\nKickoff UTC: 2026-08-27T18:30Z\nKickoff ET: 2026-08-27 14:30 EDT\nVenue: Balaidos\nRound: unavailable\nHome form: DWDLW\nAway form: DLLLL\nHome record: 0-1-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Celta Vigo -105 (open +100); Draw +240 (open +240); Osasuna +310 (open +255)\nTavily context:\n  - Title: Celta Vigo vs. Osasuna (Aug 27, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Real Betis | 2 | 2 | 0 | 0 | +2 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Real Madrid | 1 | 1 | 0 | 0 | +1 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882924/osasuna-celta-vigo\n  - Title: Celta Vigo vs Osasuna - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Celta Vigo vs Osasuna — Sun, August 16, 7:30 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nOsasunaOsasuna\n\n# Celta Vigo vs Osasuna — Sun, August 16, 7:30 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nOsasunaOsasuna\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Matías Vecino\n\n  Knee injury / Late August 2026\n\nVecinoKnee injuryLate August 2026\n\n  Javi Galán\n\n  Thigh injury / Late August 2026\n\nGalánThigh injuryLate August 2026\n\n  Raúl Moro ...\n    URL: https://www.fotmob.com/matches/osasuna-vs-celta-vigo/2rhvxv\n  - Title: Celta Vigo vs Osasuna Predictions, Tips & Odds\n    Content: The betting market prices Celta Vigo as clear favourites at 1.95, with a draw at 3.30 and Osasuna at 3.90. Double chance 1X sits at 1.27, reflecting strong confidence in a home result or stalemate. The statistical model projects a 50% probability for a home win and 50% for a draw, with BTTS hovering near evens at 1.88, signalling expectations of attacking play from both camps. ...\n    URL: https://oddslot.com/football/match/la-liga/celta-vigo/osasuna/27-aug-2026\n  - Title: Prediction Celta de Vigo vs Osasuna: analysis, odds and betting tips\n    Content: The odds are: Celta de Vigo to win 2.00, draw 3.30, Osasuna to win 4.00. The odds are Over 2.5 at 2.10 and Under 2.5 at 1.72. The odds for both\n    URL: https://betmines.com/match-preview/celta-de-vigo-vs-osasuna-prediction-match-preview-and-analysis-la-liga-27-08-2026\n\nGame ID: 2\nSource event_id: 401882921\nMatchup: Athletic Club (away) @ Barcelona (home)\nHome: Barcelona\nAway: Athletic Club\nKickoff UTC: 2026-08-27T19:00Z\nKickoff ET: 2026-08-27 15:00 EDT\nVenue: Spotify Camp Nou\nRound: unavailable\nHome form: WWLWL\nAway form: LLDLL\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: Provider unavailable: Barcelona -330 (open -285); Draw +500 (open +330); Athletic Club +800 (open +450)\nTavily context:\n  - Title: Barcelona vs Athletic Club predicted lineup · 27 Aug 2026\n    Content: 23\n\nKoundé\n\n5\n\nParedes\n\n3\n\nBalde\n\n15\n\nChristensen\n\n6\n\nGavi\n\n8\n\nPedri\n\n16\n\nFermín\n\n10\n\nYamal\n\n17\n\nGordon\n\n20\n\nOlmo\n\nConfidence rings appear once 20fans have predicted.\n\n4 predictions\n\nPredict Barcelona's XI\n\n→No predictions yet\n\nPredict Athletic Club's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nBarcelona\n\n4\n\n MIDCasadóTransfer negotiationsOut\n FWDBisiwuInactiveOut\n MIDJongKnee InjuryOut\n FWDBardghjiKnee InjuryOut\n\nAthletic Club\n\n5\n\n DEFEguíluzKnee InjuryOut\n DEFVivianHamstring InjuryOut\n MIDPradosInactiveOut\n DEFGorosabelMuscle InjuryOut\n FWDSerranoCoach's decisionOut ...\n    URL: https://starting11.com/fixtures/barcelona-vs-athletic-club\n  - Title: Barcelona vs Athletic Club - live score, predicted lineups ...\n    Content: TV schedules\n\n# Barcelona vs Athletic Club — Thu, August 27, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Spotify Camp Nou\n\nBarcelonaBarcelona\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n# Barcelona vs Athletic Club — Thu, August 27, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Spotify Camp Nou\n\nBarcelonaBarcelona\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n## Injured and suspended players\n\n  Frenkie De Jong\n\n  Meniscus injury / Early October 2026\n\nDe JongMeniscus injuryEarly October 2026\n\n  Daniel Vivian\n\n  Muscle injury / Doubtful\n\nVivianMuscle injuryDoubtful\n\n  Andoni Gorosabel\n\n  Muscle injury / Doubtful ...\n    URL: https://www.fotmob.com/matches/athletic-club-vs-barcelona/2diy4x\n  - Title: FC Barcelona vs Athletic Club Predictions, Picks & Odds\n    Content: La Liga\n\nFC Barcelona FC Barcelona\n\n27 Aug 2026 20:00\n\nAthletic Club Athletic Club\n\nPrediction:\n\nFC Barcelona to win 1.40\n\nView oddsBetfred >\n\nPick your prediction\n\n FC BarcelonaDraw Athletic Club\n\n# FC Barcelona vs Athletic Club Predictions, Picks & Odds – 27/08/2026\n\nLa Liga · 1\n\n27 Aug 2026  Camp Nou  Louis Hecq\n\n### FC Barcelona vs Athletic Club – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Betfred | 1.40 | 5.00 | 7.00 | View odds |\n| Smarkets | 1.33 | 4.10 | 5.80 | View Odds |\n\nOur prediction\n\n1: FC Barcelona to win ...\n    URL: https://www.toffeeweb.com/fc-barcelona-vs-athletic-club-predictions-picks-odds-27-08-2026\n  - Title: Barcelona vs Athletic Bilbao Prediction 27.08.2026\n    Content: The analysis of 18 bookmakers shows: Barcelona has a 71% probability of winning, while their opponent Athletic Bilbao has a 12% chance, and\n    URL: https://tips.gg/matches/football/27-08-2026/barcelona-vs-athletic-bilbao/08-00/predictions\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882924",
+                        "date_utc": "2026-08-27T18:30Z",
+                        "kickoff_et": "2026-08-27 14:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Celta Vigo",
+                        "away": "Osasuna",
+                        "home_id": "85",
+                        "away_id": "97",
+                        "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                        "venue": "Balaidos",
+                        "city": "Vigo",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DWDLW",
+                        "form_away": "DLLLL",
+                        "record_home": "0-1-0",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+100",
+                            "home_current": "-105",
+                            "draw_open": "+240",
+                            "draw_current": "+240",
+                            "away_open": "+255",
+                            "away_current": "+310"
+                        },
+                        "odds_text": "DraftKings: Celta Vigo -105 (open +100); Draw +240 (open +240); Osasuna +310 (open +255)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882921",
+                        "date_utc": "2026-08-27T19:00Z",
+                        "kickoff_et": "2026-08-27 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Barcelona",
+                        "away": "Athletic Club",
+                        "home_id": "83",
+                        "away_id": "93",
+                        "matchup": "Athletic Club (away) @ Barcelona (home)",
+                        "venue": "Spotify Camp Nou",
+                        "city": "Barcelona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWLWL",
+                        "form_away": "LLDLL",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-285",
+                            "home_current": "-330",
+                            "draw_open": "+330",
+                            "draw_current": "+500",
+                            "away_open": "+450",
+                            "away_current": "+800"
+                        },
+                        "odds_text": "Provider unavailable: Barcelona -330 (open -285); Draw +500 (open +330); Athletic Club +800 (open +450)",
+                        "game_id": 2
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-26T09:56:41.978308-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-26T09:47:26.504457-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo enters the match as the clear favorite with home advantage at Balaídos. Bookmaker odds and statistical projections heavily favor a home win or draw, with Osasuna showing struggling form away from home.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is highly favored to secure three points at the Spotify Camp Nou. They maintain a dominant home record, while Athletic Club is dealing with squad rotation and injury doubts.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-26T09:47:39.234988-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.488,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.232,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is favored to win at home with odds around -105, implying nearly a 49% implied probability after removing the vigorish. While both teams recorded a draw in their opening matches, Celta holds the home-field advantage and is projected stronger statistically.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.735,
+                    "draw_probability": 0.159,
+                    "away_win_probability": 0.106,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enters this matchup as a heavy favorite at -330, reflecting over a 70% probability of securing a home win. With their solid form and the significant advantage of playing at Spotify Camp Nou, they are highly expected to overpower Athletic Club.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-26T09:48:06.078472-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is the clear favorite at home, with betting odds and statistical models consistently placing their win probability at or around 50%. Osasuna's recent form is very poor (DLLLL), which contrasts with Celta's more stable performance. Although it is early in the season and Celta has a couple of injuries, the combination of home advantage and the opponent's poor form makes a home win the most probable result.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a heavy favorite, playing at Camp Nou with significantly better recent form compared to Athletic Club. Multiple sources, including bookmaker analysis, place Barcelona's win probability above 70%. Athletic Club's very poor form (LLDLL) and their loss in the season opener further solidifies Barcelona's advantage. Despite injuries to key players like Frenkie De Jong, Barcelona's depth and home-field dominance are expected to secure the victory.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-26T09:48:18.838861-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is favored by various betting markets, with probabilities for a home win typically around 48-51%. The market implies a significant chance for a draw (28-30%) and Osasuna is considered the underdog (24-26%). Celta Vigo's home form (DWDLW) also suggests an advantage. Both teams recorded a draw in their opening match of the season.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.68,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a strong favorite according to all available betting odds and statistical models, with their win probability consistently above 60% and often closer to 70%. They have a strong home record (1-0-0) and good recent form (WWLWL), contrasting with Athletic Club's poorer away form (LLDLL) and record (0-0-1). Barcelona is expected to comfortably win at Spotify Camp Nou.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-26T09:49:19.162688-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are modest home favorites at Balaidos, with market odds implying close to a 49% home-win chance after normalization. Osasuna's recent form is weaker, while both teams started with a draw, so the home edge is real but not overwhelming.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy home favorites, with current odds and external projections clustering around roughly a 70% plus win probability. Athletic Club enter with poorer early form and several defensive or squad availability concerns, while Barcelona have strong home advantage at Camp Nou.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-26T09:49:30.329160-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are priced as clear home favorites, with the market moving further toward them compared with the opener. Both teams drew their first league match, but Celta have the stronger recent form profile and home advantage at Balaidos, while Osasuna's recent form is poor. A draw remains a meaningful risk in an early-season fixture.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy home favorites across the market and enter with a winning start, while Athletic Club lost their opener and have several defensive injury concerns. Barcelona's home advantage at Spotify Camp Nou and superior attacking quality make a home win the most likely regulation-time result, though Athletic's quality keeps the upset and draw probabilities nonzero.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-26T09:50:01.148671-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Celta the favorite at Balaídos (home odds shortened from +100 to -105), while Osasuna are longer (+310). Recent form also tilts to Celta (DWDLW) versus Osasuna (DLLLL), suggesting better underlying momentum. With both teams showing an early-season draw on record, the draw remains a meaningful outcome, but the most likely 90-minute result is a Celta home win.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavily favored at home (around -330, implying a strong win probability) and come in with a better recent run than Athletic (Athletic listed LLDLL and already 0-0-1). Even allowing for early-season variance and some personnel uncertainty, the gap in market expectation and home advantage at Camp Nou makes a 90-minute Barcelona win the most probable outcome, with the draw the main secondary risk.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-26T09:50:16.105557-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are slight favorites at Balaídos with better recent form (DWDLW) vs Osasuna's poor run (DLLLL). Market odds and multiple models favor a home win, though a draw is plausible given modest margins and early-season rust. No major suspensions reported that would strongly swing the match.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites at Camp Nou (bookmakers and models ~70%+). Strong home record, squad depth and attacking quality far outmatch Athletic, who arrive with mixed form. Injury notes exist but are unlikely to negate Barcelona's clear edge in a regulation-time result.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-26T09:50:35.455614-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo opens as a slight home favorite with a modest edge in regulation; Osasuna have a slim away deficit but are off to a minimal start.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's home dominance and superior squad quality against Athletic Club suggest a regulation-time home win.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-26T09:50:38.934287-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are favored by both the betting markets and statistical models, with home win odds around 1.95–2.00 and a projected 50% chance of a home win or draw. Celta's home form is stronger than Osasuna's away form, and Osasuna have lost four of their last five away games. Both teams have some injury concerns, but Celta's home advantage and Osasuna's poor recent form tilt the balance toward the hosts. The draw is also a significant possibility, but an away win is less likely.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming favorites according to both bookmakers and statistical models, with win probabilities around 70–71%. Their home record is strong, and Athletic Club have struggled away from home. Despite some injuries for both sides, Barcelona's squad depth and attacking power at Camp Nou make them clear favorites. The draw and away win probabilities are much lower, reflecting the consensus across markets and models.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-26T09:50:42.105365-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is favored by the betting market and has a better recent form compared to Osasuna. The odds and statistical models suggest a higher probability for a home win.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored with a strong home record and superior squad depth. The odds and predictions from multiple sources indicate a high likelihood of a Barcelona victory.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-26T09:50:54.300961-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo are modest home favorites per market odds (-105), backed by better recent form (DWDLW) versus Osasuna's poor run (DLLLL). However, both sides drew their opening fixture against each other and the margin is thin, so a draw remains a strong possibility.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy home favorites (-330) at Camp Nou. Athletic Club arrive in poor form (LLDLL) with multiple key defensive absences (Vivian, Gorosabel, Eguiluz), while Barcelona opened the season with a dominant win. Market consensus gives Barcelona roughly a 70-73% win probability.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-26T09:51:01.320846-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo are home favorites at Balaidos (-105) with better recent form (DWDLW vs Osasuna's DLLLL). The market and statistical models favor a Celta win or draw. Osasuna's poor form and away disadvantage tilt this to Celta, though not by a large margin.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are strong home favorites (-330) at Camp Nou. Athletic Club arrive in poor form (LLDLL) with multiple key defensive injuries (Vivian, Gorosabel, Eguiluz). Bookmaker consensus gives Barcelona around 71% win probability. Despite De Jong's absence, Barcelona's home strength dominates.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-26T09:51:13.495643-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are favored at home with odds around -105 to 2.00, implying roughly 48-50% win probability. Both teams drew their opening match and have similar early records (1 point each). Celta's home form shows more wins (DWDLW) while Osasuna's form is poor (DLLLL). The statistical model from oddslot projects 50% home win and 50% draw, with no away win probability, reflecting Osasuna's struggles. Celta Vigo are home favorites with venue advantage at Balaidos. Injury concerns for both sides (Vecino and Galán for Celta, multiple absences for Athletic noted elsewhere). The odds consensus places Celta as clear favorites. Slight edge to Celta Vigo to win.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are massive favorites at Camp Nou with odds ranging from -330 (DraftKings) to 1.33-1.40 across bookmakers, implying roughly 70-75% win probability. Barcelona won their opening match convincingly (+5 GD in 1 game). Athletic Club has multiple injury absences (Vivian, Gorosabel, Eguíluz, Prados) and lost their opening fixture. The market consensus from 18 bookmakers puts Barcelona at 71% probability. Barcelona's form (WWLWL) is stronger than Athletic's (LLDLL). The draw and away win probabilities are low given the quality gap and home advantage at Camp Nou.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-26T09:51:25.737817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo hosts Osasuna at Balaidos in what appears to be an evenly matched contest. Both teams drew their opening fixtures (0-1-0 records each). The odds favor Celta slightly at -105 (implied ~51%), with the draw at +240 (~29%) and Osasuna at +310 (~24%). Recent form shows Celta with DWDLW compared to Osasuna's poor DLLLL streak. Statistical models project a 50-50 split between home win and draw, suggesting uncertainty. Home advantage and Osasuna's recent struggles provide a slight edge to Celta, but the tight odds and form metrics indicate this could easily end in a draw or narrow home victory. BTTS probability near evens suggests both teams may score, pointing to an open match.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona hosts Athletic Club at Camp Nou with strong backing from bookmakers at -330 (implied ~77%). Barcelona enters with a 1-0-0 record after their opening match, while Athletic Club has started poorly at 0-0-1 with a dismal LLDLL recent form. Multiple sources confirm Barcelona's probability around 71%, with Athletic Club at just 12%. Barcelona has significant quality advantages and home field benefit at Camp Nou. Athletic Club faces injury concerns with Vivian and Gorosabel doubtful, while Barcelona is missing De Jong but has adequate depth. The odds movement from -285 to -330 shows increasing confidence in Barcelona. Athletic's poor form and Barcelona's strong start make this a clear favorite situation.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-26T09:51:31.056673-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo plays at home with recent form showing DWDLW (mixed but with wins). Osasuna arrives with poor form DLLLL, suggesting confidence issues. Betting odds favor Celta (-105) and statistical models project 50% home win probability. However, both teams have played only 1 match, creating uncertainty. Celta's home advantage at Balaidos is meaningful but not overwhelming given Osasuna's defensive shape.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored with odds of -330, reflecting strong market confidence in a home victory. Statistical analysis shows 71% win probability for Barcelona. Barcelona's recent form (1-0-0 record in available matches) and the home advantage at Camp Nou are significant. Athletic Club arrives with poor form (0-0-1) and multiple defensive injuries (Vivian, Gorosabel, Eguíluz). Barcelona's attacking capabilities with Yamal, Olmo, and Pedri far exceed Athletic's defensive capacity given their injury situation.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-26T09:51:58.492333-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are favored at home with better recent form, while Osasuna have struggled away, though a draw remains plausible.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy home favorites at Camp Nou, and Athletic Club have key defensive injuries plus poor away form.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-26T09:52:00.780647-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo are at home and have slightly better form, while Osasuna have lost four of their last five. Odds favor the home side, but the draw is possible.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are strong at home and have a much better squad, while Athletic Club have poor away form and key injuries. The odds heavily favor Barcelona.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-26T09:52:30.864657-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is favored at home against an Osasuna side that has struggled in recent form. The betting market and statistical models give Celta a clear edge, pointing to a home win.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored at home against Athletic Club. Despite some injuries, Barcelona's squad depth and home advantage at Camp Nou make them strong favorites, which is reflected in the heavy moneyline odds and predictive models.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-26T09:52:40.672977-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is favored by the betting markets and has a strong home form, while Osasuna has struggled away from home recently. The odds and recent form suggest a higher likelihood of a home win or a draw.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored by the bookmakers and has a strong home record. Despite some injuries, Barcelona's overall quality and home advantage make them likely to secure a win against an Athletic Club side that has not been performing well away from home.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-26T09:53:31.420547-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo holds a slight edge due to home advantage at Balaidos and marginally better recent form compared to Osasuna's four-match losing streak. Betting markets and statistical models price Celta as favorites with roughly a 48-50% win probability, while also acknowledging a significant chance for a draw given both teams' early-season defensive vulnerabilities and Osasuna's struggles on the road.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enters as overwhelming favorites at the Spotify Camp Nou, with betting markets implying a roughly 75% win probability and external analysis aligning around 71%. Athletic Club arrives with a four-match away losing streak, key defensive injuries, and inferior overall form. Despite occasional early-season volatility, Barcelona's attacking depth and home advantage strongly favor a home victory in regulation time.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-26T09:54:38.491589-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo is the favorite at home with odds suggesting a slight edge (-105). While both teams drew their opening league games, Osasuna's poor away form (DLLLL) and Celta's home advantage favor a narrow home victory in regulation time.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona holds a significant odds advantage (-330) indicating a high win probability (~71%). Athletic Club lost their opening match and faces key defensive injuries, while Barcelona starts with momentum at the Camp Nou, making a home win the clear projection.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-26T09:56:06.205340-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.475,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo hold home advantage at Balaídos and carry significantly better recent form (DWDLW) compared to Osasuna’s struggling away form (DLLLL). Both sides opened their campaigns with draws, but betting markets price Celta as a slight favorite (~47-48% implied probability) and the double-chance 1X is strongly favored. Osasuna’s poor away record and injury concerns further tip the scales toward a home victory, though a low-scoring draw remains plausible.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.715,
+                    "draw_probability": 0.175,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming home favorites priced around -330 (implied ~73% before vig normalization) and opened their La Liga campaign with a win. Athletic Club arrive with a poor away record (0-0-1) and troubling away form (LLDLL), compounded by defensive injuries to Vivian, Gorosabel, and Eguíluz. Barcelona’s attacking firepower at Spotify Camp Nou, even with Frenkie de Jong injured, should be too much for a depleted Athletic side. Market consensus gives Barcelona roughly a 70% chance of victory, making a home win the clear projection.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-26T09:56:37.858551-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo benefits from home support at Balaídos and holds superior recent form (DWDLW) compared to Osasuna's struggling away sequence (DLLLL). Market odds price Celta as slight favorites (-105), reflecting a narrow edge in a likely low-scoring affair. Osasuna's defensive vulnerabilities on the road and key injuries to Celta's Vecino and Galán are offset by the hosts' historical home strength against mid-table opposition.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a dominant favorite (-330 odds) at Spotify Camp Nou following a strong opening victory, while Athletic Club displays poor away form (LLDLL) and defensive injury concerns including the doubtful status of center-back Vivian. Despite Barcelona's midfield absences, their superior attacking depth and Athletic's struggles to generate road offense support a comfortable home win.",
+                    "event_id": "401882921"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-26T09:56:41.975115-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Osasuna (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo has a slight edge based on their home form and Osasuna's poor away record, but the probabilities are close.",
+                    "event_id": "401882924"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Athletic Club (away) @ Barcelona (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is favored due to their strong home form and Athletic Club's poor away record.",
+                    "event_id": "401882921"
+                }
+            ]
+        }
+    ]
+}

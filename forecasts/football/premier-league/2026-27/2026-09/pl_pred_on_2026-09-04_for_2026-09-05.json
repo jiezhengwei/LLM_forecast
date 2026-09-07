@@ -1,0 +1,2498 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-04",
+        "target_date_et": "2026-09-05",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879286\nMatchup: AFC Bournemouth (away) @ Newcastle United (home)\nHome: Newcastle United\nAway: AFC Bournemouth\nKickoff UTC: 2026-09-05T11:30Z\nKickoff ET: 2026-09-05 07:30 EDT\nVenue: St. James' Park\nRound: unavailable\nHome form: WWDLW\nAway form: DLDDW\nHome record: 1-1-0\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Newcastle United +115 (open +130); Draw +270 (open +260); AFC Bournemouth +220 (open +180)\nTavily context:\n  - Title: Newcastle-Bournemouth - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nNewcastle logo\nBournemouth logo\nNewcastle logo\nBournemouth logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| William Osula |  | Out | 6.92 |\n| Joelinton |  | Out | N/A |\n| Dan Burn |  | Out | N/A |\n| Tino Livramento |  | Doubtful | N/A | ...\n    URL: https://www.whoscored.com/matches/1983584/preview/england-premier-league-2026-2027-newcastle-bournemouth\n  - Title: Newcastle vs Bournemouth: team news, lineups, predictions (Premier ...\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nBournemouth have won 1 point to date and are placed in 15th position. In their last outing, Marco Rose's team drew 1-1 against Everton (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Bournemouth winning 2-1.\n\n## Predicted lineups\n\nNewcastle: Lukas Hornicek, Amar Dedić, Sven Botman, Malick Thiaw, Lewis Hall, Lewis Miley, Nico González, Anthony Elanga, Joe Willock, Harvey Barnes, Yoane Wissa ...\n    URL: https://sports.yahoo.com/articles/preview-newcastle-vs-bournemouth-team-113500687.html\n  - Title: Newcastle United vs AFC Bournemouth Prediction\n    Content: The odds are: Newcastle United to win 2.10, draw 3.50, AFC Bournemouth to win 3.40. The odds are Over 2.5 at 1.57 and Under 2.5 at 2.37. both\n    URL: https://betmines.com/match-preview/newcastle-united-vs-afc-bournemouth-prediction-match-preview-and-analysis-premier-league-05-09-2026\n  - Title: Newcastle vs. Bournemouth prediction, odds, Premier League picks [9/5/2026]\n    Content: Moneyline: Bournemouth +245, Newcastle +120\n Total Goals: Over/Under 2.5 (-156/+150)\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Model picks and best bet\n\nAfter matching our predictions against the best available odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Bournemouth @ +245 via Polymarket\n Total Goals: Over 2.5 @ -156 via Polymarket\n\nAccording to our Premier League best bets, the top play to make on this game is Bournemouth to win. ...\n    URL: https://www.dimers.com/epl/news/newcastle-vs-bournemouth-prediction-09-05-2026-ac\n\nGame ID: 2\nSource event_id: 401879311\nMatchup: Sunderland (away) @ Brentford (home)\nHome: Brentford\nAway: Sunderland\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Gtech Community Stadium\nRound: unavailable\nHome form: DWWDD\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Brentford -150 (open -140); Draw +295 (open +265); Sunderland +425 (open +380)\nTavily context:\n  - Title: PREVIEW | Brentford vs Sunderland: team news, lineups, predictions (Premier League 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nSunderland have won 3 points to date and are placed in 12th position. In their last game, Régis Le Bris's team won 1-0 against Fulham (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Brentford winning 3-0.\n\n## Predicted lineups\n\nBrentford: Caoimhin Kelleher, Michael Kayode, Kristoffer Ajer, Nathan Collins, Keane Lewis-Potter, Mamadou Sangaré, Vitaly Janelt, Jaidon Anthony, Mikkel Damsgaard, Kevin Schade, Igor Thiago ...\n    URL: https://sports.yahoo.com/articles/preview-brentford-vs-sunderland-team-141000305.html\n  - Title: Brentford vs Sunderland - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brentford vs Sunderland — Sat, September 5, 2:00 PM UTC\n\nPremier League Round 3\n\n Premier League Round 3\n Gtech Community Stadium\n\nBrentfordBrentford\n\n‌\n‌\n\nSunderlandSunderland\n\n# Brentford vs Sunderland — Sat, September 5, 2:00 PM UTC\n\nPremier League Round 3\n\n Premier League Round 3\n Gtech Community Stadium\n\nBrentfordBrentford\n\n‌\n‌\n\nSunderlandSunderland\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sepp van den Berg\n\n  Groin injury / Mid September 2026\n\nvan den BergGroin injuryMid September 2026\n\n  Antoni Milambo ...\n    URL: https://www.fotmob.com/matches/sunderland-vs-brentford/2sw7v2\n  - Title: Brentford vs Sunderland Betting Pick | English Premier | 2026-09-05 |\n    Content: Brentford vs Sunderland English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - BRENTFORD V SUNDERLAND\n\n1  Home   ::::\n\n2  English Football Betting Tips    ::\n\n3  2026-09-05 - Brentford vs Sunderland    :: [...] ⚽ GoonersGuide Betting Notes   Read the latest issue or subscribe free →\nA short weekly email highlighting betting angles and lines we think the market may have mispriced.\n\nBrentford vs Sunderland Betting Pick | English Premier | 2026-09-05 | ...\n    URL: https://www.goonersguide.com/football-pick-59876-Brentford-vs-Sunderland.htm\n  - Title: Brentford vs Sunderland prediction: Match preview, betting odds and tips on January 7, 2026 – Ratingbet.com\n    Content: Active tips 29\n\nForm\n\n## Trending expert predictions\n\nAston Villa vs Arsenal prediction: expert analysis, possible lineups, August 31, 2026\n\nEnglish Premier League 31 aug 2026, 16:00\n\n## Aston Villa vs Arsenal prediction: expert analysis, possible lineups, August 31, 2026\n\nAston Villa\n\nArsenal\n\n 1X2: 2\n\n1.6\n\n All Predictions →\n\nReviews  0\n\nOnly registered users can post comments\n\nGame Prediction  Our Pick\n\nTotal under 3,0\n\n1.8 [...] Ratingbet Football English Premier League Predictions  Brentford vs Sunderland prediction: Match preview, betting odds and tips on January 7, 2026 ...\n    URL: https://ratingbet.com/predictions/brentford-vs-sunderland-prediction-match-preview-betting-odds-and-tips-on-january-7-2026\n\nGame ID: 3\nSource event_id: 401879290\nMatchup: Leeds United (away) @ Brighton & Hove Albion (home)\nHome: Brighton & Hove Albion\nAway: Leeds United\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: American Express Stadium\nRound: unavailable\nHome form: LWWDL\nAway form: DWWLW\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Brighton & Hove Albion +100 (open -125); Draw +260 (open +260); Leeds United +275 (open +320)\nTavily context:\n  - Title: PREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n3 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nBrighton & Hove Albion and Leeds United face each other this Saturday at the The American Express Community Stadium for round three of the Premier League. ...\n    URL: https://sports.yahoo.com/articles/preview-brighton-hove-albion-vs-141500639.html\n  - Title: Brighton & Hove Albion vs Leeds United prediction tips and odds | 05/09/2026\n    Content: ## Brighton and Leeds head-to-head record\n\nBrighton hold a narrow overall edge in this fixture with 20 wins to Leeds' 19 across their full history in English football, with 14 draws in between making it one of the tightest rivalries in the Premier League.\n\nLeeds won the corresponding fixture at Elland Road 1-0 in May 2026 courtesy of Dominic Calvert-Lewin's goal, ending last season's meetings between the two clubs.\n\nBefore that, Brighton won the home fixture 3-0 in November 2025, their most recent victory over Leeds at the Amex. ...\n    URL: https://www.tntsports.co.uk/betting/tips/brighton-hove-albion-vs-leeds-united-prediction-tips-and-odds-05-09-2026\n  - Title: Brighton vs Leeds United Betting Pick | English Premier | 2026-09-05 |\n    Content: Brighton vs Leeds United English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - BRIGHTON V LEEDS UNITED\n\n## Brighton vs Leeds United football Betting Pick\n\nGambling advice by Auls covering the English Premier match Brighton vs Leeds United.\n\nSections on this page :\n\n▼ Betting Pick\n▼ Match Analysis\n▼ Forecast Score\n▼ Match Report\n▼ Support Our Site\n\nAuls's Recommended Bet :\n\nI'll back Brighton to Win at 1.95 with Bet365 (early payout if a team is leading by two goals)\n\n## English Premier\n\n## 2026-09-05 - Brighton vs Leeds United\n\n### A Sports Betting Pick by Auls ...\n    URL: https://www.goonersguide.com/football-pick-59877-Brighton-vs-Leeds-United.htm\n\nGame ID: 4\nSource event_id: 401879289\nMatchup: Crystal Palace (away) @ Fulham (home)\nHome: Fulham\nAway: Crystal Palace\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Craven Cottage\nRound: unavailable\nHome form: LWLWD\nAway form: LLWLD\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Fulham +130 (open +135); Draw +245 (open +230); Crystal Palace +205 (open +195)\nTavily context:\n  - Title: Preview: Fulham vs Crystal Palace - prediction, team news, lineups - Sports Mole\n    Content: Pierre Sage's side are about to enter a very busy period, with their Europa League league phase campaign beginning against Lech on September 17, while they will take on Middlesbrough in the EFL Cup on September 8 ahead of a home Premier League clash with Ipswich Town.\n\nPalace can take plenty of heart from their recent form against Fulham, and they have not actually been beaten by the Cottagers at Craven Cottage since January 2005.\n\nThe Eagles have won on each of their last three trips to Fulham in all competitions.\n\nFulham Premier League form:\n\n L\n L\n\nFulham form (all competitions): ...\n    URL: https://www.sportsmole.co.uk/football/fulham/preview/fulham-vs-crystal-palace-prediction-team-news-lineups_604397.html\n  - Title: Fulham vs Crystal Palace prediction and betting tips 07 December 2025 | Dailysports experts\n    Content: Dailysports Football Premier League England Predictions Fulham vs Crystal Palace: H2H, lineups and match prediction — December 7, 2025. # Fulham vs Crystal Palace: H2H, lineups and match prediction — December 7, 2025. Review Match details Lineup H2H Tournament table Odds Prediction. On Sunday, December 7, in the latest round of the English Premier League, Fulham will host Crystal Palace at Craven Cottage. ...\n    URL: https://dailysports.net/predictions/fulham-vs-crystal-palace-h2h-lineups-and-match-prediction-december-7-2025\n  - Title: Fulham-Crystal Palace - Premier League 2026/2027 - Betting\n    Content: Fulham host Crystal Palace and you can find the latest odds for this match on our odds widget above. Here you will be able to compare the best\n    URL: https://www.whoscored.com/matches/1983576/betting/england-premier-league-2026-2027-fulham-crystal-palace\n  - Title: Fulham vs Crystal Palace Prediction - Premier League - 05/09/2026\n    Content: Stake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Fulham and Crystal Palace?\n\nOur prediction for the Fulham vs Crystal Palace match is: BTTS.\n\nProbabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 05/09/2026 between Fulham and Crystal Palace in Premier League :\n\n## Fulham vs Crystal Palace Form\n\n## Fulham and Crystal Palace's standings in the Premier League ...\n    URL: https://www.sportytrader.com/en/betting-tips/fulham-crystal-palace-370271\n\nGame ID: 5\nSource event_id: 401879287\nMatchup: Coventry City (away) @ Manchester City (home)\nHome: Manchester City\nAway: Coventry City\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Etihad Stadium\nRound: unavailable\nHome form: WWLLD\nAway form: LWLWW\nHome record: 2-0-0\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Manchester City -600 (open -500); Draw +750 (open +600); Coventry City +1400 (open +950)\nTavily context:\n  - Title: PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09) | OneFootball\n    Content: Open menu\n\nOneFootball's home page\n\nSearch\n\nSettings\n\nSign In\n\n# PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09) | OneFootball\n\nIcon: Playmakerstats\n\nPlaymakerstats\n\n·3 September 2026\n\n## PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09)\n\nArticle image:PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09)\n\nManchester City and Coventry City face each other this Saturday at the Etihad Stadium on Match Day three of the Premier League. ...\n    URL: https://onefootball.com/en/news/preview-manchester-city-vs-coventry-city-team-news-lineups-predictions-premier-league-0509-43395208\n  - Title: Manchester City vs Coventry predicted lineup · 5 Sept 2026\n    Content: Guéhi\n\nProbable\n\nDias\n\nProbable\n\nGvardiol\n\nProbable\n\nAnderson\n\nProbable\n\nO'Reilly\n\nProbable\n\nCherki\n\nProbable\n\nFoden\n\nProbable\n\nSemenyo\n\nProbable\n\nHaaland\n\nProbable\n\n### Coventry\n\nGK\n\nRB\n\nCB\n\nCB\n\nLB\n\nCM\n\nCM\n\nCM\n\nRW\n\nST\n\nLW\n\nNo predictions yet. Be the first below.\n\nConfidence rings appear once 20fans have predicted.\n\n9 predictions\n\nPredict Manchester City's XI\n\n→No predictions yet\n\nPredict Coventry's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nManchester City\n\n4\n\n MIDNunesInjuryOut\n FWDDokuCalf InjuryOut\n MIDAndersonInjuryDoubtful\n FWDMcAidooShoulder InjuryDoubtful\n\nCoventry\n\n3 ...\n    URL: https://starting11.com/fixtures/manchester-city-vs-coventry\n  - Title: Manchester City vs Coventry City Prediction & Betting Tips - Premier League\n    Content: Check all Manchester City vs Coventry City odds\n\nPre-register for our Member Area: win €500!\n\n Sign me up\n\n## What is the prediction for the football match between Manchester City and Coventry City?\n\nOur prediction for the Manchester City vs Coventry City match is: BTTS.\n\nProbabilities according to our algorithm of possible 1X2 football predictions and best odds for the match on 05/09/2026 between Manchester City and Coventry Cityin Premier League :\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-city-coventry-city-370232\n  - Title: Manchester City vs Coventry City Betting Pick | English Premier\n    Content: Manchester City vs Coventry City English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - MANCHESTER CITY V COVENTRY CITY\n\n1  Home   ::::\n\n2  English Football Betting Tips    ::\n\n3  2026-09-05 - Manchester City vs Coventry City    :: [...] ## Manchester City vs Coventry City football Betting Pick\n\nGambling advice by Auls covering the English Premier match Manchester City vs Coventry City.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nAuls's Recommended Bet : ...\n    URL: https://www.goonersguide.com/football-pick-59879-Manchester-City-vs-Coventry-City.htm\n\nGame ID: 6\nSource event_id: 401878780\nMatchup: Tottenham Hotspur (away) @ Nottingham Forest (home)\nHome: Nottingham Forest\nAway: Tottenham Hotspur\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: The City Ground\nRound: unavailable\nHome form: DLLDL\nAway form: LWLWL\nHome record: 0-1-1\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Nottingham Forest +140 (open +165); Draw +245 (open +230); Tottenham Hotspur +195 (open +160)\nTavily context:\n  - Title: Nottingham Forest vs Tottenham: team news, lineups, predictions ...\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n2 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nNottingham Forest and Tottenham face each other this Saturday at the The City Ground on Match Day three of the Premier League. ...\n    URL: https://sports.yahoo.com/articles/preview-nottingham-forest-vs-tottenham-143000440.html\n  - Title: Nottingham Forest-Tottenham - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nNottingham Forest logo\nTottenham logo\nNottingham Forest logo\nTottenham logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nicolò Savona |  | Out | N/A |\n| Ibrahim Sangaré |  | Doubtful | 6.63 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Xavi Simons |  | Out | N/A |\n| Wilson Odobert |  | Out | N/A |\n| James Maddison |  | Doubtful | 6.06 |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1983586/preview/england-premier-league-2026-2027-nottingham-forest-tottenham\n  - Title: Nottingham Forest vs Tottenham Hotspur live score, H2H ...\n    Content: TIME: 14:00 UTC\n\nVENUE: City Ground, Nottingham, England\n\nMore details:Nottingham Forest live score, schedule and resultsTottenham Hotspur live score, schedule and resultsSofascore livescore is available as iPhone and iPad app, Android app on Google Play and Windows phone app. You can find us in all stores on different languages as \"Sofascore\". Install Sofascore app on and follow Nottingham Forest Tottenham Hotspur live on your mobile!\n\nShow more\n\nAdd to calendar\n\nAdd event ...\n    URL: https://www.sofascore.com/football/match/tottenham-hotspur-nottingham-forest/osI\n  - Title: Nottingham Forest vs Tottenham Prediction, Betting Tips ...\n    Content: ### Premier League Predictions\n\n### Premier League Lineups\n\n### Premier League Injuries\n\n### Premier League Fixtures\n\n### Premier League Standings\n\n### Premier League Transfer News\n\n#### Expert Analysis by Charlie Wilson\n\nEditor-in-Chief & Senior English Football Analyst\n\n#### About the Analyst\n\nCharlie Wilson is the Editor-in-Chief with over 15 years of experience as a sports journalist and former odds compiler. He leads our football analysis team and heads the Football Editorial Betting Panel with a primary focus on the Premier League and top European competitions. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/nottingham-forest-vs-tottenham-prediction-lineups-odds-2026-09-05\n\nGame ID: 7\nSource event_id: 401878781\nMatchup: Aston Villa (away) @ Hull City (home)\nHome: Hull City\nAway: Aston Villa\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: The MKM Stadium\nRound: unavailable\nHome form: WWWWW\nAway form: LLLWW\nHome record: 2-0-0\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Hull City +310 (open +285); Draw +270 (open +260); Aston Villa -115 (open -115)\nTavily context:\n  - Title: PREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n2 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nHull City and Aston Villa face each other this Saturday at the KCOM Stadium for matchweek three of the Premier League. The match will be broadcast live at 17:30 on Sky Sports Main Event. ...\n    URL: https://sports.yahoo.com/articles/preview-hull-city-vs-aston-164000698.html\n  - Title: Hull City vs Aston Villa: Predictions, Picks, Odds & Lineups\n    Content: Image 16: ⭐Image 17: ⭐Image 18: ⭐Image 19: ⭐Image 20: ⭐chance opening soon @ bet365\n\nOur approach: we weigh league position, points, goal difference, and recent form against our Signal model's data-driven picks to land on the most probable scoreline and market angles.\n\nTrade these markets on KalshiNew users get $10 — trade $10 to unlock. Prices update live.\n\nTrade on Kalshi →\n\nIf Kalshi isn’t your choice, we also rate Polymarket and ProphetX — or compare the full lineup.\n\nImage 21: PolymarketImage 22: ProphetXCompare All → [...] Squawka · Team News\n\n## Potential Match-Winners ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-hull-city-vs-aston-villa-05-09-26-premier-league\n  - Title: Aston Villa Betting Odds: 2026-2027 Season | 7bet\n    Content: ## Matchday 1 – Brighton & Hove Albion vs Aston Villa (23 August 2026)\n\nIn Matchweek 1 of the 2026/27 Premier League season, Aston Villa will face Brighton & Hove Albion away from home. The match will take place at the American Express Stadium on 23 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Brighton | Draw | Aston Villa |\n| 7/6 | 12/5 | 19/10 |\n\nPREMIER LEAGUE BETTING\n\n### Matchday 2 – Aston Villa vs Arsenal (31 August 2026) ...\n    URL: https://7bet.co.uk/blog/aston-villa-odds\n  - Title: Hull vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Timezone:\n\n 13:53 (+7:00)\n -12:00\n -11:00\n -10:00\n -09:00\n -08:00\n -07:00\n -06:00\n -05:00\n -04:00\n -03:00\n -02:00\n -01:00\n +00:00\n +01:00\n +02:00\n +03:00\n +04:00\n +05:00\n +06:00\n +07:00\n +08:00\n +09:00\n +10:00\n +11:00\n +12:00\n +13:00\n +14:00\n\nOdds Type:\n\n Decimal\n Fractional\n US Odds\n\n# Hull vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n\nBy  Jack Davies, English Football Analyst | Published: 9 hours ago | 4 min read\n\nHull City logo\n\nHull City\n\nFootball England - Premier League MKM Stadium  Sat 5 Sep 18:30\n\nAston Villa FC logo\n\nAston Villa FC ...\n    URL: https://www.sportsgambler.com/betting-tips/football/hull-vs-aston-villa-prediction-lineups-odds-2026-09-05\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879286\nMatchup: AFC Bournemouth (away) @ Newcastle United (home)\nHome: Newcastle United\nAway: AFC Bournemouth\nKickoff UTC: 2026-09-05T11:30Z\nKickoff ET: 2026-09-05 07:30 EDT\nVenue: St. James' Park\nRound: unavailable\nHome form: WWDLW\nAway form: DLDDW\nHome record: 1-1-0\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Newcastle United +115 (open +130); Draw +270 (open +260); AFC Bournemouth +220 (open +180)\nTavily context:\n  - Title: Newcastle-Bournemouth - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nNewcastle logo\nBournemouth logo\nNewcastle logo\nBournemouth logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| William Osula |  | Out | 6.92 |\n| Joelinton |  | Out | N/A |\n| Dan Burn |  | Out | N/A |\n| Tino Livramento |  | Doubtful | N/A | ...\n    URL: https://www.whoscored.com/matches/1983584/preview/england-premier-league-2026-2027-newcastle-bournemouth\n  - Title: Newcastle vs Bournemouth: team news, lineups, predictions (Premier ...\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nBournemouth have won 1 point to date and are placed in 15th position. In their last outing, Marco Rose's team drew 1-1 against Everton (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Bournemouth winning 2-1.\n\n## Predicted lineups\n\nNewcastle: Lukas Hornicek, Amar Dedić, Sven Botman, Malick Thiaw, Lewis Hall, Lewis Miley, Nico González, Anthony Elanga, Joe Willock, Harvey Barnes, Yoane Wissa ...\n    URL: https://sports.yahoo.com/articles/preview-newcastle-vs-bournemouth-team-113500687.html\n  - Title: Newcastle United vs AFC Bournemouth Prediction\n    Content: The odds are: Newcastle United to win 2.10, draw 3.50, AFC Bournemouth to win 3.40. The odds are Over 2.5 at 1.57 and Under 2.5 at 2.37. both\n    URL: https://betmines.com/match-preview/newcastle-united-vs-afc-bournemouth-prediction-match-preview-and-analysis-premier-league-05-09-2026\n  - Title: Newcastle vs. Bournemouth prediction, odds, Premier League picks [9/5/2026]\n    Content: Moneyline: Bournemouth +245, Newcastle +120\n Total Goals: Over/Under 2.5 (-156/+150)\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Model picks and best bet\n\nAfter matching our predictions against the best available odds, we can reveal our picks for each of the major markets in this matchup. Plus, find our best bet for the game below:\n\n Moneyline: Bournemouth @ +245 via Polymarket\n Total Goals: Over 2.5 @ -156 via Polymarket\n\nAccording to our Premier League best bets, the top play to make on this game is Bournemouth to win. ...\n    URL: https://www.dimers.com/epl/news/newcastle-vs-bournemouth-prediction-09-05-2026-ac\n\nGame ID: 2\nSource event_id: 401879311\nMatchup: Sunderland (away) @ Brentford (home)\nHome: Brentford\nAway: Sunderland\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Gtech Community Stadium\nRound: unavailable\nHome form: DWWDD\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Brentford -150 (open -140); Draw +295 (open +265); Sunderland +425 (open +380)\nTavily context:\n  - Title: PREVIEW | Brentford vs Sunderland: team news, lineups, predictions (Premier League 05/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nSunderland have won 3 points to date and are placed in 12th position. In their last game, Régis Le Bris's team won 1-0 against Fulham (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Brentford winning 3-0.\n\n## Predicted lineups\n\nBrentford: Caoimhin Kelleher, Michael Kayode, Kristoffer Ajer, Nathan Collins, Keane Lewis-Potter, Mamadou Sangaré, Vitaly Janelt, Jaidon Anthony, Mikkel Damsgaard, Kevin Schade, Igor Thiago ...\n    URL: https://sports.yahoo.com/articles/preview-brentford-vs-sunderland-team-141000305.html\n  - Title: Brentford vs Sunderland - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brentford vs Sunderland — Sat, September 5, 2:00 PM UTC\n\nPremier League Round 3\n\n Premier League Round 3\n Gtech Community Stadium\n\nBrentfordBrentford\n\n‌\n‌\n\nSunderlandSunderland\n\n# Brentford vs Sunderland — Sat, September 5, 2:00 PM UTC\n\nPremier League Round 3\n\n Premier League Round 3\n Gtech Community Stadium\n\nBrentfordBrentford\n\n‌\n‌\n\nSunderlandSunderland\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sepp van den Berg\n\n  Groin injury / Mid September 2026\n\nvan den BergGroin injuryMid September 2026\n\n  Antoni Milambo ...\n    URL: https://www.fotmob.com/matches/sunderland-vs-brentford/2sw7v2\n  - Title: Brentford vs Sunderland Betting Pick | English Premier | 2026-09-05 |\n    Content: Brentford vs Sunderland English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - BRENTFORD V SUNDERLAND\n\n1  Home   ::::\n\n2  English Football Betting Tips    ::\n\n3  2026-09-05 - Brentford vs Sunderland    :: [...] ⚽ GoonersGuide Betting Notes   Read the latest issue or subscribe free →\nA short weekly email highlighting betting angles and lines we think the market may have mispriced.\n\nBrentford vs Sunderland Betting Pick | English Premier | 2026-09-05 | ...\n    URL: https://www.goonersguide.com/football-pick-59876-Brentford-vs-Sunderland.htm\n  - Title: Brentford vs Sunderland prediction: Match preview, betting odds and tips on January 7, 2026 – Ratingbet.com\n    Content: Active tips 29\n\nForm\n\n## Trending expert predictions\n\nAston Villa vs Arsenal prediction: expert analysis, possible lineups, August 31, 2026\n\nEnglish Premier League 31 aug 2026, 16:00\n\n## Aston Villa vs Arsenal prediction: expert analysis, possible lineups, August 31, 2026\n\nAston Villa\n\nArsenal\n\n 1X2: 2\n\n1.6\n\n All Predictions →\n\nReviews  0\n\nOnly registered users can post comments\n\nGame Prediction  Our Pick\n\nTotal under 3,0\n\n1.8 [...] Ratingbet Football English Premier League Predictions  Brentford vs Sunderland prediction: Match preview, betting odds and tips on January 7, 2026 ...\n    URL: https://ratingbet.com/predictions/brentford-vs-sunderland-prediction-match-preview-betting-odds-and-tips-on-january-7-2026\n\nGame ID: 3\nSource event_id: 401879290\nMatchup: Leeds United (away) @ Brighton & Hove Albion (home)\nHome: Brighton & Hove Albion\nAway: Leeds United\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: American Express Stadium\nRound: unavailable\nHome form: LWWDL\nAway form: DWWLW\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Brighton & Hove Albion +100 (open -125); Draw +260 (open +260); Leeds United +275 (open +320)\nTavily context:\n  - Title: PREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Brighton & Hove Albion vs Leeds United: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n3 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nBrighton & Hove Albion and Leeds United face each other this Saturday at the The American Express Community Stadium for round three of the Premier League. ...\n    URL: https://sports.yahoo.com/articles/preview-brighton-hove-albion-vs-141500639.html\n  - Title: Brighton & Hove Albion vs Leeds United prediction tips and odds | 05/09/2026\n    Content: ## Brighton and Leeds head-to-head record\n\nBrighton hold a narrow overall edge in this fixture with 20 wins to Leeds' 19 across their full history in English football, with 14 draws in between making it one of the tightest rivalries in the Premier League.\n\nLeeds won the corresponding fixture at Elland Road 1-0 in May 2026 courtesy of Dominic Calvert-Lewin's goal, ending last season's meetings between the two clubs.\n\nBefore that, Brighton won the home fixture 3-0 in November 2025, their most recent victory over Leeds at the Amex. ...\n    URL: https://www.tntsports.co.uk/betting/tips/brighton-hove-albion-vs-leeds-united-prediction-tips-and-odds-05-09-2026\n  - Title: Brighton vs Leeds United Betting Pick | English Premier | 2026-09-05 |\n    Content: Brighton vs Leeds United English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - BRIGHTON V LEEDS UNITED\n\n## Brighton vs Leeds United football Betting Pick\n\nGambling advice by Auls covering the English Premier match Brighton vs Leeds United.\n\nSections on this page :\n\n▼ Betting Pick\n▼ Match Analysis\n▼ Forecast Score\n▼ Match Report\n▼ Support Our Site\n\nAuls's Recommended Bet :\n\nI'll back Brighton to Win at 1.95 with Bet365 (early payout if a team is leading by two goals)\n\n## English Premier\n\n## 2026-09-05 - Brighton vs Leeds United\n\n### A Sports Betting Pick by Auls ...\n    URL: https://www.goonersguide.com/football-pick-59877-Brighton-vs-Leeds-United.htm\n\nGame ID: 4\nSource event_id: 401879289\nMatchup: Crystal Palace (away) @ Fulham (home)\nHome: Fulham\nAway: Crystal Palace\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Craven Cottage\nRound: unavailable\nHome form: LWLWD\nAway form: LLWLD\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Fulham +130 (open +135); Draw +245 (open +230); Crystal Palace +205 (open +195)\nTavily context:\n  - Title: Preview: Fulham vs Crystal Palace - prediction, team news, lineups - Sports Mole\n    Content: Pierre Sage's side are about to enter a very busy period, with their Europa League league phase campaign beginning against Lech on September 17, while they will take on Middlesbrough in the EFL Cup on September 8 ahead of a home Premier League clash with Ipswich Town.\n\nPalace can take plenty of heart from their recent form against Fulham, and they have not actually been beaten by the Cottagers at Craven Cottage since January 2005.\n\nThe Eagles have won on each of their last three trips to Fulham in all competitions.\n\nFulham Premier League form:\n\n L\n L\n\nFulham form (all competitions): ...\n    URL: https://www.sportsmole.co.uk/football/fulham/preview/fulham-vs-crystal-palace-prediction-team-news-lineups_604397.html\n  - Title: Fulham vs Crystal Palace prediction and betting tips 07 December 2025 | Dailysports experts\n    Content: Dailysports Football Premier League England Predictions Fulham vs Crystal Palace: H2H, lineups and match prediction — December 7, 2025. # Fulham vs Crystal Palace: H2H, lineups and match prediction — December 7, 2025. Review Match details Lineup H2H Tournament table Odds Prediction. On Sunday, December 7, in the latest round of the English Premier League, Fulham will host Crystal Palace at Craven Cottage. ...\n    URL: https://dailysports.net/predictions/fulham-vs-crystal-palace-h2h-lineups-and-match-prediction-december-7-2025\n  - Title: Fulham-Crystal Palace - Premier League 2026/2027 - Betting\n    Content: Fulham host Crystal Palace and you can find the latest odds for this match on our odds widget above. Here you will be able to compare the best\n    URL: https://www.whoscored.com/matches/1983576/betting/england-premier-league-2026-2027-fulham-crystal-palace\n  - Title: Fulham vs Crystal Palace Prediction - Premier League - 05/09/2026\n    Content: Stake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Fulham and Crystal Palace?\n\nOur prediction for the Fulham vs Crystal Palace match is: BTTS.\n\nProbabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 05/09/2026 between Fulham and Crystal Palace in Premier League :\n\n## Fulham vs Crystal Palace Form\n\n## Fulham and Crystal Palace's standings in the Premier League ...\n    URL: https://www.sportytrader.com/en/betting-tips/fulham-crystal-palace-370271\n\nGame ID: 5\nSource event_id: 401879287\nMatchup: Coventry City (away) @ Manchester City (home)\nHome: Manchester City\nAway: Coventry City\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: Etihad Stadium\nRound: unavailable\nHome form: WWLLD\nAway form: LWLWW\nHome record: 2-0-0\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Manchester City -600 (open -500); Draw +750 (open +600); Coventry City +1400 (open +950)\nTavily context:\n  - Title: PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09) | OneFootball\n    Content: Open menu\n\nOneFootball's home page\n\nSearch\n\nSettings\n\nSign In\n\n# PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09) | OneFootball\n\nIcon: Playmakerstats\n\nPlaymakerstats\n\n·3 September 2026\n\n## PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09)\n\nArticle image:PREVIEW | Manchester City vs Coventry City: team news, lineups, predictions (Premier League 05/09)\n\nManchester City and Coventry City face each other this Saturday at the Etihad Stadium on Match Day three of the Premier League. ...\n    URL: https://onefootball.com/en/news/preview-manchester-city-vs-coventry-city-team-news-lineups-predictions-premier-league-0509-43395208\n  - Title: Manchester City vs Coventry predicted lineup · 5 Sept 2026\n    Content: Guéhi\n\nProbable\n\nDias\n\nProbable\n\nGvardiol\n\nProbable\n\nAnderson\n\nProbable\n\nO'Reilly\n\nProbable\n\nCherki\n\nProbable\n\nFoden\n\nProbable\n\nSemenyo\n\nProbable\n\nHaaland\n\nProbable\n\n### Coventry\n\nGK\n\nRB\n\nCB\n\nCB\n\nLB\n\nCM\n\nCM\n\nCM\n\nRW\n\nST\n\nLW\n\nNo predictions yet. Be the first below.\n\nConfidence rings appear once 20fans have predicted.\n\n9 predictions\n\nPredict Manchester City's XI\n\n→No predictions yet\n\nPredict Coventry's XI\n\n→\n\n## Injuries & suspensions\n\nFull list →\n\nManchester City\n\n4\n\n MIDNunesInjuryOut\n FWDDokuCalf InjuryOut\n MIDAndersonInjuryDoubtful\n FWDMcAidooShoulder InjuryDoubtful\n\nCoventry\n\n3 ...\n    URL: https://starting11.com/fixtures/manchester-city-vs-coventry\n  - Title: Manchester City vs Coventry City Prediction & Betting Tips - Premier League\n    Content: Check all Manchester City vs Coventry City odds\n\nPre-register for our Member Area: win €500!\n\n Sign me up\n\n## What is the prediction for the football match between Manchester City and Coventry City?\n\nOur prediction for the Manchester City vs Coventry City match is: BTTS.\n\nProbabilities according to our algorithm of possible 1X2 football predictions and best odds for the match on 05/09/2026 between Manchester City and Coventry Cityin Premier League :\n    URL: https://www.sportytrader.com/en/betting-tips/manchester-city-coventry-city-370232\n  - Title: Manchester City vs Coventry City Betting Pick | English Premier\n    Content: Manchester City vs Coventry City English Premier betting pick played on 2026-09-05\n\n# ENGLISH PREMIER BETTING PICK - MANCHESTER CITY V COVENTRY CITY\n\n1  Home   ::::\n\n2  English Football Betting Tips    ::\n\n3  2026-09-05 - Manchester City vs Coventry City    :: [...] ## Manchester City vs Coventry City football Betting Pick\n\nGambling advice by Auls covering the English Premier match Manchester City vs Coventry City.\n\nSections on this page :\n\n▼ Betting Pick ▼ Match Analysis ▼ Forecast Score ▼ Match Report ▼ Support Our Site\n\nAuls's Recommended Bet : ...\n    URL: https://www.goonersguide.com/football-pick-59879-Manchester-City-vs-Coventry-City.htm\n\nGame ID: 6\nSource event_id: 401878780\nMatchup: Tottenham Hotspur (away) @ Nottingham Forest (home)\nHome: Nottingham Forest\nAway: Tottenham Hotspur\nKickoff UTC: 2026-09-05T14:00Z\nKickoff ET: 2026-09-05 10:00 EDT\nVenue: The City Ground\nRound: unavailable\nHome form: DLLDL\nAway form: LWLWL\nHome record: 0-1-1\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Nottingham Forest +140 (open +165); Draw +245 (open +230); Tottenham Hotspur +195 (open +160)\nTavily context:\n  - Title: Nottingham Forest vs Tottenham: team news, lineups, predictions ...\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Nottingham Forest vs Tottenham: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n2 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nNottingham Forest and Tottenham face each other this Saturday at the The City Ground on Match Day three of the Premier League. ...\n    URL: https://sports.yahoo.com/articles/preview-nottingham-forest-vs-tottenham-143000440.html\n  - Title: Nottingham Forest-Tottenham - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nNottingham Forest logo\nTottenham logo\nNottingham Forest logo\nTottenham logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nicolò Savona |  | Out | N/A |\n| Ibrahim Sangaré |  | Doubtful | 6.63 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Xavi Simons |  | Out | N/A |\n| Wilson Odobert |  | Out | N/A |\n| James Maddison |  | Doubtful | 6.06 |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1983586/preview/england-premier-league-2026-2027-nottingham-forest-tottenham\n  - Title: Nottingham Forest vs Tottenham Hotspur live score, H2H ...\n    Content: TIME: 14:00 UTC\n\nVENUE: City Ground, Nottingham, England\n\nMore details:Nottingham Forest live score, schedule and resultsTottenham Hotspur live score, schedule and resultsSofascore livescore is available as iPhone and iPad app, Android app on Google Play and Windows phone app. You can find us in all stores on different languages as \"Sofascore\". Install Sofascore app on and follow Nottingham Forest Tottenham Hotspur live on your mobile!\n\nShow more\n\nAdd to calendar\n\nAdd event ...\n    URL: https://www.sofascore.com/football/match/tottenham-hotspur-nottingham-forest/osI\n  - Title: Nottingham Forest vs Tottenham Prediction, Betting Tips ...\n    Content: ### Premier League Predictions\n\n### Premier League Lineups\n\n### Premier League Injuries\n\n### Premier League Fixtures\n\n### Premier League Standings\n\n### Premier League Transfer News\n\n#### Expert Analysis by Charlie Wilson\n\nEditor-in-Chief & Senior English Football Analyst\n\n#### About the Analyst\n\nCharlie Wilson is the Editor-in-Chief with over 15 years of experience as a sports journalist and former odds compiler. He leads our football analysis team and heads the Football Editorial Betting Panel with a primary focus on the Premier League and top European competitions. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/nottingham-forest-vs-tottenham-prediction-lineups-odds-2026-09-05\n\nGame ID: 7\nSource event_id: 401878781\nMatchup: Aston Villa (away) @ Hull City (home)\nHome: Hull City\nAway: Aston Villa\nKickoff UTC: 2026-09-05T16:30Z\nKickoff ET: 2026-09-05 12:30 EDT\nVenue: The MKM Stadium\nRound: unavailable\nHome form: WWWWW\nAway form: LLLWW\nHome record: 2-0-0\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Hull City +310 (open +285); Draw +270 (open +260); Aston Villa -115 (open -115)\nTavily context:\n  - Title: PREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n    Content: Story by\n\n  Playmakerstats\n PREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPREVIEW | Hull City vs Aston Villa: team news, lineups, predictions (Premier League 05/09)\n\nPlaymakerstats\n\n·\n\n2 min read\n\n About Our Ads\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nHull City and Aston Villa face each other this Saturday at the KCOM Stadium for matchweek three of the Premier League. The match will be broadcast live at 17:30 on Sky Sports Main Event. ...\n    URL: https://sports.yahoo.com/articles/preview-hull-city-vs-aston-164000698.html\n  - Title: Hull City vs Aston Villa: Predictions, Picks, Odds & Lineups\n    Content: Image 16: ⭐Image 17: ⭐Image 18: ⭐Image 19: ⭐Image 20: ⭐chance opening soon @ bet365\n\nOur approach: we weigh league position, points, goal difference, and recent form against our Signal model's data-driven picks to land on the most probable scoreline and market angles.\n\nTrade these markets on KalshiNew users get $10 — trade $10 to unlock. Prices update live.\n\nTrade on Kalshi →\n\nIf Kalshi isn’t your choice, we also rate Polymarket and ProphetX — or compare the full lineup.\n\nImage 21: PolymarketImage 22: ProphetXCompare All → [...] Squawka · Team News\n\n## Potential Match-Winners ...\n    URL: https://www.squawka.com/us/news/premier-league/match-preview-hull-city-vs-aston-villa-05-09-26-premier-league\n  - Title: Aston Villa Betting Odds: 2026-2027 Season | 7bet\n    Content: ## Matchday 1 – Brighton & Hove Albion vs Aston Villa (23 August 2026)\n\nIn Matchweek 1 of the 2026/27 Premier League season, Aston Villa will face Brighton & Hove Albion away from home. The match will take place at the American Express Stadium on 23 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Brighton | Draw | Aston Villa |\n| 7/6 | 12/5 | 19/10 |\n\nPREMIER LEAGUE BETTING\n\n### Matchday 2 – Aston Villa vs Arsenal (31 August 2026) ...\n    URL: https://7bet.co.uk/blog/aston-villa-odds\n  - Title: Hull vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Timezone:\n\n 13:53 (+7:00)\n -12:00\n -11:00\n -10:00\n -09:00\n -08:00\n -07:00\n -06:00\n -05:00\n -04:00\n -03:00\n -02:00\n -01:00\n +00:00\n +01:00\n +02:00\n +03:00\n +04:00\n +05:00\n +06:00\n +07:00\n +08:00\n +09:00\n +10:00\n +11:00\n +12:00\n +13:00\n +14:00\n\nOdds Type:\n\n Decimal\n Fractional\n US Odds\n\n# Hull vs Aston Villa Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n\nBy  Jack Davies, English Football Analyst | Published: 9 hours ago | 4 min read\n\nHull City logo\n\nHull City\n\nFootball England - Premier League MKM Stadium  Sat 5 Sep 18:30\n\nAston Villa FC logo\n\nAston Villa FC ...\n    URL: https://www.sportsgambler.com/betting-tips/football/hull-vs-aston-villa-prediction-lineups-odds-2026-09-05\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879286",
+                        "date_utc": "2026-09-05T11:30Z",
+                        "kickoff_et": "2026-09-05 07:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Newcastle United",
+                        "away": "AFC Bournemouth",
+                        "home_id": "361",
+                        "away_id": "349",
+                        "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                        "venue": "St. James' Park",
+                        "city": "Newcastle-upon-Tyne",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWDLW",
+                        "form_away": "DLDDW",
+                        "record_home": "1-1-0",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+130",
+                            "home_current": "+115",
+                            "draw_open": "+260",
+                            "draw_current": "+270",
+                            "away_open": "+180",
+                            "away_current": "+220"
+                        },
+                        "odds_text": "DraftKings: Newcastle United +115 (open +130); Draw +270 (open +260); AFC Bournemouth +220 (open +180)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879311",
+                        "date_utc": "2026-09-05T14:00Z",
+                        "kickoff_et": "2026-09-05 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Brentford",
+                        "away": "Sunderland",
+                        "home_id": "337",
+                        "away_id": "366",
+                        "matchup": "Sunderland (away) @ Brentford (home)",
+                        "venue": "Gtech Community Stadium",
+                        "city": "Brentford",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DWWDD",
+                        "form_away": "WLWWD",
+                        "record_home": "1-1-0",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-140",
+                            "home_current": "-150",
+                            "draw_open": "+265",
+                            "draw_current": "+295",
+                            "away_open": "+380",
+                            "away_current": "+425"
+                        },
+                        "odds_text": "Provider unavailable: Brentford -150 (open -140); Draw +295 (open +265); Sunderland +425 (open +380)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401879290",
+                        "date_utc": "2026-09-05T14:00Z",
+                        "kickoff_et": "2026-09-05 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Brighton & Hove Albion",
+                        "away": "Leeds United",
+                        "home_id": "331",
+                        "away_id": "357",
+                        "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                        "venue": "American Express Stadium",
+                        "city": "Falmer",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWWDL",
+                        "form_away": "DWWLW",
+                        "record_home": "1-0-1",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-125",
+                            "home_current": "+100",
+                            "draw_open": "+260",
+                            "draw_current": "+260",
+                            "away_open": "+320",
+                            "away_current": "+275"
+                        },
+                        "odds_text": "Provider unavailable: Brighton & Hove Albion +100 (open -125); Draw +260 (open +260); Leeds United +275 (open +320)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401879289",
+                        "date_utc": "2026-09-05T14:00Z",
+                        "kickoff_et": "2026-09-05 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Fulham",
+                        "away": "Crystal Palace",
+                        "home_id": "370",
+                        "away_id": "384",
+                        "matchup": "Crystal Palace (away) @ Fulham (home)",
+                        "venue": "Craven Cottage",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWLWD",
+                        "form_away": "LLWLD",
+                        "record_home": "0-0-2",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+135",
+                            "home_current": "+130",
+                            "draw_open": "+230",
+                            "draw_current": "+245",
+                            "away_open": "+195",
+                            "away_current": "+205"
+                        },
+                        "odds_text": "Provider unavailable: Fulham +130 (open +135); Draw +245 (open +230); Crystal Palace +205 (open +195)",
+                        "game_id": 4
+                    },
+                    {
+                        "event_id": "401879287",
+                        "date_utc": "2026-09-05T14:00Z",
+                        "kickoff_et": "2026-09-05 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Manchester City",
+                        "away": "Coventry City",
+                        "home_id": "382",
+                        "away_id": "388",
+                        "matchup": "Coventry City (away) @ Manchester City (home)",
+                        "venue": "Etihad Stadium",
+                        "city": "Manchester",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWLLD",
+                        "form_away": "LWLWW",
+                        "record_home": "2-0-0",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-500",
+                            "home_current": "-600",
+                            "draw_open": "+600",
+                            "draw_current": "+750",
+                            "away_open": "+950",
+                            "away_current": "+1400"
+                        },
+                        "odds_text": "Provider unavailable: Manchester City -600 (open -500); Draw +750 (open +600); Coventry City +1400 (open +950)",
+                        "game_id": 5
+                    },
+                    {
+                        "event_id": "401878780",
+                        "date_utc": "2026-09-05T14:00Z",
+                        "kickoff_et": "2026-09-05 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Nottingham Forest",
+                        "away": "Tottenham Hotspur",
+                        "home_id": "393",
+                        "away_id": "367",
+                        "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                        "venue": "The City Ground",
+                        "city": "Nottingham",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DLLDL",
+                        "form_away": "LWLWL",
+                        "record_home": "0-1-1",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+165",
+                            "home_current": "+140",
+                            "draw_open": "+230",
+                            "draw_current": "+245",
+                            "away_open": "+160",
+                            "away_current": "+195"
+                        },
+                        "odds_text": "Provider unavailable: Nottingham Forest +140 (open +165); Draw +245 (open +230); Tottenham Hotspur +195 (open +160)",
+                        "game_id": 6
+                    },
+                    {
+                        "event_id": "401878781",
+                        "date_utc": "2026-09-05T16:30Z",
+                        "kickoff_et": "2026-09-05 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Hull City",
+                        "away": "Aston Villa",
+                        "home_id": "306",
+                        "away_id": "362",
+                        "matchup": "Aston Villa (away) @ Hull City (home)",
+                        "venue": "The MKM Stadium",
+                        "city": "Hull",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWWWW",
+                        "form_away": "LLLWW",
+                        "record_home": "2-0-0",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+285",
+                            "home_current": "+310",
+                            "draw_open": "+260",
+                            "draw_current": "+270",
+                            "away_open": "-115",
+                            "away_current": "-115"
+                        },
+                        "odds_text": "Provider unavailable: Hull City +310 (open +285); Draw +270 (open +260); Aston Villa -115 (open -115)",
+                        "game_id": 7
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-04T10:22:23.746818-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:01:15.218172-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle United are favorites at home according to DraftKings odds, moving from +130 to +115. Despite some key defensive absences like Joelinton and Dan Burn, they still possess enough quality at St. James' Park to edge out Bournemouth.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are solid favorites at home with -150 odds. While Sunderland has started respectably, the step up to face a Premier League mainstay at the Gtech Community Stadium gives Brentford a strong edge.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are even-money (+100) favorites at home. Their strong tactical foundation at the Amex gives them the upper hand against Leeds United, though Leeds is competitive enough to make it a tight affair.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Fulham is slightly favored at +130 at Craven Cottage. Although Crystal Palace has historically performed well in away fixtures against Fulham, current bookmaker lines lean toward the home side in a tightly contested matchup.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy favorites (-600) at the Etihad Stadium against newly promoted Coventry City. Despite minor injury concerns, City's depth and home record point to a comfortable victory.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very closely matched game according to bookmakers, with Nottingham Forest slightly favored at +140. Tottenham's high line makes them dangerous but vulnerable, and the City Ground atmosphere gives the slight edge to the hosts.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are favorites at -115 away at Hull City. Villa's superior squad quality and European pedigree make them likely to claim all three points against a Hull City side fighting for mid-table security.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-04T10:01:32.355412-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle United is slightly favored at home with +115 odds, facing a Bournemouth side that has drawn or lost its recent games. St. James' Park provides a solid home advantage.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Brentford is a heavy favorite at -150 odds at home. Sunderland comes in as an underdog, and Brentford's stronger Premier League experience should secure the win.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton enters the match with +100 odds to win at the Amex, suggesting about a 50% chance of victory against Leeds United, despite a close head-to-head record historically.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Fulham is the marginal favorite at +130 odds, though Crystal Palace has historically performed well at Craven Cottage. The home edge tilts the prediction slightly towards Fulham.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is overwhelmingly favored at -600 to win at the Etihad. Coventry City faces an enormous challenge and an upset is highly unlikely.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest are narrow favorites (+140) at the City Ground. With Tottenham in mixed form on the road, Forest holds a slight advantage in a closely contested matchup.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are road favorites with -115 odds against Hull City. While Hull's overall form is strong, Villa's superior squad quality gives them the edge.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-04T10:02:24.897669-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.452,
+                    "draw_probability": 0.267,
+                    "away_win_probability": 0.281,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Newcastle are favored at home and have had a slightly better start to the season than Bournemouth. However, Newcastle has some key injuries and Bournemouth won the last head-to-head meeting, making this a potentially close match. The home advantage at St. James' Park should provide the decisive edge.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Brentford is unbeaten this season and are traditionally very strong at their home ground. They are heavy favorites according to the bookmakers and won the last encounter against Sunderland 3-0. Despite Sunderland's decent form, Brentford's quality and home advantage make them clear favorites.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have started the season in similar form. However, Brighton are favorites at home, where they are a difficult team to beat. Brighton also won the last corresponding fixture 3-0, giving them a psychological edge in what is expected to be a competitive match.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have started the season poorly, each losing their first two games. While Fulham has the home advantage, Crystal Palace has an exceptionally strong historical record at Craven Cottage, having not lost there since 2005. With both sides desperate to get a point on the board and struggling for form, a draw is a very likely outcome.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites, boasting a perfect record so far this season while playing at home against a winless Coventry side. The disparity in squad quality, depth, and current form is vast, making a comfortable home victory the most probable result.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both clubs are struggling for form and are yet to record a win this season. Nottingham Forest are slight favorites based on home advantage and Tottenham's significant injury concerns, which include key creative players. Given Spurs' poor start, especially away from home, Forest has a slight edge to secure a narrow victory.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "This match presents a classic conflict between current form and perceived team quality. Hull City has a perfect record from two games, whereas Aston Villa has lost both. Despite this, the bookmakers favor Aston Villa, suggesting a strong expectation that their superior roster will overcome their poor start. While Hull are in form, Villa are predicted to bounce back.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:04:29.128097-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle United has a better home record and generally stronger form than AFC Bournemouth's away record. While Bournemouth won the last meeting and some models suggest an away win, Newcastle's home advantage and overall strength make them slight favorites, though significant injuries to key players like Joelinton and Dan Burn could make the game tighter, increasing draw or away win chances.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Brentford is a strong favorite at home with a solid home record (1-1-0) and good form (DWWDD). They also won the last head-to-head match against Sunderland 3-0. Sunderland's away record (1-0-1) is decent but less convincing against Brentford's overall strength.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium-high",
+                    "reasoning": "Brighton holds a slight historical edge and is favored by most odds providers. They have a decent home record (1-0-1) and won their last home fixture against Leeds 3-0 in November 2025. Leeds' away form is strong, but Brighton's home advantage and expert picks lean towards a home victory.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have started the season poorly with 0-0-2 home/away records. Historically, Crystal Palace has an excellent record at Craven Cottage, not losing there since January 2005 and winning their last three trips. This strong head-to-head trend suggests Palace can avoid a loss, making a draw a highly plausible outcome given both teams' current struggles.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is a dominant force at home, boasting a perfect 2-0-0 home record. Coventry City, in contrast, has a poor 0-0-2 away record. The odds heavily favor Manchester City, indicating a clear mismatch in quality and current form.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both Nottingham Forest (0-1-1 home) and Tottenham Hotspur (0-0-2 away) have had very poor starts to the season. Tottenham also has significant injuries to key players like Xavi Simons and James Maddison, which will weaken their attacking threat. Given both teams' struggles and Tottenham's injury woes, a cagey affair is expected, making a draw a likely outcome.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium-high",
+                    "reasoning": "Hull City enters this match with a perfect 2-0-0 home record and excellent recent form (WWWWW). Aston Villa, despite being favored by the odds, has had a very poor start to their away campaign (0-0-2) and recent form (LLLWW) indicates struggles. Hull's strong home performance combined with Villa's poor away form makes a home win a strong possibility, contrary to initial odds.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:08:00.564321-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.444,
+                    "draw_probability": 0.258,
+                    "away_win_probability": 0.298,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Newcastle are slight market favorites at St. James' Park and have the better early home record, but key absences and Bournemouth's competitive pricing keep the upset and draw probabilities substantial.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.575,
+                    "draw_probability": 0.243,
+                    "away_win_probability": 0.182,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are clear home favorites, with a solid start at the Gtech and stronger market support. Sunderland's recent win tempers confidence but they remain meaningful underdogs away.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.479,
+                    "draw_probability": 0.266,
+                    "away_win_probability": 0.255,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Brighton hold the home edge and remain narrow favorites, though the odds movement toward Leeds and Leeds' strong recent form make this a relatively close three-way forecast.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.413,
+                    "draw_probability": 0.275,
+                    "away_win_probability": 0.312,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Fulham are marginal home favorites, but both sides have started poorly and Palace's strong recent record at Craven Cottage keeps the draw and away-win chances high.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.823,
+                    "draw_probability": 0.113,
+                    "away_win_probability": 0.064,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavily odds-on at the Etihad, have opened strongly at home, and retain a major squad-quality advantage over a Coventry side that has struggled away.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.399,
+                    "draw_probability": 0.277,
+                    "away_win_probability": 0.324,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Forest have taken market support at home, while Tottenham are winless away and dealing with attacking midfield absences. Forest's own poor form keeps this matchup close.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.233,
+                    "draw_probability": 0.258,
+                    "away_win_probability": 0.509,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are clear away favorites despite Hull's excellent recent form and strong home start. Villa's squad strength and pricing edge make the away win the most likely 90-minute result.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:08:25.767619-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are favored at St. James' Park and the market has moved toward the home side from the open. Bournemouth have been competitive but have only one point from two matches, while Newcastle's stronger home profile offsets some injury concerns.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are clear home favorites and have a strong recent form line with an unbeaten start. Sunderland have shown resilience, but Brentford's home edge, superior odds position, and prior head-to-head advantage make a home win the most likely result.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton retain a modest home advantage and are slight favorites, but the market has moved toward Leeds and the away side's early record is solid. The probabilities are relatively tight, making this a lower-confidence home lean.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Fulham are narrow home favorites, but both teams have opened poorly and Palace have a strong recent record at Craven Cottage. The matchup projects as close, with the draw and away win both live outcomes.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at the Etihad against a Coventry side that has lost both away matches. City's squad depth and home dominance make the home win clearly the most likely result despite a few injury concerns.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest have been backed in the market and Tottenham's away record plus attacking injuries reduce Spurs' appeal. Still, both sides have mixed form, so this is a narrow home lean rather than a strong call.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are the stronger side on paper and are priced as away favorites, though Hull's excellent early form and perfect home record keep the upset risk meaningful. Villa remain the most likely regulation-time winner.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-04T10:09:27.991044-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market has moved toward Newcastle (shorter home price, Bournemouth drifting), and Newcastle’s recent form and home advantage at St. James’ Park outweigh Bournemouth’s steadier draw-heavy run. Injuries for Newcastle temper the edge, keeping draw/away chances meaningful.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are priced as clear favorites and are typically strong at home, while Sunderland’s decent early form is acknowledged mainly through an elevated draw probability. Overall team quality and home venue tilt the most likely 90-minute result to Brentford.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton retain a slight home edge at the Amex, but the notable odds drift from earlier prices suggests reduced separation between the sides. With Leeds’ solid start and matchup history being fairly even, this is close to a coin flip with a high draw/away threat.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have struggled to start, but Palace’s strong recent record at Craven Cottage nudges the away side slightly ahead of a draw. Pricing is tight, so the advantage is marginal and volatility is high.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.84,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at the Etihad by market expectation and underlying squad strength, with Coventry’s away win requiring a major upset. Draw risk exists mainly via game-state variance, but the most likely 90-minute outcome is a City win.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "The market movement favors Forest (home shortening, Spurs drifting), and Forest’s home setting plus Tottenham injury/availability concerns reduce Spurs’ edge. With both sides inconsistent, Forest are a narrow favorite with a substantial draw probability.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Villa are priced as the clear favorite despite being away, reflecting higher overall quality and depth. Hull’s strong recent form keeps the upset/draw paths live, but Villa remain the most probable regulation-time winner.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-04T10:09:53.841448-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are stronger at St. James' Park with better recent form and market odds slightly favoring them; Bournemouth have drawn and struggled for points early and Newcastle's lineup depth gives them the edge.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are favored by the market and have been solid at home; Sunderland have shown good moments but are the underdog on paper and away.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are marginal favorites at the Amex with a consistent home record; Leeds are competitive but the home side's form and slight market edge make Brighton most likely.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This looks evenly matched on form and recent meetings; market prices are close and a low-confidence lean to Fulham at home is supported by slight home advantage.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy favorites with dominant home form and squad quality far above Coventry; probability reflects a strong expected City win in regulation.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham are marginally stronger overall despite being away; Forest's inconsistent form makes an away win the likeliest outcome, though a draw remains plausible.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are favored by the market and have stronger squad depth; Hull's good start makes an upset possible, but Villa are the clear pick in regulation time.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-04T10:10:48.515869-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.443,
+                    "draw_probability": 0.258,
+                    "away_win_probability": 0.299,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Using implied probabilities from odds (+115 home, +270 draw, +220 away) normalized to sum to 1: home ~0.443, draw ~0.258, away ~0.299. Newcastle favored.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.575,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.183,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford odds around  -150 (home) imply ~0.600 before normalization; after normalization, home ~0.575, draw ~0.242, away ~0.183.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.479,
+                    "draw_probability": 0.266,
+                    "away_win_probability": 0.255,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton slight favorite from odds (+100) corresponding to ~0.50, normalized to ~0.479; draw ~0.266; Leeds ~0.255.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.555,
+                    "draw_probability": 0.209,
+                    "away_win_probability": 0.236,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fulham odds around +130 (home) imply ~0.769, normalized to ~0.555; draw ~0.209; Palace ~0.236.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.126,
+                    "away_win_probability": 0.064,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "City heavily favored (~81.0%); draw ~12.6%; Coventry ~6.4% after normalization.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.399,
+                    "draw_probability": 0.278,
+                    "away_win_probability": 0.323,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest strongest to win ~39.9%; Tottenham ~32.3%; draw ~27.8% after normalization.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.233,
+                    "draw_probability": 0.258,
+                    "away_win_probability": 0.509,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Villa favored ~50.9% to win; Hull ~23.3%; draw ~25.8% after normalization.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-04T10:10:55.737513-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle have a strong home record and slightly better recent form, despite some key absences. Odds and model picks are split, but Newcastle's home advantage and squad depth give them a slight edge over Bournemouth, who have struggled to convert draws into wins.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Brentford are unbeaten at home and have a superior squad and recent form compared to newly promoted Sunderland. The odds heavily favor Brentford, and their home advantage should be decisive.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton have a slight historical edge and are at home, but Leeds' form is solid. The odds and expert picks lean toward Brighton, but a draw or Leeds win is not out of the question given both teams' recent results.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have struggled for consistency, and Palace have a strong away record at Fulham. The odds are close, and recent meetings have been tight, making a draw the most likely outcome.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at home against newly promoted Coventry. City's squad depth and quality are far superior, and the odds reflect a likely comfortable win.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have been inconsistent, with Forest struggling at home and Spurs not convincing away. The odds are close, and injuries on both sides make this a tough call, so a draw is slightly favored.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are favored by the odds and have a stronger squad, but Hull's perfect home form makes this tricky. Villa's quality should prevail, but Hull could make it close.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-04T10:11:09.785186-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle's strong home form and favorable odds suggest a likely win, despite Bournemouth's recent victory in their last meeting.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Brentford's solid home record and Sunderland's inconsistent away form make Brentford the favorites.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown similar form, and the historical head-to-head record is very balanced.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Crystal Palace's recent success at Craven Cottage gives them a slight edge, but both teams have struggled recently.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City's superior squad and home advantage make them overwhelming favorites against Coventry.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have been inconsistent, but Tottenham's slightly better squad depth gives them a marginal advantage.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa's stronger squad and Hull's weaker opposition in recent wins suggest Villa should prevail.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-04T10:11:35.588612-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Newcastle are moderate favorites at St. James' Park per DraftKings odds (+115), though the line has moved toward Bournemouth since opening. Newcastle have injury concerns (Joelinton, Burn, Osula out) and Bournemouth won the last meeting 2-1, keeping the away side live, but home advantage and squad quality favor Newcastle.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are clear favorites at -150 and won the last meeting 3-0. Sunderland arrive in decent form after beating Fulham, but Brentford's home strength at the Gtech and the market consensus point to a home win.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton are slight favorites at even money, though the line has drifted from -125 toward Leeds. The head-to-head record is historically tight and Leeds won the last meeting 1-0, but Brighton's home edge at the Amex gives them the best single-outcome probability.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both sides are winless (0-0-2) and the market prices Fulham as narrow favorites at +130. However, Palace haven't lost at Craven Cottage since 2005 and have won their last three visits, so this is a genuinely close three-way market; the home side takes it marginally on odds.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.115,
+                    "away_win_probability": 0.065,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy favorites at -600 (odds have lengthened against Coventry since opening). City are 2-0-0 with vastly superior squad quality at the Etihad; newly promoted Coventry are 0-0-2 and have several absentees. A home win is the strong expectation.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The market has moved toward Forest (+165 to +140) while Spurs drifted, making Forest slim favorites at the City Ground. Both teams are struggling and Tottenham are missing Xavi Simons and Odobert with Maddison doubtful. Close match with home advantage the deciding factor.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.235,
+                    "draw_probability": 0.255,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Hull's strong recent form and 2-0-0 start, the market firmly favors Aston Villa at -115 on the road, reflecting the significant squad quality gap against a newly promoted side. Villa have found form with two straight wins after a poor spell, making an away win the most likely outcome.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-04T10:11:51.064315-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Newcastle United",
+                    "confidence": "low",
+                    "reasoning": "Newcastle favored at home per odds despite some injuries (Osula, Joelinton, Burn out). Bournemouth in mixed form and drew last outing. St. James' Park advantage tips it home, but close.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Brentford",
+                    "confidence": "medium",
+                    "reasoning": "Brentford solid at home and clear favorites at -150. Sunderland decent form but Brentford's home strength and prior 3-0 win over Sunderland support the home pick.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Brighton & Hove Albion",
+                    "confidence": "low",
+                    "reasoning": "Brighton slight home favorite at +100. Leeds in good form and have won recent trips, but Brighton's home edge and quality give them the nod in a tight game.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Fulham",
+                    "confidence": "low",
+                    "reasoning": "Both winless with poor form. Palace historically strong at Craven Cottage but Fulham marginally favored by odds. Very close, slight home lean.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.83,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "Manchester City",
+                    "confidence": "high",
+                    "reasoning": "Man City heavy favorites at -600 at home against newly promoted Coventry. Class gap is significant despite some injuries.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Nottingham Forest",
+                    "confidence": "low",
+                    "reasoning": "Both sides in poor form and winless. Forest slight home favorite. Spurs have injury concerns (Simons, Odobert out, Maddison doubtful). Very tight matchup.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Aston Villa",
+                    "confidence": "low",
+                    "reasoning": "Villa favored at -115 despite Hull's perfect home form. Villa's superior quality and improving form (WW) tip the balance, though Hull are dangerous at home.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-04T10:12:26.289139-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are at home at St. James' Park with a solid WWDLW form and a 1-1-0 record. Odds have shifted toward Newcastle (opened +130, now +115), suggesting market movement in their favor. Bournemouth's form is inconsistent (DLDDW) and their record is 0-1-1. Multiple injuries for Newcastle (Osula, Joelinton, Burn, Livramento) could be a concern, but home advantage and overall quality favor Newcastle. The last meeting saw Bournemouth win 2-1, but St. James' Park is a fortress. Balancing odds, form, and context gives Newcastle a slight edge.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are strong favorites at home (-150) with a DWWDD form and 1-1-0 record. Sunderland are a newly promoted or recently returned side showing promising form (WLWWD, 1-0-1), winning their last match 1-0 against Fulham. The last meeting between these sides ended 3-0 in Brentford's favor. Brentford's home strength and experience at this level give them the edge, though Sunderland are not to be underestimated. Confidence is medium given Sunderland's recent good form.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton's odds shifted significantly from -125 to +100 (even money), suggesting the market sees this as much more competitive than initially thought. Brighton form is LWWDL (1-0-1 record) while Leeds are DWWLW (1-1-0). Leeds won the last meeting 1-0 at Elland Road and Brighton's previous home win was 3-0. The H2H record is very close historically. Market movement toward Leeds makes this tight. Brighton retain home advantage but the matchup is genuinely competitive. Slight lean toward Brighton given home field.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are winless on the season (0-0-2 each), making this a closely contested match. Crystal Palace have a strong recent record at Craven Cottage, not losing there since January 2005 and winning their last three trips in all competitions. Fulham's odds are modest at +130. The historical advantage clearly favors Crystal Palace away, but Fulham as hosts with modest odds reflects slight home advantage expectation. The BTTS prediction from multiple sources and both teams' poor early form makes this hard to call. Very thin edge to Fulham by home advantage alone.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at -600 (implied ~85%) hosting newly promoted Coventry City who are 0-0-2 on the season. Man City are 2-0-0 at home with WWLLD recent form. Despite some injuries (Nunes, Doku out; Anderson, McAidoo doubtful), City's squad depth at the Etihad against a Coventry side that has struggled to adapt to the Premier League makes this a near-certain home win. Coventry's +1400 odds reflect their huge underdog status. High confidence in a Manchester City victory.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling early in the season. Forest are 0-1-1 (DLLDL form) while Spurs are 0-0-2 (LWLWL form) - neither has won in the league yet. Forest's odds shifted from +165 to +140, suggesting some market movement toward the home side. Spurs have key absences (Xavi Simons out, Wilson Odobert out, James Maddison doubtful). Forest have home advantage at City Ground which can be an intimidating atmosphere. Slight lean to Forest at home but this is genuinely hard to call with both teams underperforming. Low confidence.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Hull City's impressive WWWWW form and 2-0-0 home record - suggesting a strong start potentially as a promoted side - Aston Villa at -115 are slight favorites. Villa's recent form is LLLWW, showing recovery after a poor start. Villa are a significantly higher quality team with Champions League pedigree. Hull's strong start may reflect easier early fixtures. The odds moved slightly (Hull from +285 to +310, Villa steady at -115), reinforcing Villa's edge. Hull's home form is impressive but facing top Premier League quality in Villa makes an upset possible but less likely. Lean toward Villa to get a result.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-04T10:12:59.194299-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle at St. James' Park with strong home form (WWDLW) faces Bournemouth who have struggled (DLDDW). Newcastle's odds have shortened from +130 to +115, indicating market confidence. Missing players like Joelinton and Dan Burn are concerns, but Newcastle's home advantage and superior recent form give them the edge. Bournemouth's away record (0-1-1) is modest, though some models favor them as value picks.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Brentford at home with decent form (DWWDD) and a 3-0 win in the last H2H. Sunderland's away record (1-0-1) is respectable but Brentford's -150 odds reflect home advantage. Missing Sepp van den Berg for one side impacts depth. Brentford's attacking options with Igor Thiago should overcome Sunderland's organized defense. The Gtech Community Stadium has been a fortress for the Bees.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Tightly contested fixture with Brighton's odds shifting dramatically from -125 to +100, suggesting market uncertainty. Leeds won 1-0 at Elland Road last meeting, but Brighton won 3-0 at home in November 2025. Both teams have mixed form and identical 1-1-0 records. Brighton's home advantage at the Amex and Leeds' away form (1-1-0) make this close, but Brighton slight favorites despite odds movement.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Both teams winless with 0-0-2 records and struggling form. Palace unbeaten at Craven Cottage since 2005, winning their last three visits. Fulham's home form is concerning (LWLWD) while Palace's away resilience (LLWLD) and historical dominance at this venue give them the edge. Close odds (+130 vs +205) reflect uncertainty, but Palace's venue record is decisive. Expect a tight, low-scoring affair.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester City at the Etihad with perfect 2-0-0 record faces winless Coventry (0-0-2). Massive odds disparity (-600 vs +1400) reflects the gulf in class. Despite missing Nunes and Doku, City's squad depth with Haaland and Foden is overwhelming. Coventry's poor away form and City's dominant home record make this highly one-sided. City should control possession and win comfortably.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Both teams struggling with poor form - Forest (DLLDL, 0-1-1) and Spurs (LWLWL, 0-0-2). Forest at the City Ground have home advantage, and Spurs are winless with key players like Maddison doubtful. Forest's odds improved from +165 to +140, suggesting backing for the home side. Missing Xavi Simons hurts Spurs. Very tight match, but Forest's home ground gives marginal advantage in a low-quality encounter.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Hull's perfect start (WWWWW, 2-0-0) is impressive but faces reality check against Villa. Villa recovered from poor start with two wins (LLLWW, 0-0-2). Villa at -115 are favorites despite playing away. Hull's Championship-level squad faces Premier League quality in Villa. While Hull's momentum is noteworthy, Villa's superior talent and recent form recovery should prevail at the MKM Stadium.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-04T10:13:12.289221-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle favored at home with better recent form (WWDLW vs DLDDW). However, Bournemouth showed resilience recently and have a historical edge over Newcastle. Multiple injury concerns for Newcastle (Osula, Joelinton, Burn, Livramento) weaken their advantage. Odds suggest competitive match despite home team preference.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford stronger home record and form (DWWDD). Sunderland have won only 3 points and are rebuilding. Historical precedent shows Brentford dominant (won 3-0 last meeting). Brentford's recent performance and home advantage suggest comfortable win, though Sunderland's last victory vs Fulham shows some competitive capability.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton slightly favored at home with even odds suggesting competitive fixture. Recent head-to-head shows tight rivalry (20-19 Brighton lead historically). Brighton's home form looks stronger despite mixed recent results. Leeds won the corresponding fixture last season but Brighton won 3-0 at home in November 2025. Expert predictions favor Brighton to win at 1.95 odds.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams show poor recent form (Fulham 0-0-2, Palace 0-0-2). Crystal Palace unbeaten at Craven Cottage since 2005 with three consecutive away wins over Fulham. However, Fulham favored in odds (+130 vs +205). Expert prediction suggests BTTS. Given Palace's Craven Cottage record and both teams' defensive vulnerabilities, draw appears likely outcome.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.87,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.03,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City heavily favored with -600 odds (87% implied probability). City unbeaten at home (2-0-0) with dominant form. Coventry struggling away (0-0-2) and overall form mixed. Massive gap in squad quality and resources favors City decisively. Some injury concerns for City (Nunes, Doku, Anderson, McAidoo) provide minimal relief. Expert tips suggest BTTS but City win highly likely.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Competitive fixture with Forest slightly favored at home (+140 vs +195 odds). Both teams show poor form (Forest 0-1-1, Spurs 0-0-2). Forest have defensive issues (DLLDL form) but home advantage helps. Tottenham missing key players (Xavi Simons, Wilson Odobert out; Maddison doubtful). Odds distribution suggests close match with draw at +245 appearing reasonable value.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa favored despite away status with -115 odds suggesting 54% win probability. Villa's form stronger (LLLWW with recent wins) compared to Hull's apparent volatility. However, Hull's home form shows 5 consecutive wins (WWWWW) suggesting genuine home strength. Villa's superior squad quality and recent momentum slightly outweigh Hull's home advantage in this competitive fixture.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-04T10:14:39.382598-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are at home with stronger recent form and the odds have shortened toward them; Bournemouth have been inconsistent away.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are solid at home and the market has moved in their favour; Sunderland face a tough road test.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton are slight home favourites, but Leeds have been competitive and this looks close.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Fulham have a marginal home advantage according to the odds, but both teams have poor early-season form.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavily favoured at home and have far superior squad quality despite a few injuries.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The market has moved toward Nottingham Forest at home, though both sides have been inconsistent.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are favoured despite Hull's strong home form, reflecting the gap in overall quality.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-04T10:14:44.057049-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle have home advantage and better form, but Bournemouth have shown resilience. Odds suggest a close match, with Newcastle slight favorites.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are strong at home and have better overall form. Sunderland are newly promoted and may struggle away.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brighton have home advantage but inconsistent form. Leeds have been decent away. Odds are close, indicating a tight match.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have poor form, but Fulham are at home. Palace have historically done well at Craven Cottage, making this a tough call.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites at home against newly promoted Coventry. City's quality should dominate.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Tottenham have more quality despite poor away form. Forest are struggling. Odds slightly favor Spurs.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are strong favorites despite poor away form. Hull have won both home games but Villa's squad depth should prevail.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-04T10:15:24.341528-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle is strong at home and favored by the odds. Bournemouth's away form is poor, and despite some injuries, Newcastle's home advantage at St. James' Park should secure the win.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Brentford is heavily favored at home against Sunderland. The Bees' solid home record and Sunderland's struggles on the road make a home win the most probable outcome.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton has a slight edge at home and the odds reflect a tight matchup. While Leeds won the last meeting, Brighton's home advantage and tactical setup give them the narrow edge.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have poor early season form with 0-0-2 records. Palace's strong historical record at Craven Cottage, where they haven't lost since 2005, offsets Fulham's home advantage, making a draw highly plausible.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.09,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is a massive favorite at home against Coventry City. City's overwhelming squad depth and Coventry's poor away record make a comfortable home win almost certain.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham is dealing with significant attacking injuries, which weakens their away threat. Forest's home advantage at the City Ground gives them the edge in a tightly contested matchup.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Hull's strong start to the season, Aston Villa's superior Premier League pedigree, squad depth, and recent momentum make them the clear favorites on the road.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-04T10:15:48.335880-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle has a strong home form and a better overall record compared to Bournemouth. Despite some key players being out, Newcastle's recent performances and historical head-to-head advantage at home suggest a higher likelihood of a home win.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Brentford has a strong home form and a significant historical advantage over Sunderland. The team's current form and the absence of key Sunderland players make a home win highly probable.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Leeds United has a good away form and a recent win against Brighton. Although Brighton is playing at home, their recent inconsistent form and the tight head-to-head record suggest a slight edge for an away win.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have had mixed results in recent matches, and their head-to-head record is very close. Fulham's home advantage is balanced by Crystal Palace's strong away form, making a draw the most likely outcome.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is a dominant force at home, and Coventry City's recent form and historical record against Manchester City suggest a high probability of a home win.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham has a better overall form and a stronger squad, even with some key players out. Nottingham Forest's recent poor home form makes an away win more likely.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa has shown strong away form recently, and Hull City's recent form, despite a strong start, suggests that Aston Villa is more likely to secure a win.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-04T10:17:20.351814-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are slight favorites at home despite missing key defenders, while Bournemouth's inconsistent away form and defensive vulnerabilities give the hosts the edge.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford's strong home record and Sunderland's defensive issues point to a home victory, overriding Sunderland's recent win due to the Bees' superior squad depth.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton's attacking quality at the Amex gives them a narrow advantage, though Leeds' resilience suggests a tight contest with a slight home edge.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Palace's historical dominance at Craven Cottage contrasts with Fulham's winless start, making a draw the most probable outcome as both sides lack sharpness.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City's overwhelming quality and home advantage at the Etihad make them heavy favorites, as Coventry struggles to score and defend against top-tier opposition.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are out of form, but Forest's home advantage and Tottenham's midfield injury crisis give the hosts a marginal edge in a highly unpredictable fixture.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa's superior squad quality and individual talent should eventually break down Hull City's energetic but less experienced defense, despite the Tigers' impressive winning streak.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-04T10:18:22.280008-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle holds home advantage at St. James' Park and has superior recent form (WWDLW) compared to Bournemouth (DLDDW). Betting odds favor Newcastle slightly (+115 vs +220), indicating market confidence in the hosts despite some injury concerns.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-high",
+                    "reasoning": "Brentford is the clear betting favorite (-150) and has a dominant historical head-to-head record including a recent 3-0 victory. Their form (DWWDD) is consistent, while Sunderland, despite good points tally, faces a tough test at Gtech Community Stadium.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton holds the home advantage with odds suggesting a slight favorite status (+100). Recent history shows Brighton can dominate Leeds at home (3-0 win previously), although Leeds won the away fixture 1-0 earlier this year. Analyst picks lean towards Brighton.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "While odds slightly favor Fulham, Crystal Palace holds a significant psychological edge, having not lost to Fulham at Craven Cottage since January 2005. The Eagles have won their last three trips there, outweighing Fulham's home disadvantage.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City is heavily favored (-600 odds) playing at the Etihad Stadium. Despite minor injuries, their quality difference against Coventry is substantial, reflected in the massive probability disparity requested by the market odds.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling with early-season results, but betting odds list Nottingham Forest as the slight favorite (+140 vs +195). Home advantage at The City Ground and the marginal market preference for Forest tips the scale despite poor form.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa enters as the betting favorite (-115) despite Hull City's impressive 5-match winning streak form. Villa's pedigree and odds positioning suggest they can overcome the temporary form surge at Hull's home ground.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-04T10:20:07.824928-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle hold a strong home advantage at St. James' Park and the betting market has moved firmly in their favor. While injuries to Joelinton, Dan Burn, and William Osula are notable, Bournemouth's mixed away form and the Magpies' superior squad depth make a home win the most likely result.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Brentford have been solid at home and thrashed Sunderland 3-0 in the last meeting. Sunderland's away form is inconsistent, and the odds strongly favor a Brentford victory at the Gtech Community Stadium.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Brighton have historical home success against Leeds, including a 3-0 win at the Amex last season. Leeds are competitive but Brighton's squad quality and home-field edge tilt the balance toward a Seagulls victory.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have lost their opening two Premier League fixtures and appear evenly matched. Crystal Palace have an excellent recent record at Craven Cottage, but Fulham's slight market edge and home support cancel out, making a stalemate the most probable outcome.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming favorites against a newly promoted Coventry side that has lost its first two games. City's perfect start, vastly superior talent, and home dominance at the Etihad make a home win highly probable.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest benefit from home-field advantage and Tottenham are missing key attackers Xavi Simons and Wilson Odobert, with James Maddison doubtful. Both sides have struggled for consistency, but Forest edge it in a tight contest.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are the stronger side on paper and market odds back them despite a winless start. However, Hull City have won their opening two matches and are in excellent form at the MKM Stadium, keeping this competitive, but Villa's class should ultimately prevail.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-04T10:21:03.301071-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are market favorites at home (+115), but the price has drifted from +130 and they are missing Joelinton, Dan Burn and William Osula, with Livramento doubtful. Bournemouth took points off Newcastle in the last meeting (2-1 win) and arrive with a resilient DLDDW run. Home advantage at St. James' Park keeps Newcastle the pick, but the injury list and Bournemouth's away threat temper the edge.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford are solid home favorites (-150) and beat Sunderland 3-0 in the last meeting. Sunderland have 3 points from two games and just beat Fulham, but their away profile remains that of a promoted side. Brentford's predicted lineup is largely intact with only van den Berg sidelined, supporting a comfortable home edge.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are modest favorites at +100, though the price has drifted from -125, reflecting their LWWDL inconsistency. Leeds are unbeaten away (1-1-0) and won this fixture 1-0 in May, but Brighton won the last Amex meeting 3-0 and historically hold a narrow H2H edge. Home advantage makes Brighton the pick in a competitive match.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both sides are winless (0-0-2) and the market narrowly favors Fulham (+130). However, Palace have won their last three visits to Craven Cottage and are unbeaten there since 2005, making the away side live at +205. Palace's looming Europa League and cup commitments add rotation risk. A genuinely three-way contest with Fulham given only a slight home nod.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.11,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are heavy -600 favorites at the Etihad with a 2-0-0 home record and a near full-strength predicted XI featuring Haaland, Foden and Cherki. Coventry are winless away (0-0-2) and face a massive step up in class. Minor absences (Doku, Nunes) do little to close the gap.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The market has swung toward Forest (+140, from +165), with Spurs drifting to +195 amid poor LWLWL form and a winless away record (0-0-2). Tottenham are without Xavi Simons and Odobert, with Maddison doubtful. Forest's own form is shaky (DLLDL) but home advantage and Spurs' injury list justify making Forest a narrow pick.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Aston Villa remain market favorites (-115) on squad quality, but the setup screams caution: Hull are a perfect 5-0-0 across their form run and 2-0-0 at home, while Villa are 0-0-2 away with LLLWW form. Villa's superior talent keeps them the narrow pick, but Hull's momentum makes this one of the week's most upset-prone fixtures.",
+                    "event_id": "401878781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-04T10:22:23.738313-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AFC Bournemouth (away) @ Newcastle United (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Newcastle are favored at home with solid early form (1-1-0) and stronger squad depth, but injuries to Joelinton, Dan Burn and Tino Livramento's doubt reduce certainty. Bournemouth drew 1-1 last time out and beat Newcastle in the previous meeting, so they can threaten.",
+                    "event_id": "401879286"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Sunderland (away) @ Brentford (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Brentford are clear home favorites (-150) with strong recent form and a 3-0 head-to-head win last meeting. Sunderland have shown fight but are newly promoted and face a tough Gtech atmosphere.",
+                    "event_id": "401879311"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Leeds United (away) @ Brighton & Hove Albion (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Brighton are priced as narrow home favorites and have a 3-0 home win over Leeds in this fixture last season. Leeds are unbeaten so far (1-1-0) and won the reverse fixture in May, keeping the outcome competitive.",
+                    "event_id": "401879290"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Crystal Palace (away) @ Fulham (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both sides are winless in their first two league games. Palace have a strong recent away record at Craven Cottage, but Fulham are slight market favorites at home. The fixture looks tight and could easily end level.",
+                    "event_id": "401879289"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Coventry City (away) @ Manchester City (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester City are overwhelming -600 favorites with a perfect 2-0-0 start and vastly superior quality. Coventry are 0-0-2 and heavy underdogs at the Etihad, making a home win the clear expectation.",
+                    "event_id": "401879287"
+                },
+                {
+                    "game_id": 6,
+                    "matchup": "Tottenham Hotspur (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have struggled early, but Forest are slight home favorites in the market. Tottenham are winless away and missing key attackers, while Forest hold home advantage and a more settled lineup.",
+                    "event_id": "401878780"
+                },
+                {
+                    "game_id": 7,
+                    "matchup": "Aston Villa (away) @ Hull City (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Aston Villa are favored by the odds despite a poor 0-0-2 away record, reflecting superior squad quality. Hull have won their opening two home games, but Villa should still be the more likely side to take all three points.",
+                    "event_id": "401878781"
+                }
+            ]
+        }
+    ]
+}

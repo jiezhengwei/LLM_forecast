@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-08\n    Target Date: 2026-03-09\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Sassuolo @ Lazio                                     | Scheduled    | Away: 40.7% (11-5-11) vs Home: 29.6% (8-10-9)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Sassuolo (Away) @ Lazio (Home)\n**News & Injury Report:**\n- [Lazio vs Sassuolo prediction, odds & betting tips 09/03/2026](https://footballwhispers.com/blog/lazio-vs-sassuolo-prediction-09-03-2026/)\n  Snippet: Predicted lineup: Provedel (GK); Marusic, Gila, Romagnoli, Tavares; Dele-Bashiru, Cataldi, Taylor; Isaksen, Maldini, Zaccagni\n\nLast five matches:\n\n 04/03/2026: Lazio 2-2 Atalanta (Coppa Italia)\n 01/03/2026: Torino 2-0 Lazio (Serie A)\n 21/02/2026: Cag...\n- [Lazio vs Sassuolo Prediction 9/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-08-03-2026-lazio-rome-sassuolo-calcio-prediction)\n  Snippet: \ud83d\udeab Sassuolo face significant squad issues. The participation of Edoardo Pieragnolo and Fali Cand\u00e9 is doubtful as both are recovering from muscle injuries. Andrea Pinamonti will miss the match due to a red card received in the last round. A return is e...\n**Betting Odds:**\n- [SS Lazio \u2013 US Sassuolo Calcio prediction 09.03.2026 - Transfermarkt](https://www.transfermarkt.com/betting/tips/lazio-rom-vs-sassuolo-calcio-prediction-09-03-2026/)\n  Snippet: ## Our betting prediction for Lazio Rom vs Sassuolo Calcio\n\nOur betting tip for this Serie A encounter favours a home victory for Lazio Rom at odds of 2.23 with 1win. Despite their inconsistent recent form, the Romans possess the home advantage at th...\n- [Lazio vs Sassuolo Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/lazio-vs-sassuolo-prediction-lineups-odds-2026-03-09/)\n  Snippet: ## Lazio vs Sassuolo Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nLazio Favourites to Win According to Bookies\n\nThe bookmakers have Lazio as 2....\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-08\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-08 17:15:52"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-08 17:14:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing makes Lazio slight favourites (~2.23 home win odds), and Sassuolo\u2019s attack is weakened by Andrea Pinamonti\u2019s suspension (plus defensive doubts like Pieragnolo/Cand\u00e9). Lazio\u2019s league form is inconsistent and their season win rate is low, so the draw/away chances remain meaningful, but home advantage plus Sassuolo absences keep Lazio marginally ahead."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:14:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bookmakers list Lazio as favourites (~2.0\u20132.3), which implies a ~42\u201350% market probability \u2014 I calibrate to a 46% home-win chance. Lazio benefit from home advantage and deeper squad depth despite mixed recent form (Coppa Italia 2-2, league loss to Torino). Sassuolo\u2019s season away record (11-5-11, ~40.7% win rate) shows they can win on the road, but current squad issues (doubts over Pieragnolo and Fali Cand\u00e9; Andrea Pinamonti suspended) reduce their attacking threat and overall probability. The relatively high draw probability (30%) reflects Lazio\u2019s modest home win rate this season (8-10-9) and general Serie A draw propensity. Combining market odds, form, injuries/suspension and head-to-head situational factors yields a medium-confidence lean to a Lazio home win."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio enjoys home advantage with a predicted Lazio lineup and analysis citing injuries/suspensions for Sassuolo (Pieragnolo and Cand\u00e9 doubtful; Pinamonti suspended). Betting odds (Lazio around 2.23) calibrate toward a Lazio win. Recent form notes show Lazio capable of leveraging home conditions despite some mid-season inconsistencies."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio are slight favourites with bookmakers (odds ~2.23) and possess the home advantage. Sassuolo are missing key striker Pinamonti (suspended) and face squad fitness concerns (Pieragnolo and Cand\u00e9 doubtful), limiting their attacking options. Lazio's recent form is inconsistent but they managed a 2-2 draw against Atalanta and have a fairly complete squad available. The match may still be competitive, but Lazio's edge at home and Sassuolo's attacking absences tip the balance in their favour."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lazio has the home advantage and the betting odds favor them. Sassuolo is facing significant squad issues with key injuries and suspensions, making their lineup weaker. Lazio's inconsistent recent form could lead to a draw, but their home advantage and Sassuolo's absences bolster the likelihood of a Lazio victory."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio are favorites at home (odds around 2.23), although their recent form is inconsistent. Sassuolo has significant squad issues with injuries and a suspension. Lazio's home advantage and Sassuolo's missing players give Lazio the edge."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio has home advantage and faces a Sassuolo side with significant squad issues: Pinamonti suspended (red card), Pieragnolo and Cand\u00e9 doubtful with muscle injuries. Lazio's recent form is inconsistent (draw vs Atalanta, loss to Torino), but their home record (29.6% win rate) is slightly better than Sassuolo's away record (40.7% win rate). Betting markets favor Lazio (odds around 2.23), suggesting implied probability ~45%, but injuries to Sassuolo's key attackers (Pinamonti) likely reduce their scoring threat. Lazio's predicted lineup includes Zaccagni and Isaksen, providing offensive quality. The draw probability is elevated due to Lazio's inconsistency, but home advantage and opponent's absences tilt the balance."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio are favorites at home with odds around 2.23, suggesting approximately 45% implied probability before margin removal. However, several factors moderate confidence: (1) Lazio's poor recent form - winless in last 5 with draw vs Atalanta and loss to Torino, (2) Lazio's modest home record of 29.6% win rate (8-10-9), (3) Sassuolo's respectable away record at 40.7% (11-5-11), better than Lazio's home performance. Key advantages for Lazio: (a) home venue, (b) Sassuolo missing key striker Andrea Pinamonti due to red card suspension, (c) Sassuolo injury concerns with Pieragnolo and Cand\u00e9 doubtful with muscle injuries. These squad issues significantly weaken Sassuolo's attacking threat. Despite Lazio's inconsistency, the combination of home advantage and Sassuolo's depleted squad tips the balance toward a Lazio victory. However, given both teams' mixed form and Lazio's tendency to draw (10 home draws), a draw remains a significant possibility at 26%. Sassuolo's decent away record prevents writing them off completely, hence 22% away win probability."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:15:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Lazio (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lazio, despite their recent inconsistent form, have the home advantage and are favored by bookmakers with odds of around 2.23. Sassuolo is facing significant squad issues, including injuries to key players and a suspension for Andrea Pinamonti. The home advantage and the current form of Lazio, even if not at their best, make them the more likely winners."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

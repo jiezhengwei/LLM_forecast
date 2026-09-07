@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-05",
+        "target_date_et": "2026-09-06",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876467\nMatchup: Strasbourg (away) @ Troyes (home)\nHome: Troyes\nAway: Strasbourg\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Stade de l'Aube\nRound: unavailable\nHome form: WDLWW\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Troyes +205 (open +205); Draw +250 (open +230); Strasbourg +130 (open +130)\nTavily context:\n  - Title: Troyes vs Strasbourg: team news, lineups, predictions (Ligue 1 06/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nStrasbourg have picked up 3 points and currently lie in 10th position. In their last fixture, Hugo Oliveira's team won 2-1 against Lens (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups\n\nTroyes: Patrick Beach, Lucas Maronnier, Adrien Monfray, Junior Diaz, Anis Ouzenadji, Mouhamed Diop, Antoine Mille, Merwan Ifnaoui, Hugo Picard, Iron Gomis, Renaud Ripart ...\n    URL: https://sports.yahoo.com/articles/preview-troyes-vs-strasbourg-team-130100265.html\n  - Title: Troyes vs Strasbourg - live score, predicted lineups and ...\n    Content: Hip injury / A few weeks\n\nBouraHip injuryA few weeks\n\n  Yvann Titi\n\n  Muscle injury / Late October 2026\n\nTitiMuscle injuryLate October 2026\n\n  Ismaël Doukouré\n\n  Injured / Doubtful\n\nDoukouréInjuredDoubtful\n\n  Maxi Oyedele\n\n  Injured / Doubtful\n\nOyedeleInjuredDoubtful\n\n  Samir El Mourabet\n\n  Suspended / September 6, 2026\n\nEl MourabetSuspendedSeptember 6, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026\n\n  Martial Godo\n\n  Muscle injury / Doubtful\n\nGodoMuscle injuryDoubtful\n\n## Who will win?\n\n‌\n\n‌\n\n‌ ...\n    URL: https://www.fotmob.com/matches/strasbourg-vs-troyes/3c5scn\n  - Title: Troyes vs Strasbourg Predictions, Picks & Odds - 06/09/2026\n    Content: ### Troyes vs Strasbourg – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 3.20 | 3.52 | 2.39 | View Odds |\n| Stake | 3.05 | 3.35 | 2.32 | View Odds |\n| bc.game | 3.00 | 3.35 | 2.30 | View Odds |\n\nOur prediction\n\n1X: Double Chance Troyes or Draw\n\n3.20 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 05 Sep 2026 at 03:38 · Odds are subject to change\n\nCompetition: Ligue 1\n\nStage: Regular Season, 3\n\nDate: 06 Sep 2026\n\nTime: 14:00 BST\n\nStadium: Complexe Sportif de l'Aube N° 2 – Terrain du Bas ...\n    URL: https://www.toffeeweb.com/int/troyes-vs-strasbourg-predictions-picks-odds-06-09-2026\n  - Title: Troyes vs Strasbourg Prediction 6/09/2026 – Odds, Tips & Analysis\n    Content: 1\n\n0\n\n1\n\n2\n\n0\n\n1.86\n\n2.63\n\n3\n\n6\n\n10\n\n11\n\n2\n\n2\n\nW\n\n21.08.26\n\nLigue 1\n\nOlympique Marseille\n\nOlympique Marseille\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n1\n\n2.27\n\n0.29\n\n3\n\n4\n\n6\n\n12\n\n1\n\n3\n\n4\n\n0\n\n0\n\n0\n\n4\n\n0\n\n2.27\n\n0.29\n\n3\n\n4\n\n6\n\n12\n\n1\n\n3\n\nL\n\n16.08.26\n\nClub Friendly Games\n\nNewcastle United\n\nNewcastle United\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n-\n\n-\n\n5\n\n7\n\n8\n\n10\n\n0\n\n0\n\n1\n\n1\n\n1\n\n0\n\n0\n\n1\n\n-\n\n-\n\n5\n\n7\n\n8\n\n10\n\n0\n\n0\n\nD\n\n08.08.26\n\nClub Friendly Games\n\nFreiburg\n\nFreiburg\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n2\n\n0\n\n1\n\n0\n\n1\n\n0\n\nL\n\n08.08.26\n\nClub Friendly Games\n\nFreiburg\n\nFreiburg\n\nStrasbourg Alsace ...\n    URL: https://scores24.live/en/soccer/m-05-09-2026-troyes-strasbourg-alsace-prediction\n\nGame ID: 2\nSource event_id: 401876475\nMatchup: Stade Rennais (away) @ Angers (home)\nHome: Angers\nAway: Stade Rennais\nKickoff UTC: 2026-09-06T15:15Z\nKickoff ET: 2026-09-06 11:15 EDT\nVenue: Stade Raymond Kopa\nRound: unavailable\nHome form: WLDDL\nAway form: WDLWL\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Angers +285 (open +310); Draw +295 (open +280); Stade Rennais -115 (open -130)\nTavily context:\n  - Title: Preview: Angers vs Rennes - prediction, team news, lineups\n    Content: Les Rouge et Noirs are unbeaten in their last seven top flight outings versus Angers, earning two victories at Stade Raymond Kopa over that stretch.\n\nAngers Ligue 1 form:\n\n L\n W\n\nRennes Ligue 1 form:\n\n D\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Fstephane-gilli-6a9ac4565459c954964346.jpg)\n\n© Iconsport / Christophe Saidi\n\nA leg injury could keep Haris Belkebla on the Angers sidelines on Sunday, and Louis Mouton remains doubtful as he recovers from a meniscus issue. ...\n    URL: https://www.sportsmole.co.uk/football/angers/preview/angers-vs-rennes-prediction-team-news-lineups_604479.html\n  - Title: Angers vs Rennes Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Mikayil Faye Illness\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-06\n\nRayan Bamba Other\n\nPosition: Defender Matches: 1 Goals: - Assists: - Expected return: 2026-09-06\n\nTeam Squads\n\n#### Angers Player Stats & Squad\n\n#### Manager: Stephane Gilli\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Jordan Lefort | 21 | D | 2 | 180 | 2 | 0 | 0 | 0 | 0 | 0 |\n| Ousmane Camara | 4 | D | 2 | 180 | 2 | 0 | 0 | 1 | 0 | 0 |\n| Anthony Lopes | 1 | G | 2 | 180 | 2 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.sportsgambler.com/betting-tips/football/angers-vs-rennes-prediction-lineups-odds-2026-09-06\n  - Title: Angers SCO vs Rennes Predictions, Picks & Odds - 06/09/2026\n    Content: Rennes arrive in fifth place, firmly in the hunt for European qualification under Franck Haise. One more win would make Haise the fastest Rennes manager to reach ten Ligue 1 victories. Estéban Lepaul has been sensational, scoring in seven consecutive matches and leading the league's scoring chart. Their recent form reads well overall, though two successive away defeats, shipping seven goals in the process, suggest vulnerabilities that Angers will look to exploit on home turf.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/angers-sco-vs-rennes-predictions-picks-odds-06-09-2026\n\nGame ID: 3\nSource event_id: 401876471\nMatchup: Paris FC (away) @ Marseille (home)\nHome: Marseille\nAway: Paris FC\nKickoff UTC: 2026-09-06T18:45Z\nKickoff ET: 2026-09-06 14:45 EDT\nVenue: Stade Vélodrome\nRound: unavailable\nHome form: LWWWL\nAway form: WDWLW\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Marseille -125 (open -145); Draw +300 (open +300); Paris FC +310 (open +350)\nTavily context:\n  - Title: Marseille - Paris FC: probable lineups on 6 September 2026\n    Content: Jeffrey de Lange\nTimothy Weah\nCJ Egan-Riley\nNayef Aguerd\nEmerson\nPierre-Emile Højbjerg\nHimad Abdelli\nAmine Harit\nAngel Gomes\nIgor Paixão\nAmine Gouiri\n\nL10/Tier: at prediction time · Matches, minutes, goals, assists and cards: league 26/27 (source Sorare) — cups and Europe excluded.\n\nUpdate on injured players out.\nOtavio unavailable.\nKoleosho and Pagis available\n\nIlan Kebbal\nMoses Simon\nLassine Sinayoko\nMoustapha Mbow\nDiego Coppola\nAdama Camara\nThibault De Smet\nKevin Trapp\nPierre Lees-Melou\nMaxime Lopez\nPablo Pagis ...\n    URL: https://sorareclubfr.com/en/match/om-paris-fc-gw11-2026-27\n  - Title: Marseille vs Paris FC - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Marseille vs Paris FC — Sun, September 6, 6:45 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nParis FCParis FC\n\n# Marseille vs Paris FC — Sun, September 6, 6:45 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nParis FCParis FC\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Igor Paixão\n\n  Thigh injury / Mid September 2026\n\nPaixãoThigh injuryMid September 2026\n\n  Leonardo Balerdi\n\n  Calf injury / About 1-2 weeks\n\nBalerdiCalf injuryAbout 1-2 weeks\n\n  Nhoa Sangui ...\n    URL: https://www.fotmob.com/matches/paris-fc-vs-marseille/1uqamy\n  - Title: Olympique Marseille - Paris FC prediction & tips 06.09.2026\n    Content: | Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 1.82 | 1win |\n| Draw | 4.11 | 1win |\n| Away Win | 4.52 | 1win |\n| Both Teams to Score - Yes | 1.60 | Paripesa |\n| Both Teams to Score - No | 2.24 | 1win |\n| Correct Score | 1:1 @ 7.50 | 1win |\n\nBrief rationale: Marseille have superior attacking personnel and home advantage; Paris FC’s neat early form suggests they will not sit back entirely, which raises the chance of both teams contributing to the scoreboard. ...\n    URL: https://www.transfermarkt.com/betting/tips/olympique-marseille-vs-paris-fc-prediction-06-09-2026\n  - Title: Marseille vs Paris FC Prediction and Betting Tips | September 6th 2026\n    Content: Paris FC have been impressive in their own right, beating Nice 3-0 and keeping two clean sheets, but it is worth noting their opponents were two of the weaker Ligue 1 sides. Moreover, they did face a lot of shots in that win over Nice.\n\nWith that in mind, then, while this one could be a close game, the prediction is a win for Marseille.\n\nPrediction: Marseille 2-1 Paris FC\n\n## Marseille vs Paris FC Betting Tips\n\nTip 1: Result - Marseille to win.\n\nTip 2: Game to feature more than 2.5 goals - Yes.\n\nTip 3: Amine Gouiri to score for Marseille - Yes.\n\nlike selected\navatar selected\n\nQuick Links ...\n    URL: https://www.sportskeeda.com/football/marseille-vs-paris-fc-prediction-betting-tips-september-6th-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876467\nMatchup: Strasbourg (away) @ Troyes (home)\nHome: Troyes\nAway: Strasbourg\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Stade de l'Aube\nRound: unavailable\nHome form: WDLWW\nAway form: WLWWD\nHome record: 1-1-0\nAway record: 1-0-1\nESPN structured 1X2 odds: DraftKings: Troyes +205 (open +205); Draw +250 (open +230); Strasbourg +130 (open +130)\nTavily context:\n  - Title: Troyes vs Strasbourg: team news, lineups, predictions (Ligue 1 06/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nStrasbourg have picked up 3 points and currently lie in 10th position. In their last fixture, Hugo Oliveira's team won 2-1 against Lens (Ligue 1 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Predicted lineups\n\nTroyes: Patrick Beach, Lucas Maronnier, Adrien Monfray, Junior Diaz, Anis Ouzenadji, Mouhamed Diop, Antoine Mille, Merwan Ifnaoui, Hugo Picard, Iron Gomis, Renaud Ripart ...\n    URL: https://sports.yahoo.com/articles/preview-troyes-vs-strasbourg-team-130100265.html\n  - Title: Troyes vs Strasbourg - live score, predicted lineups and ...\n    Content: Hip injury / A few weeks\n\nBouraHip injuryA few weeks\n\n  Yvann Titi\n\n  Muscle injury / Late October 2026\n\nTitiMuscle injuryLate October 2026\n\n  Ismaël Doukouré\n\n  Injured / Doubtful\n\nDoukouréInjuredDoubtful\n\n  Maxi Oyedele\n\n  Injured / Doubtful\n\nOyedeleInjuredDoubtful\n\n  Samir El Mourabet\n\n  Suspended / September 6, 2026\n\nEl MourabetSuspendedSeptember 6, 2026\n\n  Joaquín Panichelli\n\n  Cruciate ligament injury / Early December 2026\n\nPanichelliCruciate ligament injuryEarly December 2026\n\n  Martial Godo\n\n  Muscle injury / Doubtful\n\nGodoMuscle injuryDoubtful\n\n## Who will win?\n\n‌\n\n‌\n\n‌ ...\n    URL: https://www.fotmob.com/matches/strasbourg-vs-troyes/3c5scn\n  - Title: Troyes vs Strasbourg Predictions, Picks & Odds - 06/09/2026\n    Content: ### Troyes vs Strasbourg – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 3.20 | 3.52 | 2.39 | View Odds |\n| Stake | 3.05 | 3.35 | 2.32 | View Odds |\n| bc.game | 3.00 | 3.35 | 2.30 | View Odds |\n\nOur prediction\n\n1X: Double Chance Troyes or Draw\n\n3.20 on 1xBet1xBet · Confidence Medium\n\nOdds recorded on 05 Sep 2026 at 03:38 · Odds are subject to change\n\nCompetition: Ligue 1\n\nStage: Regular Season, 3\n\nDate: 06 Sep 2026\n\nTime: 14:00 BST\n\nStadium: Complexe Sportif de l'Aube N° 2 – Terrain du Bas ...\n    URL: https://www.toffeeweb.com/int/troyes-vs-strasbourg-predictions-picks-odds-06-09-2026\n  - Title: Troyes vs Strasbourg Prediction 6/09/2026 – Odds, Tips & Analysis\n    Content: 1\n\n0\n\n1\n\n2\n\n0\n\n1.86\n\n2.63\n\n3\n\n6\n\n10\n\n11\n\n2\n\n2\n\nW\n\n21.08.26\n\nLigue 1\n\nOlympique Marseille\n\nOlympique Marseille\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n1\n\n2.27\n\n0.29\n\n3\n\n4\n\n6\n\n12\n\n1\n\n3\n\n4\n\n0\n\n0\n\n0\n\n4\n\n0\n\n2.27\n\n0.29\n\n3\n\n4\n\n6\n\n12\n\n1\n\n3\n\nL\n\n16.08.26\n\nClub Friendly Games\n\nNewcastle United\n\nNewcastle United\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n-\n\n-\n\n5\n\n7\n\n8\n\n10\n\n0\n\n0\n\n1\n\n1\n\n1\n\n0\n\n0\n\n1\n\n-\n\n-\n\n5\n\n7\n\n8\n\n10\n\n0\n\n0\n\nD\n\n08.08.26\n\nClub Friendly Games\n\nFreiburg\n\nFreiburg\n\nStrasbourg Alsace\n\nStrasbourg Alsace\n\n2\n\n0\n\n1\n\n0\n\n1\n\n0\n\nL\n\n08.08.26\n\nClub Friendly Games\n\nFreiburg\n\nFreiburg\n\nStrasbourg Alsace ...\n    URL: https://scores24.live/en/soccer/m-05-09-2026-troyes-strasbourg-alsace-prediction\n\nGame ID: 2\nSource event_id: 401876475\nMatchup: Stade Rennais (away) @ Angers (home)\nHome: Angers\nAway: Stade Rennais\nKickoff UTC: 2026-09-06T15:15Z\nKickoff ET: 2026-09-06 11:15 EDT\nVenue: Stade Raymond Kopa\nRound: unavailable\nHome form: WLDDL\nAway form: WDLWL\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Angers +285 (open +310); Draw +295 (open +280); Stade Rennais -115 (open -130)\nTavily context:\n  - Title: Preview: Angers vs Rennes - prediction, team news, lineups\n    Content: Les Rouge et Noirs are unbeaten in their last seven top flight outings versus Angers, earning two victories at Stade Raymond Kopa over that stretch.\n\nAngers Ligue 1 form:\n\n L\n W\n\nRennes Ligue 1 form:\n\n D\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F09%2Fstephane-gilli-6a9ac4565459c954964346.jpg)\n\n© Iconsport / Christophe Saidi\n\nA leg injury could keep Haris Belkebla on the Angers sidelines on Sunday, and Louis Mouton remains doubtful as he recovers from a meniscus issue. ...\n    URL: https://www.sportsmole.co.uk/football/angers/preview/angers-vs-rennes-prediction-team-news-lineups_604479.html\n  - Title: Angers vs Rennes Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Mikayil Faye Illness\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-06\n\nRayan Bamba Other\n\nPosition: Defender Matches: 1 Goals: - Assists: - Expected return: 2026-09-06\n\nTeam Squads\n\n#### Angers Player Stats & Squad\n\n#### Manager: Stephane Gilli\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Jordan Lefort | 21 | D | 2 | 180 | 2 | 0 | 0 | 0 | 0 | 0 |\n| Ousmane Camara | 4 | D | 2 | 180 | 2 | 0 | 0 | 1 | 0 | 0 |\n| Anthony Lopes | 1 | G | 2 | 180 | 2 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.sportsgambler.com/betting-tips/football/angers-vs-rennes-prediction-lineups-odds-2026-09-06\n  - Title: Angers SCO vs Rennes Predictions, Picks & Odds - 06/09/2026\n    Content: Rennes arrive in fifth place, firmly in the hunt for European qualification under Franck Haise. One more win would make Haise the fastest Rennes manager to reach ten Ligue 1 victories. Estéban Lepaul has been sensational, scoring in seven consecutive matches and leading the league's scoring chart. Their recent form reads well overall, though two successive away defeats, shipping seven goals in the process, suggest vulnerabilities that Angers will look to exploit on home turf.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/angers-sco-vs-rennes-predictions-picks-odds-06-09-2026\n\nGame ID: 3\nSource event_id: 401876471\nMatchup: Paris FC (away) @ Marseille (home)\nHome: Marseille\nAway: Paris FC\nKickoff UTC: 2026-09-06T18:45Z\nKickoff ET: 2026-09-06 14:45 EDT\nVenue: Stade Vélodrome\nRound: unavailable\nHome form: LWWWL\nAway form: WDWLW\nHome record: 1-0-1\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Marseille -125 (open -145); Draw +300 (open +300); Paris FC +310 (open +350)\nTavily context:\n  - Title: Marseille - Paris FC: probable lineups on 6 September 2026\n    Content: Jeffrey de Lange\nTimothy Weah\nCJ Egan-Riley\nNayef Aguerd\nEmerson\nPierre-Emile Højbjerg\nHimad Abdelli\nAmine Harit\nAngel Gomes\nIgor Paixão\nAmine Gouiri\n\nL10/Tier: at prediction time · Matches, minutes, goals, assists and cards: league 26/27 (source Sorare) — cups and Europe excluded.\n\nUpdate on injured players out.\nOtavio unavailable.\nKoleosho and Pagis available\n\nIlan Kebbal\nMoses Simon\nLassine Sinayoko\nMoustapha Mbow\nDiego Coppola\nAdama Camara\nThibault De Smet\nKevin Trapp\nPierre Lees-Melou\nMaxime Lopez\nPablo Pagis ...\n    URL: https://sorareclubfr.com/en/match/om-paris-fc-gw11-2026-27\n  - Title: Marseille vs Paris FC - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Marseille vs Paris FC — Sun, September 6, 6:45 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nParis FCParis FC\n\n# Marseille vs Paris FC — Sun, September 6, 6:45 PM UTC\n\nLigue 1 Round 3\n\n Ligue 1 Round 3\n Orange Vélodrome\n\nMarseilleMarseille\n\n‌\n‌\n\nParis FCParis FC\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Igor Paixão\n\n  Thigh injury / Mid September 2026\n\nPaixãoThigh injuryMid September 2026\n\n  Leonardo Balerdi\n\n  Calf injury / About 1-2 weeks\n\nBalerdiCalf injuryAbout 1-2 weeks\n\n  Nhoa Sangui ...\n    URL: https://www.fotmob.com/matches/paris-fc-vs-marseille/1uqamy\n  - Title: Olympique Marseille - Paris FC prediction & tips 06.09.2026\n    Content: | Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 1.82 | 1win |\n| Draw | 4.11 | 1win |\n| Away Win | 4.52 | 1win |\n| Both Teams to Score - Yes | 1.60 | Paripesa |\n| Both Teams to Score - No | 2.24 | 1win |\n| Correct Score | 1:1 @ 7.50 | 1win |\n\nBrief rationale: Marseille have superior attacking personnel and home advantage; Paris FC’s neat early form suggests they will not sit back entirely, which raises the chance of both teams contributing to the scoreboard. ...\n    URL: https://www.transfermarkt.com/betting/tips/olympique-marseille-vs-paris-fc-prediction-06-09-2026\n  - Title: Marseille vs Paris FC Prediction and Betting Tips | September 6th 2026\n    Content: Paris FC have been impressive in their own right, beating Nice 3-0 and keeping two clean sheets, but it is worth noting their opponents were two of the weaker Ligue 1 sides. Moreover, they did face a lot of shots in that win over Nice.\n\nWith that in mind, then, while this one could be a close game, the prediction is a win for Marseille.\n\nPrediction: Marseille 2-1 Paris FC\n\n## Marseille vs Paris FC Betting Tips\n\nTip 1: Result - Marseille to win.\n\nTip 2: Game to feature more than 2.5 goals - Yes.\n\nTip 3: Amine Gouiri to score for Marseille - Yes.\n\nlike selected\navatar selected\n\nQuick Links ...\n    URL: https://www.sportskeeda.com/football/marseille-vs-paris-fc-prediction-betting-tips-september-6th-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876467",
+                        "date_utc": "2026-09-06T13:00Z",
+                        "kickoff_et": "2026-09-06 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Troyes",
+                        "away": "Strasbourg",
+                        "home_id": "170",
+                        "away_id": "180",
+                        "matchup": "Strasbourg (away) @ Troyes (home)",
+                        "venue": "Stade de l'Aube",
+                        "city": "Paris",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "WDLWW",
+                        "form_away": "WLWWD",
+                        "record_home": "1-1-0",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+205",
+                            "home_current": "+205",
+                            "draw_open": "+230",
+                            "draw_current": "+250",
+                            "away_open": "+130",
+                            "away_current": "+130"
+                        },
+                        "odds_text": "DraftKings: Troyes +205 (open +205); Draw +250 (open +230); Strasbourg +130 (open +130)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401876475",
+                        "date_utc": "2026-09-06T15:15Z",
+                        "kickoff_et": "2026-09-06 11:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Angers",
+                        "away": "Stade Rennais",
+                        "home_id": "7868",
+                        "away_id": "169",
+                        "matchup": "Stade Rennais (away) @ Angers (home)",
+                        "venue": "Stade Raymond Kopa",
+                        "city": "Angers",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "WLDDL",
+                        "form_away": "WDLWL",
+                        "record_home": "1-0-1",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+310",
+                            "home_current": "+285",
+                            "draw_open": "+280",
+                            "draw_current": "+295",
+                            "away_open": "-130",
+                            "away_current": "-115"
+                        },
+                        "odds_text": "Provider unavailable: Angers +285 (open +310); Draw +295 (open +280); Stade Rennais -115 (open -130)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401876471",
+                        "date_utc": "2026-09-06T18:45Z",
+                        "kickoff_et": "2026-09-06 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Marseille",
+                        "away": "Paris FC",
+                        "home_id": "176",
+                        "away_id": "6851",
+                        "matchup": "Paris FC (away) @ Marseille (home)",
+                        "venue": "Stade Vélodrome",
+                        "city": "Marseille",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWWWL",
+                        "form_away": "WDWLW",
+                        "record_home": "1-0-1",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-145",
+                            "home_current": "-125",
+                            "draw_open": "+300",
+                            "draw_current": "+300",
+                            "away_open": "+350",
+                            "away_current": "+310"
+                        },
+                        "odds_text": "Provider unavailable: Marseille -125 (open -145); Draw +300 (open +300); Paris FC +310 (open +350)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-05T05:00:19.004871-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:08.274155-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg enters this matchup as the bookmakers' favorite, buoyed by a recent 2-1 win over Lens. Although Troyes has home advantage, Strasbourg's current momentum and superior implied probability suggest an away victory is the most likely outcome.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Stade Rennais is unbeaten in their last seven league encounters with Angers. Under manager Franck Haise, Rennes features a stronger squad depth and is heavily favored by odds-makers to secure three points on the road.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille possesses far superior attacking talent and benefits from a strong home-field atmosphere at the Stade Vélodrome. Although Paris FC has had an impressive start to their campaign, matching Marseille's caliber away from home will be a difficult task.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-05T04:50:19.054505-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg are narrow favorites at +130 despite playing on the road. Both teams have had decent starts to the season, but the bookmakers give a slight edge to the visitors, making an away win the most likely scenario, albeit with high potential for a draw.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes enter as solid favorites (-115) despite playing away. Their attacking firepower under Franck Haise, led by Estéban Lepaul, makes them well-equipped to overcome Angers, who have shown some defensive vulnerabilities.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are the favorites at home (-125) and boast a strong attacking lineup, including Amine Gouiri. While Paris FC have started the season impressively with consecutive clean sheets against weaker opposition, playing at the Stade Vélodrome represents a significant step up in difficulty.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-05T04:50:42.578245-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "While Strasbourg are the slight bookmakers' favorite, they are contending with a significant list of injured and suspended players. Troyes are in good form and have the home advantage. The last meeting between these two clubs ended in a 1-1 draw, and given Strasbourg's personnel issues, a similar result is highly plausible.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Stade Rennais are the clear favorites, possessing superior quality and an unbeaten streak in their last seven matches against Angers. Although Rennes has shown some defensive frailty in recent away games, their potent offense, led by the league's top scorer Estéban Lepaul, is expected to secure the victory against an Angers side with less consistent form.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Marseille's significant home advantage at the Stade Vélodrome, combined with their superior squad depth and quality, makes them strong favorites. Paris FC has started the season well, but their early success came against weaker opponents. Facing a team of Marseille's caliber on the road is a much more difficult challenge, and a home win is the most probable outcome.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:58.029262-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Strasbourg is favored by the DraftKings odds and recent form suggests they are performing well, having won their last league fixture. Troyes faces numerous reported injuries which could weaken their squad. While the last head-to-head was a draw, Strasbourg's current momentum and opponent's injury list give them an edge.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Stade Rennais is heavily favored by the odds and has a strong historical record against Angers, being unbeaten in their last seven top-flight outings. They also have a prolific scorer in Esteban Lepaul. Despite recent away vulnerabilities mentioned, their overall quality and drive for European qualification make them the likely winners.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille possesses superior attacking personnel and the significant advantage of playing at home. Although Paris FC has shown good form, this has largely been against weaker opponents, and they reportedly concede a high number of shots. Odds and expert predictions strongly favor a Marseille victory.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:51:56.549894-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.312,
+                    "draw_probability": 0.277,
+                    "away_win_probability": 0.411,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "The 1X2 market makes Strasbourg a modest away favorite after vig removal, and their recent result profile is slightly stronger. Troyes' home start and Strasbourg's injury/doubt list keep this close, with the draw also quite live.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.248,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear market favorites despite being away, have the stronger squad profile, and have been unbeaten in recent league meetings with Angers. Angers' home advantage and Rennes' away defensive volatility prevent a higher confidence call.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.532,
+                    "draw_probability": 0.238,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille have the stronger overall squad and a significant Stade Velodrome home edge, matching the market's home-favorite stance. Paris FC's good early form and Marseille injuries lower the margin, but Marseille remain the likeliest regulation-time winner.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:52:06.717240-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg are a modest market favorite and have slightly stronger recent results, including a win over Lens, but Troyes have home advantage, unbeaten early league record, and enough form to keep the match close. Draw risk is meaningful given the prior 1-1 meeting and narrow team separation.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear away favorites in the odds, unbeaten in recent top-flight meetings with Angers, and appear to have the stronger attacking profile. Angers' home field and Rennes' noted away defensive vulnerabilities prevent this from being high confidence.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille have the stronger squad and a significant Stade Vélodrome advantage, with the betting market consistently making them favorites. Paris FC's strong early form and Marseille injury concerns keep upset and draw probabilities relevant, but the home side remains the likeliest regulation-time winner.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-05T04:52:39.503911-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.313,
+                    "draw_probability": 0.273,
+                    "away_win_probability": 0.414,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Strasbourg the clear road favorite (shorter 1X2), and both sides show decent recent form. Troyes’ home advantage keeps draw/home chances meaningful, but Strasbourg’s stronger implied win probability and slightly better early-season profile point to an away win as the likeliest 90-minute result.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.248,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are priced as a solid favorite and have a strong recent head-to-head run versus Angers. Angers’ home edge raises the draw/upset paths, but the overall balance of strength (and the odds) supports Rennes being the most likely winner in regulation time.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.529,
+                    "draw_probability": 0.238,
+                    "away_win_probability": 0.233,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are a moderate home favorite at the Vélodrome, and the pricing suggests Paris FC are competitive but still second-likeliest. Even with some squad availability questions, Marseille’s home advantage and higher baseline quality make a 90-minute home win the most probable outcome.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-05T04:52:57.093723-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds favor Strasbourg and their recent league form is strong; Troyes have several injury/suspension concerns. Neutral head-to-head and Troyes home form reduce but do not overturn Strasbourg's edge.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are the market and form favorite, with historical unbeaten runs vs Angers and more squad quality; Angers injuries and Rennes' stronger recent performances make an away win most likely, though draws remain plausible.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and home advantage favor Marseille plus superior attacking personnel; Paris FC have been solid and can frustrate, so a draw/close game remains possible, but Marseille are the likeliest 90-minute winners.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-05T04:53:54.696140-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.313,
+                    "draw_probability": 0.272,
+                    "away_win_probability": 0.415,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds favor Strasbourg to win (approx 43.5% implied) with Troyes having home advantage but slightly weaker head-to-head form; normalization yields Strasbourg as the 90-minute outcome favorite.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.248,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are slight favorites as the away side based on odds; Angers are underdogs despite home form, giving Rennes the edge for regulation time.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.238,
+                    "away_win_probability": 0.232,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille favored at home with stronger squad depth; Paris FC have been competitive but Marseille’s home advantage and form imply a home win.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-05T04:53:58.026311-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg have started the season well, coming off a win against Lens and showing solid away form (WLWWD). Troyes are also in decent form at home, but are missing key players due to injuries and suspension. Bookmakers and expert predictions slightly favor Strasbourg, and their recent head-to-head was a draw, but Strasbourg's squad depth and momentum give them the edge.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are unbeaten in their last seven against Angers and have a strong squad, with Estéban Lepaul in excellent form. Angers have injury concerns and inconsistent recent results. Bookmakers make Rennes clear favorites, and their attacking quality should be decisive despite some away vulnerabilities.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille have a strong home record and superior attacking options. Paris FC have started well but have benefited from a soft schedule and allowed many shots even in wins. Most expert predictions and odds favor Marseille, and their home advantage should see them through despite some defensive injuries.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-05T04:54:00.324154-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown competitive form, and the odds suggest a balanced match. Strasbourg's recent win and Troyes' home advantage make a draw likely.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Stade Rennais have a strong record against Angers and are in good form, making them favorites despite Angers' home advantage.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Marseille's superior squad and home advantage make them strong favorites, despite Paris FC's decent start to the season.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-05T04:54:13.927295-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg are favored by the market (+130) and arrive off a win over Lens, but they carry significant injuries (Panichelli, Doukouré, Oyedele, Godo) and a suspension (El Mourabet). Troyes are solid at home with a WDLWW form line, keeping this fairly open. Slight edge to Strasbourg's superior squad quality.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear market favorites (-115) and unbeaten in their last seven league meetings with Angers, with Lepaul in excellent scoring form. However, Rennes have shown defensive vulnerability away from home recently, and Angers at Raymond Kopa can frustrate. Rennes' overall quality edge makes an away win the most likely outcome.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are favorites at the Vélodrome (-125) with superior attacking talent, though injuries to Paixão and Balerdi soften their edge. Paris FC have started well with two clean sheets, but those came against weaker opposition and they conceded many shots. Home advantage and squad depth favor Marseille.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-05T04:54:22.742318-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Strasbourg",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg are favorites per odds (+130 vs Troyes +205) and have better recent form. However, Strasbourg have multiple injuries/suspensions (Panichelli, El Mourabet, Doukoure doubtful). Troyes have home advantage but market clearly favors visitors.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Stade Rennais",
+                    "confidence": "low",
+                    "reasoning": "Rennes are favored (-115) and unbeaten in last seven top-flight meetings versus Angers. Lepaul in strong scoring form. Angers have home advantage but recent form is weaker; Rennes edge despite defensive vulnerabilities away.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Marseille",
+                    "confidence": "medium",
+                    "reasoning": "Marseille favored (-125) at home with superior attacking talent (Gouiri, Greenwood-type squad, Harit, Gomes). Paris FC in decent form but faced weaker opponents. Velodrome home advantage supports Marseille win despite Paixao and Balerdi injuries.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-05T04:54:37.123189-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds strongly favor Strasbourg at around -130 to +130, reflecting their quality edge over a newly promoted or weaker Troyes side. Strasbourg won their last match 2-1 against Lens. The last head-to-head ended 1-1, and Troyes have injuries/suspensions. A prediction site recommends the 1X double chance for Troyes/Draw, but the market leans Strasbourg. Adjusting slightly for home advantage and draw probability, Strasbourg are slight favorites.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are priced as favorites at around -115 to -130, sitting in 5th place with European ambitions under Franck Haise. Esteban Lepaul has been in excellent form scoring in seven consecutive matches. Rennes are unbeaten in their last seven Ligue 1 meetings with Angers, with two wins at Stade Raymond Kopa over that stretch. Angers have some injury concerns (Belkebla, Mouton doubtful). Despite home advantage for Angers, Rennes' superior quality and form edge them out.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are home favorites at -125, playing at the Stade Vélodrome with strong attacking personnel including Gouiri, Harit, and Gomes. Paris FC have shown promise with a 3-0 win over Nice and two clean sheets, but faced weaker opposition. Marseille have key injuries (Paixao, Balerdi) but retain enough quality. Most prediction sources favor Marseille 2-1 with both teams to score. Paris FC's away record and the step up in opposition quality suggests Marseille edge this one.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-05T04:54:52.145478-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg enters with stronger form (WLWWD) compared to Troyes (WDLWW), and market odds favor the away side at +130 vs Troyes at +205. Strasbourg won their last fixture 2-1 against Lens and currently sit 10th with 3 points from 2 matches. Troyes has injury concerns with multiple players unavailable including suspensions (El Mourabet). The last meeting ended 1-1, but Strasbourg's superior squad depth and recent performances give them the edge despite playing away. The odds suggest a competitive match, but Strasbourg's quality should prevail.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Rennes are clear favorites at -115 vs Angers at +285, reflecting their superior quality. Rennes are unbeaten in their last seven matches against Angers with two wins at Stade Raymond Kopa in that stretch. Star striker Estéban Lepaul has scored in seven consecutive matches and leads the league scoring chart. Under Franck Haise, Rennes sit 5th and are pursuing European qualification. Angers have poor recent form (WLDDL) with injuries to Belkebla and doubts over Mouton. Despite two recent away defeats, Rennes' attacking firepower and historical dominance in this fixture make them strong favorites.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are favorites at -125 at the Stade Vélodrome with superior attacking quality. Despite both teams having identical 1-0-1 records, Marseille possess greater squad depth and individual talent. Paris FC have impressed early with a 3-0 win over Nice and two clean sheets, but faced weaker opposition. Key injuries affect Marseille (Paixão thigh injury, Balerdi calf injury) which tempers confidence slightly. Paris FC's decent form suggests they won't capitulate easily, but Marseille's home advantage and attacking personnel including Amine Gouiri should prove decisive. Expect goals from both sides but a Marseille victory, likely 2-1 as predicted by multiple sources.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-05T04:55:00.984694-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Troyes show strong recent form (WDLWW) at home. Strasbourg have decent form but are away with multiple key injuries reported for Troyes that could limit their attacking threat. DraftKings odds favor Strasbourg slightly (-130), but Troyes' home form and the previous 1-1 draw between teams suggest competitive match favoring home side. Injury concerns for Troyes (El Mourabet suspended, multiple players out) create uncertainty, but home advantage and form support Troyes.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Stade Rennais show superior recent form and are unbeaten in last seven meetings against Angers with two away wins at this venue. Rennes rank 5th with strong momentum under Haise, while Angers show inconsistent form (WLDDL). Rennes' star player Estéban Lepaul is in exceptional form (scoring in 7 consecutive matches). Angers' injuries (Belkebla leg injury, Mouton doubtful) further weaken home side. Despite DraftKings showing odds favoring Rennes slightly (-115), the context suggests clear away advantage.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille show superior attacking personnel with home advantage at Stade Vélodrome. While Paris FC have impressed early (3-0 vs Nice, clean sheets), their opponents were weaker sides and they faced high shot volume. Marseille have stronger squad depth and experience. Multiple sources predict Marseille win (2-1 scoreline predicted). DraftKings odds favor Marseille (-125). Context suggests both teams will score given attacking potential, but Marseille's quality and home advantage should prevail. Some injury concerns for Marseille (Paixão, Balerdi) prevent highest confidence, but home win remains most likely.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-05T04:55:29.405588-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg are slight favorites on odds and have solid recent away form, while Troyes at home remain competitive enough to create a draw chance.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear favorites and have a strong recent record against Angers, though their away defensive issues leave some room for a draw or home upset.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille have home advantage and superior attacking depth; Paris FC are in good early form but odds and context point to a home win.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-05T04:55:32.005291-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg have better form and are slight favorites according to odds, but Troyes are at home and the match is expected to be close.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are strong favorites and have a good record against Angers, despite their away form being inconsistent.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Marseille have home advantage and superior attacking talent, though Paris FC have started well. Marseille are favored by odds and predictions.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-05T04:55:59.378724-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg enters the match with strong recent form and a recent victory over Lens, while Troyes has been inconsistent. The odds favor Strasbourg, reflecting their superior squad depth and momentum.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes has been impressive in attack, led by Estéban Lepaul's scoring streak, and holds a strong historical record against Angers. Despite some away defensive vulnerabilities, their attacking firepower should secure the win.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille possesses superior attacking talent and the significant home advantage at the Stade Vélodrome. While Paris FC has shown neat early form against weaker sides, Marseille's overall quality and home support make them clear favorites.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-05T04:56:10.761350-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg has been in good form, winning their last match and showing a strong away record. Troyes, despite home advantage, has some key players injured or doubtful, which could affect their performance.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Stade Rennais has a strong recent form and is unbeaten in the last seven Ligue 1 matches against Angers. Estéban Lepaul's scoring form and overall team performance suggest they are likely to secure another win, even though Angers will be playing at home.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Marseille has a strong home record and superior attacking personnel. Although Paris FC has shown impressive form, they have not faced top-tier opposition yet, and Marseille's home advantage and quality should give them the edge.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-05T04:57:43.234152-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg enters as the betting favorite (+130) despite Troyes' respectable home form. Troyes' defensive stability is weakened by key suspensions and injuries, while Strasbourg's recent 2-1 victory over Lens shows they are in good attacking rhythm. The evenly matched early-season records suggest a tight contest, but Strasbourg's superior depth and momentum give them the edge in regulation time.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes is a clear betting favorite (-115) backed by superior squad quality, historical dominance over Angers (unbeaten in their last seven meetings), and a red-hot striker in Estéban Lepaul. While Rennes has shown some away vulnerabilities, Angers' injury doubts in midfield and defensive line reduce their threat. Rennes' overall tactical superiority and attacking firepower should secure a regulation-time victory.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille is heavily favored at the Stade Vélodrome (-125) with a vastly superior attacking roster and strong historical home advantage. Paris FC's early-season success came against lower-tier opposition, and their defense is likely to struggle against Marseille's pace and creativity. Despite Marseille missing a few defenders, their offensive depth and multiple expert previews pointing to a home win strongly favor a regulation-time victory for Marseille.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-05T04:58:33.579235-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg enters as the favorite with better recent form (win vs Lens) and market odds (+130 vs Troyes +205). While Troyes has home advantage, their injury list including Boura and Titi weakens the lineup. Strasbourg remains slightly superior in talent, but the matchup is competitive given Troyes' recent home performance.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes is the clear favorite (-115 odds) and holds a strong historical edge, being unbeaten in their last seven meetings against Angers. Placed 5th in the table with a prolific scorer in Lepaul, Rennes' offensive power should exploit Angers' injury concerns and recent away vulnerability, despite Angers having two home victories in that stretch.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille holds a significant home advantage at the Vélodrome and is backed by superior attacking options, reflected in their -125 odds. Although they face some defensive injuries (Paixão, Balerdi), their overall squad depth and home support give them the edge over Paris FC, whose recent wins were against perceived weaker opposition.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-05T04:59:19.110673-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg holds a quality edge and enters off a win over Lens, while Troyes faces multiple absences including a suspension. Although Troyes has shown resilience at home, the visitors are favored by the market and have stronger momentum.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes boasts a significantly stronger squad and an excellent historical record against Angers, with standout form from Lepaul. While Angers can test Rennes given the visitors' recent defensive issues on the road, the away side's class and market positioning make them the likeliest winners.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Marseille's superior firepower and home advantage at the Vélodrome give them a clear edge over a Paris FC side whose promising start came against weaker opposition. Expect Marseille to control proceedings despite a few injury concerns.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-05T04:59:54.541136-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Strasbourg are the market favorite (+130) and come off a 2-1 win over Lens, but they carry a heavy injury/suspension list (Doukouré, Oyedele, Panichelli, Godo doubtful/out, El Mourabet suspended). Troyes are unbeaten at home (1-1-0) with decent form (WDLWW), the last head-to-head finished 1-1, and some previews recommend the Troyes-or-draw double chance. Strasbourg's edge is real but slim, making this a low-confidence away lean with the draw a live alternative.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear favorites (-115) and dominate this matchup, unbeaten in their last seven top-flight meetings with Angers including two wins at Stade Raymond Kopa. They sit fifth with Estéban Lepaul scoring in seven straight games. However, Rennes have lost their last two away matches conceding seven goals, and Angers have home advantage, so the draw has meaningful probability. Overall quality, form, and head-to-head point to an away win.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are home favorites (-125) at the Vélodrome with superior attacking personnel (Gouiri, Harit, Gomes), and multiple previews predict a Marseille win (e.g., 2-1). Injuries to Paixão and Balerdi temper the edge somewhat, and Paris FC have started well (WDWLW) with clean sheets, though against weaker opposition and while conceding many shots. Marseille's home advantage and squad quality justify the home win, with the draw the main alternative.",
+                    "event_id": "401876471"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-05T05:00:19.001135-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Strasbourg (away) @ Troyes (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Strasbourg are slight betting favorites (+130) and come in with solid away form (WLWWD). Troyes have home advantage and the last meeting was a draw, while Strasbourg have a couple of injuries/suspensions, keeping this competitive. The market edge and better road record point to a narrow Strasbourg win.",
+                    "event_id": "401876467"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Stade Rennais (away) @ Angers (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are clear favorites (-115) and are unbeaten in their last seven top-flight meetings with Angers, including two wins at Stade Raymond Kopa. Angers are missing or doubtful key midfielders, and Rennes' attacking form gives them the edge despite recent away defensive frailty.",
+                    "event_id": "401876475"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris FC (away) @ Marseille (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Marseille are solid home favorites (-125) with superior attacking personnel at the Vélodrome. Paris FC have made a tidy start, but their wins came against weaker opposition and they allowed many shots. Marseille should control the game and secure a regulation-time victory.",
+                    "event_id": "401876471"
+                }
+            ]
+        }
+    ]
+}

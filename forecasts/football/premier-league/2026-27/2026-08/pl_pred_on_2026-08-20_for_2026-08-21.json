@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-20",
+        "target_date_et": "2026-08-21",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879301\nMatchup: Coventry City (away) @ Arsenal (home)\nHome: Arsenal\nAway: Coventry City\nKickoff UTC: 2026-08-21T19:00Z\nKickoff ET: 2026-08-21 15:00 EDT\nVenue: Emirates Stadium\nRound: unavailable\nHome form: WWLWW\nAway form: WWWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Arsenal -550 (open -750); Draw +650 (open +700); Coventry City +1400 (open +1500)\nTavily context:\n  - Title: Arsenal vs Coventry Preview, Lineups & Team News - RotoWire\n    Content: ## When & Where to Watch (USA)\n\n### Friday, Aug. 21 at 3:00 PM ET / 12:00 PM PT\n\nVenue: Emirates Stadium, London\n\n English TV: USA Network\n Spanish TV: Universo\n Streaming: Fubo, Sling Blue, Hulu + Live TV, DirecTV Stream\n\n## Arsenal vs Coventry City Lineups & Injury News\n\n### Predicted Lineups & Starting XIs ...\n    URL: https://www.rotowire.com/soccer/article/arsenal-vs-coventry-city-preview-lineups-team-news-128753\n  - Title: Arsenal vs Coventry Prediction, Betting Tips, Lineups & Odds | 21 Aug 2026\n    Content: Possession\n\n An average of 60.40% possession in the last 10 matches\n An average of 53.90% possession in the last 10 away matches\n Most possession in 8 of the last 10 matches\n Most possession in 6 of the last 10 away matches\n\n## Arsenal vs Coventry Lineups & Team News\n\nAlways review the Arsenal vs Coventry team news before locking in your bets. We’ll bring you the expected and confirmed lineups for the Premier League along with up-to-date injury news.\n\n Arsenal Team Page    Coventry City Team Page\n\n### Arsenal Predicted Lineup 4-3-3\n\n### Coventry Predicted Lineup 4-3-3 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/arsenal-vs-coventry-prediction-lineups-odds-2026-08-21\n  - Title: Arsenal vs Coventry City Prediction - Premier League\n    Content: estimates a probability of 38.81% for a win of Arsenal against Coventry City with odds of 1.21 at 1xbet. is 26.79% with odds of 7.8 at 1xbet.\n    URL: https://www.sportytrader.com/en/betting-tips/arsenal-coventry-city-366810\n  - Title: Bet on Arsenal - Coventry City - 21.08.2026 ⚽ England. ...\n    Content: Arsenal - Coventry City betting on 21.08.2026 ⚽ Full prematch market on England. Premier League 1X2, BTTS, Asian handicap, totals ⭐ Deposit in dirham\n    URL: https://ma-1xbet.com/en/line/football/88637-england-premier-league/343662668-arsenal-coventry-city\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-20\n\nTarget Date (ET): 2026-08-21\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879301\nMatchup: Coventry City (away) @ Arsenal (home)\nHome: Arsenal\nAway: Coventry City\nKickoff UTC: 2026-08-21T19:00Z\nKickoff ET: 2026-08-21 15:00 EDT\nVenue: Emirates Stadium\nRound: unavailable\nHome form: WWLWW\nAway form: WWWDD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Arsenal -550 (open -750); Draw +650 (open +700); Coventry City +1400 (open +1500)\nTavily context:\n  - Title: Arsenal vs Coventry Preview, Lineups & Team News - RotoWire\n    Content: ## When & Where to Watch (USA)\n\n### Friday, Aug. 21 at 3:00 PM ET / 12:00 PM PT\n\nVenue: Emirates Stadium, London\n\n English TV: USA Network\n Spanish TV: Universo\n Streaming: Fubo, Sling Blue, Hulu + Live TV, DirecTV Stream\n\n## Arsenal vs Coventry City Lineups & Injury News\n\n### Predicted Lineups & Starting XIs ...\n    URL: https://www.rotowire.com/soccer/article/arsenal-vs-coventry-city-preview-lineups-team-news-128753\n  - Title: Arsenal vs Coventry Prediction, Betting Tips, Lineups & Odds | 21 Aug 2026\n    Content: Possession\n\n An average of 60.40% possession in the last 10 matches\n An average of 53.90% possession in the last 10 away matches\n Most possession in 8 of the last 10 matches\n Most possession in 6 of the last 10 away matches\n\n## Arsenal vs Coventry Lineups & Team News\n\nAlways review the Arsenal vs Coventry team news before locking in your bets. We’ll bring you the expected and confirmed lineups for the Premier League along with up-to-date injury news.\n\n Arsenal Team Page    Coventry City Team Page\n\n### Arsenal Predicted Lineup 4-3-3\n\n### Coventry Predicted Lineup 4-3-3 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/arsenal-vs-coventry-prediction-lineups-odds-2026-08-21\n  - Title: Arsenal vs Coventry City Prediction - Premier League\n    Content: estimates a probability of 38.81% for a win of Arsenal against Coventry City with odds of 1.21 at 1xbet. is 26.79% with odds of 7.8 at 1xbet.\n    URL: https://www.sportytrader.com/en/betting-tips/arsenal-coventry-city-366810\n  - Title: Bet on Arsenal - Coventry City - 21.08.2026 ⚽ England. ...\n    Content: Arsenal - Coventry City betting on 21.08.2026 ⚽ Full prematch market on England. Premier League 1X2, BTTS, Asian handicap, totals ⭐ Deposit in dirham\n    URL: https://ma-1xbet.com/en/line/football/88637-england-premier-league/343662668-arsenal-coventry-city\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879301",
+                        "date_utc": "2026-08-21T19:00Z",
+                        "kickoff_et": "2026-08-21 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Arsenal",
+                        "away": "Coventry City",
+                        "home_id": "359",
+                        "away_id": "388",
+                        "matchup": "Coventry City (away) @ Arsenal (home)",
+                        "venue": "Emirates Stadium",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWLWW",
+                        "form_away": "WWWDD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-750",
+                            "home_current": "-550",
+                            "draw_open": "+700",
+                            "draw_current": "+650",
+                            "away_open": "+1500",
+                            "away_current": "+1400"
+                        },
+                        "odds_text": "DraftKings: Arsenal -550 (open -750); Draw +650 (open +700); Coventry City +1400 (open +1500)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-20T11:05:09.067895-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:58:18.074589-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are massive favorites playing at home at the Emirates Stadium. Bookmaker odds of -550 imply a win probability of over 80% once adjusted for the margin. Coventry City, as heavy underdogs, face an extremely difficult task away against one of the Premier League's top title contenders.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-20T10:58:24.804777-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "Home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters the match as massive home favorites against newly-promoted Coventry City. The moneyline odds of -550 for Arsenal translate to an implied probability of over 80%.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-20T10:58:37.485069-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.809,
+                    "draw_probability": 0.127,
+                    "away_win_probability": 0.064,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are overwhelming favorites playing at their home ground, the Emirates Stadium. The DraftKings odds of -550 for an Arsenal victory imply a very high probability (over 80% after normalization) for this outcome. This is the opening match of the season, where top-tier teams like Arsenal typically seek to establish dominance, especially against a team presumed to be of lower caliber like Coventry City. Despite Coventry's strong preseason/end-of-season form, the significant difference in squad quality and resources heavily favors a comfortable home win for Arsenal.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-20T10:58:46.114399-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.8088,
+                    "draw_probability": 0.1274,
+                    "away_win_probability": 0.0638,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are overwhelming favorites playing at home at Emirates Stadium against Coventry City. The DraftKings odds of -550 for an Arsenal win reflect this strong favoritism, translating to a normalized home win probability of approximately 80.88%. This significant disparity in odds strongly indicates a home victory for Arsenal.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T10:59:47.176115-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.809,
+                    "draw_probability": 0.127,
+                    "away_win_probability": 0.064,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal have a large home-field and squad-quality edge at the Emirates, and the 1X2 market strongly favors them with Arsenal around -550 versus Coventry at +1400. Coventry's recent form is positive, but the gap in Premier League quality and Arsenal's strong home profile make a regulation-time home win the most likely result.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-20T10:59:55.230560-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy home favorites at the Emirates, with market odds strongly implying a high probability of a home win. Their recent form is strong, they have a major squad-quality advantage, and the matchup context points to Arsenal controlling possession and chance creation. Coventry's unbeaten recent form is noted, but this is a much more difficult away fixture against an elite Premier League side.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-20T11:00:19.404492-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.809,
+                    "draw_probability": 0.128,
+                    "away_win_probability": 0.063,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Market 1X2 pricing strongly favors Arsenal at the Emirates (Arsenal -550 vs Coventry +1400), implying a large quality gap and substantial home advantage. Arsenal’s recent form (WWLWW) is solid, and Coventry’s positive form (WWWDD) is less informative given the step up in opponent strength. Baseline expectation is Arsenal controlling possession and chances, making a regulation home win the most likely outcome with draw the main secondary result.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-20T11:00:29.554017-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.87,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.03,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are heavy favorites at the Emirates based on market odds and underlying quality. DraftKings pricing implies a very strong home probability; Arsenal’s recent form (WWLWW), high possession profile, and superior squad depth make them clear favorites. Coventry’s good run and resilience (recent WWWDD) reduce the chance of an upset, but the gulf in expected quality and home advantage make a Coventry win unlikely. Early-season uncertainty and possible lineup/injury changes temper absolute certainty, hence medium confidence. Prediction is for an Arsenal regulation-time win (including stoppage time).",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-20T11:00:46.038558-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal favored at home with strong recent form; Coventry City away form indicates limited upset potential; 90 minutes likely favors Arsenal with a notable chance of draw and a smaller chance of Coventry win.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-20T11:00:48.628527-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy favorites at home, as reflected by both the betting odds (as short as -550) and their strong recent form (WWLWW). Coventry City, while in good away form (WWWDD), are newly promoted and face a significant step up in competition at the Emirates. Arsenal's possession stats and squad depth further support their advantage. The probability distribution reflects the consensus of bookmakers and recent team performances, making a home win the most likely outcome.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-20T11:00:51.708006-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal's strong home form and superior squad depth, combined with Coventry City's lower league status and the odds heavily favoring Arsenal, suggest a high likelihood of a home win.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-20T11:01:01.552993-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy favorites at home (DraftKings -550, implying ~85% raw / ~81% de-vigged win probability). Arsenal's recent form (WWLWW) and squad quality far exceed newly promoted Coventry City's, despite Coventry's unbeaten run (WWWDD) at a lower level. Emirates home advantage and Arsenal's dominant possession profile support a strong home win probability, with modest allowance for a draw or upset in an early-season fixture.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-20T11:01:05.507626-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.82,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "Arsenal",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy favorites at home (-550), reflecting a large quality gap over newly promoted Coventry City. Strong home form and dominant possession expectations support a comfortable home win, though upset/draw risk keeps some probability on other outcomes.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-20T11:01:13.336075-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy favorites at home against newly promoted/lower-division Coventry City. The DraftKings odds of -550 for Arsenal imply roughly 84% win probability, though we shade this slightly given early-season variance and Coventry's decent form (WWWDD). Arsenal's Emirates Stadium fortress, squad depth, and overall quality make them overwhelming favorites. Coventry's +1400 odds reflect the significant quality gap. Arsenal's 5-match form of WWLWW and Coventry's solid WWWDD form suggest Coventry could be competitive, but the class difference at Premier League level should be decisive.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-20T11:01:24.924463-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavily favored at home at Emirates Stadium against newly promoted Coventry City. The odds movement from -750 to -550 still reflects overwhelming Arsenal favoritism. Arsenal's strong home form (WWLWW) and quality advantage over a Championship side is significant. Coventry's recent form shows draws (WWWDD), suggesting defensive resilience but limited attacking threat at this level. Arsenal's superior possession stats (60.4% average) and quality should dominate. While Coventry may defend deep, Arsenal's firepower at home makes a comfortable home victory the most likely outcome. The 78% probability aligns with the heavily skewed odds, though slightly more conservative than the opening line suggested to account for first match unpredictability.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-20T11:01:27.797397-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavy favorites with -550 odds (72% implied probability). Arsenal's strong home form (WWLWW) combined with their typical possession dominance (60.4% average) creates a significant advantage against Coventry City. Coventry's away record shows mixed recent form (WWWDD) suggesting inconsistency on the road. Third-party modeling estimates Arsenal win probability at 38.81% (likely conservative), but market odds and historical matchup dynamics strongly favor the home team. The gap in quality between Arsenal and Coventry supports a dominant home performance.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-20T11:01:42.632334-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong favorites at home with DraftKings odds of -550, implying roughly 81% probability after removing vig. Coventry City's away form is solid, but the gap in quality and venue make a home win the most likely regulation-time result.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-20T11:01:44.200473-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong at home with good form, while Coventry are newly promoted and face a significant quality gap. Odds heavily favor Arsenal.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-20T11:02:02.705817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is heavily favored at home with -550 odds, reflecting their superior squad depth, possession dominance, and home-field advantage at the Emirates Stadium. Coventry City faces a significant step up in class, making a home win the most likely outcome.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-20T11:02:08.122625-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.03,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal has a strong home form and is heavily favored by the bookmakers. Coventry City, despite having a decent away form, is unlikely to match Arsenal's quality and depth, especially at the Emirates Stadium.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-20T11:03:03.633921-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.81,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is heavily favored at home with closing odds around -550, reflecting a significant squad quality gap and strong possession dominance at the Emirates. Coventry City's respectable away form is insufficient to overcome the clear market consensus and Arsenal's historical home advantage. The normalized probabilities indicate a strong expectation of a regulation-time home victory, with low likelihood for a draw or upset.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-20T11:03:39.599595-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters as a heavy favorite with -550 odds, indicating high implied probability of victory at the Emirates Stadium. Despite Coventry City's impressive recent away form (WWWDD), the gap in squad strength and home advantage strongly favors Arsenal. Probabilities are normalized to reflect Arsenal dominance while accounting for the slight possibility of a competitive upset or draw based on Coventry's current momentum.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-20T11:04:10.164715-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.79,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are overwhelming favorites at the Emirates, with DraftKings pricing them at -550, implying a very high probability of a home victory inside 90 minutes. Arsenal have averaged over 60% possession and dominated the ball in 8 of their last 10 matches, while their home form (WWLWW) is strong. Coventry City arrives with an unbeaten away run (WWWDD), but those results likely came against lesser opposition, and the step up in class against a top-tier Arsenal side at home makes an away upset extremely unlikely. A draw is the main outside chance if Coventry defends deep, but Arsenal's quality and home advantage should prevail.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-20T11:05:06.489937-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters as massive favorites against Coventry City, with betting odds of -550 implying an implied probability above 80% before vig adjustment. The gulf in class between Arsenal's established Premier League squad and Coventry (likely a promoted Championship side) is substantial. Arsenal's home form at Emirates Stadium (WWLWW) demonstrates strong performance against top-flight opposition, while Coventry's undefeated streak (WWWDD) comes against lesser competition. Arsenal's average possession of 60.4% indicates they will control tempo and territory against a Coventry side expected to defend deep. The odds movement slightly toward Coventry (+1400 from +1500) and the draw (+650 from +700) suggests minor market respect for Coventry's form, but not enough to overcome Arsenal's overwhelming quality advantage.",
+                    "event_id": "401879301"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-20T11:05:09.063214-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Coventry City (away) @ Arsenal (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal has a strong home form and is favored by the odds, with Coventry City having a weaker away form. The home advantage and the structured odds suggest a high likelihood of an Arsenal win.",
+                    "event_id": "401879301"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-28",
+        "target_date_et": "2026-08-29",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882902\nMatchup: Real Betis (away) @ Levante (home)\nHome: Levante\nAway: Real Betis\nKickoff UTC: 2026-08-29T15:00Z\nKickoff ET: 2026-08-29 11:00 EDT\nVenue: Estadi Ciutat de València\nRound: unavailable\nHome form: DLLWW\nAway form: WWWLW\nHome record: 0-1-1\nAway record: 2-0-0\nESPN structured 1X2 odds: DraftKings: Levante +235 (open +220); Draw +245 (open +240); Real Betis +120 (open +125)\nTavily context:\n  - Title: PREVIEW | Levante vs Real Betis: team news, lineups, predictions (La Liga 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nReal Betis currently have 6 points and lie in 3rd position. In their last fixture, Manuel Pellegrini's team won 0-1 against Valencia CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Real Betis winning 2-1.\n\n## Unavailable\n\n## Levante\n\n## Real Betis\n\n Gonzalo Petit - Muscle Injury\n Diego Conde - Shoulder Injury\n\n## Last starting XIs\n\nLevante ( vs Osasuna 2026-08-24): Mathew Ryan, Nacho Pérez, Aïssa Mandi, Adrián Dela, Manu Sánchez, Oriol Rey, Roger Brugué, Enzo Bardeli, Jon Olasagasti, Thiago Fernández, Iván Romero ...\n    URL: https://sports.yahoo.com/articles/preview-levante-vs-real-betis-150500445.html\n  - Title: Levante-Real Betis - LaLiga 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nLevante logo\nReal Betis logo\nLevante logo\nReal Betis logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Álex Primo |  | Out | N/A | ...\n    URL: https://www.whoscored.com/matches/1993921/preview/spain-laliga-2026-2027-levante-real-betis\n  - Title: Levante vs Real Betis Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n    Content: Total\n\n9.20 4.10 5.10\n\nHome\n\n8.90 4.50 4.40\n\nAway\n\n9.20 3.60 5.60\n\nLatest Corner Odds\n\nTotal Corners\n\nOver 9.5\n\n1.86\n\nUnder 9.5\n\n1.82\n\n Stake Logo\n\nLevante Corners\n\nOver 4.5\n\n1.86\n\nUnder 4.5\n\n1.82\n\n Stake Logo\n\nBetis Corners\n\nOver 4.5\n\n1.84\n\nUnder 4.5\n\n1.84\n\n Stake Logo\n\nMost Corners\n\n1\n\n2.02\n\nX\n\n7.00\n\n2\n\n2.00\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nAsian Handicap Levante +0.25 1.95\n\nBoth Team To Score No 1.96 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/levante-vs-real-betis-prediction-lineups-odds-2026-08-29\n  - Title: Levante vs Real Betis Predictions, Picks & Odds - 29/08/2026\n    Content: Real Betis represent genuine value at 2.23 for the outright win. Manuel Pellegrini's side averaged 1.6 goals per game last season while conceding fewer than Levante, who managed just 1.2 goals per outing. Betis finished 5th and earned Champions League football; Levante sat in 19th. That gulf in quality is difficult to ignore, and the visitors' recent form of four wins from five underlines their consistency. ...\n    URL: https://www.toffeeweb.com/int/levante-vs-real-betis-predictions-picks-odds-29-08-2026\n\nGame ID: 2\nSource event_id: 401882898\nMatchup: Espanyol (away) @ Real Sociedad (home)\nHome: Real Sociedad\nAway: Espanyol\nKickoff UTC: 2026-08-29T17:00Z\nKickoff ET: 2026-08-29 13:00 EDT\nVenue: Reale Arena\nRound: unavailable\nHome form: LLDLD\nAway form: LWDWW\nHome record: 0-0-2\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Real Sociedad -110 (open -115); Draw +270 (open +265); Espanyol +300 (open +300)\nTavily context:\n  - Title: Real Sociedad vs Espanyol Prediction, Betting Tips ...\n    Content: Real Sociedad 2-2 Real Betis\n\nConfirmed Lineups\n\n#### Previous Espanyol Lineups\n\n22 Aug La Liga\n\nEspanyol 1-2 Real Madrid\n\nConfirmed Lineups\n\n16 Aug La Liga\n\nEspanyol 3-0 Levante\n\nConfirmed Lineups\n\n23 May La Liga\n\nEspanyol 1-1 Real Sociedad\n\nConfirmed Lineups\n\n17 May La Liga\n\nOsasuna 1-2 Espanyol\n\nConfirmed Lineups\n\n13 May La Liga\n\nEspanyol 2-0 Athletic Club\n\nConfirmed Lineups\n\n09 May La Liga\n\nSevilla 2-1 Espanyol\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nReal Sociedad  Injury Table\n\nType Name Info\n\nJon Gorrotxategi Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/real-sociedad-vs-espanyol-prediction-lineups-odds-2026-08-29\n  - Title: PREVIEW | Real Sociedad vs Espanyol: team news, lineups, predictions (La Liga 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nEspanyol have won 3 points to date and are placed in 7th position. In their last game, Manolo González's team lost 1-2 against Real Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Real Sociedad\n\n## Espanyol\n\n## Last starting XIs\n\nReal Sociedad ( vs Real Madrid 2026-08-26): Álex Remiro, Jon Aramburu, Jon Martín, Luken Beitia, Sergio Gómez, Yangel Herrera, Beñat Turrientes, Takefusa Kubo, Luka Sucic, Job Nguono, Mikel Oyarzabal ...\n    URL: https://sports.yahoo.com/articles/preview-real-sociedad-vs-espanyol-170500751.html\n  - Title: Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis – Ratingbet.com\n    Content: Ratingbet Football LaLiga Spain Predictions  Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis\n\n# Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis\n\nBoth teams to score\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 27 Aug 2026, 12:46\n\nReal Sociedad vs Espanyol match prediction on Aug 29, 2026\n\nMath prediction  1 X 2\n\nReal Sociedad\n\n Real Sociedad\n\n-\n\nEspanyol\n\n Espanyol\n\n-\n\n1.92   3.78   4.37  Linebet   27 Aug 09:02  4.31  + 0.05     24 Aug 17:03  4.21  + 0.05\n\n51%     26%     23%\n\n31 TIPS ...\n    URL: https://ratingbet.com/predictions/real-sociedad-vs-espanyol-prediction-team-news-lineups-expert-analysis\n\nGame ID: 3\nSource event_id: 401882897\nMatchup: Atlético Madrid (away) @ Sevilla (home)\nHome: Sevilla\nAway: Atlético Madrid\nKickoff UTC: 2026-08-29T19:30Z\nKickoff ET: 2026-08-29 15:30 EDT\nVenue: Ramón Sánchez Pizjuán Stadium\nRound: unavailable\nHome form: WWLLW\nAway form: DWLWW\nHome record: 2-0-0\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Sevilla +260 (open +250); Draw +245 (open +245); Atlético Madrid +110 (open +105)\nTavily context:\n  - Title: Sevilla vs Atletico Madrid - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Sevilla vs Atletico Madrid — Sat, August 29, 7:30 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Ramón Sánchez Pizjuán\n\nSevillaSevilla\n\n‌\n‌\n\nAtletico MadridAtletico Madrid\n\n# Sevilla vs Atletico Madrid — Sat, August 29, 7:30 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Ramón Sánchez Pizjuán\n\nSevillaSevilla\n\n‌\n‌\n\nAtletico MadridAtletico Madrid\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alfon González\n\n  Muscle injury / Back in training\n\nGonzálezMuscle injuryBack in training\n\n  Alexander Sørloth\n\n  Muscle injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/sevilla-vs-atletico-madrid/2qpc8y\n  - Title: Preview: Sevilla vs Atletico Madrid - prediction, team news, lineups - Sports Mole\n    Content: Sevilla La Liga form:\n\n W\n W\n\nAtletico Madrid La Liga form:\n\n W\n D\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372586-0233-1-6a8fd7c4378a8127650848.jpg)\n\n© Iconsport / Cesar Cebolla / Pressinphoto\n\nSevilla could have a fully-fit squad for this match, with Kike Salas also available, having missed the team's last game against Athletic through suspension.\n\nUre is again expected to be given the nod through the middle for the hosts, while there will be a spot in a wide area for Oso, who was outstanding at San Mames last time out. ...\n    URL: https://www.sportsmole.co.uk/football/atletico-madrid/race-for-the-la-liga-title/preview/sevilla-vs-atletico-prediction-team-news-lineups_603852.html\n  - Title: Sevilla vs Atlético de Madrid Predictions, Picks & Odds\n    Content: La Liga · 3\n\n29 Aug 2026  Estadio Ramón Sánchez Pizjuán  Louis Hecq\n\n### Sevilla vs Atlético de Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 3.50 | 3.45 | 2.08 | View Odds |\n| bc.game | 3.50 | 3.30 | 2.08 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Atlético de Madrid\n\n2.08 on StakeStake · Confidence Medium\n\nOdds recorded on 28 Aug 2026 at 04:58 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 3\n\nDate: 29 Aug 2026\n\nTime: 20:30 BST\n\nStadium: Estadio Ramón Sánchez Pizjuán ...\n    URL: https://www.toffeeweb.com/int/sevilla-vs-atletico-de-madrid-predictions-picks-odds-29-08-2026\n  - Title: Sevilla vs Atletico Madrid Prediction: 29.08.2026 La Liga ...\n    Content: Yes approx. 1.75–1.90 | No approx. 1.90–2.05\n\nAtletico at 2.10-2.13 represents genuine value given their shot dominance and historical head-to-head record. The draw odds sitting around 3.30-3.43 are not particularly attractive given how both sides have played attacking football early in the season. Sevilla at 3.50+ would only be interesting if you weight their home advantage heavily, but the underlying stats do not support backing them at this stage. Over 2.5 looks the most straightforward secondary market given the average of 4 goals per head-to-head meeting across the last four fixtures. ...\n    URL: https://tips.gg/article/sevilla-vs-atletico-madrid-29-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-28\n\nTarget Date (ET): 2026-08-29\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882902\nMatchup: Real Betis (away) @ Levante (home)\nHome: Levante\nAway: Real Betis\nKickoff UTC: 2026-08-29T15:00Z\nKickoff ET: 2026-08-29 11:00 EDT\nVenue: Estadi Ciutat de València\nRound: unavailable\nHome form: DLLWW\nAway form: WWWLW\nHome record: 0-1-1\nAway record: 2-0-0\nESPN structured 1X2 odds: DraftKings: Levante +235 (open +220); Draw +245 (open +240); Real Betis +120 (open +125)\nTavily context:\n  - Title: PREVIEW | Levante vs Real Betis: team news, lineups, predictions (La Liga 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nReal Betis currently have 6 points and lie in 3rd position. In their last fixture, Manuel Pellegrini's team won 0-1 against Valencia CF (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Real Betis winning 2-1.\n\n## Unavailable\n\n## Levante\n\n## Real Betis\n\n Gonzalo Petit - Muscle Injury\n Diego Conde - Shoulder Injury\n\n## Last starting XIs\n\nLevante ( vs Osasuna 2026-08-24): Mathew Ryan, Nacho Pérez, Aïssa Mandi, Adrián Dela, Manu Sánchez, Oriol Rey, Roger Brugué, Enzo Bardeli, Jon Olasagasti, Thiago Fernández, Iván Romero ...\n    URL: https://sports.yahoo.com/articles/preview-levante-vs-real-betis-150500445.html\n  - Title: Levante-Real Betis - LaLiga 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nLevante logo\nReal Betis logo\nLevante logo\nReal Betis logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Álex Primo |  | Out | N/A | ...\n    URL: https://www.whoscored.com/matches/1993921/preview/spain-laliga-2026-2027-levante-real-betis\n  - Title: Levante vs Real Betis Prediction, Betting Tips, Lineups & Odds | 29 Aug 2026\n    Content: Total\n\n9.20 4.10 5.10\n\nHome\n\n8.90 4.50 4.40\n\nAway\n\n9.20 3.60 5.60\n\nLatest Corner Odds\n\nTotal Corners\n\nOver 9.5\n\n1.86\n\nUnder 9.5\n\n1.82\n\n Stake Logo\n\nLevante Corners\n\nOver 4.5\n\n1.86\n\nUnder 4.5\n\n1.82\n\n Stake Logo\n\nBetis Corners\n\nOver 4.5\n\n1.84\n\nUnder 4.5\n\n1.84\n\n Stake Logo\n\nMost Corners\n\n1\n\n2.02\n\nX\n\n7.00\n\n2\n\n2.00\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nAsian Handicap Levante +0.25 1.95\n\nBoth Team To Score No 1.96 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/levante-vs-real-betis-prediction-lineups-odds-2026-08-29\n  - Title: Levante vs Real Betis Predictions, Picks & Odds - 29/08/2026\n    Content: Real Betis represent genuine value at 2.23 for the outright win. Manuel Pellegrini's side averaged 1.6 goals per game last season while conceding fewer than Levante, who managed just 1.2 goals per outing. Betis finished 5th and earned Champions League football; Levante sat in 19th. That gulf in quality is difficult to ignore, and the visitors' recent form of four wins from five underlines their consistency. ...\n    URL: https://www.toffeeweb.com/int/levante-vs-real-betis-predictions-picks-odds-29-08-2026\n\nGame ID: 2\nSource event_id: 401882898\nMatchup: Espanyol (away) @ Real Sociedad (home)\nHome: Real Sociedad\nAway: Espanyol\nKickoff UTC: 2026-08-29T17:00Z\nKickoff ET: 2026-08-29 13:00 EDT\nVenue: Reale Arena\nRound: unavailable\nHome form: LLDLD\nAway form: LWDWW\nHome record: 0-0-2\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Real Sociedad -110 (open -115); Draw +270 (open +265); Espanyol +300 (open +300)\nTavily context:\n  - Title: Real Sociedad vs Espanyol Prediction, Betting Tips ...\n    Content: Real Sociedad 2-2 Real Betis\n\nConfirmed Lineups\n\n#### Previous Espanyol Lineups\n\n22 Aug La Liga\n\nEspanyol 1-2 Real Madrid\n\nConfirmed Lineups\n\n16 Aug La Liga\n\nEspanyol 3-0 Levante\n\nConfirmed Lineups\n\n23 May La Liga\n\nEspanyol 1-1 Real Sociedad\n\nConfirmed Lineups\n\n17 May La Liga\n\nOsasuna 1-2 Espanyol\n\nConfirmed Lineups\n\n13 May La Liga\n\nEspanyol 2-0 Athletic Club\n\nConfirmed Lineups\n\n09 May La Liga\n\nSevilla 2-1 Espanyol\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nReal Sociedad  Injury Table\n\nType Name Info\n\nJon Gorrotxategi Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/real-sociedad-vs-espanyol-prediction-lineups-odds-2026-08-29\n  - Title: PREVIEW | Real Sociedad vs Espanyol: team news, lineups, predictions (La Liga 29/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nEspanyol have won 3 points to date and are placed in 7th position. In their last game, Manolo González's team lost 1-2 against Real Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended in a 1-1 draw.\n\n## Unavailable\n\n## Real Sociedad\n\n## Espanyol\n\n## Last starting XIs\n\nReal Sociedad ( vs Real Madrid 2026-08-26): Álex Remiro, Jon Aramburu, Jon Martín, Luken Beitia, Sergio Gómez, Yangel Herrera, Beñat Turrientes, Takefusa Kubo, Luka Sucic, Job Nguono, Mikel Oyarzabal ...\n    URL: https://sports.yahoo.com/articles/preview-real-sociedad-vs-espanyol-170500751.html\n  - Title: Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis – Ratingbet.com\n    Content: Ratingbet Football LaLiga Spain Predictions  Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis\n\n# Real Sociedad vs Espanyol prediction: team news, lineups, expert analysis\n\nBoth teams to score\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 27 Aug 2026, 12:46\n\nReal Sociedad vs Espanyol match prediction on Aug 29, 2026\n\nMath prediction  1 X 2\n\nReal Sociedad\n\n Real Sociedad\n\n-\n\nEspanyol\n\n Espanyol\n\n-\n\n1.92   3.78   4.37  Linebet   27 Aug 09:02  4.31  + 0.05     24 Aug 17:03  4.21  + 0.05\n\n51%     26%     23%\n\n31 TIPS ...\n    URL: https://ratingbet.com/predictions/real-sociedad-vs-espanyol-prediction-team-news-lineups-expert-analysis\n\nGame ID: 3\nSource event_id: 401882897\nMatchup: Atlético Madrid (away) @ Sevilla (home)\nHome: Sevilla\nAway: Atlético Madrid\nKickoff UTC: 2026-08-29T19:30Z\nKickoff ET: 2026-08-29 15:30 EDT\nVenue: Ramón Sánchez Pizjuán Stadium\nRound: unavailable\nHome form: WWLLW\nAway form: DWLWW\nHome record: 2-0-0\nAway record: 1-1-0\nESPN structured 1X2 odds: Provider unavailable: Sevilla +260 (open +250); Draw +245 (open +245); Atlético Madrid +110 (open +105)\nTavily context:\n  - Title: Sevilla vs Atletico Madrid - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Sevilla vs Atletico Madrid — Sat, August 29, 7:30 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Ramón Sánchez Pizjuán\n\nSevillaSevilla\n\n‌\n‌\n\nAtletico MadridAtletico Madrid\n\n# Sevilla vs Atletico Madrid — Sat, August 29, 7:30 PM UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Ramón Sánchez Pizjuán\n\nSevillaSevilla\n\n‌\n‌\n\nAtletico MadridAtletico Madrid\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alfon González\n\n  Muscle injury / Back in training\n\nGonzálezMuscle injuryBack in training\n\n  Alexander Sørloth\n\n  Muscle injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/sevilla-vs-atletico-madrid/2qpc8y\n  - Title: Preview: Sevilla vs Atletico Madrid - prediction, team news, lineups - Sports Mole\n    Content: Sevilla La Liga form:\n\n W\n W\n\nAtletico Madrid La Liga form:\n\n W\n D\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372586-0233-1-6a8fd7c4378a8127650848.jpg)\n\n© Iconsport / Cesar Cebolla / Pressinphoto\n\nSevilla could have a fully-fit squad for this match, with Kike Salas also available, having missed the team's last game against Athletic through suspension.\n\nUre is again expected to be given the nod through the middle for the hosts, while there will be a spot in a wide area for Oso, who was outstanding at San Mames last time out. ...\n    URL: https://www.sportsmole.co.uk/football/atletico-madrid/race-for-the-la-liga-title/preview/sevilla-vs-atletico-prediction-team-news-lineups_603852.html\n  - Title: Sevilla vs Atlético de Madrid Predictions, Picks & Odds\n    Content: La Liga · 3\n\n29 Aug 2026  Estadio Ramón Sánchez Pizjuán  Louis Hecq\n\n### Sevilla vs Atlético de Madrid – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| Stake | 3.50 | 3.45 | 2.08 | View Odds |\n| bc.game | 3.50 | 3.30 | 2.08 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Atlético de Madrid\n\n2.08 on StakeStake · Confidence Medium\n\nOdds recorded on 28 Aug 2026 at 04:58 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 3\n\nDate: 29 Aug 2026\n\nTime: 20:30 BST\n\nStadium: Estadio Ramón Sánchez Pizjuán ...\n    URL: https://www.toffeeweb.com/int/sevilla-vs-atletico-de-madrid-predictions-picks-odds-29-08-2026\n  - Title: Sevilla vs Atletico Madrid Prediction: 29.08.2026 La Liga ...\n    Content: Yes approx. 1.75–1.90 | No approx. 1.90–2.05\n\nAtletico at 2.10-2.13 represents genuine value given their shot dominance and historical head-to-head record. The draw odds sitting around 3.30-3.43 are not particularly attractive given how both sides have played attacking football early in the season. Sevilla at 3.50+ would only be interesting if you weight their home advantage heavily, but the underlying stats do not support backing them at this stage. Over 2.5 looks the most straightforward secondary market given the average of 4 goals per head-to-head meeting across the last four fixtures. ...\n    URL: https://tips.gg/article/sevilla-vs-atletico-madrid-29-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882902",
+                        "date_utc": "2026-08-29T15:00Z",
+                        "kickoff_et": "2026-08-29 11:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Levante",
+                        "away": "Real Betis",
+                        "home_id": "1538",
+                        "away_id": "244",
+                        "matchup": "Real Betis (away) @ Levante (home)",
+                        "venue": "Estadi Ciutat de València",
+                        "city": "Manises",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DLLWW",
+                        "form_away": "WWWLW",
+                        "record_home": "0-1-1",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+220",
+                            "home_current": "+235",
+                            "draw_open": "+240",
+                            "draw_current": "+245",
+                            "away_open": "+125",
+                            "away_current": "+120"
+                        },
+                        "odds_text": "DraftKings: Levante +235 (open +220); Draw +245 (open +240); Real Betis +120 (open +125)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882898",
+                        "date_utc": "2026-08-29T17:00Z",
+                        "kickoff_et": "2026-08-29 13:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Sociedad",
+                        "away": "Espanyol",
+                        "home_id": "89",
+                        "away_id": "88",
+                        "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                        "venue": "Reale Arena",
+                        "city": "San Sebastian",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLDLD",
+                        "form_away": "LWDWW",
+                        "record_home": "0-0-2",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "-110",
+                            "draw_open": "+265",
+                            "draw_current": "+270",
+                            "away_open": "+300",
+                            "away_current": "+300"
+                        },
+                        "odds_text": "Provider unavailable: Real Sociedad -110 (open -115); Draw +270 (open +265); Espanyol +300 (open +300)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882897",
+                        "date_utc": "2026-08-29T19:30Z",
+                        "kickoff_et": "2026-08-29 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Sevilla",
+                        "away": "Atlético Madrid",
+                        "home_id": "243",
+                        "away_id": "1068",
+                        "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                        "venue": "Ramón Sánchez Pizjuán Stadium",
+                        "city": "Sevilla",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWLLW",
+                        "form_away": "DWLWW",
+                        "record_home": "2-0-0",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+250",
+                            "home_current": "+260",
+                            "draw_open": "+245",
+                            "draw_current": "+245",
+                            "away_open": "+105",
+                            "away_current": "+110"
+                        },
+                        "odds_text": "Provider unavailable: Sevilla +260 (open +250); Draw +245 (open +245); Atlético Madrid +110 (open +105)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-28T11:22:49.912803-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:09:14.309731-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have made a strong start to the campaign with two wins from two, including a recent clean sheet against Valencia, while Levante has struggled early on with just one point (0-1-1). Bookmakers strongly favor the visitors at +120, reflecting the current gulf in squad quality and momentum.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Real Sociedad's slow start to the season (0-0-2), they remain strong favorites on their home turf at -110. Espanyol put up a fight against Real Madrid but historically find visits to the Reale Arena challenging. Expect Real Sociedad to bounce back and secure their first three points.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla has started the season in solid form with two wins, but Atlético Madrid represents a significant step up in class. Diego Simeone's side has dominated this matchup historically, and with depth upfront, they are deserved favorites at +110 despite being the away team.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-28T11:09:26.591197-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis represent stronger value with an improved squad that previously qualified for the Champions League, while Levante struggled towards the bottom of the table last season. The odds currently position Betis as the solid favorite.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored heavily at home with implied odds of around 50% for a win. Espanyol come into the game off a loss and face a difficult away fixture at Reale Arena.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enter the fixture with superior shot dominance and historical head-to-head records against Sevilla. The betting markets reflect genuine value on the visitors, favoring Diego Simeone's side despite Sevilla having home advantage.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-28T11:09:58.136899-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has started the season perfectly with two wins and has superior quality, as evidenced by their 5th place finish last season compared to Levante's 19th. Betis's recent form (four wins in five) is excellent, while Levante is winless so far this season. The betting odds also strongly favor an away victory.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Despite a very poor start to the season with two losses and a concerning run of form, Real Sociedad are priced as clear favorites by bookmakers and statistical models. This suggests their underlying quality is expected to prevail at home against an Espanyol side that is not considered as strong. The prediction banks on Real Sociedad reversing their poor form in front of their home crowd.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "While Sevilla has started the season perfectly with two wins and enjoys home advantage, Atlético Madrid is a perennial title contender and is favored by the betting markets. Expert analysis points to Atlético's historical head-to-head advantage and strong underlying statistics. Despite Sevilla's excellent form, Atlético's overall quality and the market confidence make them slight favorites to win a challenging away fixture.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-28T11:10:20.269314-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Real Betis enters the match in strong form (WWWLW), holds a superior league position (3rd), and has a perfect away record (2-0-0). Expert analysis consistently rates them as the better team, having finished 5th last season compared to Levante's 19th, and averaging more goals while conceding fewer. The last H2H also resulted in a Real Betis win. The odds also strongly favor an away win.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "While Real Sociedad is the bookmakers' favorite and has a higher perceived quality, their recent home form (LLDLD) and home record (0-0-2) are concerning. Espanyol's away form (LWDWW) is stronger. However, the odds and some predictors still lean towards a Real Sociedad win, suggesting underlying quality despite a poor start. The last meeting between these two teams was a draw.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid is strongly favored by odds providers and expert analyses, which highlight their 'genuine value,' 'shot dominance,' and superior historical head-to-head record. Although Sevilla has a perfect home record (2-0-0) this season, their overall form is more mixed (WWLLW), and Atlético Madrid's consistent quality and strong away form (DWLWW) make them the likely winners.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:13:00.900678-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are the market favorite and have opened with two wins, while Levante are still seeking a first league win. Betis also appear to have the stronger overall squad, though Levante's home advantage keeps the draw and home upset probabilities meaningful.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are clear home favorites in the 1X2 market despite a poor start, reflecting stronger underlying squad quality and Reale Arena advantage. Espanyol's recent form is competitive, but away from home they remain the less likely winner.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Atlético Madrid are favored by the betting market and bring higher baseline quality, but Sevilla's perfect start and home venue make this a relatively tight forecast. Atlético's injury concern in attack slightly lowers confidence, with the draw also a significant outcome.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-28T11:13:12.612726-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are the stronger side on current evidence, starting 2-0-0 and entering with better recent form. The market also makes Betis the clear away favorite, and the available context points to a quality gap versus Levante. Levante's home advantage keeps the draw and home-win chances meaningful, but Betis are the most likely regulation-time winner.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored by the betting market and have home-field advantage at Reale Arena. Their early record and recent form are not convincing, while Espanyol have shown better form overall, so the upset and draw probabilities remain significant. Still, Sociedad's underlying squad quality and home edge make a home win the most likely outcome.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are the market favorite and have the stronger overall profile, with solid recent form and a matchup history that supports their chances. Sevilla's strong start and home advantage at Ramón Sánchez Pizjuán make this a difficult away fixture, raising both the home-win and draw probabilities. Even so, Atlético remain the likeliest 90-minute winner.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-28T11:13:49.054212-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Betis clear favorites (short away odds), and the early-season records/forms favor Betis (2-0-0; WWWLW) over Levante (0-1-1; DLLWW). Betis’ higher baseline quality and recent H2H edge slightly outweigh Levante’s home advantage, with the draw a meaningful secondary outcome.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored by the odds at home, but their recent form is weak (LLDLD), so probabilities are moderated toward draw/away. Espanyol’s results have been more positive overall, yet away to Sociedad is still a difficult spot, keeping the home win as the most likely single outcome.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético are priced as the most likely winner despite being away, indicating a class/consistency edge. Sevilla’s strong start and home venue increase the upset and draw chances, so the match projects as competitive, but Atlético remain the likeliest 90-minute result.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-28T11:14:06.223893-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor Real Betis (+120) and normalization gives the visitors a clear edge. Betis form (WWWLW) and 2-0-0 record vs Levante's poorer start (0-1-1) and recent inconsistency support an away win. Levante's home advantage and injuries cap the probability of a Betis blowout, so a competitive Betis win is most likely.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are narrow favorites in the market (-110) and have home advantage at Reale Arena. Despite mixed early-season form (LLDLD) and Espanyol's decent away results, the odds and home strength tilt the balance to Sociedad. Expect a tight match where a Sociedad regulation-time win is most probable, with draw reasonably possible.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético are favored in the betting (around +110) and possess strong recent form (DWLWW). Sevilla have good home form but Atlético's squad quality and shot dominance historically give them the edge. The market-implied probabilities and tactical matchup point to an Atlético win in regulation, though a draw remains plausible.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-28T11:14:20.980405-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Betis is favored by odds and recent form; home Levante less strong, leading to a higher away-win probability.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": " Sociedad's home form and odds position them as clear favorites over Espanyol.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Odds tilt toward Atlético Madrid as the more likely winner despite Sevilla home advantage.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-28T11:14:25.383551-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are in strong form with four wins in their last five matches and have a superior squad compared to Levante, who finished 19th last season and have struggled defensively. Betis also won the last head-to-head. Market odds and expert previews favor Betis, and their away record is perfect so far. Levante's home advantage and recent improvement warrant some respect, but Betis are deserved favorites.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored by both market odds and expert predictions, with a 51% win probability. While their form is poor, they have home advantage and a stronger squad. Espanyol have shown some resilience but are inconsistent away. The last meeting ended in a draw, but Sociedad's underlying metrics and home support tip the balance in their favor.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are slight favorites away from home, supported by market odds and recent form. Sevilla have started well at home but face a step up in class. Atlético's historical head-to-head advantage and shot dominance, along with a mostly fit squad, make them the likelier winners. The draw is a real possibility given Sevilla's home strength, but Atlético's quality edges it.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-28T11:14:34.413893-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has shown strong form with four wins in their last five matches, and they have a superior squad compared to Levante. The odds favor Betis, and their recent head-to-head record supports an away win.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad, despite a poor start, has a strong home advantage and a better squad depth. Espanyol's inconsistency away from home makes Real Sociedad the likely winners.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have been in good form, and the odds suggest a close match. Sevilla's home advantage is balanced by Atlético's strong away performance, making a draw the most probable outcome.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-28T11:14:49.160828-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Betis arrive in strong form (2-0-0, four wins in five) with superior squad quality after a 5th-place finish last season, while Levante struggled near relegation and lost their opener. Market odds (Betis +120) make the visitors clear favorites, though Levante's home advantage and Betis's early-season rotation risk keep this from being high confidence.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are winless in their last five (0-0-2 start) but remain market favorites at -110 thanks to home advantage at Reale Arena and stronger underlying squad quality. Espanyol have started well with a win over Levante and a narrow loss to Real Madrid, making this competitive, but the home side edges it. Poor La Real form limits confidence.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid's shot dominance, favorable head-to-head record, and overall squad superiority make them favorites even away at the Sánchez Pizjuán. Sevilla have started 2-0-0 and could be near full strength, which supports meaningful home win/draw probability, but the market (Atlético +110) and quality gap point to an away win as the most likely single outcome.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-28T11:14:56.711547-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Betis in strong form with 4 wins from 5, finished 5th last season with Champions League football, while Levante is a promoted side that finished 19th. Odds favor Betis, and quality gap plus away form supports away win.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad favored at home despite poor form (LLDLD), while Espanyol has decent recent form. Home advantage and market odds (-110) tip it slightly to Sociedad, but this is a close call.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid favored by odds (+110) and superior squad quality despite Sevilla's strong home record. Atlético's shot dominance and depth make them favorites away from home.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-28T11:15:14.655462-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are the stronger side on paper, sitting 3rd with 6 points from 2 games and in excellent form (4W from last 5). They won the last head-to-head 2-1 and beat Valencia away most recently. Levante, newly promoted or a mid-table side, have a mixed record (0-1-1) and are at home but facing a significantly superior opponent. Odds favor Betis at around -120 to +120 range. The quality gap is substantial — Betis finished 5th last season (Champions League football) vs Levante in 19th. Two injury concerns for Betis (Conde, Petit) are noted but not disqualifying. Levante's home advantage provides some cushion but not enough to overcome the class difference.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are heavy favorites at home (-110) despite their poor early form (0-0-2, LLDLD). Playing at Reale Arena gives them a significant advantage, and the market strongly prices them as favorites. Espanyol have a decent 1-0-1 record but just lost to Real Madrid. The last meeting ended 1-1. Real Sociedad have quality players (Kubo, Oyarzabal, Sucic) and home form tends to be strong at Reale Arena. Mathematical models suggest 51% home probability. Despite Sociedad's poor start, the home advantage and squad quality tip this in their favor.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are slight favorites at +110 (implied ~48%) with Sevilla at +260. Atlético have shot dominance and a strong historical head-to-head record, averaging 4 goals per meeting in recent fixtures. Sevilla are in decent home form (2W) but facing a well-organized Atlético side under Simeone (or successor) with proven quality. Sørloth is injured but Atlético's depth remains strong. The double-chance X2 is highlighted by analysts as value. Sevilla's home advantage is real but the underlying stats favor Atlético. The draw is plausible given Atlético's tendency to defend leads, but the away win is the most likely single outcome.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-28T11:15:34.411234-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are in excellent form with 6 points from 2 matches (3rd position) and 4 wins from their last 5 games overall. Levante are struggling with only 1 point from 2 matches and finished 19th last season. The quality gap is significant - Betis finished 5th and earned Champions League football while Levante barely avoided relegation. Betis averaged 1.6 goals per game last season vs Levante's 1.2, and they won their last fixture 1-0 against Valencia. The odds favoring Betis at +120 represent value given their superior form and squad quality. Levante have injury concerns with missing players, while Betis are only without two players (Petit and Conde). Recent head-to-head saw Betis win 2-1.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are winless in their opening 2 matches (0-0-2 record) with poor recent form (LLDLD), including a 2-2 draw with Real Betis most recently. Espanyol have started better with 3 points from 2 matches (1-0-1) and improved form (LWDWW), though they lost 1-2 to Real Madrid in their last outing. The last meeting between these sides ended 1-1. Real Sociedad have home advantage at Reale Arena which is significant, and the odds favor them at -110/-115. However, their poor start to the season creates uncertainty. Mathematical predictions show 51% for home win, suggesting marginal advantage. Both teams have injury concerns with Jon Gorrotxategi out for Sociedad. The close odds and mixed form make this a difficult match to call with high confidence.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid have strong form (DWLWW) with 4 points from 2 matches (1-1-0 record), while Sevilla have 6 points from a perfect 2-0-0 start. However, Atlético's underlying quality and shot dominance favor them. Recent head-to-head meetings average 4 goals, suggesting an open, attacking game. Atlético odds at +110/2.08-2.13 represent genuine value according to multiple sources. Sevilla won impressively at Athletic Bilbao last match, but Atlético have historically performed well in this fixture. Atlético are missing Alexander Sørloth to muscle injury (early September return), while Sevilla could have a fully-fit squad with Kike Salas returning from suspension. The X2 double chance (draw or Atlético) is recommended at 2.08, indicating bookmakers see Atlético as competitive. Over 2.5 goals is also likely given both teams' attacking approach and historical high-scoring meetings.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-28T11:15:41.053799-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are in superior form (4 wins in last 5) and currently 3rd with 6 points, while Levante are struggling (1 win in last 5, 0-1-1 record). Betis won their last head-to-head 2-1 and have averaged 1.6 goals per game last season with better defensive record. DraftKings odds favor Betis at +120. However, home advantage and recent context prevent higher confidence.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad favored at -110 odds with mathematical prediction of 51% home win probability. Espanyol are in 7th with 3 points after losing 1-2 to Real Madrid. Last meeting was a 1-1 draw. Real Sociedad's home advantage and the betting market consensus support a home win, though Espanyol's recent improvement (2 wins in last 5) limits confidence. Expert predictions show 51% for home team.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid favored at +110 odds with better underlying shot statistics and favorable historical head-to-head record. Expert analysis suggests Atlético at 2.10-2.13 represents genuine value. Sevilla are at +260 but recent form shows only 2-0 record early. Draw at 3.30-3.43 undervalued given attacking play from both sides. Atlético's tactical advantage and statistical dominance support away win despite home venue consideration.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-28T11:16:37.747732-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.286,
+                    "draw_probability": 0.278,
+                    "away_win_probability": 0.436,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are the stronger side, with better recent form and a positive head-to-head result. DraftKings odds imply an away edge after removing the vig.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.502,
+                    "draw_probability": 0.259,
+                    "away_win_probability": 0.239,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are favored by the betting market despite a poor early home record. Espanyol have been competitive, so the home edge is modest and low-confidence.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.2718,
+                    "draw_probability": 0.2836,
+                    "away_win_probability": 0.4446,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are the stronger team and the odds favor them away from home, though Sevilla's perfect home start adds some risk.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-28T11:16:41.274520-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis are in strong form (4 wins in last 5) and finished 5th last season, while Levante are newly promoted and have struggled early. Betis won the last meeting 2-1 and have superior squad quality. Odds also favor Betis.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad are winless at home (0-0-2) but have a stronger squad overall. Espanyol have won 3 of their last 5 but lost to Real Madrid last time. Home advantage and quality edge for Sociedad, but their poor form makes this uncertain.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are unbeaten and have a stronger overall squad. Sevilla have won both home games but face a tougher opponent. Odds favor Atlético, and their away form is solid. Expect a competitive match but Atlético's quality should prevail.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-28T11:17:25.488929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis is in excellent form with two wins from two matches and possesses a stronger squad overall. Levante has struggled, making the away side the clear favorite despite being on the road.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Despite a slow start to the season, Real Sociedad remains the stronger side on paper and has home advantage. Espanyol has shown good form but Sociedad's quality at Reale Arena should see them through.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid has the tactical edge and superior squad depth against a Sevilla side that has won its first two matches. The bookmakers favor Atlético, and their historical strength in big away fixtures makes them the likely winner.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-28T11:17:39.674040-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis has a strong recent form with four wins from their last five games and is currently in 3rd position. Levante, on the other hand, has been struggling and is lower in the table. The odds and historical performance favor Real Betis.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad, despite their mixed form, has a better overall record and home advantage. Espanyol, while showing some improvement, still lacks the consistency to be favored in this match. The odds and expert analysis lean towards a Real Sociedad win.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid has a strong away record and a favorable head-to-head history against Sevilla. Sevilla's recent form at home is good, but Atlético Madrid's overall performance and the current odds suggest they are more likely to win or draw. The value in the odds and the team's consistency point towards an Atlético Madrid win.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-28T11:18:52.394369-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis enter with superior recent form (WWWLW) and a perfect 2-0-0 start compared to Levante's inconsistent campaign. Market odds and expert consensus heavily favor the visitors, with Betis' historical head-to-head edge and attacking quality outweighing minor injury concerns. Levante's home advantage is mitigated by Betis' consistent road performances and tactical discipline.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Despite Real Sociedad's lackluster start (0 wins in two matches), the home pitch at Reale Arena and traditional squad depth make them narrow favorites. Espanyol's better early form and a recent head-to-head draw suggest a tightly contested match, but market odds and historical home advantage at Reale Arena edge the probability toward a Sociedad win. High volatility is expected given both teams' early-season adjustments.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are clear favorites in the market and expert analysis, leveraging superior defensive structure and away consistency. Sevilla’s strong home start is acknowledged, but Atlético’s historical dominance in this fixture and stronger overall squad quality suggest they can overcome the Ramón Sánchez Pizjuán atmosphere. A closely contested match is expected, but the away side’s tactical discipline and shot dominance give them the slight edge.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-28T11:20:00.748265-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis sits 3rd in the table with 6 points and 4 wins in their last 5 matches, contrasting with Levante's inconsistent home form and 0-1-1 league record. Betis won the last head-to-head meeting, and market odds (+120) reflect their superiority despite Levante home advantage.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Sociedad's early season home struggles (0-0-2 record), betting markets and independent models project a 51% probability for the home side (-110 odds). Espanyol shows away improvement but Sociedad retains the edge via home advantage and squad strength.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid enters as favorites (+110 odds) despite a missing striker, supported by expert analysis calling them value. While Sevilla is unbeaten at home, Atleti's overall squad depth and form (DWLWW) favor a narrow visitor victory or tight contest.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-28T11:21:43.138158-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have started the season strongly with two away wins and sit third with six points, while Levante are winless at home (0-1-1) and struggled for goals last season. The market prices Betis as a clear favorite (+120) and expert analysis points to value on the visitors given the gulf in quality and Levante's injury issues.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Despite a winless start (0-0-2), Real Sociedad are priced as home favorites (-110) and possess superior underlying quality to Espanyol. Espanyol's form is mixed (1-0-1) and their only away result this term was a loss. Home advantage and market support swing the prediction toward a Sociedad victory, though confidence is tempered by their slow start.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid remain unbeaten away (1-1-0) and are favored by the market (+110) against a Sevilla side that, while perfect at home (2-0-0), faces a significant step up in class. Expert models highlight value in Atlético's price, and their shot dominance and head-to-head pedigree give them the edge despite Sørloth's absence.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-28T11:22:42.753106-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Betis have started the season with two wins from two games (6 points, 3rd place), while Levante have only one point from two matches. Betis finished 5th last season compared to Levante's 19th, and Betis won the last meeting 2-1. Despite Levante's home advantage, Betis's superior form and squad quality make them clear favorites.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favorites according to market odds (-110) despite losing their first two games, while Espanyol have three points from two games including a 3-0 win over Levante. Sociedad's home advantage at Reale Arena and superior squad talent should help them secure their first victory of the season, though Espanyol's better recent form makes this contest competitive.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla have a perfect start with two wins from two games, but face a sterner test against Atletico Madrid, who are unbeaten with four points from two games. Atletico possess greater squad depth and finished higher last season. While Sevilla's home form is strong, Atletico's quality and market pricing (+110) suggest they have the edge in a tight encounter.",
+                    "event_id": "401882897"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-28T11:22:49.909212-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Betis (away) @ Levante (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Betis have a better form and a recent head-to-head win, suggesting a higher probability for an away win.",
+                    "event_id": "401882902"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Espanyol (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have an undefeated home record and a draw in the last encounter, which gives them a slight edge over Espanyol.",
+                    "event_id": "401882898"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atlético Madrid (away) @ Sevilla (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla has a good home record and are playing with the advantage of their home crowd, which could lead to a win against Atlético Madrid.",
+                    "event_id": "401882897"
+                }
+            ]
+        }
+    ]
+}

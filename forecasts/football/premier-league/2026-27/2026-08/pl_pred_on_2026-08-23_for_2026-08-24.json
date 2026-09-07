@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-23",
+        "target_date_et": "2026-08-24",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879318\nMatchup: Chelsea (away) @ Fulham (home)\nHome: Fulham\nAway: Chelsea\nKickoff UTC: 2026-08-24T19:00Z\nKickoff ET: 2026-08-24 15:00 EDT\nVenue: Craven Cottage\nRound: unavailable\nHome form: WDLLW\nAway form: LWLDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Fulham +290 (open +215); Draw +295 (open +260); Chelsea -115 (open +110)\nTavily context:\n  - Title: Preview: Fulham vs. Chelsea - prediction, team news, lineups\n    Content: Chelsea friendlies form:\n\n W\n L\n L\n W\n D\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fgarcia-fulham-6a88533376ff2164740785.jpg)\n\n© Imago / Mark Pain\n\nFulham have a relatively healthy squad, with Tom Cairney (knee) the only injury absentee heading into Monday's fixture, while Joachim Andersen will serve the final match of his three-game ban for a sending-off against Bournemouth in May. ...\n    URL: https://www.sportsmole.co.uk/football/fulham/preview/fulham-vs-chelsea-prediction-team-news-lineups_603532.html\n  - Title: Fulham vs Chelsea Premier League preview: Team news, tactics, transfers, new men at the helm\n    Content: Morgan Rogers Chelsea 2026Getty Images\n\n### Key stats, injuries & suspensions\n\n Chelsea have won on six of their last eight visits to Craven Cottage (L2), but after losing the last H2H, the Blues are at risk of being beaten in successive meetings at any venue for the first time since 1979.\n Fulham’s Joachim Andersen and Chelsea’s Wesley Fofana carry suspensions over from last season.\n\n### Likely XIs\n\nFulham (4231): Leno; Castagne, Cuenca, Bassey, Robinson; Berge, Iwobi; Bobb, King, Kevin; Garcia. ...\n    URL: https://www.goal.com/en/news/fulham-chelsea-premier-league-preview/blt8a9fb2cb98704850\n  - Title: Fulham vs Chelsea Betting Pick | English Premier | 2026-08-24 |\n    Content: Fulham vs Chelsea Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | FUL | DRAW | CHE |  | BET365 |  | 3.50 | 3.80 | 1.95 | | BETFRED | | 3.50 | 4.00 | 1.95 | | CLOUDBET | | 3.75 | 3.90 | 1.90 | | SPORTBET | | 3.65 | 3.74 | 1.88 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report.\n\nInstead you CAN see a list of odds and lines from recommended bookmakers and sportsbooks over on the right. ...\n    URL: https://www.goonersguide.com/football-pick-59790-Fulham-vs-Chelsea.htm\n  - Title: Fulham vs Chelsea Predictions, Picks & Odds - 24/08/2026\n    Content: Chelsea's own form heading into this fixture reads poorly, with just one win from their last five outings. Yet Xabi Alonso's appointment resets the narrative. Five intensive pre-season training sessions this week suggest a manager determined to impose his methods immediately. João Pedro's brace against Real Sociedad in a recent friendly indicates sharpness up front, offering encouragement at 2.10. ...\n    URL: https://www.toffeeweb.com/fulham-vs-chelsea-predictions-picks-odds-24-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-23\n\nTarget Date (ET): 2026-08-24\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879318\nMatchup: Chelsea (away) @ Fulham (home)\nHome: Fulham\nAway: Chelsea\nKickoff UTC: 2026-08-24T19:00Z\nKickoff ET: 2026-08-24 15:00 EDT\nVenue: Craven Cottage\nRound: unavailable\nHome form: WDLLW\nAway form: LWLDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Fulham +290 (open +215); Draw +295 (open +260); Chelsea -115 (open +110)\nTavily context:\n  - Title: Preview: Fulham vs. Chelsea - prediction, team news, lineups\n    Content: Chelsea friendlies form:\n\n W\n L\n L\n W\n D\n W\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Fgarcia-fulham-6a88533376ff2164740785.jpg)\n\n© Imago / Mark Pain\n\nFulham have a relatively healthy squad, with Tom Cairney (knee) the only injury absentee heading into Monday's fixture, while Joachim Andersen will serve the final match of his three-game ban for a sending-off against Bournemouth in May. ...\n    URL: https://www.sportsmole.co.uk/football/fulham/preview/fulham-vs-chelsea-prediction-team-news-lineups_603532.html\n  - Title: Fulham vs Chelsea Premier League preview: Team news, tactics, transfers, new men at the helm\n    Content: Morgan Rogers Chelsea 2026Getty Images\n\n### Key stats, injuries & suspensions\n\n Chelsea have won on six of their last eight visits to Craven Cottage (L2), but after losing the last H2H, the Blues are at risk of being beaten in successive meetings at any venue for the first time since 1979.\n Fulham’s Joachim Andersen and Chelsea’s Wesley Fofana carry suspensions over from last season.\n\n### Likely XIs\n\nFulham (4231): Leno; Castagne, Cuenca, Bassey, Robinson; Berge, Iwobi; Bobb, King, Kevin; Garcia. ...\n    URL: https://www.goal.com/en/news/fulham-chelsea-premier-league-preview/blt8a9fb2cb98704850\n  - Title: Fulham vs Chelsea Betting Pick | English Premier | 2026-08-24 |\n    Content: Fulham vs Chelsea Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | FUL | DRAW | CHE |  | BET365 |  | 3.50 | 3.80 | 1.95 | | BETFRED | | 3.50 | 4.00 | 1.95 | | CLOUDBET | | 3.75 | 3.90 | 1.90 | | SPORTBET | | 3.65 | 3.74 | 1.88 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report.\n\nInstead you CAN see a list of odds and lines from recommended bookmakers and sportsbooks over on the right. ...\n    URL: https://www.goonersguide.com/football-pick-59790-Fulham-vs-Chelsea.htm\n  - Title: Fulham vs Chelsea Predictions, Picks & Odds - 24/08/2026\n    Content: Chelsea's own form heading into this fixture reads poorly, with just one win from their last five outings. Yet Xabi Alonso's appointment resets the narrative. Five intensive pre-season training sessions this week suggest a manager determined to impose his methods immediately. João Pedro's brace against Real Sociedad in a recent friendly indicates sharpness up front, offering encouragement at 2.10. ...\n    URL: https://www.toffeeweb.com/fulham-vs-chelsea-predictions-picks-odds-24-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879318",
+                        "date_utc": "2026-08-24T19:00Z",
+                        "kickoff_et": "2026-08-24 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Fulham",
+                        "away": "Chelsea",
+                        "home_id": "370",
+                        "away_id": "363",
+                        "matchup": "Chelsea (away) @ Fulham (home)",
+                        "venue": "Craven Cottage",
+                        "city": "London",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WDLLW",
+                        "form_away": "LWLDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+215",
+                            "home_current": "+290",
+                            "draw_open": "+260",
+                            "draw_current": "+295",
+                            "away_open": "+110",
+                            "away_current": "-115"
+                        },
+                        "odds_text": "DraftKings: Fulham +290 (open +215); Draw +295 (open +260); Chelsea -115 (open +110)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-23T11:42:10.405262-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:35:35.354616-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are entering the new campaign with strong expectations under updated leadership. Bookmaker odds heavily favor Chelsea with an implied probability of around 51% after adjusting for margin, reflecting their historically strong record at Craven Cottage (six wins in their last eight visits). Fulham will also be missing key defender Joachim Andersen due to suspension, which presents a significant defensive vulnerability for the hosts.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-23T11:35:41.449199-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.245,
+                    "draw_probability": 0.242,
+                    "away_win_probability": 0.513,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enters the match as favorites with an implied probability over 50% based on DraftKings odds (-115). Under the guidance of their new manager, Xabi Alonso, and despite a shaky recent form, they have enough firepower and a structural edge to take all three points at Craven Cottage.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-23T11:36:02.528242-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are the clear betting favorites, with implied odds over 50% for the win. The appointment of new manager Xabi Alonso is expected to provide a tactical refresh and a 'new manager bounce,' resetting the narrative from their poor end-of-season form. Chelsea also has a strong historical record at Craven Cottage. While both teams have a key defender suspended (Joachim Andersen for Fulham, Wesley Fofana for Chelsea), Chelsea's superior squad depth should better absorb the loss. Fulham will also be without midfielder Tom Cairney. Given these factors, and despite Fulham's home advantage, an away win for Chelsea is the most likely outcome for the season opener.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-23T11:36:12.123020-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enters the season as the away favorite, supported by market odds (DraftKings -115). The appointment of Xabi Alonso and positive pre-season performances, including João Pedro's form, suggest a strong start for Chelsea. While Fulham won the last H2H, Chelsea has a good historical record at Craven Cottage (6 wins in last 8 visits) and Fulham faces key absences with Tom Cairney injured and Joachim Andersen suspended. The combination of managerial change, team news, and market sentiment points to an away victory for Chelsea.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:26.617547-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are the market favorite after a strong move from opening odds and profile as the stronger side, with recent head-to-head success at Craven Cottage. Fulham's home advantage and Chelsea's early-season uncertainty keep the draw and home win live, but Fulham's defensive suspension and Chelsea's attacking depth give the away side a narrow edge.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-23T11:37:33.866919-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are priced as clear away favorites by the market despite mixed recent form, reflecting their stronger squad and historically good record at Craven Cottage. Fulham have home advantage and a relatively healthy squad, but Joachim Andersen's suspension weakens their defense. A draw remains plausible in an early-season derby, but Chelsea have the higher win probability.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-23T11:37:55.017044-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market 1X2 pricing makes Chelsea the clear favorite despite being away, implying roughly a ~50%+ away-win chance after normalizing for bookmaker margin. Fulham’s recent form is mixed and they are missing a key defender (Andersen suspension), while Chelsea’s recent results are also uneven but they retain higher squad quality and have historically done well at Craven Cottage. Early-season uncertainty and a new Chelsea setup temper confidence, but Chelsea remain the most likely 90-minute result.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-23T11:38:05.150817-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers make Chelsea the favorite despite mixed pre-season form; Chelsea have recent historical success at Craven Cottage and Xabi Alonso's arrival likely provides an immediate tactical uplift. Fulham are relatively healthy but lost key defensive presence (Andersen serving ban) and are less consistent. Odds, venue, squad availability and managerial change point to a Chelsea win in 90 minutes, though a draw remains a live possibility given early-season instability.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-23T11:38:13.569643-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored in the pre-match odds and have a higher attacking ceiling, despite Fulham's home advantage. The distribution aligns with Chelsea being the likely 90-minute winner, with a modest chance for a draw and a smaller chance for a Fulham upset.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-23T11:38:15.162459-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea have a strong historical record at Craven Cottage, winning six of their last eight visits. Despite recent poor form, the arrival of Xabi Alonso as manager and positive signs in pre-season suggest a reset in approach and morale. Fulham are missing key defender Joachim Andersen due to suspension, which weakens their back line. Bookmakers and odds also favor Chelsea, with away win odds notably shorter than for Fulham or the draw. Fulham's home advantage and Chelsea's transitional phase temper confidence, but Chelsea's squad quality and managerial boost make them favorites.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-23T11:38:16.853586-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Chelsea's recent poor form, their historical success at Craven Cottage and the impact of new manager Xabi Alonso suggest they have a slight edge. Fulham's squad is relatively healthy, but the absence of key players like Joachim Andersen could be detrimental. Chelsea's pre-season preparations and attacking options, such as João Pedro, provide them with a better chance of securing a win.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-23T11:38:25.782591-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds heavily favor Chelsea (-115), implying roughly a 51% win probability after removing vig, with odds having shifted from +110 at open toward Chelsea. Chelsea have won six of their last eight visits to Craven Cottage, and a new managerial appointment with an in-form Joao Pedro adds attacking sharpness. Fulham face absences including Joachim Andersen's suspension, though home advantage and Chelsea's inconsistent recent form keep draw and home win probabilities meaningful.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-23T11:38:30.287587-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Chelsea",
+                    "confidence": "low",
+                    "reasoning": "Chelsea are favored by the market (-115) and have a strong recent record at Craven Cottage, winning six of their last eight visits. Despite mixed friendly form, they carry more squad quality. Fulham are solid at home but the odds and away form point slightly toward Chelsea, though the draw remains a live possibility.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-23T11:38:38.020159-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are historically strong at Craven Cottage, winning six of their last eight visits. Despite Chelsea's poor recent form (one win in last five), Xabi Alonso's appointment as manager provides a fresh start with intensive pre-season preparation. João Pedro showed attacking sharpness in friendlies. Fulham are weakened by Joachim Andersen's suspension (final match of three-game ban) and Tom Cairney's knee injury. The odds have shifted significantly in Chelsea's favor from open (around +110 away) to -115, reflecting market confidence in Chelsea. Chelsea's squad depth and Alonso's tactical pedigree give them the edge, though a new manager's first competitive match always carries uncertainty. Fulham's home form (WDLLW) is mixed, and their squad limitations make this a favorable away fixture for Chelsea.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-23T11:38:47.698392-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored despite poor recent form (LWLDL), with odds moving significantly from +110 to -115, suggesting sharp money on the visitors. New manager Xabi Alonso's appointment provides a narrative reset after intensive pre-season work, and João Pedro showed sharpness with a brace in a recent friendly. Fulham have won their last two home meetings against Chelsea, creating risk of a third consecutive loss at Craven Cottage for the first time since 1979. However, Chelsea have won 6 of their last 8 visits overall. Fulham are missing Tom Cairney and Joachim Andersen is suspended for the final match of his three-game ban, weakening their defense. Chelsea's suspension of Wesley Fofana is notable but the market clearly favors the away side. The odds movement from draw-favorable opening lines to clear Chelsea favoritism indicates professional backing. Given the managerial change, squad quality advantage, and market signals, Chelsea are the pick despite Fulham's recent success in this fixture.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-23T11:38:52.108619-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored by the betting market (-115 odds indicate ~54.5% implied probability for away win) despite poor recent form. New manager Xabi Alonso's appointment represents a significant reset with intensive pre-season preparation evident. Chelsea have historically dominated Fulham at Craven Cottage (6 wins in last 8 visits). However, Fulham's recent home form shows resilience (WDLLW), and they face injury complications with Andersen suspended and Cairney out. Chelsea's pre-season performances show improvement (recent friendly win with João Pedro's brace), suggesting tactical readiness. The DraftKings odds reflect Chelsea favoritism, and their historical advantage in this fixture tips the balance despite mixed recent form. Moderate confidence due to opening-day volatility and new managerial setup still finding rhythm.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-23T11:39:12.084800-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea are favored by current market odds despite a poor prior run, with the new-manager effect and superior head-to-head record at Craven Cottage supporting an away win. Fulham have home advantage and a relatively healthy squad, while a derby atmosphere raises draw risk, but Chelsea's overall edge leads to the away win prediction.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-23T11:39:14.037468-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea have a stronger squad and despite poor form, they are favored by odds. Fulham have key absences and Chelsea's new manager may bring a boost. Historical head-to-head favors Chelsea, but Fulham's home advantage and Chelsea's inconsistency make it not a high confidence pick.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-23T11:39:32.778407-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enter as the bookmakers' favorites despite mixed pre-season results, largely buoyed by the appointment of Xabi Alonso and superior attacking options like Joao Pedro. Fulham's defense takes a significant hit with Joachim Andersen serving a suspension, which could be exploited by Chelsea's forward line. However, early-season volatility and the difficulty of playing at Craven Cottage keep confidence at a medium level, though the away win remains the most statistically probable outcome.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-23T11:39:37.947634-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea, under new management with Xabi Alonso, has shown some promising signs in pre-season, particularly with João Pedro's form. Fulham, despite having a relatively healthy squad, has a mixed recent form and is missing key players due to injury and suspension. The historical H2H record also slightly favors Chelsea, especially at Craven Cottage.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-23T11:40:26.877241-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea is favored by the betting market despite mixed recent form, supported by a strong historical record at Craven Cottage and the tactical influx of new manager Xabi Alonso. Fulham's home advantage and mixed form provide resistance, but key defensive suspensions for both sides and Chelsea's intensive pre-season focus give the visitors a slight edge. The probabilities reflect a tight opening-day fixture with a marginal lean towards an away win.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-23T11:40:55.029388-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea enters as the favorite based on squad depth and historical dominance at Craven Cottage, reflected in bookmaker odds. Fulham faces significant defensive vulnerabilities due to the suspension of Joachim Andersen, a key organizer. While Chelsea's recent league form has been inconsistent, the appointment of new manager Xabi Alonso and the sharpness of striker João Pedro suggest a tactical resurgence. Fulham's home advantage is countered by the absence of critical players and the volatility inherent in early-season fixtures.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-23T11:41:37.255788-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Betting markets have moved sharply toward Chelsea, with their moneyline shortening from +110 to -115 while Fulham has drifted from +215 to +290, signaling strong market confidence in the Blues. Fulham will be without key defender Joachim Andersen (suspension) and captain Tom Cairney (knee), which weakens their core against a talented Chelsea squad. Although Chelsea ended last season poorly and face early-season variance under new manager Xabi Alonso, their superior depth, a productive preseason highlighted by João Pedro's form, and a strong historical record at Craven Cottage (six wins in the last eight visits) support an away victory. Fulham's mixed home form and missing personnel limit their upset potential, while the draw remains a viable secondary outcome.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-23T11:42:07.434737-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea's superior squad depth and strong historical record at Craven Cottage (six wins in last eight visits) position them as favorites despite a poor end to last season (L-W-L-D-L). The appointment of Xabi Alonso and João Pedro's sharp pre-season form provide momentum, though early-season unpredictability under a new regime tempers confidence. Fulham enters with slightly better recent form (W-D-L-L-W) and home advantage, but the suspension of key defender Joachim Andersen weakens their backline against Chelsea's attack. Market odds (~53% implied probability for Chelsea) align with a narrow away victory.",
+                    "event_id": "401879318"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-23T11:42:10.402254-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Chelsea (away) @ Fulham (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Chelsea has a slightly better form in recent friendlies and historically has a good record at Craven Cottage, winning six of their last eight visits. However, Fulham has a relatively healthy squad and Chelsea has some suspensions to deal with. The appointment of a new manager at Chelsea might also impact the team's performance.",
+                    "event_id": "401879318"
+                }
+            ]
+        }
+    ]
+}

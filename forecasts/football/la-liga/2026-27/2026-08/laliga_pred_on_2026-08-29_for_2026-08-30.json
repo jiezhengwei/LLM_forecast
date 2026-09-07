@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-29",
+        "target_date_et": "2026-08-30",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882899\nMatchup: Málaga (away) @ Real Madrid (home)\nHome: Real Madrid\nAway: Málaga\nKickoff UTC: 2026-08-30T15:00Z\nKickoff ET: 2026-08-30 11:00 EDT\nVenue: Santiago Bernabéu\nRound: unavailable\nHome form: WWWWW\nAway form: DLWDD\nHome record: 2-0-0\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Real Madrid -800 (open -550); Draw +900 (open +650); Málaga +1700 (open +1100)\nTavily context:\n  - Title: Real Madrid vs. Málaga (Aug 30, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Real Madrid | 2 | 2 | 0 | 0 | +4 | 6 |\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Real Betis | 2 | 2 | 0 | 0 | +2 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882899/malaga-real-madrid\n  - Title: Real Madrid-Malaga - LaLiga 2026/2027 Statistical Preview\n    Content: ## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 2 | R. Madrid | 2 | 0 | 0 | 6 |\n| 16 | Malaga | 0 | 1 | 1 | 1 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\n### Top Players\n\n| Real Madrid | Malaga |\n --- |\n| Ratings | |\n| |  |  |  --- | | J. Bellingham | 8.55 | | K. Mbappé | 8.51 | | A. Güler | 8.11 | | |  |  |  --- | | C. Puga | 6.96 | | Rafita | 6.93 | | C. Dotor | 6.86 | |\n| Goals | |\n| |  |  |  --- | | K. Mbappé | 3 | | V. Júnior | 1 | | J. Bellingham | 1 | | |  |  |  --- | | Chupe | 1 | | E. Galilea | 0 | | A. ...\n    URL: https://www.whoscored.com/matches/1993924/preview/spain-laliga-2026-2027-real-madrid-malaga\n  - Title: Real Madrid vs. Malaga Prediction & Picks [8/30/2026]\n    Content: ### Current betting odds\n\n Moneyline: Real Madrid -500, Malaga +1600, draw +700\n Total (Over/Under): 2.5 goals (-250/+200)\n\n### Dimers' win & correct score probabilities\n\n Real Madrid: 77.4%\n Malaga: 8.8%\n Draw: 13.9%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Real Madrid 2-0 Malaga (10.4%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_3_rma_mcf\n\nGame ID: 2\nSource event_id: 401882904\nMatchup: Valencia (away) @ Deportivo (home)\nHome: Deportivo\nAway: Valencia\nKickoff UTC: 2026-08-30T17:30Z\nKickoff ET: 2026-08-30 13:30 EDT\nVenue: Riazor\nRound: unavailable\nHome form: DDLWW\nAway form: LDWWD\nHome record: 0-2-0\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Deportivo +155 (open +155); Draw +205 (open +210); Valencia +210 (open +190)\nTavily context:\n  - Title: PREVIEW | Deportivo vs Valencia CF: team news, lineups, predictions (La Liga 30/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nValencia CF currently have 1 point and lie in 15th position. In their last game, Carlos Corberán's team lost 0-1 against Real Betis (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Valencia CF winning 2-1.\n\n## Unavailable\n\n## Deportivo\n\n## Valencia CF\n\n## Last starting XIs\n\nDeportivo ( vs Málaga CF 2026-08-24): Leo Román, Ximo Navarro, Miguel Loureiro, Lucas Noubi, Giacomo Quagliata, Lorenzo Amatucci, Mario Soriano, Adrià Altimira, Luismi Cruz, Jonathan Asp Jensen, Pierre-Emerick Aubameyang ...\n    URL: https://sports.yahoo.com/articles/preview-deportivo-vs-valencia-cf-173500079.html\n  - Title: Deportivo vs. Valencia (Aug 30, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Real Madrid | 1 | 1 | 0 | 0 | +1 | 3 |\n| Real Betis | 1 | 1 | 0 | 0 | +1 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Valencia | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882904/valencia-deportivo\n  - Title: Deportivo La Coruna vs. Valencia Prediction & Picks [8/30/2026]\n    Content: ### Match overview\n\n Teams: Deportivo La Coruna vs. Valencia\n Date: Sunday, August 30, 2026\n Time: 1:30 PM ET\n Venue: Estadio Municipal de Riazor\n\n### Current betting odds\n\n Moneyline: Deportivo La Coruna +160, Valencia +190, draw +220\n Total (Over/Under): 2.5 goals (+125/-167)\n\n### Dimers' win & correct score probabilities\n\n Deportivo La Coruna: 37.1%\n Valencia: 35.2%\n Draw: 27.6%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Deportivo La Coruna 1-1 Valencia (13.1%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_3_cor_vcf\n  - Title: Deportivo A Coruña vs Valencia Prediction - La Liga - BetMines\n    Content: August 30, 2026 at 10:30. The odds are: Deportivo A Coruña to win 2.61, draw 3.04, Valencia to win 3.11. The odds are Over 2.5 at 2.45 and\n    URL: https://betmines.com/match-preview/deportivo-a-coruna-vs-valencia-prediction-match-preview-and-analysis-la-liga-30-08-2026\n\nGame ID: 3\nSource event_id: 401882905\nMatchup: Athletic Club (away) @ Celta Vigo (home)\nHome: Celta Vigo\nAway: Athletic Club\nKickoff UTC: 2026-08-30T19:30Z\nKickoff ET: 2026-08-30 15:30 EDT\nVenue: Balaidos\nRound: unavailable\nHome form: LDWDL\nAway form: LLLDL\nHome record: 0-1-1\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Celta Vigo +145 (open +135); Draw +225 (open +230); Athletic Club +200 (open +210)\nTavily context:\n  - Title: Celta Vigo vs Athletic Club - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Celta Vigo vs Athletic Club — Sun 30 August, 19:30 UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n# Celta Vigo vs Athletic Club — Sun 30 August, 19:30 UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Daniel Vivian\n\n  Groin injury / Early September 2026\n\nVivianGroin injuryEarly September 2026\n\n  Unai Egiluz\n\n  Cruciate ligament injury / Mid January 2027 ...\n    URL: https://www.fotmob.com/en-GB/matches/athletic-club-vs-celta-vigo/2qvz7j\n  - Title: Celta Vigo-Athletic Club - LaLiga 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nCelta Vigo logo\nAthletic Club logo\nCelta Vigo logo\nAthletic Club logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Borja Iglesias |  | Out | N/A |\n| Marcos Alonso |  | Out | 6.78 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Unai Egiluz |  | Out | N/A |\n| Beñat Prados |  | Doubtful | N/A |\n| Dani Vivian |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1993918/preview/spain-laliga-2026-2027-celta-vigo-athletic-club\n  - Title: Prediction Celta de Vigo vs Athletic Club: analysis, odds and betting tips\n    Content: The odds are: Celta de Vigo to win 2.37, draw 3.20, Athletic Club to win 3.10. The odds are Over 2.5 at 2.10 and Under 2.5 at 1.72. The odds\n    URL: CAESsgEB6zswFd_8XCxP7cCaVFdcy3CfAKpz__RsT8UGZL6H3BJucaaLJzYxoX1GlG9e_p_hcTYAJbD_oD1o7JZ5w1t5NuEjtHdTny7cGqNuNBbiW3gwOzSZznvRLFpUNKCz5-h7vepYZQIfW2tWMSmk8PstwLPkAEnaYzrfbQXe8QxjL3YtGevNk-RYHgNYBtmfRT6HZq9LOr_uICRiSBM8qqK0sIWIg9kdj_8rigW32JktpE_5\n  - Title: Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026 – Ratingbet.com\n    Content: Ratingbet Football LaLiga Spain Predictions  Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026\n\n# Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026\n\nExpect at least a couple of goals\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 28 Aug 2026, 12:07\n\nCelta Vigo vs Athletic Club match prediction on Aug 30, 2026\n\nMath prediction  1 X 2\n\nCelta Vigo\n\n Celta Vigo\n\n-\n\nAthletic Club\n\n Athletic Club\n\n-\n\n2.46   3.44   3.15  Linebet   23 Aug 21:02  3.21  -0.06\n\n40%     29%     31%\n\n25 TIPS ...\n    URL: https://ratingbet.com/predictions/celta-vs-athletic-prediction-expert-analysis-possible-lineups-august-30-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-29\n\nTarget Date (ET): 2026-08-30\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882899\nMatchup: Málaga (away) @ Real Madrid (home)\nHome: Real Madrid\nAway: Málaga\nKickoff UTC: 2026-08-30T15:00Z\nKickoff ET: 2026-08-30 11:00 EDT\nVenue: Santiago Bernabéu\nRound: unavailable\nHome form: WWWWW\nAway form: DLWDD\nHome record: 2-0-0\nAway record: 0-1-1\nESPN structured 1X2 odds: DraftKings: Real Madrid -800 (open -550); Draw +900 (open +650); Málaga +1700 (open +1100)\nTavily context:\n  - Title: Real Madrid vs. Málaga (Aug 30, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Real Madrid | 2 | 2 | 0 | 0 | +4 | 6 |\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Real Betis | 2 | 2 | 0 | 0 | +2 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882899/malaga-real-madrid\n  - Title: Real Madrid-Malaga - LaLiga 2026/2027 Statistical Preview\n    Content: ## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 2 | R. Madrid | 2 | 0 | 0 | 6 |\n| 16 | Malaga | 0 | 1 | 1 | 1 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\n### Top Players\n\n| Real Madrid | Malaga |\n --- |\n| Ratings | |\n| |  |  |  --- | | J. Bellingham | 8.55 | | K. Mbappé | 8.51 | | A. Güler | 8.11 | | |  |  |  --- | | C. Puga | 6.96 | | Rafita | 6.93 | | C. Dotor | 6.86 | |\n| Goals | |\n| |  |  |  --- | | K. Mbappé | 3 | | V. Júnior | 1 | | J. Bellingham | 1 | | |  |  |  --- | | Chupe | 1 | | E. Galilea | 0 | | A. ...\n    URL: https://www.whoscored.com/matches/1993924/preview/spain-laliga-2026-2027-real-madrid-malaga\n  - Title: Real Madrid vs. Malaga Prediction & Picks [8/30/2026]\n    Content: ### Current betting odds\n\n Moneyline: Real Madrid -500, Malaga +1600, draw +700\n Total (Over/Under): 2.5 goals (-250/+200)\n\n### Dimers' win & correct score probabilities\n\n Real Madrid: 77.4%\n Malaga: 8.8%\n Draw: 13.9%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Real Madrid 2-0 Malaga (10.4%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_3_rma_mcf\n\nGame ID: 2\nSource event_id: 401882904\nMatchup: Valencia (away) @ Deportivo (home)\nHome: Deportivo\nAway: Valencia\nKickoff UTC: 2026-08-30T17:30Z\nKickoff ET: 2026-08-30 13:30 EDT\nVenue: Riazor\nRound: unavailable\nHome form: DDLWW\nAway form: LDWWD\nHome record: 0-2-0\nAway record: 0-1-1\nESPN structured 1X2 odds: Provider unavailable: Deportivo +155 (open +155); Draw +205 (open +210); Valencia +210 (open +190)\nTavily context:\n  - Title: PREVIEW | Deportivo vs Valencia CF: team news, lineups, predictions (La Liga 30/08) - Yahoo Sports\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nValencia CF currently have 1 point and lie in 15th position. In their last game, Carlos Corberán's team lost 0-1 against Real Betis (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Valencia CF winning 2-1.\n\n## Unavailable\n\n## Deportivo\n\n## Valencia CF\n\n## Last starting XIs\n\nDeportivo ( vs Málaga CF 2026-08-24): Leo Román, Ximo Navarro, Miguel Loureiro, Lucas Noubi, Giacomo Quagliata, Lorenzo Amatucci, Mario Soriano, Adrià Altimira, Luismi Cruz, Jonathan Asp Jensen, Pierre-Emerick Aubameyang ...\n    URL: https://sports.yahoo.com/articles/preview-deportivo-vs-valencia-cf-173500079.html\n  - Title: Deportivo vs. Valencia (Aug 30, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Sevilla | 2 | 2 | 0 | 0 | +3 | 6 |\n| Alavés | 2 | 1 | 1 | 0 | +3 | 4 |\n| Atlético Madrid | 2 | 1 | 1 | 0 | +2 | 4 |\n| Barcelona | 1 | 1 | 0 | 0 | +5 | 3 |\n| Espanyol | 2 | 1 | 0 | 1 | +2 | 3 |\n| Real Madrid | 1 | 1 | 0 | 0 | +1 | 3 |\n| Real Betis | 1 | 1 | 0 | 0 | +1 | 3 |\n| Getafe | 2 | 1 | 0 | 1 | -2 | 3 |\n| Villarreal | 2 | 0 | 2 | 0 | 0 | 2 |\n| Deportivo | 2 | 0 | 2 | 0 | 0 | 2 |\n| Osasuna | 1 | 0 | 1 | 0 | 0 | 1 |\n| Valencia | 1 | 0 | 1 | 0 | 0 | 1 |\n| Celta Vigo | 1 | 0 | 1 | 0 | 0 | 1 |\n| Racing Santander | 2 | 0 | 1 | 1 | -1 | 1 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882904/valencia-deportivo\n  - Title: Deportivo La Coruna vs. Valencia Prediction & Picks [8/30/2026]\n    Content: ### Match overview\n\n Teams: Deportivo La Coruna vs. Valencia\n Date: Sunday, August 30, 2026\n Time: 1:30 PM ET\n Venue: Estadio Municipal de Riazor\n\n### Current betting odds\n\n Moneyline: Deportivo La Coruna +160, Valencia +190, draw +220\n Total (Over/Under): 2.5 goals (+125/-167)\n\n### Dimers' win & correct score probabilities\n\n Deportivo La Coruna: 37.1%\n Valencia: 35.2%\n Draw: 27.6%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Deportivo La Coruna 1-1 Valencia (13.1%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_3_cor_vcf\n  - Title: Deportivo A Coruña vs Valencia Prediction - La Liga - BetMines\n    Content: August 30, 2026 at 10:30. The odds are: Deportivo A Coruña to win 2.61, draw 3.04, Valencia to win 3.11. The odds are Over 2.5 at 2.45 and\n    URL: https://betmines.com/match-preview/deportivo-a-coruna-vs-valencia-prediction-match-preview-and-analysis-la-liga-30-08-2026\n\nGame ID: 3\nSource event_id: 401882905\nMatchup: Athletic Club (away) @ Celta Vigo (home)\nHome: Celta Vigo\nAway: Athletic Club\nKickoff UTC: 2026-08-30T19:30Z\nKickoff ET: 2026-08-30 15:30 EDT\nVenue: Balaidos\nRound: unavailable\nHome form: LDWDL\nAway form: LLLDL\nHome record: 0-1-1\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Celta Vigo +145 (open +135); Draw +225 (open +230); Athletic Club +200 (open +210)\nTavily context:\n  - Title: Celta Vigo vs Athletic Club - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Celta Vigo vs Athletic Club — Sun 30 August, 19:30 UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n# Celta Vigo vs Athletic Club — Sun 30 August, 19:30 UTC\n\nLaLiga Round 3\n\n LaLiga Round 3\n Estadio Abanca-Balaídos\n\nCelta VigoCelta Vigo\n\n‌\n‌\n\nAthletic ClubAthletic Club\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Daniel Vivian\n\n  Groin injury / Early September 2026\n\nVivianGroin injuryEarly September 2026\n\n  Unai Egiluz\n\n  Cruciate ligament injury / Mid January 2027 ...\n    URL: https://www.fotmob.com/en-GB/matches/athletic-club-vs-celta-vigo/2qvz7j\n  - Title: Celta Vigo-Athletic Club - LaLiga 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nCelta Vigo logo\nAthletic Club logo\nCelta Vigo logo\nAthletic Club logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Borja Iglesias |  | Out | N/A |\n| Marcos Alonso |  | Out | 6.78 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Unai Egiluz |  | Out | N/A |\n| Beñat Prados |  | Doubtful | N/A |\n| Dani Vivian |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats ...\n    URL: https://www.whoscored.com/matches/1993918/preview/spain-laliga-2026-2027-celta-vigo-athletic-club\n  - Title: Prediction Celta de Vigo vs Athletic Club: analysis, odds and betting tips\n    Content: The odds are: Celta de Vigo to win 2.37, draw 3.20, Athletic Club to win 3.10. The odds are Over 2.5 at 2.10 and Under 2.5 at 1.72. The odds\n    URL: CAESsgEB6zswFd_8XCxP7cCaVFdcy3CfAKpz__RsT8UGZL6H3BJucaaLJzYxoX1GlG9e_p_hcTYAJbD_oD1o7JZ5w1t5NuEjtHdTny7cGqNuNBbiW3gwOzSZznvRLFpUNKCz5-h7vepYZQIfW2tWMSmk8PstwLPkAEnaYzrfbQXe8QxjL3YtGevNk-RYHgNYBtmfRT6HZq9LOr_uICRiSBM8qqK0sIWIg9kdj_8rigW32JktpE_5\n  - Title: Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026 – Ratingbet.com\n    Content: Ratingbet Football LaLiga Spain Predictions  Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026\n\n# Celta vs Athletic prediction: expert analysis, possible lineups, August 30, 2026\n\nExpect at least a couple of goals\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 28 Aug 2026, 12:07\n\nCelta Vigo vs Athletic Club match prediction on Aug 30, 2026\n\nMath prediction  1 X 2\n\nCelta Vigo\n\n Celta Vigo\n\n-\n\nAthletic Club\n\n Athletic Club\n\n-\n\n2.46   3.44   3.15  Linebet   23 Aug 21:02  3.21  -0.06\n\n40%     29%     31%\n\n25 TIPS ...\n    URL: https://ratingbet.com/predictions/celta-vs-athletic-prediction-expert-analysis-possible-lineups-august-30-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882899",
+                        "date_utc": "2026-08-30T15:00Z",
+                        "kickoff_et": "2026-08-30 11:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Madrid",
+                        "away": "Málaga",
+                        "home_id": "86",
+                        "away_id": "99",
+                        "matchup": "Málaga (away) @ Real Madrid (home)",
+                        "venue": "Santiago Bernabéu",
+                        "city": "Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWWWW",
+                        "form_away": "DLWDD",
+                        "record_home": "2-0-0",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-550",
+                            "home_current": "-800",
+                            "draw_open": "+650",
+                            "draw_current": "+900",
+                            "away_open": "+1100",
+                            "away_current": "+1700"
+                        },
+                        "odds_text": "DraftKings: Real Madrid -800 (open -550); Draw +900 (open +650); Málaga +1700 (open +1100)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882904",
+                        "date_utc": "2026-08-30T17:30Z",
+                        "kickoff_et": "2026-08-30 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Deportivo",
+                        "away": "Valencia",
+                        "home_id": "90",
+                        "away_id": "94",
+                        "matchup": "Valencia (away) @ Deportivo (home)",
+                        "venue": "Riazor",
+                        "city": "La Coruña",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DDLWW",
+                        "form_away": "LDWWD",
+                        "record_home": "0-2-0",
+                        "record_away": "0-1-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+155",
+                            "home_current": "+155",
+                            "draw_open": "+210",
+                            "draw_current": "+205",
+                            "away_open": "+190",
+                            "away_current": "+210"
+                        },
+                        "odds_text": "Provider unavailable: Deportivo +155 (open +155); Draw +205 (open +210); Valencia +210 (open +190)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882905",
+                        "date_utc": "2026-08-30T19:30Z",
+                        "kickoff_et": "2026-08-30 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Celta Vigo",
+                        "away": "Athletic Club",
+                        "home_id": "85",
+                        "away_id": "93",
+                        "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                        "venue": "Balaidos",
+                        "city": "Vigo",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDWDL",
+                        "form_away": "LLLDL",
+                        "record_home": "0-1-1",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+135",
+                            "home_current": "+145",
+                            "draw_open": "+230",
+                            "draw_current": "+225",
+                            "away_open": "+210",
+                            "away_current": "+200"
+                        },
+                        "odds_text": "Provider unavailable: Celta Vigo +145 (open +135); Draw +225 (open +230); Athletic Club +200 (open +210)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-29T08:07:10.989014-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:57:00.545321-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are dominant at home and start as massive favorites according to both bookmakers and statistical models. Key players like Kylian Mbappé are already in good scoring form.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This match is highly balanced with Deportivo slightly favored at home according to the moneyline and prediction models. Valencia has started slowly but remains a threat, making a tight contest or a home win most likely.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo playing at Balaídos holds a slight advantage over Athletic Club, who face some injury concerns and have struggled in away form. The win probabilities slightly tilt towards the home side.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-29T07:57:13.044136-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.851,
+                    "draw_probability": 0.096,
+                    "away_win_probability": 0.053,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are overwhelming favorites with -800 moneyline odds and a perfect 2-0-0 start to the season. Málaga is heavily outmatched at the Santiago Bernabéu and model predictions give Real Madrid around an 85% implied probability of securing all three points.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight matchup with Deportivo slightly favored at home (+155) over Valencia (+210). Both teams are looking for their first win of the season, but Deportivo's home advantage gives them a narrow edge in predictive models.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo enters as the slight home favorite at +145 despite a sluggish start to their season, largely due to Athletic Club's own poor early form (0-0-2 record). The odds and mathematical models lean marginally towards a Celta Vigo victory, though a draw or away win are nearly as likely.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-29T07:57:39.481416-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.774,
+                    "draw_probability": 0.138,
+                    "away_win_probability": 0.088,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are in perfect form to start the season (2-0-0) and are playing at home. Málaga has struggled, securing only one point from their first two matches. The betting odds are overwhelmingly in favor of Real Madrid, with prediction models giving them a win probability of over 77%. The vast difference in team quality and current form makes a home victory the most likely outcome.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.371,
+                    "draw_probability": 0.277,
+                    "away_win_probability": 0.352,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tightly contested match according to both betting odds and statistical models. Deportivo has a slight edge due to home advantage. Both teams have had slow starts, with Deportivo drawing both of their opening games and Valencia securing one draw and one loss. While Deportivo has a marginally higher win probability, the closeness of the probabilities for all three outcomes makes this a low-confidence prediction.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo holds the advantage playing at home against an Athletic Club side that has lost its first two matches of the season and is in poor form. Celta Vigo has managed to secure a point, showing slightly better early-season resilience. Betting odds and prediction models both favor Celta Vigo, giving them around a 40% chance to win. The combination of home advantage and the opponent's poor start supports a Celta victory.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-29T07:57:51.308440-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.773,
+                    "draw_probability": 0.139,
+                    "away_win_probability": 0.088,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is a dominant team with a perfect 2-0-0 home record and excellent form (WWWWW). Málaga has a poor away record (0-1-1) and mixed form (DLWDD). The betting odds and probability models heavily favor Real Madrid, indicating a high likelihood of a home victory.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.371,
+                    "draw_probability": 0.277,
+                    "away_win_probability": 0.352,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have struggled to secure wins early in the season, with Deportivo having two draws at home and Valencia one draw and one loss away. While the odds are tight, Deportivo is slightly favored by oddsmakers and probability models. Given Deportivo's home advantage and Valencia's recent loss, a narrow home win is predicted, though a draw remains a strong possibility.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams are in poor form, with Celta Vigo (LDWDL, 0-1-1 home record) and Athletic Club (LLLDL, 0-0-2 away record). Celta Vigo has the home advantage and is slightly favored by betting odds and implied probabilities. Athletic Club's two consecutive away losses suggest Celta Vigo has a better chance to secure a win, despite their own struggles.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T07:59:13.318047-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.84,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid have a clear home-field and squad-quality edge, have started 2-0-0 with strong form, and the betting market has shortened heavily toward a home win. Málaga are winless through two and profile as a major underdog at the Bernabéu.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly priced match. Deportivo have the home edge and are a slight market favorite, while Valencia remain close enough to make the away result plausible. The under-leaning goal market and Deportivo's early draws keep the draw probability meaningful.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta are a modest home favorite across the available odds and Athletic have opened poorly at 0-0-2 with some defensive injury concerns. The margin is narrow, though, and Celta also have absences, so the home-win call is low confidence.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-29T07:59:24.248294-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.84,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy home favorites at the Bernabéu, have opened with a 2-0-0 record and strong recent form, and the market has moved further toward them. Málaga have only one point from two matches and face a major quality gap against a Madrid side led by in-form attacking players.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely priced match, with Deportivo only a narrow home favorite and both teams still winless after two league matches. Deportivo's home advantage at Riazor and slightly stronger market position give them the edge, but Valencia are close enough in the odds and draw probability is substantial.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo are modest home favorites in the betting market, while Athletic Club have started poorly with two defeats and have defensive injury concerns. The matchup remains tight because Celta's own form is inconsistent and Athletic retain enough quality to take points, so the home-win lean is narrow.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-29T07:59:56.594081-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.851,
+                    "draw_probability": 0.096,
+                    "away_win_probability": 0.053,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Market pricing strongly favors Real Madrid at the Bernabéu (very short home odds) and aligns with early-season form/record (Real Madrid perfect start; Málaga winless). A draw is the main alternative in 90 minutes, with an away win requiring a major upset.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.371,
+                    "draw_probability": 0.276,
+                    "away_win_probability": 0.353,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and model context indicate a near coin-flip with Deportivo holding a small home-edge at Riazor. Deportivo’s two draws to start suggest solidity but limited separation, keeping draw and away-win probabilities close.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.389,
+                    "draw_probability": 0.294,
+                    "away_win_probability": 0.317,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta are slight home favorites by the 1X2 market, with both sides showing poor recent form, increasing draw variance. Squad availability concerns on both sides and Athletic’s struggles away tilt the most likely 90-minute result narrowly toward Celta.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-29T08:00:15.103787-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.87,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.03,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favourites: dominant early-season form (WWWWW), 2-0-0 record, clear home advantage at the Santiago Bernabéu, and market odds strongly back Madrid. Málaga’s form and away record are weak (DLWDD, 0-1-1) and historical metrics and models point to a decisive Real win. Expect Madrid to control the match and win in regulation.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Closely matched fixture. Betting markets and model previews show a slight edge to Deportivo at home but probabilities are balanced (Deportivo ~37%, Valencia ~35% in independent models). Both teams have mixed early-season form; home advantage and lineup continuity nudge Deportivo slightly ahead, but a draw or away win remain plausible.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo have the home advantage and better recent results than Athletic, who arrive with poor form. Market odds slightly favour Celta. The match is competitive — Celta are the likelier winners but draws or Athletic upsets are credible, so probabilities reflect that uncertainty.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-29T08:00:39.861229-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.774,
+                    "draw_probability": 0.139,
+                    "away_win_probability": 0.087,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid have strong home form (2-0-0 at home) and the matchup vs Málaga is clearly biased toward the home side. Historical odds and model expectations place Madrid as the clear favorite around 77% to win in regulation time; Málaga's away form is poor.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "A close contest with Deportivo favored slightly by home advantage and odds, but Valencia are capable on the road. Probabilities normalize to a narrow edge for the home team with a meaningful chance for a draw and for Valencia.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.389,
+                    "draw_probability": 0.294,
+                    "away_win_probability": 0.317,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Celta Vigo have a modest home edge against Athletic Club, with odds listing them as slight favorites. The expected 90-minute result leans toward a home win around 39%, with near-term draws and away wins both in the 29-32% range.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-29T08:00:43.092244-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are in excellent form with a perfect start to the season, strong home record, and a significant squad quality advantage. Betting markets and statistical models give them a very high win probability, with Málaga struggling away and lacking comparable talent. The most likely result is a comfortable Real Madrid win.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have started the season slowly, with Deportivo drawing both matches and Valencia also winless. Betting odds and models suggest a very even contest, with a slight edge to Deportivo at home but not enough to make them clear favorites. The most likely outcome is a draw, with both teams struggling to find a decisive edge.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo have a slight edge at home, with Athletic Club missing key players and in poor away form. Betting markets and expert predictions give Celta a small advantage, but the match is expected to be close and competitive. The home side is favored, but a draw or away win are both plausible.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-29T08:00:46.095271-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7732267732267732,
+                    "draw_probability": 0.13886113886113888,
+                    "away_win_probability": 0.0879120879120879,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid's strong home form and superior squad quality, combined with Málaga's poor away record and high odds against them, suggest a high likelihood of a home win.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.3713713713713714,
+                    "draw_probability": 0.2762762762762763,
+                    "away_win_probability": 0.35235235235235235,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown inconsistent form, and the odds suggest a closely contested match, making a draw a plausible outcome.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo's slight edge in home advantage and Athletic Club's injury concerns make a home win slightly more likely, though the match is expected to be competitive.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-29T08:01:00.737566-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.84,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites (-800 at DraftKings, implying ~85-89%) with a perfect start (2-0-0) and elite attackers like Mbappé and Bellingham in form. Málaga are newly promoted with only 1 point from 2 matches. Dimers' model gives Madrid 77% but market odds have steepened significantly since opening, suggesting strong home dominance at the Bernabéu.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A very tight matchup: Deportivo are slight home favorites (+155) but have drawn both opening matches, while Valencia sit on 1 point after losing to Betis. Dimers' model shows 37% Deportivo, 35% Valencia, 28% draw. The home edge at Riazor tips the balance marginally, but all three outcomes are plausible.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta are modest home favorites (+145) against an Athletic Club side in poor form (0-0-2 to start, LLLDL) and dealing with injuries to Vivian, Egiluz, and doubtful Prados. Celta have their own absentees (Borja Iglesias, Marcos Alonso) but home advantage at Balaídos plus Athletic's struggles favor them slightly. Still a competitive game with high draw potential.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-29T08:01:08.618042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.13,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Real Madrid",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are perfect at home with strong form (WWWWW), heavily favored at -800. Málaga are newly promoted and inconsistent. Bernabéu advantage and superior squad quality make a home win highly likely.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Deportivo",
+                    "confidence": "low",
+                    "reasoning": "Very tight matchup per odds. Deportivo have slight home edge but Valencia are competitive. Model probabilities near even; Deportivo marginally favored at home.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Celta Vigo",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo have home advantage and Athletic's poor away form (LLLDL) plus key injuries (Vivian, Egiluz) weaken them. Odds favor Celta slightly at home.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-29T08:01:25.879358-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites at home against a newly promoted/returning Málaga side. Real Madrid are 2-0-0 with a +4 goal difference, and their top players (Mbappé 3 goals, Bellingham, Güler) are in excellent form. Málaga are 0-1-1 and clearly outmatched in quality. Odds across all providers strongly favor Real Madrid (-500 to -800), and Dimers models give them a 77.4% win probability. The Santiago Bernabéu atmosphere adds further home advantage. Adjusting slightly from market implied to account for small upset probability.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very open match between two evenly matched sides. Deportivo are 0-2-0 (two draws) playing at home at Riazor, while Valencia are 0-1-1. Both teams have struggled to win so far this season. Odds are very tight across all providers (Deportivo +155-+160, Valencia +190-+210, Draw +205-+220), and Dimers gives probabilities of 37.1% Deportivo, 35.2% Valencia, 27.6% draw. Aubameyang gives Deportivo an attacking threat at home, but the historical last meeting went Valencia's way 2-1. Slight edge to home side but very low confidence given the closeness of the contest.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo host Athletic Club at Balaídos in a competitive match between two teams with poor early-season records. Celta are 0-1-1 and Athletic are 0-0-2 (two losses), so neither side has been impressive. Athletic have injury concerns with Dani Vivian doubtful and Unai Egiluz out. Celta also have Borja Iglesias and Marcos Alonso unavailable. Odds lean slightly toward Celta at home (+145), with Athletic at +200. Predictive models give Celta around 40% probability. Home advantage at Balaídos is a meaningful factor, and Athletic's winless start with a poor recent form (LLLDL) supports the slight home lean. Confidence remains low given the even quality and both teams' poor form.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-29T08:01:43.078573-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are in excellent form with a perfect record (2-0-0, +4 GD) and five consecutive wins. They sit top of the table with 6 points. Málaga have struggled with 0-1-1 record and sit 16th with only 1 point. The betting markets heavily favor Real Madrid at -800, and third-party models predict 77.4% home win probability. Real Madrid have strong attacking players (Mbappé with 3 goals already, Bellingham, Vinícius Jr.) playing at the Santiago Bernabéu. The odds have moved further in Real Madrid's favor from open to current, indicating strong backing. Most likely scoreline is Real Madrid 2-0. This is a significant mismatch in quality and form.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely matched fixture between two mid-table teams. Deportivo have drawn their first two matches (0-2-0) and sit 10th with 2 points, while Valencia have 0-1-1 record (15th position, 1 point) after a 0-1 loss to Real Betis. Third-party models show very tight probabilities: Deportivo 37.1%, Valencia 35.2%, Draw 27.6%. The betting odds reflect this uncertainty with Deportivo +155, Draw +205, Valencia +210. Most likely scoreline is 1-1 draw (13.1%). Valencia won the last meeting 2-1, but home advantage gives Deportivo a slight edge. Both teams have struggled defensively but this should be competitive with all three outcomes viable.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Another evenly matched encounter between two struggling sides. Celta Vigo have 0-1-1 record (12th place, 1 point), while Athletic Club are winless with 0-0-2 record (bottom of table with 0 points). Athletic's poor form (five consecutive losses: LLLDL) is concerning, though they face injury issues with Vivian and Egiluz out. Celta also have injury concerns with Borja Iglesias and Marcos Alonso unavailable. Betting odds are tight: Celta +145, Draw +225, Athletic +200, suggesting all outcomes are possible. Home advantage at Balaidos gives Celta a marginal edge. Both teams need points desperately. Expect goals with over 2.5 at good value. This is a low-confidence pick given both teams' inconsistent form.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-29T08:01:51.041292-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.774,
+                    "draw_probability": 0.139,
+                    "away_win_probability": 0.087,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is in perfect form (5 consecutive wins, 2-0 record) with elite attacking talent (Mbappé 3 goals, Bellingham 8.55 rating). Málaga is significantly weaker (0-1-1 record). Multiple models converge on Real Madrid dominance: Dimers 77.4%, betting odds strongly favor home win (-800 DraftKings). Expected scoreline around 2-0.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.3713713713713714,
+                    "draw_probability": 0.2762762762762763,
+                    "away_win_probability": 0.35235235235235235,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "This is a closely competitive fixture with both teams showing mixed form. Deportivo at 0-2-0 (home advantage) vs Valencia at 0-1-1. Dimers predicts draw as most likely correct score (13.1% for 1-1). Win probabilities are nearly even (Deportivo 37.1% vs Valencia 35.2%), but draw probability of 27.6% is substantial. Betting odds reflect tight match (+155, +210, +220 are all close).",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo has home advantage and slightly better recent form (0-1-1 vs Athletic's 0-0-2). Betting odds favor home (2.37-3.20-3.10 odds imply ~42%-31%-27% probabilities). However, Athletic Club's perfect defensive record (0 losses in 2 games) combined with Celta's injury concerns (Borja Iglesias out, Marcos Alonso out) and Athletic's defensive injuries suggest a competitive, low-scoring match. Confidence is low due to mixed signals and both teams' relative weakness.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-29T08:02:27.299667-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites at home with a perfect start and dominant form, while Málaga are winless and face a major class gap at the Bernabéu.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo have a slight home edge and have been difficult to beat, while Valencia are competitive but inconsistent, making this close with a modest lean to the hosts.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo are narrow favorites at home and Athletic Club have struggled away, but the margins are close enough for a low-confidence home lean.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-29T08:02:30.764766-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.85,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are in excellent form with 5 consecutive wins, playing at home against a Málaga side that has struggled, with only 1 point from 2 matches. The odds heavily favor Real Madrid, and statistical models give them a very high win probability.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo have drawn both their matches so far, while Valencia have lost one and drawn one. The match is expected to be close, with Deportivo having a slight edge at home. Odds are nearly even, but home advantage tips the balance slightly.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo have had mixed form but are playing at home, while Athletic Club have lost both their opening matches. The odds slightly favor Celta, and home advantage could be decisive in a close encounter.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-29T08:02:59.238634-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.774,
+                    "draw_probability": 0.138,
+                    "away_win_probability": 0.088,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is in stellar form with a perfect record and overwhelming odds in their favor. Málaga has struggled and is a massive underdog on the road.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.371,
+                    "draw_probability": 0.277,
+                    "away_win_probability": 0.352,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A very tight matchup with both teams yet to secure a win. Deportivo has a slight edge playing at home, but a draw is highly probable given the close odds and model projections.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club is in poor form with two losses and missing key defenders like Dani Vivian. Celta Vigo has the home advantage and is favored by the bookmakers, making them the most likely to secure the win.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-29T08:03:09.999571-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7732267732267732,
+                    "draw_probability": 0.13886113886113888,
+                    "away_win_probability": 0.0879120879120879,
+                    "predicted_outcome": "home",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid has a strong home form and a superior record compared to Málaga. The odds and statistical models also heavily favor Real Madrid.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.3713713713713714,
+                    "draw_probability": 0.2762762762762763,
+                    "away_win_probability": 0.35235235235235235,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have similar recent form and records, with no clear favorite. The probabilities are close, suggesting a balanced match that could end in a draw.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo has a slight edge based on the odds and expert analysis, but both teams have had mixed recent form, making this a relatively even match.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-29T08:04:01.671951-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid has started the season perfectly (2-0-0) with dominant attacking ratings from Mbappé and Bellingham. Betting markets heavily favor the home side, and probabilistic models consistently project a high win probability. Málaga remains winless and has shown defensive vulnerabilities, making a comfortable Real Madrid victory the most likely outcome.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are winless in the league this season with nearly identical records and tightly clustered betting odds. Deportivo holds a marginal home-field advantage, and statistical previews slightly edge them ahead, but the matchup is highly balanced. The high draw probability reflects the competitive nature of this contest, with a narrow home victory emerging as the most probable single result.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo benefits from a significant home advantage at Balaidos, while Athletic Club is struggling offensively and defensively (0-0-2) and missing key defensive personnel through injury. Betting odds and statistical models slightly favor the home side. Although both teams are off to slow starts, Celta's home form and Athletic's current fragility make a home victory the most probable outcome.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-29T08:04:47.952411-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid exhibits perfect form with five consecutive wins and a strong home record at the Bernabéu. Málaga is struggling with poor away results and faces overwhelming odds favoring the home side.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "A tightly matched fixture where Deportivo holds a slight edge based on home advantage and being unbeaten so far. Valencians are inconsistent, but the odds and model suggest a marginal home preference with a high likelihood of a draw.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club is weakened by significant defensive injuries including Vivian and Egiluz. Celta Vigo is favored by odds and home support at Balaidos, making them the logical choice despite the competitive nature of the matchup.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-29T08:06:24.508780-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.79,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid have started the season with two wins and dominant form (WWWWW) while Málaga are winless and heavy underdogs. Odds and predictive models both assign Real Madrid roughly 77-80% win probability at the Bernabéu.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo and Valencia are both still seeking their first win, but Deportivo’s home status and slightly tighter defensive record give them a marginal edge in a contest the models rate as essentially a coin-flip among three outcomes.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are winless in five competitive matches (LLLDL) and face defensive injury concerns, whereas Celta Vigo enjoy home advantage and have picked up a point already, making them the modest favorite in betting markets and projections.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-29T08:07:04.802552-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enters the match with a perfect start (2-0-0, +4 GD) and formidable home form (WWWWW), while Málaga has struggled early (0-1-1, 1 point). The betting odds (-800) and statistical models align on an approximately 80% win probability for the hosts, driven by superior squad quality (Mbappé, Bellingham) and Málaga's defensive vulnerabilities. The Santiago Bernabéu advantage further solidifies this forecast.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This fixture presents a tightly balanced contest between two winless sides (both on 1 point). Deportivo has drawn both home matches, while Valencia lost their opener. Market odds have remained stable for Deportivo (+155) but drifted for Valencia (+190 to +210), suggesting slight market preference for the hosts. With win probabilities separated by less than 10 percentage points and a high likelihood of a draw (~31%), the outcome is highly uncertain.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo holds a significant advantage against an Athletic Club side that has lost its first two matches (0-0-2) and is dealing with key defensive absences (Vivian, Egiluz out; Prados doubtful). Celta's home pricing (+145) reflects this edge, and probability models estimate their win chance at approximately 40-42%. While Athletic possesses historical quality, their current form and injury issues make an away upset unlikely.",
+                    "event_id": "401882905"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-29T08:07:10.984413-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.774,
+                    "draw_probability": 0.139,
+                    "away_win_probability": 0.087,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid has a strong home form and a better overall record. Málaga has a losing away record and is an underdog in this matchup.",
+                    "event_id": "401882899"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Valencia (away) @ Deportivo (home)",
+                    "home_win_probability": 0.371,
+                    "draw_probability": 0.276,
+                    "away_win_probability": 0.353,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo has a slight edge with home advantage, but the match is closely contested with similar win probabilities for both teams.",
+                    "event_id": "401882904"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Athletic Club (away) @ Celta Vigo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Celta Vigo has home advantage, but both teams have similar win probabilities. The match is expected to be closely contested.",
+                    "event_id": "401882905"
+                }
+            ]
+        }
+    ]
+}

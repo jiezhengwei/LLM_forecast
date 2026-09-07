@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-16\n    Target Date: 2026-04-17\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Toulouse @ Lens                                      | Scheduled    | Away: 34.5% (10-7-12) vs Home: 67.9% (19-2-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Toulouse (Away) @ Lens (Home)\n**News & Injury Report:**\n- [Lens vs Toulouse Prediction, Betting Tips, Lineups & Odds | 17 Apr ...](https://www.sportsgambler.com/betting-tips/football/lens-vs-toulouse-prediction-lineups-odds-2026-04-17/)\n  Snippet: Jhoanner Chavez Thigh \n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-04-18\n\nRuben Aguilar Calf \n\nPosition: Defender Matches: 21 Goals: 2 Assists: 2 Expected return: -\n\nJonathan Gradit Lower leg \n\nPosition: Defender Matches:...\n- [Lens vs Toulouse Prediction 17/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-19-04-2026-lens-toulouse-prediction)\n  Snippet: \u274c Lens are facing some squad issues due to injuries. The appearances of Samson Baidoo (muscle injury) and Ruben Aguilar (game injury) are doubtful. Regis Gurtner, Jonathan Gradit, and Kylian Antonio are confirmed absentees as they continue their long...\n**Betting Odds:**\n- [Lens vs Toulouse prediction \u2013 Odds & stats \u2013 17 April 2026](https://www.wincomparator.com/predictions/lens-toulouse-7680881/)\n  Snippet: #### Lens and Toulouse stats in Ligue 1\n\n68%\n\nWins\n\n34%\n\n25%\n\nLosses\n\n41%\n\n7%\n\nDraws\n\n24%\n\n2.89\n\nAverage goals per match\n\n2.69\n\n1.93\n\nGoals scored per match\n\n1.34\n\n0.96\n\nGoals conceded per match\n\n1.34\n\n32%\n\nUnder 2.5 goals\n\n52%\n\n68%\n\nOver 2.5 goals\n\n...\n- [Lens vs Toulouse Odds - Friday April 17 2026](https://www.oddsshark.com/soccer/ligue-1/lens-toulouse-odds-april-19-2026-2430094)\n  Snippet: Skip to main content \n\nSoccer\n\n# Lens vs Toulouse\n\nToulouse\n\n10 - 7 - 12\n\nL-L-W-W-L-L\n\nLens\n\n19 - 2 - 7\n\nL-W-L-W-D-L\n\nApril 17, 2026, 2:45 PM EDT  \n | Stade Bollaert-Delelis\n\nPredicted Score\n\n1.2\n\nTFC\n\n1.6\n\nRCDL\n\nMoneyline Consensus\n\nLine History\n\nTF...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-16\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-16 20:50:23"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-16 20:49:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens have the clearly stronger season profile (19-2-7 vs Toulouse 10-7-12) and strong home advantage at Stade Bollaert-Delelis; market/preview models also lean Lens (projected ~1.6\u20131.2). Lens\u2019 probability is trimmed slightly due to notable defensive absences/doubts (e.g., Gradit out; Aguilar/Baidoo doubtful; other squad issues), which raises draw/away upset chances versus a mid-table Toulouse side."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens have a strong home record and better season form (19-2-7) with a lower goals-against rate, and betting markets favour them (predicted score ~1.6-1.2). However, several defensive absences/doubts (Jonathan Gradit, Samson Baidoo doubtful, Ruben Aguilar, plus other long-term absentees) weaken Lens' defence and reduce certainty. Toulouse are inconsistent away but capable of punishing defensive gaps. Balancing home advantage, season form and market odds against the injury risk to Lens gives a Home Win probability edge but only medium confidence."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens have a strong home record (19-2-7) and are favored in most betting markets, while Toulouse are better on the road than at home but still hold weaker overall away form (10-7-12). Lens' home advantage is substantial, though several Lens defenders (e.g., Chavez, Aguilar, Gradit) are listed with injuries/outages, which could slightly dampen defense; overall expected to tilt toward Lens. Betting odds show Lens as clear favorites, providing calibration support for a Lens win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens have a very strong home record this season (67.9% win rate) and superior overall form compared to Toulouse. However, Lens have a number of key defensive absentees and some uncertainty in their back line, slightly tempering their advantage. Toulouse have been inconsistent and have performed poorly away from home. Bookmaker odds and win rates point clearly toward a Lens victory, but defensive injuries introduce some risk, raising the draw probability slightly. Overall, Lens are favoured but not overwhelmingly so."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens has a strong home record with a 67.9% win rate, and despite facing injury challenges, their squad depth should help mitigate these losses. Toulouse, while having moments of good form, has a lower away win rate of 34.5%. The betting odds favor Lens and their overall performance metrics support a higher likelihood of a home win."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens has a strong home record (67.9% win rate) compared to Toulouse's away record (34.5% win rate). However, Lens faces squad issues due to injuries, with multiple defenders potentially out (Aguilar, Gradit, Baidoo), weakening their defense. The odds suggest Lens are still favored at home, but the injuries make an upset possible. The predicted score from oddsshark implies a Lens win, but only by a small margin (1.6 vs 1.2), supporting a higher draw probability."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:49:55",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lens has dominant home form (67.9% win rate, 19-2-7 record) and strong statistical advantage (68% win rate vs 34% for Toulouse, 1.93 goals scored per match vs 1.34). Toulouse's recent form is inconsistent (L-L-W-W-L-L). Lens faces multiple defensive injuries (Gradit, Gurtner, Antonio confirmed out; Baidoo and Aguilar doubtful), but their offensive capability remains intact. Betting market consensus favors Lens heavily. Toulouse's away record (34.5% win rate) suggests limited threat despite Lens' defensive absences."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:50:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a dominant home record (67.9% win rate, 19-2-7) compared to Toulouse's poor away form (34.5% win rate, 10-7-12). Lens has won 68% of their matches this season versus Toulouse's 34%. Despite injury concerns for Lens (Chavez, Aguilar, Gradit, Baidoo, Gurtner, and Antonio), their defensive issues are somewhat mitigated by home advantage. The betting odds and predicted score (1.2-1.6 favoring Lens) strongly support a home win. Lens averages 1.93 goals scored per match vs 0.96 conceded, while Toulouse scores 1.34 and concedes 1.34. Recent form shows both teams inconsistent (Toulouse: L-L-W-W-L-L, Lens: L-W-L-W-D-L), but Lens's superior overall record and home fortress advantage (only 2 draws at home all season) make them clear favorites. The 68% over 2.5 goals rate for Lens suggests an attacking home performance is likely."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:50:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Lens (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Lens has a strong home record with a 67.9% win rate, while Toulouse's away record is significantly weaker at 34.5%. Additionally, Lens has been more consistent in their recent form despite some key defensive injuries. The betting odds and statistical data support a higher likelihood of a home win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

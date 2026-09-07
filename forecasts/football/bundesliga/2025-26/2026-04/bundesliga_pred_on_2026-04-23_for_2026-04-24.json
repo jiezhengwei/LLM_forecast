@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-23\n    Target Date: 2026-04-24\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. 1. FC Union Berlin @ RB Leipzig                      | Scheduled    | Away: 26.7% (8-8-14) vs Home: 60.0% (18-5-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: 1. FC Union Berlin (Away) @ RB Leipzig (Home)\n**News & Injury Report:**\n- [RB Leipzig vs Union Berlin Prediction, Betting Tips, Lineups & Odds | 24 Apr 2026](https://www.sportsgambler.com/betting-tips/football/rb-leipzig-vs-union-berlin-prediction-lineups-odds-2026-04-24/)\n  Snippet: #### Previous Union Berlin Lineups\n\n### Injuries & Suspensions\n\n#### RB Leipzig Player Stats & Squad\n\n#### Manager: Ole Werner\n\n| Player | # | Pos | GP | MIN | ST | BE | G | A | Y | R |\n ---  ---  ---  ---  ---\n| Willi Orban | 4 | D | 29 | 2589 | 29 | 0 | 1 | 0 | 4 | 0 |\n| Nicolas Seiwald | 13 | M | 30 | 2536 | 29 | 1 | 0 | 2 | 2 | 0 |\n| David Raum | 22 | D | 29 | 2485 | 28 | 1 | 3 | 6 | 6 | 0 |\n| Christoph Baumgartner | 14 | M | 29 | 2421 | 28 | 1 | 12 | 7 | 6 | 0 |\n| Ridle Baku | 17 | M | 28 | 2219 | 25 | 3 | 1 | 3 | 4 | 0 | [...] | # | Team | G | W | D | L | +/- | P |\n ---  ---  ---  --- | ...\n- [Leipzig vs Union Prediction 24/04/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-25-04-2026-leipzig-union-prediction)\n  Snippet: ### Union Berlin\n\n\ud83c\udf99\ufe0f Marie-Luise Eta on the team's condition: \"The past weeks and months have taken their toll, so the players' confidence isn't at its peak. However, they have been open and receptive to our ideas. Even in the match against Wolfsburg, it was evident that the team is trying to implement them. Despite the result, it's a step in the right direction. It's crucial now to build on this and approach the next game with full confidence.\"\n\n\u274c Robert Skov, Matteo Raab, and Woo-Yeong are still unavailable due to injuries.\n\n## \ud83d\udfe8 Yellow Card Prediction [...] ## Latest news\n\n### RB Leipzig ...\n**Betting Odds:**\n- [RB Leipzig vs Union Berlin Betting Pick | German Bundesliga | 2026-04-24 |](https://www.goonersguide.com/football-pick-59131-RB-Leipzig-vs-Union-Berlin.htm)\n  Snippet: ## RB Leipzig vs Union Berlin Match Report :\n\nRB Leipzig vs Union Berlin Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Fixed Odds BETS |  | RB | DRAW | Uni |  | BET365 |  | 1.33 | 5.00 | 9.00 | | BETFRED | | 1.33 | 5.00 | 8.50 | | 12PLAY | | 1.31 | 5.00 | 7.90 | | CLOUDBET | | 1.32 | 5.40 | 8.50 | | SPORTBET | | 1.29 | 5.27 | 8.64 |  | Click the bookmaker name to visit the betting site |  |\n\nThis game has not been played yet - so there is no match report. ...\n- [RB Leipzig \u2013 1. FC Union Berlin prediction 24.04.2026 - Transfermarkt](https://www.transfermarkt.com/betting/tips/rb-leipzig-vs-1-fc-union-berlin-prediction-24-04-2026/)\n  Snippet: ## Our Betting Prediction for RB Leipzig vs Union Berlin\n\nOur betting tip for this Bundesliga clash strongly favours a home victory for RB Leipzig. The odds reflect the significant gulf in class and current form between these sides, with Leipzig priced at 1.39 with 1win for the home win. While these odds offer modest returns, they represent solid value given Leipzig's superior quality and recent momentum.\n\n## Our tips\n\nbet365\n\nTotal Goals\n\nUnder 4.5\n\nThere have been under 4.5 goals scored in 4 of RB Leipzig's last 5 matches. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-23 22:58:56"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-23 22:57:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Betting market heavily favors Leipzig (approx. 1.33 home vs 5.00 draw vs 9.00 away), which normalizes to ~0.71/0.19/0.10. Leipzig also has a much stronger season profile (home win rate ~60% vs Union away win rate ~26.7%). Union report suggests confidence/form issues recently, and they remain without Skov, Raab, and Woo-Yeong, reducing depth and attacking/creative options."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:57:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market and form strongly favour RB Leipzig. Bookmakers price Leipzig ~1.31\u20131.39 (implied probabilities ~70% after normalization), which is consistent with on-paper and recent performance: Leipzig have a 60% home win rate this season vs Union's weak away record (26.7%). Union are missing key attacking players (Robert Skov, Matteo Raab, Woo-Yeong) and reports cite low confidence/fatigue in the squad. Leipzig have quality in midfield/attack (e.g., Baumgartner) and home advantage under manager Ole Werner. Given the large class gap, injuries to Union and the betting market, a Leipzig win is the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": " Leipzig has a strong home record (60% win rate) and is facing Union Berlin who struggle away (about 27% win rate) with key injuries for Union. Odds favor a Leipzig win (approx 1.3\u20131.35), reinforcing the home advantage and current form differential."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig have a strong home record this season (60% win rate), while Union Berlin have struggled away (only a 26.7% win rate). Leipzig also have close to a full squad available, whereas Union Berlin are missing a few key players and their confidence is reportedly low. The betting odds (around 1.33 for Leipzig win, 5.00 for draw, 8.50-9.00 for Union win) strongly favor the home side, matching model expectations. All factors point towards a likely Leipzig win, with a draw only possible if Union defend deep and are fortunate. An away win is highly unlikely barring a major upset."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig has a strong home win rate at 60%. Union Berlin is struggling with a win rate of 26.7% away from home. Key players for Leipzig have high appearance and performance stats whereas Union Berlin is dealing with injuries and low confidence in recent performances. Betting odds overwhelmingly favor RB Leipzig at approximately 1.33 for a home win, indicating a high probability of success for the home team."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin @ RB Leipzig",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig is heavily favored by the betting markets (average odds of 1.33 imply around a 71-73% win probability). Leipzig boasts a strong 60% win rate this season, whereas Union Berlin is struggling with poor form (26.7% win rate), low team confidence, and key injuries to players like Robert Skov and Woo-Yeong."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig have strong home record (60% win rate) and are clear favorites with betting odds around 1.33. Union Berlin have poor away form (26.7% win rate) and are affected by key injuries (Skov, Raab, Woo-Yeong). Leipzig's lineup is stable with key contributors like Baumgartner and Raum. The probability gap is large, making a home win highly likely."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig holds a commanding 60% win rate (18-5-7) at home this season, while Union Berlin struggles with only 26.7% wins (8-8-14) away. The betting markets strongly favor Leipzig with odds around 1.31-1.33 for a home win, implying approximately 72-76% probability. Union Berlin has significant injury concerns (Robert Skov, Matteo Raab, Woo-Yeong unavailable) and their coach Marie-Luise Eta acknowledged the team's confidence isn't at peak levels after difficult recent months. Leipzig's key players are healthy and performing well, with Christoph Baumgartner contributing 12 goals and 7 assists this season. The substantial quality gap between the teams, Leipzig's home advantage, Union's poor away form, and the betting market consensus all point to a decisive home victory. Draw odds around 5.00-5.40 (18-20% implied probability) suggest some possibility of Union defending deeply, but their defensive struggles away from home make this unlikely. Away win odds of 7.90-9.00 (11-13% implied probability) reflect Union's minimal chances of an upset."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 22:58:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Union Berlin (away) @ RB Leipzig (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "RB Leipzig has a strong home record with a 60.0% win rate, while 1. FC Union Berlin's away record is poor at 26.7%. Additionally, key players for Union Berlin like Robert Skov, Matteo Raab, and Woo-Yeong are injured, which further weakens their chances. The betting odds also heavily favor RB Leipzig, with odds of around 1.33 for a home win, indicating a high probability of a Leipzig victory."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

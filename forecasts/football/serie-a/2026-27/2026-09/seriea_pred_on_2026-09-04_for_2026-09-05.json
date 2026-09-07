@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-04",
+        "target_date_et": "2026-09-05",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874939\nMatchup: Torino (away) @ Fiorentina (home)\nHome: Fiorentina\nAway: Torino\nKickoff UTC: 2026-09-05T13:00Z\nKickoff ET: 2026-09-05 09:00 EDT\nVenue: Stadio Artemio Franchi\nRound: unavailable\nHome form: LLWDW\nAway form: LLLWD\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Fiorentina -105 (open -120); Draw +215 (open +210); Torino +310 (open +350)\nTavily context:\n  - Title: Fiorentina vs Torino: Scores, Results Lineups, H2H & Odds\n    Content: Attackers: Giovanni Simeone, Che Adams.\n\nSubs: Alberto Paleari, Diego Mascardi, Franco Israel, Ardian Ismajli, Nathan Patterson, Cristiano Biraghi, Niccolò Fortini, Rolando Mandragora, Aaron Tchamda, Emirhan İlkhan, Daniel Bragança, Tino Anjorin, Gaetano Oristanio, Zakaria Aboukhlal, Sandro Kulenovic, Duvan Zapata.\n\nMissing Players: Cesare Casadei, Pietro Pellegri.\n\n### Event Details:\n\nName: Fiorentina vs. Torino\n\nDate: Saturday, September 5, 2026\n\nTime: 13:00\n\nLocation: Stadio Artemio Franchi\n\nCapacity: 43147\n\nSee More\n\nImage 93 [...] Home Team: FiorentinaCoach: Fabio Grosso. ...\n    URL: https://www.365scores.com/en-us/football/match/serie-a-17/fiorentina-torino-228-235-17\n  - Title: PREVIEW | Fiorentina vs Torino: team news, lineups ...\n    Content: ## OneFootball Videos\n\nTorino currently have 0 points and lie in 14th position. In their last encounter, Ignazio Abate's team were beaten 0-1 by Monza (Coppa Italia 2026/27).\n\nThe last meeting between the two teams ended in a 2-2 draw.\n\n### Predicted lineups\n\nFiorentina: David de Gea, Álex Jiménez, Marin Pongracic, Radu Dragusin, Víctor Valdepeñas, Arthur Atta, Christ Oulaï, Cher Ndour, Franco Mastantuono, Mateo Pellegrino, Albert Gudmundsson ...\n    URL: https://onefootball.com/en/news/preview-fiorentina-vs-torino-team-news-lineups-predictions-serie-a-0509-43394701\n  - Title: Fiorentina vs Torino Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Timezone:\n\n 13:53 (+7:00)\n -12:00\n -11:00\n -10:00\n -09:00\n -08:00\n -07:00\n -06:00\n -05:00\n -04:00\n -03:00\n -02:00\n -01:00\n +00:00\n +01:00\n +02:00\n +03:00\n +04:00\n +05:00\n +06:00\n +07:00\n +08:00\n +09:00\n +10:00\n +11:00\n +12:00\n +13:00\n +14:00\n\nOdds Type:\n\n Decimal\n Fractional\n US Odds\n\n# Fiorentina vs Torino Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n\nBy  Federico Giordano, Italian Football Analyst | Published: 1 hour ago | 4 min read\n\nACF Fiorentina logo\n\nACF Fiorentina\n\nFootball Italy - Serie A Stadio Artemio Franchi  Sat 5 Sep 10:00\n\nTorino FC logo\n\nTorino FC ...\n    URL: https://www.sportsgambler.com/betting-tips/football/fiorentina-vs-torino-prediction-lineups-odds-2026-09-05\n  - Title: Fiorentina vs Torino Predictions, Picks & Odds - 05/09/2026\n    Content: Serie A\n\nFiorentina Fiorentina\n\n05 Sep 2026 14:00\n\nTorino Torino\n\nPrediction:\n\nFiorentina to win 1.91\n\nView oddsBetfred >\n\nPick your prediction\n\n FiorentinaDraw Torino\n\n# Fiorentina vs Torino Predictions, Picks & Odds – 05/09/2026\n\nSerie A · 3\n\n05 Sep 2026  Stadio Artemio Franchi  Louis Hecq\n\n### Fiorentina vs Torino – Best bets of the match ...\n    URL: https://www.toffeeweb.com/fiorentina-vs-torino-predictions-picks-odds-05-09-2026\n\nGame ID: 2\nSource event_id: 401874937\nMatchup: Napoli (away) @ Internazionale (home)\nHome: Internazionale\nAway: Napoli\nKickoff UTC: 2026-09-05T16:00Z\nKickoff ET: 2026-09-05 12:00 EDT\nVenue: San Siro\nRound: unavailable\nHome form: WWDDW\nAway form: LWWWL\nHome record: 2-0-0\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Internazionale -165 (open -140); Draw +275 (open +245); Napoli +425 (open +350)\nTavily context:\n  - Title: Napoli vs Inter Milan Preview: Serie A Lineups, Team News, Odds, Predictions & More\n    Content: # Napoli vs Inter Milan Preview: Serie A Lineups, Team News, Odds, Predictions & More\n## The Italian Football Podcast\n11800 subscribers\n50 likes\n\n### Description\n1791 views\nPosted: 22 Oct 2025\nThe Serie A matchday eight game between Napoli and Inter Milan takes place on Saturday 25 October at 1800 CET at the Stadio Maradona. Carlo Garganese and Nima Tavallaey preview the big Scudetto game.\nWe look at the probable XIs, injuries and suspensions, and break down the game tactically before offering our predictions.\nWho do you think will win? Who will score?\nLet us know in the comments below. ...\n    URL: https://www.youtube.com/watch?v=GgjD0stFtlc&vl=en\n  - Title: Napoli vs. Inter: latest team news, injuries, suspensions for Serie A title showdown | OneFootball\n    Content: ## Vidéos OneFootball\n\nThe Nerazzurri leapfrogged Napoli at the top of the Serie A table last weekend and currently lead the Partenopei by one point.\n\n### Napoli vs Inter: latest team news, injuries, suspensions for Serie A title showdown\n\nImage de l'article :Napoli vs. Inter: latest team news, injuries, suspensions for Serie A title showdown ...\n    URL: https://onefootball.com/fr/news/napoli-vs-inter-latest-team-news-injuries-suspensions-for-serie-a-title-showdown-40771449\n  - Title: Inter Milan vs Napoli Prediction - Serie A - 05/09/2026\n    Content: Limited Offer. Currently at Stake\n\n## Inter Milan v Napoli Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.65 | 3.8 | 5.6 |  |\n| 1xbet | 1.71 | 3.91 | 5.73 |  |\n| Melbet | 1.65 | 3.82 | 5.45 |  |\n| Betwinner | 1.65 | 3.82 | 5.45 |  |\n| 22bet | 1.65 | 3.8 | 5.45 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Inter Milan and Napoli?\n\nOur prediction for the Inter Milan vs Napoli match is: more than 2.5 goals & BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/inter-milan-napoli-370496\n  - Title: Inter Milan vs. Napoli (Sep 5, 2026) Live Score - ESPN\n    Content: | DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/30/26 | vsCOMO | L2-1 | Italian Serie A |\n| 8/22/26 | @GEN | W2-0 | Italian Serie A |\n| 8/12/26 | vsARI | W6-2 | Club Friendly |\n| 8/8/26 | vsCEL | D1-1 | Club Friendly |\n| 5/24/26 | vsUDI | W1-0 | Italian Serie A |\n\ndraftkings\n\n## Italian Serie A Standings [...] | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| AS Roma | 2 | 2 | 0 | 0 | +8 | 6 |\n| Internazionale | 2 | 2 | 0 | 0 | +4 | 6 |\n| AC Milan | 2 | 2 | 0 | 0 | +3 | 6 |\n| Juventus | 2 | 2 | 0 | 0 | +3 | 6 |\n| Atalanta | 2 | 2 | 0 | 0 | +2 | 6 |\n| Lazio | 2 | 2 | 0 | 0 | +2 | 6 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874937/napoli-internazionale\n\nGame ID: 3\nSource event_id: 401874781\nMatchup: Atalanta (away) @ AS Roma (home)\nHome: AS Roma\nAway: Atalanta\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WWWWW\nAway form: WWWDD\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: AS Roma -145 (open -115); Draw +270 (open +240); Atalanta +360 (open +280)\nTavily context:\n  - Title: Roma vs Atalanta Predictions, Picks & Odds - 05/09/2026\n    Content: WWWWW\n\nWins5/5 (100%)\n\nDraws0/5 (0%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n3.6Total goals\n\n61%Both teams score\n\n2.1Goals scored\n\n1.5Goals conceded\n\n#### Atalanta\n\nRecent form\n\nWWWDW\n\nWins4/5 (80%)\n\nDraws1/5 (20%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n2.5Total goals\n\n42%Both teams score\n\n1.8Goals scored\n\n0.7Goals conceded\n\n| Statistic | Roma | Atalanta |\n ---\n| Last 5 results | 5W | · | 4W 1D |\n| Avg goals scored | 2.1 | · | 1.8 |\n| Avg goals conceded | 1.5 | · | 0.7 |\n| Under 2.5 (last 5) | 1/5 | · | 3/5 |\n| H2H, last 4 meetings | 0 Roma · 1 Draws · 3 Atalanta |\n\nProbable lineup ...\n    URL: https://www.toffeeweb.com/ng/roma-vs-atalanta-predictions-picks-odds-05-09-2026\n  - Title: Preview: Roma vs Atalanta - Team News, Lineups & Prediction\n    Content: Skip to content\n\nThe Cult of Calcio\n\nThe Cult of Calcio\n\nItalian Football and Serie A News in English\n\nSearch\n\n# Serie A Preview: Roma vs Atalanta – Team News, Lineups & Prediction\n\nMarko Vrakela Atalanta, Italian Football, Roma, Serie A, Serie A 2025-2026\n\nEuropean qualification will be on the line when Roma and Atalanta renew hostilities at the Stadio Olimpico on Saturday night. With only six games remaining until the end of the season, neither side can afford a slip-up here if they’re to stay relevant in the top-six race. ...\n    URL: https://cultofcalcio.com/serie-a-preview-roma-vs-atalanta-team-news-lineups-prediction\n  - Title: AS Roma vs. Atalanta (Sep 5, 2026) Live Score\n    Content: | DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/31/26 | vsBOL | W1-0 | Italian Serie A |\n| 8/27/26 | @HTA | W1-0  Agg. 0-1, ATA | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/23/26 | vsSAS | W2-1 | Italian Serie A |\n| 8/20/26 | vsHTA | D0-0 | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/14/26 | vsATH | W1-0 | Club Friendly |\n\ndraftkings\n\n## Italian Serie A Standings [...] Watch ESPN\n\n# AS Roma v Atalanta\n\nROMA\n\nParamount+\n\nATA\n\n## Game Information\n\nRoma, Italy\n\n## Top Scorers\n\n## Most Assists\n\n## Team Stats\n\n4.00\n\nAverage Goals\n\n1.50\n\n0 ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874781/atalanta-as-roma\n  - Title: Roma vs Atalanta Predictions, Picks & Odds - 05/09/2026\n    Content: + Sports Betting Glossary\n  + Arbitrage Calculator\n  + Double Chance Betting\n  + How Betting Odds Work\n  + Over/Under Betting\n US Guides\n\n  + Best Online Social Casinos\n  + Best Free Spin Bonus No Deposit Sites\n\nSearch\n\n Best 100 Rs Signup Bonus\n BC Game Bonus Code bctoffee\n Stake Promo Code XXLPROMO\n 1xBet Promo Code 1XINVIP\n Melbet Promo Code\n\n Best 100 Rs Signup Bonus\n BC Game Bonus Code bctoffee\n Stake Promo Code XXLPROMO\n 1xBet Promo Code 1XINVIP\n Melbet Promo Code\n\n Serie A\n\nRoma Roma\n\n05 Sep 2026 19:45\n\nAtalanta Atalanta\n\nPrediction:\n\nRoma to win 1.79\n\nView Odds1xBet > ...\n    URL: https://www.toffeeweb.com/int/roma-vs-atalanta-predictions-picks-odds-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-04\n\nTarget Date (ET): 2026-09-05\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874939\nMatchup: Torino (away) @ Fiorentina (home)\nHome: Fiorentina\nAway: Torino\nKickoff UTC: 2026-09-05T13:00Z\nKickoff ET: 2026-09-05 09:00 EDT\nVenue: Stadio Artemio Franchi\nRound: unavailable\nHome form: LLWDW\nAway form: LLLWD\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Fiorentina -105 (open -120); Draw +215 (open +210); Torino +310 (open +350)\nTavily context:\n  - Title: Fiorentina vs Torino: Scores, Results Lineups, H2H & Odds\n    Content: Attackers: Giovanni Simeone, Che Adams.\n\nSubs: Alberto Paleari, Diego Mascardi, Franco Israel, Ardian Ismajli, Nathan Patterson, Cristiano Biraghi, Niccolò Fortini, Rolando Mandragora, Aaron Tchamda, Emirhan İlkhan, Daniel Bragança, Tino Anjorin, Gaetano Oristanio, Zakaria Aboukhlal, Sandro Kulenovic, Duvan Zapata.\n\nMissing Players: Cesare Casadei, Pietro Pellegri.\n\n### Event Details:\n\nName: Fiorentina vs. Torino\n\nDate: Saturday, September 5, 2026\n\nTime: 13:00\n\nLocation: Stadio Artemio Franchi\n\nCapacity: 43147\n\nSee More\n\nImage 93 [...] Home Team: FiorentinaCoach: Fabio Grosso. ...\n    URL: https://www.365scores.com/en-us/football/match/serie-a-17/fiorentina-torino-228-235-17\n  - Title: PREVIEW | Fiorentina vs Torino: team news, lineups ...\n    Content: ## OneFootball Videos\n\nTorino currently have 0 points and lie in 14th position. In their last encounter, Ignazio Abate's team were beaten 0-1 by Monza (Coppa Italia 2026/27).\n\nThe last meeting between the two teams ended in a 2-2 draw.\n\n### Predicted lineups\n\nFiorentina: David de Gea, Álex Jiménez, Marin Pongracic, Radu Dragusin, Víctor Valdepeñas, Arthur Atta, Christ Oulaï, Cher Ndour, Franco Mastantuono, Mateo Pellegrino, Albert Gudmundsson ...\n    URL: https://onefootball.com/en/news/preview-fiorentina-vs-torino-team-news-lineups-predictions-serie-a-0509-43394701\n  - Title: Fiorentina vs Torino Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n    Content: Timezone:\n\n 13:53 (+7:00)\n -12:00\n -11:00\n -10:00\n -09:00\n -08:00\n -07:00\n -06:00\n -05:00\n -04:00\n -03:00\n -02:00\n -01:00\n +00:00\n +01:00\n +02:00\n +03:00\n +04:00\n +05:00\n +06:00\n +07:00\n +08:00\n +09:00\n +10:00\n +11:00\n +12:00\n +13:00\n +14:00\n\nOdds Type:\n\n Decimal\n Fractional\n US Odds\n\n# Fiorentina vs Torino Prediction, Betting Tips, Lineups & Odds | 05 Sep 2026\n\nBy  Federico Giordano, Italian Football Analyst | Published: 1 hour ago | 4 min read\n\nACF Fiorentina logo\n\nACF Fiorentina\n\nFootball Italy - Serie A Stadio Artemio Franchi  Sat 5 Sep 10:00\n\nTorino FC logo\n\nTorino FC ...\n    URL: https://www.sportsgambler.com/betting-tips/football/fiorentina-vs-torino-prediction-lineups-odds-2026-09-05\n  - Title: Fiorentina vs Torino Predictions, Picks & Odds - 05/09/2026\n    Content: Serie A\n\nFiorentina Fiorentina\n\n05 Sep 2026 14:00\n\nTorino Torino\n\nPrediction:\n\nFiorentina to win 1.91\n\nView oddsBetfred >\n\nPick your prediction\n\n FiorentinaDraw Torino\n\n# Fiorentina vs Torino Predictions, Picks & Odds – 05/09/2026\n\nSerie A · 3\n\n05 Sep 2026  Stadio Artemio Franchi  Louis Hecq\n\n### Fiorentina vs Torino – Best bets of the match ...\n    URL: https://www.toffeeweb.com/fiorentina-vs-torino-predictions-picks-odds-05-09-2026\n\nGame ID: 2\nSource event_id: 401874937\nMatchup: Napoli (away) @ Internazionale (home)\nHome: Internazionale\nAway: Napoli\nKickoff UTC: 2026-09-05T16:00Z\nKickoff ET: 2026-09-05 12:00 EDT\nVenue: San Siro\nRound: unavailable\nHome form: WWDDW\nAway form: LWWWL\nHome record: 2-0-0\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Internazionale -165 (open -140); Draw +275 (open +245); Napoli +425 (open +350)\nTavily context:\n  - Title: Napoli vs Inter Milan Preview: Serie A Lineups, Team News, Odds, Predictions & More\n    Content: # Napoli vs Inter Milan Preview: Serie A Lineups, Team News, Odds, Predictions & More\n## The Italian Football Podcast\n11800 subscribers\n50 likes\n\n### Description\n1791 views\nPosted: 22 Oct 2025\nThe Serie A matchday eight game between Napoli and Inter Milan takes place on Saturday 25 October at 1800 CET at the Stadio Maradona. Carlo Garganese and Nima Tavallaey preview the big Scudetto game.\nWe look at the probable XIs, injuries and suspensions, and break down the game tactically before offering our predictions.\nWho do you think will win? Who will score?\nLet us know in the comments below. ...\n    URL: https://www.youtube.com/watch?v=GgjD0stFtlc&vl=en\n  - Title: Napoli vs. Inter: latest team news, injuries, suspensions for Serie A title showdown | OneFootball\n    Content: ## Vidéos OneFootball\n\nThe Nerazzurri leapfrogged Napoli at the top of the Serie A table last weekend and currently lead the Partenopei by one point.\n\n### Napoli vs Inter: latest team news, injuries, suspensions for Serie A title showdown\n\nImage de l'article :Napoli vs. Inter: latest team news, injuries, suspensions for Serie A title showdown ...\n    URL: https://onefootball.com/fr/news/napoli-vs-inter-latest-team-news-injuries-suspensions-for-serie-a-title-showdown-40771449\n  - Title: Inter Milan vs Napoli Prediction - Serie A - 05/09/2026\n    Content: Limited Offer. Currently at Stake\n\n## Inter Milan v Napoli Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  ---\n| Stake | 1.65 | 3.8 | 5.6 |  |\n| 1xbet | 1.71 | 3.91 | 5.73 |  |\n| Melbet | 1.65 | 3.82 | 5.45 |  |\n| Betwinner | 1.65 | 3.82 | 5.45 |  |\n| 22bet | 1.65 | 3.8 | 5.45 |  |\n\nStake\n1xbet\nMelbet\nBetwinner\n22bet\n\nPre-register for our Member Area: win €500!\n\n## What is the prediction for the football match between Inter Milan and Napoli?\n\nOur prediction for the Inter Milan vs Napoli match is: more than 2.5 goals & BTTS. ...\n    URL: https://www.sportytrader.com/en/betting-tips/inter-milan-napoli-370496\n  - Title: Inter Milan vs. Napoli (Sep 5, 2026) Live Score - ESPN\n    Content: | DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/30/26 | vsCOMO | L2-1 | Italian Serie A |\n| 8/22/26 | @GEN | W2-0 | Italian Serie A |\n| 8/12/26 | vsARI | W6-2 | Club Friendly |\n| 8/8/26 | vsCEL | D1-1 | Club Friendly |\n| 5/24/26 | vsUDI | W1-0 | Italian Serie A |\n\ndraftkings\n\n## Italian Serie A Standings [...] | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| AS Roma | 2 | 2 | 0 | 0 | +8 | 6 |\n| Internazionale | 2 | 2 | 0 | 0 | +4 | 6 |\n| AC Milan | 2 | 2 | 0 | 0 | +3 | 6 |\n| Juventus | 2 | 2 | 0 | 0 | +3 | 6 |\n| Atalanta | 2 | 2 | 0 | 0 | +2 | 6 |\n| Lazio | 2 | 2 | 0 | 0 | +2 | 6 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874937/napoli-internazionale\n\nGame ID: 3\nSource event_id: 401874781\nMatchup: Atalanta (away) @ AS Roma (home)\nHome: AS Roma\nAway: Atalanta\nKickoff UTC: 2026-09-05T18:45Z\nKickoff ET: 2026-09-05 14:45 EDT\nVenue: Olimpico\nRound: unavailable\nHome form: WWWWW\nAway form: WWWDD\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: AS Roma -145 (open -115); Draw +270 (open +240); Atalanta +360 (open +280)\nTavily context:\n  - Title: Roma vs Atalanta Predictions, Picks & Odds - 05/09/2026\n    Content: WWWWW\n\nWins5/5 (100%)\n\nDraws0/5 (0%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n3.6Total goals\n\n61%Both teams score\n\n2.1Goals scored\n\n1.5Goals conceded\n\n#### Atalanta\n\nRecent form\n\nWWWDW\n\nWins4/5 (80%)\n\nDraws1/5 (20%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n2.5Total goals\n\n42%Both teams score\n\n1.8Goals scored\n\n0.7Goals conceded\n\n| Statistic | Roma | Atalanta |\n ---\n| Last 5 results | 5W | · | 4W 1D |\n| Avg goals scored | 2.1 | · | 1.8 |\n| Avg goals conceded | 1.5 | · | 0.7 |\n| Under 2.5 (last 5) | 1/5 | · | 3/5 |\n| H2H, last 4 meetings | 0 Roma · 1 Draws · 3 Atalanta |\n\nProbable lineup ...\n    URL: https://www.toffeeweb.com/ng/roma-vs-atalanta-predictions-picks-odds-05-09-2026\n  - Title: Preview: Roma vs Atalanta - Team News, Lineups & Prediction\n    Content: Skip to content\n\nThe Cult of Calcio\n\nThe Cult of Calcio\n\nItalian Football and Serie A News in English\n\nSearch\n\n# Serie A Preview: Roma vs Atalanta – Team News, Lineups & Prediction\n\nMarko Vrakela Atalanta, Italian Football, Roma, Serie A, Serie A 2025-2026\n\nEuropean qualification will be on the line when Roma and Atalanta renew hostilities at the Stadio Olimpico on Saturday night. With only six games remaining until the end of the season, neither side can afford a slip-up here if they’re to stay relevant in the top-six race. ...\n    URL: https://cultofcalcio.com/serie-a-preview-roma-vs-atalanta-team-news-lineups-prediction\n  - Title: AS Roma vs. Atalanta (Sep 5, 2026) Live Score\n    Content: | DATE | OPP | RESULT | COMPETITION |\n ---  --- |\n| 8/31/26 | vsBOL | W1-0 | Italian Serie A |\n| 8/27/26 | @HTA | W1-0  Agg. 0-1, ATA | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/23/26 | vsSAS | W2-1 | Italian Serie A |\n| 8/20/26 | vsHTA | D0-0 | 2026-27 UEFA Conference League Qualifying, Playoff Round |\n| 8/14/26 | vsATH | W1-0 | Club Friendly |\n\ndraftkings\n\n## Italian Serie A Standings [...] Watch ESPN\n\n# AS Roma v Atalanta\n\nROMA\n\nParamount+\n\nATA\n\n## Game Information\n\nRoma, Italy\n\n## Top Scorers\n\n## Most Assists\n\n## Team Stats\n\n4.00\n\nAverage Goals\n\n1.50\n\n0 ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401874781/atalanta-as-roma\n  - Title: Roma vs Atalanta Predictions, Picks & Odds - 05/09/2026\n    Content: + Sports Betting Glossary\n  + Arbitrage Calculator\n  + Double Chance Betting\n  + How Betting Odds Work\n  + Over/Under Betting\n US Guides\n\n  + Best Online Social Casinos\n  + Best Free Spin Bonus No Deposit Sites\n\nSearch\n\n Best 100 Rs Signup Bonus\n BC Game Bonus Code bctoffee\n Stake Promo Code XXLPROMO\n 1xBet Promo Code 1XINVIP\n Melbet Promo Code\n\n Best 100 Rs Signup Bonus\n BC Game Bonus Code bctoffee\n Stake Promo Code XXLPROMO\n 1xBet Promo Code 1XINVIP\n Melbet Promo Code\n\n Serie A\n\nRoma Roma\n\n05 Sep 2026 19:45\n\nAtalanta Atalanta\n\nPrediction:\n\nRoma to win 1.79\n\nView Odds1xBet > ...\n    URL: https://www.toffeeweb.com/int/roma-vs-atalanta-predictions-picks-odds-05-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874939",
+                        "date_utc": "2026-09-05T13:00Z",
+                        "kickoff_et": "2026-09-05 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Fiorentina",
+                        "away": "Torino",
+                        "home_id": "109",
+                        "away_id": "239",
+                        "matchup": "Torino (away) @ Fiorentina (home)",
+                        "venue": "Stadio Artemio Franchi",
+                        "city": "Firenze",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LLWDW",
+                        "form_away": "LLLWD",
+                        "record_home": "0-0-2",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-120",
+                            "home_current": "-105",
+                            "draw_open": "+210",
+                            "draw_current": "+215",
+                            "away_open": "+350",
+                            "away_current": "+310"
+                        },
+                        "odds_text": "DraftKings: Fiorentina -105 (open -120); Draw +215 (open +210); Torino +310 (open +350)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874937",
+                        "date_utc": "2026-09-05T16:00Z",
+                        "kickoff_et": "2026-09-05 12:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Internazionale",
+                        "away": "Napoli",
+                        "home_id": "110",
+                        "away_id": "114",
+                        "matchup": "Napoli (away) @ Internazionale (home)",
+                        "venue": "San Siro",
+                        "city": "Milano",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWDDW",
+                        "form_away": "LWWWL",
+                        "record_home": "2-0-0",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-140",
+                            "home_current": "-165",
+                            "draw_open": "+245",
+                            "draw_current": "+275",
+                            "away_open": "+350",
+                            "away_current": "+425"
+                        },
+                        "odds_text": "Provider unavailable: Internazionale -165 (open -140); Draw +275 (open +245); Napoli +425 (open +350)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401874781",
+                        "date_utc": "2026-09-05T18:45Z",
+                        "kickoff_et": "2026-09-05 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "AS Roma",
+                        "away": "Atalanta",
+                        "home_id": "104",
+                        "away_id": "105",
+                        "matchup": "Atalanta (away) @ AS Roma (home)",
+                        "venue": "Olimpico",
+                        "city": "Roma",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWWWW",
+                        "form_away": "WWWDD",
+                        "record_home": "2-0-0",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "-145",
+                            "draw_open": "+240",
+                            "draw_current": "+270",
+                            "away_open": "+280",
+                            "away_current": "+360"
+                        },
+                        "odds_text": "Provider unavailable: AS Roma -145 (open -115); Draw +270 (open +240); Atalanta +360 (open +280)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-04T10:11:46.322889-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:00:40.464815-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are solid favorites playing at home in Stadio Artemio Franchi (-105 odds). Both teams have started the season slowly with early losses, but Fiorentina's squad depth and home advantage give them the edge over a struggling Torino side.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan has started the campaign flawlessly with two wins and a +4 goal difference. Napoli showed vulnerability recently by dropping points against Como. Inter playing at the San Siro is strongly backed by the bookmakers at -165.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma is in fantastic form with 5 consecutive wins across all competitions and a perfect 2-0-0 start to the domestic campaign. While Atalanta is always a dangerous opponent, Roma's home-field advantage at the Olimpico and low odds (-145) support a home victory.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-04T10:01:01.610440-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina has the home advantage and relatively better recent form compared to Torino, who has struggled early in the season. Betting odds of -105 suggest Fiorentina is a moderate favorite to secure the three points in regulation.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Inter Milan comes into this match in strong form at the top of the table and holds a notable home advantage. With odds resting at -165 for an Inter victory, oddsmakers reflect significant confidence in the reigning champions defeating Napoli.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma has been flawless recently with five consecutive wins. While Atalanta is also unbeaten in their last five, Roma's momentum at the Stadio Olimpico makes them clear favorites, indicated by their -145 moneyline.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-04T10:01:28.899310-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have started the season poorly with two losses each. However, Fiorentina is playing at home and is the clear favorite according to betting markets. Torino's overall recent form appears worse. While the last meeting between the two was a draw, Fiorentina's home advantage and the odds give them the edge in a match between two struggling sides.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale has started the season in perfect form with two wins and is playing at home. Their recent form is excellent (WWDDW), and they are strong favorites with the bookmakers. Napoli has had a mixed start (1-0-1) and lost their most recent league game. All key indicators point towards a comfortable home victory for Inter.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a difficult match to call, with both teams entering on perfect 2-0-0 records and in exceptional form. Roma has the home advantage and is favored by the odds. However, the recent head-to-head record heavily favors Atalanta (3 wins, 1 draw, 0 losses in the last 4 meetings). This historical context adds significant uncertainty. While Roma's current form and home venue make them slight favorites, the strong possibility of a draw or an Atalanta upset makes this a low-confidence prediction.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-04T10:01:51.291483-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.4771,
+                    "draw_probability": 0.2957,
+                    "away_win_probability": 0.2272,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina is the bookmakers' favorite with negative odds at home. Although both teams have started the season with two losses, Fiorentina's slightly better recent form (LLWDW vs LLLWD) and home advantage give them an edge. The last encounter was a draw, suggesting a competitive match, but Fiorentina's predicted win probability remains highest.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.578,
+                    "draw_probability": 0.249,
+                    "away_win_probability": 0.173,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale has started the season with a perfect 2-0-0 home record and boasts excellent recent form (WWDDW). They are strong favorites across all available odds. Napoli's away record is 1-0-1, and their overall form is less convincing (LWWWL). Internazionale's superior form and home advantage make a home win the most probable outcome.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.548,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.202,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both AS Roma and Atalanta have started the season with perfect 2-0-0 records. AS Roma holds an impressive recent form (WWWWW), supported by favorable odds and home advantage. However, Atalanta also comes in with strong form (WWWDW) and has a dominant head-to-head record against Roma in their last four meetings (3 wins, 1 draw). While Roma is favored, Atalanta's historical performance in this fixture and strong start to the season suggest a competitive match, making a home win slightly more probable but with a notable chance for a draw or away upset.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:03:28.838657-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.477,
+                    "draw_probability": 0.296,
+                    "away_win_probability": 0.227,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Fiorentina are a modest home favorite in the market after removing bookmaker margin. Both teams started 0-0-2, but Torino's recent form is weaker and the Stadio Artemio Franchi home edge slightly favors Fiorentina, with draw risk still elevated.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.577,
+                    "draw_probability": 0.247,
+                    "away_win_probability": 0.176,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Internazionale have opened 2-0-0, carry stronger recent form, and the odds have shortened toward the home side at San Siro. Napoli remain dangerous, but their 1-0-1 start and away status make Inter the likeliest 90-minute result.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.548,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.202,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Roma have a perfect recent run and a 2-0-0 league start, while the betting line has moved notably toward them at the Olimpico. Atalanta's unbeaten form and favorable recent head-to-head keep the draw and away-win chances meaningful, but Roma remain the most likely winner.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-04T10:03:46.921922-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are favored by the market at home, with Torino also starting poorly and coming off weak recent results. The away side has enough attacking quality to keep the draw live, but home advantage and shorter odds point to Fiorentina as the most likely 90-minute result.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Internazionale are unbeaten through two league matches and are strong favorites at San Siro. Napoli remain dangerous but have shown more volatility early, and the odds movement toward Inter supports a home-win forecast.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma enter with excellent form and two league wins, while Atalanta are also strong but face a difficult away fixture. Market pricing has moved toward Roma, and home advantage makes them the most likely winner despite Atalanta's unbeaten recent run.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-04T10:04:29.125064-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Fiorentina a modest home favorite, and home advantage at the Franchi is meaningful. Both sides’ early records are poor, which keeps the draw and Torino upset chances non-trivial, but Fiorentina’s edge in the odds and typical home/away split supports a narrow home win lean.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are priced as clear favorites and come in with stronger recent results and a 2-0-0 start, plus the San Siro advantage. Napoli have enough quality to force a draw on their day, but the away price implies they need several things to break perfectly; Inter win is the most likely 90-minute outcome.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Roma’s strong form and home advantage justify favoritism, but Atalanta’s solid start and recent H2H edge raise the upset and draw probabilities relative to a typical Roma home spot. This profiles as a tight match where a single goal could decide it, so the win lean is Roma but with reduced confidence.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-04T10:04:47.230003-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are narrow favorites in the market and have slightly better recent form (LLWDW) than Torino (LLLWD). Fiorentina play at home (Stadio Artemio Franchi) and have potent attacking options (Simeone, Adams listed), while Torino are missing forward depth (Casadei, Pellegri noted missing). Odds and squad depth point to a home victory, though Torino can be competitive so a draw remains plausible.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter are clear favorites in the odds and carry strong home form (WWDDW) and a perfect early league record (2-0-0). Napoli have shown good recent results but are priced as underdogs away. The strength and consistency of Inter at San Siro, plus market support, make a home win the most likely outcome, though a high-scoring draw or Napoli upset remains possible.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma arrive in exceptional form (WWWWW) and are favored by bettors; Atalanta are also strong (WWWDD) but historically the matchup is competitive. Roma's form and home advantage at the Olimpico tip the balance to a Roma win, but Atalanta's attacking pedigree keeps both draw and away-win chances meaningful.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-04T10:05:14.411155-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina is favored in the market with a modest home advantage; both teams started poorly but Fiorentina has better home odds.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Inter has stronger home form and is favored by odds; Napoli is capable but likely to struggle to overturn in Milan.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Roma's strong home record and favorable odds suggest a home win; Atalanta can challenge, but Roma edge is expected at the Olimpico.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-04T10:05:18.910564-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are favored by bookmakers and have a stronger home form compared to Torino's away struggles. Fiorentina's squad depth and attacking options give them an edge, while Torino are missing key players and have lost recent matches. The last H2H was a draw, but Fiorentina's home advantage and recent odds movement support a home win.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale are in excellent form with a perfect home record and are strongly favored by both odds and recent results. Napoli have been inconsistent away and are significant underdogs. Inter's squad quality and momentum make them clear favorites for a regulation-time win.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma have a perfect home record and are in outstanding form, but Atalanta are also unbeaten and have a good defensive record. Bookmakers narrowly favor Roma, and their attacking output at home gives them a slight edge, though Atalanta's resilience suggests a draw or away win is possible.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-04T10:05:23.680628-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina has a stronger home form and better odds, despite both teams having similar records. Torino's recent form is weaker.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is in excellent form at home and has favorable odds. Napoli's away form is inconsistent.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma has a perfect home record and strong recent form. Atalanta is also in good form, but Roma's home advantage is significant.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-04T10:05:37.602669-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Fiorentina are moderate home favorites at -105, though both sides have started poorly (0-0-2 records). Torino sit at 0 points and lost recently in the Coppa Italia. Market drift toward Fiorentina from open plus home advantage supports a slight edge, but low confidence given both teams' shaky form and a recent 2-2 draw in their last meeting.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are clear favorites at -165 (line moved from -140), unbeaten in their last five and 2-0-0 to start the season at San Siro. Napoli are coming off a 2-1 loss to Como and mixed recent form. Market movement and home strength favor Inter, though a big-club clash carries inherent variance.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are on a perfect WWWWW run with a +8 goal difference and strong odds movement in their favor (-115 to -145). Atalanta are also unbeaten and defensively solid (0.7 goals conceded per game), and historically have a good H2H record vs Roma, keeping draw/away probabilities meaningful. Roma's home form makes them the pick.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-04T10:05:45.128549-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Fiorentina",
+                    "confidence": "low",
+                    "reasoning": "Fiorentina favored at home (-105) despite poor recent form. Both sides struggling early, but home advantage and market lean to Fiorentina.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Internazionale",
+                    "confidence": "low",
+                    "reasoning": "Inter strong at home with 2-0-0 record and -165 favorite. Napoli capable but Inter's form at San Siro gives edge in this top clash.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "AS Roma",
+                    "confidence": "low",
+                    "reasoning": "Roma perfect WWWWW form at home and favored (-145), but Atalanta also unbeaten with strong defense. Slight edge to Roma at Olimpico.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-04T10:06:01.475215-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are slight favorites at home with odds around -105 to -120. Both teams have poor early-season records (0-0-2 each in league), but Fiorentina's home form and Torino's difficult run of form (LLLWD) give the home side the edge. The last H2H ended 2-2. Odds imply roughly 48-50% for Fiorentina. Home advantage at Franchi is meaningful and Torino look fragile early in the season.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are strong favorites at -165 (open -140), reflecting their perfect 2-0-0 start and strong home form (WWDDW). Napoli are 1-0-1 and showed inconsistency (LWWWL). Inter at San Siro is a formidable proposition. The odds movement toward Inter (from -140 to -165) suggests market confidence in the home side. Napoli's last result was a loss to Inter in the ESPN data context. Inter's +4 GD vs Napoli's mixed form supports the home win prediction.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Roma are listed as favorites at -145 (opened at -115), a notable shift toward Roma. Roma have a perfect WWWWW form and a 2-0-0 record with +8 GD, the best in Serie A. However, Atalanta are also unbeaten (2-0-0) with WWWDD form and only 0.7 goals conceded per game on average. H2H strongly favors Atalanta (3 wins in last 4). The odds move from -115 to -145 for Roma may reflect Atalanta injury news or home crowd factor. This is a close, competitive match and confidence is low given Atalanta's defensive solidity and historical H2H dominance.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-04T10:06:17.338375-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina has superior recent form (LLWDW vs LLLWD) and home advantage at Stadio Artemio Franchi. Both teams have identical 0-0-2 records, but Fiorentina's better form in the last 5 matches gives them the edge. Torino's poor away form with 3 consecutive losses is concerning. The odds favor Fiorentina at -105, reflecting similar market confidence. Fiorentina's attacking options with Simeone, Adams, and Gudmundsson should provide enough firepower against a struggling Torino side that lost their last match 0-1 to Monza in Coppa Italia.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Inter Milan has exceptional home form with WWDDW and a perfect 2-0-0 record at San Siro. They've scored 4 goals in 2 matches with no losses. Napoli's 1-0-1 away record and recent loss to Como 2-1 shows vulnerability. The odds strongly favor Inter at -165, indicating market confidence in the home side. Inter's defensive solidity (only conceded in draws) and attacking prowess give them the advantage. Both teams are title contenders, but Inter's home fortress at San Siro and superior current form (WWDDW vs LWWWL) make them favorites in this heavyweight clash.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Roma has been in exceptional form with 5 consecutive wins (WWWWW) and a perfect 2-0-0 home record. They've averaged 2.1 goals scored per game with strong attacking momentum. Atalanta also has solid form (WWWDD, 2-0-0) but has drawn twice recently and averages fewer goals (1.8). Roma's home advantage at Olimpico and superior recent momentum give them the edge. The odds favor Roma at -145. Historical H2H shows Atalanta leads 3-1-0 in last 4 meetings, but Roma's current form is irresistible. Both teams are unbeaten, but Roma's perfect winning streak and home fortress make them slight favorites.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-04T10:06:24.529880-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina playing at home with recent mixed form (LLWDW) but better record than Torino. Torino in poor form (LLLWD) with 0 points and 14th position. DraftKings odds favor home win (-105). Fiorentina has quality attackers and home advantage at Stadio Artemio Franchi. Both teams have limited recent success but home advantage and Torino's poor start to season suggest Fiorentina edge.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Internazionale with strong home record (2-0-0) and excellent recent form (WWDDW). Napoli away with mixed form (LWWWL) including recent loss to Como. Inter leading Serie A standings with 6 points from 2 games. DraftKings odds favor Inter (-165). Home advantage at San Siro, superior current form and league position support Inter despite Napoli's quality. Head-to-head context suggests competitive match but Inter slight favorite.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma with perfect home form (WWWWW, 5 wins in 5 games) and 2-0-0 record, leading Serie A with 6 points. Atalanta also strong (WWWDD, 4W-1D) with 2-0-0 record but recent draw suggests slight inconsistency. Roma's perfect form at Olimpico is compelling. DraftKings odds favor Roma (-145). However, H2H history shows Atalanta strong (3 wins in last 4 meetings), creating competitive matchup. Roma's home dominance and current form edge out Atalanta's quality away record.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-04T10:06:59.119521-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina are favored at home despite a slow start, and the odds plus home advantage outweigh Torino's similarly poor early form.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Internazionale's strong start and San Siro advantage make them clear favorites over a Napoli side that has been less consistent.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Roma's perfect start and home field give them the edge, but Atalanta's unbeaten form keeps this competitive.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-04T10:07:01.171006-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina have home advantage and stronger squad, despite poor start. Torino are winless and struggling. Odds favor Fiorentina.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are strong at home with good form, Napoli have been inconsistent. Inter's odds reflect slight edge.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Roma are in excellent form, but Atalanta are also strong. Close match, but home advantage and form give Roma slight edge.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-04T10:07:25.207813-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina has the home advantage and slightly better recent form compared to Torino, who have struggled on the road. The odds favor a narrow home victory.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is in excellent form with a perfect 2-0-0 start and a strong home advantage at San Siro. The odds and team news heavily favor the Nerazzurri over Napoli.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma boasts a perfect 5-game winning streak in their recent form and is formidable at the Stadio Olimpico. While Atalanta is also strong, Roma's momentum and home-field edge give them the advantage.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-04T10:07:39.702303-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina has a stronger home form and recent performances, while Torino's away form is poor. The odds also favor Fiorentina to win.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale has a strong home record and good recent form, while Napoli's away form is not as impressive. The odds and team news support a home win.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma has an excellent home form and a strong recent performance, while Atalanta's away form is decent but not as strong. The odds and recent results suggest a slight edge for AS Roma.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-04T10:08:51.120374-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina holds a clear home advantage at Stadio Artemio Franchi and opens as slight favorites despite a shaky early-season record. Torino's away form is equally inconsistent, and historical matchups have been tight but slightly favor the host. Market odds and venue support lean toward a narrow Fiorentina victory in a closely contested match.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale arrives in excellent form with a perfect start and a strong goal difference, heavily bolstered by home advantage at San Siro. Napoli's recent inconsistency on the road and Inter's market-favored status make a home victory the most probable outcome. Momentum, venue, and betting markets all strongly align behind the hosts.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Both clubs start the campaign perfectly, but Roma's current five-match winning streak and home advantage at the Olimpico provide a decisive edge. Atalanta remains defensively organized, yet Roma's offensive momentum, favorable market odds, and passionate home support tilt the probabilities toward a narrow home victory in a high-quality tactical clash.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-04T10:09:31.258743-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina holds a significant home advantage at Stadio Artemio Franchi and boasts better recent form (LLWDW) compared to Torino's winless start (LLLWD). Betting odds also favor the home team, and Torino appears to be struggling early in the season in 14th position.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams are in strong form, but Internazionale remains unbeaten with 6 points and plays at San Siro. The odds significantly favor Inter (-165), suggesting market confidence in their title defense capabilities over Napoli despite the latter's competitive record.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma displays perfect home form (WWWWW) leading into this fixture, while Atalanta is also performing well. The odds tilt towards Roma (-145), reflecting their momentum at the Olimpico and the pressure of maintaining top-six contention.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-04T10:10:36.411320-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina holds home advantage and carries slightly better recent form (LLWDW) than Torino (LLLWD). Betting markets list the Viola as modest favorites (-105), and Torino’s early-season struggles support a narrow home victory at the Stadio Artemio Franchi.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale enter with a perfect 2-0-0 record and strong overall form (WWDDW), sitting near the top of the table. Napoli are coming off a loss and face a difficult trip to the San Siro. The market prices Inter as solid favorites (-165), and their momentum and home strength make them the clear pick.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Roma have started the campaign in outstanding form (WWWWW) with a perfect record and strong attacking numbers. Atalanta are also unbeaten (2-0-0) but must travel to the Olimpico. Despite Atalanta’s recent historical edge in this fixture, Roma’s current scoring run and home support swing the prediction toward a home win.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-04T10:11:20.026852-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both sides are winless at 0-0-2, but Fiorentina holds the home edge at the Franchi and the market has steamed toward the Viola (-105 from -120 open). Torino's form is poor (LLLWD) including a Coppa Italia loss to Monza, and Fiorentina fields the stronger squad (de Gea, Gudmundsson, Pellegrino). Last meeting was a 2-2 draw, so a stalemate is a live possibility, keeping draw probability elevated.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Inter are 2-0-0 with a +4 goal difference, in strong form (WWDDW), and playing at San Siro where the market has pushed them from -140 to -165. Napoli's form is inconsistent (LWWWL) with a home loss to Como most recently, and they sit at 1-0-1. Inter are clear favorites, but this is a heavyweight clash where Napoli's quality keeps the draw and away win probabilities non-trivial.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Roma are in red-hot form (WWWWW, top of the table at +8 GD) and have been bet from -115 to -145 at the Olimpico. However, Atalanta are also 2-0-0, concede just 0.7 goals per game, and have won 3 of the last 4 head-to-head meetings, so the upset risk is real. Roma's home advantage and momentum make them the pick, but Atalanta's defensive strength and H2H dominance temper confidence.",
+                    "event_id": "401874781"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-04T10:11:46.320042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Torino (away) @ Fiorentina (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Fiorentina holds a modest home-field edge at the Franchi and the market has moved slightly in its favor, while Torino arrives with three straight losses and no points through two league games. The fixture has recent draw history (2-2), keeping confidence only medium.",
+                    "event_id": "401874939"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Napoli (away) @ Internazionale (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Internazionale is 2-0-0 at home, on strong form (WWDDW), and the market has steamed from -140 to -165. Napoli is less consistent away (LWWWL, 1-0-1), making Inter the clear regulation-time favorite.",
+                    "event_id": "401874937"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Atalanta (away) @ AS Roma (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Roma enters on a five-match winning streak and a 2-0-0 home record, with odds shortening from -115 to -145. Atalanta is also unbeaten (2-0-0) but faces a red-hot home side at the Olimpico.",
+                    "event_id": "401874781"
+                }
+            ]
+        }
+    ]
+}

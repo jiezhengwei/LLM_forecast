@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "UEFA Champions League 2025-26",
+        "system_prompt": "You are an expert UEFA Champions League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-27\n    Target Date: 2026-04-28\n    Competition: UEFA Champions League 2025-26\n\n    [UCL Schedule & Team Stats]\n    --------------------------------------------------------------------------------------------------------------\nUCL Matchup                                             | Status       | UCL League Stage Record & Recent Form\n--------------------------------------------------------------------------------------------------------------\n1. Bayern Munich @ Paris Saint-Germain (1st Leg)        | Scheduled    | Away: #2 88% (7-0-1) Pts:21 Form:WWWWW | Home: #11 50% (4-2-2) Pts:14 Form:WWLWW\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Bayern Munich (Away) @ Paris Saint-Germain (Home)\n**News & Injury Report:**\n- [Paris Saint-Germain vs Bayern Munich \u2013 prediction, preview and betting tips \u2013 28/04/2026](https://footballwhispers.com/blog/paris-saint-germain-vs-bayern-munich-prediction-28-04-2026/)\n  Snippet: Their emphatic triumph over Liverpool in the previous round should provide a significant psychological lift for this semi-final, and PSG are also on the brink of becoming the first French club to record 100 Champions League wins.\n\nIn terms of team news, Desire Doue and Nuno Mendes returned against Angers and are expected to feature again. Fabian Ruiz has recently returned after a two-month injury absence, while Vitinha remains a doubt after picking up an issue against Lyon. ...\n- [PSG vs Bayern Prediction 28/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-28-04-2026-paris-saint-germain-bayern-munich-prediction)\n  Snippet: \u274c The squad situation in Paris is concerning, despite only one significant absence. Vitinha is a key player in Luis Enrique's system. The Portuguese midfielder suffered a heel injury in the match against Lyon (1-2) and is still recovering. His recovery is progressing well, but his participation against Bayern is questionable. On a positive note, Fabian Ruiz has returned from an injury that sidelined him since early January, and he has gained some playing time in the last three matches to prepare for the semifinal. ...\n**Betting Odds:**\n- [PSG vs Bayern Munich Prediction & Betting Tips - Champions League](https://www.sportytrader.com/en/betting-tips/psg-bayern-munich-345322/)\n  Snippet: Probabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 28/04/2026 between PSG and Bayern Munich in Champions League :\n\n The Sportytrader \u2b50 algorithm estimates a probability of 35.31% for a win of PSG against Bayern Munich with odds of 2.36 at 888Starz.\n The probability according to Sportytrader \u2b50 for a draw between PSG vs Bayern Munich is 9.86%with odds of 4.02 at 888Starz.\n Our prediction model gives a 54.83% chance \u2b50 for a win of Bayern Munich vs PSG with odds of 2.92 at 888Starz.\n\n## PSG vs Bayern Munich Form ...\n- [PSG vs Bayern Munich prediction 28.04.2026 | Champions League](https://www.mightytips.com/football-predictions/psg-vs-bayern-munich-prediction-28-04-2026/)\n  Snippet: ## Additional predictions\n\nPSG vs Bayern Munich odds\n\n|  | 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---  --- |\n| Swifty Sports logo Swifty Sports | 11/9 | 3/1 | 11/6 | 9/25 | 13/6 |\n| Highbet logo Highbet | 15/11 | 14/5 | 13/8 | 8/21 | 39/20 |\n| Betnero logo Betnero | 9/7 | 23/8 | 16/9 | 9/25 | 11/6 |\n| BOYLE Sports logo BOYLE Sports | 11/8 | 3/1 | 17/9 | 9/25 | 11/6 |\n| JeffBet logo JeffBet | 11/8 | 3/1 | 17/9 | 9/25 | 11/6 |\n| FruityKing logo FruityKing | 4/3 | 71/24 | 11/6 | 9/25 | 11/6 |\n\nSwifty Sports logo\nHighbet logo\nBetnero logo\nBOYLE Sports logo\nJeffBet logo\nFruityKing logo ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-27\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-27 16:40:27"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-27 16:39:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market 1X2 prices around PSG ~2.36, Draw ~4.0, Bayern ~2.9 imply a very tight tie with a substantial draw chance; slight lean to PSG at home in the 1st leg. Bayern\u2019s stronger UCL league-stage record/form (7-0-1) pulls probability toward the away side, but PSG\u2019s home advantage plus momentum from the Liverpool round and key returns (Mendes/Doue; Ruiz back) balance it. Vitinha being a doubt reduces PSG\u2019s control/pressing efficiency, keeping Bayern\u2019s win probability close and preventing high confidence."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern enter on outstanding form (WWWWW) and an excellent UCL away record; market signal (Sportytrader) also leans to Bayern. PSG have home advantage and a psychological boost from a big win over Liverpool plus returning options (Desire Doue, Nuno Mendes, Fabian Ruiz), but Vitinha is doubtful \u2014 a meaningful loss for PSG's midfield balance. Betting markets are mixed (some bookmakers price PSG as slight favourites), so probabilities are calibrated between conflicting odds and on-pitch factors. Expect a tight, tactical first-leg where Bayern\u2019s superior recent form and continental experience give them a marginal edge, but a draw and a PSG home upset remain plausible."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Calibrated to betting market signals indicating Bayern as the stronger side. Bayern\u2019s upbeat away form (7-0-1) and current momentum boost their odds. PSG approach the tie with some squad concerns (Vitinha doubtful), but key returns (Desire Doue, Nuno Mendes, Fabian Ruiz back) help. Home advantage for PSG exists, yet market odds and Bayern\u2019s recent performances favor an away win."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:32",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Bayern Munich have shown superior strength this UCL season (7-0-1, 88%, winning last 5 matches), while PSG at home are somewhat vulnerable (4-2-2, 50%) despite recent form improvements. Key PSG midfielder Vitinha is still a major doubt, weakening PSG's midfield stability and buildup. Bayern are at near full strength. Betting markets and prediction models consistently favor Bayern (Sportytrader: 54.83% away win, best odds around 2.92) and give PSG a slim win chance (35.3%) and low draw probability (~10-14%)\u2014this is corroborated by recent form, market odds and team news. With only minor PSG injury returns (Fabian Ruiz, Nuno Mendes), squad fitness is adequate but not ideal. Given the aggregate of model, injury, and market signals, a Bayern away win is the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich has a strong record with 88% win rate, while PSG has key injury concerns with Vitinha's doubtful status affecting their midfield dynamics. Recent form slightly favors Bayern, and the odds heavily support an away win."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich @ Paris Saint-Germain",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Despite Bayern Munich's dominant league stage record (7-0-1) and five-match winning streak, bookmakers slightly favor PSG in the 1st leg at the Parc des Princes. PSG receives a psychological boost from eliminating Liverpool, and the return of key players like Nuno Mendes and Fabian Ruiz mitigates the potential absence of Vitinha. The betting markets suggest a tight match, with PSG edging it as the home favorite."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:39:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich has a superior UCL league stage record (7-0-1, 88% win rate) and excellent recent form (WWWWW) despite being away. PSG is strong at home (4-2-2) but key midfielder Vitinha is a doubt, which could disrupt their buildup. Betting odds show market leaning slightly toward Bayern (implied ~54% chance according to one algorithm, but odds reflect around 2.92 for away win, ~2.36 for home), indicating a competitive match. The injury to Vitinha and Bayern's momentum tilt probability toward the away side, though PSG's psychological boost from beating Liverpool and returning players (Doue, Mendes, Ruiz) keep it close."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:40:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bayern Munich enters as the superior team with an exceptional UCL record (88% win rate, 7-0-1, 21 points) compared to PSG's more modest 50% (4-2-2, 14 points). Bayern's perfect recent form (WWWWW) demonstrates excellent momentum heading into this semi-final first leg. The betting markets strongly favor Bayern with implied probabilities around 54-55% for an away win versus 35% for PSG home win. PSG faces critical squad concerns with Vitinha (key midfielder) questionable due to heel injury, though Fabian Ruiz has returned from long-term injury. While PSG gained psychological boost from eliminating Liverpool and have home advantage, Bayern's significantly stronger UCL campaign performance and league position (#2 vs #11) suggests superior overall quality. The market odds (Bayern around 1.65-1.90, PSG around 2.36-2.92 depending on bookmaker) clearly indicate Bayern as favorites. First leg of knockout ties often see conservative play, but Bayern's dominant form and PSG's injury concerns tip this toward an away win. Draw probability remains low (~10%) given both teams' attacking quality and the need for a result in the first leg."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-27 16:40:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Bayern Munich (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.1,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Bayern Munich has a strong away record in the UCL, with 88% win rate and recent form of WWWWW. PSG, despite their home advantage, has a 50% win rate at home and some key players like Vitinha are doubtful due to injury. The betting odds also favor Bayern Munich, with a 54.83% chance of winning according to Sportytrader."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-22",
+        "target_date_et": "2026-08-23",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876493\nMatchup: Lille (away) @ Angers (home)\nHome: Angers\nAway: Lille\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: Stade Raymond Kopa\nRound: unavailable\nHome form: DDLLD\nAway form: LWDWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Angers +380 (open +390); Draw +280 (open +275); Lille -135 (open -150)\nTavily context:\n  - Title: Angers vs Lille - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Angers vs Lille — Sun, August 23, 1:00 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade Raymond Kopa\n Jeremy Stinat\n\nAngersAngers\n\n‌\n‌\n\nLilleLille\n\n# Angers vs Lille — Sun, August 23, 1:00 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade Raymond Kopa\n Jeremy Stinat\n\nAngersAngers\n\n‌\n‌\n\nLilleLille\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Haris Belkebla\n\n  Thigh injury / Late August 2026\n\nBelkeblaThigh injuryLate August 2026\n\n  Louis Mouton\n\n  Knee injury / Late August 2026\n\nMoutonKnee injuryLate August 2026\n\n  Benjamin André\n\n  Suspended / August 23, 2026 ...\n    URL: https://www.fotmob.com/matches/angers-vs-lille/2bmo4b\n  - Title: Angers vs Lille: Scores, Results Lineups, H2H & Odds\n    Content: ### Injury Report\n\nThe probable lineups for the Angers vs Lille matchup are highly anticipated, as both teams are aiming for a crucial victory. Stay tuned to 365Scores for the latest updates on starting players and any last-minute changes or absences for the Angers vs. Lille game.\n\nAway Team: LilleMissing Players: Benjamin André, Matias Fernandez-Pardo.\n\n### Event Details:\n\nName: Angers vs. Lille\n\nDate: Sunday, August 23, 2026\n\nTime: 13:00\n\nSee More\n\nImage 86\n    URL: https://www.365scores.com/en-us/football/match/ligue-1-35/angers-lille-478-493-35\n  - Title: Angers vs Lille Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Bookies Have Lille as Favourites\n\nThe Full-Time Result odds of 1.67 suggest that LOSC Lille are likely victors and there’s a 60% probability that the favourites win this Ligue 1 clash. If you want to back the outsider, Angers are available at 5.10.\n\nThere’s an alternative Asian Handicap angle where you back Lille -0.75 against Angers at 1.87. A 2+ goal win means a full return, although you get a payout on half your stake if they win by one and the other half is refunded. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/angers-vs-lille-prediction-lineups-odds-2026-08-23\n  - Title: Angers vs. Lille - Live Score - August 23, 2026\n    Content: Databricks\nAngers\nLille\n\n## Angers vs Lille\n\nStade Raymond Kopa\n\n# Angers vs. Lille: Aug 23, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAngers\n\n|  | | |\n ---\n| 8/15 | Default Logo PAR (H) | W3-2 |\n| 8/8 | Default Logo LOR (H) | W2-1 |\n| 8/1 | Default Logo MAN (H) | L3-2 |\n| 7/25 | Default Logo CRE (H) | W2-1 |\n| 7/22 | Default Logo HER (H) | W3-1 |\n\nDefault Logo\nDefault Logo\nDefault Logo\nDefault Logo\nDefault Logo\nLille ...\n    URL: https://www.foxsports.com/soccer/ligue1-angers-vs-lille-aug-23-2026-game-boxscore-878536\n\nGame ID: 2\nSource event_id: 401876492\nMatchup: AS Monaco (away) @ Le Havre AC (home)\nHome: Le Havre AC\nAway: AS Monaco\nKickoff UTC: 2026-08-23T15:15Z\nKickoff ET: 2026-08-23 11:15 EDT\nVenue: Stade Océane\nRound: unavailable\nHome form: WLDDD\nAway form: WLLWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Le Havre AC +275 (open +225); Draw +300 (open +285); AS Monaco -110 (open +100)\nTavily context:\n  - Title: Le Havre vs Monaco Prediction, Betting Tips, Lineups & Odds\n    Content: 19 Apr Ligue 1\n\nMonaco 2-2 Auxerre\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nLe Havre  Injury Table\n\nType Name Info\n\nAyumu Seko Yellow cards\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nFelix Mambimbi Other\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nMonaco  Injury Table\n\nType Name Info\n\nChristian Mawissa Yellow cards\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nFolarin Balogun Other\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nAnsu Fati Calf ...\n    URL: https://www.sportsgambler.com/betting-tips/football/le-havre-vs-monaco-prediction-lineups-odds-2026-08-23\n  - Title: Le Havre vs Monaco - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Le Havre vs Monaco — Sun, August 23, 3:15 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade CMA CGM Océane\n Jeremie Pignard\n\nLe HavreLe Havre\n\n‌\n‌\n\nMonacoMonaco\n\n# Le Havre vs Monaco — Sun, August 23, 3:15 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade CMA CGM Océane\n Jeremie Pignard\n\nLe HavreLe Havre\n\n‌\n‌\n\nMonacoMonaco\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Felix Mambimbi\n\n  Achilles tendon injury / Early October 2026\n\nMambimbiAchilles tendon injuryEarly October 2026\n\n  Stephan Zagadou\n\n  Cruciate ligament injury / Early January 2027 ...\n    URL: https://www.fotmob.com/matches/le-havre-vs-monaco/362v61\n  - Title: Le Havre vs Monaco Prediction - Ligue 1 - 23/08/2026\n    Content: However, their 0-0 draw in the return match was the third between the sides in five matches. It should concern Monaco that in their last five visits to Le Havre, they are winless.\n\nA positive twist on that, though, is that they only lost once in the five games. Les Monegasques are coming off a 3-2 away win against Gornik in the Conference League, and their planning will have to put the return leg into consideration.\n\nLimited Offer. Currently at Stake\n\n## Le Havre v Monaco Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/le-havre-monaco-367488\n  - Title: Havre AC - AS Monaco FC prediction & tips 23.08.2026\n    Content: Head-to-head snapshot:\n\n## Final Word: Our Betting Tip, Risk Notes and Today's Odds Boosts\n\nTo conclude, the sensible market play is an Away win for AS Monaco at roughly 1.97 (1win). That pick balances Monaco’s superior squad depth and attacking talent with Havre’s home solidity and the unpredictability of season openers. For lower-risk players, consider backing Both Teams to Score – Yes at around 1.55 (Paripesa) given Monaco’s recent high-scoring encounters and Havre’s ability to nick goals in transition. ...\n    URL: https://www.transfermarkt.com/betting/tips/havre-ac-vs-as-monaco-prediction-23-08-2026\n\nGame ID: 3\nSource event_id: 401876487\nMatchup: Paris Saint-Germain (away) @ Stade Rennais (home)\nHome: Stade Rennais\nAway: Paris Saint-Germain\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: Roazhon Park\nRound: unavailable\nHome form: LWLWW\nAway form: LWWLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Stade Rennais -205 (open -250); Draw +400 (open +425); Paris Saint-Germain +475 (open +500)\nTavily context:\n  - Title: Rennes vs PSG Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: PSG 1-0 Brest\n\nConfirmed Lineups\n\n06 May Champions League\n\nBayern Munich 1-1 PSG\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nRennes  Injury Table\n\nType Name Info\n\nMahdi Camara Yellow cards\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nBrice Samba Yellow cards\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nNicolas Lemaitre Knee\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nMikayil Faye Illness\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nPSG  Injury Table ...\n    URL: https://www.sportsgambler.com/betting-tips/football/rennes-vs-psg-prediction-lineups-odds-2026-08-23\n  - Title: Paris Saint-Germain vs Rennes Ligue 1 preview: Everything you need to know\n    Content: ## Team news & squads\n\n## Paris Saint-Germain vs Rennes Probable lineups\n\nParis Saint-Germain crest\n\nParis Saint-Germain\n\nPSG\n\nFormation\n\nRennes crest\n\nRennes\n\nREN\n\nRennes crest\n\nRennes\n\nREN\n\n### Manager\n\n Luis Enrique\n\nLuis Enrique has no confirmed injury or suspension concerns listed for PSG ahead of this fixture, though no probable lineup has been submitted. The situation around Bradley Barcola's potential departure adds uncertainty to the squad, and updates are expected closer to kick-off. ...\n    URL: https://www.goal.com/en/news/paris-saint-germain-rennes-ligue-1-preview/blt4e8879c8e674f7fc\n  - Title: Stade Rennais FC vs Paris Saint-Germain - Soccer - YesPlay\n    Content: MAIN ; 1x2 · X4.70 21.53 ; Double chance · 2.15 121.17. X21.14 ; Draw no bet · 21.22 ; Both teams to score · 1.54. No2.37 ; Which team to score · 23.00\n    URL: https://yesplay.bet/sports/events/stade-rennais-fc-paris-saint-germain-72036520\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876493\nMatchup: Lille (away) @ Angers (home)\nHome: Angers\nAway: Lille\nKickoff UTC: 2026-08-23T13:00Z\nKickoff ET: 2026-08-23 09:00 EDT\nVenue: Stade Raymond Kopa\nRound: unavailable\nHome form: DDLLD\nAway form: LWDWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Angers +380 (open +390); Draw +280 (open +275); Lille -135 (open -150)\nTavily context:\n  - Title: Angers vs Lille - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Angers vs Lille — Sun, August 23, 1:00 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade Raymond Kopa\n Jeremy Stinat\n\nAngersAngers\n\n‌\n‌\n\nLilleLille\n\n# Angers vs Lille — Sun, August 23, 1:00 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade Raymond Kopa\n Jeremy Stinat\n\nAngersAngers\n\n‌\n‌\n\nLilleLille\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Haris Belkebla\n\n  Thigh injury / Late August 2026\n\nBelkeblaThigh injuryLate August 2026\n\n  Louis Mouton\n\n  Knee injury / Late August 2026\n\nMoutonKnee injuryLate August 2026\n\n  Benjamin André\n\n  Suspended / August 23, 2026 ...\n    URL: https://www.fotmob.com/matches/angers-vs-lille/2bmo4b\n  - Title: Angers vs Lille: Scores, Results Lineups, H2H & Odds\n    Content: ### Injury Report\n\nThe probable lineups for the Angers vs Lille matchup are highly anticipated, as both teams are aiming for a crucial victory. Stay tuned to 365Scores for the latest updates on starting players and any last-minute changes or absences for the Angers vs. Lille game.\n\nAway Team: LilleMissing Players: Benjamin André, Matias Fernandez-Pardo.\n\n### Event Details:\n\nName: Angers vs. Lille\n\nDate: Sunday, August 23, 2026\n\nTime: 13:00\n\nSee More\n\nImage 86\n    URL: https://www.365scores.com/en-us/football/match/ligue-1-35/angers-lille-478-493-35\n  - Title: Angers vs Lille Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Bookies Have Lille as Favourites\n\nThe Full-Time Result odds of 1.67 suggest that LOSC Lille are likely victors and there’s a 60% probability that the favourites win this Ligue 1 clash. If you want to back the outsider, Angers are available at 5.10.\n\nThere’s an alternative Asian Handicap angle where you back Lille -0.75 against Angers at 1.87. A 2+ goal win means a full return, although you get a payout on half your stake if they win by one and the other half is refunded. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/angers-vs-lille-prediction-lineups-odds-2026-08-23\n  - Title: Angers vs. Lille - Live Score - August 23, 2026\n    Content: Databricks\nAngers\nLille\n\n## Angers vs Lille\n\nStade Raymond Kopa\n\n# Angers vs. Lille: Aug 23, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAngers\n\n|  | | |\n ---\n| 8/15 | Default Logo PAR (H) | W3-2 |\n| 8/8 | Default Logo LOR (H) | W2-1 |\n| 8/1 | Default Logo MAN (H) | L3-2 |\n| 7/25 | Default Logo CRE (H) | W2-1 |\n| 7/22 | Default Logo HER (H) | W3-1 |\n\nDefault Logo\nDefault Logo\nDefault Logo\nDefault Logo\nDefault Logo\nLille ...\n    URL: https://www.foxsports.com/soccer/ligue1-angers-vs-lille-aug-23-2026-game-boxscore-878536\n\nGame ID: 2\nSource event_id: 401876492\nMatchup: AS Monaco (away) @ Le Havre AC (home)\nHome: Le Havre AC\nAway: AS Monaco\nKickoff UTC: 2026-08-23T15:15Z\nKickoff ET: 2026-08-23 11:15 EDT\nVenue: Stade Océane\nRound: unavailable\nHome form: WLDDD\nAway form: WLLWD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Le Havre AC +275 (open +225); Draw +300 (open +285); AS Monaco -110 (open +100)\nTavily context:\n  - Title: Le Havre vs Monaco Prediction, Betting Tips, Lineups & Odds\n    Content: 19 Apr Ligue 1\n\nMonaco 2-2 Auxerre\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nLe Havre  Injury Table\n\nType Name Info\n\nAyumu Seko Yellow cards\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nFelix Mambimbi Other\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nMonaco  Injury Table\n\nType Name Info\n\nChristian Mawissa Yellow cards\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nFolarin Balogun Other\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nAnsu Fati Calf ...\n    URL: https://www.sportsgambler.com/betting-tips/football/le-havre-vs-monaco-prediction-lineups-odds-2026-08-23\n  - Title: Le Havre vs Monaco - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Le Havre vs Monaco — Sun, August 23, 3:15 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade CMA CGM Océane\n Jeremie Pignard\n\nLe HavreLe Havre\n\n‌\n‌\n\nMonacoMonaco\n\n# Le Havre vs Monaco — Sun, August 23, 3:15 PM UTC\n\nLigue 1 Round 1\n\n Ligue 1 Round 1\n Stade CMA CGM Océane\n Jeremie Pignard\n\nLe HavreLe Havre\n\n‌\n‌\n\nMonacoMonaco\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Felix Mambimbi\n\n  Achilles tendon injury / Early October 2026\n\nMambimbiAchilles tendon injuryEarly October 2026\n\n  Stephan Zagadou\n\n  Cruciate ligament injury / Early January 2027 ...\n    URL: https://www.fotmob.com/matches/le-havre-vs-monaco/362v61\n  - Title: Le Havre vs Monaco Prediction - Ligue 1 - 23/08/2026\n    Content: However, their 0-0 draw in the return match was the third between the sides in five matches. It should concern Monaco that in their last five visits to Le Havre, they are winless.\n\nA positive twist on that, though, is that they only lost once in the five games. Les Monegasques are coming off a 3-2 away win against Gornik in the Conference League, and their planning will have to put the return leg into consideration.\n\nLimited Offer. Currently at Stake\n\n## Le Havre v Monaco Best Betting Odds ...\n    URL: https://www.sportytrader.com/en/betting-tips/le-havre-monaco-367488\n  - Title: Havre AC - AS Monaco FC prediction & tips 23.08.2026\n    Content: Head-to-head snapshot:\n\n## Final Word: Our Betting Tip, Risk Notes and Today's Odds Boosts\n\nTo conclude, the sensible market play is an Away win for AS Monaco at roughly 1.97 (1win). That pick balances Monaco’s superior squad depth and attacking talent with Havre’s home solidity and the unpredictability of season openers. For lower-risk players, consider backing Both Teams to Score – Yes at around 1.55 (Paripesa) given Monaco’s recent high-scoring encounters and Havre’s ability to nick goals in transition. ...\n    URL: https://www.transfermarkt.com/betting/tips/havre-ac-vs-as-monaco-prediction-23-08-2026\n\nGame ID: 3\nSource event_id: 401876487\nMatchup: Paris Saint-Germain (away) @ Stade Rennais (home)\nHome: Stade Rennais\nAway: Paris Saint-Germain\nKickoff UTC: 2026-08-23T18:45Z\nKickoff ET: 2026-08-23 14:45 EDT\nVenue: Roazhon Park\nRound: unavailable\nHome form: LWLWW\nAway form: LWWLW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Stade Rennais -205 (open -250); Draw +400 (open +425); Paris Saint-Germain +475 (open +500)\nTavily context:\n  - Title: Rennes vs PSG Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: PSG 1-0 Brest\n\nConfirmed Lineups\n\n06 May Champions League\n\nBayern Munich 1-1 PSG\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nRennes  Injury Table\n\nType Name Info\n\nMahdi Camara Yellow cards\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-30\n\nBrice Samba Yellow cards\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nNicolas Lemaitre Knee\n\nPosition: Goalkeeper Matches: - Goals: - Assists: - Expected return: -\n\nMikayil Faye Illness\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-08-23\n\nPSG  Injury Table ...\n    URL: https://www.sportsgambler.com/betting-tips/football/rennes-vs-psg-prediction-lineups-odds-2026-08-23\n  - Title: Paris Saint-Germain vs Rennes Ligue 1 preview: Everything you need to know\n    Content: ## Team news & squads\n\n## Paris Saint-Germain vs Rennes Probable lineups\n\nParis Saint-Germain crest\n\nParis Saint-Germain\n\nPSG\n\nFormation\n\nRennes crest\n\nRennes\n\nREN\n\nRennes crest\n\nRennes\n\nREN\n\n### Manager\n\n Luis Enrique\n\nLuis Enrique has no confirmed injury or suspension concerns listed for PSG ahead of this fixture, though no probable lineup has been submitted. The situation around Bradley Barcola's potential departure adds uncertainty to the squad, and updates are expected closer to kick-off. ...\n    URL: https://www.goal.com/en/news/paris-saint-germain-rennes-ligue-1-preview/blt4e8879c8e674f7fc\n  - Title: Stade Rennais FC vs Paris Saint-Germain - Soccer - YesPlay\n    Content: MAIN ; 1x2 · X4.70 21.53 ; Double chance · 2.15 121.17. X21.14 ; Draw no bet · 21.22 ; Both teams to score · 1.54. No2.37 ; Which team to score · 23.00\n    URL: https://yesplay.bet/sports/events/stade-rennais-fc-paris-saint-germain-72036520\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876493",
+                        "date_utc": "2026-08-23T13:00Z",
+                        "kickoff_et": "2026-08-23 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Angers",
+                        "away": "Lille",
+                        "home_id": "7868",
+                        "away_id": "166",
+                        "matchup": "Lille (away) @ Angers (home)",
+                        "venue": "Stade Raymond Kopa",
+                        "city": "Angers",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DDLLD",
+                        "form_away": "LWDWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+390",
+                            "home_current": "+380",
+                            "draw_open": "+275",
+                            "draw_current": "+280",
+                            "away_open": "-150",
+                            "away_current": "-135"
+                        },
+                        "odds_text": "DraftKings: Angers +380 (open +390); Draw +280 (open +275); Lille -135 (open -150)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401876492",
+                        "date_utc": "2026-08-23T15:15Z",
+                        "kickoff_et": "2026-08-23 11:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Le Havre AC",
+                        "away": "AS Monaco",
+                        "home_id": "3236",
+                        "away_id": "174",
+                        "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                        "venue": "Stade Océane",
+                        "city": "Le Havre",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "WLDDD",
+                        "form_away": "WLLWD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+225",
+                            "home_current": "+275",
+                            "draw_open": "+285",
+                            "draw_current": "+300",
+                            "away_open": "+100",
+                            "away_current": "-110"
+                        },
+                        "odds_text": "Provider unavailable: Le Havre AC +275 (open +225); Draw +300 (open +285); AS Monaco -110 (open +100)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401876487",
+                        "date_utc": "2026-08-23T18:45Z",
+                        "kickoff_et": "2026-08-23 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Stade Rennais",
+                        "away": "Paris Saint-Germain",
+                        "home_id": "169",
+                        "away_id": "160",
+                        "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                        "venue": "Roazhon Park",
+                        "city": "Rennes",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "LWLWW",
+                        "form_away": "LWWLW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-250",
+                            "home_current": "-205",
+                            "draw_open": "+425",
+                            "draw_current": "+400",
+                            "away_open": "+500",
+                            "away_current": "+475"
+                        },
+                        "odds_text": "Provider unavailable: Stade Rennais -205 (open -250); Draw +400 (open +425); Paris Saint-Germain +475 (open +500)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-22T08:30:51.516732-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:17:03.055294-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters the match as clear favorites with bookmakers pricing them around -135 (1.67). Although they are missing Benjamin Andre due to suspension, their superior squad depth and quality should be enough to overcome Angers at the Stade Raymond Kopa.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Monaco is favored at -110 despite having a historically difficult time winning away at Stade Oceane. Monaco's superior squad depth and attacking threat give them the edge over a solid Le Havre defense in this season opener.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "The structured odds heavily favor Stade Rennais at -205 compared to Paris Saint-Germain at +475. This significant market tilt suggests PSG may be fielding a heavily rotated squad or facing critical absences, making a Rennais victory the statistically expected outcome based on pricing.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-22T08:17:22.688449-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enter as clear favorites (-135), supported by their superior squad quality and Angers' recent struggles in form. Bookmakers assign LOSC roughly a 55-60% implied probability of securing the away victory.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Monaco's winless streak in their last few visits to Le Havre, they possess a more talented squad and better attacking depth. Betting odds heavily tilt towards the visitors, giving them a 50% probability to clinch the win.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Although some structured odds platforms appear to have mistakenly flipped the lines (listing Rennes at -205), external sources and standard market values confirm PSG are heavily favored at roughly 1.53 (-188) to win. Their overwhelming domestic dominance makes them the clear choice.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-22T08:17:45.716562-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.57,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is the clear favorite according to betting markets, reflecting a significant difference in squad quality. While it is the first match of the season, which adds some uncertainty, Lille's recent form is superior to Angers'. The suspension of Lille's key midfielder Benjamin André slightly tempers expectations, but Lille should have enough depth to secure a victory against a team that struggled for form.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "AS Monaco possesses a stronger squad and is the betting favorite. However, their historical record away at Le Havre is poor, with no wins in their last five visits (four draws). This historical trend, combined with it being an opening-day fixture and Monaco potentially having an eye on a concurrent European fixture, makes this a difficult match to predict. While Monaco has the higher probability of winning, a draw is a very strong possibility.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Despite one source showing anomalous odds, Paris Saint-Germain is the perennial powerhouse of Ligue 1 and the strong favorite to win. Stade Rennais is a quality side, especially at home, but the talent disparity with PSG is significant. Rennes is also dealing with key suspensions to Mahdi Camara and Brice Samba. For an opening day match, PSG will be keen to start strong and should have the quality to overcome a tough opponent on the road.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:18:02.430963-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is heavily favored by oddsmakers, with SportsGambler indicating a 60% win probability. Despite Benjamin André's suspension, Lille's squad strength and the betting market consensus point to an away victory against Angers, who finished lower last season. Angers also has key injuries to Haris Belkebla and Louis Mouton.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "AS Monaco are considered favorites with superior squad depth and attacking talent. Despite a historical record of being winless in their last five visits to Le Havre, they only lost once in those encounters, indicating a tendency for draws. Monaco's potential fixture congestion from the Conference League and some player absences could slightly temper their performance, but they are expected to secure a victory.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Paris Saint-Germain, as the perennial powerhouse of Ligue 1, is expected to win this match. Despite Stade Rennais having a strong home record and the potential for an upset, PSG generally possesses superior squad depth and quality. There are no major injury concerns reported for PSG, while Rennes has a few players sidelined. The provided ESPN odds appear highly anomalous and are disregarded in favor of PSG's historical and consistent performance as the league's dominant force.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:20:11.798007-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear away favorites in the 1X2 market and have the stronger recent form profile. Angers' home advantage and Lille absences keep draw/upset risk meaningful, but Lille remain the most likely 90-minute winner.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.48,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Monaco have the stronger squad and are modest market favorites, but the edge is not overwhelming. Le Havre's home solidity, Monaco injury/rotation concerns, and a history of tight meetings raise the draw and home-upset chances.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are priced as strong home favorites and enter with solid recent results. PSG's overall quality and relatively clean team-news picture prevent this from being a high-confidence call, but the market signal points to Rennes as the most likely 90-minute winner.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:20:24.418944-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear market favorites and enter with the stronger recent form profile. Angers have home advantage and Lille have some absences, including Benjamin Andre suspended, but the overall squad-strength and odds signal still point to Lille as the most likely 90-minute winner.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are favored by the market and have the stronger squad, but the edge is moderated by being away, Le Havre's home resilience, and Monaco injury/availability concerns. A draw remains live, yet Monaco's attacking quality makes an away win the most likely result.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "The listed market prices strongly favor Rennes despite PSG's usual stature, suggesting significant contextual factors in Rennes' favor for this fixture. Rennes also have home advantage at Roazhon Park, while the draw and PSG win remain possible given PSG's baseline quality.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-22T08:21:05.951142-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Lille a clear favorite away (short price), and Lille's recent form is stronger than Angers'. Lille have a notable suspension (Benjamin André), which slightly increases draw/upset risk, but squad quality still points to an away win most often.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are favored by the odds and generally carry higher attacking upside, but this is an away opener against a home side that can be stubborn, with some head-to-head context suggesting tight games. Monaco absences/fitness uncertainty also nudges probability toward a draw relative to a typical Monaco-favored spot.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The provided 1X2 odds strongly favor Rennes at home, implying PSG are priced as a significant underdog; using that market signal yields a home-win lean. Confidence is lowered due to the counterintuitive pricing for PSG and early-season volatility, which increases draw/away-tail risk.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-22T08:21:17.938810-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers list Lille as clear favourites and Lille enter with steadier pre-season form; Angers' recent results are inconsistent and key midfielders are injured/suspended (Benjamin André listed out for Lille reduces but does not invert the gap). Lille's superior squad depth and expectation to control chances away at Stade Raymond Kopa make an away win most likely, though the opener and Angers' home crowd leave a material draw/home upset probability.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices make Monaco marginal favourites and their overall squad quality is higher. Le Havre are solid at home and recent H2H suggests Monaco can be vulnerable here; additional factors (European commitments, minor Monaco injuries) temper the away edge. Forecast therefore favors Monaco but acknowledges a meaningful home/draw chance.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite PSG's usual stature, preseason context and listed odds show Rennes as favourites for this fixture. Rennes have strong home form and PSG face squad uncertainty (possible departures, injury list) and travel/rotation concerns. That makes a Rennes win the likeliest 90-minute outcome, though PSG retain a realistic chance of rescue or a draw.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-22T08:21:44.385519-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.199,
+                    "draw_probability": 0.252,
+                    "away_win_probability": 0.549,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored to win according to odds; after normalization with the draw option, Lille holds the highest probability for a 90-minute result.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.256,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.504,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco is the away favorite per the odds (-110); after normalization with the draw, Monaco edges Le Havre for the regulation-time result.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.642,
+                    "draw_probability": 0.191,
+                    "away_win_probability": 0.167,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes occupy home advantage and PSG are not clear favorites; normalization yields Rennes with the highest probability for a 90-minute result.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-22T08:21:47.932109-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear favorites according to both market odds and expert previews, with a stronger squad and better recent away form. Angers are missing key players due to injury, and Lille's absences are less impactful. The odds and context suggest Lille should win, but as this is the season opener and Angers have shown some resilience at home, a draw is not out of the question.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are favored due to superior squad depth and attacking talent, despite some recent away inconsistency and a few injuries. Le Havre are solid at home and have a history of drawing with Monaco, but the away side's quality should prevail. The probabilities reflect Monaco's edge but also the unpredictability of early-season matches.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite PSG's reputation, the odds and context indicate Rennes are strong favorites at home, possibly due to PSG squad uncertainty and Rennes' solid recent form. Rennes have a good home record and PSG may be unsettled by potential squad changes. The probabilities reflect Rennes' advantage but acknowledge PSG's potential to surprise.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-22T08:21:50.862429-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Lille is favored by bookmakers and has a stronger recent form compared to Angers. Despite some key absences, Lille's squad depth and away form suggest they are likely to secure a win.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco's superior squad depth and attacking talent give them an edge, although Le Havre's home solidity and Monaco's mixed away form suggest a competitive match.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Stade Rennais has a strong home form and PSG's away form is inconsistent. Despite PSG's quality, Rennais is favored by bookmakers, indicating a likely home win.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-22T08:22:06.065369-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear market favorites (-135 away) with superior squad quality, though Benjamin Andre's suspension and Angers' home record temper confidence. Angers showed decent preseason form but Lille's overall class should prevail in this opener.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Monaco are modest favorites (-110) but have a poor recent record at Le Havre (winless in last five visits) and face rotation risk with midweek Conference League commitments. Monaco's talent advantage still makes them the most likely winner, but with limited confidence.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite the ESPN odds display, secondary market data (Rennes at ~4.70, PSG at ~1.53) confirms PSG as strong favorites, consistent with their vastly superior squad. Rennes at Roazhon Park can be difficult and PSG may face early-season sharpness issues, but PSG win is the most probable outcome.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-22T08:22:13.877537-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear favorites (-135) with stronger squad depth despite missing Andre. Angers at home but market and quality favor Lille.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.41,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Monaco favored (-110) with superior squad talent, though Le Havre have been solid at home historically and Monaco winless in last five visits. Season-opener uncertainty keeps this close.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds show Rennes as home favorites (-205) over PSG (+475), a surprising line suggesting this may reflect a weakened or rotated PSG. Following the market strongly favors Rennes at home.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-22T08:22:29.370736-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear favourites per market odds (around -135 to -150), reflecting their superior squad quality as a consistent Ligue 1 top-four side. Angers are newly promoted or returning to the top flight and struggled in recent form (DDLLD). Lille's away form is decent (LWDWD). Key absences for Lille include Benjamin André (suspended) and Matias Fernandez-Pardo, which tempers confidence slightly. Bookmaker consensus puts Lille win probability around 55-60%. Angers at home have some upside but lack the quality to be favoured.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are slight favourites per market odds (around -110), reflecting their stronger squad depth and attacking talent. However, Le Havre have a notable record of solidity at home and Monaco are reportedly winless in their last five visits to Le Havre. Monaco also have a Conference League second leg to consider, which could affect squad rotation. Ansu Fati (calf) and Folarin Balogun are out for Monaco. The odds have shifted from Monaco being even money (open +100) to slight favourite, suggesting information pointing toward Monaco. A draw is also a very plausible outcome given historical head-to-head trends.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "The odds are heavily in favour of Rennes at home (around -205 to -250), which is unusual for a PSG match and likely reflects a heavily rotated or weakened PSG side given they are the defending champions but may be managing a squad amid potential departures (Bradley Barcola uncertainty noted). Rennes have strong recent home form (LWLWW) and Roazhon Park is a difficult venue. PSG at +475 implies only about a 17-18% win probability. The market strongly favours Rennes, and this is reflected in the forecast, though some probability is reserved for PSG given their squad depth.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-22T08:22:49.558800-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear favorites with odds of -135, suggesting a 57% implied probability of victory. Angers have struggled in recent form (DDLLD) while Lille's away form (LWDWD) is stronger. Lille are missing Benjamin André to suspension and Matias Fernandez-Pardo, but their squad depth should handle these absences. Angers have injury concerns with Belkebla and Mouton both out until late August. The bookmakers' assessment of 60% probability for a Lille win is reasonable given the quality gap between the sides. However, as a season opener at home, Angers may make it competitive, hence a moderate confidence level.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are favorites at -110, though the odds have shifted from +100 opening, suggesting some uncertainty. Monaco have superior squad quality but are dealing with injuries to Folarin Balogun, Ansu Fati (calf), and Christian Mawissa suspended. Le Havre's home form (WLDDD) shows defensive solidity with recent draws, and Monaco are winless in their last five visits to Le Havre. However, Monaco's recent 3-2 away win in the Conference League demonstrates attacking capability. Both teams have had mixed recent form, but Monaco's overall quality gives them the edge. The prediction accounts for Le Havre's home resistance and Monaco's historical struggle at this venue.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "The odds heavily favor Rennes at home with -205, while PSG are significant underdogs at +475. This is highly unusual given PSG's typical dominance in Ligue 1, suggesting either a data anomaly or significant context (potential cup competition, heavily rotated squad, or unusual circumstances). Rennes' recent form (LWLWW) shows improvement with back-to-back wins, while PSG's form (LWWLW) is mixed. Rennes have Mahdi Camara suspended and Mikayil Faye questionable with illness, but their home advantage at Roazhon Park is significant. Given the overwhelming betting market sentiment favoring Rennes and no clear injury crisis for the home side, I'm following the market assessment while acknowledging this seems unusual for a PSG fixture.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-22T08:22:58.523909-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are favored by odds (1.67 implied probability ~60% win) and market data. Away form (LWDWD) shows mixed results but recent structure suggests competitiveness. Angers home form (DDLLD) is concerning with recent pre-season friendlies showing vulnerability (L3-2, W3-2, W2-1). Lille missing Benjamin André (suspended) and Matias Fernandez-Pardo is notable, but they maintain squad depth advantage. Angers also missing Belkebla and Mouton. Season opener volatility suggests some risk, but Lille's quality edges favor away win.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco favored slightly in odds (-110) with superior squad depth and attacking talent. Le Havre home record shows mixed form (WLDDD) with recent pre-season results variable. Historical context notes Monaco winless in last 5 visits to Le Havre but only 1 loss (3 draws), suggesting defensive solidity at home for Le Havre. Monaco's recent Conference League win (3-2 away) demonstrates attacking capability but potential fixture fatigue. Both Teams to Score likely given Monaco's offensive threats and Le Havre's transition opportunities. Moderate confidence due to season opener unpredictability and fixture congestion for Monaco.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds heavily favor Rennes home win (-205 implies ~67% probability), but this appears overvalued given PSG's superior quality and away form (LWWLW with recent friendly stability). Rennes home form (LWLWW) is respectable but inconsistent. PSG squad uncertainty regarding Bradley Barcola departure adds some volatility, and Luis Enrique's tactical implementation in season opener unknown. Rennes have Mahdi Camara suspended/unavailable until late August. PSG's elite attacking players should exploit Rennes defense despite away status and squad uncertainty. Market may overestimate home advantage; slight preference for PSG away win but low confidence due to squad composition questions and season opener variables.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-22T08:23:57.111975-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear odds-on favourites with better recent away form, while Angers are winless in their last five home matches and missing key midfielders.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.51,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco have superior squad depth and attacking quality, but Le Havre's home resilience and Monaco's poor recent record at Stade Océane keep draw risk elevated.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are strong odds-on home favourites and have solid recent home form, while PSG's squad transition adds uncertainty despite their historical strength.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-22T08:23:59.885275-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Lille are clear favorites per odds and have better recent form, despite missing André and Fernandez-Pardo. Angers have poor form and key injuries. Away win is most likely.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "Monaco have superior squad and are slight favorites, but Le Havre are solid at home and Monaco have injury concerns. Slight edge to away win.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Rennes are strong at home and PSG are in transition with key players possibly leaving. Odds heavily favor Rennes. Home win is the most probable outcome.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-22T08:24:26.608496-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored by the sportsbooks and enters with better recent form, despite missing Benjamin André. Angers has struggled with draws and losses in their recent matches, making the away side the most probable victor.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco is the favorite according to the odds and possesses superior squad depth, even with a few injury concerns. Le Havre has been stubborn at home historically against Monaco, but Monaco's attacking quality and recent European momentum should edge it.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "The betting market heavily favors Stade Rennais, which is highly unusual for a PSG match, suggesting significant squad rotation, transfer unrest, or tactical mismatches for the visitors. Rennais is strong at home and the odds strongly back them for the win.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-22T08:24:41.397311-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored by the bookmakers and has a stronger away form compared to Angers' home form. The absence of key players for both teams, but especially the suspension of Benjamin André for Lille, slightly reduces the confidence in an away win.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "AS Monaco is the stronger team on paper and has a better recent form, despite their poor record against Le Havre in the past. The injuries and suspensions for both teams, particularly the long-term absence of Felix Mambimbi for Le Havre, contribute to a moderate confidence in an away win.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Stade Rennais is favored by the bookmakers, and they have a strong home form. PSG's away form is less consistent, and there are uncertainties around their squad due to potential departures and injuries. The odds and recent form suggest a high confidence in a home win.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-22T08:25:50.560654-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.21,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enter as clear market favorites (-135) with superior squad depth and more consistent recent form. Angers' inconsistent home performances and key midfield absences heavily favor a controlled, narrow away victory for LOSC in what is expected to be a disciplined tactical contest.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Monaco hold a slight betting edge, but their winless H2H record at Le Havre and potential European competition fatigue heavily level the playing field. Le Havre's strong home solidity suggests a tightly contested opener where a narrow away victory or stalemate is most likely, with a marginal lean to the visitors.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "The betting market heavily favors Rennes (-205) over PSG, reflecting Rennes' robust home form and PSG's significant squad uncertainty, potential player departures, and injury concerns. Rennes' structured home setup is expected to control tempo and exploit PSG's transitional weaknesses, making a home victory the dominant probability.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-22T08:26:51.046604-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.56,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "DraftKings odds heavily favor Lille (-135 implied ~57%) despite Benjamin André's suspension. Angers show inconsistent form (DDLLD) at home, while Lille demonstrates resilience. Market probability suggests ~55% away win chance.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco (-110 implied ~52%) favored despite historical difficulty at Le Havre. Monaco's squad depth outweighs Le Havre's recent home form. Market consensus points to an away victory, though low-scoring nature risks a draw.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Provider odds unusually favor Rennes (-205) over PSG (+475), possibly reflecting PSG uncertainty regarding Barcola. Rennes home advantage cited, but PSG talent and Rennes goalkeeper concerns introduce high variance in outcome.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-22T08:29:46.593518-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille's superior squad quality and stronger recent form make them clear favorites against an Angers side with a sluggish pre-season record. Although Angers benefit from home support and opening-weekend unpredictability, the market and available talent point toward a Lille victory.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco's greater attacking talent and squad depth justify their status as favorites, but Le Havre's home solidity and Monaco's winless record in recent trips to Stade Océane keep confidence tempered. The match should be tight, yet Monaco are likeliest to find a winning edge.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Conflicting market signals exist, but the unavailable ESPN line that makes Rennes a heavy favorite appears anomalous and is contradicted by other bookmakers pricing PSG as the away favorite. PSG report no major injuries while Rennes face key absences, supporting an away win in regulation time.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-22T08:30:45.017861-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Lille are significant betting favorites (-135) with superior squad depth and quality compared to Angers. Angers are missing midfielders Belkebla and Mouton through injury, weakening their core. Lille's away form (LWDWD) shows resilience, and their class should prevail against a side expected to battle relegation.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Monaco are priced as favorites (-110) and possess greater attacking talent, though historical data shows they are winless in their last five visits to Le Havre. Le Havre are missing key defenders Mambimbi and Zagadou. Monaco's midweek Conference League fixture presents rotation risks, but their squad depth and quality advantage should secure the three points.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds surprisingly favor Stade Rennais heavily (-205) against PSG (+475), potentially due to PSG resting key players after European commitments or transfer market uncertainty. While PSG possess superior individual quality on paper, the odds imply Rennes are expected to dominate at Roazhon Park. Rennes' strong home form (LWLWW) supports this market leaning, creating high uncertainty.",
+                    "event_id": "401876487"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-22T08:30:51.515048-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Angers (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille has a better form and is favored by the bookies, but the match is at Angers' home ground which could make it more competitive.",
+                    "event_id": "401876493"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "AS Monaco (away) @ Le Havre AC (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have comparable forms and the bookies have a close call on the odds, suggesting a potentially tight match.",
+                    "event_id": "401876492"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Paris Saint-Germain (away) @ Stade Rennais (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "PSG has a strong form and is favored significantly by the bookies, suggesting a likely away win against Stade Rennais.",
+                    "event_id": "401876487"
+                }
+            ]
+        }
+    ]
+}

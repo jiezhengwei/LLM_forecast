@@ -1,0 +1,144 @@
+{
+    "meta_info": {
+        "system_prompt": "You are an expert NBA Sports Bettor and Analyst. \nYou think in probabilities. NBA games CANNOT end in a draw (there is overtime).\nYour goal is to predict the winner based on team strength, injuries, home-court advantage, and Vegas betting lines.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-23\n    Target Date: 2026-05-24\n\n    [Daily Schedule & Team Stats]\n    ---------------------------------------------------------------------------------------------\nGame Matchup (Time ET)                                  | Season Record (W-L) & Win Rate     \n---------------------------------------------------------------------------------------------\n1. [5/24 - 8:00 PM EDT] Oklahoma City Thunder @ San Antonio Spurs | Away: 78.0% (64-18) vs Home: 75.6% (62-20)\n\n    [Real-time News, Injury Reports & Vegas Odds]\n    ### Real-time News, Injury Reports & Vegas Odds for All Games\n\n#### Matchup: Oklahoma City Thunder (Away) @ San Antonio Spurs (Home)\n**News & Injury Report:**\n- [Thunder vs. Spurs (May 24, 2026) Odds and Spread - ESPN](https://www.espn.com/nba/odds/_/gameId/401873200)\n  Snippet: # Oklahoma City Thunder @ San Antonio Spurs\n\nOKC\n\nNBC\n\n+1\n\nSA\n\n## Game Odds Odds by\n\n## Recent Schedule\n\n| DATE | OPP | RESULT | SPREAD | TOTAL |\n ---  ---\n| 5/22 | @SA | W123-108 | +3.5 | 219.5 |\n| 5/20 | vsSA | W122-113 | -7.5 | 213.5 |\n| 5/18 | vsSA | L122-115 | -7.5 | 219.5 |\n| 5/11 | @LAL | W115-110 | -12.5 | 214.5 |\n| 5/09 | @LAL | W131-108 | -9.5 | 210.5 |\n\n## Betting 101\n\n## Matchup Predictor\n\nOklahoma City Thunder\nSan Antonio Spurs\n\nOKC\n\nSA\n\nAccording to ESPN Analytics\n\n## Injury Report ...\n- [Full injury report for Friday's Thunder vs. Spurs Game 3 matchup](https://okcthunderwire.usatoday.com/story/sports/nba/thunder/2026/05/22/full-injury-report-for-fridays-thunder-vs-spurs-game-3-matchup/90210417007)\n  Snippet: OKC THUNDER\n\n# Full injury report for Friday's Thunder vs. Spurs Game 3 matchup\n\nPortrait of Clemente Almanza Clemente Almanza\n\nOKC Thunder Wire\n\nMay 22, 2026, 8:01 a.m. CT\n\nThe Oklahoma City Thunder will host the San Antonio Spurs on Friday for the 2026 NBA playoffs. It will be Game 3 of the 2026 Western Conference Finals. The series is tied at 1-1. ...\n**Vegas Odds & Lines:**\n- [Thunder vs. Spurs Game 4 Predictions, Odds & Stats \u2013 May 24 | 1430 The Buzz](https://buzztulsa.iheart.com/content/2026-05-23-thunder-vs-spurs-game-4-predictions-odds-stats-may-24)\n  Snippet: | Date | Favorite | Spread | Total | Favorite Moneyline | Underdog Moneyline | Result |\n ---  ---  ---\n| 5/22/2026 | Spurs | -2.5 | 218.5 | -139 | +117 | 123-108 OKC |\n| 5/20/2026 | Thunder | -7.5 | 216.5 | -270 | +219 | 122-113 OKC |\n| 5/18/2026 | Thunder | -6.5 | 219.5 | -250 | +204 | 122-115 SA |\n| 2/4/2026 | Spurs | -9.5 | 221.5 | -420 | +325 | 116-106 SA |\n| 1/13/2026 | Thunder | -8.5 | 230.5 | -304 | +245 | 119-98 OKC |\n| 12/25/2025 | Thunder | -9.5 | 235 | -372 | +294 | 117-102 SA |\n| 12/23/2025 | Thunder | -6.5 | 235.5 | -237 | +195 | 130-110 SA | ...\n- [Spurs vs Thunder Odds, Betting Trends, and Line Movements - 05/17/2026](https://www.vegasinsider.com/nba/matchups/spurs-vs-thunder)\n  Snippet: ## SAS @ OKC Line Movements\n\n### Spread\n\n2725\n15\n\n### Total\n\n120\n15\n\n### Moneyline\n\n108\n15\n\n## Thunder vs. Spurs Head-to-Head [...] | San Antonio Spurs   543   Spurs | o217.5   -110 | o112.5   -110     + | N/A | o112.5   -110     + | o112.5   -115     + | o112.5   -120     + | N/A | N/A | o219.5   -110 |  |\n| Oklahoma City Thunder   544   Thunder | u217.5   -110 | u112.5   -110     + | N/A | u112.5   -110     + | u112.5   -105     + | u112.5   -115     + | N/A | N/A | u219.5   -110 |  |\n|  Matchup | | | | | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY game listed in the schedule.\n        For each game, estimate the probability of the HOME TEAM winning (0.0 to 1.0).\n        (Away Win Probability = 1.0 - Home Win Probability).\n        There are NO DRAWS in NBA.\n        If Vegas odds/spreads are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.65,\n                    \"predicted_winner\": \"HomeTeam\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all games)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-23 20:37:50"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-23 20:36:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.42,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Oklahoma City leads the series 2-1 and is coming off a dominant 123-108 victory in Game 3 in San Antonio. Despite the Spurs having home-court advantage and facing a critical game to avoid a 3-1 deficit, the Thunder's momentum and superior performance in the last two games are significant. The Vegas line in Game 3 favored the Spurs (-2.5), but the lopsided result suggests the Thunder are the better team right now, capable of overcoming the road environment. We project OKC to have a higher probability of winning Game 4."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:36:58",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.53,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Low",
+                    "reasoning": "Vegas pricing has San Antonio as a very small home favorite (around SA -1), implying a near coin-flip with a slight Spurs edge from home-court. Team strength is comparable (OKC 64-18 vs SA 62-20), and OKC has won 2 of the last 3 including a road win in San Antonio, which keeps the home win probability only modestly above 50%. No specific injury advantages were provided in the context, so the line/home-court and overall team quality drive the forecast."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.57,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Vegas markets show San Antonio as a small favorite (spread ~ -2.5; ML around -139), implying ~58% market-implied probability \u2014 a strong calibration signal. Both teams are elite this season (OKC 78.0% road win rate; SAS 75.6% home win rate) and the series has been tight, with recent games split and OKC taking the most recent meeting 123-108 (5/22). No major injuries reported in the provided context. Given home-court advantage, market lines, and the close recent form, I give the Spurs a modest edge at home but treat this as a close game, so probability is set at 57% for the home team."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:21",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.6,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Spurs have home-court advantage and are slight Vegas favorites (-2.5). They won the latest meeting at San Antonio (123-108) on 5/22, indicating favorable matchup dynamics for the home team in this game. No major injury red flags reported in the provided context."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.54,
+                    "predicted_winner": "San Antonio Spurs",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have elite season records (OKC 78.0%, SAS 75.6%). The series is tied 1-1, and the last game saw OKC win convincingly on the road. However, Vegas has made the Spurs slight favorites at home (-2.5 to -1 spread), indicating a modest home-court edge. No major injuries are reported for either side. The probability is close to a coin flip, but the home-court advantage and Vegas line tip the edge to San Antonio."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.48,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "The Oklahoma City Thunder have a slightly better season record and have won the last two games against the Spurs, including an away game. The Vegas odds show a close matchup with the Spurs as slight favorites, but recent performance and head-to-head results favor OKC. No significant injuries reported for either team."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.45,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "Series tied 1-1; Thunder won Game 3 on the road despite being underdogs. Spurs have home court but Thunder's strong season record (64-18) and recent win suggest they are slightly favored. Vegas lines show Spurs as small favorites but recent result indicates Thunder's strength."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.48,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "This is Game 4 of the Western Conference Finals with OKC leading 2-1 after winning Game 3 (123-108) convincingly on the road. Key factors: (1) Thunder have won 2 straight games and covered in both, showing momentum. (2) Vegas opened with Thunder as +1 underdogs (slight), implying near pick'em odds - this translates to roughly 48-52% win probability for either team. (3) Both teams have elite records (OKC 78.0%, SA 75.6%), making this a true toss-up. (4) OKC has proven they can win in San Antonio, doing so 123-108 just two days ago in Game 3. (5) Recent trends show Thunder winning 3 of last 4 meetings. (6) The small spread (+1 for OKC) suggests Vegas sees this as essentially even, with slight home court edge to Spurs. (7) No significant injuries reported for Game 3, assuming both teams relatively healthy. (8) Thunder's recent playoff form has been exceptional, winning critical road games. Given the momentum shift to OKC, their recent dominant road victory, and the minimal Vegas spread, I slightly favor the Thunder despite being on the road. This is essentially a coin flip with slight edge to the visitors based on current form and series momentum."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-23 20:37:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Oklahoma City Thunder (away) @ San Antonio Spurs (home)",
+                    "home_win_probability": 0.45,
+                    "predicted_winner": "Oklahoma City Thunder",
+                    "confidence": "Medium",
+                    "reasoning": "The Oklahoma City Thunder have a slightly better win rate and have won the last two games against the Spurs. The Thunder also covered the spread in their last two matchups. However, the home-court advantage for the Spurs and the close Vegas line (+1 for OKC) indicate a competitive game, leading to a moderate confidence level."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

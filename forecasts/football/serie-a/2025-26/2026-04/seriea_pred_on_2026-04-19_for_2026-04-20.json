@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-19\n    Target Date: 2026-04-20\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Fiorentina @ Lecce                                   | Scheduled    | Away: 25.0% (8-11-13) vs Home: 21.9% (7-6-19)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Fiorentina (Away) @ Lecce (Home)\n**News & Injury Report:**\n- [Lecce vs Fiorentina Prediction 20/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-19-04-2026-lecce-fiorentina-prediction)\n  Snippet: \ud83d\udeab The hosts face significant personnel issues: Kealonda Gaspar (knee injury), Medon Berisha (hamstring injury), Francesco Camarda (shoulder injury), and Riccardo Sottil (muscle injury) will not play. Additionally, Sadiq Fofana is confirmed to miss ou...\n- [Lecce vs Fiorentina Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/lecce-vs-fiorentina-prediction-lineups-odds-2026-04-20/)\n  Snippet: Rares Burnete Other \n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nMedon Berisha Other \n\nPosition: Midfielder Matches: 13 Goals: 2 Assists: 3 Expected return: 2026-07-01\n\nKialonda Gaspar Knee \n\nPosition: Defender Matches: 22 G...\n**Betting Odds:**\n- [Lecce vs Fiorentina prediction \u2013 Odds & stats \u2013 20 April 2026](https://www.wincomparator.com/predictions/lecce-fiorentina-7651876/)\n  Snippet: 1.42\n\n63%\n\nUnder 2.5 goals\n\n42%\n\n38%\n\nOver 2.5 goals\n\n58%\n\n25%\n\nNo goals conceded\n\n19%\n\n34%\n\nBTTS\n\n65%\n\n## Lecce vs Fiorentina betting odds\n\nPopular\n\nLecce - Fiorentina 1x2 Results\n\n1\n\nUnibet\n\n3.4\n\nX\n\nUnibet\n\n3.2\n\n2\n\nUnibet\n\n2.1\n\nCheck all odds\n\nUnde...\n- [Fiorentina vs Lecce Odds & Live Scores - April 20, 2026](https://www.actionnetwork.com/seriea-game/fiorentina-lecce/284302)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| Lecce logo Lecce | 16-15-1 | 7-8-1 | 9-7 | 2-2 | 14-13-1 |\n| Fiorentina logo Fiorentina | 12-19-1 | 7-8-1 | 5-11 | 6-12-1 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-19 18:52:03"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-19 18:50:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market makes Fiorentina the favorite (approx. 2.10 away vs 3.40 home; implied probabilities after vig ~44% away, ~29% draw, ~27% home). Lecce also report multiple absences (notably Gaspar, Berisha and others), which weakens depth and defensive stability. Lecce\u2019s season win rate is low and the draw is a meaningful secondary outcome given Serie A tendency for tighter games, but Fiorentina retain the strongest overall win likelihood."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:50:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.23,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.49,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (example Unibet: Lecce 3.4 / Draw 3.2 / Fiorentina 2.1) imply Fiorentina is the favorite after normalizing the book (roughly 44% implied for Fiorentina). Adjusted upward to ~49% because Lecce has multiple key absences (Kialonda Gaspar, Medon Berisha, Francesco Camarda, Riccardo Sottil, Sadiq Fofana) reducing their attacking/defensive options and depth. Season win rates show both teams struggling, but Fiorentina are the stronger side on the road per betting markets and available squad. Draw probability remains material (28%) given Serie A draw frequency and Lecce playing at home; Lecce win probability is reduced by injuries and market pricing. Overall a calculated lean to an away win with medium confidence."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.272,
+                    "draw_probability": 0.289,
+                    "away_win_probability": 0.439,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "High",
+                    "reasoning": "Lecce's injury list (Gaspar, Berisha, Camarda, Sottil) weakens home advantage; Fiorentina favored by odds (away win ~2.1) and a relatively stable squad. After calibration of available 1x2 odds (home 3.4, draw 3.2, away 2.1), the implied probabilities favor Fiorentina as the winner while a draw remains plausible and Lecce remains dangerous at home."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce are at home but are missing multiple key players (Kialonda Gaspar, Medon Berisha, Francesco Camarda, Riccardo Sottil), significantly weakening their squad. Fiorentina, though not in elite form, have a better away win rate and better overall record. Market odds imply Fiorentina are notable favorites (2.1 for AWAY win vs 3.4 for home), and these odds calibrate the model. The draw cannot be ruled out given Serie A's historical draw rate and Lecce's tendency to tie, but injuries tip balance to Fiorentina."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce faces significant personnel issues with key players like Gaspar, Berisha, and Camarda injured. This weakens their defense and midfield significantly. Fiorentina has slightly better away win rate, and the betting odds favor Fiorentina with a 2.1 against 3.4 for Lecce. These factors lead to a higher probability of an away win, although a draw remains a significant outcome possibility given Serie A's competitiveness."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce has several key injuries, significantly weakening their squad (Gaspar, Berisha, Camarda, Sottil). Fiorentina's away record is poor, but Lecce's home record is also weak, and they are missing crucial players. The betting odds suggest Fiorentina is slightly favored (2.1 vs 3.4 for Lecce), but with the injuries and considering Lecce is at home, a draw seems plausible. The Unibet odds are used to calibrate the probabilities by converting them to implied probabilities, then adjusting for injuries and home-field advantage. Given Lecce's injury list, Fiorentina's chance is slightly improved and draw is more probable outcome."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina has significantly better season performance (25.0% win rate vs Lecce's 21.9%). Lecce faces critical injury crisis with 4-5 key players out including Gaspar, Berisha, Camarda, Sottil, and Fofana. Betting odds strongly favor Fiorentina (2.1 vs 3.4 for Lecce win). However, Fiorentina's away form is mediocre (5-11 ATS away), and Lecce's home advantage provides some resilience. Expected low-scoring match with Fiorentina's quality edge likely decisive."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:51:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Fiorentina are clear favorites with betting odds of 2.1 (implied probability ~47.6%) for an away win. Despite their modest away record (8-11-13, 25% win rate), they face a struggling Lecce side with only 21.9% home win rate (7-6-19). Lecce are severely depleted with multiple key injuries: Kialonda Gaspar (defender, knee), Medon Berisha (midfielder, hamstring), Francesco Camarda (shoulder), Riccardo Sottil (muscle), and Sadiq Fofana all ruled out. These personnel issues significantly weaken Lecce's defensive structure and midfield options. The betting market strongly favors Fiorentina (Home odds: 3.4, Draw: 3.2, Away: 2.1), suggesting approximately 25% home win, 28% draw, and 47% away win probabilities. BTTS probability is high at 65%, and Over 2.5 goals is favored at 58%, indicating an open game. Fiorentina's superior squad depth and Lecce's injury crisis make an away win the most likely outcome, though Lecce's home advantage and Fiorentina's inconsistent away form (only 25% win rate) prevent this from being a high-confidence prediction. The draw remains a viable option given Serie A's tendency for tight matches."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:52:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Fiorentina (away) @ Lecce (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Lecce is facing significant personnel issues with key players like Kealonda Gaspar, Medon Berisha, Francesco Camarda, and Riccardo Sottil out due to injuries. Fiorentina, despite their poor away record, has a better chance of winning or drawing given the home team's weakened squad. The betting odds also suggest a close match with a slight edge to Fiorentina."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Bundesliga 2026-2027",
+        "competition_key": "bundesliga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-03",
+        "target_date_et": "2026-09-04",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast German Bundesliga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884808\nMatchup: FC Cologne (away) @ VfB Stuttgart (home)\nHome: VfB Stuttgart\nAway: FC Cologne\nKickoff UTC: 2026-09-04T18:30Z\nKickoff ET: 2026-09-04 14:30 EDT\nVenue: MHPArena\nRound: unavailable\nHome form: LWLDW\nAway form: WWLLD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: VfB Stuttgart -200 (open -220); Draw +370 (open +370); FC Cologne +400 (open +425)\nTavily context:\n  - Title: VfB Stuttgart vs FC Köln Predictions, Picks & Odds - 04/09/2026\n    Content: Stadium: MHPArena\n\n## VfB Stuttgart vs FC Köln Preview\n\nVfB Stuttgart sit 14th in the Bundesliga table and will be desperate to build momentum at the MHPArena. Their recent form shows two wins, two draws, and a defeat across the last five outings. A stunning 4-0 DFB-Pokal demolition of Hansa Rostock provided a timely confidence boost, with new signing Dženan Pejčinović bagging a hat-trick on debut. Injuries to Dennis Seimen, Justin Diehl, and Nikolas Nartey will test squad depth significantly. [...] The over 2.5 goals market at 1.34 complements the home win pick nicely. ...\n    URL: https://www.toffeeweb.com/int/vfb-stuttgart-vs-fc-koln-predictions-picks-odds-04-09-2026\n  - Title: VfB Stuttgart vs Köln - live score, predicted lineups and ...\n    Content: TV schedules\n\n# VfB Stuttgart vs 1. FC Köln — Fri 4 September, 18:30 UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n MHPArena\n\nVfB StuttgartVfB Stuttgart\n\n‌\n‌\n\nKöln1. FC Köln\n\n# VfB Stuttgart vs 1. FC Köln — Fri 4 September, 18:30 UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n MHPArena\n\nVfB StuttgartVfB Stuttgart\n\n‌\n‌\n\nKöln1. FC Köln\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Luca Jaquez\n\n  Muscle injury / Mid September 2026\n\nJaquezMuscle injuryMid September 2026\n\n  Chris Führich\n\n  Muscle injury / Doubtful\n\nFührichMuscle injuryDoubtful\n\n  Nikolas Nartey ...\n    URL: https://www.fotmob.com/en-GB/matches/koln-vs-vfb-stuttgart/2zdgu2\n  - Title: VfB Stuttgart vs FC Köln Predictions, Picks & Odds - 04/09/ ...\n    Content: FC Köln arrive in Stuttgart occupying 15th place, their recent form an uneven sequence of a win, a defeat, a draw, and another loss-draw combination across the last five away fixtures. Luca Waldschmidt misses out with a muscle complaint, while Linton Maina remains doubtful after a training knock. On a brighter note, Ragnar Ache is fully fit again, and summer recruits Thijs Dallinga and Reigan Heskey offer fresh attacking options as Köln seek early-season momentum.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/vfb-stuttgart-vs-fc-koln-predictions-picks-odds-04-09-2026\n  - Title: Bundesliga Odds | Get today's Bundesliga Spreads & Betting Lines\n    Content: Bars Menu\nBookmakers Review Logo\n\n# Bundesliga Betting Odds, Spreads, & Lines\n\ndropdown arrow\ndropdown arrow\ndropdown arrow\n\n| Time | ROT | Fri Sep 04, 2026 |  | WAGERS | OPENER | BetOnline | Bovada | BookMaker | BetAnything | Heritage Sports | Everygame | JustBet | MyBookie | Bet105 |\n ---  ---  ---  ---  ---  ---  ---\n\nBetOnline\nBovada\nBookMaker\nBetAnything\nHeritage Sports\nEverygame\nJustBet\nMyBookie\nBet105\n\nUpcoming Games\n\nFriday, September 04, 2026 ...\n    URL: https://odds.bookmakersreview.com/bundesliga/matchups/1-fc-cologne-vs-vfb-stuttgart/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Bundesliga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401884808\nMatchup: FC Cologne (away) @ VfB Stuttgart (home)\nHome: VfB Stuttgart\nAway: FC Cologne\nKickoff UTC: 2026-09-04T18:30Z\nKickoff ET: 2026-09-04 14:30 EDT\nVenue: MHPArena\nRound: unavailable\nHome form: LWLDW\nAway form: WWLLD\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: VfB Stuttgart -200 (open -220); Draw +370 (open +370); FC Cologne +400 (open +425)\nTavily context:\n  - Title: VfB Stuttgart vs FC Köln Predictions, Picks & Odds - 04/09/2026\n    Content: Stadium: MHPArena\n\n## VfB Stuttgart vs FC Köln Preview\n\nVfB Stuttgart sit 14th in the Bundesliga table and will be desperate to build momentum at the MHPArena. Their recent form shows two wins, two draws, and a defeat across the last five outings. A stunning 4-0 DFB-Pokal demolition of Hansa Rostock provided a timely confidence boost, with new signing Dženan Pejčinović bagging a hat-trick on debut. Injuries to Dennis Seimen, Justin Diehl, and Nikolas Nartey will test squad depth significantly. [...] The over 2.5 goals market at 1.34 complements the home win pick nicely. ...\n    URL: https://www.toffeeweb.com/int/vfb-stuttgart-vs-fc-koln-predictions-picks-odds-04-09-2026\n  - Title: VfB Stuttgart vs Köln - live score, predicted lineups and ...\n    Content: TV schedules\n\n# VfB Stuttgart vs 1. FC Köln — Fri 4 September, 18:30 UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n MHPArena\n\nVfB StuttgartVfB Stuttgart\n\n‌\n‌\n\nKöln1. FC Köln\n\n# VfB Stuttgart vs 1. FC Köln — Fri 4 September, 18:30 UTC\n\nBundesliga Round 2\n\n Bundesliga Round 2\n MHPArena\n\nVfB StuttgartVfB Stuttgart\n\n‌\n‌\n\nKöln1. FC Köln\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Luca Jaquez\n\n  Muscle injury / Mid September 2026\n\nJaquezMuscle injuryMid September 2026\n\n  Chris Führich\n\n  Muscle injury / Doubtful\n\nFührichMuscle injuryDoubtful\n\n  Nikolas Nartey ...\n    URL: https://www.fotmob.com/en-GB/matches/koln-vs-vfb-stuttgart/2zdgu2\n  - Title: VfB Stuttgart vs FC Köln Predictions, Picks & Odds - 04/09/ ...\n    Content: FC Köln arrive in Stuttgart occupying 15th place, their recent form an uneven sequence of a win, a defeat, a draw, and another loss-draw combination across the last five away fixtures. Luca Waldschmidt misses out with a muscle complaint, while Linton Maina remains doubtful after a training knock. On a brighter note, Ragnar Ache is fully fit again, and summer recruits Thijs Dallinga and Reigan Heskey offer fresh attacking options as Köln seek early-season momentum.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/vfb-stuttgart-vs-fc-koln-predictions-picks-odds-04-09-2026\n  - Title: Bundesliga Odds | Get today's Bundesliga Spreads & Betting Lines\n    Content: Bars Menu\nBookmakers Review Logo\n\n# Bundesliga Betting Odds, Spreads, & Lines\n\ndropdown arrow\ndropdown arrow\ndropdown arrow\n\n| Time | ROT | Fri Sep 04, 2026 |  | WAGERS | OPENER | BetOnline | Bovada | BookMaker | BetAnything | Heritage Sports | Everygame | JustBet | MyBookie | Bet105 |\n ---  ---  ---  ---  ---  ---  ---\n\nBetOnline\nBovada\nBookMaker\nBetAnything\nHeritage Sports\nEverygame\nJustBet\nMyBookie\nBet105\n\nUpcoming Games\n\nFriday, September 04, 2026 ...\n    URL: https://odds.bookmakersreview.com/bundesliga/matchups/1-fc-cologne-vs-vfb-stuttgart/odds\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401884808",
+                        "date_utc": "2026-09-04T18:30Z",
+                        "kickoff_et": "2026-09-04 14:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "VfB Stuttgart",
+                        "away": "FC Cologne",
+                        "home_id": "134",
+                        "away_id": "122",
+                        "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                        "venue": "MHPArena",
+                        "city": "Stuttgart",
+                        "country": "Germany",
+                        "round": null,
+                        "form_home": "LWLDW",
+                        "form_away": "WWLLD",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-220",
+                            "home_current": "-200",
+                            "draw_open": "+370",
+                            "draw_current": "+370",
+                            "away_open": "+425",
+                            "away_current": "+400"
+                        },
+                        "odds_text": "DraftKings: VfB Stuttgart -200 (open -220); Draw +370 (open +370); FC Cologne +400 (open +425)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-03T05:12:20.090820-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:04:57.469206-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart enters the match as strong favorites, backed by an implied win probability of around 62% based on current betting odds (-200). Despite a few injury concerns, Stuttgart's home advantage at the MHPArena and their recent convincing DFB-Pokal victory provide positive momentum. FC Cologne is dealing with notable absences, including Luca Waldschmidt, which likely limits their offensive threat on the road.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-03T05:05:08.879287-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.197,
+                    "away_win_probability": 0.185,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "VfB Stuttgart enters the match as clear favorites at the MHPArena, as reflected by their -200 odds on the moneyline. Despite a few injury concerns, Stuttgart recently enjoyed a massive 4-0 cup win, whereas FC Cologne is dealing with key injuries of their own and have struggled on the road.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-03T05:05:25.104553-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "VfB Stuttgart are strong favorites, playing at their home stadium, the MHPArena. The betting odds reflect this, with Stuttgart priced around -200, which implies a probability of over 60%. This favoritism is supported by their recent form, which includes a convincing 4-0 DFB-Pokal win where a new signing scored a hat-trick, boosting team morale. While both teams have some injuries, Stuttgart's significant home advantage and apparent attacking confidence position them to secure a victory against an FC Cologne side with an inconsistent away record.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:05:39.463929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.6176,
+                    "draw_probability": 0.1971,
+                    "away_win_probability": 0.1853,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "VfB Stuttgart is the clear favorite according to DraftKings odds (-200), translating to an approximate 61.8% implied win probability after vig removal. The team is looking to build momentum at home following a strong 4-0 DFB-Pokal win, which included a hat-trick from a new signing. While their Bundesliga record is 0-0-1, the home advantage at MHPArena is significant. FC Cologne, sitting 15th, shows uneven recent form and has several players injured or doubtful, despite their 1-0-0 away record for the season. Stuttgart's offensive potential, bolstered by recent success and home advantage, makes a home win the most probable outcome.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:06:40.961035-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor VfB Stuttgart at home, and MHPArena advantage plus recent attacking confidence from their cup win point toward the home side. Cologne have some attacking options and an opening win, but squad doubts and the away setting make an upset less likely. Early-season uncertainty and Stuttgart injury concerns keep confidence at medium rather than high.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:06:47.674446-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart are clear home favorites in the market, with DraftKings pricing them around -200, implying a materially stronger chance than either the draw or FC Cologne away win. Stuttgart have home advantage at MHPArena and enter with some attacking confidence after a strong cup performance, while Cologne remain a dangerous but less likely away upset candidate. Injuries and early-season uncertainty keep confidence from being high, but the most likely 90-minute result is a Stuttgart win.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-03T05:07:09.613109-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing makes Stuttgart a clear home favorite (roughly low-60s% after normalizing 1X2 odds). Cologne arrive with mixed recent form and some attacking availability questions, while Stuttgart’s home edge and recent confidence boost (strong cup performance) support a regulation-time home win despite a few squad injuries that add some uncertainty and keep draw/away chances meaningful.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-03T05:07:16.440232-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.66,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are clear favorites in the markets and have the home advantage; recent form (LWLDW) and a confidence-boosting cup performance—plus a summer attacking signing—tilt this toward a home win. Köln have attacking options but mixed away form (WWLLD) and doubts over key players reduce their upside. Injuries on both sides introduce some uncertainty, so while a Stuttgart win is most likely, a draw remains plausible.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-03T05:07:27.182904-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are favorites at home per odds, with a modest home advantage and Köln showing mixed form on the road. Regulation-time win for Stuttgart is plausible, with a relatively tight expected scoreline.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-03T05:07:29.048209-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart are favored by bookmakers with strong odds and have home advantage, despite some injury concerns. Their recent form includes a dominant cup win and a solid home record. FC Cologne are missing key players and have inconsistent away form, though they have some new attacking options. The probability distribution reflects Stuttgart's edge, but the draw remains a possibility given both teams' early-season uncertainties.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-03T05:07:31.382962-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart have shown strong form at home, including a recent 4-0 victory in the DFB-Pokal. Despite some injuries, their attacking prowess, especially with new signing Dženan Pejčinović, gives them an edge. FC Cologne's away form is inconsistent, and they have key players missing due to injuries.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-03T05:07:40.898223-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds (DraftKings -200 on Stuttgart) imply roughly a 62% normalized chance of a home win. Stuttgart's confidence boost from a 4-0 cup win and home advantage at MHPArena support this, though injuries to Jaquez, Führich, and others add some uncertainty. Köln are winless in recent away league form and missing Waldschmidt, making a home win the most likely outcome while a draw remains a plausible secondary result.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-03T05:07:44.691326-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "VfB Stuttgart",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are strong favorites at home (-200), backed by attacking form and home advantage at the MHPArena. Cologne have some fitness concerns and are typically weaker away. Odds imply roughly 62% home win probability.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-03T05:07:51.946534-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart are favored at home with odds implying roughly 65-67% win probability before margin removal. Adjusting for the overround, the market-implied probability sits around 52% for Stuttgart. Stuttgart got a confidence boost from a 4-0 DFB-Pokal win with new signing Pejčinović scoring a hat-trick, though they sit 14th in the Bundesliga table and have injury concerns (Seimen, Diehl, Nartey, Führich doubtful). FC Cologne are 15th with mixed form and key absences including Waldschmidt and doubts over Maina. Stuttgart's home advantage and Cologne's comparable table position and injury issues support a moderate home win probability. The draw odds at +370 suggest roughly 20-21% draw probability before adjustment. Overall, Stuttgart's home form and the DFB-Pokal momentum edge them as favorites.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-03T05:08:02.260393-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart are favored at home with odds of -200, suggesting approximately 67% implied probability. Recent momentum favors Stuttgart with their 4-0 DFB-Pokal victory where new signing Pejčinović scored a hat-trick on debut, providing a significant confidence boost. Stuttgart's home form (LWLDW) shows two wins in their last five, while Cologne's away form (WWLLD) is inconsistent. Cologne sit 15th in the table compared to Stuttgart's 14th position. Stuttgart have injury concerns (Seimen, Diehl, Nartey) but appear to have attacking firepower. Cologne are missing Waldschmidt to injury with Maina doubtful. The betting market strongly favors Stuttgart with the home win at -200 and over 2.5 goals at 1.34 recommended by analysts. However, Stuttgart's own inconsistency (0-0-1 record) prevents this from being a high-confidence pick. A home win is the most likely outcome but with moderate confidence given both teams' mixed form.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-03T05:08:06.220816-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart are favored at -200 odds (58% implied probability). Home advantage at MHPArena combined with recent confidence boost from 4-0 DFB-Pokal win and new signing Pejčinović's hat-trick performance supports home win. Stuttgart's recent form (LWLDW) shows mixed results but they're stronger at home. FC Cologne (15th place, away form WWLLD) have inconsistent away form and injury concerns with Waldschmidt out. However, Stuttgart's defensive injuries (Seimen, Diehl, Nartey) and mid-table positioning (14th) prevent higher confidence. Draw and away win possibilities remain viable given both teams' vulnerabilities.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-03T05:08:37.803225-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.618,
+                    "draw_probability": 0.197,
+                    "away_win_probability": 0.185,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are favored at home with strong betting odds and recent DFB-Pokal momentum, while FC Cologne have key attacking doubts. Stuttgart's injuries keep confidence from being higher.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-03T05:08:39.171308-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are at home and have strong recent form, including a 4-0 cup win. Cologne have been inconsistent on the road. Odds heavily favor Stuttgart, and they have the quality to secure a home victory.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-03T05:09:04.974555-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart is heavily favored by the sportsbooks (-200) despite early-season league struggles, backed by their strong home advantage at the MHPArena and a recent confidence-boosting 4-0 Pokal victory. FC Cologne sits just below them in the table and is missing key attacking pieces like Luca Waldschmidt. Stuttgart's attacking depth, highlighted by Dženan Pejčinović's debut hat-trick, should be enough to overcome their own injury concerns and secure a home win.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-03T05:09:13.536664-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart has a stronger recent form with two wins, two draws, and a defeat in the last five outings, including a 4-0 DFB-Pokal win. They are also playing at home, which gives them an advantage. However, injuries to key players like Dennis Seimen, Justin Diehl, and Nikolas Nartey could affect their performance. FC Cologne's away form is inconsistent, with a win, a defeat, a draw, and another loss-draw combination in their last five away fixtures. The odds and recent form suggest a higher likelihood of a home win, but the injuries and FC Cologne's potential to cause an upset make the confidence medium.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-03T05:10:05.289718-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart enters as the clear betting favorite (-200) and leverages a historically strong home advantage at MHPArena. Despite a 0-1 league start, Stuttgart's momentum is bolstered by a convincing 4-0 DFB-Pokal victory, providing attacking confidence. FC Cologne's away prospects are hampered by the absence of key striker Luca Waldschmidt, a doubtful Linton Maina, and inconsistent recent form. While both sides show early-season defensive vulnerabilities, Stuttgart's superior squad depth, home crowd support, and Cologne's missing offensive pieces make a regulation home win the most statistically probable outcome.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-03T05:10:48.749966-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "VfB Stuttgart enters with momentum following a 4-0 DFB-Pokal win and sits higher in implied team strength compared to Cologne. While both sides deal with mid-season injuries (Cologne missing Waldschmidt, Stuttgart lacking Nartey/Diehl), Stuttgart's home advantage at MHPArena and favorable betting odds (-200) indicate a clear likelihood of a regulation-time home victory despite early season volatility.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-03T05:11:45.898831-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor VfB Stuttgart at home (-200), and early-season forecasts expect a rebound at the MHPArena despite injuries to Dennis Seimen, Justin Diehl, and Nikolas Nartey. FC Cologne also face absences (Luca Waldschmidt out, Linton Maina doubtful) and inconsistent away form. Stuttgart's 4-0 DFB-Pokal victory and attacking reinforcements tilt the balance toward a home win in regulation time.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-03T05:12:05.640367-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are clear market favorites (-200, ~62% implied before vig removal) at the MHPArena despite sitting 14th, reflecting their underlying quality edge over 15th-placed Cologne. A 4-0 DFB-Pokal win with new signing Pejcinovic's debut hat-trick provides momentum, and Cologne's away form has been uneven (WWLLD, though they did win their away opener). Stuttgart's injury list (Seimen, Diehl, Nartey, Jaquez, Führich doubtful) and their 0-0-1 home record this season temper confidence slightly, while Cologne are also without Waldschmidt and possibly Maina. Market pricing, home advantage, and squad quality point to a Stuttgart win, but early-season volatility and both sides' depleted squads keep meaningful probability on draw and away outcomes.",
+                    "event_id": "401884808"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-03T05:12:20.078455-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ VfB Stuttgart (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Stuttgart are priced as clear favorites at the MHPArena and received a confidence boost from a 4-0 DFB-Pokal win. However, they opened the Bundesliga season with a loss (0-0-1) and carry several injury concerns, while Köln enter 1-0-0 and have shown solid away form. The model still expects Stuttgart to control the match at home, but the value is only moderate given Köln's early momentum and Stuttgart's squad issues.",
+                    "event_id": "401884808"
+                }
+            ]
+        }
+    ]
+}

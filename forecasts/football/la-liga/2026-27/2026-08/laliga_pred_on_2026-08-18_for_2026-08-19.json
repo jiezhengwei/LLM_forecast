@@ -1,0 +1,722 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-18",
+        "target_date_et": "2026-08-19",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-18\n\nTarget Date (ET): 2026-08-19\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882925\nMatchup: Málaga (away) @ Atlético Madrid (home)\nHome: Atlético Madrid\nAway: Málaga\nKickoff UTC: 2026-08-19T19:00Z\nKickoff ET: 2026-08-19 15:00 EDT\nVenue: Riyadh Air Metropolitano\nRound: unavailable\nHome form: LWWLL\nAway form: WDDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Atlético Madrid -330 (open -350); Draw +450 (open +425); Málaga +900 (open +900)\nTavily context:\n  - Title: Atletico Madrid vs Malaga - live score, predicted lineups ...\n    Content: Knock / Doubtful\n\nRomeroKnockDoubtful\n\n  Aarón Ochoa\n\n  Suspended / August 19, 2026\n\nOchoaSuspendedAugust 19, 2026\n\n  Adrián Nino\n\n  Thigh injury / Early September 2026\n\nNinoThigh injuryEarly September 2026\n\n  Fernando Calero\n\n  Broken rib / Late September 2026\n\nCaleroBroken ribLate September 2026\n\n  Carlos Dotor\n\n  Knee injury / Early October 2026\n\nDotorKnee injuryEarly October 2026\n\n  Diego Murillo\n\n  Cruciate ligament injury / Early January 2027\n\nMurilloCruciate ligament injuryEarly January 2027\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Marseille\n\n  1 - 2\n\n  Atletico Madrid\n Man City ...\n    URL: https://www.fotmob.com/matches/malaga-vs-atletico-madrid/38d3a9\n  - Title: Atlético de Madrid vs Málaga Prediction & Betting Tips\n    Content: ## Recommended Bets\n\nOdds recorded on 17 Aug 2026 at 21:55 · Odds are subject to change\n\n## Match Analysis\n\nAtlético de Madrid open their La Liga campaign as commanding favourites at 1.29, backed by an unbeaten run in 32 of their last 40 home games across all competitions and a 75% win rate in their last 12 home league fixtures. ...\n    URL: https://sports.yahoo.com/articles/atl-tico-madrid-vs-m-205500419.html\n  - Title: Atlético de Madrid vs Málaga Predictions, Picks & Odds - 19/08 ...\n    Content: Málaga return to the top flight after an eight-year absence, a remarkable achievement now tempered by early setbacks. Confirmed injuries to Fernando Calero and Carlos Dotor, both sustained in a pre-season friendly against Ceuta, leave coach Juan Funes short of options for a daunting opener. With no prior La Liga form to reference this term, the newly promoted side face a steep challenge as they look to lay down an early marker in their survival bid.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/atletico-de-madrid-vs-malaga-predictions-picks-odds-19-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-18\n\nTarget Date (ET): 2026-08-19\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882925\nMatchup: Málaga (away) @ Atlético Madrid (home)\nHome: Atlético Madrid\nAway: Málaga\nKickoff UTC: 2026-08-19T19:00Z\nKickoff ET: 2026-08-19 15:00 EDT\nVenue: Riyadh Air Metropolitano\nRound: unavailable\nHome form: LWWLL\nAway form: WDDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Atlético Madrid -330 (open -350); Draw +450 (open +425); Málaga +900 (open +900)\nTavily context:\n  - Title: Atletico Madrid vs Malaga - live score, predicted lineups ...\n    Content: Knock / Doubtful\n\nRomeroKnockDoubtful\n\n  Aarón Ochoa\n\n  Suspended / August 19, 2026\n\nOchoaSuspendedAugust 19, 2026\n\n  Adrián Nino\n\n  Thigh injury / Early September 2026\n\nNinoThigh injuryEarly September 2026\n\n  Fernando Calero\n\n  Broken rib / Late September 2026\n\nCaleroBroken ribLate September 2026\n\n  Carlos Dotor\n\n  Knee injury / Early October 2026\n\nDotorKnee injuryEarly October 2026\n\n  Diego Murillo\n\n  Cruciate ligament injury / Early January 2027\n\nMurilloCruciate ligament injuryEarly January 2027\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Marseille\n\n  1 - 2\n\n  Atletico Madrid\n Man City ...\n    URL: https://www.fotmob.com/matches/malaga-vs-atletico-madrid/38d3a9\n  - Title: Atlético de Madrid vs Málaga Prediction & Betting Tips\n    Content: ## Recommended Bets\n\nOdds recorded on 17 Aug 2026 at 21:55 · Odds are subject to change\n\n## Match Analysis\n\nAtlético de Madrid open their La Liga campaign as commanding favourites at 1.29, backed by an unbeaten run in 32 of their last 40 home games across all competitions and a 75% win rate in their last 12 home league fixtures. ...\n    URL: https://sports.yahoo.com/articles/atl-tico-madrid-vs-m-205500419.html\n  - Title: Atlético de Madrid vs Málaga Predictions, Picks & Odds - 19/08 ...\n    Content: Málaga return to the top flight after an eight-year absence, a remarkable achievement now tempered by early setbacks. Confirmed injuries to Fernando Calero and Carlos Dotor, both sustained in a pre-season friendly against Ceuta, leave coach Juan Funes short of options for a daunting opener. With no prior La Liga form to reference this term, the newly promoted side face a steep challenge as they look to lay down an early marker in their survival bid.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/atletico-de-madrid-vs-malaga-predictions-picks-odds-19-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882925",
+                        "date_utc": "2026-08-19T19:00Z",
+                        "kickoff_et": "2026-08-19 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Atlético Madrid",
+                        "away": "Málaga",
+                        "home_id": "1068",
+                        "away_id": "99",
+                        "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                        "venue": "Riyadh Air Metropolitano",
+                        "city": "Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LWWLL",
+                        "form_away": "WDDWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-350",
+                            "home_current": "-330",
+                            "draw_open": "+425",
+                            "draw_current": "+450",
+                            "away_open": "+900",
+                            "away_current": "+900"
+                        },
+                        "odds_text": "DraftKings: Atlético Madrid -330 (open -350); Draw +450 (open +425); Málaga +900 (open +900)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-18T06:14:32.326953-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-18T05:36:20.207670-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong favorites playing at the Riyadh Air Metropolitano, where they historically maintain an exceptional record. Málaga, newly promoted to La Liga after an eight-year absence, face severe squad depth issues for this opener with key players like Fernando Calero, Carlos Dotor, and Aarón Ochoa unavailable due to injuries and suspensions.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-18T05:36:27.313935-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.731,
+                    "draw_probability": 0.174,
+                    "away_win_probability": 0.095,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid boasts an outstanding home record and are heavily favored at -330 to win. Newly promoted Málaga are returning to the top flight after eight years and will be without key players Fernando Calero and Carlos Dotor due to injuries, severely complicating their chances against a formidable La Liga powerhouse.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-18T05:36:40.751097-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid, a perennial contender with a formidable home record (unbeaten in 32 of their last 40 home games), faces a newly-promoted Málaga side returning to the top flight after an eight-year absence. Málaga is already hampered by injuries to key players, which poses a significant challenge for their daunting season opener. The vast difference in squad quality, experience, and Atlético's strong home advantage make a home win the highly probable outcome.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-18T05:36:48.248877-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid opens their La Liga campaign as commanding favorites, boasting an unbeaten record in 32 of their last 40 home games and a 75% win rate in their last 12 home league fixtures. Málaga, newly promoted after an eight-year absence, faces a daunting opener compounded by a significant injury crisis including key players Fernando Calero, Carlos Dotor, Adrián Nino, and Diego Murillo, along with a suspension for Aarón Ochoa. These factors severely diminish Málaga's chances against a top-tier home side.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-18T05:38:03.810663-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong home favorites, with market odds implying a clear edge after normalization. The home advantage at Riyadh Air Metropolitano, superior squad quality, and Málaga's newly promoted status plus reported injuries/suspensions all point toward Atlético being more likely to win in regulation time, though early-season uncertainty keeps some draw/upset risk.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-18T05:38:09.327151-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong home favorites, supported by market odds around -330 and a strong recent home profile. Málaga are newly promoted, face a difficult away opener, and have several availability concerns, including defensive and midfield injuries plus a suspension. A draw or upset is possible early in the season, but the most likely 90-minute result is an Atlético Madrid win.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-18T05:38:37.007929-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.7313,
+                    "draw_probability": 0.1734,
+                    "away_win_probability": 0.0953,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Market odds make Atlético Madrid a strong home favorite (roughly low-70% win after vig removal). Atlético’s home venue advantage and typical defensive strength support a home win in a season opener, while Málaga are newly promoted and appear to have availability issues (noted injuries/suspension), which reduces upset likelihood. Draw remains the main alternative given early-season variance.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-18T05:38:54.254670-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are heavy favorites: bookmakers price them strongly (-330) and they have an excellent home record and continuity. Málaga have just been promoted and, despite decent recent form in friendlies and away results, arrive with squad disruptions from pre-season injuries and suspensions that weaken their depth. The match being listed at Atlético’s Metropolitano (even staged in Riyadh) preserves the home-side advantage. Given the odds, personnel issues for the visitors, and Atlético’s superior quality, a regulation-time home win is the most likely outcome.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-18T05:39:10.338478-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong at home and Málaga are newly promoted with some injury concerns; home control and squad depth give Atlético the edge for a regulation-time win.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-18T05:39:34.442717-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.77,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are overwhelming favorites, supported by strong home form (75% win rate in last 12 home league games and unbeaten in 32 of last 40 at home). Málaga are newly promoted, missing key players due to injuries, and have no recent La Liga experience. The odds and team news both strongly favor Atlético Madrid to win in regulation.",
+                    "event_id": "401882925"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "Connection error.",
+                        "error_kind": "transient_api",
+                        "previous_error": "game_id for game_id 1: must be an exact integer"
+                    }
+                ],
+                "retried_at_et": "2026-08-18T07:16:29.758660-04:00",
+                "previous_retry": {
+                    "via": "manual_prepost",
+                    "recovered_chunk_indices": [],
+                    "original_errors": [
+                        {
+                            "chunk_index": 1,
+                            "error": "game_id for game_id 1: must be an exact integer",
+                            "error_kind": "validation"
+                        }
+                    ],
+                    "retried_at_et": "2026-08-18T07:12:17.627508-04:00"
+                }
+            }
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-18T05:39:56.513013-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong favorites with a 75% win rate in their last 12 home league fixtures and an unbeaten run in 32 of their last 40 home games. Málaga, newly promoted, face significant challenges with key injuries and no recent La Liga form.",
+                    "event_id": "401882925"
+                }
+            ],
+            "column_retry": {
+                "via": "manual_prepost",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "Connection error.",
+                        "error_kind": "transient_api",
+                        "previous_error": "game_id for game_id 1: must be an exact integer"
+                    }
+                ],
+                "retried_at_et": "2026-08-18T07:16:29.758660-04:00",
+                "previous_retry": {
+                    "via": "manual_prepost",
+                    "recovered_chunk_indices": [],
+                    "original_errors": [
+                        {
+                            "chunk_index": 1,
+                            "error": "game_id for game_id 1: must be an exact integer",
+                            "error_kind": "validation"
+                        }
+                    ],
+                    "retried_at_et": "2026-08-18T07:12:17.627508-04:00"
+                }
+            }
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-18T05:40:05.313556-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are heavy favorites (-330) at home against newly promoted Málaga, who return to La Liga after eight years and are hampered by injuries to key players (Calero, Dotor, Nino) plus a suspension. Atlético's strong home record (75% win rate in last 12 home league games) supports a comfortable home win, though season openers carry some upset/draw risk.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-18T05:40:09.494349-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.76,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Atlético Madrid",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid open at home as heavy favourites (-330), with a strong home record and 75% win rate in their last 12 home league fixtures. Newly promoted Málaga return after an eight-year absence and face multiple key injuries (Calero, Dotor) plus a suspension (Ochoa). The gulf in quality and Atlético's home advantage make a home win the clear expectation.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-18T05:40:15.746419-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are heavy favorites at home in their La Liga opener against newly promoted Málaga, who return to the top flight after an eight-year absence. Atlético have an unbeaten run in 32 of their last 40 home games and a 75% home win rate in recent league fixtures. Málaga face key injury absences (Calero and Dotor from pre-season) and lack top-flight experience at this level. The DraftKings implied probability from -330 odds translates to roughly 77% for Atlético, which aligns with their structural advantages. A slight discount is applied given Málaga's good pre-season form (WDDWW) and Atlético's mixed recent form (LWWLL), but the quality gap strongly favors the home side.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-18T05:40:22.979034-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are overwhelming favorites opening their La Liga campaign at home. They have been unbeaten in 32 of their last 40 home games across all competitions with a 75% win rate in their last 12 home league fixtures. Málaga are returning to the top flight after an 8-year absence and face significant challenges with confirmed injuries to key players Fernando Calero and Carlos Dotor. The DraftKings odds heavily favor Atlético at -330, reflecting the substantial gap in quality and experience. Málaga's away form shows WDDWW but this was likely in Segunda División. The venue at Riyadh Air Metropolitano should provide a strong home advantage for Atlético, who are expected to dominate this season opener against the newly promoted side.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-18T05:40:25.726799-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are heavy favorites with superior recent form (LWWLL home form includes wins), strong home record (75% win rate in last 12 home league fixtures, unbeaten in 32 of last 40 home games across all competitions). Málaga are newly promoted after 8-year absence with significant injury concerns (Calero, Dotor confirmed out), limited top-flight experience, and face a daunting opener. The -330 moneyline odds heavily favor the home side. Context strongly supports Atlético Madrid dominance despite some defensive injuries affecting their depth.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-18T05:40:39.031120-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.731,
+                    "draw_probability": 0.173,
+                    "away_win_probability": 0.096,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong home favorites and open the season at the Metropolitano, while newly promoted Málaga have key injury absences. The odds imply a clear home-win probability.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-18T05:40:40.958970-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong favorites at home, with a dominant home record and superior squad depth. Málaga are newly promoted and have key injuries, making an upset unlikely.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-18T05:40:53.576967-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid is heavily favored at home against newly promoted Málaga, who are dealing with key injuries and returning to the top flight after an eight-year absence. Atlético's strong home record and superior squad depth make them the clear favorite for the opener.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-18T05:40:59.617788-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid has a strong home record, with an unbeaten run in 32 of their last 40 home games and a 75% win rate in their last 12 home league fixtures. Málaga, newly promoted, is facing significant challenges due to injuries and a lack of recent top-flight experience, which makes it difficult for them to compete against a well-established team like Atlético Madrid.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-18T05:41:45.411461-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid enters as heavy market favorites (-330) backed by a formidable home record, remaining unbeaten in 32 of their last 40 matches at the Metropolitano. Málaga, newly promoted after an eight-year absence, faces a steep debut challenge hampered by significant defensive absences due to injuries and suspensions (Calero, Dotor, Murillo, and others). The disparity in squad depth, home advantage, and Málaga's depleted starting options heavily favor a regulated home victory within 90 minutes, aligning with both odds and contextual team news.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-18T05:43:05.508218-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong home favorites (-330 odds) with a 75% win rate in their last 12 home league fixtures. Málaga, newly promoted after an eight-year absence, faces a severe deficit with confirmed injuries to defenders Fernando Calero and Carlos Dotor, plus a suspension for Aarón Ochoa. Despite Málaga's recent friendly form, the lack of top-flight cohesion and Atlético's superior squad strength at the Metropolitano strongly favor a home victory.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-18T05:43:58.013501-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid enter the season opener as heavy home favorites with a formidable record of being unbeaten in 32 of their last 40 home matches and winning 75% of their last 12 home league fixtures. Newly promoted Málaga return to La Liga after an eight-year absence and face significant adversity due to pre-season injuries to key contributors Fernando Calero and Carlos Dotor. The substantial quality, experience, and depth advantage for Atlético, combined with Málaga’s transitional state, strongly favor a home victory.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-18T05:44:29.413976-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid enter the 2026-27 La Liga season as commanding home favorites against newly promoted Málaga, returning to the top flight after an eight-year absence. Atletico's formidable home record—unbeaten in 32 of their last 40 home fixtures across all competitions and a 75% win rate in their last 12 home league games—provides a strong foundation for the opener. Conversely, Málaga face significant early setbacks with key injuries to Fernando Calero (broken rib) and Carlos Dotor (knee injury) sustained in pre-season, severely limiting coach Juan Funes' options for a daunting trip to the Riyadh Air Metropolitano. The betting odds (-330 home, +450 draw, +900 away) reflect the substantial quality gap, implying roughly 75-77% win probability for Atletico after vig adjustment, consistent with historical data for established top-four sides hosting newly promoted teams in season openers.",
+                    "event_id": "401882925"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-18T05:44:32.319247-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Málaga (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Atlético Madrid are strong favorites with a 75% win rate in their last 12 home league fixtures and an unbeaten run in 32 of their last 40 home games across all competitions. Málaga, on the other hand, are newly promoted and have confirmed injuries to key players, making it difficult for them to compete in this opening match.",
+                    "event_id": "401882925"
+                }
+            ]
+        }
+    ]
+}

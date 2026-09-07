@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-12\n    Target Date: 2026-03-13\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. St. Pauli @ Borussia M\u00f6nchengladbach                 | Scheduled    | Away: 24.0% (6-6-13) vs Home: 24.0% (6-7-12)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: St. Pauli (Away) @ Borussia M\u00f6nchengladbach (Home)\n**News & Injury Report:**\n- [Borussia Monchengladbach vs St. Pauli Prediction, Betting Tips ...](https://www.sportsgambler.com/betting-tips/football/borussia-monchengladbach-vs-st-pauli-prediction-lineups-odds-2026-03-13/)\n  Snippet: Leverkusen 3-0 St. Pauli\n\nConfirmed Lineups\n\n### Injuries & Suspensions\n\nBorussia Monchengladbach  Injury Table\n\nType Name Info\n\nRocco Reitz Red card (direc \n\nPosition: Midfielder Matches: 24 Goals: - Assists: 2 Expected return: 2026-03-21\n\nJens Cast...\n- [FC St. Pauli, 13/03/2026 - Bundesliga - Match sheet](https://www.transfermarkt.com/vorbericht/index/spielbericht/4634411)\n  Snippet: ## Missing players\n\n## Top fixture-goal scorers\n\n| Player | Club | Goals |\n --- \n| |  |  |  --- | | Hans-J\u00f6rg Criens | Hans-J\u00f6rg Criens | | Centre-Forward | | Borussia M\u00f6nchengladbach | 5 |\n| |  |  |  --- | | Arie van Lent | Arie van Lent | | Centre-...\n**Betting Odds:**\n- [Borussia Monchengladbach vs St. Pauli Odds - Friday March 13 2026](https://www.oddsshark.com/soccer/bundesliga/borussia-monchengladbach-st-pauli-odds-march-14-2026-2417509)\n  Snippet: STP\n\n1.5 +315\n\nBMG\n\n1.7 -109\n\nSpread Pick\n\n+0.5\n\n-0.5\n\nTotal Pick\n\nO 2.25\n\nU 2.25\n\nBest ATS\n\n- - - -\n\n- - - -\n\nBest O/U\n\n- - - -\n\n- - - -\n\nSponsored Picks\n\nWIN% Spread Bet Total Bet\n\nPROP PROFESSOR +EV\n\nWIN% Spread Bet Total Bet\n\nPROP PROFESSOR +EV\n\n...\n- [M\u00f6nchengladbach vs St. Pauli Prediction & Betting Tips - Bundesliga](https://www.sportytrader.com/en/betting-tips/monchengladbach-st-pauli-333888/)\n  Snippet: | Bookmaker | 1 | X | 2 | Bonus up to |\n ---  --- \n| Stake | 2 | 3.45 | 4 |  |\n| Melbet | 1.92 | 3.42 | 4.16 |  |\n| Betwinner | 1.92 | 3.42 | 4.16 |  |\n| Bet365 | 1.95 | 3.3 | 4 |  |\n| Roobet | 1.93 | 3.4 | 4 |  |\n\n Check all M\u00f6nchengladbach vs St. P...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-12 16:33:51"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-12 16:32:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds make M\u00f6nchengladbach clear but not dominant favorites (roughly ~49% home / ~28% draw / ~23% away after vig removal). Both teams have similarly poor season win rates (~24%), which increases draw likelihood. Home advantage still matters, but Gladbach\u2019s midfield is weakened by Rocco Reitz\u2019s suspension (red card), so the home-win probability is trimmed slightly and some mass moved to the draw. St. Pauli\u2019s recent heavy loss (0-3 vs Leverkusen) also supports Gladbach avoiding defeat more often than not."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:32:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds consistently favour Gladbach (\u22481.92\u20131.95) implying roughly a ~48\u201349% chance after normalisation. Both teams have similar poor season records (24% win rate each), so the home advantage is the main differentiator. Gladbach are favourites at home despite a suspension to midfielder Rocco Reitz (red card) which weakens their midfield for this match. St. Pauli arrive with recent heavy defeat(s) (e.g., 3-0 at Leverkusen) indicating defensive vulnerability but remain an underdog per bookmakers. Combining market-implied probabilities, home advantage, form and the lone notable suspension yields a moderate edge for a Gladbach win, with a non-negligible draw probability."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:32:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.522,
+                    "draw_probability": 0.238,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting odds show Borussia M\u00f6nchengladbach as a slight home favorite (approx -109), with St. Pauli as a notable underdog (+315). Both teams have similar season win rates (~24%), but home-field advantage and market pricing favor Gladbach. Key injury: Rocco Reitz for Gladbach is unavailable with an expected return after 2026-03-21, which could temper the home edge. Given the odds and form, a home win is the most probable outcome, with a plausible draw given the close pricing."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical win rates (24%) this season, indicating similar levels, but M\u00f6nchengladbach enjoy home advantage. The injury to key midfielder Rocco Reitz for Gladbach is a slight negative. Recent form suggests St. Pauli are struggling (lost 3-0 to Leverkusen); Gladbach have a more solid home record. Market odds rate Gladbach around 1.9 (implied probability \u2248 52%), with draw and away win priced higher, but actual edge may be less due to even team metrics and injury impact. Hence, a modest preference for Gladbach, with draw probability increased due to both teams' inconsistency."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:04",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have similar win rates (24%) and Monchengladbach has the home advantage. Despite a recent 3-0 loss for St. Pauli to Leverkusen, Gladbach is missing midfielder Rocco Reitz due to suspension. Betting odds slightly favor Monchengladbach to win with odds between 1.7 to 1.95 for a home win, indicating a moderate probability of home victory."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Borussia M\u00f6nchengladbach has home advantage, but both teams have similar season records. The odds favor a home win (around 1.93-1.95). The injury of Rocco Reitz, a midfielder for Gladbach, could impact their midfield strength but it is expected return is close, implying it may not be a big factor. Recent Leverkusen victory over St. Pauli 3-0 hints at St. Pauli's vulnerability. The spread pick indicates Gladbach -0.5, further supporting the home win bias."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:22",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical poor season records (24% win rate), suggesting evenly matched but struggling sides. Betting odds from Sportytrader show average home win odds of 1.94 (implied probability ~51.5%), draw odds 3.40 (~29.4%), away win odds 4.08 (~24.5%). Borussia M\u00f6nchengladbach has home advantage and St. Pauli is coming off a 3-0 loss to Leverkusen. Key injury: Gladbach's Rocco Reitz (24 matches this season) is suspended due to red card, weakening their midfield. Both teams have poor attacking records (Gladbach's top scorer has only 5 goals). The implied probabilities from betting markets are adjusted slightly downward for home win due to Reitz's absence, but home advantage and St. Pauli's poor away form (6-6-13 record) still favor Gladbach."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical poor records (6-6-13 for St. Pauli away, 6-7-12 for Gladbach home), but home advantage is significant. Betting odds strongly favor Gladbach with odds around 1.92-2.00 for home win vs 4.00-4.16 for away win, implying approximately 50% home win probability. Key factor: Rocco Reitz suspended for Gladbach (midfielder with 24 matches, 2 assists) which weakens their midfield, but St. Pauli recently lost 3-0 to Leverkusen showing poor form. The odds suggest bookmakers see Gladbach as clear favorites despite both teams' struggles. Home advantage combined with St. Pauli's poor away record (24% win rate) and recent heavy defeat tips the balance toward Gladbach. The relatively high draw odds (3.3-3.45) reflect the evenly-matched nature of two struggling sides, but home field provides the edge."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:33:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "St. Pauli (away) @ Borussia M\u00f6nchengladbach (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Borussia M\u00f6nchengladbach has a slightly better win rate at home (24.0%) compared to St. Pauli's away record (24.0%). The betting odds also favor Borussia M\u00f6nchengladbach, with a home win probability of around 50% based on the odds provided. However, both teams have similar overall performance, and key player Rocco Reitz is suspended for Borussia M\u00f6nchengladbach, which may impact their midfield strength."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

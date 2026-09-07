@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-12\n    Target Date: 2026-04-13\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Getafe @ Levante                                     | Scheduled    | Away: 40.0% (12-5-13) vs Home: 20.0% (6-8-16)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Getafe (Away) @ Levante (Home)\n**News & Injury Report:**\n- [Levante vs Getafe Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/levante-vs-getafe-prediction-lineups-odds-2026-04-13/)\n  Snippet: Getafe  Injury Table\n\nType Name Info\n\nMauro Arambarri Yellow cards \n\nPosition: Midfielder Matches: 30 Goals: 6 Assists: 2 Expected return: 2026-04-22\n\nAbdelkabir Abqar Red card (direc \n\nPosition: Defender Matches: 16 Goals: - Assists: 2 Expected retu...\n- [Levante vs Getafe Prediction and Betting Tips | April 13th 2026](https://www.sportskeeda.com/football/levante-vs-getafe-prediction-betting-tips-april-13th-2026)\n  Snippet: ## Levante vs Getafe Prediction\n\nWhile the hosts have no major absentees ahead of Monday\u2019s fixture, Getafe will be without midfield stalwart Mauro Arambarri, with the Uruguayan, who has started every league game for the visitors this season, set to m...\n**Betting Odds:**\n- [Levante vs Getafe prediction \u2013 Odds & stats \u2013 13 April 2026](https://www.wincomparator.com/predictions/levante-getafe-7687593/)\n  Snippet: Under 2.5 goals\n\nUnibet\n\n1.8\n\nOver 2.5 goals\n\nUnibet\n\n2.05\n\nCheck all odds\n\nBoth Teams To Score: Levante v Getafe BTTS Odds\n\nYes\n\nUnibet\n\n2.2\n\nNo\n\nUnibet\n\n1.62\n\nCheck all odds\n\nLevante vs Getafe 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake S...\n- [Levante vs Getafe Prediction - LaLiga - 13/04/2026](https://www.sportytrader.com/en/betting-tips/levante-getafe-341866/)\n  Snippet: ## Levante v Getafe Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  --- \n| Stake | 2.7 | 3 | 2.95 |  |\n| Melbet | 2.69 | 2.94 | 2.94 |  |\n| Betwinner | 2.69 | 2.94 | 2.94 |  |\n| Bet365 | 2.7 | 3 | 2.9 |  |\n| Roobet | 2.68 | 2.92 | 2....\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-12 17:28:02"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-12 17:26:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Market 1X2 pricing is very balanced (home ~2.7, draw ~3.0, away ~2.9), implying a near coin-flip match with elevated draw chance. Levante have home advantage and no major absences reported, while Getafe are stronger on season record but miss key midfielder Mauro Arambarri (regular starter) which reduces their edge. Goal markets lean to a tight, low-scoring game (Under 2.5 favored; BTTS 'No' favored), which typically increases draw probability and compresses win edges\u2014nudging the call slightly toward Levante at home."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:26:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Model blends market odds and team form. Bookmakers show a close market (average 1X2 ~ Home 2.7 / Draw 3.0 / Away ~2.95 \u2192 implied ~35/32/33 before normalization), and Under 2.5 & 'BTTS No' market lean toward a low-scoring game which increases draw probability. Season records favor Getafe overall and away (Getafe 40% win rate away vs Levante 20% home), but Getafe will be without midfield stalwart Mauro Arambarri (regular starter, key contributor), reducing their attacking control. Levante report no major absences and benefit from home advantage. Calibrating those signals yields a modest Levante edge (38%), elevated draw probability (33%), and Getafe win chance of 29%."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.395,
+                    "draw_probability": 0.3097,
+                    "away_win_probability": 0.2953,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds imply a home-side edge for Levante. Baseline from 1X2 odds (home ~2.7, draw ~3.0, away ~2.95) normalizes to roughly 35.5% home, 32.0% draw, 32.5% away. Getafe\u2019s midfield key man Mauro Arambarri is suspended/absent, weakening away performance, while Levante have no major injuries and benefit from home advantage. After factoring these, the calibrated view shifts toward a Levante win with a higher home probability (39.5%), a plausible draw around 31.0%, and away risk around 29.5%."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Levante have a poor home win rate (20%), but Getafe are missing key midfielder Arambarri due to suspension, which weakens their midfield control. Getafe are a stronger team overall (40% away win rate), but the injury tilts things closer to even. Market 1X2 odds (home: ~2.7, draw: ~3.0, away: ~2.94) signal a very balanced matchup with a slightly higher probability assigned to home and away wins than a draw, but the margins are minimal. Given both teams\u2019 limitations and under 2.5 goals favored by odds, a low-scoring, potentially cagey match is likely. Hence, draw is marginally the likeliest outcome, but confidence is only medium due to these near-equal signals."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite having a better season record, Getafe will miss key midfielder Mauro Arambarri due to suspension, which could impede their playmaking ability. Levante, playing at home with no major absentees, has a slight edge. The betting odds align with a close match, with a possible draw reflecting in their similar quality of play."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Levante's home record is poor, but Getafe will be missing a key midfielder (Mauro Arambarri) due to yellow card accumulation. The betting odds are close to even for all three outcomes, suggesting a tight match. The home advantage is slightly offset by Getafe's away form and Arambarri's absence."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Getafe has a significantly stronger season record (40.0% win rate vs Levante's 20.0%). Levante's home advantage is mitigated by their poor form. Getafe's key absence is midfielder Mauro Arambarri (yellow card suspension), but they have no other major injuries reported. Levante has no major absentees. The betting odds from SportyTrader (approx. 2.7 for Levante, 3.0 for Draw, 2.9 for Getafe) imply probabilities around 37% Home, 33% Draw, 34% Away. Calibrating these with the stark season performance gap, I adjust to give Getafe a slight edge despite being away, as Levante's home form is weak. The high draw probability reflects both teams' potential struggle for a decisive result."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:27:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Getafe enters as the superior team with a 40% win rate (12-5-13) compared to Levante's poor 20% (6-8-16). The betting odds heavily favor this assessment with Getafe at 2.90-2.95 vs Levante at 2.68-2.70, suggesting a closely-matched contest with slight away advantage. The Draw is priced at 2.92-3.00, indicating ~33% implied probability. Key concern: Getafe will miss Mauro Arambarri, their midfield stalwart who has started every league game this season (30 matches, 6 goals, 2 assists), suspended until April 22nd due to yellow card accumulation. Additionally, defender Abdelkabir Abqar is out on red card suspension. Despite these absences, Getafe's superior season form and win rate suggest they maintain an edge. Levante has struggled at home but reports no major injuries. The odds suggest a tight three-way contest, with under 2.5 goals favored (1.80 vs 2.05 for over), and 'No' BTTS at 1.62 vs 'Yes' at 2.20, indicating a likely low-scoring affair. Given Arambarri's absence weakens Getafe's control, but their overall quality edge persists, I project a narrow away win probability with draw as second-most likely outcome."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:28:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Getafe (away) @ Levante (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Levante has a poor home record with only a 20% win rate, while Getafe has a better away record at 40%. Getafe's key midfielder Mauro Arambarri is out due to suspension, which could impact their performance, but the overall form and recent results still favor Getafe. Betting odds also slightly favor Getafe, indicating a higher probability of an away win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

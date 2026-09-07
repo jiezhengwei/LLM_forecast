@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-09\n    Target Date: 2026-04-10\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Wolverhampton Wanderers @ West Ham United            | Scheduled    | Away: 9.7% (3-8-20) vs Home: 22.6% (7-8-16)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Wolverhampton Wanderers (Away) @ West Ham United (Home)\n**News & Injury Report:**\n- [West Ham vs Wolves Prediction, Betting Tips, Lineups & Odds | 10 Apr 2026](https://www.sportsgambler.com/betting-tips/football/west-ham-vs-wolves-prediction-lineups-odds-2026-04-10/)\n  Snippet: ## West Ham vs Wolves Lineups & Team News\n\nStay informed and review the West Ham vs Wolves team news before placing your bets. We\u2019ll keep you posted with predicted and confirmed lineups for the Premier League and all current injury news.\n\n West Ham U...\n- [West Ham United vs Wolverhampton Wanderers (Apr 10, 2026) - Premier League Live Score, Result, Stats](https://www.givemesport.com/game/premier-league/west-ham-united-vs-wolverhampton-wanderers-20260410/)\n  Snippet: WOL  1\n\n|\n\nWHU  2\n\n2024/04/06\n\nWHU  3\n\n|\n\nWOL  0\n\n2023/12/17\n\n### Top Scorers\n\n###### West Ham United\n\n| Name | Goals | Assists |\n --- \n| Jarrod Bowen | 8 | 6 |\n| Callum Wilson | 5 | 1 |\n| Crysencio Summerville | 5 | 1 |\n\n###### Wolverhampton Wandere...\n**Betting Odds:**\n- [West Ham United - Wolverhampton Wanderers FC betting tip & best odds | 10.04.2026](https://www.futbol24.com/betting-tips/preview/10-04-2026-west-ham-united-wolverhampton-wanderers-fc-betting-tip/)\n  Snippet: 9.3\n\nVery popular in africa, lots of mobile-friendy features\n\nGo to 1win\n\nMore betting companies\n\n## Best Betting Odds for West Ham United vs Wolverhampton Wanderers\n\nExamining the best betting sites, the odds heavily favor West Ham United at 1.85 to...\n- [West Ham vs Wolves Prediction 10/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-11-04-2026-west-ham-united-wolverhampton-wanderers-prediction)\n  Snippet: It's worth noting that Rob Edwards' squad had an almost four-week break from matches. Their last outing was on March 16, when they secured a draw at the Brentford Community Stadium (2-2). Wolverhampton showed resilience by coming back from two goals ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-09\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-09 20:13:00"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-09 20:11:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Betting market prices West Ham as clear favorite (home ~1.85), which typically implies a material home-win edge. Wolves have been very poor away this season (3-8-20; ~9.7% away win rate), while West Ham, despite a weak home record (7-8-16), still benefits from home advantage and faces an opponent that struggles to convert road performances into wins. Given both teams\u2019 high draw rates, the draw probability remains elevated, but market signal and Wolves\u2019 away weakness tilt the most likely result to a West Ham win."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:11:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds strongly favor West Ham (quoted ~1.85 -> implied ~54%); West Ham have the better home win rate this season (22.6% vs Wolves' away win rate 9.7%). Recent head-to-heads favour West Ham and Wolves have been low-scoring and inconsistent on the road. Wolves also reportedly had a long break, which can affect sharpness. Given the market signal, home/away form discrepancy and squad scoring profiles (Bowen/Callum Wilson providing West Ham threat), a West Ham win is the most likely outcome, with a substantial chance of a draw and a smaller chance of an away surprise."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "West Ham have stronger home form and are favored by the betting market (odds around 1.85). Wolves\u2019 away record is weak and recent form/injury news suggests the home side enjoy a tangible advantage."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "West Ham are clear favorites according to the market (odds ~1.85, implied probability above 50%). West Ham's home win rate (22.6%) is weak, but still better than Wolves' very poor away win rate (9.7%). Recent head-to-heads favor West Ham (two straight wins), and Wolves have struggled away from home all season, with just 3 wins out of 31. No mention of major new injuries for either side. The draw is a notable risk as both teams have drawn 8 times, but West Ham's slight uptick in form and market odds justify predicting a home win."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:16",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "West Ham United have a better home win rate compared to Wolverhampton's away win rate. Historical head-to-head scores favor West Ham, and given the betting odds heavily favoring West Ham, I expect them to secure the win. Wolverhampton, having had a recent break, may lack match sharpness. However, the possibility of a draw remains significant due to Wolverhampton's ability to recover in games."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:18",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "West Ham are favored at home (odds around 1.85), with a significantly better home record (22.6% win rate) compared to Wolves' away record (9.7% win rate).  While Wolves had a long break, West Ham's offensive output led by Bowen gives them an edge. I adjust probability slightly to account for the possibility of a draw."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "West Ham has significantly better season form (22.6% win rate vs Wolves' 9.7% away win rate), home advantage, and betting odds heavily favor West Ham at 1.85. Wolves' four-week break could disrupt match rhythm, while West Ham has more potent attacking options with Bowen (8 goals, 6 assists) leading their scoring. Recent head-to-head shows West Ham dominance with 3-0 and 2-1 wins in previous meetings."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:12:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "West Ham United holds a significant advantage in this matchup. Their season record of 22.6% win rate (7-8-16) is substantially better than Wolves' dismal 9.7% (3-8-20). The betting odds heavily favor West Ham at 1.85, which translates to approximately 54% implied probability for a home win. West Ham's home advantage at London Stadium is crucial, and they have quality attacking options with Jarrod Bowen (8 goals, 6 assists), Callum Wilson, and Crysencio Summerville each contributing 5 goals. Historical recent form shows West Ham dominated Wolves 3-0 in December 2023. Wolves had a nearly four-week break since their last match (March 16, 2-2 vs Brentford), which could lead to match fitness concerns despite their resilience in that comeback. With Wolves having won only 3 matches all season and sitting in relegation territory, West Ham should capitalize at home. However, Premier League unpredictability and Wolves' need for survival points prevents this from being a high-confidence prediction. Draw probability is notable given both teams' inconsistent form (West Ham with 8 draws themselves), but the home side's superior quality and desperate need for points to climb the table should see them through."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-09 20:13:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ West Ham United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "West Ham United has a significantly better win rate at home (22.6%) compared to Wolverhampton's away record (9.7%). Additionally, the betting odds heavily favor West Ham United, and their top scorers like Jarrod Bowen are in good form. Wolverhampton, despite showing resilience, has not been in a match for almost four weeks, which could affect their performance."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

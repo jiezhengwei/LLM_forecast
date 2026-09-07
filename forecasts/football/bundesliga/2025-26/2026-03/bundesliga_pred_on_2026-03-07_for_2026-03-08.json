@@ -1,0 +1,223 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "forecast_type": "one-day-ahead",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-07\n    Target Date: 2026-03-08 (one-day-ahead forecast)\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Eintracht Frankfurt @ St. Pauli                      | Scheduled    | Away: 37.5% (9-7-8) vs Home: 25.0% (6-5-13)\n2. Werder Bremen @ 1. FC Union Berlin                   | Scheduled    | Away: 20.8% (5-7-12) vs Home: 29.2% (7-7-10)\n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Eintracht Frankfurt (Away) @ St. Pauli (Home)\n- [St. Pauli vs Eintracht Frankfurt Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/st-pauli-vs-eintracht-frankfurt-prediction-lineups-odds-2026-03-08/)\n  Snippet: Confirmed Lineups\n\n### Injuries & Suspensions\n\nSt. Pauli  Injury Table\n\nType Name Info\n\nTomoya Ando Other \n\nPosition: Defender Matches: 6 Goals: - Assists: - Expected return: 2026-03-08\n\nMathias Rasmu...\n- [St. Pauli vs Eintracht Frankfurt prediction 08.03.2026 | Bundesliga](https://www.mightytips.com/football-predictions/st-pauli-vs-eintracht-frankfurt-prediction-08-03-2026/)\n  Snippet: | 11 | Hamburger SV | 24 | 6 | 8 | 10 | 26 - 35 | -9 | 26 |\n| 12 | Borussia M\u00f6nchengladbach | 25 | 6 | 7 | 12 | 28 - 43 | -15 | 25 |\n| 13 | FC K\u00f6ln | 24 | 6 | 6 | 12 | 33 - 41 | -8 | 24 |\n| 14 | FSV M...\n- [St Pauli vs Eintracht Frankfurt prediction, odds & betting tips 08/03 ...](https://footballwhispers.com/blog/st-pauli-vs-eintracht-frankfurt-prediction-08-03-2026/)\n  Snippet: In terms of injuries, the visitors are missing two key forwards in the form of Michy Batshuayi and Younes Ebnoutalib.\n\nKaua Santos and Arthur Theate are both out with ankle injuries, while Ansgar Knau...\n\n----------------------------------------\n#### Matchup: Werder Bremen (Away) @ 1. FC Union Berlin (Home)\n- [Union Berlin vs Werder Bremen Prediction, Betting Tips, Lineups ...](https://www.sportsgambler.com/betting-tips/football/union-berlin-vs-werder-bremen-prediction-lineups-odds-2026-03-08/)\n  Snippet: Confirmed Lineups\n\n### Injuries & Suspensions\n\nUnion Berlin  Injury Table\n\nType Name Info\n\nAndrej Ilic Yellow cards \n\nPosition: Forward Matches: 22 Goals: 1 Assists: 7 Expected return: 2026-03-08\n\nDio...\n- [Union Berlin vs Werder Bremen - prediction, team news, lineups](https://www.sportsmole.co.uk/football/union-berlin/preview/union-berlin-vs-werder-bremen-prediction-team-news-lineups_593356.html)\n  Snippet: Further forward, striker Victor Boniface continues his rehabilitation from an anterior cruciate ligament injury that is set to keep him out until May, while left winger Samuel Mbangula is unavailable ...\n- [Werder Bremen vs Union Berlin Lineups - Bundesliga 2026](https://www.besoccer.com/match/werder-bremen/1-fc-union-berlin/202617173/lineups)\n  Snippet: 79'\n\n  Substitution in\n D. K\u00f6hn\n\n  39\n\n  D. K\u00f6hn\n\n  5.6\n\n  61'\n\n  Substitution in\n Oliver Burke\n\n  7\n\n  Oliver Burke\n\n  5.7\n Ilyas Ansah\n\n  10\n\n  Ilyas Ansah\n\n  5.7\n Andrej Ilic\n\n  23\n\n  Andrej Ilic\n\n...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-07 20:42:24"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-07 20:40:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Frankfurt have the stronger season profile (higher win rate and overall record) and more top-end quality, but their away edge is reduced by reported absences in attack (e.g., Batshuayi, Ebnoutalib) plus other injuries. St. Pauli\u2019s home advantage keeps draw/upset chances meaningful, yet their season home record remains weak."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Union\u2019s home record is slightly better than Bremen\u2019s away record, giving Union a narrow edge. However, Union\u2019s attacking ceiling is lowered by key forward absences (e.g., Boniface out), which increases the likelihood of a tight, low-margin game where a draw is very live."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:40:47",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Eintracht's away record this season (9-7-8, ~37.5% wins) is materially better than St. Pauli's home win rate (~25%), giving Frankfurt the edge. However Eintracht are missing two key forwards (Michy Batshuayi and Younes Ebnoutalib), which reduces their attacking punch and increases draw probability. St. Pauli have some injury uncertainty in defence but their overall poor home form limits their outright win chances. Taking squad strength, form and home advantage into account results in a clear but not overwhelming tilt toward an Eintracht away win."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Werder Bremen have struggled away (5-7-12, ~20.8% wins), while Union's home win rate (7-7-10, ~29.2%) is noticeably better. Union do have key absences in attack (long-term absence of Victor Boniface and other forward availability issues), which elevates the draw probability and keeps Werder's chance of an upset viable. Overall, modest home advantage plus Werder's poor away form favors Union but the match is competitive, so probabilities are relatively close."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:41:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Frankfurt are missing two key forwards (Batshuayi and Ebnoutalib) which weakens their attack. St. Pauli have some defensive injuries but enjoy home advantage. Historically Frankfurt have a higher away win rate (9-7-8) than St. Pauli's home win rate (6-5-13), so the away side edges the likelihood, though a draw remains plausible given the injuries on both sides."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Union Berlin's attacking options are hampered by injuries (Boniface out until May; Mbangula unavailable), reducing their home firepower. Bremen's away form is modest but the reduced Union attack tilts the fixture slightly toward Bremen, though a draw remains a viable outcome given the leagues' parity."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "model_name": "GPT-4 Turbo",
+            "error": "GPT-4 Turbo failed: Error code: 400 - {'error': {'message': 'max_tokens is too large: 8192. This model supports at most 4096 completion tokens, whereas you provided 8192.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:41:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "St. Pauli, despite having a lower win rate, benefits from home advantage. Additionally, Eintracht Frankfurt is missing key forwards Batshuayi and Ebnoutalib which weakens their attacking power."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Union Berlin has a better overall record and home win percentage. Werder Bremen struggles away with a lower win rate, and Union Berlin has the advantage of playing at home despite some injuries."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:41:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "St. Pauli has a poor home record (6-5-13), but Frankfurt is missing key forwards (Batshuayi and Ebnoutalib). Ando is out for Pauli. Given St. Pauli's home advantage and Frankfurt's attacking absences, a slight edge to St. Pauli or a draw is likely."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Union Berlin has a slightly better home record (7-7-10) than Werder's away record (5-7-12). Boniface is out for Union Berlin, but Ilic is expected to return. Given similar records and Union's slight home advantage with the boost from Ilic returning, leaning towards Union Berlin win or a draw."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:41:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Eintracht Frankfurt has significantly better season form (37.5% win rate vs St. Pauli's 25.0%). St. Pauli has only 6 wins in 24 matches and faces injury concerns with defender Tomoya Ando. Frankfurt is missing forwards Batshuayi and Ebnoutalib, but their overall squad depth and superior away record (9-7-8) gives them the edge. Home advantage for St. Pauli is limited given their poor home performance."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Union Berlin has a better home record (29.2% win rate) compared to Werder Bremen's poor away form (20.8% win rate). Union Berlin's striker Victor Boniface is out long-term, but they have Andrej Ilic returning from suspension. Werder Bremen's away struggles (5-7-12) make them vulnerable. The match is likely to be tight, but Union Berlin's home advantage and slightly better defensive organization should give them the edge, though a draw is quite possible."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:42:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Eintracht Frankfurt has a superior win rate (37.5%) compared to St. Pauli (25.0%) and better overall season record (9-7-8 vs 6-5-13). St. Pauli is struggling near the bottom of the table with relegation concerns. While Frankfurt is missing key forwards Batshuayi and Ebnoutalib, plus defenders Santos and Theate with ankle injuries, their squad depth should be sufficient against a weaker opponent. St. Pauli has defender Tomoya Ando questionable. Home advantage provides some support for St. Pauli, making this competitive, but Frankfurt's quality edge tilts this toward an away win. The injury situation for Frankfurt prevents high confidence, and a draw remains a realistic outcome given St. Pauli's home desperation."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Both teams have poor records - Union Berlin at 29.2% win rate (7-7-10) and Werder Bremen at just 20.8% (5-7-12). Union Berlin holds a slight edge with home advantage and marginally better form. Union Berlin has Andrej Ilic suspended (yellow card accumulation) and appears to be missing Victor Boniface (ACL injury until May) and Samuel Mbangula. Bremen's injury situation is less clear from the reports. This is a tight match between two struggling sides in the lower half of the table. Union's home advantage is the deciding factor, but given both teams' inconsistency and poor form, this could easily end in a draw. The probability spread is tight, reflecting the evenly-matched nature of two underperforming sides."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-07 20:42:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Eintracht Frankfurt (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Eintracht Frankfurt has a stronger win rate and better form compared to St. Pauli. Key defenders for St. Pauli are injured, which could weaken their defense. Eintracht Frankfurt, despite missing two key forwards, still has a more balanced team."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Werder Bremen (away) @ 1. FC Union Berlin (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Low",
+                    "reasoning": "Both teams have similar win rates and are struggling this season. Werder Bremen's away form is poor, and Union Berlin's home form is not significantly better. The injuries on both sides, especially the absence of key players like Victor Boniface for Union Berlin, make it difficult to predict a clear winner. A draw seems the most likely outcome."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-05",
+        "target_date_et": "2026-09-06",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882888\nMatchup: Barcelona (away) @ Valencia (home)\nHome: Valencia\nAway: Barcelona\nKickoff UTC: 2026-09-06T14:15Z\nKickoff ET: 2026-09-06 10:15 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: LLDWW\nAway form: WWWWL\nHome record: 0-1-2\nAway record: 3-0-0\nESPN structured 1X2 odds: DraftKings: Valencia +800 (open +500); Draw +500 (open +380); Barcelona -350 (open -210)\nTavily context:\n  - Title: Valencia-Barcelona - LaLiga 2026/2027 Statistical Preview\n    Content: ## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 1 | Barcelona | 3 | 0 | 0 | 9 |\n| 17 | Valencia | 0 | 1 | 2 | 1 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (1)\n\nBarca easy Win.\n\n### Top Players\n\n| Valencia | Barcelona |\n --- |\n| Ratings | |\n| |  |  |  --- | | C. Tárrega | 6.63 | | F. Ugrinic | 6.62 | | Pepelu | 6.5 | | |  |  |  --- | | Raphinha | 9.02 | | L. Yamal | 8.19 | | F. López | 7.81 | |\n| Goals | |\n| |  |  |  --- | | U. Sadiq | 1 | | J. Gayà | 0 | | S. Dimitrievski | 0 | | |  |  |  --- | | Raphinha | 5 | | F. López | 3 | | L. ...\n    URL: https://www.whoscored.com/matches/1993949/preview/spain-laliga-2026-2027-valencia-barcelona\n  - Title: Barcelona injury, suspension list and return dates vs. Valencia: Gavi, Frenkie de Jong latest\n    Content: La Liga  Gameweek 4\n\nSep 6, 2026 3.15pm\n\n Estadio de Mestalla\n\nBarcelona/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2F19%2F06%2Fbarlog.png)\n\nBarcelona\n\n# Barcelona injury, suspension list and return dates vs. Valencia: Gavi, Frenkie de Jong latest\n\nBy   Matt Law   | , Last updated:\n\nGavi, De Jong updates: Barcelona injury, suspension list vs. Valencia/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372528-2821-6a8c021a93c1f665634454.jpg)\n\n© Iconsport / Zuma ...\n    URL: https://www.sportsmole.co.uk/football/barcelona/injury-news/injuries-and-suspensions/gavi-de-jong-updates-barcelona-injury-suspension-list-vs-valencia_604383.html\n  - Title: Valencia vs FC Barcelona Predictions, Picks & Odds – 06/09/2026\n    Content: FC Barcelona, by contrast, have been ruthless. Hansi Flick's men occupy third in the table on the back of four wins from their last five outings, averaging a remarkable 3.50 goals per match this campaign. Their defensive record has been equally impressive, keeping clean sheets with regularity. Flick boasts a perfect personal record against Valencia, winning all four previous meetings by a staggering combined scoreline of 18-1. Momentum sits firmly with the visitors.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/valencia-vs-fc-barcelona-predictions-picks-odds-06-09-2026\n  - Title: Valencia CF - FC Barcelona betting tip & best odds | 06.09.2026\n    Content: ## Betting Tips for Valencia FC vs FC Barcelona\n\n1. Away Win - Tip 2: With FC Barcelona's dominant form, winning all their opening three matches with a goal difference of 12:2, an away win seems likely. Their attacking prowess and solid defense make them strong favorites. The odds for Barcelona securing an away victory are 1.32.\n2. Both Teams to Score - YES: While Barcelona's defense has been sturdy, Valencia will be motivated to improve their standing and have the home advantage. Despite their struggles, they have managed to score in their last matches. ...\n    URL: https://www.futbol24.com/betting-tips/preview/06-09-2026-valencia-cf-fc-barcelona-betting-tip\n\nGame ID: 2\nSource event_id: 401882896\nMatchup: Osasuna (away) @ Alavés (home)\nHome: Alavés\nAway: Osasuna\nKickoff UTC: 2026-09-06T16:30Z\nKickoff ET: 2026-09-06 12:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: WDWLW\nAway form: WWDLL\nHome record: 2-1-0\nAway record: 2-1-0\nESPN structured 1X2 odds: Provider unavailable: Alavés +130 (open +125); Draw +205 (open +205); Osasuna +255 (open +250)\nTavily context:\n  - Title: Alavés vs Osasuna Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Osasuna predicted lineup (4-4-2): Sergio Herrera (GK), Inigo Arguibide, Alejandro Catena, Flavien Boyomo, Abel Bretones, Ruben Garcia, Jon Moncayola, Iker Munoz, Moi Gomez, Raul Garcia, Ante Budimir.\n\n## Main Match Prediction\n\nThere’s a strong chance that we’ll see Alavés record a victory and they are priced at 2.30 to win this La Liga clash. We think that the latest odds offer bettors plenty of value.\n\nKey stats supporting our main match prediction (league matches): ...\n    URL: https://www.sportsgambler.com/betting-tips/football/alaves-vs-osasuna-prediction-lineups-odds-2026-09-06\n  - Title: Deportivo Alavés vs Osasuna Predictions, Picks & Odds - 06/09/2026\n    Content: Recent form\n\nWDWWD\n\nWins3/5 (60%)\n\nDraws2/5 (40%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n2.6Total goals\n\n38%Both teams score\n\n2.1Goals scored\n\n0.5Goals conceded\n\n#### Osasuna\n\nRecent form\n\nWWDLL\n\nWins2/5 (40%)\n\nDraws1/5 (20%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3.4Total goals\n\n58%Both teams score\n\n2.2Goals scored\n\n1.2Goals conceded ...\n    URL: https://www.toffeeweb.com/ng/deportivo-alaves-vs-osasuna-predictions-picks-odds-06-09-2026\n  - Title: Deportivo Alavés vs Osasuna Prediction & Betting Tips - 06/09/2026\n    Content: ### Odds comparison\n\n| Betfred | William Hill | Smarkets | Matchbook | Coral | Ladbrokes |\n ---  ---  --- |\n| Deportivo Alavés to win | 2.25 | 2.25 | 2.38 | 2.38 | 2.87 | 2.87 |\n| Draw | 3.10 | 3.00 | 3.10 | 3.10 | 1.95 | 1.95 |\n| Osasuna to win | 3.50 | 3.40 | 3.70 | 3.70 | 3.90 | 3.90 |\n| Under 2.5 | · | 1.55 | · | · | 1.50 | 1.50 |\n| BTTS Yes | 2.10 | 2.00 | · | 2.16 | 2.05 | 2.05 |\n\nOdds recorded on 05 Sep 2026 at 00:06 · Odds are subject to change\n\n## Our Verdict [...] ## Our Verdict ...\n    URL: https://thefootballfaithful.com/deportivo-alaves-vs-osasuna-prediction-betting-tips-06-09-2026\n  - Title: Deportivo Alavés vs Osasuna Prediction, Stats & Betting Tips, Sep 6, 2026 | MyGameOdds\n    Content: Over/Under 3.5 goals\n\nunder 66%\n\nDeportivo Alavés\nOsasuna\n\nWinner\n\n1X 70%\n\nBTTS\\\\\n\nYes 51%\n\nCorrect Score\n\n1-1 13%\n\nOver/Under 2.5 goals\n\nunder 55%\n\nOver/Under 3.5 goals\n\nunder 66%\n\nFull Time\n\nGoals Over/Under\n\n|  | <1.5 | >1.5 | <2.5 | >2.5 | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---  ---  ---\n| FT | 29% | 71% | 55% | 45% | 66% | 34% | 87% | 13% |\n\nGoals Over/Under\n\n|  | <1.5 | >1.5 | <2.5 | >2.5 |\n ---  ---\n| FT | 29% | 71% | 55% | 45% |\n\n|  | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---\n| FT | 66% | 34% | 87% | 13% |\n\nTeam Goals Over/Under ...\n    URL: https://mygameodds.com/predictions/la-liga-spain/53951\n\nGame ID: 3\nSource event_id: 401882890\nMatchup: Levante (away) @ Málaga (home)\nHome: Málaga\nAway: Levante\nKickoff UTC: 2026-09-06T16:30Z\nKickoff ET: 2026-09-06 12:30 EDT\nVenue: La Rosaleda\nRound: unavailable\nHome form: LDLWD\nAway form: WDLLW\nHome record: 0-1-2\nAway record: 1-1-1\nESPN structured 1X2 odds: Provider unavailable: Málaga +145 (open +160); Draw +225 (open +220); Levante +200 (open +180)\nTavily context:\n  - Title: Málaga vs Levante Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Levante predicted lineup (4-3-3): Mathew Ryan (GK), Nacho Perez, Adrian De La Fuente, Aissa Mandi, Manuel Sanchez, Enzo Bardeli, Oriol Rey, Jon Olasagasti, Roger Brugue, Ivan Romero, Thiago Fernandez.\n\n## Main Match Prediction\n\nWe’ll take the plunge and back Málaga to secure victory when they line up in this La Liga game. There’s plenty of confidence behind this wager and the odds of 2.32 look attractive.\n\nKey stats supporting our main match prediction (league matches): ...\n    URL: https://www.sportsgambler.com/betting-tips/football/malaga-vs-levante-prediction-lineups-odds-2026-09-06\n  - Title: Málaga vs Levante Predictions, Picks & Odds - 06/09/2026\n    Content: #### Levante\n\n4-4-2\n\nStarters\n\n1. 1 Mathew Ryan\n2. 2 Nacho Pérez\n3. 3 Aïssa Mandi\n4. 4 Adrián Dela\n5. 5 Manu Sánchez\n6. 6 Oriol Rey\n7. 7 Enzo Bardeli\n8. 8 Jon Olasagasti\n9. 9 Thiago Fernández\n10. 10 Iván Romero\n11. 11 TBD (due to Brugué's suspension)\n\nAbsent\n\n Unai Elgezabal (injury)\n Roger Brugué (Red Card (Suspended))\n Primo (Shoulder Injury)\n\nMedium confidence ...\n    URL: https://www.toffeeweb.com/int/malaga-vs-levante-predictions-picks-odds-06-09-2026\n  - Title: Malaga vs. Levante Prediction & Picks [9/6/2026]\n    Content: ### Match overview\n\n Teams: Malaga vs. Levante\n Date: Sunday, September 6, 2026\n Time: 12:30 PM ET\n Venue: Estadio La Rosaleda\n\n### Current betting odds\n\n Moneyline: Malaga +160, Levante +203, draw +233\n Total (Over/Under): 2.5 goals (+104/-108)\n\n### Dimers' win & correct score probabilities\n\n Malaga: 39.8%\n Levante: 34.5%\n Draw: 25.6%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Malaga 1-1 Levante (12.1%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_4_mcf_lev\n\nGame ID: 4\nSource event_id: 401882892\nMatchup: Sevilla (away) @ Espanyol (home)\nHome: Espanyol\nAway: Sevilla\nKickoff UTC: 2026-09-06T19:00Z\nKickoff ET: 2026-09-06 15:00 EDT\nVenue: RCDE Stadium\nRound: unavailable\nHome form: LLWDW\nAway form: LWWLL\nHome record: 1-0-2\nAway record: 2-0-1\nESPN structured 1X2 odds: Provider unavailable: Espanyol +130 (open +135); Draw +225 (open +220); Sevilla +230 (open +210)\nTavily context:\n  - Title: Espanyol vs Sevilla Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Leandro Cabrera Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-06\n\nJavier Puado Cruciate ligame\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-10-09\n\nKike Garcia Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-15\n\nSevilla  Injury Table\n\nType Name Info\n\nIsaac Romero Red card (direc\n\nPosition: Forward Matches: 3 Goals: 1 Assists: 1 Expected return: -\n\nRuben Vargas Other\n\nPosition: Midfielder Matches: 1 Goals: - Assists: - Expected return: 2026-09-06\n\nMarcao Foot ...\n    URL: https://www.sportsgambler.com/betting-tips/football/espanyol-vs-sevilla-prediction-lineups-odds-2026-09-06\n  - Title: PREVIEW | Espanyol vs Sevilla FC: team news, lineups, predictions (La Liga 06/09)\n    Content: Espanyol have picked up 3 points and currently lie in 11th position. Last time out, Manolo González's team slipped to a 2-1 defeat against Real Sociedad (La Liga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nSevilla FC have won 6 points to date and are placed in 6th position. In their last fixture, Luis García's team suffered a 1-3 reverse against Atlético de Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Sevilla FC winning 2-1.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-espanyol-vs-sevilla-fc-191000616.html\n  - Title: Espanyol vs Sevilla Predictions, Picks & Odds - 06/09/2026\n    Content: Sevilla's recent form makes the draw or away pick a solid selection here. The visitors have rattled off four consecutive wins and sit comfortably in 5th, while Espanyol have lost three of their last five outings. Historically, Sevilla dominate this fixture with 28 wins from 49 meetings, a record that tilts the balance firmly in their favour at 3.40. ...\n    URL: https://www.toffeeweb.com/ng/espanyol-vs-sevilla-predictions-picks-odds-06-09-2026\n  - Title: Espanyol vs Sevilla La Liga Odds & Predictions\n    Content: in 22 hours — La Liga Espanyol vs Sevilla Espanyol 40% 40¢ No 62¢ ・ game originally scheduled for Sep 6, 2026 after 90 minutes ・ it closes by Sep 8, 2026\n    URL: https://kalshi.com/markets/kx/test/kxlaligagame-26sep06espsev\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882888\nMatchup: Barcelona (away) @ Valencia (home)\nHome: Valencia\nAway: Barcelona\nKickoff UTC: 2026-09-06T14:15Z\nKickoff ET: 2026-09-06 10:15 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: LLDWW\nAway form: WWWWL\nHome record: 0-1-2\nAway record: 3-0-0\nESPN structured 1X2 odds: DraftKings: Valencia +800 (open +500); Draw +500 (open +380); Barcelona -350 (open -210)\nTavily context:\n  - Title: Valencia-Barcelona - LaLiga 2026/2027 Statistical Preview\n    Content: ## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 1 | Barcelona | 3 | 0 | 0 | 9 |\n| 17 | Valencia | 0 | 1 | 2 | 1 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (1)\n\nBarca easy Win.\n\n### Top Players\n\n| Valencia | Barcelona |\n --- |\n| Ratings | |\n| |  |  |  --- | | C. Tárrega | 6.63 | | F. Ugrinic | 6.62 | | Pepelu | 6.5 | | |  |  |  --- | | Raphinha | 9.02 | | L. Yamal | 8.19 | | F. López | 7.81 | |\n| Goals | |\n| |  |  |  --- | | U. Sadiq | 1 | | J. Gayà | 0 | | S. Dimitrievski | 0 | | |  |  |  --- | | Raphinha | 5 | | F. López | 3 | | L. ...\n    URL: https://www.whoscored.com/matches/1993949/preview/spain-laliga-2026-2027-valencia-barcelona\n  - Title: Barcelona injury, suspension list and return dates vs. Valencia: Gavi, Frenkie de Jong latest\n    Content: La Liga  Gameweek 4\n\nSep 6, 2026 3.15pm\n\n Estadio de Mestalla\n\nBarcelona/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2F19%2F06%2Fbarlog.png)\n\nBarcelona\n\n# Barcelona injury, suspension list and return dates vs. Valencia: Gavi, Frenkie de Jong latest\n\nBy   Matt Law   | , Last updated:\n\nGavi, De Jong updates: Barcelona injury, suspension list vs. Valencia/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Ficonsport-372528-2821-6a8c021a93c1f665634454.jpg)\n\n© Iconsport / Zuma ...\n    URL: https://www.sportsmole.co.uk/football/barcelona/injury-news/injuries-and-suspensions/gavi-de-jong-updates-barcelona-injury-suspension-list-vs-valencia_604383.html\n  - Title: Valencia vs FC Barcelona Predictions, Picks & Odds – 06/09/2026\n    Content: FC Barcelona, by contrast, have been ruthless. Hansi Flick's men occupy third in the table on the back of four wins from their last five outings, averaging a remarkable 3.50 goals per match this campaign. Their defensive record has been equally impressive, keeping clean sheets with regularity. Flick boasts a perfect personal record against Valencia, winning all four previous meetings by a staggering combined scoreline of 18-1. Momentum sits firmly with the visitors.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/valencia-vs-fc-barcelona-predictions-picks-odds-06-09-2026\n  - Title: Valencia CF - FC Barcelona betting tip & best odds | 06.09.2026\n    Content: ## Betting Tips for Valencia FC vs FC Barcelona\n\n1. Away Win - Tip 2: With FC Barcelona's dominant form, winning all their opening three matches with a goal difference of 12:2, an away win seems likely. Their attacking prowess and solid defense make them strong favorites. The odds for Barcelona securing an away victory are 1.32.\n2. Both Teams to Score - YES: While Barcelona's defense has been sturdy, Valencia will be motivated to improve their standing and have the home advantage. Despite their struggles, they have managed to score in their last matches. ...\n    URL: https://www.futbol24.com/betting-tips/preview/06-09-2026-valencia-cf-fc-barcelona-betting-tip\n\nGame ID: 2\nSource event_id: 401882896\nMatchup: Osasuna (away) @ Alavés (home)\nHome: Alavés\nAway: Osasuna\nKickoff UTC: 2026-09-06T16:30Z\nKickoff ET: 2026-09-06 12:30 EDT\nVenue: Mendizorrotza\nRound: unavailable\nHome form: WDWLW\nAway form: WWDLL\nHome record: 2-1-0\nAway record: 2-1-0\nESPN structured 1X2 odds: Provider unavailable: Alavés +130 (open +125); Draw +205 (open +205); Osasuna +255 (open +250)\nTavily context:\n  - Title: Alavés vs Osasuna Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Osasuna predicted lineup (4-4-2): Sergio Herrera (GK), Inigo Arguibide, Alejandro Catena, Flavien Boyomo, Abel Bretones, Ruben Garcia, Jon Moncayola, Iker Munoz, Moi Gomez, Raul Garcia, Ante Budimir.\n\n## Main Match Prediction\n\nThere’s a strong chance that we’ll see Alavés record a victory and they are priced at 2.30 to win this La Liga clash. We think that the latest odds offer bettors plenty of value.\n\nKey stats supporting our main match prediction (league matches): ...\n    URL: https://www.sportsgambler.com/betting-tips/football/alaves-vs-osasuna-prediction-lineups-odds-2026-09-06\n  - Title: Deportivo Alavés vs Osasuna Predictions, Picks & Odds - 06/09/2026\n    Content: Recent form\n\nWDWWD\n\nWins3/5 (60%)\n\nDraws2/5 (40%)\n\nLosses0/5 (0%)\n\nSeason statistics (5)\n\n2.6Total goals\n\n38%Both teams score\n\n2.1Goals scored\n\n0.5Goals conceded\n\n#### Osasuna\n\nRecent form\n\nWWDLL\n\nWins2/5 (40%)\n\nDraws1/5 (20%)\n\nLosses2/5 (40%)\n\nSeason statistics (5)\n\n3.4Total goals\n\n58%Both teams score\n\n2.2Goals scored\n\n1.2Goals conceded ...\n    URL: https://www.toffeeweb.com/ng/deportivo-alaves-vs-osasuna-predictions-picks-odds-06-09-2026\n  - Title: Deportivo Alavés vs Osasuna Prediction & Betting Tips - 06/09/2026\n    Content: ### Odds comparison\n\n| Betfred | William Hill | Smarkets | Matchbook | Coral | Ladbrokes |\n ---  ---  --- |\n| Deportivo Alavés to win | 2.25 | 2.25 | 2.38 | 2.38 | 2.87 | 2.87 |\n| Draw | 3.10 | 3.00 | 3.10 | 3.10 | 1.95 | 1.95 |\n| Osasuna to win | 3.50 | 3.40 | 3.70 | 3.70 | 3.90 | 3.90 |\n| Under 2.5 | · | 1.55 | · | · | 1.50 | 1.50 |\n| BTTS Yes | 2.10 | 2.00 | · | 2.16 | 2.05 | 2.05 |\n\nOdds recorded on 05 Sep 2026 at 00:06 · Odds are subject to change\n\n## Our Verdict [...] ## Our Verdict ...\n    URL: https://thefootballfaithful.com/deportivo-alaves-vs-osasuna-prediction-betting-tips-06-09-2026\n  - Title: Deportivo Alavés vs Osasuna Prediction, Stats & Betting Tips, Sep 6, 2026 | MyGameOdds\n    Content: Over/Under 3.5 goals\n\nunder 66%\n\nDeportivo Alavés\nOsasuna\n\nWinner\n\n1X 70%\n\nBTTS\\\\\n\nYes 51%\n\nCorrect Score\n\n1-1 13%\n\nOver/Under 2.5 goals\n\nunder 55%\n\nOver/Under 3.5 goals\n\nunder 66%\n\nFull Time\n\nGoals Over/Under\n\n|  | <1.5 | >1.5 | <2.5 | >2.5 | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---  ---  ---\n| FT | 29% | 71% | 55% | 45% | 66% | 34% | 87% | 13% |\n\nGoals Over/Under\n\n|  | <1.5 | >1.5 | <2.5 | >2.5 |\n ---  ---\n| FT | 29% | 71% | 55% | 45% |\n\n|  | <3.5 | >3.5 | <4.5 | >4.5 |\n ---  ---\n| FT | 66% | 34% | 87% | 13% |\n\nTeam Goals Over/Under ...\n    URL: https://mygameodds.com/predictions/la-liga-spain/53951\n\nGame ID: 3\nSource event_id: 401882890\nMatchup: Levante (away) @ Málaga (home)\nHome: Málaga\nAway: Levante\nKickoff UTC: 2026-09-06T16:30Z\nKickoff ET: 2026-09-06 12:30 EDT\nVenue: La Rosaleda\nRound: unavailable\nHome form: LDLWD\nAway form: WDLLW\nHome record: 0-1-2\nAway record: 1-1-1\nESPN structured 1X2 odds: Provider unavailable: Málaga +145 (open +160); Draw +225 (open +220); Levante +200 (open +180)\nTavily context:\n  - Title: Málaga vs Levante Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Levante predicted lineup (4-3-3): Mathew Ryan (GK), Nacho Perez, Adrian De La Fuente, Aissa Mandi, Manuel Sanchez, Enzo Bardeli, Oriol Rey, Jon Olasagasti, Roger Brugue, Ivan Romero, Thiago Fernandez.\n\n## Main Match Prediction\n\nWe’ll take the plunge and back Málaga to secure victory when they line up in this La Liga game. There’s plenty of confidence behind this wager and the odds of 2.32 look attractive.\n\nKey stats supporting our main match prediction (league matches): ...\n    URL: https://www.sportsgambler.com/betting-tips/football/malaga-vs-levante-prediction-lineups-odds-2026-09-06\n  - Title: Málaga vs Levante Predictions, Picks & Odds - 06/09/2026\n    Content: #### Levante\n\n4-4-2\n\nStarters\n\n1. 1 Mathew Ryan\n2. 2 Nacho Pérez\n3. 3 Aïssa Mandi\n4. 4 Adrián Dela\n5. 5 Manu Sánchez\n6. 6 Oriol Rey\n7. 7 Enzo Bardeli\n8. 8 Jon Olasagasti\n9. 9 Thiago Fernández\n10. 10 Iván Romero\n11. 11 TBD (due to Brugué's suspension)\n\nAbsent\n\n Unai Elgezabal (injury)\n Roger Brugué (Red Card (Suspended))\n Primo (Shoulder Injury)\n\nMedium confidence ...\n    URL: https://www.toffeeweb.com/int/malaga-vs-levante-predictions-picks-odds-06-09-2026\n  - Title: Malaga vs. Levante Prediction & Picks [9/6/2026]\n    Content: ### Match overview\n\n Teams: Malaga vs. Levante\n Date: Sunday, September 6, 2026\n Time: 12:30 PM ET\n Venue: Estadio La Rosaleda\n\n### Current betting odds\n\n Moneyline: Malaga +160, Levante +203, draw +233\n Total (Over/Under): 2.5 goals (+104/-108)\n\n### Dimers' win & correct score probabilities\n\n Malaga: 39.8%\n Levante: 34.5%\n Draw: 25.6%\n\nThese probabilities are generated using Dimers' La Liga data model, which predicts the most likely outcomes for all major betting markets.\n\nMost likely correct score: Malaga 1-1 Levante (12.1%) ...\n    URL: https://www.dimers.com/la-liga/predictions/2026_4_mcf_lev\n\nGame ID: 4\nSource event_id: 401882892\nMatchup: Sevilla (away) @ Espanyol (home)\nHome: Espanyol\nAway: Sevilla\nKickoff UTC: 2026-09-06T19:00Z\nKickoff ET: 2026-09-06 15:00 EDT\nVenue: RCDE Stadium\nRound: unavailable\nHome form: LLWDW\nAway form: LWWLL\nHome record: 1-0-2\nAway record: 2-0-1\nESPN structured 1X2 odds: Provider unavailable: Espanyol +130 (open +135); Draw +225 (open +220); Sevilla +230 (open +210)\nTavily context:\n  - Title: Espanyol vs Sevilla Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: Leandro Cabrera Other\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-06\n\nJavier Puado Cruciate ligame\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2026-10-09\n\nKike Garcia Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-15\n\nSevilla  Injury Table\n\nType Name Info\n\nIsaac Romero Red card (direc\n\nPosition: Forward Matches: 3 Goals: 1 Assists: 1 Expected return: -\n\nRuben Vargas Other\n\nPosition: Midfielder Matches: 1 Goals: - Assists: - Expected return: 2026-09-06\n\nMarcao Foot ...\n    URL: https://www.sportsgambler.com/betting-tips/football/espanyol-vs-sevilla-prediction-lineups-odds-2026-09-06\n  - Title: PREVIEW | Espanyol vs Sevilla FC: team news, lineups, predictions (La Liga 06/09)\n    Content: Espanyol have picked up 3 points and currently lie in 11th position. Last time out, Manolo González's team slipped to a 2-1 defeat against Real Sociedad (La Liga 2026/27).\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\nSevilla FC have won 6 points to date and are placed in 6th position. In their last fixture, Luis García's team suffered a 1-3 reverse against Atlético de Madrid (La Liga 2026/27).\n\nThe last meeting between the two teams ended with Sevilla FC winning 2-1.\n\n## Predicted lineups ...\n    URL: https://ca.sports.yahoo.com/news/preview-espanyol-vs-sevilla-fc-191000616.html\n  - Title: Espanyol vs Sevilla Predictions, Picks & Odds - 06/09/2026\n    Content: Sevilla's recent form makes the draw or away pick a solid selection here. The visitors have rattled off four consecutive wins and sit comfortably in 5th, while Espanyol have lost three of their last five outings. Historically, Sevilla dominate this fixture with 28 wins from 49 meetings, a record that tilts the balance firmly in their favour at 3.40. ...\n    URL: https://www.toffeeweb.com/ng/espanyol-vs-sevilla-predictions-picks-odds-06-09-2026\n  - Title: Espanyol vs Sevilla La Liga Odds & Predictions\n    Content: in 22 hours — La Liga Espanyol vs Sevilla Espanyol 40% 40¢ No 62¢ ・ game originally scheduled for Sep 6, 2026 after 90 minutes ・ it closes by Sep 8, 2026\n    URL: https://kalshi.com/markets/kx/test/kxlaligagame-26sep06espsev\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882888",
+                        "date_utc": "2026-09-06T14:15Z",
+                        "kickoff_et": "2026-09-06 10:15 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Valencia",
+                        "away": "Barcelona",
+                        "home_id": "94",
+                        "away_id": "83",
+                        "matchup": "Barcelona (away) @ Valencia (home)",
+                        "venue": "Mestalla Stadium",
+                        "city": "Manises",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLDWW",
+                        "form_away": "WWWWL",
+                        "record_home": "0-1-2",
+                        "record_away": "3-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+500",
+                            "home_current": "+800",
+                            "draw_open": "+380",
+                            "draw_current": "+500",
+                            "away_open": "-210",
+                            "away_current": "-350"
+                        },
+                        "odds_text": "DraftKings: Valencia +800 (open +500); Draw +500 (open +380); Barcelona -350 (open -210)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882896",
+                        "date_utc": "2026-09-06T16:30Z",
+                        "kickoff_et": "2026-09-06 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Alavés",
+                        "away": "Osasuna",
+                        "home_id": "96",
+                        "away_id": "97",
+                        "matchup": "Osasuna (away) @ Alavés (home)",
+                        "venue": "Mendizorrotza",
+                        "city": "Vitoria-Gasteiz",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WDWLW",
+                        "form_away": "WWDLL",
+                        "record_home": "2-1-0",
+                        "record_away": "2-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+125",
+                            "home_current": "+130",
+                            "draw_open": "+205",
+                            "draw_current": "+205",
+                            "away_open": "+250",
+                            "away_current": "+255"
+                        },
+                        "odds_text": "Provider unavailable: Alavés +130 (open +125); Draw +205 (open +205); Osasuna +255 (open +250)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882890",
+                        "date_utc": "2026-09-06T16:30Z",
+                        "kickoff_et": "2026-09-06 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Málaga",
+                        "away": "Levante",
+                        "home_id": "99",
+                        "away_id": "1538",
+                        "matchup": "Levante (away) @ Málaga (home)",
+                        "venue": "La Rosaleda",
+                        "city": "Malaga",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDLWD",
+                        "form_away": "WDLLW",
+                        "record_home": "0-1-2",
+                        "record_away": "1-1-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+160",
+                            "home_current": "+145",
+                            "draw_open": "+220",
+                            "draw_current": "+225",
+                            "away_open": "+180",
+                            "away_current": "+200"
+                        },
+                        "odds_text": "Provider unavailable: Málaga +145 (open +160); Draw +225 (open +220); Levante +200 (open +180)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401882892",
+                        "date_utc": "2026-09-06T19:00Z",
+                        "kickoff_et": "2026-09-06 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Espanyol",
+                        "away": "Sevilla",
+                        "home_id": "88",
+                        "away_id": "243",
+                        "matchup": "Sevilla (away) @ Espanyol (home)",
+                        "venue": "RCDE Stadium",
+                        "city": "Barcelona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LLWDW",
+                        "form_away": "LWWLL",
+                        "record_home": "1-0-2",
+                        "record_away": "2-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+135",
+                            "home_current": "+130",
+                            "draw_open": "+220",
+                            "draw_current": "+225",
+                            "away_open": "+210",
+                            "away_current": "+230"
+                        },
+                        "odds_text": "Provider unavailable: Espanyol +130 (open +135); Draw +225 (open +220); Sevilla +230 (open +210)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-05T05:04:44.853177-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:04.349290-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is in exceptional form with a perfect opening start to the season (3-0-0) and a massive goal difference. Hansi Flick has a dominant personal record against Valencia, and the visitors are heavy bookmaker favorites (-350).",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés is favored at home with a solid 2-1-0 home record. While Osasuna has started well, home advantage and market pricing around +130 indicate Alavés is more likely to secure the three points.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga is a slight favorite at La Rosaleda with odds of +145. Both teams have had mixed starts to the season, making a tight contest highly probable, but the home side has a marginal statistical edge.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Espanyol are priced as slight favorites at +130 playing at the RCDE Stadium, despite Sevilla having a strong squad. Home advantage is expected to be the deciding factor in a tightly contested fixture.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-05T04:50:23.632052-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is in stellar form with a perfect record and prolific goal-scoring, making them heavy favorites (-350) against a struggling Valencia side.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alaves is unbeaten at home and are slight favorites according to the odds (+130) to defeat Osasuna at Mendizorrotza.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested match, but Malaga holds a marginal advantage playing at home, backed by predictive models and slight favorable odds of +145.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Despite Sevilla's superior recent form and historical dominance, Espanyol enters the match as slight betting favorites (+130) holding the home advantage.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-05T04:51:00.595054-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona has started the season in dominant form with a perfect 3-0-0 record and a prolific attack, averaging 3.5 goals per game. Valencia, in contrast, is winless with a 0-1-2 record and sits 17th in the table. Betting odds, recent form, and expert analysis all heavily favor a comfortable victory for Barcelona, even with some potential injuries.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both Alavés and Osasuna have started the season strongly with identical 2-1-0 records. However, Alavés holds the home advantage and appears to be in better defensive form, having conceded fewer goals. The betting odds favor Alavés, and multiple sources suggest a home victory in what is expected to be a closely contested match.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This match is extremely difficult to call, with conflicting indicators. Málaga is the slight betting favorite due to home advantage, but their season record (0-1-2) is worse than Levante's (1-1-1). Prediction models show a near-even probability split across all three outcomes, with a 1-1 draw being the most likely single correct score. Given the close nature of the matchup, a draw is the most logical prediction.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "While Espanyol are the betting favorites at home, Sevilla has started the season stronger with 6 points to Espanyol's 3. Furthermore, Sevilla has historically dominated this fixture. Despite the odds favoring the home side, Sevilla's better league position and strong head-to-head record suggest they have a slight edge in quality, making them a value pick for an away victory in a tight contest.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:51:17.597313-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.07,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.78,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is in dominant form, with four wins in their last five outings, averaging 3.50 goals per match and maintaining an impressive defensive record. Coach Hansi Flick has a perfect 4-0 record against Valencia with a combined score of 18-1. Barcelona's away record is 3-0-0 this season, while Valencia's home record is 0-1-2. The betting odds strongly favor Barcelona (-350).",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés has a strong recent form of WDWWD and a solid home record of 2-1-0. Their defensive record is impressive, conceding only 0.5 goals per match over their last five. Contextual information suggests a 'strong chance' of an Alavés victory, and their odds are slightly more favorable compared to Osasuna. MyGameOdds also indicates a 70% chance for a home win or draw (1X).",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Málaga's poor home record (0-1-2), multiple sources, including SportsGambler and Dimers, explicitly back Málaga for a victory, with Dimers assigning a 39.8% win probability. Levante will be without Roger Brugué due to a red card suspension, which could impact their attacking threat. While a draw is considered the most likely correct score (1-1) by Dimers, the explicit backing for a Málaga win pushes the prediction.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla has a strong historical dominance over Espanyol with 28 wins from 49 meetings. Although Sevilla lost their last fixture, general context highlights their recent strong form and comfortable position in 5th place. Espanyol's form has been weaker, with three losses in their last five outings. Despite betting odds slightly favoring Espanyol, the overall context and historical head-to-head record lean towards an away win or draw for Sevilla.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:53:22.277266-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.105,
+                    "draw_probability": 0.158,
+                    "away_win_probability": 0.737,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are a heavily shortened market favorite and enter 3-0-0 with elite attacking output, while Valencia are winless in league play. Home advantage at Mestalla and Barcelona injury questions leave some draw/upset risk, but the away win is clearly most likely.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.416,
+                    "draw_probability": 0.314,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are the market's slight home favorite and have a strong early record, with previews also leaning toward the home side. Osasuna remain competitive, so the draw is a significant risk, but the home edge is enough to make Alavés the pick.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.389,
+                    "draw_probability": 0.293,
+                    "away_win_probability": 0.318,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Málaga are only marginally favored by current odds and model previews, while Levante's suspension/injury issues slightly reduce the away case. Both sides have mixed starts, so all three outcomes remain plausible.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.416,
+                    "draw_probability": 0.294,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "The 1X2 market makes Espanyol narrow home favorites, but Sevilla's better early record and historical matchup strength keep this close. Attacking absences on both sides also raise draw and low-margin risk.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:53:35.752396-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enter with a perfect away/overall start, very strong scoring form, and heavy market support around -350. Valencia have only one point from three matches and the available previews consistently point to a Barcelona win, despite Mestalla home advantage.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are unbeaten early, have home advantage, and the betting market makes them clear but not overwhelming favorites. Osasuna are also competitive, so the draw remains a meaningful risk, but Alavés have the better current profile.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a close matchup with both teams starting inconsistently. The market and several models give Málaga a small home edge, while Levante remain live but have some lineup concerns, including suspension/injury notes. Margins are narrow, so confidence is low.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "The odds give Espanyol a slight home advantage, but the matchup is finely balanced. Sevilla have shown some away strength and historical edge, while both sides have form and availability concerns. A narrow Espanyol lean is preferred, with draw and away win both close behind.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-05T04:54:38.276672-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Market odds heavily favor Barcelona and align with their strong early-season record and recent head-to-head dominance over Valencia. Valencia’s mixed form and weaker results to date make an upset less likely, even with home advantage at Mestalla.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are priced as a modest home favorite and have looked steadier in recent form, while Osasuna’s recent results are more volatile. With both teams showing similar season records, home field nudges the balance toward Alavés in a likely low-to-moderate scoring match.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The market leans slightly toward Málaga at home in what looks like a fairly even matchup. Málaga’s home edge plus Levante absences (including a suspension) provide a small advantage, but both teams’ inconsistent form keeps the draw and away outcomes very live.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Espanyol are a slight home favorite by odds, but Sevilla’s historical edge in the fixture and comparable overall quality keep this close to a coin flip. Squad availability concerns on both sides raise draw likelihood, with home advantage just barely tipping it toward Espanyol.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-05T04:54:50.323723-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enter in much stronger form (WWWWL) and superior season record; market odds make them clear favorites despite being away. Valencia's poor start and defensive issues lower upset chances; possible Barcelona rotation/injuries noted but not enough to outweigh quality gap.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés slight home favorite in odds and form (WDWLW) with solid home record; Osasuna capable but less consistent. Expect a close match where home advantage tips the balance toward Alavés.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and models give Málaga a narrow edge at La Rosaleda but Levante are competitive — forecast expects a tight game with a slight home lean; probability spread reflects meaningful upset/draw chance.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds are close; Sevilla have stronger recent league position and superior head-to-head history, while Espanyol have home advantage. Predict a narrow Sevilla edge but with a significant draw possibility.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-05T04:55:29.144776-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.105,
+                    "draw_probability": 0.158,
+                    "away_win_probability": 0.737,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is the favorite per odds; after normalization Barcelona is projected to win about 73.7% with Valencia around 10.5% and a ~15.8% chance of a draw.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.321,
+                    "draw_probability": 0.346,
+                    "away_win_probability": 0.333,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Odds imply a relatively balanced match with a slight preference for a draw (about 34.6%), while home and away chances are close (32.1% and 33.3%).",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.422,
+                    "draw_probability": 0.272,
+                    "away_win_probability": 0.306,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Málaga shows the strongest probability among the three, around 42.2% to win, with Levante ~30.6% and a 27.2% draw.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.4665334665334665,
+                    "draw_probability": 0.2697302697302697,
+                    "away_win_probability": 0.26373626373626374,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Espanyol is favored at home with about a 46.7% chance to win, followed by a ~27% draw and ~26.4% for Sevilla.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-05T04:55:32.940674-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.09,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.76,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in dominant form, winning all their opening matches with a strong goal difference and a history of comfortable wins over Valencia. Valencia have struggled, with poor recent form and a weak head-to-head record. Bookmakers and statistical models heavily favor Barcelona, and expert previews expect an away win.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés have a strong home record and recent form, while Osasuna have been inconsistent and are coming off two losses. Bookmakers and statistical models slightly favor Alavés, and most previews expect a narrow home win, though a draw is also plausible given both teams' defensive records.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga are slight favorites at home, but both teams have inconsistent form and Levante are missing key players due to suspension and injury. Statistical models and odds suggest a close match, with Málaga having a marginal edge, but a draw or away win are also realistic outcomes.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have mixed recent form and are missing some players. Sevilla have a strong historical record against Espanyol, but Espanyol have home advantage. Bookmakers and models see this as a very even match, with a draw slightly more likely than either team winning outright.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-05T04:55:36.273567-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's dominant form and strong head-to-head record against Valencia, combined with Valencia's poor start to the season, make an away win highly likely.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés' strong home form and Osasuna's inconsistent performances suggest a home win is the most probable outcome.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga's slight edge in home advantage and Levante's recent struggles make a home win slightly more likely.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have shown mixed form, but Sevilla's historical advantage in this fixture gives them a slight edge.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-05T04:55:53.686411-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites (-350) with a perfect 3-0-0 start and 12:2 goal difference. Flick has won all four prior meetings vs Valencia by a combined 18-1. Valencia sit 17th with one point from three matches. Line has moved further toward Barcelona since open.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Alavés are modest home favorites (+130) with strong recent form (unbeaten in five, only 0.5 goals conceded per game this season). Osasuna have lost two of their last three. A tight, lower-scoring match is expected, keeping draw probability elevated, but home edge tips the prediction to Alavés.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Very close market: Málaga +145 vs Levante +200, with the line drifting slightly toward the home side. Levante are missing Brugué (suspended) and Elgezabal, which weakens their attack. Model probabilities (Dimers ~40% Málaga) align with a narrow home edge, but this is a genuine three-way toss-up.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Espanyol are slight home favorites (+130) despite mixed form, aided by Sevilla missing Isaac Romero (suspension) and coming off a 1-3 loss to Atlético. Sevilla's historical dominance in this fixture and 2-0-1 record keeps this competitive, but home advantage gives Espanyol the narrow edge per market pricing (~40-42%).",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-05T04:56:03.041707-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.73,
+                    "predicted_outcome": "Barcelona",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are perfect (3-0-0) with dominant attacking form (3.5 goals/match) and a flawless historical record vs Valencia. Valencia are struggling near the bottom. Odds heavily favor Barcelona (-350).",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Alavés",
+                    "confidence": "low",
+                    "reasoning": "Alavés are slight favorites at home (+130) with strong defensive form (0.5 goals conceded per game recently). Osasuna have lost two of last five. Home advantage tips this narrowly to Alavés.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Málaga",
+                    "confidence": "low",
+                    "reasoning": "Close matchup with Málaga slight favorites at home (+145). Both teams have inconsistent form. Levante missing suspended Brugué. Home edge favors Málaga marginally.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "Espanyol",
+                    "confidence": "low",
+                    "reasoning": "Espanyol favored at home (+130) despite Sevilla's stronger record. Sevilla missing Isaac Romero (suspended) and dealing with injuries. Home advantage gives Espanyol the edge in a tight contest.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-05T04:56:25.253155-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.73,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in dominant form with 3 wins from 3, averaging 3.5 goals per match and a goal difference of 12:2. Raphinha has been outstanding (rated 9.02, 5 goals). The odds strongly favor Barcelona at -350 (open -210), reflecting their clear superiority. Flick has a perfect record against Valencia (4W, combined 18-1). Valencia are struggling at 0-1-2 in the league. The head-to-head this season also shows Barcelona 3W-0D-0L vs Valencia 0W-1D-2L. While Mestalla can be a tough venue, Barcelona's current form and quality make an away win the most likely outcome.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are at home with a solid 2-1-0 record and recent form of WDWLW (3 wins in last 5). They have shown strong home performances at Mendizorrotza. Osasuna have slipped in form (WWDLL), losing their last two matches. The odds favor Alavés at +130, which is modest home favoritism. Multiple sources back Alavés to win. Osasuna's defensive record has been leaky recently (1.2 goals conceded per game). The home advantage combined with Osasuna's dip in form tips the balance toward Alavés.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly matched contest between two mid-table sides. Málaga are at home (La Rosaleda) but have a poor record of 0-1-2 this season. Levante have a 1-1-1 record away. Dimers' model gives Málaga 39.8%, Draw 25.6%, Levante 34.5% — essentially a coin flip. The odds (Málaga +145, Levante +200) give a slight edge to the home side. Multiple sources back Málaga to win but with low confidence. Levante are missing Brugué (suspension). Home advantage gives Málaga a marginal edge, but this could easily go either way.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Espanyol are slight home favorites at +130 despite having a 1-0-2 record. Sevilla have a 2-0-1 record but recent form shows LWWLL — inconsistent, with consecutive losses recently. Espanyol's form LLWDW shows improvement. The odds are tight between these two sides. One source notes Sevilla dominated historically (28W from 49 meetings), but current form and home advantage slightly favor Espanyol. Sevilla's Isaac Romero is suspended (red card) and Marcao has a foot injury, weakening the away side. The match is essentially a pick'em with marginal home edge.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-05T04:56:48.287782-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in dominant form, winning 3 of their first 3 matches with a 12:2 goal difference and averaging 3.5 goals per match. Valencia sit 17th with only 1 point from 3 matches (0-1-2 record). Barcelona's key players Raphinha (5 goals) and Lamine Yamal are performing exceptionally. Hansi Flick has a perfect 4-0 record against Valencia with an astonishing 18-1 aggregate scoreline. The odds have moved significantly in Barcelona's favor (from -210 to -350), reflecting strong betting confidence. Despite home advantage, Valencia's poor form and Barcelona's ruthless attacking make an away win highly probable.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés have strong home form with a 2-1-0 record, winning 3 of their last 5 matches (60% win rate) while scoring 2.1 goals per game and conceding only 0.5. Osasuna have been inconsistent with a 2-1-0 record but showing vulnerability with 2 losses in their last 5 matches and conceding 1.2 goals per game. Multiple prediction sources favor Alavés at odds around 2.25-2.30, suggesting value in the home win. The statistics show Alavés have been more defensively solid, and with home advantage at Mendizorrotza, they should edge this contest. Both teams have similar attacking output (2.1-2.2 goals scored), but Alavés' defensive stability gives them the edge.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a closely matched contest between two struggling sides. Málaga have a 0-1-2 record while Levante sit at 1-1-1. Both teams have inconsistent form (Málaga: LDLWD, Levante: WDLLW). Levante will be without key player Roger Brugué due to suspension and Unai Elgezabal to injury, which weakens their lineup significantly. Multiple betting sources favor Málaga at odds around 2.32-2.45, suggesting slight home advantage. The most likely correct score prediction is 1-1 (12.1% probability per Dimers), indicating a tight match. Home advantage at La Rosaleda and Levante's injury/suspension issues tip the balance slightly toward Málaga, but confidence is low given both teams' struggles.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is an evenly matched fixture with narrow odds. Espanyol have a 1-0-2 record with 3 points (11th position), while Sevilla have a 2-0-1 record with 6 points (6th position). However, Sevilla's recent form shows vulnerability with losses in 2 of their last 3 matches, including a 1-3 defeat to Atlético Madrid. Sevilla will be without suspended striker Isaac Romero (1 goal, 1 assist in 3 matches), which is a significant blow. Espanyol have injury concerns but recently secured a win and have home advantage at RCDE Stadium. Historical head-to-head favors Sevilla (28 wins from 49 meetings), but current form and Sevilla's key suspension level the playing field. The odds are tight (Espanyol +130, Sevilla +230), reflecting uncertainty. Home advantage and Sevilla's suspension issues give Espanyol a marginal edge.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-05T04:56:59.273731-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona has perfect form (3-0-0) with 12 goals for and only 2 against. Valencia is struggling (0-1-2) with only 1 point. Barcelona's head-to-head record against Valencia this season is 3-0-0. Coach Hansi Flick has won all 4 previous meetings against Valencia by a combined 18-1. Barcelona's attacking prowess (Raphinha 5 goals, López 3 goals) and defensive solidity overwhelm Valencia's weak record. Betting odds heavily favor Barcelona at -350.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés shows stronger recent form (WDWLW) with no losses in last 5 matches and superior win percentage (60% vs 40%). Both teams are evenly matched on record (2-1-0 each) but Alavés has better momentum. Alavés averages 2.6 goals and concedes only 0.5. Osasuna's form is deteriorating (WWDLL). Home advantage at Mendizorrotza combined with Alavés' superior defensive record suggests home win. Prediction models favor Alavés at approximately 70% combined moneyline probability.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga shows better recent consistency (LDLWD) despite weak record. Levante has unstable form (WDLLW) with more losses. Both teams have struggled this season but Málaga has home advantage at La Rosaleda. Dimers' model gives Málaga 39.8% win probability, highest among outcomes. Most likely correct score predicted as 1-1 draw (12.1%), but home win more probable than away win given Málaga's recent positioning. Betting odds favor Málaga at +145 moneyline. Levante missing key player Roger Brugué (suspension) further weakens away chances.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla has stronger recent form and current league position (6th, 6 points) compared to Espanyol (11th, 3 points). Sevilla won 4 consecutive matches before recent loss to Atlético Madrid, showing competitive quality. Sevilla historically dominates this fixture (28 wins from 49 meetings). Espanyol have lost 3 of last 5 with significant injuries (Puado, Kike García). Sevilla's record (2-0-1) is superior to Espanyol (1-0-2). Despite Espanyol home advantage, Sevilla's form, historical dominance, and stronger squad composition favor the away win. Betting odds give Sevilla +230, suggesting meaningful away win probability.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-05T04:58:32.804189-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.78,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in dominant form and have a perfect league start while Valencia have struggled; H2H and odds strongly favor an away win.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are unbeaten at home and slightly favored on the moneyline, with Osasuna's away form mixed.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Málaga have a narrow home edge, but this is close and Levante are capable of earning a point.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla have a stronger away record and H2H edge, while Espanyol are missing key attackers, though the odds are competitive.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-05T04:58:36.325717-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in excellent form with 3 wins, scoring 12 goals and conceding 2. Valencia are winless and near the bottom. Historical dominance and strong squad depth favor a comfortable away win.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés have a solid home record (2-1-0) and are in good form. Osasuna have been inconsistent on the road. Slight edge to the home side.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Málaga have home advantage but poor recent form. Levante are slightly better away. This is a close match, but home advantage gives Málaga a narrow edge.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Sevilla have a better overall record and historical dominance in this fixture, but Espanyol are at home. The match is evenly balanced; slight lean to Sevilla based on quality.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-05T04:59:12.445026-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is in dominant form with a 3-0-0 record and averaging 3.5 goals per match, while Valencia has struggled with a 0-1-2 start. Hansi Flick's perfect record against Valencia and Barcelona's overwhelming talent advantage make a comfortable away victory highly probable.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés has been strong at home and enters with solid recent form, while Osasuna has lost their last two matches. The odds and predictive models favor Alavés to capitalize on their home advantage at Mendizorrotza.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Despite Málaga's poor home record, predictive models slightly favor them over a Levante side dealing with key absences like Roger Brugué's suspension. The match is expected to be tight, but Málaga's home edge gives them a narrow advantage.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Espanyol is slightly favored by the odds at home, while Sevilla is missing key forward Isaac Romero due to suspension. Both teams have been inconsistent, but Espanyol's home advantage and Sevilla's attacking absents tilt the balance slightly towards the home side.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-05T04:59:27.802546-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona has been in excellent form, winning all their opening matches with a strong goal difference. Valencia's recent performance and head-to-head record against Barcelona suggest a high likelihood of an away win.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés has shown a strong home form and a good recent record. Osasuna, while capable, has a mixed away form. The odds and recent performances favor Alavés to secure a win at home.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga has a slightly better home form and the odds are in their favor. Levante, despite some positive results, has a less consistent away record, making Málaga the more likely winner.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla has a strong away form and a historical advantage over Espanyol. Despite Espanyol's home advantage, Sevilla's recent performance and form make them the more likely winners.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-05T05:00:41.156750-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's dominant form, high-scoring attack led by Raphinha and Yamal, and Hansi Flick's perfect record against Valencia make them overwhelming favorites. Valencia's home struggles and defensive vulnerabilities contrast sharply with Barca's tactical maturity and squad depth.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Alavés holds a slight advantage due to home pitch familiarity and more consistent early-season results compared to Osasuna's up-and-down form. The betting odds and statistical models point to a tight contest where the home side can edge out a narrow victory.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Both teams display similar inconsistency early in the campaign, with overlapping form patterns and nearly identical squad ratings. Statistical models and market odds indicate a highly balanced fixture where home advantage provides only a marginal edge, making any result plausible.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Espanyol's home setup and motivation to climb the table give them a slight edge over a Sevilla side showing road inconsistency despite higher overall squad quality. Market odds and probabilistic models favor a narrow home result or draw, leaning toward the hosts securing all three points.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-05T05:01:36.114812-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona displays superior recent form with four wins in their last five matches and averages 3.5 goals per game. Their head-to-head record against Valencia is dominant with four straight victories and an 18-1 aggregate scoreline under Hansi Flick. Betting odds heavily favor the away side, reflecting their attacking prowess and defensive solidity compared to Valencia's struggles.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés enters the match with stronger recent form, having not lost in their last three outings compared to Osasuna's two losses in five games. Market odds provide value on the home side at +130, and Mendizorrotza's home advantage combined with Alavés' solid defensive record supports a narrow home victory.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Statistical models from Dimers assign a slight edge to Málaga at 39.8% probability versus Levante's 34.5%. Additionally, Levante has suspension issues including Roger Brugué, weakening their midfield options. Málaga's home advantage at La Rosaleda and attractive odds from betting analysts support a home result.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "While Sevilla historically dominates this fixture, current market odds favor Espanyol (+130) over Sevilla (+230), indicating confidence in the home side's performance. Sevilla faces injuries and a suspension to Isaac Romero, dampening their attacking threat. Espanyol's recent accumulation of points at 11th position provides a foundation for holding the line at RCDE Stadium.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-05T05:03:19.290372-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona have won all three away matches with a dominant attack and historic success against Valencia, while Valencia are winless at home and sit near the relegation zone.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are unbeaten at home with strong defensive numbers, while Osasuna arrive with patchy away form and defensive frailties, giving the hosts a narrow edge.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Málaga hold slight home favoritism against a Levante side missing key attackers through suspension and injury, tilting a tight contest toward the hosts.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Espanyol are marginal favorites with home support, while Sevilla are impacted by suspensions and injuries. The match is close, but home advantage and market odds justify a narrow pick.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-05T05:03:54.777506-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are in dominant form (3-0-0, 12:2 goal difference, 3.5 goals per game) and Hansi Flick has won all four previous meetings with Valencia by a combined 18-1. Valencia sit on 1 point from three matches and their attack has been toothless. Market odds moved further toward Barcelona (-350), and all preview sources expect a comfortable away win.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both teams hold identical 2-1-0 records, but Alavés have been defensively excellent (0.5 goals conceded per game, unbeaten in last five) and hold home advantage at Mendizorrotza. Osasuna's away form (WWDLL) is shakier and their matches are more open (3.4 total goals per game). Odds favor Alavés (+130) and tipster consensus backs a home win, though this remains a closely matched fixture.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A tight, hard-to-call match. Málaga are winless (0-1-2) but their odds have shortened (+145 from +160), and Levante arrive depleted: Roger Brugué is suspended, plus Elgezabal and Primo are injured. Home advantage at La Rosaleda and Levante's absences give Málaga a slight edge, in line with the Dimers model (Málaga 39.8%), but a draw or narrow Levante win are very live outcomes.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla lead the head-to-head historically and sit higher in the table (6th vs 11th), but they are without suspended striker Isaac Romero and have other fitness concerns, while coming off a 1-3 home loss to Atlético. Espanyol's away form is poor but their home results have been more competitive, and the market makes them clear favorites (+130) at RCDE Stadium. Slight lean to the home side in a match where a draw is also plausible.",
+                    "event_id": "401882892"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-05T05:04:44.848219-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Barcelona (away) @ Valencia (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona have won all three league matches with a strong goal difference, dominate the recent head-to-head, and the odds heavily favor an away win. Valencia are winless through three games.",
+                    "event_id": "401882888"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Osasuna (away) @ Alavés (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Alavés are unbeaten at home with solid form and are the market favorite. Osasuna have been inconsistent away, making a home victory the most likely outcome.",
+                    "event_id": "401882896"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Levante (away) @ Málaga (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Preview sources back Málaga to win at home, where they have shown some positive moments. Levante face absences and have been inconsistent on the road, though the match is close on paper.",
+                    "event_id": "401882890"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Sevilla (away) @ Espanyol (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Sevilla hold a superior away record and a strong historical record against Espanyol. Espanyol have lost three of their last five, and the source analysis favors the draw or away side.",
+                    "event_id": "401882892"
+                }
+            ]
+        }
+    ]
+}

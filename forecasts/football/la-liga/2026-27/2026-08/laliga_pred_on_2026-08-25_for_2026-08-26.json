@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-25",
+        "target_date_et": "2026-08-26",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-25\n\nTarget Date (ET): 2026-08-26\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882919\nMatchup: Real Sociedad (away) @ Real Madrid (home)\nHome: Real Madrid\nAway: Real Sociedad\nKickoff UTC: 2026-08-26T19:00Z\nKickoff ET: 2026-08-26 15:00 EDT\nVenue: Santiago Bernabéu\nRound: unavailable\nHome form: WWWWL\nAway form: LDLDD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Real Madrid -300 (open -245); Draw +475 (open +390); Real Sociedad +700 (open +550)\nTavily context:\n  - Title: Real Madrid vs Real Sociedad - live score, predicted lineups and H2H ...\n    Content: TV schedules\n\n# Real Madrid vs Real Sociedad — Wed, August 26, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Bernabéu\n\nReal MadridReal Madrid\n\n‌\n‌\n\nReal SociedadReal Sociedad\n\n# Real Madrid vs Real Sociedad — Wed, August 26, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Bernabéu\n\nReal MadridReal Madrid\n\n‌\n‌\n\nReal SociedadReal Sociedad\n\n## Injured and suspended players\n\n  Raúl Asencio\n\n  Muscle injury / Mid September 2026\n\nAsencioMuscle injuryMid September 2026\n\n  Thibaut Courtois\n\n  Thigh injury / Doubtful\n\nCourtoisThigh injuryDoubtful\n\n  Éder Militao ...\n    URL: https://www.fotmob.com/matches/real-sociedad-vs-real-madrid/2g087q\n  - Title: Real Madrid vs Real Sociedad LaLiga preview: Everything you need to know\n    Content: Real Sociedad\n\nRSO\n\n### Manager\n\n J. Mourinho\n\nJose Mourinho faces a significant defensive injury crisis ahead of the opening day. Rodrygo, Eder Militao, Ferland Mendy, Raul Asencio, and Thiago Pitarch are all unavailable, leaving the head coach with limited options at the back. No probable starting lineup has been confirmed, and no suspensions are currently in place. Updates are expected closer to kick-off. ...\n    URL: https://www.goal.com/en/news/real-madrid-real-sociedad-laliga-preview/blt2a73551469a069e0\n  - Title: Real Madrid vs Real Sociedad Prediction, Odds & Betting Tips | 26.08.2026 | La Liga\n    Content: Best Odds:\n\nLucky Star\n\nLucky Star\n\nBet here\n\n## Additional predictions\n\nReal Madrid vs Real Sociedad odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| BC.GAME logo  BC.GAME | 1.33 | 5.40 | 8.50 | 1.46 | 2.70 |\n| Mostbet logo  Mostbet | 1.32 | 5.10 | 8.70 | 1.45 | 2.70 |\n| Roobet logo  Roobet | 1.32 | 5.50 | 8.50 | 1.40 | 2.68 |\n| Redracer logo  Redracer | 1.33 | 5.75 | 7.50 | 1.44 | 2.75 |\n| Lucky Star logo  Lucky Star | 1.37 | 5.74 | 8.90 | 1.40 | 2.68 |\n| Melbet logo  Melbet | 1.32 | 5.50 | 8.50 |  |  |\n| Megapari logo  Megapari | 1.33 | 5.75 | 7.50 | 1.44 | 2.75 | ...\n    URL: https://www.mightytips.com/football-predictions/real-madrid-vs-real-sociedad-prediction-26-08-2026\n  - Title: Real Madrid vs Real Sociedad La Liga match (Aug 2026)\n    Content: The odds for a Real Madrid win are a short 1.42, a draw sits at 5.0, and a Sociedad shocker is out at 6.5. AI tips also lean heavily towards a\n    URL: https://www.facebook.com/groups/435999061243188/posts/1602023361307413\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-25\n\nTarget Date (ET): 2026-08-26\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882919\nMatchup: Real Sociedad (away) @ Real Madrid (home)\nHome: Real Madrid\nAway: Real Sociedad\nKickoff UTC: 2026-08-26T19:00Z\nKickoff ET: 2026-08-26 15:00 EDT\nVenue: Santiago Bernabéu\nRound: unavailable\nHome form: WWWWL\nAway form: LDLDD\nHome record: 1-0-0\nAway record: 0-0-1\nESPN structured 1X2 odds: DraftKings: Real Madrid -300 (open -245); Draw +475 (open +390); Real Sociedad +700 (open +550)\nTavily context:\n  - Title: Real Madrid vs Real Sociedad - live score, predicted lineups and H2H ...\n    Content: TV schedules\n\n# Real Madrid vs Real Sociedad — Wed, August 26, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Bernabéu\n\nReal MadridReal Madrid\n\n‌\n‌\n\nReal SociedadReal Sociedad\n\n# Real Madrid vs Real Sociedad — Wed, August 26, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Bernabéu\n\nReal MadridReal Madrid\n\n‌\n‌\n\nReal SociedadReal Sociedad\n\n## Injured and suspended players\n\n  Raúl Asencio\n\n  Muscle injury / Mid September 2026\n\nAsencioMuscle injuryMid September 2026\n\n  Thibaut Courtois\n\n  Thigh injury / Doubtful\n\nCourtoisThigh injuryDoubtful\n\n  Éder Militao ...\n    URL: https://www.fotmob.com/matches/real-sociedad-vs-real-madrid/2g087q\n  - Title: Real Madrid vs Real Sociedad LaLiga preview: Everything you need to know\n    Content: Real Sociedad\n\nRSO\n\n### Manager\n\n J. Mourinho\n\nJose Mourinho faces a significant defensive injury crisis ahead of the opening day. Rodrygo, Eder Militao, Ferland Mendy, Raul Asencio, and Thiago Pitarch are all unavailable, leaving the head coach with limited options at the back. No probable starting lineup has been confirmed, and no suspensions are currently in place. Updates are expected closer to kick-off. ...\n    URL: https://www.goal.com/en/news/real-madrid-real-sociedad-laliga-preview/blt2a73551469a069e0\n  - Title: Real Madrid vs Real Sociedad Prediction, Odds & Betting Tips | 26.08.2026 | La Liga\n    Content: Best Odds:\n\nLucky Star\n\nLucky Star\n\nBet here\n\n## Additional predictions\n\nReal Madrid vs Real Sociedad odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| BC.GAME logo  BC.GAME | 1.33 | 5.40 | 8.50 | 1.46 | 2.70 |\n| Mostbet logo  Mostbet | 1.32 | 5.10 | 8.70 | 1.45 | 2.70 |\n| Roobet logo  Roobet | 1.32 | 5.50 | 8.50 | 1.40 | 2.68 |\n| Redracer logo  Redracer | 1.33 | 5.75 | 7.50 | 1.44 | 2.75 |\n| Lucky Star logo  Lucky Star | 1.37 | 5.74 | 8.90 | 1.40 | 2.68 |\n| Melbet logo  Melbet | 1.32 | 5.50 | 8.50 |  |  |\n| Megapari logo  Megapari | 1.33 | 5.75 | 7.50 | 1.44 | 2.75 | ...\n    URL: https://www.mightytips.com/football-predictions/real-madrid-vs-real-sociedad-prediction-26-08-2026\n  - Title: Real Madrid vs Real Sociedad La Liga match (Aug 2026)\n    Content: The odds for a Real Madrid win are a short 1.42, a draw sits at 5.0, and a Sociedad shocker is out at 6.5. AI tips also lean heavily towards a\n    URL: https://www.facebook.com/groups/435999061243188/posts/1602023361307413\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882919",
+                        "date_utc": "2026-08-26T19:00Z",
+                        "kickoff_et": "2026-08-26 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Madrid",
+                        "away": "Real Sociedad",
+                        "home_id": "86",
+                        "away_id": "89",
+                        "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                        "venue": "Santiago Bernabéu",
+                        "city": "Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWWWL",
+                        "form_away": "LDLDD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-1",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-245",
+                            "home_current": "-300",
+                            "draw_open": "+390",
+                            "draw_current": "+475",
+                            "away_open": "+550",
+                            "away_current": "+700"
+                        },
+                        "odds_text": "DraftKings: Real Madrid -300 (open -245); Draw +475 (open +390); Real Sociedad +700 (open +550)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-25T08:29:36.978613-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-25T08:23:12.461765-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites playing at the Santiago Bernabéu, with bookmaker odds indicating over a 70% chance of victory. Despite some reported squad rotation and minor defensive absences, their superior squad depth and dominant home record point strongly to a home win.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-25T08:23:24.031323-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.715,
+                    "draw_probability": 0.166,
+                    "away_win_probability": 0.119,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavily favored by the betting markets with moneyline odds of -300, implying a 75% chance of winning before the vig. Despite dealing with several defensive injuries, their home advantage at the Santiago Bernabéu and overall squad depth make them highly likely to secure a win against Real Sociedad.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-25T08:23:43.035917-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are playing at home and are overwhelming favorites according to all available betting odds, with implied probabilities of victory well over 70%. Their recent form is excellent (WWWWL), contrasting sharply with Real Sociedad's poor form (LDLDD). While Real Madrid is reportedly dealing with a defensive injury crisis, with key players like Éder Militão unavailable and Thibaut Courtois doubtful, their offensive strength and home advantage at the Santiago Bernabéu are expected to be decisive. Real Sociedad's struggles make it highly unlikely they can capitalize enough to secure a win or even a draw against the reigning champions, even with their defensive issues.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-25T08:23:58.650232-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7149942502874856,
+                    "draw_probability": 0.16584170791460426,
+                    "away_win_probability": 0.11916404179791008,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong favorites playing at home with superior recent form (WWWWL) compared to Real Sociedad's poor away form (LDLDD). Despite Real Madrid facing several defensive injuries, market odds heavily favor a home win, suggesting their squad depth and overall strength are still expected to prevail. The implied home win probability is over 71%, indicating high confidence in this outcome.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-25T08:24:42.718174-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.715,
+                    "draw_probability": 0.166,
+                    "away_win_probability": 0.119,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong home favorites at the Santiago Bernabeu, with market odds implying roughly a low-70% home-win chance after removing vig. Sociedad enter with weaker recent form and an early away loss, while Madrid's defensive injury concerns keep the draw and upset probabilities meaningful but secondary.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-25T08:24:52.202999-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong home favorites at the Santiago Bernabéu, with market odds implying roughly a 70%+ chance of a home win. Their recent form is much stronger than Real Sociedad's, and Sociedad enter with poor recent results and an away underdog profile. Madrid do have some injury concerns, but the overall squad strength, home advantage, and betting market consensus point clearly toward a regulation-time Real Madrid win.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-25T08:25:11.974331-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.69,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing strongly favors Real Madrid at the Bernabéu, and the form/records provided also tilt heavily toward the home side (Madrid WWWWL; Sociedad LDLDD). Real Madrid’s defensive injury list and uncertainty around Courtois slightly raise the draw/upset paths, but the baseline gap in squad quality and home advantage still make a 90-minute home win the most likely outcome.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-25T08:25:22.569056-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor Real Madrid (DraftKings ~ -300) and Madrid have superior form (WWWWL) plus home advantage at the Bernabéu. Real Sociedad’s recent form is mixed (LDLDD) and they started the season with a loss, so an upset is possible but unlikely. Madrid do have defensive absences (Militao, Mendy) and Courtois is doubtful, which raises upset/draw risk—hence a medium confidence favoring a Real Madrid 90-minute win.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-25T08:25:36.378114-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are strong at home with favorable form and squad depth, while Real Sociedad faces a challenging opening-day away fixture at the Bernabéu.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-25T08:25:38.903750-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong favorites at home, with all major bookmakers and AI models giving them a significant edge. Despite some defensive injuries, their squad depth and recent form (WWWL) outweigh Real Sociedad's poor away record and form (LDLDD). The odds and expert predictions consistently point to a Real Madrid win, with a draw or away win considered unlikely.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-25T08:25:40.680529-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid has a strong home form and favorable odds, despite some injury concerns. Real Sociedad's recent away form is weak, and the odds heavily favor a Real Madrid victory.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-25T08:25:50.049761-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.71,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong home favorites per market odds (~-300, decimal ~1.33), with recent form of WWWWL versus Real Sociedad's winless LDLDD run. Despite Madrid's defensive injury concerns (Militao, Asencio, Mendy out; Courtois doubtful), their attacking quality and Bernabeu home advantage heavily outweigh Sociedad's struggling side under Mourinho's opposition. Implied probabilities from consensus odds support a decisive home win expectation.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-25T08:25:54.261529-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Real Madrid",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites at home (-300) despite defensive injuries to Militao, Mendy, Asencio, and Rodrygo. Their strong form (WWWWL) and home advantage at the Bernabeu outweigh Real Sociedad's poor away form (LDLDD). Market odds imply roughly a 75% home win probability.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-25T08:26:02.305693-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are heavy favorites at home in the Bernabéu for LaLiga's opening round. However, their odds have shortened somewhat from open (-245 to -300), reflecting confidence in their form (4W-1L in last 5). Despite this, Real Madrid face significant defensive injury concerns — Rodrygo, Militao, Mendy, Asencio, and Pitarch are all unavailable — which limits their defensive depth under Mourinho. Courtois is also doubtful with a thigh injury. Real Sociedad come in with poor recent form (1W-2D-2L in last 5) and are 0-0-1 in this early season. The market odds (~1.33 decimal for Real Madrid home win) imply roughly 75% win probability, but the defensive injury crisis warrants some discount. Adjusted probability leans toward a Real Madrid win but with elevated draw/upset risk given the backline disruptions.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-25T08:26:09.260767-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites at home at the Santiago Bernabéu with DraftKings odds of -300. Despite facing a defensive injury crisis under new manager Jose Mourinho (with Rodrygo, Militao, Mendy, Asencio, and Pitarch unavailable), Real Madrid have strong recent form (WWWWL) and a positive home record (1-0-0). Real Sociedad come in with poor form (LDLDD) and an away record of 0-0-1, having struggled in their opening match. The market consensus heavily favors Real Madrid with odds around 1.32-1.42 for a home win. Real Madrid's quality and home advantage should overcome their defensive limitations against a struggling Sociedad side. The odds movement from -245 to -300 indicates increased confidence in a Real Madrid victory.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-25T08:26:12.423698-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is the strong favorite despite significant defensive injuries (Militao, Mendy, Asencio, Rodrygo unavailable). Real Sociedad arrives with poor form (LDLDD) and a loss in their opening match. Real Madrid's excellent home record (WWWWL), market consensus (DraftKings -300), and consistent odds across multiple books (1.32-1.37) all point to a comfortable home victory. The injury concerns for Madrid are partially offset by Real Sociedad's current weakness and their manager's defensive crisis being equally impactful.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-25T08:26:21.419607-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are at home with strong recent form and a perfect home record, while Real Sociedad have struggled away and come in with poor form. Market odds heavily favor Madrid despite some defensive injuries.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-25T08:26:22.733452-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid are strong at home and have superior squad depth despite defensive injuries. Real Sociedad have poor away form and are winless in recent matches. Odds heavily favor Real Madrid, but the defensive crisis introduces some uncertainty.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-25T08:26:39.750135-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is heavily favored at home in the opening round, supported by strong home form and heavily skewed bookmaker odds. Despite a defensive injury crisis, their overall squad depth and Real Sociedad's poor away form make a home win the most probable outcome.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-25T08:26:45.056121-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid has a strong home form and is favored by the odds. However, they are facing a defensive injury crisis which could impact their performance. Real Sociedad's away form is not particularly strong, and they have several key players unavailable. The odds and recent form suggest a likely home win, but the injuries add some uncertainty.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-25T08:27:40.169523-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enters as heavy favorites at home with strong recent form (WWWWL) and a perfect start to the season, while Real Sociedad struggles with poor form (LDLDD) and a significant defensive injury crisis. The betting market heavily favors the home side, reflecting their superior squad depth, home advantage at the Santiago Bernabéu, and the visitor's defensive vulnerabilities. Stoppage-time goals are possible but unlikely to alter the clear favorite status.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-25T08:28:17.380008-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid hosts at Santiago Bernabéu with strong recent form (WWWWL) compared to Real Sociedad's inconsistent away record (LDLDD). Although Real Madrid faces defensive injuries, market odds (DraftKings -300) heavily favor the home team, suggesting their squad depth compensates for absences. Real Sociedad is managed by Jose Mourinho but displays weaker form. A regulation-time home victory is the most probable outcome based on form and pricing.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-25T08:29:10.755493-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.11,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong home favorites with solid early-season form (WWWWL) and the backing of odds around -300, while Real Sociedad arrive with poor away form (LDLDD) and long odds near +700. Although Madrid face defensive absences (Militão, Mendy, Courtois doubtful), their superior squad depth and Bernabéu advantage make a home win the most probable outcome within 90 minutes.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-25T08:29:33.608413-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid enters the match with superior form (WWWWL) and a perfect start to the season (1-0-0) at the Santiago Bernabéu, while Real Sociedad struggles with poor recent results (LDLDD) and an 0-0-1 record. Despite significant defensive injuries to Militao, Mendy, Asencio, and Courtois being doubtful, Los Blancos maintain a substantial quality advantage and depth to control possession against a Sociedad side showing early-season vulnerabilities. The market odds (-300) appropriately reflect Madrid's dominance, and while the defensive absences may prevent a blowout, the home side's attacking firepower should secure the three points.",
+                    "event_id": "401882919"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-25T08:29:36.964814-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Sociedad (away) @ Real Madrid (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid has a strong home form and despite some injuries, they are favored against Real Sociedad who has a poor away form.",
+                    "event_id": "401882919"
+                }
+            ]
+        }
+    ]
+}

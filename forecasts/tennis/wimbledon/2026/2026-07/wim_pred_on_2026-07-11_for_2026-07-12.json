@@ -1,0 +1,970 @@
+{
+    "meta_info": {
+        "tournament": "Wimbledon 2026",
+        "events": [
+            "mens-singles",
+            "womens-doubles"
+        ],
+        "system_prompt": "You are an expert grass-court tennis analyst and bettor.\nYou think in probabilities. A tennis match is BINARY: exactly one side wins, there are no draws,\nand the match always produces a winner (a retirement or walkover ⇒ the trailing/withdrawing side loses).\nWeigh ranking, seeding, recent grass-court form, head-to-head, fitness, conditions, and market odds.\nReply in valid JSON format only.",
+        "user_prompts": {
+            "mens-singles": [
+                "Current Date: 2026-07-11\nTarget Date: 2026-07-12\nCompetition: The Championships, Wimbledon 2026 — mens-singles\n\n[Tournament — The Championships, Wimbledon 2026 (grass)]\nSurface: natural grass — fast, low bounce; rewards big serving, slice and net play; rallies are short.\nFormat: men's singles best-of-5 sets; women's singles best-of-3; the deciding set is decided by a\n10-point tiebreak at 6-6. Draw: 128 players, 7 rounds, 32 seeds. Singles seedings follow ATP/WTA rankings.\nVenue: All England Lawn Tennis Club, London; Centre Court and No.1 Court have retractable roofs.\nLineups and conditions can change near match time; reason from rankings, seeds, recent grass form,\nhead-to-head, fitness, and the betting market.\n\n[Matches to forecast — schedule, players, conditions, news]\n--- Match 1: Jannik Sinner vs Alexander Zverev ---\nMatch ID: 177491\nEvent: mens-singles | Round: Final | best-of-5 sets\nScheduled: 2026-07-12 11:00 ET | Court/venue: London, Great Britain\nPlayer 1: Jannik Sinner (Italy) [seed 1, rank #1]\nPlayer 2: Alexander Zverev (Germany) [seed 2, rank #3]\nMarket (median h2h moneyline, American odds): Jannik Sinner -500 / Alexander Zverev +350\nWeather at the All England Club ~match time: 29°C, humidity 33%, precip prob 0%. Centre Court & No.1 Court have retractable roofs (rain/late play → roof closed: indoor, slightly slower, no wind). 2026 has seen extreme heat — a heat rule may apply.\n[News & market snippets]\n  - [Jannik Sinner vs Alexander Zverev H2H & Live Scores - Tennis Stats] ## Head-to-Head (Grass Courts)\n\n## Win Percentage (Grass Courts)\n\nJannik Sinner\n\nJannik Sinner is performing better in the current calendar year.\n\nAlexander Zverev\nJannik Sinner\n\nJannik Sinner is performing better in the trailing 12 months.\n\nJannik Sinner\n\n## Aces (Grass Courts)\n\n## Match Total Games (Grass Courts)\n\n## Break Points Won (Grass Courts)\n\nBreaks Per Set data uses Set 1 as a sample.\n\nBreaks Per Set data uses Set 1 as a sample.\n\n## Double Faults (Grass Courts)\n\n## Tie Breaks (Grass Courts)\n\n## Net Points Won (Grass Courts)\n\n## Latest Results For Jannik Sinner\n\nJul 7\n2026 ...\n  - [Jannik Sinner vs Alexander Zverev - Preview & Prediction ...] We break down absolutely everything — head-to-head record, tactical masterplan, grass court form, who performs better in Grand Slam finals, the key moments that will decide this match, and our bold final prediction for the Wimbledon 2026 champion.\n\n🎾 The biggest match in tennis — our complete preview and prediction for\nSinner vs Zverev in the Wimbledon 2026 final. Don't miss this one.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📺 SUBSCRIBE for daily Wimbledon 2026 coverage, interviews, and analysis\n🔔 Hit the bell so you never miss an upload\n━━━━━━━━━━━━━━━━━━━━━━━━━━━ ...\n  - [Head-to-head: Zverev - Sinner - Tennis Explorer] | Year | Tournament | Match | S | Surface | 1 | 2 | 3 | 4 | 5 | Round |\n ---  ---  ---  ---  ---\n| 2026 | Madrid | Sinner J. | 2 |  | 6 | 6 |  |  |  | F |\n| Zverev A. | 0 | 1 | 2 |  |  |  |\n| 2026 | Monte Carlo | Sinner J. | 2 |  | 6 | 6 |  |  |  | SF |\n| Zverev A. | 0 | 1 | 4 |  |  |  |\n| 2026 | Miami | Sinner J. | 2 |  | 6 | 7 |  |  |  | SF |\n| Zverev A. | 0 | 3 | 64 |  |  |  |\n| 2026 | Indian Wells | Sinner J. | 2 |  | 6 | 6 |  |  |  | SF |\n| Zverev A. | 0 | 2 | 4 |  |  |  |\n| 2025 | Masters Cup ATP | Sinner J. | 2 |  | 6 | 6 |  |  |  |  |\n| Zverev A. ...\n  - [Jannik Sinner vs Alexander Zverev Prediction - Wimbledon 2026] Our independent predictive analytics model currently gives Sinner an 83% chance of defeating Zverev in the Wimbledon Men's Singles 2026.\n\n## Sinner vs Zverev: Odds\n\nThe latest betting odds in Australia for Monday's Wimbledon 2026 match between Sinner and Zverev are listed here:\n\n Head to Head: Sinner $1.20, Zverev $4.80\n First Set: Sinner $1.33, Zverev $3.40\n\nOdds are correct at the time of publication and subject to change.\n\nLooking at the latest head-to-head odds, TAB currently has Sinner at $1.20 and Zverev at $4.80. ...\n  - [Sinner vs Zverev Prediction for 12 July 2026 15:00 UTC - Tennis, head-to-head statistics] ## ⭐ Editor's Pick\n\nBoth players arrive at the Wimbledon final in outstanding form. Each boasts an impressive winning streak: the Italian hasn’t lost on London’s grass since last year, while the German has been unbeaten since the previous Grand Slam. Their playing styles share plenty of similarities, though Jannik Sinner tends to take a bit more risk. With both preferring to dictate play from the baseline, we’re likely in for extended rallies throughout the match - meaning a high number of points is on the cards. ...\n\nTask:\n    Predict the winner of EVERY match above. There are no draws. For each match estimate:\n      - p1_win_probability (0.0 to 1.0)\n      - p2_win_probability (0.0 to 1.0)\n    The two must sum to 1.0. If market odds are shown, use them as a key calibration signal.\n\nOutput Format (JSON strictly):\n{\n    \"forecast_timestamp\": \"2026-07-11\",\n    \"event\": \"mens-singles\",\n    \"predictions\": [\n        {\n            \"match_id\": \"12345\",\n            \"matchup\": \"Player 1 vs Player 2\",\n            \"p1_win_probability\": 0.62,\n            \"p2_win_probability\": 0.38,\n            \"predicted_winner\": \"Player 1 name\",\n            \"confidence\": \"High/Medium/Low\",\n            \"reasoning\": \"Higher seed, superior grass record...\"\n        }\n    ]\n}\n"
+            ],
+            "womens-doubles": [
+                "Current Date: 2026-07-11\nTarget Date: 2026-07-12\nCompetition: The Championships, Wimbledon 2026 — womens-doubles\n\n[Tournament — The Championships, Wimbledon 2026 (grass)]\nSurface: natural grass — fast, low bounce; rewards big serving, slice and net play; rallies are short.\nFormat: men's singles best-of-5 sets; women's singles best-of-3; the deciding set is decided by a\n10-point tiebreak at 6-6. Draw: 128 players, 7 rounds, 32 seeds. Singles seedings follow ATP/WTA rankings.\nVenue: All England Lawn Tennis Club, London; Centre Court and No.1 Court have retractable roofs.\nLineups and conditions can change near match time; reason from rankings, seeds, recent grass form,\nhead-to-head, fitness, and the betting market.\n[Doubles note] This is a DOUBLES event: two players per side, best-of-3 sets, a 64-pair draw with 16 seeds (mixed doubles is a smaller draw, one man + one woman per side). Each side wins or loses as a team; exact order-of-play court times may still be TBC.\n\n[Matches to forecast — schedule, players, conditions, news]\n--- Match 1: Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani ---\nMatch ID: 4601\nEvent: womens-doubles | Round: Final | best-of-3 sets\nScheduled: 2026-07-12 07:00 ET | Court/venue: Centre Court\nPlayer 1: Hanyu Guo / Kristina Mladenovic (CHN/FRA) [seed 10]\nPlayer 2: Gabriela Dabrowski / Luisa Stefani (CAN/BRA) [seed 2]\nWeather at the All England Club ~match time: 28°C, humidity 40%, precip prob 0%. Centre Court & No.1 Court have retractable roofs (rain/late play → roof closed: indoor, slightly slower, no wind). 2026 has seen extreme heat — a heat rule may apply.\n[News & market snippets]\n  - [Dabrowski & Stefani vs Guo & Mladenovic H2H & Live Scores - TennisStats.com] TennisStats.com logo\nTennisStats.com logo\n\nMenu\n\nUser\n\nRankings\n\nStats\n\nWimbledon WTA Doubles\n\n ›\n\nHead to Head\n\n ›\n\nDabrowski & Stefani vs Guo & Mladenovic\n\n# Dabrowski & Stefani vs Guo & Mladenovic Head-to-Head Stats & Results\n\nDabrowski & Stefani\nDabrowski & Stefani\n\nRanking\n\n3 / 7\n\nElo Score\n\n7935 / 6575\n\nH2H Record\n\nNo H2H\n\nWins\n\nNo Past Match-Ups\n\nDabrowski & Stefani and Guo & Mladenovic have equal wins in their careers.\n\nGuo & Mladenovic\nGuo & Mladenovic\n\nRanking\n\n22 / 32\n\nElo Score\n\n2910 / 2360\n\nVerdict : Dabrowski & Stefani and Guo & Mladenovic have equal wins in their careers. ...\n  - [Dabrowski and Stefani, Guo and Mladenovic to play for first Wimbledon title] WTAxMB-star_joint-logo_h_MB-version_p_3C_web (1)\n\nWTAxMB-star_joint-logo_h_MB-version_p_3C_web_white (1)\n\nWTA Logo Go back to the home page\n\nWTA_Web_Quick-Links_Tiles-Scores_288x288\n\n Scores  WTA_Web_Quick-Links_Tiles-Rankings_288x288\n\n Rankings  WTA_Web_Quick-Links_Tiles-Exclusive-Content_288x288\n\n Exclusives  Finals Quick Link Tile\n\n Finals  WTA_Web_Quick-Links_Tiles-TourCalendar_288x288\n\n Calendar  WTA_Web_Quick-Links_Tiles-Video_288x288\n\n Highlights  unlocked\n\n Unlocked  WTA_Web_Quick-Links_Tiles-H2H_288x288\n\n H2H\n\nMatch Reaction ...\n  - [WTA - The doubles final is set 👯‍♀️ Kristina Mladenovic &...] ## WTA's post\n\n### WTA\n\n10h  ·\n\nThe doubles final is set 👯‍♀️\n\nKristina Mladenovic & Guo Hanyu d. Jiang/Xu 7-6(5), 6-4\n\nGaby Dabrowski & Luisa Stefani d. Liang/Aoyama 7-5, 6-3\n\n#Wimbledon #wta #doubles [...] '/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' ...\n  - [Wimbledon Women Doubles Tennis Odds & Predictions 2026] ## Sports\n\n## Sports\n\n# Wimbledon Women Doubles · Games\n\nRory McIlroy\nScottie Scheffler\nFrance advances\nMorocco advances\nSpain advances\nBelgium advances\nStephan Jaeger\nSteven Fisk\nPittsburgh\nAtlanta\nChicago WS\nBoston\nMiami\nSeattle\nNicolas Mejia\nSantiago Rodriguez Taverna\nHernan Casanova\nLuciano Emanuel Ambrogi\nAdrian Mannarino\nAlexis Galarneau\nBernard Tomic\nAdam Walton\nGarrett Johns\nDarwin Blanch\nArthur Fery\nAlexander Zverev\nJannik Sinner\nNovak Djokovic\nRudy Quan\nNoah Zamora\nLoes Ebeling Koning\nGina Feistel\nGloriana Nahum\nNatalie Kha\nAki Iwai\nHae-Ran Ryu\nReese Brantmeier\nElizabeth Mandlik ...\n\nTask:\n    Predict the winner of EVERY match above. There are no draws. For each match estimate:\n      - p1_win_probability (0.0 to 1.0)\n      - p2_win_probability (0.0 to 1.0)\n    The two must sum to 1.0. If market odds are shown, use them as a key calibration signal.\n\nOutput Format (JSON strictly):\n{\n    \"forecast_timestamp\": \"2026-07-11\",\n    \"event\": \"womens-doubles\",\n    \"predictions\": [\n        {\n            \"match_id\": \"12345\",\n            \"matchup\": \"Player 1 vs Player 2\",\n            \"p1_win_probability\": 0.62,\n            \"p2_win_probability\": 0.38,\n            \"predicted_winner\": \"Player 1 name\",\n            \"confidence\": \"High/Medium/Low\",\n            \"reasoning\": \"Higher seed, superior grass record...\"\n        }\n    ]\n}\n"
+            ]
+        },
+        "chunks_per_event": {
+            "mens-singles": 1,
+            "womens-doubles": 1
+        },
+        "schedules": {
+            "mens-singles": [
+                {
+                    "event": "mens-singles",
+                    "match_id": "177491",
+                    "date_utc": "2026-07-12T15:00Z",
+                    "scheduled_et": "2026-07-12 11:00 ET",
+                    "round": "Final",
+                    "venue": "London, Great Britain",
+                    "set_format": "best-of-5 sets",
+                    "p1": {
+                        "name": "Jannik Sinner",
+                        "country": "Italy",
+                        "rank": 1,
+                        "points": 13450.0,
+                        "seed": 1
+                    },
+                    "p2": {
+                        "name": "Alexander Zverev",
+                        "country": "Germany",
+                        "rank": 3,
+                        "points": 7190.0,
+                        "seed": 2
+                    },
+                    "odds": {
+                        "p1_american": -500.0,
+                        "p2_american": 350.0
+                    }
+                }
+            ],
+            "womens-doubles": [
+                {
+                    "event": "womens-doubles",
+                    "match_id": "4601",
+                    "date_utc": "2026-07-12T11:00Z",
+                    "scheduled_et": "2026-07-12 07:00 ET",
+                    "round": "Final",
+                    "venue": "Centre Court",
+                    "set_format": "best-of-3 sets",
+                    "p1": {
+                        "name": "Hanyu Guo / Kristina Mladenovic",
+                        "country": "CHN/FRA",
+                        "seed": 10,
+                        "rank": null,
+                        "points": null
+                    },
+                    "p2": {
+                        "name": "Gabriela Dabrowski / Luisa Stefani",
+                        "country": "CAN/BRA",
+                        "seed": 2,
+                        "rank": null,
+                        "points": null
+                    },
+                    "odds": null
+                }
+            ]
+        },
+        "source_coverage": {
+            "mens-singles": {
+                "matches": 1,
+                "missing_rank_count": 0,
+                "missing_rank": [],
+                "missing_odds_count": 0,
+                "missing_odds": []
+            },
+            "womens-doubles": {
+                "matches": 1,
+                "missing_rank_count": 0,
+                "missing_rank": [],
+                "missing_odds_count": 0,
+                "missing_odds": []
+            }
+        },
+        "market_odds": {
+            "mens-singles": [
+                {
+                    "match_id": "177491",
+                    "p1": "Jannik Sinner",
+                    "p2": "Alexander Zverev",
+                    "odds": {
+                        "p1_american": -500.0,
+                        "p2_american": 350.0
+                    }
+                }
+            ],
+            "womens-doubles": [
+                {
+                    "match_id": "4601",
+                    "p1": "Hanyu Guo / Kristina Mladenovic",
+                    "p2": "Gabriela Dabrowski / Luisa Stefani",
+                    "odds": null
+                }
+            ]
+        },
+        "panel_spec": "docs/superpowers/specs/2026-06-27-wimbledon-forecast-design.md",
+        "generated_at": "2026-07-11 20:10:06"
+    },
+    "model_predictions": [
+        {
+            "event": "mens-singles",
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner enters the Wimbledon final as the World No. 1 and is in peak form on grass, having dominated the head-to-head matchups against Zverev throughout the 2026 season on other surfaces. Market odds of -500 heavily favor the Italian, aligning with predictive models that project him with an 81-83% win probability due to his superior movement, return game, and baseline consistency on quick courts."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:55:11"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Jannik Sinner is a heavy market favorite (-500 or $1.20), implying around an 80-83% win probability. He has dominated their recent head-to-head matchups in 2026 and currently possesses superior grass-court form and tactical acumen that suits the low, fast-bouncing surface of Wimbledon."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:55:17"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner, the world #1, holds a significant advantage based on form, ranking, and a dominant recent head-to-head record, having won his last several matches against Zverev in straight sets. While this is their first meeting on grass, Sinner's powerful, flat groundstrokes are exceptionally well-suited to the surface. The betting markets strongly corroborate this, pricing Sinner as a heavy favorite with an implied win probability of approximately 80-83%. Zverev's formidable serve is a threat, but Sinner's superior baseline game and consistency in high-pressure moments make him the clear favorite to win his first Wimbledon title."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:55:36"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.82,
+                    "p2_win_probability": 0.18,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Jannik Sinner, the world #1 and top seed, enters the Wimbledon final with exceptional momentum, boasting an unbeaten record on London's grass since last year. His head-to-head record against Alexander Zverev has been overwhelmingly dominant in recent encounters across various surfaces, showcasing a clear tactical and psychological edge. Sinner also holds the advantage of having recently won a Grand Slam (Australian Open 2024), providing crucial experience in major finals. While Zverev is the #2 seed and has shown strong form, reflected by being 'unbeaten since the previous Grand Slam,' the market odds are heavily skewed towards Sinner (-500 / $1.20, implying ~83% raw probability), and independent predictive models align with this strong favoritism. The best-of-5 set format on a fast grass court, in potentially hot conditions, will reward Sinner's high-risk, aggressive baseline play and current superior form."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:55:51"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "The market makes Sinner a strong favorite, with -500/+350 implying roughly 79-80% no-vig. I shade slightly higher because Sinner is the #1 seed, has the stronger recent grass profile, and appears to have dominated recent head-to-head meetings with Zverev in 2026. Zverev's serve and best-of-5 experience keep him live on fast grass, especially in tiebreak-heavy sets, but Sinner's return quality, baseline control, and current form make him the clear pick."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:56:36"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is the #1 seed and current world #1, with stronger recent form, a dominant recent head-to-head trend against Zverev, and the market making him a clear favorite around -500. Zverev's serve and baseline durability give him upset paths on fast grass, especially if sets reach tiebreaks, but Sinner's return quality, cleaner first-strike tennis, and superior recent performance profile make him the more likely Wimbledon champion."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:56:42"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Market calibration strongly favors Sinner (approx. -500 implies ~79% after vig), and the recent H2H trend provided shows repeated Sinner wins in 2026 (mostly straightforward), suggesting a persistent matchup edge. On grass in best-of-5, Zverev’s serve/first-strike game keeps sets close and raises tiebreak likelihood, but Sinner’s superior return quality, baseline pace, and ability to pressure Zverev’s second serve should create the more reliable break chances over a long match. Hot, fast conditions marginally help Zverev hold serve, yet they also reward Sinner’s clean ball-striking and aggressive returning; overall edge remains clearly with the #1 seed."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:08"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.8,
+                    "p2_win_probability": 0.2,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Market and form strongly favour Sinner (median moneyline -500 → market-implied ~79% before vig; independent models ~83%). Sinner is world #1 and top seed, arrives with superior 2026 head-to-head vs Zverev (multiple wins across the season) and excellent recent grass form (unbeaten in London since last year). Zverev's big serve and net game give him upset potential—hot, low-humidity conditions slightly favour servers and a best-of-5 gives room for comebacks—but no injury flags and Sinner's return, movement and consistent baseline aggression make him the clear favorite. Probabilities calibrated to market, head-to-head, ranking, surface fit and match context."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:19"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.789,
+                    "p2_win_probability": 0.211,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Market odds imply Sinner as the favorite (-500) and Zverev (+350); normalized implied probabilities yield p1 ≈ 0.789 and p2 ≈ 0.211. Sinner has stronger recent grass form, higher win-rate on grass this year, and a favorable matchup on fast grass with strong serve and baseline control. Zverev is a dangerous baseline returner but faces a higher-variance, five-set match on Centre Court; Sinner's fitness and head-to-head trend on grass support the prediction."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:34"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is the world #1 and top seed, with a dominant head-to-head record against Zverev in 2026, including multiple straight-set wins in Masters finals and semifinals. Sinner's grass-court form is exceptional, with an unbeaten streak at Wimbledon since last year. The market heavily favors Sinner (-500 to -600 range), and predictive models align with an 80-83% win probability. Zverev is in strong form but has consistently come up short against Sinner this season, and Sinner's aggressive baseline play and superior movement are well-suited to grass. No fitness concerns reported for either player. All signals point to Sinner as a clear favorite."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:37"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Jannik Sinner is the top seed and current world number one, with a superior head-to-head record against Alexander Zverev, especially on grass. Sinner has been in outstanding form, not losing on grass since last year, and has consistently defeated Zverev in recent encounters. The market odds heavily favor Sinner, aligning with his recent performances and grass-court prowess."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:40"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is world #1, top seed, and has utterly dominated the recent head-to-head — he won all four 2026 meetings (Indian Wells, Miami, Monte Carlo, Madrid) in straight sets, often lopsidedly, plus the 2025 ATP Finals. He is unbeaten on Wimbledon grass since last year and leads Zverev in grass-court metrics and 12-month form. The market (-500/+350, ~79-80% implied after vig) and independent models (~83%) both point strongly to Sinner. Zverev's big serve gives him a puncher's chance in a best-of-5 grass final, but Sinner's superior return, baseline consistency, and psychological edge in this matchup make him a heavy favorite."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:51"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.84,
+                    "p2_win_probability": 0.16,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is world #1, top seed, and holds a dominant recent H2H — winning multiple 2026 matches (Madrid, Monte Carlo, Miami, Indian Wells) without dropping sets. His faster, lower-risk grass game and superior serve/return efficiency suit the fast Centre Court, likely closed roof indoor conditions. Market (-500) and predictive models (~83%) strongly favor Sinner. Zverev's big serve gives him a puncher's chance in best-of-5, but the gap in form and matchup edge is decisive."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:57:57"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Market odds of -500/+350 imply roughly 83% probability for Sinner, which aligns closely with independent model estimates (83%) and Australian TAB pricing ($1.20 vs $4.80). Sinner arrives as world #1 and top seed with dominant 2026 form across all surfaces — he has swept Zverev in all four of their 2026 meetings (Indian Wells SF, Miami SF, Monte Carlo SF, Madrid F), all in straight sets, indicating a substantial performance gap. On grass specifically, Sinner has not lost at Wimbledon since 2025 and his game — heavy topspin groundstrokes, elite return, outstanding defensive retrieval — has translated extremely well to fast grass in recent seasons. Zverev, while a formidable ball-striker and the #2 seed, has historically underperformed on grass relative to other surfaces; his serve-and-volley game is less developed and his movement on the low-bouncing surface is a relative weakness. Zverev's path to the final has been strong but Sinner's recent H2H dominance (4-0 in 2026, all straight sets) is a significant signal of a genuine quality gap at this moment in their careers. The hot, dry conditions (29°C, 33% humidity) with no rain threat mean roof stays open and the court plays at full pace — favoring big servers but Sinner's consistency and return game hold up extremely well in fast conditions. Heat rule may slow play slightly between sets but does not materially shift the balance. In Grand Slam finals specifically, Sinner has proven his mental fortitude (Australian Open titles) while Zverev's final record remains mixed. Overall, Sinner is a heavy, well-justified favorite."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:10"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Market odds (-500/+350) imply ~83% probability for Sinner, which aligns perfectly with multiple strong factors. Sinner holds a dominant 2026 head-to-head record (4-0), winning all encounters in straight sets across different surfaces (Indian Wells, Miami, Monte Carlo, Madrid). The independent analytics model cited gives Sinner 83% win probability. Sinner is #1 seed/rank vs Zverev #2 seed/rank #3. Critically, Sinner has been unbeaten on grass at Wimbledon since 2025, showing superior grass-court adaptation. Both players arrive in excellent form, but Sinner's recent dominance over Zverev is overwhelming - he hasn't dropped a set against him in 2026. While Zverev is a formidable opponent with strong serving capabilities ideal for grass, Sinner's ability to take more risks and dictate baseline rallies gives him the tactical edge. The best-of-5 format slightly favors the more consistent player (Sinner). Weather conditions (29°C, low humidity) are neutral. Zverev's main path to victory requires exceptional serving and avoiding the baseline exchanges where Sinner has consistently dominated him. The 83% probability reflects Sinner as a strong favorite while acknowledging Zverev's quality and the inherent variance in Grand Slam finals."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:21"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is World No. 1 seed and dominant favourite. Market odds (-500) imply ~83% win probability, consistent with independent analytics. H2H record strongly favours Sinner: 5-0 in 2026 (Madrid F 6-0 6-1, Monte Carlo SF 6-0 6-1, Miami SF 6-3 7-64, Indian Wells SF 6-2 6-4, ATP Masters Cup 6-0 6-0). Sinner's grass-court form is exceptional with no losses on London grass in 12+ months. Zverev, despite strong recent form and unbeaten streak since a prior Grand Slam, has never beaten Sinner in 2026 and faces a superior baseline dictator who thrives on fast courts. Sinner's serve, movement, and risk tolerance edge Zverev's. Centre Court conditions (29°C, low humidity, potentially closed roof) favour Sinner's aggressive baseline game. Zverev's value at +350 odds reflects realistic upset potential, but Sinner's superiority is substantial."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:26"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "World #1 and top seed, dominant head-to-head lead (won all recent meetings in straight sets), exceptional grass-court pedigree as defending champion, strong serving and movement well-suited to fast grass, while Zverev's power baseline game has been less effective in this matchup. Market odds strongly support Sinner."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:35"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is world #1, has dominated Zverev in 2026 (4-0 on hard courts), and has an 83% win probability per predictive models. Zverev has never beaten Sinner on grass and struggles in big finals. Market odds imply ~83% chance for Sinner. Sinner's grass form is impeccable, while Zverev's second serve is vulnerable on grass."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:37"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.82,
+                    "p2_win_probability": 0.18,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is the World No. 1 and top seed, holding a dominant recent head-to-head record against Zverev, including four straight-sets victories in 2026 Masters events. Market odds and predictive models heavily favor Sinner with an implied win probability of over 80%. While Zverev is in excellent form, Sinner's elite baseline consistency, superior grass-court results, and tactical edge make him the clear favorite for the Wimbledon title."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:58:58"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.83,
+                    "p2_win_probability": 0.17,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Jannik Sinner, the top seed and world #1, has a strong head-to-head record against Zverev, particularly in recent matches on various surfaces. His current form and superior grass-court performance, including a higher win percentage and more aces, indicate a significant edge. The market odds also strongly favor Sinner, with a median moneyline of -500, suggesting a high probability of victory. While Zverev is a formidable opponent, especially in big matches, Sinner's aggressive play style and recent success on grass make him the favorite."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 19:59:04"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.82,
+                    "p2_win_probability": 0.18,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner enters as the #1 seed and ATP #1 with a dominant recent head-to-head record (five straight wins, all straight sets) and an unbeaten grass streak since 2025. His combination of elite serving, heavy penetrating groundstrokes, and superior court movement translates exceptionally well to fast, low-bouncing Wimbledon conditions. While Zverev’s massive serve and #2 seed status keep him in contention, his grass-court navigation and historical struggles against Sinner’s aggressive baseline pressure lower his upset probability. The market odds (-500) and independent predictive models (~83%) strongly align, with Sinner’s superior fitness, heat adaptation, and proven best-of-5 closing ability justifying a high-confidence projection."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:00:00"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.81,
+                    "p2_win_probability": 0.19,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner enters as the World No. 1 and top seed with significant momentum, having dominated H2H meetings across all surfaces in 2026. Market indicators (TAB $1.20, US odds -500) and independent modeling consistently place his win probability near 83%. Grass suitability supports his aggressive game style ('hasn't lost on London's grass'), while Zverev faces an uphill battle against a player in peak form despite being the second-seeded favorite. Extreme heat adds fatigue risk in a best-of-5 format, potentially favoring the higher-ranked stamina profile of Sinner. While Zverev is dangerous, the statistical convergence favors Sinner heavily."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:00:36"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.82,
+                    "p2_win_probability": 0.18,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Sinner is the world #1 and top seed, carrying a dominant 4-0 head-to-head record against Zverev in 2026 with straight-sets wins at Indian Wells, Miami, Monte Carlo and Madrid. He has not lost on London grass since last year, showcasing elite grass-court baseline power and movement. Market odds (-500 / +350) imply an approximately 79-80% win probability for Sinner, closely aligned with independent predictive models citing 83%. Zverev is a proven Grand Slam finalist with a strong serve, but Sinner's superior return game, recent mental edge in their rivalry, and best-of-5 set stamina on fast surfaces make him the clear favorite to lift the trophy."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:01:46"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.8,
+                    "p2_win_probability": 0.2,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "World No. 1 and top seed Jannik Sinner enters the final with a dominant 4-0 head-to-head record against Zverev in 2026 (winning every set in their last three meetings) and an unbeaten streak on grass dating back to the previous Wimbledon. Sinner's flat, aggressive baseline game and superior court penetration are ideally suited to the fast, low-bounce grass surface, while Zverev's high-topspin style is less effective and his movement more vulnerable on slick lawns. Market odds (-500/+350) price Sinner at an implied ~80% win probability, aligning with his elite grass-court ELO and recent Grand Slam final experience. Although Zverev's big serve and best-of-five endurance provide a path to victory, Sinner's mental edge, physical freshness in extreme heat conditions, and tactical superiority on grass make him the clear favorite to lift the trophy."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:02:22"
+        },
+        {
+            "event": "mens-singles",
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "predictions": [
+                {
+                    "match_id": "177491",
+                    "matchup": "Jannik Sinner vs Alexander Zverev",
+                    "p1_win_probability": 0.65,
+                    "p2_win_probability": 0.35,
+                    "predicted_winner": "Jannik Sinner",
+                    "confidence": "High",
+                    "reasoning": "Jannik Sinner is the top seed and has a better head-to-head record against Zverev on grass courts. Sinner has also been performing better in the current calendar year and in the trailing 12 months. Market odds heavily favor Sinner, aligning with his higher seed, superior grass record, and recent form. The weather conditions are expected to be hot, which may favor players with a more aggressive style, and Sinner's tendency to take more risks could be an advantage. The retractable roof ensures that weather conditions will not affect the match, maintaining a consistent playing surface."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:02:27"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani enter as the higher-seeded team (seed 2 vs seed 10) and boast a more stable and high-ranking partnership. While Mladenovic brings immense past Grand Slam final experience, the Canadian-Brazilian duo has shown exceptional form on grass and possesses superior serve-and-volley chemistry suited for the fast Centre Court conditions."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:02:52"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani are the No. 2 seeds and hold significantly higher individual doubles rankings (3 and 7) than Guo and Mladenovic (22 and 32). Although Mladenovic brings vast Grand Slam finals experience, the Canadian-Brazilian duo has shown greater overall consistency and holds the edge as the superior overall pairing on grass."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:03:10"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "This Wimbledon final pits the in-form underdogs against the established top seeds. Gabriela Dabrowski and Luisa Stefani, the #2 seeds, hold a significant advantage in terms of team ranking and year-long consistency. As an established partnership, their cohesion in high-pressure moments is a major asset. In contrast, the #10 seeded pair of Hanyu Guo and Kristina Mladenovic are on a fantastic run, but this is a newer pairing. While Kristina Mladenovic is the most accomplished player on the court with multiple Grand Slam titles and a game well-suited to grass, her partner Guo is the least experienced in a match of this magnitude. The pressure of a Centre Court final could be a deciding factor. Dabrowski and Stefani's higher baseline and proven track record as a duo make them the favorites to handle the occasion and secure their first Wimbledon title together."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:03:29"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium-High",
+                    "reasoning": "Dabrowski/Stefani are the #2 seeds and have demonstrated consistent high-level play throughout the tournament, culminating in a strong semi-final win. Both players are established top-tier doubles specialists with excellent grass-court skills, particularly their aggressive net play and strong serves. While Guo/Mladenovic (#10 seeds) have had an impressive run, highlighted by Mladenovic's extensive Grand Slam final experience, the overall aggregate strength, higher seeding, and consistent performance observed in their semi-final match against strong opponents (winning more decisively) favor the Canadian-Brazilian duo. No head-to-head history is available for these specific teams, but Dabrowski/Stefani's higher individual rankings and overall pedigree make them the stronger pairing on paper and in current form."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:03:40"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.34,
+                    "p2_win_probability": 0.66,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani are the No. 2 seeds with the stronger combined doubles ranking profile and a clearer recent elite-level partnership edge. Their serving, returning and net skills translate well to fast grass, and their semifinal win was slightly more convincing. Guo/Mladenovic are dangerous because Mladenovic has major-title doubles pedigree and the pair has handled pressure well, but Guo is the least proven player in this final and the ranking/Elo gap favors Dabrowski/Stefani."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:04:53"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.36,
+                    "p2_win_probability": 0.64,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani are the No. 2 seeds and appear to have the stronger combined doubles profile, with higher listed rankings and a more established elite-team baseline. Both pairs reached the final in straight sets, but Dabrowski/Stefani's net coverage, first-strike serving patterns and grass-court doubles instincts should translate well on a fast Centre Court. Guo/Mladenovic are dangerous because Mladenovic has major-final doubles experience and strong hands at net, but Guo is the less proven player in this matchup. No head-to-head reduces certainty, and doubles finals can swing on a few return games or tiebreak points, so the favorite is clear but not overwhelming."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:05"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Seed/ranking gap favors Dabrowski/Stefani (seed 2 vs seed 10) and the available rating/Elo snapshot strongly leans their way. On fast Wimbledon grass, their balanced profile (serve + first-volley quality, plus Dabrowski’s elite doubles instincts) should translate to more holds and more high-leverage return chances. Guo/Mladenovic have momentum and Mladenovic brings significant big-match/grass doubles pedigree, which keeps upset risk real in a best-of-3, but overall team quality and season-level strength point to Dabrowski/Stefani as clear (not overwhelming) favorites."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:26"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.38,
+                    "p2_win_probability": 0.62,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani (seed 2) are the stronger established partnership on paper — higher team ranking/Elo, more consistent tour-level doubles results and better recent grass-court form this fortnight (including a straight-sets semi). Seed 2 vs seed 10 indicates market expectation in their favor and the available market snippets corroborate they are the favorite; I calibrate to ~62% accordingly. Guo/Mladenovic have momentum (Mladenovic is a top doubles veteran and Guo has played well), and Mladenovic’s big-match experience narrows the gap, but their pairing is less proven as a team compared with Dabrowski/Stefani. Centre Court conditions (fast natural grass, 28°C, no rain forecast) reward strong serving, quick net play and team coordination — strengths for both teams but marginally favor the more cohesive Dabrowski/Stefani unit. No prior head-to-head to use. Fitness/injury concerns are not reported for either side. Given doubles volatility and Mladenovic’s experience, I keep confidence at Medium rather than High."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:40"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.38,
+                    "p2_win_probability": 0.62,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "High",
+                    "reasoning": "Dabrowski/Stefani are the higher-seeded and more proven Wimbledon doubles specialists; favorable head-to-head surface record, strong grass-court pedigree, and likely market favorite status; Guo/Mladenovic have a lower seed and less doubles-experience on grass at this level."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:47"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.28,
+                    "p2_win_probability": 0.72,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "High",
+                    "reasoning": "Dabrowski/Stefani are the #2 seeds and both are top-10 doubles specialists with strong grass-court credentials. Their combined Elo and WTA rankings are significantly higher than Guo/Mladenovic, who are seeded #10 and have lower individual and team grass-court pedigree. Mladenovic is an experienced doubles player but has not been as consistent at the top level in recent years, while Guo is less proven at this stage. Both teams have reached the final without dropping a set in the semis, but Dabrowski/Stefani have faced and beaten tougher opposition throughout the draw. No head-to-head, but the market and statistical signals point strongly to Dabrowski/Stefani as clear favorites. The Centre Court conditions (fast, low bounce) suit their aggressive net play and serve. Confidence is high barring late injury or lineup news."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:51"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani are the higher-seeded team (seed 2) and have superior individual rankings and Elo scores compared to Guo and Mladenovic. They have shown strong form throughout the tournament, defeating tough opponents in straight sets. The fast grass surface at Wimbledon suits their aggressive style of play, particularly their strong net game and effective serving. Although there is no head-to-head record, Dabrowski and Stefani's consistent performance and higher seeding give them an edge in this final."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:05:54"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.34,
+                    "p2_win_probability": 0.66,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani are the No.2 seeds with substantially higher team rankings and Elo (7935 vs 6575 per stats snippet), and they are an established, experienced pairing with a strong net-forward game well-suited to fast grass. They reached the final in convincing fashion (7-5, 6-3 over Liang/Aoyama). Guo/Mladenovic (seed 10) are dangerous — Mladenovic is a multiple-time Grand Slam doubles champion and their run through Jiang/Xu shows form — but the seeding, Elo gap, and team cohesion favor the Canadian/Brazilian pair. Doubles finals carry inherent variance, so confidence is medium."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:05"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.28,
+                    "p2_win_probability": 0.72,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani are the No.2 seeds with far superior team ranking (3/7 vs 22/32) and a dominant Elo edge (7935/6575 vs 2910/2360). They are an established elite pairing with proven Grand Slam pedigree, while Guo/Mladenovic are the No.10 seeds who overachieved to reach the final. No prior H2H exists. Mladenovic brings big-match experience which keeps this from being a blowout, but the class and consistency of the higher seeds make them clear favorites on grass."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:11"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani are the clear favourites on multiple dimensions. They are the #2 seeds versus the #10 seeds, their doubles team rankings (3/7 vs 22/32) reflect substantially higher pedigree, and their Elo scores (7935/6575 vs 2910/2360) confirm a significant skill gap. Dabrowski is one of the elite doubles specialists on the WTA Tour — a former world #1 in doubles — and Stefani is an accomplished partner with grass-court experience. Their semifinal win over Liang/Aoyama (7-5, 6-3) was comfortable and efficient. Guo and Mladenovic surprised in the semis by defeating Jiang/Xu in a tight 7-6(5), 6-4 match, demonstrating they are competitive, but they are the underdogs here. Mladenovic has solid doubles credentials but the aggregate team quality gap is considerable. No H2H record between the pairs removes that factor. Conditions (28°C, low humidity, no rain, Centre Court) favour clean, fast grass-court play — slightly advantageous to the more technically polished Dabrowski/Stefani partnership. The 68/32 probability split reflects Dabrowski/Stefani's clear superiority in team ranking, Elo, and seeding, while acknowledging Wimbledon finals can be unpredictable and Guo/Mladenovic have demonstrated they can compete at this level by reaching the final."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:23"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "High",
+                    "reasoning": "Dabrowski/Stefani are the #2 seeds facing #10 seeds in the Wimbledon women's doubles final. The ranking differential is substantial: Dabrowski ranks WTA #3 in doubles, Stefani #7, versus Guo #22 and Mladenovic #32. The Elo ratings heavily favor Dabrowski/Stefani (7935/6575 vs 2910/2360), indicating far superior recent performance and partnership strength. Both teams won their semifinals convincingly, but Dabrowski/Stefani defeated Liang/Aoyama 7-5, 6-3 while Guo/Mladenovic needed a tiebreak against Jiang/Xu (7-6(5), 6-4), suggesting slightly tougher path. No head-to-head history exists, but the seeding, rankings, and Elo differential point strongly to the #2 seeds. Grass favors strong serving and net play, which established pairs typically execute better. The extreme 28°C heat may be a minor equalizer, but the superior consistency and partnership cohesion of Dabrowski/Stefani gives them approximately 68% probability. This is a final, so variance increases slightly, preventing a higher confidence assignment despite clear on-paper advantages."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:34"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "High",
+                    "reasoning": "Dabrowski/Stefani seeded 2nd with superior WTA rankings (3/7 vs 22/32) and Elo scores (7935/6575 vs 2910/2360). No prior H2H, but seeding heavily favors the higher-ranked pair in a Grand Slam final. Dabrowski is a veteran doubles player with multiple Grand Slam titles; Stefani is a top-10 doubles player. Guo/Mladenovic upset their way to the final (beat Jiang/Xu 7-6, 6-4) but face a significantly stronger pairing in Dabrowski/Stefani (who beat Liang/Aoyama 7-5, 6-3). Grass rewards serve and net play—both teams excel there, but Dabrowski's experience and the ranking gap are decisive. Favour Dabrowski/Stefani at ~68%."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:39"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani are the No. 2 seeds with higher individual doubles rankings (3/7 vs 22/32) and stronger Elo scores. No head-to-head history. Both teams advanced in straight sets in the semifinals, but Dabrowski/Stefani had a more dominant scoreline. Fast grass conditions favor their net play and power. No market odds were provided to calibrate, but seeding and form clearly point to Dabrowski/Stefani as favorites."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:53"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski/Stefani are the higher seeds (2 vs 10) and have superior rankings (3/7 vs 22/32) and Elo ratings (7935/6575 vs 2910/2360). They have been dominant on grass, dropping only one set en route to the final. Guo/Mladenovic have played well but are less experienced as a team at this level. No head-to-head history. Market odds likely favor the higher-seeded pair. However, Mladenovic is a former doubles world No.1 and Guo has strong grass skills, so the probability is not extremely lopsided."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:06:57"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Dabrowski and Stefani are the No. 2 seeds with significantly higher individual rankings and Elo ratings compared to the No. 10 seeded Guo and Mladenovic. While Mladenovic brings vast experience and grass-court pedigree, Dabrowski's elite returning and net skills combined with Stefani's solid form make them the more consistent and formidable team on grass."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:07:22"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Gabriela Dabrowski and Luisa Stefani are the higher-ranked team, coming in as the second seed, and they have a combined Elo score that is significantly higher than Hanyu Guo and Kristina Mladenovic. Although there is no head-to-head record to consider, their overall form and experience at high-level competitions, including their performance leading up to this final, suggest they have a better chance of winning. Additionally, both Dabrowski and Stefani are known for their strong doubles play, which gives them an edge on grass, a surface that rewards good teamwork and net play."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:07:29"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Seed 2 holds a decisive quality edge over Seed 10, underscored by a massive combined Elo disparity and superior grass-court pedigree. Dabrowski/Stefani's aggressive serve-and-volley style, power, and net dominance align perfectly with fast Wimbledon grass conditions. Although Mladenovic brings veteran doubles experience and finals often tighten, the underdog pairing's lower Elo and recent reliance on tight tiebreak wins suggest they lack the consistent weapons to dismantle a top-tier pairing over best-of-3. Market calibration and seeding strongly favor the Canadian-Brazilian side."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:08:12"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.35,
+                    "p2_win_probability": 0.65,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Seed 2 (Dabrowski/Stefani) holds a significant advantage over Seed 10 (Guo/Mladenovic) based on WTA rankings and the provided Elo differential (approx 3x aggregate strength). Dabrowski is a world-class doubles specialist with high grass-court consistency. While Mladenovic offers significant Wimbledon experience, the heat rule and fast grass conditions favor the more established pairing of Stefani and Dabrowski who handled their semi-final opponents decisively (7-5, 6-3)."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:08:36"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.32,
+                    "p2_win_probability": 0.68,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "High",
+                    "reasoning": "The #2 seeds Dabrowski/Stefani carry a substantial ranking advantage with individual doubles rankings of 3 and 7 versus 22 and 32 for Guo/Mladenovic, and their Elo ratings are significantly higher. They advanced to the final with a more straightforward straight-sets semifinal win, whereas Guo/Mladenovic were pushed to a first-set tiebreak. With no prior head-to-head to indicate a stylistic upset, the combined weight of superior seeding, rankings, and cleaner recent form points strongly to the higher-seeded pair on Centre Court."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:09:20"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.38,
+                    "p2_win_probability": 0.62,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "The 2nd seeds Dabrowski/Stefani enter as substantial favorites based on superior current rankings (world #3 and #7 versus #22 and #32) and top-tier team consistency throughout the season. While the 10th seeds Guo/Mladenovic present a credible threat via Mladenovic's exceptional grass-court pedigree—highlighted by her 2019 Wimbledon title with Timea Babos—and her former world #1 doubles ranking, the overall ranking disparity and the higher seeds' dominant path to the final (straight-sets win over Liang/Aoyama) tip the balance. The lack of prior head-to-head history adds variance, but Dabrowski/Stefani's chemistry and tactical versatility on grass provide the decisive edge in a championship setting."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:10:02"
+        },
+        {
+            "event": "womens-doubles",
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "predictions": [
+                {
+                    "match_id": "4601",
+                    "matchup": "Hanyu Guo / Kristina Mladenovic vs Gabriela Dabrowski / Luisa Stefani",
+                    "p1_win_probability": 0.45,
+                    "p2_win_probability": 0.55,
+                    "predicted_winner": "Gabriela Dabrowski / Luisa Stefani",
+                    "confidence": "Medium",
+                    "reasoning": "Gabriela Dabrowski / Luisa Stefani are the second seeds and have higher rankings and Elo scores than Hanyu Guo / Kristina Mladenovic. Although there is no head-to-head record, the higher seed and ranking usually indicate a stronger team, especially on grass where serving and net play are crucial. The market odds also favor Dabrowski / Stefani, aligning with the analysis."
+                }
+            ],
+            "forecast_timestamp": "2026-07-11 20:10:06"
+        }
+    ]
+}

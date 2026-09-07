@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-12\n    Target Date: 2026-04-13\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Leeds United @ Manchester United                     | Scheduled    | Away: 22.6% (7-12-12) vs Home: 48.4% (15-10-6)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Leeds United (Away) @ Manchester United (Home)\n**News & Injury Report:**\n- [Manchester United vs Leeds Prediction - Premier League - 13/04/2026](https://www.sportytrader.com/en/betting-tips/manchester-united-leeds-341792/)\n  Snippet: Formation : 4 - 2 - 3 - 1\n\nS. Lammens\n\nD. Dalot\n\nL. Yoro\n\nH. Maguire\n\nL. Shaw\n\nCasemiro\n\nK. Mainoo\n\nA. Diallo\n\nB. Fernandes\n\nM. Cunha\n\nB. Mbeumo\n\nL. Nmecha\n\nN. Okafor\n\nA. Tanaka\n\nJ. Justin\n\nA. Stach\n\nE. Ampadu\n\nJ. Bogle\n\nP. Struijk\n\nJ. Bijol\n\nJ. Rodo...\n- [Manchester United vs Leeds Prediction 13/04/2026 - Scores24](https://scores24.live/en/soccer/m-11-04-2026-manchester-united-leeds-united-prediction)\n  Snippet: ### Leeds United\n\n\ud83c\udf99 Daniel Farke after reaching the FA Cup semi-finals: \u201cWe always take the hard road. An away quarter-final against a Premier League team is never an easy ride. We could have made things easier for ourselves. We showed great mentalit...\n**Betting Odds:**\n- [Manchester United vs Leeds prediction \u2013 Odds & stats \u2013 13 April 2026](https://www.wincomparator.com/predictions/manchester-united-leeds-7664782/)\n  Snippet: 48%\n\nWins\n\n23%\n\n19%\n\nLosses\n\n39%\n\n32%\n\nDraws\n\n39%\n\n3.19\n\nAverage goals per match\n\n2.74\n\n1.81\n\nGoals scored per match\n\n1.19\n\n1.39\n\nGoals conceded per match\n\n1.55\n\n39%\n\nUnder 2.5 goals\n\n48%\n\n61%\n\nOver 2.5 goals\n\n52%\n\n16%\n\nNo goals conceded\n\n19%\n\n74%\n\nB...\n- [Manchester United vs Leeds Prediction - Premier League - 13/04/2026](https://www.sportytrader.com/en/betting-tips/manchester-united-leeds-341792/)\n  Snippet: Our prediction for the Manchester United vs Leeds match is: Manchester United wins.\n\nProbabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 13/04/2026 between Manchester United and Leeds in Premi...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-12 17:21:40"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-12 17:20:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market-calibrated lean to Man United (roughly ~48% home / ~32% draw / ~19% away in available odds-derived model outputs). Season records also favor the home side (Man United 15-10-6 vs Leeds 7-12-12), with Leeds showing a high draw rate but lower win rate. Home advantage at Old Trafford plus stronger XI quality (Fernandes/Casemiro/Mainoo core) makes United the most likely winner, with the draw still material given Leeds' tendency to share points."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:20:49",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United have a markedly stronger home record this season (15-10-6, ~48.4% win rate) vs Leeds' poor away record (7-12-12, ~22.6% win rate). Market previews and tip sites included in the context favour a United win, which I use to calibrate the model upward for the home side. Squad lists in previews show United likely to field a settled XI with attacking options (Fernandes, Cunha, Nmecha/Okafor), while Leeds may be carrying fatigue from their cup run (manager comments about a tough road) and lack a consistent away cutting edge. No clear major absences reported in the supplied snippets, but uncertainty on availability keeps confidence medium. Thus probability mass is tilted to a Manchester United win, with a meaningful draw possibility and lower chance for a Leeds upset."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (Away) @ Manchester United (Home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United hold a stronger home record (approx. 48.4% wins at home) vs Leeds' weaker away form (approx. 22.6% wins away). Home advantage and current form suggest United are favored. Some injuries/noise in squad reports exist but no decisive absences indicated; odds context leans toward a United win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester United boasts a strong home record (48.4% win rate) and superior recent form and squad quality compared to Leeds United, who have a modest away win rate (22.6%). Statistical and betting markets give United a clear edge. No significant injury crises affect either side's core. Leeds' respectable defense and cup momentum make a draw feasible, but United's attacking strength and home advantage make them likely winners."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.59,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester United has a significantly higher win rate at home (48.4%) compared to Leeds' away win rate (22.6%). Recent form and betting odds also favor a Manchester United win, as well as the strong lineup highlighted by Bruno Fernandes and Casemiro's presence. Leeds, having just come off a demanding FA Cup quarter-final, might be fatigued, which can further tip the scales toward a Manchester United home victory."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United has a significantly better home record (48.4% win rate) compared to Leeds' away record (22.6% win rate). The provided odds also suggest a higher probability of a Manchester United win. The SportyTrader prediction states 'Manchester United wins'. The wincomparator data says ManU wins 48% of the time, Draw 32%, and Leeds wins 19% of the time (although these odds are for the full season instead of this specific match). Leeds reaching the FA cup semi-final might impact their performance in the premier league."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United holds significant home advantage with 48.4% win rate vs Leeds' 22.6% away win rate. Betting market data shows Manchester United with 48% win probability compared to Leeds' 19%. Manchester United's lineup includes established players like Bruno Fernandes, Casemiro, and Mainoo, while Leeds' lineup appears less experienced. Leeds' recent FA Cup success may provide confidence but facing Manchester United at Old Trafford presents a different challenge. The goal statistics favor Manchester United (1.81 scored vs 1.19 for Leeds, 1.39 conceded vs 1.55 for Leeds)."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:28",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Manchester United holds a significant advantage with a 48.4% win rate (15-10-6) compared to Leeds United's struggling 22.6% (7-12-12). Home advantage at Old Trafford is substantial. The betting odds suggest Manchester United are favorites at 48% win probability. Manchester United averages 1.81 goals scored vs 1.39 conceded per match, while Leeds scores only 1.19 and concedes 1.55 per match. However, Leeds showed resilience in the FA Cup quarter-final against Premier League opposition according to Daniel Farke's comments, suggesting they can compete. Manchester United's lineup appears strong with Bruno Fernandes, Casemiro, and quality attacking options. The 61% over 2.5 goals stat for Manchester United suggests an attacking game. Leeds' poor away record (7-12-12) is a critical factor. While Manchester United are clear favorites, Leeds' cup form and United's occasional inconsistency (10 draws this season) mean a draw cannot be discounted. The probability distribution reflects United's home strength while acknowledging Leeds' ability to frustrate and the inherent unpredictability of derby-style fixtures."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-12 17:21:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Leeds United (away) @ Manchester United (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Manchester United has a strong home record with a 48.4% win rate, and Leeds United's away form is poor at 22.6%. Additionally, the betting odds and recent form suggest a higher likelihood of a Manchester United win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

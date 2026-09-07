@@ -1,0 +1,696 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-16",
+        "target_date_et": "2026-08-17",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-16\n\nTarget Date (ET): 2026-08-17\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882923\nMatchup: Elche (away) @ Deportivo (home)\nHome: Deportivo\nAway: Elche\nKickoff UTC: 2026-08-17T19:00Z\nKickoff ET: 2026-08-17 15:00 EDT\nVenue: Riazor\nRound: unavailable\nHome form: LWWWW\nAway form: DWLDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Deportivo +135 (open +130); Draw +205 (open +210); Elche +235 (open +225)\nTavily context:\n  - Title: Deportivo A Coruña vs Elche - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Deportivo A Coruña vs Elche — Mon, August 17, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Riazor\n\nDeportivo A CoruñaDeportivo A Coruña\n\n‌\n‌\n\nElcheElche\n\n# Deportivo A Coruña vs Elche — Mon, August 17, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Riazor\n\nDeportivo A CoruñaDeportivo A Coruña\n\n‌\n‌\n\nElcheElche\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Yeremay Hernández\n\n  Muscle injury / Doubtful\n\nHernándezMuscle injuryDoubtful\n\n  Grady Diangana\n\n  Knee injury / Doubtful\n\nDianganaKnee injuryDoubtful\n\n## Team form ...\n    URL: https://www.fotmob.com/matches/deportivo-la-coruna-vs-elche/3bp0b9\n  - Title: Deportivo vs. Elche (Aug 17, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Alavés | 0 | 0 | 0 | 0 | 0 | 0 |\n| Athletic Club | 0 | 0 | 0 | 0 | 0 | 0 |\n| Atlético Madrid | 0 | 0 | 0 | 0 | 0 | 0 |\n| Barcelona | 0 | 0 | 0 | 0 | 0 | 0 |\n| Celta Vigo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Deportivo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Elche | 0 | 0 | 0 | 0 | 0 | 0 |\n| Espanyol | 0 | 0 | 0 | 0 | 0 | 0 |\n| Getafe | 0 | 0 | 0 | 0 | 0 | 0 |\n| Levante | 0 | 0 | 0 | 0 | 0 | 0 |\n| Málaga | 0 | 0 | 0 | 0 | 0 | 0 |\n| Osasuna | 0 | 0 | 0 | 0 | 0 | 0 |\n| Racing Santander | 0 | 0 | 0 | 0 | 0 | 0 |\n| Rayo Vallecano | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882923/elche-deportivo\n  - Title: Deportivo La Coruna vs Elche Predictions, Tips & Odds | ODDSLOT\n    Content: The betting market reflects the uncertainty surrounding this matchup. Deportivo La Coruna are slight favourites at 2.25, yet Elche's odds of 3.20 and the draw at 3.10 indicate bookmakers view this as competitive. The double chance 1X sits at 1.37, offering attractive value given the tight nature of the contest. Both teams' attacking potential is reflected in BTTS Yes trading at 1.93, signalling expectations of goals at both ends. ...\n    URL: https://oddslot.com/football/match/la-liga/deportivo-la-coruna/elche/17-aug-2026\n  - Title: Deportivo La Coruña vs Elche Prediction, Betting Tips ...\n    Content: Sportsgambler\n\n# Deportivo La Coruña vs Elche Prediction, Betting Tips, Lineups & Odds | 17 Aug 2026\n\nRC Deportivo La Coruña logo\nElche CF logo\n\n## Deportivo La Coruña vs Elche Predictions\n\n### Deportivo To Win @ 2.33\n\nStake logo\n\nWe really like Deportivo at odds of 2.33 with Stake to beat Elche, with this Full-Time Result bet making lots of appeal. There’s a nice potential return and we think a victory could be on the cards. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/deportivo-la-coruna-vs-elche-prediction-lineups-odds-2026-08-17\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-16\n\nTarget Date (ET): 2026-08-17\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882923\nMatchup: Elche (away) @ Deportivo (home)\nHome: Deportivo\nAway: Elche\nKickoff UTC: 2026-08-17T19:00Z\nKickoff ET: 2026-08-17 15:00 EDT\nVenue: Riazor\nRound: unavailable\nHome form: LWWWW\nAway form: DWLDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Deportivo +135 (open +130); Draw +205 (open +210); Elche +235 (open +225)\nTavily context:\n  - Title: Deportivo A Coruña vs Elche - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Deportivo A Coruña vs Elche — Mon, August 17, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Riazor\n\nDeportivo A CoruñaDeportivo A Coruña\n\n‌\n‌\n\nElcheElche\n\n# Deportivo A Coruña vs Elche — Mon, August 17, 7:00 PM UTC\n\nLaLiga Round 1\n\n LaLiga Round 1\n Estadio Abanca-Riazor\n\nDeportivo A CoruñaDeportivo A Coruña\n\n‌\n‌\n\nElcheElche\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Yeremay Hernández\n\n  Muscle injury / Doubtful\n\nHernándezMuscle injuryDoubtful\n\n  Grady Diangana\n\n  Knee injury / Doubtful\n\nDianganaKnee injuryDoubtful\n\n## Team form ...\n    URL: https://www.fotmob.com/matches/deportivo-la-coruna-vs-elche/3bp0b9\n  - Title: Deportivo vs. Elche (Aug 17, 2026) Live Score - ESPN\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Alavés | 0 | 0 | 0 | 0 | 0 | 0 |\n| Athletic Club | 0 | 0 | 0 | 0 | 0 | 0 |\n| Atlético Madrid | 0 | 0 | 0 | 0 | 0 | 0 |\n| Barcelona | 0 | 0 | 0 | 0 | 0 | 0 |\n| Celta Vigo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Deportivo | 0 | 0 | 0 | 0 | 0 | 0 |\n| Elche | 0 | 0 | 0 | 0 | 0 | 0 |\n| Espanyol | 0 | 0 | 0 | 0 | 0 | 0 |\n| Getafe | 0 | 0 | 0 | 0 | 0 | 0 |\n| Levante | 0 | 0 | 0 | 0 | 0 | 0 |\n| Málaga | 0 | 0 | 0 | 0 | 0 | 0 |\n| Osasuna | 0 | 0 | 0 | 0 | 0 | 0 |\n| Racing Santander | 0 | 0 | 0 | 0 | 0 | 0 |\n| Rayo Vallecano | 0 | 0 | 0 | 0 | 0 | 0 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401882923/elche-deportivo\n  - Title: Deportivo La Coruna vs Elche Predictions, Tips & Odds | ODDSLOT\n    Content: The betting market reflects the uncertainty surrounding this matchup. Deportivo La Coruna are slight favourites at 2.25, yet Elche's odds of 3.20 and the draw at 3.10 indicate bookmakers view this as competitive. The double chance 1X sits at 1.37, offering attractive value given the tight nature of the contest. Both teams' attacking potential is reflected in BTTS Yes trading at 1.93, signalling expectations of goals at both ends. ...\n    URL: https://oddslot.com/football/match/la-liga/deportivo-la-coruna/elche/17-aug-2026\n  - Title: Deportivo La Coruña vs Elche Prediction, Betting Tips ...\n    Content: Sportsgambler\n\n# Deportivo La Coruña vs Elche Prediction, Betting Tips, Lineups & Odds | 17 Aug 2026\n\nRC Deportivo La Coruña logo\nElche CF logo\n\n## Deportivo La Coruña vs Elche Predictions\n\n### Deportivo To Win @ 2.33\n\nStake logo\n\nWe really like Deportivo at odds of 2.33 with Stake to beat Elche, with this Full-Time Result bet making lots of appeal. There’s a nice potential return and we think a victory could be on the cards. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/deportivo-la-coruna-vs-elche-prediction-lineups-odds-2026-08-17\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882923",
+                        "date_utc": "2026-08-17T19:00Z",
+                        "kickoff_et": "2026-08-17 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Deportivo",
+                        "away": "Elche",
+                        "home_id": "90",
+                        "away_id": "3751",
+                        "matchup": "Elche (away) @ Deportivo (home)",
+                        "venue": "Riazor",
+                        "city": "La Coruña",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LWWWW",
+                        "form_away": "DWLDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+130",
+                            "home_current": "+135",
+                            "draw_open": "+210",
+                            "draw_current": "+205",
+                            "away_open": "+225",
+                            "away_current": "+235"
+                        },
+                        "odds_text": "DraftKings: Deportivo +135 (open +130); Draw +205 (open +210); Elche +235 (open +225)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-16T08:55:50.399730-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-16T08:37:43.988639-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "HOME_WIN",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo enters the season opener as the slight favorite playing at home in the Riazor, with bookmakers pricing them around +135. Elche has a solid squad but typically faces challenges away, making a narrow home win the most expected outcome.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-16T08:38:04.154043-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.405,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.283,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo opens their season at the Riazor as slight favorites with around a 40.5% implied probability of victory. Their strong recent form (LWWWW) gives them a solid edge over an Elche side that has struggled lately (DWLDL).",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-16T08:38:18.187494-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "This is the first match of the La Liga season for both teams. Deportivo has the significant advantage of playing at their home stadium, Riazor. Betting markets, including DraftKings and other sources, list Deportivo as the favorite, with implied probabilities consistently placing them as the most likely winner. Deportivo's recent form (LWWWW) appears much stronger than Elche's (DWLDL), suggesting better momentum coming into the season. Additionally, Elche may be hampered by potential injuries to Yeremay Hernández and Grady Diangana. While opening-day matches can be unpredictable, the combination of home advantage, market sentiment, and superior recent form points to a Deportivo victory.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-16T08:38:28.526995-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.4081,
+                    "draw_probability": 0.3053,
+                    "away_win_probability": 0.2866,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo is identified as the slight favorite playing at home for the opening La Liga match, a sentiment echoed by various bookmakers' odds (e.g., DraftKings, Oddslot, Sportsgambler). While it's the first match of the season with both teams starting 0-0-0, the perceived strength and home advantage for Deportivo make a home win the most probable outcome. The odds suggest a competitive match, with draw and away win also having significant probabilities. Although Deportivo has a couple of doubtful players due to injuries, this is not expected to completely negate their home advantage.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-16T08:39:04.736084-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.405,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.285,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo are slight home favorites in the market and have the Riazor advantage, with stronger recent form than Elche. However, the odds are tight, it is Round 1 with limited current-season evidence, and possible injury doubts keep the draw and away chances meaningful.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-16T08:39:09.999590-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo are slight home favorites at Riazor, with recent form listed as strong and the market narrowly leaning toward them. Elche have enough draw/away equity to make this a close Round 1 match, especially with limited current-season data and some Deportivo injury doubts, but home advantage and pricing give Deportivo the edge.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-16T08:39:29.247947-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Deportivo a modest home favorite, and recent form indicators favor Deportivo (LWWWW) over Elche (DWLDL). Playing at Riazor adds a typical home-edge in an otherwise relatively even Round 1 matchup. Some uncertainty remains due to early-season variance and a couple of Deportivo players listed as doubtful, keeping draw/away probabilities meaningful.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-16T08:39:38.598244-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo are slight favorites in the market and benefit from home advantage at Riazor plus strong recent form (LWWWW). Elche’s form (DWLDL) is less convincing and bookmakers price a competitive but lower probability for the away win. Some injury doubts (listed) introduce uncertainty, so a Deportivo 90-minute win is the most likely single outcome but a draw or away surprise remain plausible.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-16T08:39:51.472413-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.405,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.283,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Derived from bookmaker odds (+135 for home, +205 for draw, +235 for away) by converting to decimal odds (2.35, 3.05, 3.35), calculating implied probabilities (0.426, 0.328, 0.299) and normalizing to sum to 1. The normalized distribution yields approximately 0.405/0.312/0.283 for home/draw/away, indicating Deportivo A Coruña as the favored 90-minute result.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-16T08:40:14.641042-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo are slight favorites according to both betting odds and expert predictions, with home advantage at Riazor and stronger recent form (LWWWW) compared to Elche's (DWLDL). The odds from multiple sources consistently favor Deportivo, though the match is expected to be competitive and a draw is a significant possibility. Both teams are starting the season, so uncertainty is higher, but Deportivo's edge at home and better momentum tip the balance.",
+                    "event_id": "401882923"
+                }
+            ],
+            "column_retry": {
+                "via": "inline_auto",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "game_id for game_id 1: must be an exact integer",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-16T08:55:50.392066-04:00"
+            }
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-16T08:40:40.424756-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo has a strong home form with four consecutive wins, while Elche's away form is inconsistent. The odds slightly favor Deportivo, and despite some injury concerns, they are expected to leverage their home advantage.",
+                    "event_id": "401882923"
+                }
+            ],
+            "column_retry": {
+                "via": "inline_auto",
+                "recovered_chunk_indices": [
+                    1
+                ],
+                "original_errors": [
+                    {
+                        "chunk_index": 1,
+                        "error": "game_id for game_id 1: must be an exact integer",
+                        "error_kind": "validation"
+                    }
+                ],
+                "retried_at_et": "2026-08-16T08:55:50.392087-04:00"
+            }
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-16T08:40:49.943085-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bookmaker odds (Deportivo +135, Draw +205, Elche +235) imply Deportivo as modest favorites at home at Riazor, supported by strong recent form (LWWWW) versus Elche's inconsistent run (DWLDL). However, Deportivo's key creative player Yeremay Hernandez is doubtful with a muscle injury, and season openers between newly promoted/mid-tier sides often produce tight, cagey matches. The market sees this as competitive, so confidence is low with a meaningful draw probability.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-16T08:40:55.063104-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "Deportivo",
+                    "confidence": "low",
+                    "reasoning": "Deportivo are home favorites at Riazor per market odds (around +135/2.25), reflecting a slight edge. Home advantage and better recent form (LWWWW) favor Deportivo, though Elche remain competitive. The market views this as a tight opening-round contest, so probabilities are close with only a modest lean to the home side.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-16T08:41:00.901276-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Deportivo are slight favorites at home in Riazor in the La Liga season opener. Their recent form (LWWWW) is notably better than Elche's (DWLDL). The odds across multiple bookmakers consistently point to Deportivo as the home favorite, with DraftKings pricing them at +135. However, this is a Round 1 match with no current season data, and Elche has injury concerns (Diangana doubtful). The market treats this as a competitive match with all three outcomes plausible. Deportivo's home advantage and better recent form give them a slight edge, but uncertainty is high given the early stage of the season.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-16T08:41:10.013986-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This La Liga opening match features two newly promoted sides with limited historical data for the 2026-2027 season. Deportivo enters with strong recent form (LWWWW) and home advantage at Riazor, while Elche shows mixed form (DWLDL). The betting market slightly favors Deportivo (+135) over Elche (+235), with the draw at +205, indicating a competitive matchup. Both teams have injury concerns - Deportivo with Yeremay Hernández and Elche with Grady Diangana. The odds suggest this is expected to be tight, with BTTS trading at 1.93 indicating both teams may score. Home advantage and superior recent form give Deportivo the edge, but the narrow margins in the betting market and first-match uncertainty warrant low confidence. This appears to be a closely contested affair where home field could prove decisive.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-16T08:41:13.905238-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo shows stronger recent form (LWWWW) compared to Elche's inconsistent record (DWLDL). As the home team at Riazor, Deportivo has a historical advantage. DraftKings odds favor Deportivo (+135), reflecting market confidence in a home victory. However, moderate confidence is warranted given this is round 1 with no meaningful competitive history this season, pre-season form variability, and injury uncertainties (Yeremay Hernández and Grady Diangana doubtful for Elche). Elche's recent draws and losses suggest defensive vulnerabilities that Deportivo could exploit.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-16T08:41:22.505446-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.405,
+                    "draw_probability": 0.312,
+                    "away_win_probability": 0.283,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo are slight favorites per DraftKings odds and enter in strong home form (LWWWW), while Elche have mixed away form (DWLDL). The Riazor venue and market support a home lean, though a draw is also fairly plausible.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-16T08:41:24.246288-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo have strong home form (LWWWW) and are slight favorites according to odds. Elche's away form is poor (DWLDL). Despite some injury doubts for Deportivo, they have the edge at Riazor.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-16T08:41:41.286143-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo La Coruña enters the match with strong recent form and the advantage of playing at home at Riazor. Elche has struggled on the road, and the betting odds favor Deportivo. Their home advantage combined with Elche's away struggles makes a home win the most probable outcome.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-16T08:41:45.547407-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo has a strong home form (LWWWW) and is slightly favored by the bookmakers. Elche's away form (DWLDL) is not as impressive, and the odds suggest a competitive but favorable match for Deportivo.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-16T08:42:31.013854-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Betting markets and normalized odds favor Deportivo as slight favorites, reflecting their home advantage at Riazor and stronger recent form (LWWWW) compared to Elche (DWLDL). As it is Round 1, both teams have zero competitive records, introducing typical early-season volatility. However, Deportivo's momentum and venue edge provide a marginal statistical advantage in a closely contested fixture that also leaves a realistic path for a draw.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-16T08:42:52.571525-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo is favored by the betting market with implied probabilities around 42-44% and is playing at home in Riazor. Their recent form (LWWWW) stands out against Elche's inconsistency (DWLDL), and the 1X double chance price indicates market caution on an away upset. However, as a Round 1 fixture with full season records unestablished and key injury doubts (Hernández, Diangana), the margin for error remains significant despite the statistical edge.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-16T08:43:46.494270-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo begins the La Liga season at Riazor as the slight betting favorite (~+135) and enters with stronger recent form (LWWWW) against Elche's less consistent run (DWLDL). The home crowd and early-season venue advantage favor Deportivo, though attacking absences/doubts for Yeremay Hernández and Grady Diangana add uncertainty. Elche's draw-heavy, patchy preparation keeps them competitive, but the market and momentum tilt modestly toward the hosts in a typically tight Round 1 affair.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-16T08:44:33.379497-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo enters the season with superior pre-season momentum (LWWWW) compared to Elche's patchy form (DWLDL). The home side holds a clear advantage playing at Riazor, supported by betting markets pricing them as slight favorites (+135). While injuries to Yeremay Hernández and Grady Diangana create some uncertainty for Deportivo's attack, Elche's inconsistent away record and the opening-day home crowd advantage favor a narrow Deportivo victory. The tight odds and lack of competitive season data limit confidence.",
+                    "event_id": "401882923"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-16T08:44:36.123664-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Elche (away) @ Deportivo (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Deportivo has a strong home form and is favored by the betting market. Elche's away form is weaker, and they have key players doubtful for the match.",
+                    "event_id": "401882923"
+                }
+            ]
+        }
+    ]
+}

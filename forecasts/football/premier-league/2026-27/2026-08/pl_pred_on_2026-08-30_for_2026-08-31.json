@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-30",
+        "target_date_et": "2026-08-31",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879295\nMatchup: Arsenal (away) @ Aston Villa (home)\nHome: Aston Villa\nAway: Arsenal\nKickoff UTC: 2026-08-31T19:00Z\nKickoff ET: 2026-08-31 15:00 EDT\nVenue: Villa Park\nRound: unavailable\nHome form: LLWWW\nAway form: WWWLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Aston Villa +550 (open +500); Draw +340 (open +320); Arsenal -195 (open -190)\nTavily context:\n  - Title: Aston Villa vs Arsenal - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Aston Villa vs Arsenal — Mon, August 31, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Villa Park\n\nAston VillaAston Villa\n\n‌\n‌\n\nArsenalArsenal\n\n# Aston Villa vs Arsenal — Mon, August 31, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Villa Park\n\nAston VillaAston Villa\n\n‌\n‌\n\nArsenalArsenal\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Brian Madjo\n\n  Knock / Early September 2026\n\nMadjoKnockEarly September 2026\n\n  Tammy Abraham\n\n  Knock / Doubtful\n\nAbrahamKnockDoubtful\n\n  João Gomes\n\n  Calf injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/arsenal-vs-aston-villa/3c06vg\n  - Title: Aston Villa vs Arsenal Premier League preview\n    Content: ARS\n\nArsenal crest\n\nArsenal\n\nARS\n\n### Manager\n\n U. Emery\n\nUnai Emery faces a significant absentee list ahead of this fixture. Brian Madjo, Amadou Onana, Johan Manzambi, Leon Bailey and Tammy Abraham are all sidelined through injury, while Joao Gomes is suspended. Villa's projected lineup will be confirmed closer to kick-off, and further updates will be added as they become available. ...\n    URL: https://www.goal.com/en/news/aston-villa-arsenal-premier-league-preview/bltb66d58c8a1870b29\n  - Title: Aston Villa vs Arsenal Prediction 31.08.2026\n    Content: Aston Villa has a 16% probability of winning, while their opponent Arsenal has a 62% chance, and there is a 22% of the match ending in a draw.\n    URL: https://tips.gg/matches/football/31-08-2026/aston-villa-vs-arsenal/08-00/predictions\n  - Title: Aston Villa vs. Arsenal - Live Score - August 31, 2026 | FOX Sports\n    Content: Databricks\nAston Villa\nArsenal\n\n## Aston Villa vs Arsenal\n\nVilla Park\n\n# Aston Villa vs. Arsenal: Aug 31, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAston Villa\n\n|  | | |\n ---\n| 8/23 | Brighton BHA (A) | L4-0 |\n| 8/15 | B. M'gladbach BM (A) | L2-1 |\n| 8/12 | Paris SG PSG (A) | L2-1 |\n| 8/7 | Bayern Munich MUN (H) | L2-1 |\n| 8/4 | Default Logo PAU (A) | W3-1 |\n\nBrighton\nB. M'gladbach\nParis SG\nBayern Munich\nDefault Logo\nArsenal ...\n    URL: https://www.foxsports.com/soccer/premier-league-aston-villa-vs-arsenal-aug-31-2026-game-boxscore-891076\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-30\n\nTarget Date (ET): 2026-08-31\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879295\nMatchup: Arsenal (away) @ Aston Villa (home)\nHome: Aston Villa\nAway: Arsenal\nKickoff UTC: 2026-08-31T19:00Z\nKickoff ET: 2026-08-31 15:00 EDT\nVenue: Villa Park\nRound: unavailable\nHome form: LLWWW\nAway form: WWWLW\nHome record: 0-0-1\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Aston Villa +550 (open +500); Draw +340 (open +320); Arsenal -195 (open -190)\nTavily context:\n  - Title: Aston Villa vs Arsenal - live score, predicted lineups and ...\n    Content: TV schedules\n\n# Aston Villa vs Arsenal — Mon, August 31, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Villa Park\n\nAston VillaAston Villa\n\n‌\n‌\n\nArsenalArsenal\n\n# Aston Villa vs Arsenal — Mon, August 31, 7:00 PM UTC\n\nPremier League Round 2\n\n Premier League Round 2\n Villa Park\n\nAston VillaAston Villa\n\n‌\n‌\n\nArsenalArsenal\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Brian Madjo\n\n  Knock / Early September 2026\n\nMadjoKnockEarly September 2026\n\n  Tammy Abraham\n\n  Knock / Doubtful\n\nAbrahamKnockDoubtful\n\n  João Gomes\n\n  Calf injury / Early September 2026 ...\n    URL: https://www.fotmob.com/matches/arsenal-vs-aston-villa/3c06vg\n  - Title: Aston Villa vs Arsenal Premier League preview\n    Content: ARS\n\nArsenal crest\n\nArsenal\n\nARS\n\n### Manager\n\n U. Emery\n\nUnai Emery faces a significant absentee list ahead of this fixture. Brian Madjo, Amadou Onana, Johan Manzambi, Leon Bailey and Tammy Abraham are all sidelined through injury, while Joao Gomes is suspended. Villa's projected lineup will be confirmed closer to kick-off, and further updates will be added as they become available. ...\n    URL: https://www.goal.com/en/news/aston-villa-arsenal-premier-league-preview/bltb66d58c8a1870b29\n  - Title: Aston Villa vs Arsenal Prediction 31.08.2026\n    Content: Aston Villa has a 16% probability of winning, while their opponent Arsenal has a 62% chance, and there is a 22% of the match ending in a draw.\n    URL: https://tips.gg/matches/football/31-08-2026/aston-villa-vs-arsenal/08-00/predictions\n  - Title: Aston Villa vs. Arsenal - Live Score - August 31, 2026 | FOX Sports\n    Content: Databricks\nAston Villa\nArsenal\n\n## Aston Villa vs Arsenal\n\nVilla Park\n\n# Aston Villa vs. Arsenal: Aug 31, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nAston Villa\n\n|  | | |\n ---\n| 8/23 | Brighton BHA (A) | L4-0 |\n| 8/15 | B. M'gladbach BM (A) | L2-1 |\n| 8/12 | Paris SG PSG (A) | L2-1 |\n| 8/7 | Bayern Munich MUN (H) | L2-1 |\n| 8/4 | Default Logo PAU (A) | W3-1 |\n\nBrighton\nB. M'gladbach\nParis SG\nBayern Munich\nDefault Logo\nArsenal ...\n    URL: https://www.foxsports.com/soccer/premier-league-aston-villa-vs-arsenal-aug-31-2026-game-boxscore-891076\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879295",
+                        "date_utc": "2026-08-31T19:00Z",
+                        "kickoff_et": "2026-08-31 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Aston Villa",
+                        "away": "Arsenal",
+                        "home_id": "362",
+                        "away_id": "359",
+                        "matchup": "Arsenal (away) @ Aston Villa (home)",
+                        "venue": "Villa Park",
+                        "city": "Birmingham",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LLWWW",
+                        "form_away": "WWWLW",
+                        "record_home": "0-0-1",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+500",
+                            "home_current": "+550",
+                            "draw_open": "+320",
+                            "draw_current": "+340",
+                            "away_open": "-190",
+                            "away_current": "-195"
+                        },
+                        "odds_text": "DraftKings: Aston Villa +550 (open +500); Draw +340 (open +320); Arsenal -195 (open -190)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-30T09:55:39.647224-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:50:24.274771-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are heavily favored by bookmakers (-195) and model predictions (~62-63% win probability). Aston Villa enters this Matchweek 2 fixture with a severely depleted squad, facing injuries to key players such as Amadou Onana, Leon Bailey, and Tammy Abraham, alongside the suspension of Joao Gomes. These significant absences heavily tilt the advantage to the visitors.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-30T09:50:31.333641-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.148,
+                    "draw_probability": 0.218,
+                    "away_win_probability": 0.634,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are significant favorites according to the betting odds (-195), while Aston Villa are facing a severe injury crisis with several key players out, including Onana, Bailey, Abraham, and a suspension for Joao Gomes. Coming off a heavy 4-0 defeat in their opening match, Villa will struggle against a strong Arsenal side.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-30T09:50:42.273315-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters the match as a strong favorite, reflected in both the betting odds (-195) and predictive models, which give them a 62% chance of winning. Aston Villa's chances are severely diminished by a significant number of injuries to key players including Tammy Abraham, Leon Bailey, and Amadou Onana, as well as a suspension for Joao Gomes. The early season form of both teams also favors Arsenal, who started with a win (1-0-0), while Aston Villa suffered a loss (0-0-1). Despite playing at home, Aston Villa's extensive list of unavailable players makes it difficult to see them securing a result against a strong Arsenal side.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-30T09:50:48.655801-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal is strongly favored by betting odds and expert predictions, with a 62% chance to win according to tips.gg. Aston Villa faces a significant disadvantage due to a substantial list of injured and suspended key players, coupled with poor recent form, making an away win the most likely outcome.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:51:05.312621-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds strongly favor Arsenal, with no-vig pricing around the low-to-mid 60% range for an away win. Arsenal enter with better early-season form and fewer negative signals, while Aston Villa have a poor recent result profile and notable injury/suspension concerns. Villa Park home advantage keeps the draw and upset chances meaningful, but Arsenal are the clear forecast pick.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-30T09:51:10.255856-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong away favorites in the market, with implied probabilities around the low-to-mid 60% range after removing vig. Aston Villa have home advantage at Villa Park, but their listed absentee concerns and poor recent competitive result increase downside risk. A draw remains plausible in an early-season Premier League fixture, but Arsenal project as the better side and the most likely 90-minute winner.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-30T09:51:31.598835-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.1476,
+                    "draw_probability": 0.2181,
+                    "away_win_probability": 0.6343,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds heavily favor Arsenal (roughly two-thirds implied win probability after normalization). Arsenal enter in stronger recent form and already have a win on record, while Villa are dealing with multiple reported absences/suspension, reducing stability at home. A draw remains the main alternative given Villa Park advantage, but Arsenal are the most likely 90-minute winner.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-30T09:51:42.521847-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal enter on stronger form and are favored by market odds; Villa have multiple absences (including attacking options) and a poor recent result at home, increasing upset risk but still making Arsenal the clear favorite. Early-season variance and Villa's home advantage keep draw/upset probability non-negligible.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-30T09:51:58.805140-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.148,
+                    "draw_probability": 0.218,
+                    "away_win_probability": 0.634,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Odds favor Arsenal to win in regulation (away), with normalization of implied probabilities from market odds and current form suggesting a clear edge for the away side.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-30T09:52:00.982166-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal are strong favorites based on recent form, squad strength, and bookmaker odds. Aston Villa are missing several key players due to injuries and suspensions, which further weakens their chances. Arsenal have started the season well and have a superior away record, while Villa's home form is inconsistent. The consensus from multiple sources and the odds strongly support an Arsenal win.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-30T09:52:02.772685-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal has a strong away form and a higher probability of winning according to the odds and predictions. Aston Villa is dealing with several key injuries and suspensions, which further diminishes their chances of winning.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-30T09:52:10.885690-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favorites per market odds (-195, ~63% de-vigged implied probability) and enter in good form (WWWLW). Aston Villa are hampered by a significant injury list (Onana, Bailey, Abraham, Madjo, Manzambi) plus a Joao Gomes suspension, and lost their opening league match. Villa Park home advantage keeps home/draw probabilities meaningful, but Arsenal's squad quality and Villa's absentee list favor an away win in regulation.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-30T09:52:15.164531-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.54,
+                    "predicted_outcome": "Arsenal",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favorites per market odds (-195) and Villa are missing several key players including Onana, Bailey, Abraham, and suspended Joao Gomes. Villa's poor recent form and injury list contrast with Arsenal's better momentum, making an away win the most likely outcome.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-30T09:52:22.234871-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.61,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favourites here. The odds imply roughly 58-62% probability for Arsenal, consistent with third-party model estimates (62%). Aston Villa are significantly depleted heading into this fixture: Brian Madjo, Amadou Onana, Johan Manzambi, Leon Bailey, and Tammy Abraham are all injured, and Joao Gomes is suspended. Villa's recent form (LLWWW) is mixed and their pre-season/early results showed defeats to elite opposition. Arsenal (WWWLW) have started the season in better form. Playing at Villa Park provides some home advantage but cannot compensate for the extent of Villa's absentees. I slightly shade the draw probability upward and compress the home win probability relative to raw odds given Villa Park's typical atmosphere, but Arsenal remain clear favourites.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-30T09:52:30.104223-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favorites with odds of -195, reflecting their superior form (WWWLW) compared to Aston Villa's mixed results (LLWWW). Villa face significant squad challenges with multiple key players unavailable: Brian Madjo, Amadou Onana, Johan Manzambi, Leon Bailey, and Tammy Abraham are injured, while Joao Gomes is suspended. This depleted lineup severely weakens Villa's competitive edge. Arsenal's 1-0-0 away record is solid, while Villa's 0-0-1 home record shows early season struggles. The betting market and analytical models (62% Arsenal win probability per tips.gg) align on Arsenal as clear favorites. Despite home advantage at Villa Park, the combination of Arsenal's quality, form, and Villa's injury crisis points strongly toward an away victory.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-30T09:52:33.087157-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.53,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal favored by DraftKings odds (-195) and external prediction model (62% win probability). Arsenal's strong away form (WWWLW) and superior recent performance contrast with Aston Villa's concerning form (LLWWW) and significant injury crisis (Madjo, Onana, Bailey, Abraham out; Gomes suspended). Villa's injuries significantly weaken their squad depth. However, home advantage and draw probability warrant some caution. Model consensus heavily favors Arsenal.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-30T09:52:47.226051-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal enter as clear favorites based on recent form and the betting market, while Aston Villa are dealing with multiple injuries and a suspension. Villa's home advantage may keep it competitive, but Arsenal's superior squad and away record point toward an away win.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-30T09:52:48.809975-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal are strong favorites with odds around -195, and have better recent form. Aston Villa have multiple injuries and suspensions, weakening their squad. The probabilities reflect the market and contextual factors.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-30T09:53:04.381285-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters as the strong favorite based on market odds and predictive models. Aston Villa is dealing with a significant injury and suspension list, missing key players like Amadou Onana, Leon Bailey, Tammy Abraham, and Joao Gomes, which severely weakens their squad depth and midfield control. Villa's recent form also shows defensive vulnerabilities, while Arsenal's superior squad quality and solid away form make them the clear pick for the regulation-time win.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-30T09:53:08.220578-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal has a strong away form and is favored by the odds. Aston Villa, on the other hand, has been struggling with recent losses and key player absences due to injuries and suspensions.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-30T09:53:58.569521-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal is heavily favored by both market odds and early season form, but faces a significant injury and suspension list that could disrupt their usual attacking rotation and midfield balance. Aston Villa's recent results highlight defensive frailties and inconsistency, which typically hinder home-side momentum against top-tier opposition. While Villa Park provides a marginal advantage and Arsenal's depleted roster introduces variance, the visitors' superior baseline squad quality and tactical structure under Unai Emery still make them the most likely to secure a regulation-time victory. The probability split reflects a clear away favorite tempered by availability concerns, with a draw as a plausible secondary outcome if Arsenal's replacements struggle to maintain intensity.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-30T09:54:30.608934-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers and statistical models heavily favor Arsenal, offering roughly 62% win probability compared to Villa's 16%. DraftKings odds of -195 for Arsenal indicate a strong likelihood of an away victory. Although Arsenal plays at Villa Park, their perceived squad depth and superior form metrics outweigh the home advantage. Confidence is medium due to the early season (Round 2) volatility and reported injuries affecting both sides.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-30T09:55:12.294743-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.17,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Aston Villa is dealing with a severe injury and suspension crisis, missing key players including Tammy Abraham, Leon Bailey, Amadou Onana, and João Gomes, while also coming off a heavy opening loss that leaves them with poor early form. Arsenal has started the campaign strongly with a win and carries strong away form (WWWLW). The betting markets reflect this imbalance by pricing Arsenal as clear favorites (-195), and Villa Park home advantage is insufficient to overcome the extensive absentee list and Arsenal's superior quality and momentum.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-30T09:55:36.570357-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Arsenal enters with strong away form (WWWLW) and a season-opening win, while Aston Villa struggles with extensive injury and suspension issues including key players Onana, Bailey, Abraham, and Gomes. Villa has lost four of their last five competitive matches including a 4-0 defeat to Brighton in their Premier League opener. Bookmakers heavily favor Arsenal (-195) reflecting the significant quality gap and Villa's depleted squad against a title-contending Arsenal side.",
+                    "event_id": "401879295"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-30T09:55:39.644421-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Arsenal (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Arsenal has a higher win probability based on the given data, with Aston Villa having a 16% chance to win and Arsenal having a 62% chance. The away team also has a better form with WWWLW compared to Aston Villa's LLWWW. The odds from DraftKings also favor Arsenal with -195, while Aston Villa is at +550. Considering these factors, Arsenal is more likely to win this match.",
+                    "event_id": "401879295"
+                }
+            ]
+        }
+    ]
+}

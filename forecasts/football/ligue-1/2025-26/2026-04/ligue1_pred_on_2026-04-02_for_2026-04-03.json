@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-02\n    Target Date: 2026-04-03\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Toulouse @ Paris Saint-Germain                       | Scheduled    | Away: 37.0% (10-7-10) vs Home: 73.1% (19-3-4)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Toulouse (Away) @ Paris Saint-Germain (Home)\n**News & Injury Report:**\n- [Paris Saint-Germain vs Toulouse - prediction, team news, lineups](https://www.sportsmole.co.uk/football/psg/preview/psg-vs-toulouse-prediction-team-news-lineups_594821.html)\n  Snippet: On the Toulouse side, Abu Francis has a lower leg injury, Charlie Cresswell is dealing with a sore hamstring, Djibril Sidibe has a knock, Frank Magri hurt his knee, Rafik Messali and Alex Dominguez have ankle issues and Santiago Hidalgo will be suspe...\n- [PSG vs Toulouse Prediction, Betting Tips, Lineups & Odds | 03 Apr ...](https://www.sportsgambler.com/betting-tips/football/psg-vs-toulouse-prediction-lineups-odds-2026-04-03/)\n  Snippet: Noham Kamara Lower leg \n\nPosition: Defender Matches: 1 Goals: - Assists: - Expected return: -\n\nBradley Barcola Ankle \n\nPosition: Forward Matches: 22 Goals: 10 Assists: 1 Expected return: -\n\nFabian Ruiz Knee \n\nPosition: Midfielder Matches: 13 Goals: 1...\n**Betting Odds:**\n- [Toulouse vs Paris Saint-Germain Odds & Live Scores - April 3, 2026](https://www.actionnetwork.com/ligue1-game/toulouse-paris-saint-germain-score-odds-april-3-2026/283835)\n  Snippet: ## Matchup History\n\n### Against the Spread (ATS) History\n\n|  | overall | home | away | favorite | underdog |\n ---  ---  --- |\n| PSG logo PSG | 4-3 | 2-1 | 2-2 | 3-3 | 1-0 |\n| Toulouse logo Toulouse | 11-16 | 5-9 | 6-7 | 8-11 | 3-5 |\n\nPSG logo\nToulous...\n- [PSG vs Toulouse Prediction & Betting Tips - Ligue 1 - SportyTrader](https://www.sportytrader.com/en/betting-tips/psg-toulouse-339028/)\n  Snippet: ## PSG v Toulouse Best Betting Odds\n\n| Bookmaker | 1 | X | 2 | Bonus up to |\n ---  --- \n| Stake | 1.3 | 6 | 9.6 |  |\n| Melbet | 1.28 | 5.65 | 11 |  |\n| Betwinner | 1.28 | 5.65 | 11 |  |\n| Bet365 | 1.3 | 5.5 | 10 |  |\n| Roobet | 1.29 | 5.4 | 10 |  |\n\n...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-02\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-02 17:04:42"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-02 17:03:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds heavily favor PSG (around 1.28\u20131.30 home win vs ~5.5\u20136 draw and ~10\u201311 away), implying roughly 73\u201375% home-win after vig removal. PSG also have a far stronger season record (73.1% win rate) and home advantage. While PSG have notable injury doubts (e.g., Barcola, Fabian Ruiz), Toulouse carry multiple injuries/suspensions across key positions, keeping the away-win and draw chances limited."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:03:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favour PSG (~1.28-1.30), which normalise to roughly 74% implied chance; I round to 75% after accounting for other factors. PSG have dominant home form (19-3-4, 73% win rate) and squad depth to cover a few injuries. Toulouse arrive with many absences (multiple defenders and attackers injured/suspended) and weaker away form (37% win rate). The combination of PSG\u2019s home advantage, market calibration, roster depth despite some PSG injuries (Barcola/Ruiz concerns), and Toulouse\u2019s significant personnel issues makes a PSG win the most likely outcome. Draw and away probabilities reduced accordingly."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:03:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Strong home advantage for PSG (dominant home record) and PSG likely to control this fixture. Toulouse have several injury concerns (Abu Francis, Charlie Cresswell, Djibril Sidibe, Frank Magri, Rafik Messali, Alex Dominguez, Hidalgo listed) which could hamper away performance. Market odds heavily favor PSG (approx 1.30 win, ~6.0 draw, ~11.0 Toulouse), aligning with a home-win expectation."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:03:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "PSG have a dominant home record (73.1% win rate) and significantly superior squad depth. Toulouse face multiple injuries/suspensions to key players (Francis, Cresswell, Sidibe, Magri, Messali, Dominguez, Hidalgo), reducing their strength further. PSG are missing Barcola and Ruiz, but overall have better replacements. Bookmaker odds (PSG win: 1.28-1.3; Draw: ~5.5-6; Toulouse: 9.6-11) clearly point to PSG as massive favorites, further confirming the model's output. Draw remains possible (Toulouse are not the weakest side), but away win probability is low given all factors."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:03:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.8,
+                    "draw_probability": 0.14,
+                    "away_win_probability": 0.06,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Paris Saint-Germain has a strong home win rate of 73.1% this season and are heavy favorites according to betting odds with odds around 1.3 for a home win. Toulouse is dealing with multiple injuries, affecting key players like Abu Francis and Frank Magri, which significantly impacts their performance. PSG's injuries are less critical, with Bradley Barcola being the most prominent absentee."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:03:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Paris Saint-Germain has a strong home record (73.1% win rate) while Toulouse has a weaker away record (37.0% win rate). Betting odds heavily favor PSG (around 1.3 for home win, 6 for draw, 10 for away win).  Several Toulouse players are injured (Abu Francis, Charlie Cresswell, Djibril Sidibe, Frank Magri, Rafik Messali, Alex Dominguez, Santiago Hidalgo) and PSG has key injuries to Noham Kamara, Bradley Barcola and Fabian Ruiz, but the odds suggest PSG are still heavily favored."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:04:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "PSG's dominant home record (73.1% win rate, 19-3-4) and superior squad quality create a massive gap. Toulouse's extensive injury list (6+ players including key defenders) severely weakens their defensive structure. Betting odds (PSG win ~1.28-1.3) imply ~77-78% probability for a home win, aligning with PSG's historical dominance and current form advantage. Toulouse's poor ATS record (11-16) and PSG's status as heavy favorites further support a comfortable PSG victory."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:04:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.77,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "PSG dominates with a 73.1% win rate (19-3-4) at home versus Toulouse's poor away form of 37.0% (10-7-10). The betting odds strongly favor PSG with odds around 1.28-1.30, implying ~75-78% win probability. Despite PSG missing Bradley Barcola (ankle, 10 goals in 22 matches) and Fabian Ruiz (knee), their squad depth is superior. Toulouse has multiple key injuries including Abu Francis (lower leg), Charlie Cresswell (hamstring), Frank Magri (knee), and Santiago Hidalgo suspended. The massive talent gap, home advantage, and betting market consensus all point to a comfortable PSG victory. Historical head-to-head and current form heavily favor the home side."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-02 17:04:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Toulouse (away) @ Paris Saint-Germain (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Paris Saint-Germain has a strong home record with a 73.1% win rate, while Toulouse has a relatively weak away record at 37.0%. Additionally, PSG's key players like Bradley Barcola and Fabian Ruiz are injured, but their overall squad depth and home advantage should still be sufficient to secure a win. The betting odds also heavily favor PSG, with a 1.28-1.30 odds for a home win, which aligns with the high probability of a home victory."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

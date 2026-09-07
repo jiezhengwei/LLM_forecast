@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-07\n    Target Date: 2026-05-08\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Sassuolo @ Torino                                    | Scheduled    | Away: 40.0% (14-7-14) vs Home: 31.4% (11-8-16)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Sassuolo (Away) @ Torino (Home)\n**News & Injury Report:**\n- [Torino vs Sassuolo Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/torino-vs-sassuolo-prediction-lineups-odds-2026-05-08/)\n  Snippet: Torino  Injury Table\n\nType Name Info\n\nDuvan Zapata Groin\n\nPosition: Forward Matches: 25 Goals: 3 Assists: 1 Expected return: -\n\nM. Holmgren Pedersen Other\n\nPosition: Defender Matches: 26 Goals: - Assists: 2 Expected return: -\n\nChe Adams Hamstring\n\nPosition: Forward Matches: 31 Goals: 5 Assists: 2 Expected return: -\n\nArdian Ismajli Hamstring\n\nPosition: Defender Matches: 24 Goals: - Assists: 2 Expected return: -\n\nZakaria Aboukhlal Muscle\n\nPosition: Forward Matches: 15 Goals: - Assists: - Expected return: -\n\nPerr Schuurs Knee\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: - ...\n- [Torino vs Sassuolo Prediction 8/05/2026 \u2013 Odds, Tips & Analysis - Football](https://scores24.live/en/soccer/m-10-05-2026-torino-sassuolo-calcio-prediction)\n  Snippet: \ud83d\udccc Ismajli's absence could be a significant setback, as he is a key defender. In their last outing against Udinese (0-2), he didn't play, and the \"Bulls\" struggled defensively without him. Losing Adams is also a blow; the Scotsman has recorded 5 goals and 2 assists in 31 Serie A appearances.\n\n### Sassuolo\n\n\ud83d\udeab The visitors are dealing with their own lineup issues: Edoardo Pieragnolo, Fali Cand\u00e9, and Daryl Bakola are doubtful for the match. Aliou Fadera will miss the game due to an accumulation of yellow cards, and Daniel Boloca is sidelined with an injury. ...\n**Betting Odds:**\n- [Torino vs Sassuolo Prediction & Betting Tips | 08/05/2026 | FootballPredictions.com](https://footballpredictions.com/footballpredictions/serieapredictions/torino-vs-sassuolo-prediction-08-05-2026/)\n  Snippet: ## Torino vs Sassuolo Betting Tips\n\n Correct Score: 2-1 @ 17/2 Odds\n Both Teams to Score (BTTS): Yes @ 4/5 Odds\n Over / Under 4.5 Goals: Under 4.5 Goals @ 1/9 Odds\n Over / Under 3.5 Goals: Under 3.5 Goals @ 3/10 Odds\n Over / Under 2.5 Goals: Over 2.5 Goals @ 1/1 Odds\n Over / Under 1.5 Goals: Over 1.5 Goals @ 1/3 Odds\n Anytime Goalscorer: Duvan Zapata @ 6/5 Odds\n First Goalscorer: Duvan Zapata @ 15/4 Odds\n Asian Handicap: Torino 0 @ 13/20 Odds\n European Handicap: Torino +1 @ 4/11 Odds\n Shots on Target (Home): Over 4.5\n Shots on Target (Away): Over 2.5\n Shots on Target (Total): Over 7.5 ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-07\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-07 17:47:43"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-07 17:45:50",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market signal leans Torino (Torino 0/DNB priced around 1.65), which typically implies Torino are the more likely winner in non-draw outcomes. Torino\u2019s injury list is heavy (notably Zapata/Adams plus key defensive absences like Ismajli), which raises draw/away upset risk, but Sassuolo also have meaningful absences (Fadera suspended, Boloca out, others doubtful). Net: slight Torino edge at home, with an elevated draw probability."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:46:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market calibration: bookmakers' markets (Torino Asian Hcap 0 ~13/20) still favor Torino as home side, implying a market-implied home win edge. Team form & context: Sassuolo have a strong away win rate (40.0%) while Torino's home win rate this season is low (31.4%), which pulls the model toward a more balanced view. Injuries/suspensions: Torino list multiple absences including forwards (Zapata doubtful/limited, Che Adams hamstring, Aboukhlal) and key defenders (Ismajli, Schuurs, Holmgren), a significant blow to both attack and defensive stability. Sassuolo have doubts (Pieragnolo, Fali Cand\u00e9, Daryl Bakola) plus Fadera suspended and Boloca injured \u2014 meaningful but overall less disruptive than Torino's list. Tactical/goal expectation: market tips (BTTS yes, Over 2.5 ~evens) point to an open game with both sides likely to score. Balancing the bookmaker edge for Torino with Torino's heavier injury list and Sassuolo's decent away form yields a moderate tilt to a Torino win but with sizable probabilities for draw and Sassuolo upset. Confidence rated Medium due to conflicting signals (bookmakers favor home, injuries favor the away side) and limited head-to-head/form detail."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:46:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (Away) @ Torino (Home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Torino hold home advantage and a relatively stable lineup, while Sassuolo face multiple injuries/doubts (Pieragnolo, Cand\u00e9, Bakola doubtful; Fadera suspended; Boloca sidelined). The betting market shows Torino with a modest home bias (Asian Handicap Torino 0; European Handicap Torino +1), implying a roughly 65% chance Torino avoids defeat. Allocation: 40% home win, 25% draw, 35% away win reflects both teams' threat and the injury-considered uncertainty."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:46:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Torino play at home but face substantial squad issues, notably with key absences in both defense (Ismajli, Pedersen) and attack (Che Adams, Zapata). Sassuolo also have their own injuries and suspensions, but their away win rate this season is best-in-class (40.0%) relative to Torino's home win rate (31.4%). Markets suggest Torino are mild favorites but not overwhelming. Injury and squad news dampen Torino's edge a bit, raising the draw and away probabilities slightly. A draw is reasonably likely, but Torino's home advantage and Sassuolo's lineup doubts make a Torino win the slight favorite."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:46:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Torino has a slight advantage being at home despite key injuries, notably Ardian Ismajli and Che Adams, which could influence their defensive and offensive capabilities. Sassuolo also faces lineup issues, with several players doubtful or out, but the betting odds favor Torino slightly and expect a competitive match."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:47:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "This prediction goes against the betting market, which slightly favors Torino. The primary driver for this forecast is the severe injury crisis at Torino. They are reportedly missing multiple key players in both attack (Duvan Zapata, Che Adams) and defense (Ardian Ismajli, Perr Schuurs). The provided news highlights their defensive struggles in a recent 0-2 loss without Ismajli, which is a significant indicator. Sassuolo, despite having a better season record, also has notable absences, including a key suspension. However, the sheer impact of Torino's injuries, affecting the spine of their team, appears more damaging. This should neutralize their home advantage and potentially tilt the match in favor of the visitors. The confidence is low due to the direct conflict between this fundamental analysis and the betting odds which still price Torino as favorites."
+                }
+            ],
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:47:15",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Torino have several key injuries in defense (Ismajli) and attack (Adams, Zapata) which weaken them; Sassuolo also have absences in midfield/defense. Both teams are inconsistent, with season records showing nearly equal home/away win rates. Betting odds favor low-scoring and BTTS Yes, suggesting a tight match. Slight home edge given but uncertainty high."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:47:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "This is a closely matched contest between two mid-table sides. Torino (31.4% win rate, 11-8-16) has home advantage but faces significant injury problems. Key absences include defender Ardian Ismajli (whose absence in their last 0-2 loss to Udinese exposed defensive vulnerabilities) and forward Che Adams (5 goals, 2 assists in 31 appearances). Duvan Zapata is also listed with a groin injury. Sassuolo (40.0% win rate, 14-7-14) has performed better this season overall but is dealing with their own issues: Aliou Fadera suspended due to yellow card accumulation, Daniel Boloca injured, and several players (Pieragnolo, Cand\u00e9, Bakola) doubtful. The betting odds suggest a tight match with Asian Handicap at Torino 0 @ 13/20, indicating bookmakers see minimal separation. The BTTS odds at 4/5 and Over 2.5 Goals at 1/1 suggest an open game. Torino's home record gives them a slight edge, but both teams' injury situations and similar form levels make this highly unpredictable. The probability distribution reflects a three-way contest where any outcome is plausible, with home advantage providing Torino the marginal favorite status."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-07 17:47:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sassuolo (away) @ Torino (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Torino has a slight home advantage, but they are missing key players like Duvan Zapata and Ardian Ismajli, which could weaken their defensive and offensive capabilities. Sassuolo, despite having their own injury concerns, has shown better form this season with a higher win rate. The betting odds suggest a close match, with a slight edge to Torino, but the draw probability is also significant."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

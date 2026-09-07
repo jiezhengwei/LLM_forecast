@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-15\n    Target Date: 2026-03-16\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Wolverhampton Wanderers @ Brentford                  | Scheduled    | Away: 10.0% (3-7-20) vs Home: 44.8% (13-5-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Wolverhampton Wanderers (Away) @ Brentford (Home)\n**News & Injury Report:**\n- [Brentford vs Wolves Prediction 16/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-14-03-2026-brentford-wolverhampton-wanderers-prediction)\n  Snippet: \u274c The hosts have an extensive injury list, but all are long-term absences. Aaron Hickey (hamstring), Vitaly Janelt (foot), and Rico Henry (hip) will be sidelined for a few more weeks. Anthony Milambo, Fabio Carvalho, and Josh Dasilva (all knee injuri...\n- [Preview: Brentford vs Wolverhampton Wanderers - Sports Mole](https://www.sportsmole.co.uk/football/brentford/relegation-battle/preview/brentford-vs-wolves-prediction-team-news-lineups_593860.html)\n  Snippet: Brentford Premier League form:\n\n W\n W\n D\n L\n W\n D\n\nBrentford form (all competitions):\n\n D\n W\n L\n W\n D\n L\n\nWolverhampton Wanderers Premier League form:\n\n L\n D\n D\n L\n W\n W\n\nWolverhampton Wanderers form (all competitions):\n\n W\n D\n L\n W\n W\n L\n\n## Team Ne...\n**Betting Odds:**\n- [Brentford vs Wolves prediction 16.03.2026 | Premier League](https://www.mightytips.com/football-predictions/brentford-vs-wolves-prediction-16-03-2026/)\n  Snippet: Brentford vs Wolverhampton Wanderers odds\n\n|  | 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---  --- |\n| 1xBet logo 1xBet | 1.56 | 4.20 | 5.80 | 1.72 | 2.12 |\n| Melbet logo Melbet | 1.54 | 4.30 | 5.80 | 1.70 | 2.10 |\n| Megapari logo Megapari | 1.55 | 4....\n- [Brentford vs Wolverhampton Odds - Monday March 16 2026](https://www.oddsshark.com/soccer/epl/brentford-wolves-odds-march-14-2026-2422814)\n  Snippet: ## Team Records\n\n| BFC | Record | WOL |\n --- \n| 13-5-11 | All | 3-7-20 |\n| 7-4-3 | Home | 3-3-10 |\n| 6-1-8 | Away | 0-4-10 |\n| 14-12-3 | ATS | 13-16-1 |\n| 9-4-1 | ATS Home | 6-10 |\n| 5-8-2 | ATS Away | 7-6-1 |\n| 14-15 | O/U | 9-18-3 |\n| 7-7 | O/U Hom...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-15\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-15 14:51:13"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-15 14:49:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Betting market strongly favors Brentford (home ~1.55 vs away ~5.80), and season performance supports it: Brentford 13-5-11 overall with strong home record (7-4-3) while Wolves are 3-7-20 overall and winless away (0-4-10). Brentford have long-term injuries (e.g., Hickey, Henry, Janelt), but these appear priced into the odds and Wolves' away weakness plus home advantage still point to a Brentford win as the most likely outcome."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.63,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds strongly favor Brentford (implied ~61% before normalization). Brentford benefit from solid home form this season and recent positive results (W W D L W D). Wolves have been poor overall and especially on the road this campaign (very low away win rate) and enter inconsistent form. Brentford do have several long-term absences (Hickey, Janelt, Rico Henry, others) which slightly reduces certainty, but the betting market, home advantage, and Wolves' weak away record justify a clear Brentford probability edge."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.61,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Brentford have the statistical edge at home (better season record and home form). Odds heavily favor Brentford (home win) but normalized probabilities still support a solid home win expectation (~61%). Brentford's injury list (long-term absences) could dampen performance, while Wolves' away form is typically weak."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:26",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.67,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Brentford have a strong home record (44.8% win rate; 7-4-3 at home) and come into the match in solid form, winning three of their last six Premier League games. While they do have several long-term absentees, none are recent or unexpected, reducing the surprise impact. Conversely, Wolves have won just three league games all season (10% win rate), with a poor away record (0-4-10 away). The betting market is heavily skewed toward Brentford (best home win odds ~1.55, equivalent to ~64.5% implied probability), lending further credence to the home side. A draw is more likely than a Wolves win based on form, odds, and team quality."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.13,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite Brentford's injury list, Wolverhampton's away form is poor (10% win rate) and Brentford's home form is strong (44.8% win rate). Betting odds also heavily favor a Brentford win, reinforcing the prediction."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:31",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.6,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brentford is favored at home (1.55 odds) despite their injuries and Wolves' poor away record (3-7-20 overall, 0-4-10 away). Brentford also has a much better home record. The betting odds heavily suggest a home win is most probable."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brentford has strong home form (44.8% win rate, 7-4-3 home record) and recent Premier League form (W-W-D-L-W-D). Wolverhampton has poor away record (0-4-10 away, 10.0% overall win rate) despite recent improved form (W-W in last two). Betting odds heavily favor Brentford (1.56 home win vs 5.80 away win), suggesting ~64% implied probability for home win. Brentford's injury list contains long-term absences but doesn't significantly impact current form. Home advantage and form differential outweigh Wolves' recent momentum."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:50:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Brentford holds a significant advantage with a 44.8% win rate (13-5-11) compared to Wolves' dismal 10.0% (3-7-20). Brentford's home form is strong (7-4-3), while Wolves have been abysmal away (0-4-10), failing to win a single away match this season. The betting odds strongly favor Brentford: 1xBet offers 1.56 for home win vs 5.80 for away win, implying ~64% home win probability vs ~17% away win. Recent form shows Brentford with W-W-D-L-W-D while Wolves have L-D-D-L-W-W (improved but still inconsistent). Despite Brentford's extensive injury list (Hickey, Janelt, Henry, Milambo, Carvalho, Dasilva), these are long-term absences they've adapted to during their strong season. Wolves' two recent wins may indicate slight improvement, but their away record remains catastrophic. Over/Under odds (1.72/2.12 for O/U 2.5) suggest a moderate-scoring game. Brentford should control this match at home against the league's worst traveling team."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-15 14:51:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Wolverhampton Wanderers (away) @ Brentford (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Brentford has a strong home record with a 44.8% win rate, and despite their injury list, they have shown better recent form compared to Wolverhampton Wanderers. The betting odds also favor Brentford, with home win odds around 1.55-1.56, which translates to an implied probability of about 64%. However, considering the extensive injury list, the confidence is set to medium."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

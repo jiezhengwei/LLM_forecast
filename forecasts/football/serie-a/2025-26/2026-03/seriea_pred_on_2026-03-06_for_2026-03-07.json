@@ -1,0 +1,303 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "forecast_type": "one-day-ahead",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, and home-court advantage.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-06\n    Target Date: 2026-03-07 (one-day-ahead forecast)\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Como @ Cagliari                                      | Scheduled    | Away: 48.1% (13-9-5) vs Home: 25.9% (7-9-11)\n2. Udinese @ Atalanta                                   | Scheduled    | Away: 37.0% (10-5-12) vs Home: 44.4% (12-9-6)\n3. Pisa @ Juventus                                      | Scheduled    | Away: 3.7% (1-12-14) vs Home: 48.1% (13-8-6)\n\n    [Real-time News, Injury & Analysis]\n    ### Real-time News, Injury Reports & Predictions\n\n#### Matchup: Como (Away) @ Cagliari (Home)\n- [Cagliari vs Como prediction, odds & betting tips \u2013 07/03/2026](https://footballwhispers.com/blog/cagliari-vs-como-prediction-07-03-2026/)\n  Snippet: Como still have a healthy squad despite some absentees. They will be without Marc-Oliver Kempf due to injury, dealing a blow to their defensive options ahead of this clash.\n\nTeenage winger Jayden Adda...\n- [Cagliari vs Como Prediction, Betting Tips, Lineups & Odds | 07 Mar ...](https://www.sportsgambler.com/betting-tips/football/cagliari-vs-como-prediction-lineups-odds-2026-03-07/)\n  Snippet: Gianluca Gaetano Thigh \n\nPosition: Midfielder Matches: 23 Goals: 2 Assists: 3 Expected return: 2026-03-07\n\nGennaro Borrelli Thigh \n\nPosition: Forward Matches: 22 Goals: 3 Assists: 1 Expected return: -...\n- [Cagliari vs Como Prediction 7/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-08-03-2026-cagliari-calcio-como-1907--prediction)\n  Snippet: \ud83d\udeab Cagliari are facing significant squad issues. By mid-March, they expect the return of Luca Mazzitelli (muscle injury), Alessandro Deiola (thigh injury), Gianluca Gaetano (muscle injury), and Gennaro...\n\n----------------------------------------\n#### Matchup: Udinese (Away) @ Atalanta (Home)\n- [Atalanta vs Udinese - live score, predicted lineups and H2H stats](https://www.fotmob.com/matches/atalanta-vs-udinese/2faumq)\n  Snippet: The current predicted lineups are:   \nAtalanta (3-4-2-1): Marco Carnesecchi - Odilon Kossounou, Berat Djimsiti, Sead Kolasinac - Raoul Bellanova, Marten de Roon, Mario Pasalic, Lorenzo Bernasconi - La...\n- [Atalanta vs Udinese Prediction 7/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-08-03-2026-atalanta-udinese-calcio-prediction)\n  Snippet: \ud83d\udeab Atalanta are dealing with some squad issues. Giorgio Scalvini is doubtful due to a knee injury, and Ederson is experiencing physical discomfort. Giacomo Raspadori is expected to return from a muscle...\n- [Atalanta vs Udinese Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/atalanta-vs-udinese-prediction-lineups-odds-2026-03-07/)\n  Snippet: Atalanta  Injury Table\n\nType Name Info\n\nEderson Other \n\nPosition: Midfielder Matches: 21 Goals: 1 Assists: - Expected return: -\n\nCharles De Ketelaere Knee \n\nPosition: Midfielder Matches: 21 Goals: 3 A...\n\n----------------------------------------\n#### Matchup: Pisa (Away) @ Juventus (Home)\n- [Juventus vs Pisa Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/juventus-vs-pisa-prediction-lineups-odds-2026-03-07/)\n  Snippet: Arthur Muscle \n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: -\n\nDusan Vlahovic Groin \n\nPosition: Forward Matches: 13 Goals: 3 Assists: 1 Expected return: 2026-03-07\n\nArkadiusz ...\n- [Juventus FC - Pisa Sporting Club, 07/03/2026 - Serie A - Match sheet](https://www.transfermarkt.com/vorbericht/index/spielbericht/4620990)\n  Snippet: ## Missing players\n\n## Top fixture-goal scorers\n\n| Player | Club | Goals |\n --- \n| |  |  |  --- | | Roberto Baggio | Roberto Baggio | | Second Striker | | Juventus FC | 6 |\n| |  |  |  --- | | Luigi De...\n- [Juventus vs Pisa Prediction 7/03/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-08-03-2026-juventus-turin-pisa-prediction)\n  Snippet: ### Pisa\n\n\ud83d\udce3 Following the match against Bologna (0-1), Pisa's head coach Oscar Hiljemark remarked: \"The team played well, and such a performance deserved three points. I see a lively squad out there, ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-06\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-06 17:38:10"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-06 17:36:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Como\u2019s season profile is clearly stronger (13-9-5) than Cagliari\u2019s (7-9-11), and that gap outweighs home advantage. Como missing CB Marc-Oliver Kempf slightly increases concession risk (supporting draw/BTTS), while Cagliari have multiple fitness issues/returns around this date (Gaetano/Borrelli etc.) creating uncertainty rather than a clear boost."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Atalanta\u2019s home record (12-9-6) and overall quality edge make them favorites, but their injury list (Scalvini doubtful, Ederson discomfort, De Ketelaere issues) raises volatility and draw probability. Udinese\u2019s away results are mid-table (10-5-12), giving them some upset chance, though still secondary to Atalanta at home."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.74,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Massive record mismatch: Pisa away have struggled badly all season (1-12-14), while Juventus at home are strong (13-8-6). Even with some Juventus absences/fitness questions (e.g., Arthur out; Vlahovic expected back), the baseline gap plus home advantage strongly points to a Juventus win, with the main threat being a low-scoring draw."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:36:34",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Season numbers show Como strong on the road (high away win rate) while Cagliari's home form is poor. Cagliari also have key defensive absences (Marc-Oliver Kempf) and several midfield/forward players doubtful or recovering, reducing their attacking/defensive cohesion. Como arrive with a healthier squad and better recent form; home advantage is outweighed by Cagliari's injuries and inferior season form."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Atalanta have stronger home performance and overall squad quality versus Udinese. Injuries/doubts (Scalvini, Ederson) slightly blunt Atalanta's edge but expected returns (e.g., Raspadori) help. Udinese's away win rate is modest, so Atalanta remain favorites but the injury noise keeps certainty moderate \u2014 draw/away upset still plausible."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.78,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.07,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Juventus strong at home (high win rate) while Pisa have an extremely poor away record (very low away win rate). Juventus also may see key attackers (Vlahovic) available, increasing scoring potential. The gap in quality and form is large; upset probability exists but is low."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:37:07",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Como are missing defender Marc-Oliver Kempf, which weakens their back line. Cagliari, while historically modest at home, benefit from home support and the disruption in Como's squad could tilt toward the away side."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Atalanta hold a clear home advantage (higher home win rate). Udinese away form is weaker (37%). Some Atalanta injuries (Scalvini doubtful) could dampen defense slightly, but An overall tilt favors Atalanta at home."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Juventus enjoy strong home form and a superior head-to-head profile against Pisa. Pisa travel with a weak away record; expect Juventus to assert dominance at home, aided by potential return of key striker Vlahovic."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:37:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Cagliari has significant squad issues due to injuries, which levels the playing field against Como who are without one key defender."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Atalanta, despite some injuries, are in better form and have a stronger season record than Udinese."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Despite injuries, Juventus' overall strength and form outmatch Pisa significantly."
+                }
+            ],
+            "model_name": "GPT-4 Turbo"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:37:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Cagliari is facing significant squad issues with several key players injured or doubtful, including Gianluca Gaetano and Gennaro Borrelli. Despite being away, Como has a decent win rate and the absence of Marc-Oliver Kempf may balance the scales."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Atalanta's home win rate is strong, and despite some squad issues with players like Ederson and Scalvini, their depth should be enough to handle Udinese at home. Udinese's away form is moderate, giving Atalanta the edge."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Juventus has a strong home win record and even without some regulars like Dusan Vlahovic who is expected to return, they are well-equipped to handle Pisa, who have only won one match all season and are struggling significantly in away games."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:37:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Cagliari has significant squad issues, while Como is missing a key defender. Cagliari's home record is poor, but Como's away record is only slightly better. The injuries to key Cagliari players such as Gaetano and Borrelli negatively impact their chances, but home advantage gives them a slight edge."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Atalanta is dealing with injuries to key players like Ederson and De Ketelaere, however Udinese's away record is poor (10-5-12), and Atalanta's home record is respectable. Atalanta still has a stronger squad overall despite the injuries, and home advantage tilts the balance in their favor."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Juventus is the stronger team, and Pisa has a terrible away record (1-12-14). Juventus is only missing Arthur (long term injury), and Vlahovic may return. Despite Pisa's coach praising the team's performance, Juventus at home should be too strong."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:37:54",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Como has significantly better season performance (48.1% win rate vs Cagliari's 25.9%). Cagliari faces multiple injury issues including Mazzitelli, Deiola, Gaetano, and Borrelli, while Como only misses Kempf. Como's superior form and Cagliari's squad problems give Como the edge despite being away."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium-High",
+                    "reasoning": "Atalanta has better home record (44.4% win rate vs Udinese's 37.0% away). Atalanta's injuries (Scalvini doubtful, Ederson discomfort) are manageable with key players like Carnesecchi, Djimsiti, and de Roon available. Home advantage and superior squad depth should overcome Udinese's decent away form."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Massive disparity in quality and form: Juventus has 48.1% home win rate vs Pisa's dismal 3.7% away win rate. Juventus' injuries (Arthur, Vlahovic) are offset by squad depth and home advantage. Pisa's coach acknowledges good performances but poor results - facing Juventus at Allianz Stadium is a different challenge entirely."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "model_name": "Claude 3.5",
+            "error": "Claude failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CYmbtn1JvBTrwiACLthDg'}"
+        },
+        {
+            "forecast_timestamp": "2026-03-06 17:38:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Como (away) @ Cagliari (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Cagliari is facing significant squad issues with multiple key players out, including Gianluca Gaetano and Gennaro Borrelli. Como, despite the absence of Marc-Oliver Kempf, has a healthy squad and a strong away record. This makes the match more balanced, with a slight edge to Como."
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Udinese (away) @ Atalanta (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "High",
+                    "reasoning": "Atalanta, despite some injuries, has a strong home record and is expected to perform well against Udinese. Udinese's away form is not as strong, and Atalanta's overall team strength and home advantage give them a higher probability of winning or at least drawing."
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Pisa (away) @ Juventus (home)",
+                    "home_win_probability": 0.7,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Juventus, even with some key players like Dusan Vlahovic and Arthur potentially missing, has a significantly stronger team and a strong home record. Pisa's poor away form and Juventus' overall quality make a home win highly likely."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

@@ -1,0 +1,1583 @@
+{
+    "meta_info": {
+        "competition": "Serie A 2026-2027",
+        "competition_key": "serie_a",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-05",
+        "target_date_et": "2026-09-06",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Italian Serie A 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874768\nMatchup: Venezia (away) @ Frosinone (home)\nHome: Frosinone\nAway: Venezia\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Stadio Benito Stirpe\nRound: unavailable\nHome form: LWLWW\nAway form: LLLWW\nHome record: 1-0-1\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Frosinone +170 (open +170); Draw +230 (open +215); Venezia +145 (open +140)\nTavily context:\n  - Title: Frosinone vs Venezia: team news, lineups, predictions (Serie A 06/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nVenezia have 0 points to their name this season and occupy 19th position in the table. In their last game, Giovanni Stroppa's team lost 2-1 against Udinese (Coppa Italia 2026/27).\n\nThe last meeting between the two teams ended with Venezia winning 2-1.\n\n## Predicted lineups\n\nFrosinone: Lorenzo Palmisani, Anthony Oyono, Ilario Monterisi, Gabriele Calvani, Gabriele Bracaglia, Giacomo Calò, Patrizio Masini, Seydou Fini, Romano Schmid, Giorgi Kvernadze, Antonio Raimondo ...\n    URL: https://sports.yahoo.com/articles/preview-frosinone-vs-venezia-team-131000182.html\n  - Title: Frosinone vs Venezia - live score, predicted lineups and H2H stats\n    Content: Stroppa\n\n  Farès Ghedjemis\n\n  Calf injury / Doubtful\n\nGhedjemisCalf injuryDoubtful\n\n  Bartol Franjic\n\n  Physical discomfort / Doubtful\n\nFranjicPhysical discomfortDoubtful\n\n  Marin Sverko\n\n  Thigh injury / Mid October 2026\n\nSverkoThigh injuryMid October 2026\n\n  Matías Moreno\n\n  Physical discomfort / Doubtful\n\nMorenoPhysical discomfortDoubtful\n\n  Andrea Adorante\n\n  Back injury / Early October 2026\n\nAdoranteBack injuryEarly October 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Sassuolo\n\n  1 - 1\n\n  Frosinone\n Fiorentina\n\n  0 - 3\n\n  Frosinone\n Frosinone\n\n  0 - 1\n\n  Juventus\n Frosinone\n\n  4 - 1 ...\n    URL: https://www.fotmob.com/matches/venezia-vs-frosinone/2m17vl\n  - Title: Frosinone vs Venezia Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: ## Frosinone vs Venezia Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nClose Game in the Eyes of the Betting Sites\n\nThe available 1x2 betting prices reveal that Venezia are 2.48 for a Serie A win, with Frosinone being 2.70. The draw is on offer at 3.35 if you expect the game to finish level.\n\nThere’s the option to get some insurance on your bet by going down the Draw No Bet route. This allows you to back Venezia at 1.75 with a safety net or alternatively opt for Frosinone at 1.92. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/frosinone-vs-venezia-prediction-lineups-odds-2026-09-06\n  - Title: Frosinone vs Venezia prediction, preview & betting tips – 06/09/2026\n    Content: ## Whispers predicts: Frosinone 2-1 Venezia\n\nFrosinone enter this fixture as slight favourites to claim victory, and we are predicting a tight 2-1 win for the home side.\n\nI Canarini have had an average start to their season, with one loss and one win, and their recent victory will come as a boost heading into this clash.\n\nOn the other hand, Venezia will look to get their first win of the season after conceding four goals in their first two games.\n\nFollowing their form for the new season, bookmakers have given Frosinone 17/10 (2.70) to secure a home victory. ...\n    URL: https://footballwhispers.com/blog/frosinone-vs-venezia-prediction-06-09-2026\n\nGame ID: 2\nSource event_id: 401874987\nMatchup: Monza (away) @ Parma (home)\nHome: Parma\nAway: Monza\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Ennio Tardini\nRound: unavailable\nHome form: LLLWW\nAway form: WLLWL\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Parma +145 (open -105); Draw +200 (open +210); Monza +195 (open +275)\nTavily context:\n  - Title: Parma vs Monza - live score, predicted lineups and H2H stats\n    Content: Leonardo Colombo\n\n  Muscle injury / About 1-2 weeks\n\nColomboMuscle injuryAbout 1-2 weeks\n\n  Idrissa Touré\n\n  Knee injury / Early September 2026\n\nTouréKnee injuryEarly September 2026\n\n  Matteo Pessina\n\n  Knee injury / Early October 2026\n\nPessinaKnee injuryEarly October 2026\n\n## Team form\n\n Parma\n\n  0 - 1\n\n  Cagliari\n Parma\n\n  2 - 0\n\n  Catania\n Parma\n\n  0 - 2\n\n  Sampdoria\n Parma\n\n  1 - 1\n\n  Iraklis\n Parma\n\n  1 - 1\n\n  Arezzo\n\n Inter\n\n  4 - 1\n\n  Monza\n Monza\n\n  3 - 0\n\n  Avellino\n Monza\n\n  1 - 3\n\n  Aris Thessaloniki\n Galatasaray\n\n  0 - 2\n\n  Monza\n Monza\n\n  0 - 2\n\n  Catanzaro ...\n    URL: https://www.fotmob.com/matches/monza-vs-parma/2aqqjc\n  - Title: Parma vs Monza Prediction, Stats, H2H - 06 Sep 2026 - Forebet\n    Content: Parma welcome Monza to Stadio Ennio Tardini for a Serie A fixture scheduled on 2026-09-06 GMT.\n\nParma have struggled recently, suffering defeats in four of their previous five Serie A matches, while Monza have lost 50 percent of their last two away games.\n\nTheir head to head record indicates tight contests, with Under 2.5 goals scored in three of the last four meetings between Parma and Monza.\n\nParma and Monza to draw 1-1\n\nImage 6401/09/2026\ninjured and suspended\n\n   Parma\n   Monza\n\nPlayer\n\nReason\n\nUntil\n\nE. Toure (F)\n\nImage 65 Unknown injury\n\n -\n\nH. Nicolussi Caviglia (M)\n\nImage 66 Pubalgia ...\n    URL: https://www.forebet.com/en/football/matches/parma-monza-2496512\n  - Title: Prediction Parma vs Monza: analysis, odds and betting tips\n    Content: What are the 1X2 betting odds for Parma vs Monza in the Serie A? The odds are: Parma to win 2.55, draw 3.10, Monza to win 3.00. What are the\n    URL: https://betmines.com/match-preview/parma-vs-monza-prediction-match-preview-and-analysis-serie-a-06-09-2026\n  - Title: Parma vs Monza prediction – Odds & stats – 6 September 2026\n    Content: Parma\nMonza\n\n## Parma vs Monza under/over prediction\n\n-2.5\nProbability: 68.11%\n\nBet365\nBet365\n\n| Parma |  | Monza |\n ---\n| Parma | stat | Monza |\n| 1.83 | Average goals per game | 4 |\n| 0.5 | Average goal scored | 1.83 |\n| 1.33 | Goals conceded per match | 2.17 |\n| 100 % | Matches with -2.5 goals | 17 % |\n| 0 % | Matches with +2.5 goals | 83 % |\n| 1.83 | Average goals home team 1/away team 2 | 4.5 |\n| 0.67 | Avg. goals home team 1/away team 2 | 2.17 |\n| 1.17 | Avg. goals conceded home team 1/away team 2 | 2.33 |\nStats based on the last 6 matches\n\nParma\nMonza\n\n## Parma vs Monza BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/parma-monza-8522120\n\nGame ID: 3\nSource event_id: 401874751\nMatchup: Sassuolo (away) @ Bologna (home)\nHome: Bologna\nAway: Sassuolo\nKickoff UTC: 2026-09-06T16:00Z\nKickoff ET: 2026-09-06 12:00 EDT\nVenue: Renato Dall'Ara\nRound: unavailable\nHome form: LLDWW\nAway form: WWLWL\nHome record: 0-0-2\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Bologna +105 (open -110); Draw +235 (open +225); Sassuolo +250 (open +260)\nTavily context:\n  - Title: Bologna vs Sassuolo Predictions, Picks & Odds - 06/09/2026\n    Content: #### Sassuolo\n\nRecent form\n\nSeason statistics (5)\n\n| Statistic | Bologna |  | Sassuolo |\n ---  --- |\n| Last 5 results | 1W 1D 3L | · | 2W 1D 2L |\n| Avg goals scored | 1.1 | · | 1.7 |\n| Avg goals conceded | 1.5 | · | 1.4 |\n| Under 2.5 (last 5) | 4/5 | · | 1/5 |\n| H2H, last 2 meetings | 1 Bologna · 1 Draws · 0 Sassuolo | | |\n\n### Lineups: Bologna vs Sassuolo\n\n#### Bologna\n\nStarters\n\nBench\n\nAbsent\n\n#### Sassuolo\n\nStarters\n\nBench\n\nAbsent\n\nLow confidence ...\n    URL: https://www.toffeeweb.com/int/bologna-vs-sassuolo-predictions-picks-odds-06-09-2026\n  - Title: Bologna-Sassuolo - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nBologna logo\nSassuolo logo\nBologna logo\nSassuolo logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Oussama El Azzouzi |  | Out | 6.25 |\n| Nicolò Casale |  | Doubtful | N/A |\n| Riccardo Orsolini |  | Doubtful | 6.08 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Ismaël Koné |  | Out | N/A |\n| Fali Candé |  | Out | N/A |\n| Edoardo Pieragnolo |  | Out | N/A |\n| Daniel Boloca |  | Out | N/A | ...\n    URL: http://www.whoscored.com/matches/1980892/preview/italy-serie-a-2026-2027-bologna-sassuolo\n  - Title: Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n    Content: Ratingbet Football Serie A Italy Predictions  Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n\n# Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n\nExpect at least a couple of goals\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 04 Sep 2026, 23:17\n\nBologna vs Sassuolo match prediction on Sep 06, 2026\n\nMath prediction  1 X 2\n\nBologna\n\n Bologna\n\n-\n\nSassuolo\n\n Sassuolo\n\n-\n\n2.09   3.52  Linebet   27 Aug 06:36  3.53  + 0.05      3.96  Linebet   02 Sep 05:33  4.14  -0.13     31 Aug 05:32  4.2  -0.06 ...\n    URL: https://ratingbet.com/predictions/bologna-vs-sassuolo-prediction-team-news-lineups-expert-analysis-september-6-2026\n  - Title: Bologna FC 1909 - US Sassuolo Calcio prediction & tips 06.09.2026\n    Content: | Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 2.09 | 1win |\n| Draw | 3.52 | 1win |\n| Away Win | 3.97 | 1win |\n| Both Teams to Score - Yes | 1.83 | Paripesa |\n| Both Teams to Score - No | 1.91 | Paripesa |\n| Correct Score | 1:0 (7.00) | 1win |\n\nNote: when hunting for value, compare multiple Bookmaker and Sports Betting Site offers — odds can move and markets such as BTTS or correct score often provide the best value for astute punters. ...\n    URL: https://www.transfermarkt.com/betting/tips/bologna-fc-vs-sassuolo-calcio-prediction-06-09-2026\n\nGame ID: 4\nSource event_id: 401874954\nMatchup: AC Milan (away) @ Juventus (home)\nHome: Juventus\nAway: AC Milan\nKickoff UTC: 2026-09-06T18:45Z\nKickoff ET: 2026-09-06 14:45 EDT\nVenue: Allianz Stadium\nRound: unavailable\nHome form: WWDLW\nAway form: WWLWL\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Juventus +105 (open +100); Draw +225 (open +225); AC Milan +245 (open +235)\nTavily context:\n  - Title: PREVIEW | Juventus vs AC Milan: team news, lineups, predictions (Serie A 06/09)\n    Content: ## Predicted lineups\n\nJuventus: Guglielmo Vicario, Pierre Kalulu, Jhon Lucumí, Bremer, Zeki Çelik, Manuel Locatelli, Douglas Luiz, Francisco Conceição, Jonathan David, Jérémie Boga, Randal Kolo Muani\n\nAC Milan: Mike Maignan, Mario Gila, Koni De Winter, Strahinja Pavlovic, Samuel Chukwueze, Luka Modrić, Yunus Musah, Davide Bartesaghi, Ruben Loftus-Cheek, Gonçalo Ramos, Alphadjo Cissé\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\n## Unavailable\n\n## Juventus\n\n Andrea Cambiaso - Ankle Sprain\n Kenan Yildiz - Broken Foot\n Jeff Ekhator - Hamstring Strain\n\n## AC Milan\n\n## Last starting XIs ...\n    URL: https://ca.sports.yahoo.com/news/preview-juventus-vs-ac-milan-185500710.html\n  - Title: PREVIEW | Juventus vs AC Milan: team news, lineups ...\n    Content: ## OneFootball Videos\n\nAC Milan have won 6 points to date and are placed in 3rd position. In their last fixture, Ruben Amorim's team won 2-0 against Venezia (Serie A 2026/27).\n\nThe last meeting between the two teams ended in a 0-0 draw.\n\n### Predicted lineups\n\nJuventus: Guglielmo Vicario, Pierre Kalulu, Jhon Lucumí, Bremer, Zeki Çelik, Manuel Locatelli, Douglas Luiz, Francisco Conceição, Jonathan David, Jérémie Boga, Randal Kolo Muani ...\n    URL: https://onefootball.com/en/news/preview-juventus-vs-ac-milan-team-news-lineups-predictions-serie-a-0609-43402628\n  - Title: Juventus vs AC Milan Stats | 6 Sep 2026\n    Content: Match Odds 1X2 Odds Juventus Open 2.20 Current 2.10 Draw Open 3.20 Current 3.25 AC Milan Open 3.20 Current 3.70 Goals Odds Over 2.5 goals Open\n    URL: https://www.betshoot.com/football/19713591-Juventus-vs-AC-Milan-prediction\n  - Title: Juventus vs AC Milan Predictions, Picks & Odds – 06/09/2026\n    Content: AC Milan arrive at the Juventus Stadium top of the table following a convincing 2-0 win over Venezia in Ruben Amorim's first competitive match as manager. Club-record signing Goncalo Ramos opened his Serie A account in that victory, offering early encouragement. However, the Rossoneri face significant disruption with Rafael Leao reportedly set to leave after the club accepted a bid from Galatasaray, and their away form has been inconsistent, with two defeats in their last five on the road.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/juventus-vs-ac-milan-predictions-picks-odds-06-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Serie A 2026-2027 forecast\n\nForecast Date (ET): 2026-09-05\n\nTarget Date (ET): 2026-09-06\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401874768\nMatchup: Venezia (away) @ Frosinone (home)\nHome: Frosinone\nAway: Venezia\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Stadio Benito Stirpe\nRound: unavailable\nHome form: LWLWW\nAway form: LLLWW\nHome record: 1-0-1\nAway record: 0-0-2\nESPN structured 1X2 odds: DraftKings: Frosinone +170 (open +170); Draw +230 (open +215); Venezia +145 (open +140)\nTavily context:\n  - Title: Frosinone vs Venezia: team news, lineups, predictions (Serie A 06/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nVenezia have 0 points to their name this season and occupy 19th position in the table. In their last game, Giovanni Stroppa's team lost 2-1 against Udinese (Coppa Italia 2026/27).\n\nThe last meeting between the two teams ended with Venezia winning 2-1.\n\n## Predicted lineups\n\nFrosinone: Lorenzo Palmisani, Anthony Oyono, Ilario Monterisi, Gabriele Calvani, Gabriele Bracaglia, Giacomo Calò, Patrizio Masini, Seydou Fini, Romano Schmid, Giorgi Kvernadze, Antonio Raimondo ...\n    URL: https://sports.yahoo.com/articles/preview-frosinone-vs-venezia-team-131000182.html\n  - Title: Frosinone vs Venezia - live score, predicted lineups and H2H stats\n    Content: Stroppa\n\n  Farès Ghedjemis\n\n  Calf injury / Doubtful\n\nGhedjemisCalf injuryDoubtful\n\n  Bartol Franjic\n\n  Physical discomfort / Doubtful\n\nFranjicPhysical discomfortDoubtful\n\n  Marin Sverko\n\n  Thigh injury / Mid October 2026\n\nSverkoThigh injuryMid October 2026\n\n  Matías Moreno\n\n  Physical discomfort / Doubtful\n\nMorenoPhysical discomfortDoubtful\n\n  Andrea Adorante\n\n  Back injury / Early October 2026\n\nAdoranteBack injuryEarly October 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Sassuolo\n\n  1 - 1\n\n  Frosinone\n Fiorentina\n\n  0 - 3\n\n  Frosinone\n Frosinone\n\n  0 - 1\n\n  Juventus\n Frosinone\n\n  4 - 1 ...\n    URL: https://www.fotmob.com/matches/venezia-vs-frosinone/2m17vl\n  - Title: Frosinone vs Venezia Prediction, Betting Tips, Lineups & Odds | 06 Sep 2026\n    Content: ## Frosinone vs Venezia Odds\n\nThe odds and lines below are updated regularly and may differ from the prices shown in our picks, which are captured at the time of publication.\n\nClose Game in the Eyes of the Betting Sites\n\nThe available 1x2 betting prices reveal that Venezia are 2.48 for a Serie A win, with Frosinone being 2.70. The draw is on offer at 3.35 if you expect the game to finish level.\n\nThere’s the option to get some insurance on your bet by going down the Draw No Bet route. This allows you to back Venezia at 1.75 with a safety net or alternatively opt for Frosinone at 1.92. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/frosinone-vs-venezia-prediction-lineups-odds-2026-09-06\n  - Title: Frosinone vs Venezia prediction, preview & betting tips – 06/09/2026\n    Content: ## Whispers predicts: Frosinone 2-1 Venezia\n\nFrosinone enter this fixture as slight favourites to claim victory, and we are predicting a tight 2-1 win for the home side.\n\nI Canarini have had an average start to their season, with one loss and one win, and their recent victory will come as a boost heading into this clash.\n\nOn the other hand, Venezia will look to get their first win of the season after conceding four goals in their first two games.\n\nFollowing their form for the new season, bookmakers have given Frosinone 17/10 (2.70) to secure a home victory. ...\n    URL: https://footballwhispers.com/blog/frosinone-vs-venezia-prediction-06-09-2026\n\nGame ID: 2\nSource event_id: 401874987\nMatchup: Monza (away) @ Parma (home)\nHome: Parma\nAway: Monza\nKickoff UTC: 2026-09-06T13:00Z\nKickoff ET: 2026-09-06 09:00 EDT\nVenue: Ennio Tardini\nRound: unavailable\nHome form: LLLWW\nAway form: WLLWL\nHome record: 0-0-2\nAway record: 0-0-2\nESPN structured 1X2 odds: Provider unavailable: Parma +145 (open -105); Draw +200 (open +210); Monza +195 (open +275)\nTavily context:\n  - Title: Parma vs Monza - live score, predicted lineups and H2H stats\n    Content: Leonardo Colombo\n\n  Muscle injury / About 1-2 weeks\n\nColomboMuscle injuryAbout 1-2 weeks\n\n  Idrissa Touré\n\n  Knee injury / Early September 2026\n\nTouréKnee injuryEarly September 2026\n\n  Matteo Pessina\n\n  Knee injury / Early October 2026\n\nPessinaKnee injuryEarly October 2026\n\n## Team form\n\n Parma\n\n  0 - 1\n\n  Cagliari\n Parma\n\n  2 - 0\n\n  Catania\n Parma\n\n  0 - 2\n\n  Sampdoria\n Parma\n\n  1 - 1\n\n  Iraklis\n Parma\n\n  1 - 1\n\n  Arezzo\n\n Inter\n\n  4 - 1\n\n  Monza\n Monza\n\n  3 - 0\n\n  Avellino\n Monza\n\n  1 - 3\n\n  Aris Thessaloniki\n Galatasaray\n\n  0 - 2\n\n  Monza\n Monza\n\n  0 - 2\n\n  Catanzaro ...\n    URL: https://www.fotmob.com/matches/monza-vs-parma/2aqqjc\n  - Title: Parma vs Monza Prediction, Stats, H2H - 06 Sep 2026 - Forebet\n    Content: Parma welcome Monza to Stadio Ennio Tardini for a Serie A fixture scheduled on 2026-09-06 GMT.\n\nParma have struggled recently, suffering defeats in four of their previous five Serie A matches, while Monza have lost 50 percent of their last two away games.\n\nTheir head to head record indicates tight contests, with Under 2.5 goals scored in three of the last four meetings between Parma and Monza.\n\nParma and Monza to draw 1-1\n\nImage 6401/09/2026\ninjured and suspended\n\n   Parma\n   Monza\n\nPlayer\n\nReason\n\nUntil\n\nE. Toure (F)\n\nImage 65 Unknown injury\n\n -\n\nH. Nicolussi Caviglia (M)\n\nImage 66 Pubalgia ...\n    URL: https://www.forebet.com/en/football/matches/parma-monza-2496512\n  - Title: Prediction Parma vs Monza: analysis, odds and betting tips\n    Content: What are the 1X2 betting odds for Parma vs Monza in the Serie A? The odds are: Parma to win 2.55, draw 3.10, Monza to win 3.00. What are the\n    URL: https://betmines.com/match-preview/parma-vs-monza-prediction-match-preview-and-analysis-serie-a-06-09-2026\n  - Title: Parma vs Monza prediction – Odds & stats – 6 September 2026\n    Content: Parma\nMonza\n\n## Parma vs Monza under/over prediction\n\n-2.5\nProbability: 68.11%\n\nBet365\nBet365\n\n| Parma |  | Monza |\n ---\n| Parma | stat | Monza |\n| 1.83 | Average goals per game | 4 |\n| 0.5 | Average goal scored | 1.83 |\n| 1.33 | Goals conceded per match | 2.17 |\n| 100 % | Matches with -2.5 goals | 17 % |\n| 0 % | Matches with +2.5 goals | 83 % |\n| 1.83 | Average goals home team 1/away team 2 | 4.5 |\n| 0.67 | Avg. goals home team 1/away team 2 | 2.17 |\n| 1.17 | Avg. goals conceded home team 1/away team 2 | 2.33 |\nStats based on the last 6 matches\n\nParma\nMonza\n\n## Parma vs Monza BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/parma-monza-8522120\n\nGame ID: 3\nSource event_id: 401874751\nMatchup: Sassuolo (away) @ Bologna (home)\nHome: Bologna\nAway: Sassuolo\nKickoff UTC: 2026-09-06T16:00Z\nKickoff ET: 2026-09-06 12:00 EDT\nVenue: Renato Dall'Ara\nRound: unavailable\nHome form: LLDWW\nAway form: WWLWL\nHome record: 0-0-2\nAway record: 1-0-1\nESPN structured 1X2 odds: Provider unavailable: Bologna +105 (open -110); Draw +235 (open +225); Sassuolo +250 (open +260)\nTavily context:\n  - Title: Bologna vs Sassuolo Predictions, Picks & Odds - 06/09/2026\n    Content: #### Sassuolo\n\nRecent form\n\nSeason statistics (5)\n\n| Statistic | Bologna |  | Sassuolo |\n ---  --- |\n| Last 5 results | 1W 1D 3L | · | 2W 1D 2L |\n| Avg goals scored | 1.1 | · | 1.7 |\n| Avg goals conceded | 1.5 | · | 1.4 |\n| Under 2.5 (last 5) | 4/5 | · | 1/5 |\n| H2H, last 2 meetings | 1 Bologna · 1 Draws · 0 Sassuolo | | |\n\n### Lineups: Bologna vs Sassuolo\n\n#### Bologna\n\nStarters\n\nBench\n\nAbsent\n\n#### Sassuolo\n\nStarters\n\nBench\n\nAbsent\n\nLow confidence ...\n    URL: https://www.toffeeweb.com/int/bologna-vs-sassuolo-predictions-picks-odds-06-09-2026\n  - Title: Bologna-Sassuolo - Serie A 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Probable Lineups Statistical Comparison\n\nBologna logo\nSassuolo logo\nBologna logo\nSassuolo logo\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Oussama El Azzouzi |  | Out | 6.25 |\n| Nicolò Casale |  | Doubtful | N/A |\n| Riccardo Orsolini |  | Doubtful | 6.08 |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Ismaël Koné |  | Out | N/A |\n| Fali Candé |  | Out | N/A |\n| Edoardo Pieragnolo |  | Out | N/A |\n| Daniel Boloca |  | Out | N/A | ...\n    URL: http://www.whoscored.com/matches/1980892/preview/italy-serie-a-2026-2027-bologna-sassuolo\n  - Title: Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n    Content: Ratingbet Football Serie A Italy Predictions  Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n\n# Bologna vs Sassuolo prediction: team news, lineups, expert analysis September 6, 2026\n\nExpect at least a couple of goals\n\nBenjamin Mcneil\n\nAuthor:\n\nBenjamin Mcneil,  betting expert\n\nPublished: 04 Sep 2026, 23:17\n\nBologna vs Sassuolo match prediction on Sep 06, 2026\n\nMath prediction  1 X 2\n\nBologna\n\n Bologna\n\n-\n\nSassuolo\n\n Sassuolo\n\n-\n\n2.09   3.52  Linebet   27 Aug 06:36  3.53  + 0.05      3.96  Linebet   02 Sep 05:33  4.14  -0.13     31 Aug 05:32  4.2  -0.06 ...\n    URL: https://ratingbet.com/predictions/bologna-vs-sassuolo-prediction-team-news-lineups-expert-analysis-september-6-2026\n  - Title: Bologna FC 1909 - US Sassuolo Calcio prediction & tips 06.09.2026\n    Content: | Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 2.09 | 1win |\n| Draw | 3.52 | 1win |\n| Away Win | 3.97 | 1win |\n| Both Teams to Score - Yes | 1.83 | Paripesa |\n| Both Teams to Score - No | 1.91 | Paripesa |\n| Correct Score | 1:0 (7.00) | 1win |\n\nNote: when hunting for value, compare multiple Bookmaker and Sports Betting Site offers — odds can move and markets such as BTTS or correct score often provide the best value for astute punters. ...\n    URL: https://www.transfermarkt.com/betting/tips/bologna-fc-vs-sassuolo-calcio-prediction-06-09-2026\n\nGame ID: 4\nSource event_id: 401874954\nMatchup: AC Milan (away) @ Juventus (home)\nHome: Juventus\nAway: AC Milan\nKickoff UTC: 2026-09-06T18:45Z\nKickoff ET: 2026-09-06 14:45 EDT\nVenue: Allianz Stadium\nRound: unavailable\nHome form: WWDLW\nAway form: WWLWL\nHome record: 2-0-0\nAway record: 2-0-0\nESPN structured 1X2 odds: Provider unavailable: Juventus +105 (open +100); Draw +225 (open +225); AC Milan +245 (open +235)\nTavily context:\n  - Title: PREVIEW | Juventus vs AC Milan: team news, lineups, predictions (Serie A 06/09)\n    Content: ## Predicted lineups\n\nJuventus: Guglielmo Vicario, Pierre Kalulu, Jhon Lucumí, Bremer, Zeki Çelik, Manuel Locatelli, Douglas Luiz, Francisco Conceição, Jonathan David, Jérémie Boga, Randal Kolo Muani\n\nAC Milan: Mike Maignan, Mario Gila, Koni De Winter, Strahinja Pavlovic, Samuel Chukwueze, Luka Modrić, Yunus Musah, Davide Bartesaghi, Ruben Loftus-Cheek, Gonçalo Ramos, Alphadjo Cissé\n\nAdvertisement\n\nAdvertisement\n\nAdvertisement\n\n## Unavailable\n\n## Juventus\n\n Andrea Cambiaso - Ankle Sprain\n Kenan Yildiz - Broken Foot\n Jeff Ekhator - Hamstring Strain\n\n## AC Milan\n\n## Last starting XIs ...\n    URL: https://ca.sports.yahoo.com/news/preview-juventus-vs-ac-milan-185500710.html\n  - Title: PREVIEW | Juventus vs AC Milan: team news, lineups ...\n    Content: ## OneFootball Videos\n\nAC Milan have won 6 points to date and are placed in 3rd position. In their last fixture, Ruben Amorim's team won 2-0 against Venezia (Serie A 2026/27).\n\nThe last meeting between the two teams ended in a 0-0 draw.\n\n### Predicted lineups\n\nJuventus: Guglielmo Vicario, Pierre Kalulu, Jhon Lucumí, Bremer, Zeki Çelik, Manuel Locatelli, Douglas Luiz, Francisco Conceição, Jonathan David, Jérémie Boga, Randal Kolo Muani ...\n    URL: https://onefootball.com/en/news/preview-juventus-vs-ac-milan-team-news-lineups-predictions-serie-a-0609-43402628\n  - Title: Juventus vs AC Milan Stats | 6 Sep 2026\n    Content: Match Odds 1X2 Odds Juventus Open 2.20 Current 2.10 Draw Open 3.20 Current 3.25 AC Milan Open 3.20 Current 3.70 Goals Odds Over 2.5 goals Open\n    URL: https://www.betshoot.com/football/19713591-Juventus-vs-AC-Milan-prediction\n  - Title: Juventus vs AC Milan Predictions, Picks & Odds – 06/09/2026\n    Content: AC Milan arrive at the Juventus Stadium top of the table following a convincing 2-0 win over Venezia in Ruben Amorim's first competitive match as manager. Club-record signing Goncalo Ramos opened his Serie A account in that victory, offering early encouragement. However, the Rossoneri face significant disruption with Rafael Leao reportedly set to leave after the club accepted a bid from Galatasaray, and their away form has been inconsistent, with two defeats in their last five on the road.\n\n### Recommended Bets ...\n    URL: https://www.toffeeweb.com/int/juventus-vs-ac-milan-predictions-picks-odds-06-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401874768",
+                        "date_utc": "2026-09-06T13:00Z",
+                        "kickoff_et": "2026-09-06 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Frosinone",
+                        "away": "Venezia",
+                        "home_id": "4057",
+                        "away_id": "17530",
+                        "matchup": "Venezia (away) @ Frosinone (home)",
+                        "venue": "Stadio Benito Stirpe",
+                        "city": "Frosinone",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LWLWW",
+                        "form_away": "LLLWW",
+                        "record_home": "1-0-1",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+170",
+                            "home_current": "+170",
+                            "draw_open": "+215",
+                            "draw_current": "+230",
+                            "away_open": "+140",
+                            "away_current": "+145"
+                        },
+                        "odds_text": "DraftKings: Frosinone +170 (open +170); Draw +230 (open +215); Venezia +145 (open +140)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401874987",
+                        "date_utc": "2026-09-06T13:00Z",
+                        "kickoff_et": "2026-09-06 09:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Parma",
+                        "away": "Monza",
+                        "home_id": "115",
+                        "away_id": "4007",
+                        "matchup": "Monza (away) @ Parma (home)",
+                        "venue": "Ennio Tardini",
+                        "city": "Parma",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LLLWW",
+                        "form_away": "WLLWL",
+                        "record_home": "0-0-2",
+                        "record_away": "0-0-2",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-105",
+                            "home_current": "+145",
+                            "draw_open": "+210",
+                            "draw_current": "+200",
+                            "away_open": "+275",
+                            "away_current": "+195"
+                        },
+                        "odds_text": "Provider unavailable: Parma +145 (open -105); Draw +200 (open +210); Monza +195 (open +275)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401874751",
+                        "date_utc": "2026-09-06T16:00Z",
+                        "kickoff_et": "2026-09-06 12:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Bologna",
+                        "away": "Sassuolo",
+                        "home_id": "107",
+                        "away_id": "3997",
+                        "matchup": "Sassuolo (away) @ Bologna (home)",
+                        "venue": "Renato Dall'Ara",
+                        "city": "Bologna",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "LLDWW",
+                        "form_away": "WWLWL",
+                        "record_home": "0-0-2",
+                        "record_away": "1-0-1",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-110",
+                            "home_current": "+105",
+                            "draw_open": "+225",
+                            "draw_current": "+235",
+                            "away_open": "+260",
+                            "away_current": "+250"
+                        },
+                        "odds_text": "Provider unavailable: Bologna +105 (open -110); Draw +235 (open +225); Sassuolo +250 (open +260)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401874954",
+                        "date_utc": "2026-09-06T18:45Z",
+                        "kickoff_et": "2026-09-06 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Juventus",
+                        "away": "AC Milan",
+                        "home_id": "111",
+                        "away_id": "103",
+                        "matchup": "AC Milan (away) @ Juventus (home)",
+                        "venue": "Allianz Stadium",
+                        "city": "Torino",
+                        "country": "Italy",
+                        "round": null,
+                        "form_home": "WWDLW",
+                        "form_away": "WWLWL",
+                        "record_home": "2-0-0",
+                        "record_away": "2-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+100",
+                            "home_current": "+105",
+                            "draw_open": "+225",
+                            "draw_current": "+225",
+                            "away_open": "+235",
+                            "away_current": "+245"
+                        },
+                        "odds_text": "Provider unavailable: Juventus +105 (open +100); Draw +225 (open +225); AC Milan +245 (open +235)",
+                        "game_id": 4
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-05T05:07:09.777484-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:50:35.275196-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tightly contested match with close betting odds. Venezia has had a very difficult start to the campaign with zero points, while Frosinone secured a recent victory to boost their confidence. Frosinone has the home-field advantage which could edge them to a narrow victory.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling early in the season. Parma has the benefit of playing at home at Stadio Ennio Tardini and is positioned as a slight favorite by bookmakers. A low-scoring match is anticipated, with Parma having a minor edge.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna is favored to win at home against Sassuolo, with bookmakers pricing them around +105. Sassuolo is dealing with a few missing players which weakens their away prospects.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Juventus has started the season in strong form with a 2-0-0 home record. Meanwhile, AC Milan is facing potential squad disruptions due to the looming departure of star player Rafael Leao to Galatasaray. Juventus is favored to take the three points at the Allianz Stadium.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-05T04:50:56.075230-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Despite Venezia's poor start to the season with two losses, the betting odds lean slightly in their favor over Frosinone, giving them a narrow edge for a potential away win.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Parma and Monza both seek consistency early in the season, but oddsmakers have positioned Parma as slight favorites at the Stadio Ennio Tardini, marginally tilting the probability toward a home win.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna enters as a notable favorite playing on their home ground. With shorter odds and solid expectations in the market, a home victory is the most likely scenario.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus has opened the season well and holds the home-field advantage against AC Milan. The odds reflect a solid probability of a home win, combined with Milan's potentially distracting transfer market activity and historically inconsistent away form.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-05T04:51:25.118454-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Venezia has had a very poor start to the season, losing both of their opening matches and sitting 19th in the table. They are also dealing with several injuries. Frosinone, playing at home, secured a win in their last outing which should serve as a confidence boost. While betting odds are close, Venezia's dismal form and injury situation gives the edge to the home side.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both Parma and Monza have started the season poorly, each with zero points from their first two matches. Historical head-to-head matchups have been tight, low-scoring affairs. Given that both teams are struggling for form and confidence, a draw is a highly probable outcome, as neither side may have the quality to secure a decisive victory. One source specifically forecasts a 1-1 draw.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Bologna starting the season with two losses and zero points, they are strong betting favorites at home. Their recent head-to-head record against Sassuolo is also favorable, with one win and one draw in their last two meetings. Sassuolo has had a mixed start and is facing several player absences. The strong home advantage for Bologna is expected to be the deciding factor.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "This is a top-of-the-table clash between two teams who have both started the season with a perfect record. However, Juventus holds a significant home advantage, which is reflected in the betting odds making them clear favorites. Furthermore, AC Milan may be distracted by reports of star player Rafael Leao's imminent departure. The last meeting was a draw, but the circumstances favor Juventus to claim the victory at Allianz Stadium.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-05T04:51:50.367167-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone has a better season record (1-0-1 vs 0-0-2) and home advantage. Venezia is at 19th position with 0 points and has several players doubtful or injured. Although some betting odds slightly favored Venezia, contextual information and expert predictions lean towards a Frosinone victory. The last H2H resulted in a Venezia win, but current form and injuries for Venezia sway the prediction.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both Parma and Monza have had a poor start to the season, each holding a 0-0-2 record. Betting odds suggest Parma as slight favorites, but a draw is considered a strong possibility, especially given Forebet's 1-1 draw prediction and the historical low-scoring nature of their head-to-head matches. The similar poor form of both teams makes an even result likely.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium-high",
+                    "reasoning": "Bologna, despite a 0-0-2 start to the season, is significantly favored by betting markets due to home advantage and historical performance. Sassuolo has a slightly better season record (1-0-1) but the strong odds and head-to-head history (1 Bologna win, 1 draw in last 2) point towards a Bologna victory.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "This is a clash of two teams with perfect 2-0-0 records. Juventus holds the home advantage and is consistently favored by betting odds. While AC Milan also has a strong start, their away form has been inconsistent, and key player Rafael Leao is reportedly departing. The last encounter was a draw, but Juventus's strong home record and favorable odds make them the likely winners despite some reported injuries.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:54:10.602002-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Market pricing makes Venezia a very slight favorite, but the edge is narrow because Frosinone have home advantage and the better early record while Venezia enter with no league points and some injury concerns.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Parma are only a marginal home favorite in the current odds, while both teams have opened poorly and recent head-to-head trends point to a tight, lower-scoring match, keeping draw and away chances significant.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are favored by the market at home and Sassuolo have several reported absences, though Bologna's own form and lineup doubts prevent this from being a high-confidence home selection.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus have the home-field edge, strong early results, and are the market favorite, while Milan's quality and the historically tight nature of this fixture keep the draw probability elevated.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-05T04:54:23.874997-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "The market is close, with Venezia only a slight odds-side lean, but Frosinone have the home advantage, the better early league record, and stronger recent form. Venezia have opened the season poorly away from home and have several injury doubts, so Frosinone are narrowly preferred in a tight matchup.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Both sides enter with poor early records, and recent head-to-head trends point toward a low-scoring, tight game. Parma have home advantage and are a slight market favorite, but Monza's odds have shortened from the opener, keeping the draw and away outcomes very live.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are clear but not overwhelming favorites in the 1X2 market, and home advantage at Renato Dall'Ara supports them despite an uneven start. Sassuolo's recent form is competitive, but their defensive absences and Bologna's stronger market profile make a home win the most likely regulation-time result.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Juventus are the market favorite at home and have started with two home wins, while Milan also arrive in strong early form. The matchup is close and recent meetings have often been tight, so the draw carries meaningful probability, but Juventus' home edge and Milan's reported squad disruption make Juventus the narrow pick.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-05T04:55:11.608618-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market pricing is very tight with a slight lean toward Venezia, but Frosinone’s recent form is stronger and they have the home advantage. Venezia’s early-season record and points situation suggest vulnerability, so the marginal edge goes to Frosinone in a close game where the draw is also a major risk.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma are modest favorites in the odds and get the home boost, but both teams’ recent results/records point to a low-margin matchup. With limited separation in form and pricing, Parma are the narrow pick, with a substantial draw likelihood.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are clear home favorites per the market and H2H has recently leaned their way. Even with Bologna’s uneven start, Sassuolo’s away upset chances rate lower than Bologna’s win probability, making the home win the most likely 1X2 outcome.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are priced as the favorite at home in what looks like a balanced, high-quality fixture. Both sides have strong early records, which elevates draw probability, but home advantage and market signal keep Juventus as the most likely regulation-time result.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-05T04:55:32.681898-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers list Venezia marginal favourites and implied-market normalization gives a slight edge to the visitors. Venezia have struggled early but are offensively more threatening on available lines; Frosinone are competitive at home but have injury doubts. Expect a close game with a narrow Venezia win.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds slightly favor Parma after market normalization and home advantage. Both teams have inconsistent form and injury concerns for Parma, increasing draw likelihood, but Parma's home setup and marginal market edge make a narrow home win the most likely 90-minute result.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices and recent form give Bologna a modest home advantage. Fixtures and line-up uncertainties for both sides point to a competitive match but Bologna are likeliest to edge it in regulation time, with a significant chance of goals from both teams.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus are slight favorites in the market for this high-profile fixture and have home advantage; both teams began the season well but Juventus' squad depth and home form give them the edge. Match remains tight so a close Juventus win is most likely in 90 minutes.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-05T04:55:54.690166-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone favored at home according to odds (+170) with Venezia underdog; recent forms mixed but home advantage cited.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Parma positioned as home favorite; Monza have weaker away form; home win predicted.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna at home favored; Sassuolo away struggles; home win expected.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus home advantage in a high-profile fixture; Milan unsettled; home win predicted.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-05T04:55:58.313274-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone have a slight edge as hosts and are coming off a morale-boosting win, while Venezia have struggled defensively and are yet to earn a point this season. Bookmakers and expert predictions narrowly favor Frosinone, and their home form is stronger than Venezia's away record. However, the match is expected to be close, as reflected in the odds and recent H2H results.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have inconsistent recent form and similar weaknesses, with Parma struggling at home and Monza not convincing away. Head-to-head history suggests tight, low-scoring games, and several prediction sources expect a draw. The odds are also closely matched, supporting a balanced outcome.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are slight favorites at home, with a better defensive record and positive recent home form. Sassuolo have been inconsistent and have injury concerns. Bookmakers and statistical models give Bologna the edge, though Sassuolo's attack could make it competitive. The most likely outcome is a Bologna win, but a draw is also plausible.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus have a strong home record and are largely at full strength, while AC Milan face squad disruption and have been inconsistent away. The odds and expert previews narrowly favor Juventus, though Milan's quality means a draw or away win is possible. Juventus' home advantage and recent form tip the balance in their favor.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-05T04:56:02.606147-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown inconsistent form, and the odds suggest a close match. Frosinone's slight home advantage is offset by Venezia's need to secure points.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Parma's recent home form and Monza's struggles on the road give Parma a slight edge, despite both teams having similar records.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna's home advantage and Sassuolo's inconsistent away form suggest a likely win for Bologna, supported by favorable odds.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "high",
+                    "reasoning": "Juventus' strong home record and AC Milan's inconsistent away performances make Juventus the favorites, despite AC Milan's recent form.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-05T04:56:20.185866-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds slightly favor Venezia (+145) over Frosinone (+170) despite Venezia's 0-0-2 start, suggesting bookmakers rate Venezia's underlying quality higher. Venezia also won the last H2H meeting 2-1, though they carry several injuries. Extremely tight three-way market with all outcomes near 28-38%.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are 0-0-2 in league play. Odds moved against Parma (from -105 to +145), but Parma remain narrow favorites at home. Monza was thrashed 4-1 by Inter and has key injuries; H2H history suggests tight, low-scoring contests. Very balanced three-way outcome distribution.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bologna is a clear market favorite (+105) at home despite a poor 0-0-2 start, reflecting a quality edge over Sassuolo. Bologna has injury doubts (Orsolini, Casale) but Sassuolo is missing more players (Kone, Boloca, Cande, Pieragnolo). Home advantage at Renato Dall'Ara and favorable H2H support a home win lean.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Both sides are 2-0-0, but Juventus is the market favorite (+105 vs +245) with odds drifting against Milan. Milan faces disruption with Rafael Leao reportedly departing and inconsistent away form, while Juventus is strong at Allianz Stadium despite missing Yildiz and Cambiaso. Home win is the most likely single outcome.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-05T04:56:28.419864-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds are close with Venezia slightly favored per markets, but Frosinone's home advantage and better recent form give a slight edge. Very tight matchup.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma at home are slight favorites. Both teams have struggled offensively, but home advantage tips the balance toward Parma in a low-scoring affair.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Bologna are favored at home per markets despite mixed form. Their home advantage and stronger squad depth outweigh Sassuolo's decent away results.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams have won all their matches. Juventus are slight favorites at home. Milan face disruption with Leao's potential departure, tilting it slightly toward Juventus.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-05T04:56:47.062240-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Frosinone are slight favorites at home based on odds (around +170 for home win vs +145 for Venezia away). Venezia have 0 points and lost their first two league games, while Frosinone have a win and a loss. The odds from multiple sources are very tight, with some showing Venezia as slight favorites (2.48 vs 2.70), while DraftKings leans Venezia. Frosinone's home form and Venezia's poor start favor a narrow home win, but this is a very close matchup.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have 0 points from their opening two games and are struggling. Parma opened at near-even odds (-105) but current lines show them at +145, suggesting a market shift. Monza moved significantly from +275 to +195. Forebet predicts a 1-1 draw, and H2H history shows tight contests with under 2.5 goals common. With both sides in poor form, a low-scoring draw is plausible, though Parma's home advantage gives them a slight edge.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are favored at home with odds around +105 (implied ~48%), and multiple sources list them as favorites. Sassuolo have shown inconsistent form (2W 1D 2L in last 5). Bologna's home advantage and superior recent metrics support the home win. Sassuolo have several key players out (Koné, Candé, Pieragnolo, Boloca), which weakens them significantly. However, Bologna also have injury concerns (El Azzouzi out, Casale and Orsolini doubtful). Overall, home win is the most likely outcome.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are slight home favorites (~+105, implied ~48%) against AC Milan. Both sides have perfect records (2-0-0) to start the season, making this a top-of-the-table clash. Juventus have home advantage at Allianz Stadium and key players available, though Cambiaso, Yildiz, and Ekhator are out. Milan are disrupted by the likely Leao departure and inconsistent away form. The last meeting ended 0-0. Jonathan David and Kolo Muani provide firepower for Juve. A closely contested home win is the slight lean.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-05T04:57:10.980354-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Frosinone has shown improved form with recent wins (LWLWW) and a positive home record (1-0-1), while Venezia remains winless with 0 points and sits in 19th position (0-0-2 record). Venezia faces injury concerns with multiple players doubtful including Ghedjemis, Franjic, and Moreno, plus key absences (Sverko until mid-October, Adorante until early October). Betting markets slightly favor Venezia at +145 vs Frosinone at +170, suggesting a close match. Multiple predictions favor a tight 2-1 Frosinone home win. However, the betting odds being close and both teams showing inconsistency creates uncertainty in this fixture.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are struggling with identical 0-0-2 records to start the season. Parma has lost four of their last five Serie A matches (LLLWW recent form) while Monza has also been inconsistent (WLLWL). Monza faces significant injuries with Colombo (1-2 weeks), Touré (early September), and Pessina (early October) all out. Head-to-head records show tight contests with Under 2.5 goals in three of the last four meetings. Betting odds reflect uncertainty with Parma at +145, Draw at +200, and Monza at +195. Statistical models predict a 1-1 draw with 68% probability of under 2.5 goals. The combination of poor form from both sides and injury concerns makes this an extremely difficult match to call with confidence.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna hosts with home advantage at Renato Dall'Ara, though both teams have identical 0-0-2 records in league play this season. Sassuolo has slightly better overall form (1-0-1 record, WWLWL) and higher scoring average (1.7 vs 1.1 goals per game). However, Sassuolo faces multiple absences including Koné, Candé, Pieragnolo, and Boloca. Bologna also has injury concerns with El Azzouzi out and Casale and Orsolini doubtful. Betting markets favor Bologna at +105 vs Sassuolo at +250, indicating bookmaker confidence in the home side. Statistical analysis suggests both teams to score with only 1 of last 5 Sassuolo matches under 2.5 goals. Bologna's home advantage and betting market positioning give them the edge, though Sassuolo's better attacking output creates some uncertainty.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "A top-tier clash between two teams with identical perfect 2-0-0 records and 6 points each. AC Milan sits 3rd in the table with momentum from a 2-0 win over Venezia under new manager Ruben Amorim, with new signing Goncalo Ramos already scoring. However, Milan faces major disruption with Rafael Leao reportedly leaving to Galatasaray after an accepted bid, and inconsistent away form (2 defeats in last 5 away). Juventus has strong home advantage at Allianz Stadium but faces injuries to Cambiaso (ankle), Yildiz (broken foot), and Ekhator (hamstring). The last meeting was a 0-0 draw. Betting odds are tight: Juventus +105, Draw +225, Milan +245, reflecting expected competitiveness. Juventus' home advantage and Milan's squad disruption slightly favor the home side, but this is highly uncertain given both teams' strong starts and quality.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-05T04:57:19.796673-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone are slight favorites with better recent form (LWLWW vs LLLWW). They've won their last game and show more stability. Venezia are in poor form with 0 points and significant defensive issues. Expert predictions favor Frosinone 2-1. Odds reflect this slight home advantage.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have poor recent form with identical 0-0-2 records. Historical data shows tight contests with Under 2.5 goals in 3 of last 4 meetings. Parma has struggled recently (4 losses in 5), while Monza are inconsistent. Expert predictions favor 1-1 draw. Draw odds at +200 reflect competitive equilibrium.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna favored at +105 odds. Sassuolo have slightly better recent form (2W1D2L vs 1W1D3L) but Bologna play at home. H2H shows competitive history (1 Bologna, 1 Draw in last 2). Multiple sources predict at least 2 goals. Bologna's home advantage and slight odds favor gives them edge despite Sassuolo's marginally better recent record.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus slight favorites at +105 with strong home record (2-0-0 vs 2-0-0 away for Milan). Both teams have solid recent form, but Juventus' Allianz Stadium advantage is significant. Previous meeting ended 0-0. AC Milan have disruption with Leao transfer saga and away form inconsistency. Juventus show more stability and benefit from home advantage in this tight matchup.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-05T05:01:15.798417-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "DraftKings odds make Venezia a narrow favorite despite away struggles; Frosinone are slight home underdogs, but the market implies a close match.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both sides have lost both league games and form is poor; Forebet projects a 1-1 draw with tight head-to-head matches.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are clear home favorites and Sassuolo are missing several key players; odds imply a home edge at the Dall'Ara.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Juventus have home advantage and the odds lean toward them, though AC Milan's strong start makes a draw or away win plausible.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-05T05:01:19.296470-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Venezia have lost both league games but are slight favorites in odds; Frosinone have mixed form. Close match, slight edge to Venezia based on odds.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Parma have home advantage and are favored by odds, though both teams have poor form. Slight edge to Parma.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are at home and favored by odds; Sassuolo have some away wins but Bologna's home advantage and better squad depth give them the edge.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus are strong at home and have a better record; AC Milan have key player issues. Juventus slight favorites.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-05T05:01:52.820043-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Frosinone holds a slight edge playing at home against a Venezia side that has yet to earn a point this season and sits in 19th place. Despite Venezia being slight favorites in some betting markets, multiple previews lean towards a narrow home victory.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both Parma and Monza have struggled significantly, sporting 0-0-2 records at home and away respectively. Statistical models and betting trends heavily point toward a tight, low-scoring affair, making a 1-1 draw the most logical outcome.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna is favored by the bookmakers at the Renato Dall'Ara. Even with a few injury doubts, their squad depth and home advantage should be enough to overcome a Sassuolo team that is missing several key midfielders like Boloca and Kone.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus boasts a perfect 2-0-0 home record and faces an AC Milan squad dealing with major off-field distractions, including the reported imminent departure of Rafael Leao. Juve's defensive solidity at the Allianz Stadium gives them the edge in this heavyweight clash.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-05T05:02:10.616479-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone has a better recent form and home advantage, while Venezia is struggling with no points this season. The odds also slightly favor Frosinone, and the predicted lineup suggests they are in a better position to secure a win.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar recent forms and records, with neither showing strong dominance. The head-to-head record suggests tight contests, and the odds reflect a balanced match. A draw seems the most likely outcome given the current data.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna has a slight edge in recent form and home advantage. The odds also slightly favor Bologna, and the predicted lineups suggest they are in a better position to secure a win. However, Sassuolo's away form is not too far behind, making this a competitive match.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus has a strong home record and a slight edge in recent form. The odds also slightly favor Juventus, and the predicted lineups suggest they are in a better position to secure a win. AC Milan, despite being in good form, faces some disruptions, which may affect their performance.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-05T05:03:13.390531-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone holds a slight edge due to home advantage and a better early-season record, while Venezia remains winless and vulnerable defensively. Market odds and expert previews align on a narrow home victory, though Venezia's quality keeps the draw and away win probabilities competitive.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.38,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both sides are winless early in the campaign and display similar statistical profiles, with low goal averages and shared defensive concerns. Historical head-to-head meetings are consistently tight and low-scoring, making a stalemate the most statistically supported outcome.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna enters as the clear home favorite with favorable odds and a slight form advantage, though key squad absences may disrupt their rhythm. Sassuolo's inconsistent away performances and multiple injuries tilt the balance toward a narrow home victory.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus's perfect home start and tactical familiarity at the Allianz Stadium provide a marginal advantage over an AC Milan side potentially dealing with squad disruption and transfer speculation. While Milan's recent win shows momentum, the historical tightness of this fixture and home field edge favor a narrow home win.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-05T05:03:59.864542-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone holds home advantage and is coming off a recent victory, while Venezia sits bottom with 0 points. Expert analysts predict a narrow home win despite close betting odds.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both sides show inconsistent form and defensive vulnerabilities. Historical data indicates tight matches with Under 2.5 goals, leading statistical models to favor a stalemate.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna is the favorite based on opening odds around 2.09 and a solid H2H record. Recent home form suggests Bologna is better placed to secure points against Sassuolo.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A tightly contested Derby involving two unbeaten teams. While AC Milan is high in the table, Juventus home strength and recent parity suggest a slight edge to the hosts, though a draw remains likely.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-05T05:05:24.998966-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Frosinone benefit from home advantage and have already secured a league win this season, while Venezia are winless with two away defeats. The odds are tightly contested, but the home side's superior start and venue edge provide the narrowest of margins.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both Parma and Monza are winless in their respective home and away records this season, and each has struggled for consistency in recent weeks. The market is evenly balanced, and a hard-fought stalemate appears the most probable outcome.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are solid betting favorites and have historically performed well against Sassuolo. Sassuolo's away form is mixed, and key absences tilt the scales toward a home victory at the Renato Dall'Ara.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Juventus have started the campaign with two home wins and enjoy a narrow market edge. AC Milan have been strong on the road but face squad disruption from Rafael Leão's likely departure, giving the Bianconeri the advantage in a tight contest.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-05T05:06:35.534900-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market prices this as nearly even (Frosinone +170, Venezia +145), but Venezia's on-field situation is poor: 0 points from two matches, 19th place, four goals conceded, and multiple absentees/doubts (Sverko and Adorante out, Ghedjemis and Franjic doubtful). Frosinone's form (LWLWW) is better and includes a recent win, and prediction outlets lean toward a tight Frosinone victory (2-1). Venezia won the last H2H 2-1, which tempers conviction, but home edge plus Venezia's dismal start tilts this slightly to Frosinone in a close, low-confidence call.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Both sides are winless (0-0-2) and the market sees a near coin-flip: Parma +145 (drifted from -105), Monza +195, draw +200. Parma's attack has been toothless (0.5 goals scored per game recently) and they miss Touré and Nicolussi Caviglia, while Monza lose Pessina until October and concede heavily (2.17 per match). H2H history points to tight, low-scoring games (under 2.5 in 3 of last 4), and Forebet projects 1-1, so the draw is live. The odds drift against Parma is a warning sign, but residual home advantage at the Tardini gives Parma a marginal edge in a highly uncertain fixture.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are clear market favorites at the Dall'Ara (+105, best-priced around 2.09 elsewhere) despite a winless start (0-0-2), and H2H favors them (1 win, 1 draw in last two meetings). Sassuolo's early form (WWLWL, 1.7 goals scored per game) makes them dangerous, but they travel with a depleted squad (Koné, Candé, Boloca, Pieragnolo all out). Bologna have their own concerns with Orsolini and Casale doubtful, yet home advantage, superior squad depth, and the market's consistent lean justify favoring the Rossoblù. The odds drift from -110 to +105 slightly dampens enthusiasm, keeping this at medium confidence.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "A heavyweight clash between two 2-0-0 sides, with Juventus installed as home favorites (+105, shortened toward 2.10) and Milan drifting (to ~3.70). Juve's attacking absences (Yildiz, Cambiaso, Ekhator) are notable, but Milan face bigger disruption: Rafael Leão is reportedly on his way out after the club accepted a Galatasaray bid, and their away form has been inconsistent (two defeats in last five on the road). The last H2H ended 0-0, keeping the draw very plausible, but home advantage at the Allianz Stadium, Milan's off-field turbulence, and the market's direction support a Juventus lean at medium confidence.",
+                    "event_id": "401874954"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-05T05:07:09.774175-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Venezia (away) @ Frosinone (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Frosinone are slight home favorites with a win already this season and a healthier attack, while Venezia are winless and have defensive issues (four goals conceded in two games). The odds and a 2-1 prediction favor Frosinone, though Venezia's last H2H win keeps the match competitive.",
+                    "event_id": "401874768"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Monza (away) @ Parma (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.33,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both sides are winless in Serie A this season and recent form is poor. H2H history is tight and low-scoring, and Forebet projects a 1-1 draw. Bookmakers slightly favor Parma, but the matchup looks evenly balanced.",
+                    "event_id": "401874987"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sassuolo (away) @ Bologna (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bologna are priced as clear home favorites (+105) and have stronger underlying squad quality despite a winless start. Sassuolo have shown decent form but face several absences, making a Bologna home win the most likely outcome.",
+                    "event_id": "401874751"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "AC Milan (away) @ Juventus (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Juventus have started the season with two home wins and face an AC Milan side that may be disrupted by Rafael Leao's impending departure. Juventus are favored in the betting and have the stronger home record, so a home win is the confident pick.",
+                    "event_id": "401874954"
+                }
+            ]
+        }
+    ]
+}

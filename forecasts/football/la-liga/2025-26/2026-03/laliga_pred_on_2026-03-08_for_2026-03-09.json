@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-08\n    Target Date: 2026-03-09\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Real Oviedo @ Espanyol                               | Scheduled    | Away: 11.5% (3-8-15) vs Home: 38.5% (10-6-10)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Real Oviedo (Away) @ Espanyol (Home)\n**News & Injury Report:**\n- [Preview: Espanyol vs Real Oviedo - prediction, team news, lineups](https://www.sportsmole.co.uk/football/espanyol/preview/espanyol-vs-real-oviedo-prediction-team-news-lineups_593385.html)\n  Snippet: \u00a9 Imago\n\nEspanyol will again be without the services of long-term absentee Javi Puado through injury, while Antoniu Roca faces a late fitness test.\n\nThe Catalan outfit will also be missing both Charles Pickel and Edu Exposito on Monday through suspen...\n- [Espanyol-Real Oviedo - LaLiga 2025/2026 Statistical Preview](https://www.whoscored.com/matches/1914110/preview/spain-laliga-2025-2026-espanyol-real-oviedo)\n  Snippet: Spain\u00bbLaLiga - 2025/2026\n\u00bb\n\nEspanyolEspanyolvsvsReal OviedoReal Oviedo\n\nKick off:\n:   20:00\n\nDate:\n:   Mon, 09-Mar-26\n\n Preview\n Head to Head\n Bet Builder\n Betting\n Match Centre\n Match Report\n Live Stream\n\n## Predicted Lineups\n\nEspanyol\n\n4-2-3-1\n\nRea...\n**Betting Odds:**\n- [Espanyol-Real Oviedo - LaLiga 2025/2026 Statistical Preview](https://www.whoscored.com/matches/1914110/preview/spain-laliga-2025-2026-espanyol-real-oviedo)\n  Snippet: Over 2.5 goals\n\n+\n\nEspanyol have conceded at least 2 goals in their last 7 matches (LaLiga).\n\nOver 1.5 goals\n\n+\n\nReal Oviedo have failed to win 18 of their last 19 matches (LaLiga).\n\nReal Oviedo lose or draw\n\n### Head to Head Stats\n\n| R | Team | W | ...\n- [Espanyol v Oviedo 09/03/2026, Odds - Flashscore.com](https://www.flashscore.com/match/football/espanyol-QFfPdh1J/real-oviedo-SzYzw34K/odds/)\n  Snippet: at kn (file:///home/deploy/versions/fs/web-servers-production-tt2/current/www/res/\\_fs/build-ssr/eventPreviewServer.js:2:495905) at wn (file:///home/deploy/versions/fs/web-servers-production-tt2/current/www/res/\\_fs/build-ssr/eventPreviewServer.js:2:...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-08\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-08 17:03:51"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-08 17:02:45",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol\u2019s season profile is clearly stronger (10-6-10 vs Oviedo\u2019s 3-8-15) and home advantage matters. Market/preview signals also lean against Oviedo (failed to win 18 of last 19). However, Espanyol are missing key pieces (Puado injured; Pickel and Exposito suspended; Roca a late test) and have recently been leaky defensively (conceded 2+ in seven straight), which lifts the draw and keeps a smaller away upset chance."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:02:53",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol are materially stronger at home this season (home win rate ~38.5% vs Oviedo away win rate ~11.5%) and the betting/preview context prices them as favorites. Oviedo arrive in very poor form (failed to win 18 of their last 19 LaLiga matches), which pulls their win probability down. Espanyol do have squad issues (long-term absence of Javi Puado, late fitness tests and suspensions) and defensive vulnerability (conceded 2+ goals in many recent matches), which increases draw/away upset chances. Balancing home advantage, market signal, injuries and recent form yields a most likely home win but with a meaningful chance of draw and a small upset probability for Oviedo."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol have clear home advantage (historical home win rate ~38.5%) over Real Oviedo (away win rate ~11.5%). Espanyol\u2019s injury/disciplinary issues (Puado out long-term; Pickel and Exposito suspended; Roca fitness uncertain) may dampen their efficiency, but Oviedo\u2019s terrible form (no wins in ~19 matches) and away struggles still tilt the balance toward the home side. The balance yields a higher probability for a home win with a moderate chance of a draw and a reasonable but smaller chance of an away win."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:14",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol, despite missing Puado (important attacker) and two central midfielders due to suspension, still benefit from significant home advantage (10W-6D-10L at home) against an Oviedo side with just 3 wins in 26 matches (W-D-L: 3-8-15, 11.5% win rate overall, dreadful away form). Espanyol\u2019s defensive injuries will make them somewhat vulnerable, but Real Oviedo\u2019s attack is among the league\u2019s worst and they have failed to win 18 of their last 19 matches. The betting market heavily discounts the Oviedo win, aligning with statistical underperformance for the visitors. Draw has notable probability given Espanyol\u2019s absences, but home win remains most likely."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has a significantly better home win rate compared to Real Oviedo's away performance. Despite injury concerns and missing players, Espanyol's home advantage is notable. Additionally, Real Oviedo's form has been poor, with them failing to win 18 of their last 19 matches. Betting odds suggest a high likelihood of Real Oviedo losing or drawing, reinforcing the probability of Espanyol securing a win."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has a better home record (10-6-10, 38.5% win rate) compared to Real Oviedo's away record (3-8-15, 11.5% win rate). Espanyol has injuries to Javi Puado, possibly Antoniu Roca, and suspensions to Charles Pickel and Edu Exposito. However, Espanyol is still favored at home. Flashscore odds also suggest Espanyol being favored. The whoscored.com preview indicates a high likelihood of over 1.5 goals, and Real Oviedo struggling to win matches. Given these factors, a slight edge is given to the home win, but a draw is still a reasonably possible outcome."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:29",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has significant home advantage (38.5% win rate vs Oviedo's 11.5% away win rate). Oviedo has failed to win 18 of last 19 matches. Espanyol missing key players (Puado injured, Pickel/Exposito suspended) reduces margin. Oviedo's poor away form and Espanyol's home strength suggest home win most likely, though Espanyol's defensive issues (conceded 2+ goals in last 7 matches) increase draw probability."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:38",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Strong divergence in form and quality favors Espanyol heavily. Espanyol has a 38.5% win rate (10-6-10) at home, while Real Oviedo has been abysmal away with only 11.5% win rate (3-8-15). The betting market strongly suggests 'Real Oviedo lose or draw' as a highlighted bet, indicating low confidence in an away win. Oviedo has failed to win 18 of their last 19 La Liga matches, showing terrible form. While Espanyol is missing key players (Javi Puado long-term injury, Charles Pickel and Edu Exposito suspended, Antoniu Roca questionable), their home advantage and superior season performance should overcome these absences against such a weak opponent. The 'Over 2.5 goals' trend (Espanyol conceding 2+ in last 7 matches) suggests an open game, but Espanyol's attacking quality at home should be decisive. Given Oviedo's 8 draws away from 26 matches (30.8% draw rate), there's a reasonable chance of a stalemate, but Espanyol should prevail more often than not."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-08 17:03:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Real Oviedo (away) @ Espanyol (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Espanyol has a strong home record with a win rate of 38.5% compared to Real Oviedo's away win rate of only 11.5%. Additionally, Espanyol's recent form and the absence of key players for Real Oviedo due to injuries and suspensions further support the home team's advantage."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

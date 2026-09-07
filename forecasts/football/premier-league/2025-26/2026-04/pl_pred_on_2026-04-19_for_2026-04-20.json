@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-19\n    Target Date: 2026-04-20\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. West Ham United @ Crystal Palace                     | Scheduled    | Away: 25.0% (8-8-16) vs Home: 35.5% (11-9-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: West Ham United (Away) @ Crystal Palace (Home)\n**News & Injury Report:**\n- [Crystal Palace vs West Ham Prediction, Betting Tips, Lineups & Odds | 20 Apr 2026](https://www.sportsgambler.com/betting-tips/football/crystal-palace-vs-west-ham-prediction-lineups-odds-2026-04-20/)\n  Snippet: ## Crystal Palace vs West Ham Lineups & Team News\n\nMake sure you're up to date on the Palace vs West Ham team news before betting. We\u2019ll bring you the expected and confirmed lineups for the Premier League along with up-to-date injury news.\n\n Crystal ...\n- [Preview: Crystal Palace vs West Ham United - prediction, team news, lineups - Sports Mole](https://www.sportsmole.co.uk/football/crystal-palace/relegation-battle/preview/crystal-palace-vs-west-ham-prediction-team-news-lineups_595940.html)\n  Snippet: On West Ham's end, Santo reported no injury concerns whatsoever in his pre-game press conference, suggesting that veteran goalkeeper Lukasz Fabianski has overcome a back problem to make himself available again.\n\nWhile Taty Castellanos and Dinos Mavro...\n**Betting Odds:**\n- [Crystal Palace vs West Ham Prediction - Premier League - 20/04/2026](https://www.sportytrader.com/en/betting-tips/crystal-palace-west-ham-343457/)\n  Snippet: Probabilities according to our algorithm\\ of possible 1X2 football predictions and best odds for the match on 20/04/2026 between Crystal Palace and West Ham in Premier League :\n\n The Sportytrader \u2b50 algorithm estimates a probability of 54.38% for a wi...\n- [Crystal Palace vs West Ham United Odds - Monday April 20 2026](https://www.oddsshark.com/soccer/epl/crystal-palace-west-ham-odds-april-18-2026-2422929)\n  Snippet: Skip to main content \n\nSoccer\n\n# Crystal Palace vs West Ham United\n\nWest Ham\n\n8 - 8 - 16\n\nW-L-D-W-L-D\n\nCrystal Palace\n\n11 - 9 - 11\n\nW-D-W-L-W-L\n\nApril 20, 2026, 3:00 PM EDT  \n | Selhurst Park\n\nPredicted Score\n\n0.9\n\nWHU\n\n2.1\n\nCRY\n\nMoneyline Consensus\n...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-19\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-19 18:59:13"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-19 18:58:10",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market/algorithm signals favor Crystal Palace (external model estimate ~54% home win; consensus lean and projected score around 2.1\u20130.9). Palace also have the stronger season record (11-9-11 vs 8-8-16) and home advantage at Selhurst Park. West Ham reportedly have no major injury concerns, which supports some away upset chance, but overall calibration still points to Palace as the most likely outcome with a meaningful draw probability consistent with both sides' draw rates."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:23",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market signals and team form favour Crystal Palace. Palace's home win rate (35.5%) and recent home form are stronger than West Ham's poor away win rate (25.0%). Betting algorithms and odds snapshots (predicted score ~CRY 2.1 - WHU 0.9 and algorithmic win probability ~54% for Palace in available sources) point to Palace as favorites. Injury/availability updates appear light \u2014 West Ham reported no major new concerns while Palace have routine checks \u2014 so no clear absentee weakens Palace. Both teams' recent sequences are mixed, so a draw remains plausible, but overall probability leans to a Palace home win. Confidence is medium due to some noise in recent form and limited full-lineup confirmations."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Crystal Palace show stronger home performance (11-9-11; 35.5% win rate) compared to West Ham's away form (8-8-16; 25.0% win rate). Available betting odds align with a home-favoring scenario (~54% home win). West Ham are reportedly injury-light, but Palace's home advantage and head-to-head context favor the home side."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:40",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace have a stronger home record (11-9-11, 35.5% win rate) compared to West Ham's away performance (8-8-16, 25% win rate). Real-time betting algorithms (Sportytrader) suggest ~54% probability for a Palace win and fewer injuries impact Palace; West Ham has a healthy squad but recent form and the predicted scorelines show Palace favored at home. Draw is possible due to both teams' inconsistency, but home edge and market odds support Palace. Confidence is medium due to both teams\u2019 volatility."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:41",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace has a better season record at home with a 35.5% win rate compared to West Ham's 25.0% away win rate. Additionally, betting odds suggest a home win probability of 54.38%. West Ham has no major injury concerns, but Palace's home advantage and current form suggest a slightly stronger position for them."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:44",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace's home record is slightly better (11-9-11) than West Ham's away record (8-8-16). The Sportytrader algorithm estimates a 54.38% probability for a Crystal Palace win. Oddsshark also predicts a Crystal Palace win (2.1 to 0.9). West Ham has no new injuries, suggesting a stable but ultimately weaker performance on the road. The moneyline consensus also suggests a slight favour towards Crystal Palace."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:58:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace has significantly better home form (35.5% win rate vs West Ham's 25.0% away win rate) and the betting market consensus strongly favors Palace. The Sportytrader algorithm shows 54.38% probability for Palace win, aligning with the home advantage. West Ham's injury report shows no major concerns, but their poor away record (8-8-16) suggests limited threat. Palace's home venue (Selhurst Park) provides additional advantage. The predicted score consensus of 2.1-0.9 further supports Palace dominance."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:59:02",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace holds a significant home advantage with a 35.5% win rate (11-9-11) compared to West Ham's poor away form at 25.0% (8-8-16). The Sportytrader algorithm estimates a 54.38% probability for a Crystal Palace win, which aligns closely with our assessment. OddsShark's predicted score of 2.1-0.9 in favor of Crystal Palace further supports a home victory. West Ham manager Santo reported no injury concerns, with Lukasz Fabianski overcoming a back problem and players like Castellanos and Mavropanos available. However, West Ham's historically weak away record this season (only 8 wins in 32 away matches) suggests they struggle on the road. Crystal Palace is in a relegation battle and will be highly motivated at Selhurst Park, where home support typically provides a boost. The betting market consensus strongly favors a Crystal Palace win, which serves as a key calibration signal. While West Ham has full squad availability, their away form is simply too poor to overcome a motivated Palace side at home. Draw probability is elevated given both teams' tendency to share points (West Ham has 8 away draws, Palace has 9 home draws), but the home advantage tips the scales toward Crystal Palace."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-19 18:59:13",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "West Ham United (away) @ Crystal Palace (home)",
+                    "home_win_probability": 0.5438,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2062,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Crystal Palace has a slightly better home record (35.5% win rate) compared to West Ham's away record (25.0% win rate). Additionally, the betting odds suggest a higher probability of a Crystal Palace win. There are no significant injury concerns for either team, but Crystal Palace's recent form and home advantage make them the more likely winner."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

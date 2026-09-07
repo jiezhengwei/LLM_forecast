@@ -1,0 +1,142 @@
+{
+    "meta_info": {
+        "competition": "Italian Serie A 2025-26",
+        "system_prompt": "You are an expert Italian Serie A Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-23\n    Target Date: 2026-04-24\n    Competition: Italian Serie A 2025-26\n\n    [Serie A Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nSerie A Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Cremonese @ Napoli                                   | Scheduled    | Away: 18.2% (6-10-17) vs Home: 60.6% (20-6-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Cremonese (Away) @ Napoli (Home)\n**News & Injury Report:**\n- [Napoli vs Cremonese Prediction, Betting Tips, Lineups & Odds | 24 Apr 2026](https://www.sportsgambler.com/betting-tips/football/napoli-vs-cremonese-prediction-lineups-odds-2026-04-24/)\n  Snippet: ### Predicted & Confirmed Lineups\n\nNapoli predicted lineup (4-4-2): Vanja Milinkovic-Savic (GK), Sam Beukema, Alessandro Buongiorno, Mathias Olivera, Matteo Politano, Andre-Frank Zambo Anguissa, Stanislav Lobotka, Leonardo Spinazzola, Kevin De Bruyne, Scott McTominay, Rasmus Hoejlund.\n\nCremonese predicted lineup (4-4-2): Emil Audero (GK), Filippo Terracciano, Federico Baschirotto, Sebastiano Luperto, Giuseppe Pezzella, Romano Floriani Mussolini, Warren Bondo, Alberto Grassi, Jari Vandeputte, Federico Bonazzoli, Antonio Sanabria.\n\n## Napoli vs Cremonese Prediction & Betting Tips ...\n- [Napoli vs Cremonese Prediction, Odds & Betting Tips | 24.04.2026 | Serie A](https://www.mightytips.com/football-predictions/napoli-vs-cremonese-prediction-24-04-2026/)\n  Snippet: Their most pressing issue remains a severe attacking struggle, having failed to score in as many as 16 matches this term, a barren spell that has placed enormous strain on a back line forced to absorb sustained pressure while trying to maintain some level of structural discipline.\n\nThere are no confirmed absentees at this stage, although the quartet of Morten Thorsby, Michele Collocolo, Faris Moumbagna, and 39-year-old striker Jamie Vardy will all be assessed late after recent injury concerns, leaving Cremonese with several key selection doubts ahead of this daunting assignment against ...\n**Betting Odds:**\n- [S.S.C. Napoli vs Cremonese Odds - Friday April 24 2026](https://www.oddsshark.com/soccer/ita-serie-a/napoli-cremonese-odds-april-26-2026-2453319)\n  Snippet: Skip to main content\n\nSoccer\n\n# S.S.C. Napoli vs Cremonese\n\nCremonese\n\n6 - 10 - 17\n\nD-L-L-W-L-L\n\nNapoli\n\n20 - 6 - 7\n\nL-D-W-W-W-W\n\nApril 24, 2026, 2:45 PM EDT\n | Stadio Diego Armando Maradona\n\nPredicted Score\n\n0.0\n\nCRE\n\n2.5\n\nNAP\n\nMoneyline Consensus\n\nLine History\n\nCRE\n\n+835\n\nCRE\n\n-101\n\n+413\n\nDraw\n\nNAP\n\n-275\n\nNAP\n\n-119\n\nTotal Consensus\n\nBest Over\n\n-103\n\no2.5\n\n0%\n\nBest Under\n\n-117\n\nu2.5\n\nOur Prediction\n\nS.S.C. Napoli will Win and the Total  has an equal chance of being Over or Under.\n\nCalifornia\n\n## Where to Bet in California\n\nOur Experience\n\nBonus Offer\n\nRatings\n\nLinks\n\n#1\n\n4.5\n\n/5\n\n4.5\n\n/5 ...\n- [Napoli vs Cremonese Prediction 24/04/2026 \u2013 Odds, Tips & Analysis](https://scores24.live/en/soccer/m-26-04-2026-napoli-cremonese-prediction)\n  Snippet: ## Betting Tips: Napoli - Cremonese\n\nCremonese have lost\n\nus-cremonesein 7 of last 8 away games (Serie A).\n\nNapoli Win\n\nBet365\n\n33/100\n\nNapoli have not lost\n\nssc-napoli-1in 23 of last 25 home games.\n\nssc-napoli-1in 18 of last 19 home games (Serie A).\n\nCremonese have not won\n\nus-cremonesein 18 of last 19 games (Serie A).\n\nus-cremonesein 9 of last 10 away games (Serie A).\n\nNapoli will not lose\n\nBet365\n\n3/50\n\nUnder 3.5 goals scored\n\nssc-napoli-1in last 8 Napoli games (Serie A).\n\nssc-napoli-1in 7 of last 8 Napoli home games (Serie A).\n\nssc-napoli-1in 6 of last 7 Napoli home games. ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-23\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-23 18:06:37"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-23 18:05:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Market odds strongly favor Napoli (around -275), implying roughly a ~70%+ home-win baseline after normalization. Napoli\u2019s season profile and home edge are clear (20-6-7 overall; strong recent run), while Cremonese\u2019s overall record is weak (6-10-17) and they\u2019ve struggled badly for goals (reported long scoreless stretches) plus potential late fitness doubts for multiple players. Draw remains the main alternative due to Serie A draw frequency, but an away win requires a major Napoli underperformance."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:05:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.72,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.12,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli are substantially stronger at home (season home win rate ~60.6%) and arrive in good form (L-D-W-W-W-W). Cremonese have a poor away record (away win rate ~18.2%) and several players are being assessed late, creating selection uncertainty. The betting market heavily favors Napoli (market-implied probabilities ~70%+ before vig), so combining team strength, form, injuries and market signals yields a high probability for a Napoli win, with a smaller chance of a draw and low chance of an upset."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:05:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.709,
+                    "draw_probability": 0.188,
+                    "away_win_probability": 0.103,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Napoli's home advantage with a strong predicted lineup (Milinkovic-Savic, Lobotka, De Bruyne, Hoejlund) vs Cremonese who face late selection doubts and have a poor away record (6-10-17). Market odds show Napoli as a clear favorite (~70% win probability) with a smaller chance for draw (~19%) and Cremonese (~11%)."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:05:52",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.08,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli have a dominant home record (20-6-7, 60.6% home win rate), have not lost in 18 of their last 19 home league games, and approach this with an in-form, nearly fully fit squad. Cremonese are struggling, having not won in 18 of their last 19 Serie A matches and lost 7 of their last 8 away games, with severe attacking issues (failed to score in 16 matches and key players under injury clouds). Betting odds heavily favor Napoli (approx. implied win probability 75\u201378%). All factors point strongly to a home win, with a small probability of a draw and little chance of an away upset."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:05:56",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli has a strong home record with a 60.6% win rate, while Cremonese has struggled away, failing to win in 9 of their last 10 away games. The betting odds heavily favor Napoli, indicating strong market confidence in a home win. Additionally, Cremonese has serious attacking struggles, failing to score frequently, which reduces their chances of an upset."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "model_name": "Gemini 3.0",
+            "error": "Gemini failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:06:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.1,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli has a strong home record (60.6% win rate) and is in good form (L-D-W-W-W-W). Cremonese struggles on the road (18.2% win rate overall, lost 7 of last 8 away games), has a severe attacking issue (failed to score in 16 matches), and faces several key injury doubts. Betting odds strongly favor Napoli (moneyline -275, consensus predicted score 2.5-0). High confidence in a home win."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:06:19",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.73,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.09,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli's dominant home form (60.6% win rate, 20-6-7) versus Cremonese's poor away record (18.2% win rate, 6-10-17) creates a significant mismatch. The betting odds strongly favor Napoli at -275 (implied probability ~73%), with Cremonese at +835 (implied probability ~11%). Napoli are unbeaten in 23 of their last 25 home games and 18 of last 19 in Serie A. Cremonese have lost 7 of their last 8 away games and failed to score in 16 matches this season, indicating severe attacking deficiencies. Napoli's superior squad featuring Kevin De Bruyne, Rasmus Hoejlund, and Scott McTominay should dominate. Cremonese have late fitness concerns with Thorsby, Collocolo, Moumbagna, and Vardy. The historical data shows Cremonese haven't won in 18 of their last 19 Serie A matches overall and 9 of last 10 away. Under 3.5 goals is likely given Cremonese's attacking struggles, but Napoli should secure a comfortable home victory."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-23 18:06:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Cremonese (away) @ Napoli (home)",
+                    "home_win_probability": 0.75,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.05,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Napoli has a strong home record with a 60.6% win rate, while Cremonese has struggled away from home, winning only 18.2% of their matches. Additionally, Cremonese has had significant attacking issues, failing to score in 16 matches this season. The betting odds also heavily favor Napoli, with a -275 moneyline, indicating a high likelihood of a home win."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

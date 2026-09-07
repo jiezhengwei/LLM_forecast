@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-02",
+        "target_date_et": "2026-09-03",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-02\n\nTarget Date (ET): 2026-09-03\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882867\nMatchup: Celta Vigo (away) @ Real Sociedad (home)\nHome: Real Sociedad\nAway: Celta Vigo\nKickoff UTC: 2026-09-03T19:00Z\nKickoff ET: 2026-09-03 15:00 EDT\nVenue: Reale Arena\nRound: unavailable\nHome form: WLLDL\nAway form: LLDWD\nHome record: 1-0-2\nAway record: 0-1-2\nESPN structured 1X2 odds: DraftKings: Real Sociedad -105 (open +110); Draw +265 (open +245); Celta Vigo +290 (open +240)\nTavily context:\n  - Title: Real Sociedad vs Celta Vigo: Scores, Results Lineups, H2H & Odds\n    Content: Missing Players: Álvaro Odriozola, Héctor Fort, Pablo Marín.\n\nAway Team: Celta VigoCoach: Claudio Giráldez.\n\nGoalkeeper: Ionut Radu.\n\nDefenders: Sergio Carreira, Álvaro Núñez, Abdoulaye Faye, Carl Starfelt, Javi Rodríguez.\n\nMidfielders: Ilaix Moriba, Aleix Febas.\n\nAttackers: Ferran Jutglà, Hugo González, Williot Swedberg.\n\nSubs: Altay Bayindir, Kike Ribes, Yoel Lago, Javi Rueda, Javier Galán, Miguel Román, Andrés Antañón, Hugo Burcio, Jones El-Abdellaoui, Hugo Álvarez, Iago Aspas, Pablo Durán.\n\nMissing Players: Borja Iglesias.\n\n### Event Details:\n\nName: Real Sociedad vs. Celta Vigo ...\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/celta-vigo-real-sociedad-154-158-11\n  - Title: Real Sociedad vs Celta Vigo - prediction, team news, lineups\n    Content: Real Sociedad La Liga form:\n\n L\n L\n W\n\nCelta Vigo La Liga form:\n\n D\n L\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Forri-oskarsson-in-action-for-real-sociedad-on-july-28-2026-gareth-evans-sportimage-6a7dd4c38a0f4600023125.jpg)\n\n© Iconsport / Gareth Evans / Sportimage\n\nReal Sociedad remain without long-term absentee Alvaro Odriozola, while Pablo Marin is unlikely to feature due to a hamstring issue. ...\n    URL: https://www.sportsmole.co.uk/football/real-sociedad/preview/real-sociedad-vs-celta-vigo-prediction-team-news-lineups_604226.html\n  - Title: Real Sociedad vs Celta de Vigo Predictions, Picks & Odds\n    Content: La Liga · 6\n\n03 Sep 2026  Anoeta Stadium  Louis Hecq\n\n### Real Sociedad vs Celta de Vigo – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 2.08 | 3.63 | 3.84 | View Odds |\n| Stake | 1.95 | 3.35 | 3.30 | View Odds |\n| bc.game | 1.98 | 3.55 | 3.65 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Celta de Vigo\n\n3.84 on 1xBet1xBet · Confidence Low\n\nOdds recorded on 01 Sep 2026 at 22:06 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 6\n\nDate: 03 Sep 2026\n\nTime: 20:00 BST\n\nStadium: Anoeta Stadium ...\n    URL: https://www.toffeeweb.com/int/real-sociedad-vs-celta-de-vigo-predictions-picks-odds-03-09-2026\n  - Title: Celta Vigo vs Real Sociedad Odds & Live Scores - September 3, 2026 | The Action Network\n    Content: September 03, 2026\n\nReale ArenaSan Sebastian\n\nCelta Vigo vs. Real Sociedad Expert Picks\n\nDoug Ziefel\n\nDoug Ziefel\n\nLast 30d: 133-137-6 (-0.1u)\n\nRSO +100\n\n0.5u\n\n### Line Movement Tracker\n\n## Celta Vigo vs. Real Sociedad Public Betting Percentages\n\nAway Logo\n\n### Celta Vigo\n\n### Public\n\nHome Logo\n\n### Real Sociedad\n\n8%\n\n#### Bets%\n\n92%\n\n#### Money%\n\nLa Liga Public Betting\n\n## Matchup History\n\n### Against the Spread (ATS) History ...\n    URL: https://www.actionnetwork.com/laliga-game/celta-vigo-real-sociedad-score-odds-september-3-2026/292649\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-09-02\n\nTarget Date (ET): 2026-09-03\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882867\nMatchup: Celta Vigo (away) @ Real Sociedad (home)\nHome: Real Sociedad\nAway: Celta Vigo\nKickoff UTC: 2026-09-03T19:00Z\nKickoff ET: 2026-09-03 15:00 EDT\nVenue: Reale Arena\nRound: unavailable\nHome form: WLLDL\nAway form: LLDWD\nHome record: 1-0-2\nAway record: 0-1-2\nESPN structured 1X2 odds: DraftKings: Real Sociedad -105 (open +110); Draw +265 (open +245); Celta Vigo +290 (open +240)\nTavily context:\n  - Title: Real Sociedad vs Celta Vigo: Scores, Results Lineups, H2H & Odds\n    Content: Missing Players: Álvaro Odriozola, Héctor Fort, Pablo Marín.\n\nAway Team: Celta VigoCoach: Claudio Giráldez.\n\nGoalkeeper: Ionut Radu.\n\nDefenders: Sergio Carreira, Álvaro Núñez, Abdoulaye Faye, Carl Starfelt, Javi Rodríguez.\n\nMidfielders: Ilaix Moriba, Aleix Febas.\n\nAttackers: Ferran Jutglà, Hugo González, Williot Swedberg.\n\nSubs: Altay Bayindir, Kike Ribes, Yoel Lago, Javi Rueda, Javier Galán, Miguel Román, Andrés Antañón, Hugo Burcio, Jones El-Abdellaoui, Hugo Álvarez, Iago Aspas, Pablo Durán.\n\nMissing Players: Borja Iglesias.\n\n### Event Details:\n\nName: Real Sociedad vs. Celta Vigo ...\n    URL: https://www.365scores.com/en-us/football/match/laliga-11/celta-vigo-real-sociedad-154-158-11\n  - Title: Real Sociedad vs Celta Vigo - prediction, team news, lineups\n    Content: Real Sociedad La Liga form:\n\n L\n L\n W\n\nCelta Vigo La Liga form:\n\n D\n L\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Forri-oskarsson-in-action-for-real-sociedad-on-july-28-2026-gareth-evans-sportimage-6a7dd4c38a0f4600023125.jpg)\n\n© Iconsport / Gareth Evans / Sportimage\n\nReal Sociedad remain without long-term absentee Alvaro Odriozola, while Pablo Marin is unlikely to feature due to a hamstring issue. ...\n    URL: https://www.sportsmole.co.uk/football/real-sociedad/preview/real-sociedad-vs-celta-vigo-prediction-team-news-lineups_604226.html\n  - Title: Real Sociedad vs Celta de Vigo Predictions, Picks & Odds\n    Content: La Liga · 6\n\n03 Sep 2026  Anoeta Stadium  Louis Hecq\n\n### Real Sociedad vs Celta de Vigo – Best bets of the match\n\n| Bookmaker | 1 | X | 2 | Bonus info |\n ---  ---\n| 1xBet | 2.08 | 3.63 | 3.84 | View Odds |\n| Stake | 1.95 | 3.35 | 3.30 | View Odds |\n| bc.game | 1.98 | 3.55 | 3.65 | View Odds |\n\nOur prediction\n\nX2: Double Chance Draw or Celta de Vigo\n\n3.84 on 1xBet1xBet · Confidence Low\n\nOdds recorded on 01 Sep 2026 at 22:06 · Odds are subject to change\n\nCompetition: La Liga\n\nStage: Regular Season, 6\n\nDate: 03 Sep 2026\n\nTime: 20:00 BST\n\nStadium: Anoeta Stadium ...\n    URL: https://www.toffeeweb.com/int/real-sociedad-vs-celta-de-vigo-predictions-picks-odds-03-09-2026\n  - Title: Celta Vigo vs Real Sociedad Odds & Live Scores - September 3, 2026 | The Action Network\n    Content: September 03, 2026\n\nReale ArenaSan Sebastian\n\nCelta Vigo vs. Real Sociedad Expert Picks\n\nDoug Ziefel\n\nDoug Ziefel\n\nLast 30d: 133-137-6 (-0.1u)\n\nRSO +100\n\n0.5u\n\n### Line Movement Tracker\n\n## Celta Vigo vs. Real Sociedad Public Betting Percentages\n\nAway Logo\n\n### Celta Vigo\n\n### Public\n\nHome Logo\n\n### Real Sociedad\n\n8%\n\n#### Bets%\n\n92%\n\n#### Money%\n\nLa Liga Public Betting\n\n## Matchup History\n\n### Against the Spread (ATS) History ...\n    URL: https://www.actionnetwork.com/laliga-game/celta-vigo-real-sociedad-score-odds-september-3-2026/292649\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882867",
+                        "date_utc": "2026-09-03T19:00Z",
+                        "kickoff_et": "2026-09-03 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Real Sociedad",
+                        "away": "Celta Vigo",
+                        "home_id": "89",
+                        "away_id": "85",
+                        "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                        "venue": "Reale Arena",
+                        "city": "San Sebastian",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WLLDL",
+                        "form_away": "LLDWD",
+                        "record_home": "1-0-2",
+                        "record_away": "0-1-2",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+110",
+                            "home_current": "-105",
+                            "draw_open": "+245",
+                            "draw_current": "+265",
+                            "away_open": "+240",
+                            "away_current": "+290"
+                        },
+                        "odds_text": "DraftKings: Real Sociedad -105 (open +110); Draw +265 (open +245); Celta Vigo +290 (open +240)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-02T09:54:20.035778-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-02T09:46:10.592438-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad holds the home advantage at the Reale Arena and enters as the clear favorite with bookmakers pricing them around -105. Both teams have had mediocre starts to the season (Real Sociedad at 1-0-2 and Celta Vigo at 0-1-2), but the home side's superior squad depth and tactical stability under pressure give them the edge to secure all three points.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-02T09:46:18.601901-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.491,
+                    "draw_probability": 0.263,
+                    "away_win_probability": 0.246,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are the bookmakers' favorites at home, with DraftKings odds of -105 translating to roughly a 49% implied win probability. Although both teams have started the season somewhat inconsistently, Real Sociedad's home advantage at the Reale Arena gives them a solid edge over Celta Vigo.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-02T09:46:33.760581-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad holds a significant home-field advantage at the Reale Arena, and betting markets reflect this, making them the clear favorite with odds around -105. Public betting data also heavily favors a home win. However, both teams have started the season in poor form, with Real Sociedad's record at 1-0-2 and Celta Vigo at 0-1-2. This shared struggle introduces considerable uncertainty and elevates the possibility of a draw. While Real Sociedad is the most likely victor on paper due to home advantage, the inconsistent form of both sides warrants low confidence in the outcome.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-02T09:46:47.372011-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.475,
+                    "draw_probability": 0.265,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad is the home team and is consistently favored by bookmakers, with normalized odds suggesting approximately a 46-49% chance of victory. Despite both teams showing poor early-season form and records (Real Sociedad 1-0-2, Celta Vigo 0-1-2), Real Sociedad holds the home advantage at Reale Arena. Key players are missing for both sides: Álvaro Odriozola and Pablo Marín for Real Sociedad, and Borja Iglesias for Celta Vigo. The consensus from multiple odds providers points towards a Real Sociedad victory, even with one external prediction suggesting a draw or Celta Vigo win, albeit with 'low confidence'. The probabilities are derived from averaging the normalized implied probabilities from DraftKings, 1xBet, and Stake.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-02T09:48:53.779404-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing has moved toward Real Sociedad, with the home side now a slight odds-on favorite despite a mixed start. Home advantage at Reale Arena, Celta Vigo's weaker away record, and Celta missing Borja Iglesias lean the forecast toward Real Sociedad, though both teams' recent form is inconsistent enough to keep draw risk meaningful.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-02T09:48:59.616346-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have home advantage at Reale Arena and the market has moved notably toward them, with DraftKings shifting from an opening home price of +110 to -105. Both teams enter with uneven early form and losing records, which keeps draw and away outcomes live, but Celta Vigo remain winless away and are missing Borja Iglesias. Real Sociedad also have absences, but overall pricing and venue edge make a narrow home win the most likely 90-minute result.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-02T09:49:38.771432-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market pricing and movement favor Real Sociedad at home (shift from +110 to -105), implying they are the most likely 90-minute winner. Both sides have mixed recent form, but Celta’s away record (0-1-2) and the home-field edge at Reale Arena tilt the balance toward Sociedad. A draw remains a meaningful outcome given the relatively tight 1X2 pricing and limited separation in current records.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-02T09:49:46.375914-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets make Real Sociedad slight favorites and home advantage at Reale Arena matters. Both teams have inconsistent form, but Celta are missing striker Borja Iglesias which reduces their scoring threat; Real Sociedad have some absentees but overall squad depth and strong home backing tilt the balance. Odds and team news support a close Real Sociedad win as the most likely 90-minute result.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-02T09:50:02.342073-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad have home advantage at Reale Arena. Celta Vigo are weakened by missing Borja Iglesias, and Real Sociedad are also missing Álvaro Odriozola, which may impact their defensive stability but does not negate the home edge. The odds favor Real Sociedad modestly; expect a competitive 90 minutes with Real Sociedad likely to secure a home win.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-02T09:50:04.389095-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are slight favorites at home, supported by both betting odds and public money (92% of money on Sociedad). Their home form is mixed but generally stronger than Celta Vigo's away record, which is winless. Sociedad are missing a couple of players but retain most of their core squad. Celta Vigo are also missing Borja Iglesias, a key attacker, which could limit their scoring threat. Some tipsters suggest a double chance for Celta, but the odds and home advantage point to Sociedad as the most likely winner in regulation.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-02T09:50:07.281329-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad has a stronger home record and better odds from bookmakers. Despite missing key players, their overall form and public betting percentages favor a home win. Celta Vigo's away form is weaker, contributing to a lower probability of an away win.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-02T09:50:14.997055-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds (DraftKings -105 home, +265 draw, +290 away) imply Real Sociedad as modest favorites at home, roughly 48-49% after removing vig. Both teams are in poor early-season form (Sociedad 1-0-2, Celta 0-1-2), and Celta is missing Borja Iglesias while Sociedad lacks Odriozola and Marin. Line movement toward the home side supports a slight home edge, but the matchup is close enough that draw and away outcomes retain meaningful probability.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-02T09:50:19.258981-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Real Sociedad",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored at home (odds around -105) with strong money backing (92%). Both teams have modest form, but home advantage at Reale Arena and market pricing favor Real Sociedad. Celta Vigo have some winnable draw upside, keeping away/draw probabilities meaningful.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-02T09:50:28.418842-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad host Celta Vigo at Reale Arena in what looks like an evenly contested match. Real Sociedad hold a slight edge as home side with DraftKings making them marginal favorites at -105 (implied ~51%), though that has drifted from their opening +110. Both teams are in poor form early in the season — Real Sociedad at 1-0-2 with WLLDL form, Celta Vigo at 0-1-2 with LLDWD. The bookmaker odds across multiple sources converge around 2.08 for Real Sociedad, suggesting roughly 48% implied probability. A third-party prediction source favored X2 (draw or Celta) with low confidence. Celta are missing Borja Iglesias, while Real Sociedad are without Odriozola and Marín. The public betting heavily favors Real Sociedad (92% money%), which may reflect some overreaction. Slight lean to Real Sociedad at home, but overall uncertainty is high given both sides' inconsistent starts.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-02T09:50:37.817329-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad hosts Celta Vigo at Reale Arena. Both teams are struggling with poor recent form - Real Sociedad with WLLDL (1-0-2 record) and Celta Vigo with LLDWD (0-1-2 record). The betting market shows Real Sociedad as slight favorites at -105, though the line has moved from an opening +110, suggesting money coming in on the home side. Real Sociedad has home advantage and Celta Vigo is without Borja Iglesias. However, both teams' inconsistent form makes this a difficult match to predict with confidence. The public betting heavily favors Real Sociedad (92% money), which combined with home advantage gives them the edge. Celta's winless away form (0-1-2) and recent struggles (3 losses in last 5) support a narrow home win prediction, though the poor form of both sides warrants low confidence.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-02T09:50:41.285250-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored at -105 odds and have stronger recent form (1W-0D-2L vs Celta's 0W-1D-2L). DraftKings implied probability favors the home side. However, Celta remain competitive and are missing key player Borja Iglesias while Real Sociedad are without Odriozola and Marín. The balanced absences and Celta's recent draw suggest moderate confidence in a home win rather than a strong favorite outcome. Multiple expert predictions lean toward close matches or slight Real Sociedad advantage.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-02T09:51:03.554722-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are home favorites with DraftKings odds around -105, implying close to 50% regulation win probability. Celta Vigo are missing Borja Iglesias and have a poor away record, while Sociedad's home form is mixed but enough to edge this matchup.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-02T09:51:05.277900-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Real Sociedad have home advantage and are favored by odds, but both teams have poor recent form. Celta Vigo have shown some resilience with draws and wins away, but Real Sociedad's overall squad quality and home support give them a slight edge. The match is expected to be close, with a low confidence in a home win.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-02T09:51:21.902083-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad has the home advantage at Reale Arena and is favored by the sportsbooks despite mixed early-season form. Celta Vigo has struggled on the road with a 0-1-2 away record and is missing key players like Borja Iglesias, making the home side the most likely outcome in regulation time.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-02T09:51:27.152905-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad has a slightly better recent form and home advantage, but Celta Vigo has shown some resilience in away games. The odds and team news suggest a close match, with a slight edge to Real Sociedad.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-02T09:52:14.282763-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad enter as narrow favorites at the Reale Arena, backed by odds movement and heavy public betting money. While their early-season form is inconsistent and they have key defensive absences, Celta Vigo's road record is poor and they are missing primary striker Borja Iglesias, significantly limiting their attacking threat. The combination of home advantage, Celta's away struggles, and Sociedad's desire to rebound from recent losses points toward a closely contested match that is most likely decided in favor of the home side within regulation time.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-02T09:52:44.940975-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad enters as slight favorites (-105 odds) with significant public money backing (92%). They hold a home record of 1-0-2 compared to Celta's 0-1-2 away record. Celta misses key striker Borja Iglesias, weakening their attacking threat, while Real Sociedad's defensive absences are balanced by home advantage at Reale Arena. Probabilities align with implied market expectations adjusted for volatility.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-02T09:53:37.567820-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad hold home advantage at the Reale Arena and market odds, alongside line movement from +110 to -105, reflect betting support for a home result despite patchy form (WLLDL). Celta Vigo also arrive in inconsistent shape (LLDWD) with a winless away record (0-1-2) and the absence of Borja Iglesias. While Real Sociedad are missing Álvaro Odriozola and Pablo Marín, the stronger home-side market backing and venue edge make a home win the most likely 90-minute outcome.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-02T09:54:03.132343-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are modest home favorites at the Reale Arena, and the market has moved toward them (DraftKings from +110 to -105) while Celta Vigo drifted from +240 to +290, indicating money on the hosts. Celta are winless through three matches (0-1-2) and are missing striker Borja Iglesias, weakening their attack. Real Sociedad's own form is shaky (WLLDL, 1-0-2) and they are without Odriozola and likely Marín, which keeps draw and upset probabilities meaningful, but home advantage plus the line movement make a home win the most likely regulation-time outcome. Probabilities roughly align with vig-adjusted market prices.",
+                    "event_id": "401882867"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-02T09:54:20.026761-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Celta Vigo (away) @ Real Sociedad (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Real Sociedad are favored at home with odds that have shortened from +110 to -105, and the public money is heavily behind them. Celta Vigo has yet to win this season (0-1-2) and is missing striker Borja Iglesias. Although Real Sociedad will be without Odriozola and Marin, their home advantage and stronger squad tilt the balance toward a narrow Sociedad victory.",
+                    "event_id": "401882867"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-21",
+        "target_date_et": "2026-08-22",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882916\nMatchup: Sevilla (away) @ Athletic Club (home)\nHome: Athletic Club\nAway: Sevilla\nKickoff UTC: 2026-08-22T15:00Z\nKickoff ET: 2026-08-22 11:00 EDT\nVenue: San Mamés\nRound: unavailable\nHome form: LDLLW\nAway form: WLLWW\nHome record: 0-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Athletic Club -135 (open -140); Draw +270 (open +260); Sevilla +400 (open +370)\nTavily context:\n  - Title: Athletic Club vs Sevilla Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Benat Prados Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-22\n\nNico Serrano Hip\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nDaniel Vivian Hamstring\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nSevilla  Injury Table\n\nType Name Info\n\nKike Salas Red card (direc\n\nPosition: Defender Matches: 1 Goals: - Assists: - Expected return: 2026-08-29\n\nIsaac Romero Red card (direc\n\nPosition: Forward Matches: 1 Goals: - Assists: - Expected return: -\n\nJon Guridi Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/athletic-club-vs-sevilla-prediction-lineups-odds-2026-08-22\n  - Title: Athletic Club-Sevilla - LaLiga 2026/2027 Statistical Preview\n    Content: ## Predicted Lineups\n\nImage 19Athletic Club\n\n4-2-3-1\n\nSevillaImage 20\n\n4-2-3-1\n\n   Simón\n   N/A\n\n   Berchiche\n   N/A\n\n   Álvarez\n   N/A\n\n   Paredes\n   N/A\n\n   Areso\n   N/A\n\n   Jauregizar\n   N/A\n\n   Galarreta\n   N/A\n\n   Navarro\n   N/A\n\n   Sancet\n   N/A\n\n   Williams\n   N/A\n\n   Guruzeta\n   N/A\n\n   Vlachodimos\n   6.4\n\n   Suazo\n   6.55\n\n   Castrín\n   N/A\n\n   Sangante\n   6.01\n\n   Iglesias\n   6.89\n\n   Agoumé\n   6.7\n\n   Guridi\n   6.58\n\n   Oso\n   6.22\n\n   Fernández\n   6.91\n\n   Sierra\n   7\n\n   Ure\n   6.56\n\n© WhoScored.com\n\n## Missing Players\n\nImage 21\n\nAthletic Club\n\nImage 22\n\nSevilla ...\n    URL: https://www.whoscored.com/matches/1993907/preview/spain-laliga-2026-2027-athletic-club-sevilla\n  - Title: Athletic Club vs Sevilla Prediction - 22 Aug 2026\n    Content: ### Betting odds, head to head and AI match view\n\nThe market clearly respects Athletic at San Mamés. The current betting odds are 1.74 for a home win, 3.65 for the draw, and 5.30 for a Sevilla away win. That lines up with the squad values too: Athletic are valued at €240.70m, while Sevilla stand at €129.90m. Money does not score goals, of course, but it often explains why the home side are shorter in the 1x2 market. [...] U3.5  1.26\n\nNo more than 3 goals will be scored in the match with odds of 1.26\n\n4/10\n\n#### 1x2 Tip\n\n1X  1.19\n\nAthletic Club to win or draw\n\n2/10\n\n#### Total Goals ...\n    URL: https://nerdytips.com/match-details/athletic-club-vs-sevilla-prediction-1293764\n  - Title: Athletic Club vs Sevilla Prediction, Stats & Betting Tips, Aug 22, 2026 | MyGameOdds\n    Content: La Liga - Season 2026/2027 (Round 2)\n\nLa Liga - Season 2026/2027 (Round 2)\n\nGet our AI football prediction and stats for Athletic Club vs Sevilla. Our model tracks per-team football prediction accuracy across 1X2, BTTS, Over/Under and Correct Score markets — see how it performs for both teams below.\n\n## Athletic Club vs Sevilla — La Liga Prediction Accuracy\n\nSeason 2026/2027 · Round 2 · Regular Season\n\nFull-Time Result →\n\n┊ 44.4% implied\n\nSevilla100%1/1+125.2%Strongly above implied probability\n\nBoth Teams To Score →\n\n┊ 54.4% implied\n\nSevilla100%1/1+83.8%Strongly above implied probability ...\n    URL: https://mygameodds.com/predictions/la-liga-spain/52460\n\nGame ID: 2\nSource event_id: 401882907\nMatchup: Celta Vigo (away) @ Valencia (home)\nHome: Valencia\nAway: Celta Vigo\nKickoff UTC: 2026-08-22T17:30Z\nKickoff ET: 2026-08-22 13:30 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: WWDWL\nAway form: WDLWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Valencia +140 (open +110); Draw +225 (open +225); Celta Vigo +215 (open +250)\nTavily context:\n  - Title: Valencia vs Celta prediction: teams form analysis, possible lineups on August 22, 2026 – Ratingbet.com\n    Content: Celta are likely to use a 1-3-4-3 formation (possible lineup): Radu – Alonso, Lago, Rodriguez – Carreira, Moriba, Lopez, Rueda – Svedberg, Iglesias, Aspas. Duran and Fernandez will not travel.\n\nPlace your bet on the upcoming match and follow the team's performance in the Spanish La Liga standings.\n\nOur Pick\n\nGame Prediction Celta Vigo won't lose\n\n1.6\n\nMostbet app\n\nDetails →\n\nMostbet Promo Code 2026\n\nBonus code 150BET  Promo code copied\n\nBenjamin Mcneil ...\n    URL: https://ratingbet.com/predictions/valencia-vs-celta-prediction-teams-form-analysis-possible-lineups-on-august-22-2026\n  - Title: Valencia vs Celta Vigo - live score, predicted lineups and ...\n    Content: Giráldez\n\n  Luis Rioja\n\n  Muscle injury / Doubtful\n\nRiojaMuscle injuryDoubtful\n\n  José Copete\n\n  Meniscus injury / Early September 2026\n\nCopeteMeniscus injuryEarly September 2026\n\n  Diego López\n\n  Cruciate ligament injury / Early January 2027\n\nLópezCruciate ligament injuryEarly January 2027\n\n  Alberto Marí\n\n  Muscle injury / Early September 2026\n\nMaríMuscle injuryEarly September 2026\n\n  Sergi Canós\n\n  Cruciate ligament injury / Early December 2026\n\nCanósCruciate ligament injuryEarly December 2026\n\n  Javi Galán\n\n  Thigh injury / Doubtful\n\nGalánThigh injuryDoubtful\n\n  Matías Vecino ...\n    URL: https://www.fotmob.com/matches/celta-vigo-vs-valencia/3d7bzj\n  - Title: Valencia vs Celta Vigo Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Betting Sites Predicting a Close-Run Battle\n\nCelta Vigo are chalked up at betting odds of 3.20 to defeat Valencia, with their opponents operating at 2.35 with the bookmakers. If you want to back the draw, it’s available at 3.15 for this La Liga clash.\n\nThere’s sometimes a case for betting on the Draw No Bet market, with Valencia available at 1.61 for those who want insurance on their bet. The same applies to opponents Celta at 2.14. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/valencia-vs-celta-vigo-prediction-lineups-odds-2026-08-22\n  - Title: València vs. Celta Vigo - Live Score - August 22, 2026\n    Content: Databricks\nValencia\nCelta Vigo\n\n## Valencia vs Celta Vigo\n\nMestalla\n\n# València vs. Celta Vigo: Aug 22, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nValencia\n\n|  | | |\n ---\n| 8/12 | Default Logo TER (H) | L1-0 |\n| 8/8 | Newcastle NEW (H) | L2-1 |\n| 8/1 | Stoke City STK (A) | D1-1 |\n| 7/28 | Derby County DER (A) | W2-1 |\n| 7/25 | Castellón CAS (H) | L2-1 |\n\nDefault Logo\nNewcastle\nStoke City\nDerby County\nCastellón\nCelta Vigo ...\n    URL: https://www.foxsports.com/soccer/la-liga-valencia-vs-celta-vigo-aug-22-2026-game-boxscore-908970\n\nGame ID: 3\nSource event_id: 401882912\nMatchup: Real Madrid (away) @ Espanyol (home)\nHome: Espanyol\nAway: Real Madrid\nKickoff UTC: 2026-08-22T19:30Z\nKickoff ET: 2026-08-22 15:30 EDT\nVenue: RCDE Stadium\nRound: unavailable\nHome form: WDWWL\nAway form: WWWLW\nHome record: 1-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Espanyol +600 (open +475); Draw +370 (open +320); Real Madrid -230 (open -190)\nTavily context:\n  - Title: Espanyol vs Real Madrid Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Kike Garcia Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-15\n\nReal Madrid  Injury Table\n\nType Name Info\n\nEndrick Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nAurelien Tchouameni Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-22\n\nRaul Asencio Thigh\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-11\n\nFerland Mendy Hip\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-10-09\n\nRodrygo Cruciate ligame ...\n    URL: https://www.sportsgambler.com/betting-tips/football/espanyol-vs-real-madrid-prediction-lineups-odds-2026-08-22\n  - Title: Espanyol vs Real Madrid - live score, predicted lineups and H2H stats\n    Content: # Espanyol vs Real Madrid — Sat, August 22, 7:30 PM UTC\n\n# Espanyol vs Real Madrid — Sat, August 22, 7:30 PM UTC\n\n## Who will win?\n\n## Injured and suspended players\n\n## Team form\n\n## News\n\n## About the match\n\nEspanyol faces Real Madrid at RCDE Stadium on Sat, Aug 22, 2026, 19:30 UTC. This match is part of the LaLiga. You can check the recent head-to-head encounters, as well as full H2H record on this page to see how Espanyol and Real Madrid have fared against each other in the past. On FotMob, you can follow the Espanyol vs Real Madrid live score with a full set of match features, including: ...\n    URL: https://www.fotmob.com/matches/espanyol-vs-real-madrid/2fzhol\n  - Title: Espanyol vs Real Madrid prediction – Odds & stats – 22 August 2026\n    Content: -2.5\nProbability: 67.08%\n\nBet365\nBet365\n\n| Espanyol |  | Real Madrid |\n ---\n| Espanyol | stat | Real Madrid |\n| 3.83 | Average goals per game | 3 |\n| 2.33 | Average goal scored | 2.17 |\n| 1.5 | Goals conceded per match | 0.83 |\n| 17 % | Matches with -2.5 goals | 33 % |\n| 83 % | Matches with +2.5 goals | 67 % |\n| 1.83 | Average goals home team 1/away team 2 | 3.33 |\n| 1.17 | Avg. goals home team 1/away team 2 | 2 |\n| 0.67 | Avg. goals conceded home team 1/away team 2 | 1.33 |\nStats based on the last 6 matches\n\nEspanyol\nReal Madrid\n\n## Espanyol vs Real Madrid BTTS tips\n\nNo\nProbability: 53.33% ...\n    URL: https://www.wincomparator.com/predictions/espanyol-real-madrid-8586427\n  - Title: Espanyol vs Real Madrid Prediction, Tip and Match Preview - Saturday 22nd August 2026 - Spain La Liga\n    Content: |  |  |  |\n ---\n|  | Over in % of games | Average # of goals |\n| Latest games | 1.5 | 2.5 | 3.5 | Scored | Conceded |\n| Espanyol | 87% | 60% | 33% | 1.60 | 1.33 |\n| Real Madrid | 87% | 53% | 27% | 1.93 | 1.13 |\n\n|  |\n\n| »Latest games |\n\n|  | [...] ## Last 5 Stats\n\nLast 5 games power rank overall.\n\nPower - Team strength (goals, victories, possession, corners, attacking pressure and defense performance). ...\n    URL: https://www.soccervital.com/espanyol-vs-real-madrid-soccer-prediction-jggaga29j.html\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882916\nMatchup: Sevilla (away) @ Athletic Club (home)\nHome: Athletic Club\nAway: Sevilla\nKickoff UTC: 2026-08-22T15:00Z\nKickoff ET: 2026-08-22 11:00 EDT\nVenue: San Mamés\nRound: unavailable\nHome form: LDLLW\nAway form: WLLWW\nHome record: 0-0-0\nAway record: 1-0-0\nESPN structured 1X2 odds: DraftKings: Athletic Club -135 (open -140); Draw +270 (open +260); Sevilla +400 (open +370)\nTavily context:\n  - Title: Athletic Club vs Sevilla Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Benat Prados Knee\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-22\n\nNico Serrano Hip\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nDaniel Vivian Hamstring\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: -\n\nSevilla  Injury Table\n\nType Name Info\n\nKike Salas Red card (direc\n\nPosition: Defender Matches: 1 Goals: - Assists: - Expected return: 2026-08-29\n\nIsaac Romero Red card (direc\n\nPosition: Forward Matches: 1 Goals: - Assists: - Expected return: -\n\nJon Guridi Other ...\n    URL: https://www.sportsgambler.com/betting-tips/football/athletic-club-vs-sevilla-prediction-lineups-odds-2026-08-22\n  - Title: Athletic Club-Sevilla - LaLiga 2026/2027 Statistical Preview\n    Content: ## Predicted Lineups\n\nImage 19Athletic Club\n\n4-2-3-1\n\nSevillaImage 20\n\n4-2-3-1\n\n   Simón\n   N/A\n\n   Berchiche\n   N/A\n\n   Álvarez\n   N/A\n\n   Paredes\n   N/A\n\n   Areso\n   N/A\n\n   Jauregizar\n   N/A\n\n   Galarreta\n   N/A\n\n   Navarro\n   N/A\n\n   Sancet\n   N/A\n\n   Williams\n   N/A\n\n   Guruzeta\n   N/A\n\n   Vlachodimos\n   6.4\n\n   Suazo\n   6.55\n\n   Castrín\n   N/A\n\n   Sangante\n   6.01\n\n   Iglesias\n   6.89\n\n   Agoumé\n   6.7\n\n   Guridi\n   6.58\n\n   Oso\n   6.22\n\n   Fernández\n   6.91\n\n   Sierra\n   7\n\n   Ure\n   6.56\n\n© WhoScored.com\n\n## Missing Players\n\nImage 21\n\nAthletic Club\n\nImage 22\n\nSevilla ...\n    URL: https://www.whoscored.com/matches/1993907/preview/spain-laliga-2026-2027-athletic-club-sevilla\n  - Title: Athletic Club vs Sevilla Prediction - 22 Aug 2026\n    Content: ### Betting odds, head to head and AI match view\n\nThe market clearly respects Athletic at San Mamés. The current betting odds are 1.74 for a home win, 3.65 for the draw, and 5.30 for a Sevilla away win. That lines up with the squad values too: Athletic are valued at €240.70m, while Sevilla stand at €129.90m. Money does not score goals, of course, but it often explains why the home side are shorter in the 1x2 market. [...] U3.5  1.26\n\nNo more than 3 goals will be scored in the match with odds of 1.26\n\n4/10\n\n#### 1x2 Tip\n\n1X  1.19\n\nAthletic Club to win or draw\n\n2/10\n\n#### Total Goals ...\n    URL: https://nerdytips.com/match-details/athletic-club-vs-sevilla-prediction-1293764\n  - Title: Athletic Club vs Sevilla Prediction, Stats & Betting Tips, Aug 22, 2026 | MyGameOdds\n    Content: La Liga - Season 2026/2027 (Round 2)\n\nLa Liga - Season 2026/2027 (Round 2)\n\nGet our AI football prediction and stats for Athletic Club vs Sevilla. Our model tracks per-team football prediction accuracy across 1X2, BTTS, Over/Under and Correct Score markets — see how it performs for both teams below.\n\n## Athletic Club vs Sevilla — La Liga Prediction Accuracy\n\nSeason 2026/2027 · Round 2 · Regular Season\n\nFull-Time Result →\n\n┊ 44.4% implied\n\nSevilla100%1/1+125.2%Strongly above implied probability\n\nBoth Teams To Score →\n\n┊ 54.4% implied\n\nSevilla100%1/1+83.8%Strongly above implied probability ...\n    URL: https://mygameodds.com/predictions/la-liga-spain/52460\n\nGame ID: 2\nSource event_id: 401882907\nMatchup: Celta Vigo (away) @ Valencia (home)\nHome: Valencia\nAway: Celta Vigo\nKickoff UTC: 2026-08-22T17:30Z\nKickoff ET: 2026-08-22 13:30 EDT\nVenue: Mestalla Stadium\nRound: unavailable\nHome form: WWDWL\nAway form: WDLWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Valencia +140 (open +110); Draw +225 (open +225); Celta Vigo +215 (open +250)\nTavily context:\n  - Title: Valencia vs Celta prediction: teams form analysis, possible lineups on August 22, 2026 – Ratingbet.com\n    Content: Celta are likely to use a 1-3-4-3 formation (possible lineup): Radu – Alonso, Lago, Rodriguez – Carreira, Moriba, Lopez, Rueda – Svedberg, Iglesias, Aspas. Duran and Fernandez will not travel.\n\nPlace your bet on the upcoming match and follow the team's performance in the Spanish La Liga standings.\n\nOur Pick\n\nGame Prediction Celta Vigo won't lose\n\n1.6\n\nMostbet app\n\nDetails →\n\nMostbet Promo Code 2026\n\nBonus code 150BET  Promo code copied\n\nBenjamin Mcneil ...\n    URL: https://ratingbet.com/predictions/valencia-vs-celta-prediction-teams-form-analysis-possible-lineups-on-august-22-2026\n  - Title: Valencia vs Celta Vigo - live score, predicted lineups and ...\n    Content: Giráldez\n\n  Luis Rioja\n\n  Muscle injury / Doubtful\n\nRiojaMuscle injuryDoubtful\n\n  José Copete\n\n  Meniscus injury / Early September 2026\n\nCopeteMeniscus injuryEarly September 2026\n\n  Diego López\n\n  Cruciate ligament injury / Early January 2027\n\nLópezCruciate ligament injuryEarly January 2027\n\n  Alberto Marí\n\n  Muscle injury / Early September 2026\n\nMaríMuscle injuryEarly September 2026\n\n  Sergi Canós\n\n  Cruciate ligament injury / Early December 2026\n\nCanósCruciate ligament injuryEarly December 2026\n\n  Javi Galán\n\n  Thigh injury / Doubtful\n\nGalánThigh injuryDoubtful\n\n  Matías Vecino ...\n    URL: https://www.fotmob.com/matches/celta-vigo-vs-valencia/3d7bzj\n  - Title: Valencia vs Celta Vigo Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Betting Sites Predicting a Close-Run Battle\n\nCelta Vigo are chalked up at betting odds of 3.20 to defeat Valencia, with their opponents operating at 2.35 with the bookmakers. If you want to back the draw, it’s available at 3.15 for this La Liga clash.\n\nThere’s sometimes a case for betting on the Draw No Bet market, with Valencia available at 1.61 for those who want insurance on their bet. The same applies to opponents Celta at 2.14. ...\n    URL: https://www.sportsgambler.com/betting-tips/football/valencia-vs-celta-vigo-prediction-lineups-odds-2026-08-22\n  - Title: València vs. Celta Vigo - Live Score - August 22, 2026\n    Content: Databricks\nValencia\nCelta Vigo\n\n## Valencia vs Celta Vigo\n\nMestalla\n\n# València vs. Celta Vigo: Aug 22, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nValencia\n\n|  | | |\n ---\n| 8/12 | Default Logo TER (H) | L1-0 |\n| 8/8 | Newcastle NEW (H) | L2-1 |\n| 8/1 | Stoke City STK (A) | D1-1 |\n| 7/28 | Derby County DER (A) | W2-1 |\n| 7/25 | Castellón CAS (H) | L2-1 |\n\nDefault Logo\nNewcastle\nStoke City\nDerby County\nCastellón\nCelta Vigo ...\n    URL: https://www.foxsports.com/soccer/la-liga-valencia-vs-celta-vigo-aug-22-2026-game-boxscore-908970\n\nGame ID: 3\nSource event_id: 401882912\nMatchup: Real Madrid (away) @ Espanyol (home)\nHome: Espanyol\nAway: Real Madrid\nKickoff UTC: 2026-08-22T19:30Z\nKickoff ET: 2026-08-22 15:30 EDT\nVenue: RCDE Stadium\nRound: unavailable\nHome form: WDWWL\nAway form: WWWLW\nHome record: 1-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Espanyol +600 (open +475); Draw +370 (open +320); Real Madrid -230 (open -190)\nTavily context:\n  - Title: Espanyol vs Real Madrid Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Kike Garcia Hamstring\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: 2027-01-15\n\nReal Madrid  Injury Table\n\nType Name Info\n\nEndrick Muscle\n\nPosition: Forward Matches: - Goals: - Assists: - Expected return: -\n\nAurelien Tchouameni Thigh\n\nPosition: Midfielder Matches: - Goals: - Assists: - Expected return: 2026-08-22\n\nRaul Asencio Thigh\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-09-11\n\nFerland Mendy Hip\n\nPosition: Defender Matches: - Goals: - Assists: - Expected return: 2026-10-09\n\nRodrygo Cruciate ligame ...\n    URL: https://www.sportsgambler.com/betting-tips/football/espanyol-vs-real-madrid-prediction-lineups-odds-2026-08-22\n  - Title: Espanyol vs Real Madrid - live score, predicted lineups and H2H stats\n    Content: # Espanyol vs Real Madrid — Sat, August 22, 7:30 PM UTC\n\n# Espanyol vs Real Madrid — Sat, August 22, 7:30 PM UTC\n\n## Who will win?\n\n## Injured and suspended players\n\n## Team form\n\n## News\n\n## About the match\n\nEspanyol faces Real Madrid at RCDE Stadium on Sat, Aug 22, 2026, 19:30 UTC. This match is part of the LaLiga. You can check the recent head-to-head encounters, as well as full H2H record on this page to see how Espanyol and Real Madrid have fared against each other in the past. On FotMob, you can follow the Espanyol vs Real Madrid live score with a full set of match features, including: ...\n    URL: https://www.fotmob.com/matches/espanyol-vs-real-madrid/2fzhol\n  - Title: Espanyol vs Real Madrid prediction – Odds & stats – 22 August 2026\n    Content: -2.5\nProbability: 67.08%\n\nBet365\nBet365\n\n| Espanyol |  | Real Madrid |\n ---\n| Espanyol | stat | Real Madrid |\n| 3.83 | Average goals per game | 3 |\n| 2.33 | Average goal scored | 2.17 |\n| 1.5 | Goals conceded per match | 0.83 |\n| 17 % | Matches with -2.5 goals | 33 % |\n| 83 % | Matches with +2.5 goals | 67 % |\n| 1.83 | Average goals home team 1/away team 2 | 3.33 |\n| 1.17 | Avg. goals home team 1/away team 2 | 2 |\n| 0.67 | Avg. goals conceded home team 1/away team 2 | 1.33 |\nStats based on the last 6 matches\n\nEspanyol\nReal Madrid\n\n## Espanyol vs Real Madrid BTTS tips\n\nNo\nProbability: 53.33% ...\n    URL: https://www.wincomparator.com/predictions/espanyol-real-madrid-8586427\n  - Title: Espanyol vs Real Madrid Prediction, Tip and Match Preview - Saturday 22nd August 2026 - Spain La Liga\n    Content: |  |  |  |\n ---\n|  | Over in % of games | Average # of goals |\n| Latest games | 1.5 | 2.5 | 3.5 | Scored | Conceded |\n| Espanyol | 87% | 60% | 33% | 1.60 | 1.33 |\n| Real Madrid | 87% | 53% | 27% | 1.93 | 1.13 |\n\n|  |\n\n| »Latest games |\n\n|  | [...] ## Last 5 Stats\n\nLast 5 games power rank overall.\n\nPower - Team strength (goals, victories, possession, corners, attacking pressure and defense performance). ...\n    URL: https://www.soccervital.com/espanyol-vs-real-madrid-soccer-prediction-jggaga29j.html\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882916",
+                        "date_utc": "2026-08-22T15:00Z",
+                        "kickoff_et": "2026-08-22 11:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Athletic Club",
+                        "away": "Sevilla",
+                        "home_id": "93",
+                        "away_id": "243",
+                        "matchup": "Sevilla (away) @ Athletic Club (home)",
+                        "venue": "San Mamés",
+                        "city": "Bilbao",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "LDLLW",
+                        "form_away": "WLLWW",
+                        "record_home": "0-0-0",
+                        "record_away": "1-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-140",
+                            "home_current": "-135",
+                            "draw_open": "+260",
+                            "draw_current": "+270",
+                            "away_open": "+370",
+                            "away_current": "+400"
+                        },
+                        "odds_text": "DraftKings: Athletic Club -135 (open -140); Draw +270 (open +260); Sevilla +400 (open +370)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882907",
+                        "date_utc": "2026-08-22T17:30Z",
+                        "kickoff_et": "2026-08-22 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Valencia",
+                        "away": "Celta Vigo",
+                        "home_id": "94",
+                        "away_id": "85",
+                        "matchup": "Celta Vigo (away) @ Valencia (home)",
+                        "venue": "Mestalla Stadium",
+                        "city": "Manises",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WWDWL",
+                        "form_away": "WDLWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+110",
+                            "home_current": "+140",
+                            "draw_open": "+225",
+                            "draw_current": "+225",
+                            "away_open": "+250",
+                            "away_current": "+215"
+                        },
+                        "odds_text": "Provider unavailable: Valencia +140 (open +110); Draw +225 (open +225); Celta Vigo +215 (open +250)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882912",
+                        "date_utc": "2026-08-22T19:30Z",
+                        "kickoff_et": "2026-08-22 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Espanyol",
+                        "away": "Real Madrid",
+                        "home_id": "88",
+                        "away_id": "86",
+                        "matchup": "Real Madrid (away) @ Espanyol (home)",
+                        "venue": "RCDE Stadium",
+                        "city": "Barcelona",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WDWWL",
+                        "form_away": "WWWLW",
+                        "record_home": "1-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+475",
+                            "home_current": "+600",
+                            "draw_open": "+320",
+                            "draw_current": "+370",
+                            "away_open": "-190",
+                            "away_current": "-230"
+                        },
+                        "odds_text": "Provider unavailable: Espanyol +600 (open +475); Draw +370 (open +320); Real Madrid -230 (open -190)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-21T08:06:29.412566-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:55:00.008234-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club is historically formidable at San Mamés and enters this fixture as the clear favorite. Sevilla is hampered by key suspensions to Kike Salas and Isaac Romero, which weakens their squad depth and heavily tilts the match in the home side's favor.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Valencia is slightly favored at the Mestalla, but the market expects a tightly contested match. Both sides are managing several injury doubts early in the season, suggesting a potential draw or a narrow home victory.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is the heavy favorite with strong bookmaker backing at around -230. Despite being on the road and missing a few rotation players, their overwhelming squad quality advantage over Espanyol makes an away win the highly likely outcome.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-21T07:55:10.769125-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Athletic Club are the clear favorites at San Mamés, valued at -135 to win. The odds reflect their strong home advantage and stable squad value compared to Sevilla, making a home win the most probable outcome.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is expected to be a highly competitive match. The betting odds indicate a slight edge for Valencia at +140 playing at the Mestalla, but Celta Vigo's recent form makes a draw or an away win very plausible as well.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavily favored at -230 against Espanyol. With their significant squad depth and quality advantage, an away win is highly anticipated despite missing some players to injury.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-21T07:55:39.509401-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong favorites at their home ground, San Mamés, a notoriously difficult venue for visiting teams. The betting markets reflect this, pricing them as a -135 favorite. Furthermore, Sevilla is hampered by two key suspensions (Kike Salas and Isaac Romero) following red cards in their previous match. While both teams have mixed recent form, the combination of Athletic Club's home advantage and Sevilla's depleted squad strongly points towards a home victory.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This match is expected to be very close, as indicated by the tight betting odds with Valencia as only a slight favorite at home. Both teams have had comparable starts to their season. However, Valencia is contending with a significant number of injuries to key players, including Diego López and Sergi Canós. This could neutralize their home-field advantage. While Valencia has the highest probability of winning, the close odds and their injury situation make this a low-confidence pick, with a draw being a very plausible alternative.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are overwhelming favorites, even playing away from home. The betting odds (-230) reflect the significant gap in quality and depth between the two squads. While Real Madrid is managing some injuries, including to key players like Rodrygo, their roster is deep enough to compensate. Espanyol has started the season well at home, but facing a team of Real Madrid's caliber is a much tougher challenge. Based on historical dominance and superior talent, a Real Madrid victory is the most probable outcome.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:56:09.208526-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.5499,
+                    "draw_probability": 0.2587,
+                    "away_win_probability": 0.1914,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club is the clear home favorite based on betting odds (-135) and squad valuation. Sevilla faces significant challenges with key players Kike Salas and Isaac Romero suspended due to red cards. While Athletic Club has some listed injuries, the impact of Sevilla's suspensions combined with Athletic's home advantage at San Mamés is expected to lead to a home victory. Athletic's less convincing recent form (LDLLW) is a minor concern, but the market strongly backs them.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.3999399939993999,
+                    "draw_probability": 0.29532953295329534,
+                    "away_win_probability": 0.3047304730473048,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "This match is projected to be a close contest, with betting odds indicating Valencia as a slight home favorite. However, Valencia is hampered by a substantial list of injuries, including key players like Diego López and Sergi Canós. Celta Vigo, despite being the away team, shows strong recent form (WDLWW), and an expert prediction suggests 'Celta Vigo won't lose'. Given Valencia's injury concerns and the tight betting market, a draw is a plausible outcome where both teams could cancel each other out.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.1357,
+                    "draw_probability": 0.2021,
+                    "away_win_probability": 0.6622,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is a dominant favorite, reflected by the overwhelming betting odds (-230 for an away win). While Real Madrid is dealing with a few notable injuries, including Rodrygo and Ferland Mendy, their exceptional squad depth and quality typically allow them to overcome such challenges. Espanyol has decent home form (WDWWL) and won their first league game, but Real Madrid's class and historical dominance make an away victory the most probable result.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:58:09.473417-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are clear home favorites at San Mames, and Sevilla have notable suspension issues, including Kike Salas and Isaac Romero. Athletic also have injury concerns, so the draw has meaningful probability, but home advantage and market pricing point to a home win.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is priced as a close match, with Valencia only a narrow favorite at Mestalla. Celta have drawn market support and Valencia have several injury doubts or absences, so the draw and away win are both live outcomes, but home edge keeps Valencia slightly ahead.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong away favorites with a much stronger squad profile and supportive odds movement. Espanyol's home advantage and decent form keep upset and draw chances present, but the most likely regulation-time result is a Real Madrid win.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:58:29.014082-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are clear market favorites at San Mames, with odds implying a strong home edge. Sevilla have some disciplinary absences, including a suspended defender and forward, while Athletic's home advantage and stronger squad profile support the home-win forecast. The draw remains a meaningful risk in an early-season match.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This is priced as a very close match, with Valencia only a slight market lean and Celta shortening from opening odds. Valencia have several injury concerns, while external previews suggest Celta are capable of avoiding defeat. With little separation between the sides, a draw is the narrowest preferred outcome.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy away favorites and have shortened notably from opening odds, indicating strong market support. Espanyol's home setting gives them some upset and draw chances, but Real Madrid's overall quality, recent winning form, and superior attacking profile make the away win the most likely regulation-time result.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-21T07:59:15.199582-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Athletic as a clear favorite at San Mamés, and Sevilla arrive with key suspensions (notably Kike Salas in defense and Isaac Romero in attack), which reduces both their defensive stability and counterattacking threat. Athletic’s own absences add some variance, but home advantage plus squad continuity makes a 90-minute home win the most likely result.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds indicate a tight match with only a small edge to Valencia at Mestalla, but Valencia’s injury list increases uncertainty and keeps draw/away outcomes very live. Celta’s ability to avoid defeat is plausible, yet home advantage still nudges Valencia to the highest single-outcome probability in regulation time.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strongly favored by the 1X2 market even away from home, reflecting a large quality gap. While Madrid have some injury concerns, their depth and chance creation typically translate into a regulation-time win against mid-table opposition; Espanyol’s upset path is comparatively narrow.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-21T07:59:29.130395-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club start at San Mamés where they are historically strong and bookmakers make them clear favorites. Sevilla arrive with disciplinary/injury concerns and a thinner squad valuation; recent forms are mixed for both sides. Market and situational factors favor a home victory, though an upset or draw is plausible.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets and previews show a close contest at Mestalla with Valencia slightly favored. Both teams have comparable form and some injury doubts reported; expect a tight game where the home side's marginal advantage at Mestalla gives Valencia the edge, but a draw or Celta win remain realistic.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are clear favorites despite some injury notes; their squad depth and offensive quality make an away win the most likely outcome. Espanyol have shown resilience at home but odds and form strongly favor Real; a draw is possible but an Espanyol win is unlikely.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-21T07:59:45.891799-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "high",
+                    "reasoning": "Athletic Club favored at home per odds and current form; Sevilla shown solid form but traveling.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Valencia marginally favored at Mestalla; balanced matchup with potential for a draw.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid strong away favorite; Espanyol defense faces a tough test.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-21T07:59:50.408684-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.56,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong favorites at home, supported by both market odds and squad value. Sevilla are missing key players due to suspension, and Athletic's home form is generally solid. The betting markets and expert previews both lean toward a home win, with a draw as a secondary possibility. Sevilla's away form is decent, but the overall context and odds suggest Athletic Club should prevail.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "The odds and expert previews indicate a very balanced matchup, with both teams having similar recent form and several injuries on both sides. Celta Vigo are tipped not to lose, and the betting odds for all three outcomes are close. Valencia have home advantage, but Celta's resilience and the market's lack of a clear favorite point toward a high probability of a draw.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites according to both market odds and recent form. Espanyol are missing a key forward, while Real Madrid's squad depth compensates for their own injuries. Statistical previews and betting markets strongly favor an away win, with Real Madrid's attacking and defensive metrics superior to Espanyol's. The probability of a draw or home win is much lower.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-21T07:59:52.982057-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club has a strong home advantage at San Mamés and favorable odds. Sevilla's away form is inconsistent, and they have key players suspended.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams have similar form and injuries affecting key players. The odds suggest a close match, making a draw a likely outcome.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is in excellent form and has a strong squad despite some injuries. Espanyol's odds and recent form suggest they are unlikely to win.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-21T08:00:08.116763-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong at San Mames and clearly favored by the market (-135). Sevilla are missing Kike Salas and Isaac Romero to red-card suspensions and have a much weaker squad on paper (€130m vs €240m valuation). Athletic have some injury concerns (Vivian, Prados) which tempers confidence slightly, but the home edge is substantial.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.305,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "A tightly matched fixture at Mestalla. Valencia have modest home advantage but Celta arrive in solid form and the odds have shifted toward the visitors. Both sides carry injury issues (Rioja, Copete for Valencia; Duran, Fernandez not traveling for Celta). Valencia are the marginal favorite, but draw and away win are both live outcomes.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.135,
+                    "draw_probability": 0.205,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites (-230) despite several absentees (Rodrygo, Mendy, Asencio, Endrick). Their squad depth vastly exceeds Espanyol's, and Madrid have strong recent form. Espanyol can be dangerous at home and the line has shifted slightly toward the underdog, but Madrid should still win this in regulation around two-thirds of the time.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-21T08:00:17.849621-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.57,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "Athletic Club",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong at San Mamés and heavily favored by the market (-135). Sevilla have two key players suspended (Kike Salas, Isaac Romero red cards) and lower squad value. Athletic's home advantage and better resources make them clear favorites.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Valencia",
+                    "confidence": "low",
+                    "reasoning": "Very close match with the odds tightly balanced. Valencia have home advantage at Mestalla, but Celta have a solid away form and multiple injuries affect both sides. Slight edge to Valencia given home field, but the draw and away win are nearly as likely.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.16,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "Real Madrid",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong favorites (-230) despite some injuries (Rodrygo, Mendy, Endrick out). Their superior squad depth and quality should overcome Espanyol at RCDE Stadium. Espanyol have been decent at home but face a significant class gap.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-21T08:00:38.770879-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong favorites at San Mamés, one of La Liga's most intimidating home venues. The market odds (Athletic -135) reflect their structural advantage. Sevilla are significantly depleted heading into this match: both Kike Salas (defender) and Isaac Romero (forward) received direct red cards in matchday 1 and are suspended. Athletic also have injury concerns (Vivian, Prados) but their home record and squad depth (valued at €240m vs Sevilla's €129m) favor them. Sevilla's 1-0-0 record is noted but their suspensions are a major handicap. The odds imply roughly 57% for Athletic, but accounting for Sevilla's suspensions and San Mamés fortress effect, a slight upward adjustment to ~50% home win is warranted while acknowledging Sevilla's recent form (WLLWW). Draw probability held moderate given La Liga's typical competitive nature.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a tight, closely contested match. The ESPN odds show Valencia at +140 (implied ~42%) and Celta Vigo at +215 (implied ~32%), which interestingly makes Valencia favorites despite the open line suggesting a shift toward Celta. Sportsgambler has Valencia at 2.35 (42%) and Celta at 3.20 (31%). Both teams have decent recent form (Valencia WWDWL, Celta WDLWW). Valencia benefit from home advantage at Mestalla. However, Valencia's pre-season form was mixed (losses to TER and Newcastle in friendlies). Celta have Aspas leading their attack. The market movement toward Celta (from +250 open to +215 current) is notable. Given home advantage for Valencia and a very competitive match, slight lean to Valencia home win but confidence is low given the tight market.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites at -230 (implied ~70%) and the market has moved significantly in their favor since open (-190 to -230). Espanyol are listed at +600 reflecting their underdog status. Real Madrid's squad value and quality far exceed Espanyol's. Key Real Madrid injury concerns include Endrick (muscle), Tchouameni (thigh, possibly available Aug 22), Raul Asencio (thigh), Ferland Mendy (hip), and Rodrygo (cruciate - likely long-term out). Despite these absences, Real Madrid's depth is sufficient. Espanyol have a reasonable home record (WDWWL) but historically struggle against Madrid. The odds movement and squad differential point strongly toward a Real Madrid away win. Adjusting slightly from implied 70% to 68% accounting for Espanyol's home form and Real Madrid's injury list.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-21T08:00:56.646629-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club has strong home advantage at San Mamés with odds favoring them at -135. Sevilla faces significant suspensions with Kike Salas and Isaac Romero both out due to red cards, severely weakening their squad. Athletic's form shows recent improvement (LDLLW) while playing at home, and their squad value (€240.70m) significantly exceeds Sevilla's (€129.90m). Despite Sevilla's better recent away form (WLLWW), the combination of key player absences and Athletic's home fortress makes a home win the most likely outcome.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "This appears to be a very evenly matched contest with tight odds (Valencia +140, Draw +225, Celta +215). Valencia has better recent form overall (WWDWL) compared to Celta (WDLWW), and holds home advantage at Mestalla. However, both teams have significant injury concerns - Valencia missing multiple players including Diego López (cruciate ligament) and Sergi Canós, while Celta has Copete, Marí, and others out. The betting markets suggest this is essentially a coin flip, but Valencia's home advantage and slightly superior form give them a marginal edge. This is a low-confidence prediction given the balance of the matchup.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are clear favorites at -230 despite playing away, reflecting their superior quality and recent form (WWWLW). Madrid's squad significantly outclasses Espanyol in both talent and depth. While Madrid has some injury concerns (Rodrygo with cruciate ligament injury, Mendy out until October), Espanyol also faces absences including Kike Garcia (long-term hamstring). Espanyol's recent loss and Madrid's strong away record (averaging 3.33 goals in away matches based on context) point to a comfortable away victory. The odds and form differential strongly support Real Madrid to win this match.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-21T08:01:03.895206-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.17,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are favored at home with superior squad value (€240.70m vs €129.90m). Recent form shows Athletic with mixed results but playing at San Mamés. Sevilla have injuries including red card suspensions (Kike Salas, Isaac Romero) which weakens their defense. Betting odds strongly favor Athletic (-135). However, Sevilla's recent form (WLLWW before suspensions) suggests they can score, keeping draw probability reasonable.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Valencia show slightly better recent form (WWDWL) compared to Celta (WDLWW). Valencia are favored in betting odds (+140 implies ~41% probability). However, Valencia are significantly impacted by injuries (Copete, López, Canós) which weakens their squad depth. Celta's prediction source suggests 'won't lose' with 1.6 odds. The match appears competitive with moderate confidence in either outcome given injury concerns for Valencia.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.61,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong favorites with -230 odds (implying ~70% win probability). Real Madrid's recent form is excellent (WWWLW) and they have superior quality despite injury concerns (Endrick, Tchouameni, Mendy, Asencio, Rodrygo). Espanyol's mixed form (WDWWL) and home record shows vulnerability. Statistical analysis indicates Real Madrid -2.5 has 67% probability. Real Madrid's goal-scoring average (3 per game) vs Espanyol's conceding (1.5 per game) strongly favors the visitors.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-21T08:01:35.078350-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.19,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are clear favorites at San Mamés and the odds imply roughly a 55% home win probability. Sevilla have some key absences and a weaker squad value, but the draw remains a meaningful risk.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Valencia remain narrow home favorites at Mestalla, but the market has moved toward Celta Vigo and the three-way odds are tight. Home edge is small, with draw and away both live outcomes.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are strong favorites despite being away, with odds implying around two-thirds probability for the away win. Espanyol are clear underdogs and Real Madrid's superior squad quality should decide the match.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-21T08:01:37.760856-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong at home, and Sevilla have key suspensions (Kike Salas, Isaac Romero). Odds favor Athletic Club.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Valencia have home advantage, but Celta Vigo are in good form. Odds are close, suggesting a tight match.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites despite playing away. Espanyol have injury concerns, and Real Madrid's squad depth is superior.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-21T08:02:11.416775-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Athletic Club",
+                    "confidence": "high",
+                    "reasoning": "Athletic Club is heavily favored at home against a Sevilla side missing key players to suspension. The odds and home advantage at San Mamés strongly point to a home win.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Valencia",
+                    "confidence": "low",
+                    "reasoning": "Valencia is a slight favorite at home according to the odds, but the match is expected to be tightly contested with Celta Vigo showing good recent form. Home advantage gives Valencia the edge in a close matchup.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "Real Madrid",
+                    "confidence": "high",
+                    "reasoning": "Despite some injury concerns, Real Madrid's superior squad depth and strong away form make them heavy favorites against Espanyol. The betting market reflects a high probability of an away win.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-21T08:02:23.645292-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club has a strong home form and the odds favor them. Sevilla is missing key players due to injuries and suspensions, which may affect their performance.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "Celta Vigo has shown good away form, and Valencia has some injury concerns. The betting odds also suggest a close match with a slight edge for Celta Vigo.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is a stronger team overall and has a good away form. Espanyol, despite having a decent home record, is less likely to win against a top-tier team like Real Madrid.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-21T08:03:11.241418-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.58,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.18,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club's historical dominance at San Mamés and significantly higher squad valuation give them a clear edge. Sevilla's away form is inconsistent, and the betting market strongly favors the home side. Early-season roster adjustments and key injuries on both sides justify a medium confidence rating.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Valencia is missing a large portion of their defensive and midfield core due to injuries, severely limiting their home advantage. Celta Vigo arrives in better recent form and faces a depleted Valencian lineup. The tight betting odds and early-season unpredictability make a closely contested stalemate the most likely outcome.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.14,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Real Madrid possesses the deepest squad in La Liga, allowing them to withstand injuries to key attackers and defenders. Espanyol's lower roster quality and historical struggles against elite away sides make a Real Madrid victory highly probable. The away setting and early-season rhythm factor keep confidence at medium rather than high.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-21T08:03:56.891787-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.55,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club benefits from strong home support at San Mamés and superior squad value, though injuries impact their lineup. Sevilla faces suspensions for key defenders, increasing the likelihood of a home victory.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away",
+                    "confidence": "low",
+                    "reasoning": "A closely contested match where Valencia is hampered by multiple defensive injuries. Celta Vigo enters with better recent momentum and favorable odds movement, suggesting an upset or close result.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is the overwhelming favorite based on market odds and squad hierarchy. Despite missing key midfielders, their attacking depth significantly outweighs Espanyol's capabilities at RCDE Stadium.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-21T08:05:22.885402-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.54,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.22,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club are strong favorites at San Mamés, supported by market pricing (-135) and a significantly higher squad valuation. Both sides are missing key players—Athletic are without Vivian and Prados, while Sevilla lose Salas and Romero to red cards—but the home side’s depth and historic home advantage provide the edge. Early-season variance and defensive absences keep confidence moderate.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Valencia have drifted in the market from +110 to +140 amid a lengthy injury list that includes Copete, Marí, Canós and Diego López, plus doubts over Rioja and Galán. Celta Vigo arrive with comparable form and a healthier squad, prompting a narrow lean to the away side. However, the match is essentially a coin flip given Mestalla’s traditionally difficult environment.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are clear market favorites and the odds have tightened further in their favor from -190 to -230. Despite injuries to Tchouameni, Mendy and Rodrygo, Real Madrid’s superior squad depth and quality should overcome an Espanyol side that, even with an opening-day win, faces a massive talent gap at home. The model and market both strongly support an away victory.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-21T08:06:16.872677-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club hold significant home advantage at San Mamés and superior squad valuation (€240.7m vs €129.9m), though they are missing key defender Daniel Vivian. Sevilla suffer from suspensions to Kike Salas and Isaac Romero, weakening their defensive and attacking options. The market favors the hosts at -135 odds, reflecting their fortress status despite mixed early form.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Valencia face an injury crisis with Copete, Diego López, Alberto Marí, and Sergi Canós all sidelined, plus doubts over Rioja and Galán. While Valencia have home advantage at Mestalla, Celta Vigo arrive with solid form (WDLWW) and a more intact squad. The tight odds (+140 vs +215) reflect a near coin-flip scenario favoring the visitors due to Valencia's depleted roster.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.63,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid are heavy favorites (-230) despite missing Rodrygo and Mendy long-term, plus potential absences for Tchouameni and Asencio. Their attacking firepower and squad depth significantly outweigh Espanyol, who are without Kike Garcia. Espanyol's decent start (1-0-0) is unlikely to withstand Real Madrid's quality, though the RCDE Stadium atmosphere may keep the match competitive.",
+                    "event_id": "401882912"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-21T08:06:29.405727-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Sevilla (away) @ Athletic Club (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Athletic Club has a slight edge at home with a 40% chance of winning. Sevilla has a 30% chance of winning and a 30% chance of a draw. Athletic Club's home form is LDLLW and Sevilla's away form is WLLWW, suggesting a close match.",
+                    "event_id": "401882916"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Celta Vigo (away) @ Valencia (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Valencia has a slight advantage at home with a 40% chance of winning. Celta Vigo has a 30% chance of winning and a 30% chance of a draw. Valencia's home form is WWDWL and Celta Vigo's away form is WDLWW, indicating a close match.",
+                    "event_id": "401882907"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Real Madrid (away) @ Espanyol (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Real Madrid is the clear favorite with a 60% chance of winning. Espanyol has a 20% chance of winning and a 20% chance of a draw. Real Madrid's away form is WWWLW and Espanyol's home form is WDWWL, suggesting a likely win for Real Madrid.",
+                    "event_id": "401882912"
+                }
+            ]
+        }
+    ]
+}

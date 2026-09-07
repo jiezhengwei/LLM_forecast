@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-03",
+        "target_date_et": "2026-09-04",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879288\nMatchup: Liverpool (away) @ Ipswich Town (home)\nHome: Ipswich Town\nAway: Liverpool\nKickoff UTC: 2026-09-04T19:00Z\nKickoff ET: 2026-09-04 15:00 EDT\nVenue: Portman Road\nRound: unavailable\nHome form: LWWWD\nAway form: DDDLD\nHome record: 1-0-1\nAway record: 0-2-0\nESPN structured 1X2 odds: DraftKings: Ipswich Town +425 (open +380); Draw +370 (open +340); Liverpool -185 (open -175)\nTavily context:\n  - Title: PREVIEW | Ipswich Town vs Liverpool: team news, lineups, predictions (Premier League 04/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nLiverpool have won 2 points to date and are placed in 13th position. In their last outing, Andoni Iraola's team drew 2-2 against Nottingham Forest (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Liverpool winning 4-1.\n\n## Unavailable\n\n## Ipswich Town\n\n Azor Matusiwa - Injury\n Jack Taylor - Injury\n Jaden Philogene - Injury\n Florentino Luís - In doubt\n\n## Liverpool\n\n Joe Gomez - Injury\n Federico Chiesa - Injury\n Conor Bradley - Injury\n Hugo Ekitiké - Injury\n Giovanni Leoni - Injury\n\n## Last starting XIs ...\n    URL: https://sports.yahoo.com/articles/preview-ipswich-town-vs-liverpool-191000605.html\n  - Title: Ipswich Town vs Liverpool Box Score - September 04, 2026\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nPremier League, Matchweek 3\n\nIpswich Town\n\n12th in Premier League\n\nIPS\n\nFri Sep 4\n\n19:00\n\nLIV\n\nLiverpool\n\n14th in Premier League\n\nInjury Report\n\nIPS\n\nIPS\n\nA. Fatawu\n\nA. Fatawu\n\nA\n\nOut\n\nKnock\n\nA. Matusiwa\n\nA. Matusiwa\n\nM\n\nOut\n\nMuscle Injury\n\nJ. Taylor\n\nJ. Taylor\n\nM\n\nOut\n\nKnee Injury\n\nLIV\n\nLIV\n\nC. Jones\n\nC. Jones\n\nM\n\nOut\n\nHip Injury\n\nF. Woodman\n\nF. Woodman\n\nGK\n\nOut\n\nUnknown\n\nJ. Gomez\n\nJ. Gomez\n\nD\n\nOut\n\nMuscle Injury\n\nH. Ekitiké\n\nH. Ekitiké\n\nA\n\nOut\n\nAchilles Tendon Rupture\n\nV. Jaroš\n\nV. Jaroš\n\nGK\n\nOut\n\nACL Knee Injury\n\nC. Bradley\n\nC. Bradley\n\nD\n\nOut ...\n    URL: https://www.nytimes.com/athletic/football/game/ipswich-town-vs-liverpool/gKWbNh2lWuBfqJoX\n  - Title: Ipswich Town vs. Liverpool: Sep 4, 2026\n    Content: Databricks\nIpswich Town\nLiverpool\n\n## Ipswich Town vs Liverpool\n\nPortman Road Stadium\n\n# Ipswich Town vs. Liverpool: Sep 4, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nIpswich Town\n\n|  | | |\n ---\n| 8/30 | Manchester Utd MUN (A) | L5-2 |\n| 8/25 | Leicester City LEI (H) | W3-1 |\n| 8/22 | Sunderland SUN (H) | W2-1 |\n| 8/15 | FC Union Berlin UB (A) | W4-2 |\n| 8/8 | Rayo Vallecano RAY (H) | W3-0 |\n\nManchester Utd\nLeicester City\nSunderland\nFC Union Berlin\nRayo Vallecano\nLiverpool ...\n    URL: https://www.foxsports.com/soccer/premier-league-ipswich-town-vs-liverpool-sep-04-2026-game-boxscore-891092\n  - Title: Ipswich vs. Liverpool (Sep 4, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Manchester City | 2 | 2 | 0 | 0 | +4 | 6 |\n| Arsenal | 2 | 2 | 0 | 0 | +4 | 6 |\n| Hull City | 2 | 2 | 0 | 0 | +3 | 6 |\n| Chelsea | 2 | 2 | 0 | 0 | +2 | 6 |\n| Brentford | 2 | 1 | 1 | 0 | +3 | 4 |\n| Newcastle United | 2 | 1 | 1 | 0 | +2 | 4 |\n| Everton | 2 | 1 | 1 | 0 | +2 | 4 |\n| Leeds United | 2 | 1 | 1 | 0 | +1 | 4 |\n| Brighton & Hove Albion | 2 | 1 | 0 | 1 | +3 | 3 |\n| Manchester United | 2 | 1 | 0 | 1 | +1 | 3 |\n| Sunderland | 2 | 1 | 0 | 1 | 0 | 3 |\n| Ipswich Town | 2 | 1 | 0 | 1 | -2 | 3 |\n| Liverpool | 2 | 0 | 2 | 0 | 0 | 2 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879288/liverpool-ipswich-town\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-09-03\n\nTarget Date (ET): 2026-09-04\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879288\nMatchup: Liverpool (away) @ Ipswich Town (home)\nHome: Ipswich Town\nAway: Liverpool\nKickoff UTC: 2026-09-04T19:00Z\nKickoff ET: 2026-09-04 15:00 EDT\nVenue: Portman Road\nRound: unavailable\nHome form: LWWWD\nAway form: DDDLD\nHome record: 1-0-1\nAway record: 0-2-0\nESPN structured 1X2 odds: DraftKings: Ipswich Town +425 (open +380); Draw +370 (open +340); Liverpool -185 (open -175)\nTavily context:\n  - Title: PREVIEW | Ipswich Town vs Liverpool: team news, lineups, predictions (Premier League 04/09)\n    Content: Advertisement\n\nAdvertisement\n\nAdvertisement\n\nLiverpool have won 2 points to date and are placed in 13th position. In their last outing, Andoni Iraola's team drew 2-2 against Nottingham Forest (Premier League 2026/27).\n\nThe last meeting between the two teams ended with Liverpool winning 4-1.\n\n## Unavailable\n\n## Ipswich Town\n\n Azor Matusiwa - Injury\n Jack Taylor - Injury\n Jaden Philogene - Injury\n Florentino Luís - In doubt\n\n## Liverpool\n\n Joe Gomez - Injury\n Federico Chiesa - Injury\n Conor Bradley - Injury\n Hugo Ekitiké - Injury\n Giovanni Leoni - Injury\n\n## Last starting XIs ...\n    URL: https://sports.yahoo.com/articles/preview-ipswich-town-vs-liverpool-191000605.html\n  - Title: Ipswich Town vs Liverpool Box Score - September 04, 2026\n    Content: SKIP ADVERTISEMENT\n\nAdvertisement\n\nPremier League, Matchweek 3\n\nIpswich Town\n\n12th in Premier League\n\nIPS\n\nFri Sep 4\n\n19:00\n\nLIV\n\nLiverpool\n\n14th in Premier League\n\nInjury Report\n\nIPS\n\nIPS\n\nA. Fatawu\n\nA. Fatawu\n\nA\n\nOut\n\nKnock\n\nA. Matusiwa\n\nA. Matusiwa\n\nM\n\nOut\n\nMuscle Injury\n\nJ. Taylor\n\nJ. Taylor\n\nM\n\nOut\n\nKnee Injury\n\nLIV\n\nLIV\n\nC. Jones\n\nC. Jones\n\nM\n\nOut\n\nHip Injury\n\nF. Woodman\n\nF. Woodman\n\nGK\n\nOut\n\nUnknown\n\nJ. Gomez\n\nJ. Gomez\n\nD\n\nOut\n\nMuscle Injury\n\nH. Ekitiké\n\nH. Ekitiké\n\nA\n\nOut\n\nAchilles Tendon Rupture\n\nV. Jaroš\n\nV. Jaroš\n\nGK\n\nOut\n\nACL Knee Injury\n\nC. Bradley\n\nC. Bradley\n\nD\n\nOut ...\n    URL: https://www.nytimes.com/athletic/football/game/ipswich-town-vs-liverpool/gKWbNh2lWuBfqJoX\n  - Title: Ipswich Town vs. Liverpool: Sep 4, 2026\n    Content: Databricks\nIpswich Town\nLiverpool\n\n## Ipswich Town vs Liverpool\n\nPortman Road Stadium\n\n# Ipswich Town vs. Liverpool: Sep 4, 2026\n\n## MATCHUP\n\n## ODDS\n\n## STANDINGS\n\nIpswich Town\n\n|  | | |\n ---\n| 8/30 | Manchester Utd MUN (A) | L5-2 |\n| 8/25 | Leicester City LEI (H) | W3-1 |\n| 8/22 | Sunderland SUN (H) | W2-1 |\n| 8/15 | FC Union Berlin UB (A) | W4-2 |\n| 8/8 | Rayo Vallecano RAY (H) | W3-0 |\n\nManchester Utd\nLeicester City\nSunderland\nFC Union Berlin\nRayo Vallecano\nLiverpool ...\n    URL: https://www.foxsports.com/soccer/premier-league-ipswich-town-vs-liverpool-sep-04-2026-game-boxscore-891092\n  - Title: Ipswich vs. Liverpool (Sep 4, 2026) Live Score\n    Content: | Team | GP | W | D | L | GD | P |\n ---  ---  ---\n| Manchester City | 2 | 2 | 0 | 0 | +4 | 6 |\n| Arsenal | 2 | 2 | 0 | 0 | +4 | 6 |\n| Hull City | 2 | 2 | 0 | 0 | +3 | 6 |\n| Chelsea | 2 | 2 | 0 | 0 | +2 | 6 |\n| Brentford | 2 | 1 | 1 | 0 | +3 | 4 |\n| Newcastle United | 2 | 1 | 1 | 0 | +2 | 4 |\n| Everton | 2 | 1 | 1 | 0 | +2 | 4 |\n| Leeds United | 2 | 1 | 1 | 0 | +1 | 4 |\n| Brighton & Hove Albion | 2 | 1 | 0 | 1 | +3 | 3 |\n| Manchester United | 2 | 1 | 0 | 1 | +1 | 3 |\n| Sunderland | 2 | 1 | 0 | 1 | 0 | 3 |\n| Ipswich Town | 2 | 1 | 0 | 1 | -2 | 3 |\n| Liverpool | 2 | 0 | 2 | 0 | 0 | 2 | ...\n    URL: https://www.espn.com/soccer/match/_/gameId/401879288/liverpool-ipswich-town\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879288",
+                        "date_utc": "2026-09-04T19:00Z",
+                        "kickoff_et": "2026-09-04 15:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Ipswich Town",
+                        "away": "Liverpool",
+                        "home_id": "373",
+                        "away_id": "364",
+                        "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                        "venue": "Portman Road",
+                        "city": "Ipswich",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LWWWD",
+                        "form_away": "DDDLD",
+                        "record_home": "1-0-1",
+                        "record_away": "0-2-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+380",
+                            "home_current": "+425",
+                            "draw_open": "+340",
+                            "draw_current": "+370",
+                            "away_open": "-175",
+                            "away_current": "-185"
+                        },
+                        "odds_text": "DraftKings: Ipswich Town +425 (open +380); Draw +370 (open +340); Liverpool -185 (open -175)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-03T05:14:50.389313-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:07:11.360698-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool enter as clear favorites despite a sluggish start to the campaign (two draws). While Ipswich Town have shown resilience at home, Liverpool's squad quality and pressure to secure their first victory of the season make an away win the most likely outcome, consistent with the -185 market odds.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-03T05:07:35.111043-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.61,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Despite starting the season with two draws, Liverpool remain heavy favorites against Ipswich Town. Ipswich's recent 5-2 loss to Manchester United highlights their vulnerability against top-tier opposition, making an away win the most probable outcome based on odds and squad quality.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-03T05:07:54.064582-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Liverpool are the bookmakers' favorites, but their start to the season has been poor with two draws from two matches and they are dealing with a significant number of injuries. Ipswich Town, playing at home, have secured one win and one loss, showing they can compete at this level despite a recent heavy defeat to Manchester United. Given Liverpool's lackluster form and injury crisis, an upset or a draw is very possible, making confidence in a Liverpool victory low. However, their superior squad quality, even when depleted, still makes them the most likely, albeit uncertain, winners.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-03T05:08:06.530370-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool is favored by odds (-185) despite a challenging start to the season (0-2-0 record, 2 draws). They face a newly promoted Ipswich Town who have managed a win and a loss (1-0-1 record) and will have home advantage at Portman Road. Liverpool also has a substantial injury list, including key players, which could impact their performance and contribute to their early season struggles. While Liverpool is expected to secure the win given their overall squad quality, their current form and injuries make a draw a significant possibility.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:47.217322-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear odds-on favorites and retain the stronger overall squad despite a slow start and several injuries. Ipswich have home advantage and recent scoring form, but the market pricing and quality gap make a Liverpool regulation-time away win the most likely outcome, with a draw the main upset risk.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-03T05:08:56.907581-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear market favorites despite an uneven start with two draws, and their overall squad quality remains higher than Ipswich's. Ipswich have home advantage and recent attacking form, but defensive concerns were evident in the 5-2 loss at Manchester United. Liverpool also have several injuries, which raises draw and upset risk, but the odds and matchup still point most strongly toward an away win.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-03T05:09:22.368918-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices make Liverpool a clear favorite despite being winless early (0-2-0) and carrying multiple injuries; their overall squad quality and historical edge still point to an away win most often. Ipswich’s stronger recent form and home edge at Portman Road raise upset/draw chances, so the away-win probability is trimmed slightly versus the raw odds, with some lift to draw/home outcomes.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-03T05:09:28.304789-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Liverpool clear favorites despite their slow start, and Liverpool still possess higher overall quality. Ipswich have good home form and injuries to Liverpool (Gomez, Chiesa, Bradley, Ekitiké, others) weaken their depth, increasing draw potential. Ipswich’s strong recent results at Portman Road and Liverpool’s inconsistent early-season form reduce certainty. Balancing odds, team quality, injuries, and home advantage yields a moderate lean to an away win but with substantial draw upset risk.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-03T05:09:41.756225-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.181,
+                    "draw_probability": 0.202,
+                    "away_win_probability": 0.617,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Derived from bookmakers' three-way odds showing Liverpool as favorite; probabilities normalized to sum to 1. Ipswich Town carry home-field context but injuries and Liverpool's squad strength tilt result toward the away win for regulation 90 minutes.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-03T05:09:43.623297-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear favorites based on squad strength, historical head-to-head, and bookmaker odds. Ipswich Town have started the season with a win and a loss, showing some promise, but Liverpool's quality and depth, even with several injuries, should be decisive. Liverpool's away form is not strong (two draws), but their overall quality and attacking options outweigh Ipswich's home advantage. The draw is a reasonable possibility given Liverpool's recent results, but an away win is the most likely outcome.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-03T05:09:45.733185-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Liverpool's injury concerns and recent form, they are still a stronger team compared to Ipswich Town. The odds favor Liverpool significantly, and their historical performance against Ipswich suggests they are likely to win. Ipswich's recent home form is decent, but Liverpool's overall quality should prevail.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-03T05:09:55.281023-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.61,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds (Liverpool -185) imply roughly a 62% away win probability after removing the vig. Liverpool are unbeaten but have drawn both league games and carry several injuries (Ekitike, Gomez, Bradley, Jones), which tempers confidence. Ipswich are in decent form at Portman Road with wins over Sunderland and Leicester, but lost 5-2 at Manchester United and are missing key midfielders (Matusiwa, Taylor) plus Fatawu. Liverpool's superior squad quality makes them clear favorites, though the draw risk is elevated given their slow start.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-03T05:09:59.878959-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "Liverpool",
+                    "confidence": "low",
+                    "reasoning": "Liverpool are favored by the market (-185) and won the last meeting 4-1, reflecting a talent gap despite a slow start (0-2-0, all draws). Ipswich have decent home form but injuries to key players. Liverpool's superior squad depth tips this in their favor, though their inconsistent form makes it far from certain.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-03T05:10:06.635826-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.24,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favored by the odds (-185) despite a poor start to the season (0W-2D-0L). Ipswich have shown good home form with wins over Leicester and Sunderland but suffered a heavy 5-2 loss to Manchester United. Liverpool's quality and historical dominance (won 4-1 in the last meeting) suggest they are the stronger side. Both teams carry injury concerns. Liverpool's draws suggest they are not clinical enough yet, but their squad depth gives them the edge. The odds imply roughly 62% implied probability for Liverpool after margin removal, which I shade slightly downward given Ipswich's home form and Liverpool's inconsistency. Settling on ~50% away win probability.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-03T05:10:15.566721-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.22,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.52,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favorites despite their poor start to the season with 2 draws from 2 matches. Ipswich Town have 1 win and 1 loss (including a heavy 5-2 defeat to Manchester United). The betting odds strongly favor Liverpool at -185, suggesting approximately 65% implied probability for an away win. However, Liverpool have significant injury concerns with multiple players out (Gomez, Chiesa, Bradley, Ekitiké, Leoni, Jones) which could impact their performance. Ipswich also have injuries (Matusiwa, Taylor, Philogene) but fewer key absences. Liverpool won the last meeting 4-1, showing historical dominance. Given Liverpool's quality advantage but concerning form (0 wins in 2 matches) and injury issues, I'm projecting a moderate away win probability of 52%, with reasonable chances for a draw (26%) given Liverpool's two consecutive draws. Home win probability is lower at 22% but not negligible given Liverpool's struggles and Ipswich's home advantage at Portman Road.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-03T05:10:19.745943-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.47,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favorites despite poor recent form (0-2-0 record, 2 points from 2 matches). Ipswich have slightly better form (1-0-1, 3 points) but face a strong opponent. Liverpool's -185 odds indicate market confidence in an away win. However, Liverpool's inconsistency (DDDLD form) and significant injury concerns (5 players out including key defender Gomez and forward Ekitiké) create uncertainty. Ipswich's home advantage at Portman Road and recent positive form (LWWWD) provide support, though they lost 4-1 to Liverpool previously. The draw +370 odds suggest a realistic scenario given Liverpool's recent tendency to draw. Moderate confidence in Liverpool win based on historical dominance and market odds, but injuries and form warrant caution.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-03T05:11:10.144598-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.59,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are favored by the betting market and have stronger squad depth, but they have started the league with two draws and several injuries. Ipswich are at home and competitive, so an away win is likely but carries added draw risk.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-03T05:11:11.426924-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are the stronger side despite a slow start, and odds heavily favor them. Ipswich have injury concerns, while Liverpool's attacking quality should prevail.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-03T05:11:36.586407-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.61,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Liverpool's winless start to the season and multiple injury concerns, the betting market heavily favors them over an Ipswich Town side that has shown defensive vulnerabilities. Liverpool's superior squad depth and quality should allow them to break down Ipswich and secure all three points.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-03T05:11:42.354459-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool, despite their current form, have a stronger squad and historical performance against Ipswich Town. The recent draw against Nottingham Forest suggests they are capable of scoring, and the injury list for both teams is similar. However, Liverpool's experience and quality should give them an edge in this match.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-03T05:12:34.876377-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.62,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool are clear favorites per betting odds (-185) and possess superior squad depth despite several key injuries. Ipswich's home record looks solid on paper but includes a heavy 5-2 defeat to Manchester United, exposing defensive vulnerabilities. Liverpool's early season draws suggest minor inconsistency, but their attacking quality and Ipswich's recent high-scoring matches strongly point toward an away victory in regulation time.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-03T05:13:29.523743-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool is the clear favorite based on squad depth and historical dominance over Ipswich (4-1 last meeting), supported by betting odds near -185. However, Liverpool's defensive injuries (Gomez, Bradley) and early-season lack of form (two draws) introduce volatility, making a draw plausible despite the high away-win probability.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-03T05:14:12.203730-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool possess significantly greater squad depth and quality, and the last meeting ended in a 4-1 Liverpool victory. Although Liverpool have started the season with two draws, the betting markets price them as heavy favorites (~64% implied probability) due to Ipswich's heavier 5-2 defeat to Manchester United and injury absences to key midfielders. Ipswich have shown some home attacking threat, but Liverpool's overall talent advantage should prevail in regulation time.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-03T05:14:36.460813-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.19,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.58,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool remain clear market favorites (-185, implying roughly 62% after margin removal) despite a slow start with two draws (DDDLD form, 0-2-0 record). Their squad depth and quality still far exceed Ipswich's, and the last head-to-head ended 4-1 to Liverpool. However, Liverpool's significant injury list (Ekitiké, Chiesa, Gomez, Bradley, Jones, Leoni) and draw-heavy form temper expectations and elevate the draw probability above the market's implied ~20%. Ipswich have decent home form (wins over Leicester and Sunderland at Portman Road) but are missing key players (Matusiwa, Taylor, Philogene, Fatawu) and were thrashed 5-2 by Manchester United. A Liverpool win is most likely, but the winless start and injuries keep confidence at medium.",
+                    "event_id": "401879288"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-03T05:14:50.386264-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Liverpool remain strong favorites despite a slow start and injuries, while Ipswich's home form is decent but they were beaten heavily in the last meeting. Odds price Liverpool around 55% to win, and their superior squad depth should edge a likely low-scoring affair.",
+                    "event_id": "401879288"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1888 @@
+{
+    "meta_info": {
+        "competition": "Premier League 2026-2027",
+        "competition_key": "premier_league",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-21",
+        "target_date_et": "2026-08-22",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast English Premier League 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879322\nMatchup: Manchester United (away) @ Hull City (home)\nHome: Hull City\nAway: Manchester United\nKickoff UTC: 2026-08-22T11:30Z\nKickoff ET: 2026-08-22 07:30 EDT\nVenue: The MKM Stadium\nRound: unavailable\nHome form: WWDWL\nAway form: WWDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Hull City +700 (open +550); Draw +400 (open +360); Manchester United -260 (open -235)\nTavily context:\n  - Title: Hull City vs Manchester United - prediction, team news, lineups\n    Content: Eliot Matazo, Darko Gyabi, Jack Butland, Oscar Zambrano, Charlie Hughes, Joe Gelhardt and Hidemasa Morita are all out of the match through injury.\n\nMeanwhile, Cody Drameh and Matty Jacob face late fitness tests.\n\nAs for Man United, Matthijs de Ligt and Manuel Ugarte are both out, while Mason Mount and Karl Darlow face late fitness tests for the 20-time English champions. ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/top-four-race/preview/hull-city-vs-man-utd-prediction-team-news-lineups_603353.html\n  - Title: Hull-Manchester United - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jack Butland |  | Out | N/A |\n| Charlie Hughes |  | Out | N/A |\n| Óscar Zambrano |  | Out | N/A |\n| Darko Gyabi |  | Out | N/A |\n| Eliot Matazo |  | Out | N/A |\n| Matty Jacob |  | Out | N/A |\n| Joe Gelhardt |  | Out | N/A |\n| Cody Drameh |  | Doubtful | N/A |\n| Hidemasa Morita |  | Doubtful | N/A | ...\n    URL: https://www.whoscored.com/matches/1983548/preview/england-premier-league-2026-2027-hull-manchester-united\n  - Title: Hull City vs Manchester United Betting Pick | English Premier | 2026-08-22 |\n    Content: Hull City vs Manchester United Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Handicap BETS |  | HUL | H/C | MUN |  | BET365 |  | 2.05 | + 1.25 | 1.75 | | CLOUDBET | | 2.03 | + 1.25 | 1.84 |  | Fixed Odds BETS |  | HUL | DRAW | MUN |  | BET365 |  | 8.50 | 5.00 | 1.36 | | BETFRED | | 9.00 | 5.00 | 1.33 | | CLOUDBET | | 8.30 | 4.85 | 1.38 | | SPORTBET | | 8.02 | 4.73 | 1.34 |  | Click the bookmaker name to visit the betting site ...\n    URL: https://www.goonersguide.com/football-pick-59780-Hull-City-vs-Manchester-United.htm\n  - Title: Manchester United Betting Odds: 2026-2027 Season - 7bet\n    Content: In matchweek 1 of 38, Manchester United will face Hull City away from home. The match will take place on 22 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Hull City | Draw | Manchester United |\n| 17/3 | 3/1 | 3/7 |\n\nPREMIER LEAGUE BETTING\n\n## Matchday 2 – Manchester United vs Ipswich Town (30 August 2026)\n\nWithin matchweek 2 of 38, Manchester United will face Ipswich Town at home. The match will take place on 30 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Manchester United | Draw | Ipswich |\n| – | – | – | ...\n    URL: https://7bet.co.uk/blog/manchester-united-odds\n\nGame ID: 2\nSource event_id: 401879300\nMatchup: Crystal Palace (away) @ Everton (home)\nHome: Everton\nAway: Crystal Palace\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: Hill Dickinson Stadium\nRound: unavailable\nHome form: LLDDL\nAway form: WLDLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Everton +120 (open +100); Draw +240 (open +250); Crystal Palace +235 (open +255)\nTavily context:\n  - Title: Everton-Crystal Palace - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Tim Iroegbunam |  | Out | N/A |\n| James Garner |  | Doubtful | N/A |\n| Christian Nørgaard |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 8 | C. Palace | 0 | 0 | 0 | 0 |\n| 9 | Everton | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\nfree soccer tips telegram @Diskistats last 6 plus odds won wafa wafa\n    URL: https://www.whoscored.com/matches/1983549/preview/england-premier-league-2026-2027-everton-crystal-palace\n  - Title: Everton vs Crystal Palace Premier League preview: Everything you need to know\n    Content: Crystal Palace\n\nCRY\n\n### Manager\n\n D. Moyes\n\nDavid Moyes is without James Garner and Tim Iroegbunam through injury as Everton prepare for the opening fixture. No suspensions are currently recorded for the home side, and a projected starting XI has not yet been confirmed. Updates to the squad will be added closer to kick-off.\n\nPierre Sage reports a clean bill of health for Crystal Palace, with no injuries or suspensions listed in the away camp. The Eagles have options across the squad following their summer recruitment, though a confirmed lineup has not been released at this stage.\n\n### Form ...\n    URL: https://www.goal.com/en/news/everton-crystal-palace-premier-league-preview/bltb73d4fb734c12f69\n  - Title: Everton vs Crystal Palace Betting Pick | English Premier | 2026-08-22 |\n    Content: #### Fixed Odds BETS\n\n##### EVE\n\n##### DRAW\n\n##### CRY\n\n| BET365 | | |\n ---\n| 2.15 | 3.40 | 3.40 |\n| BETFRED | | |\n| 2.15 | 3.50 | 3.30 |\n| CLOUDBET | | |\n| 2.18 | 3.40 | 3.35 |\n| SPORTBET | | |\n| 2.12 | 3.41 | 3.24 |\n\n| Click the bookmaker name to visit the betting site | | |\n ---\n\n### READER FEEDBACK\n\nThis preview has been read 73 times. ...\n    URL: https://www.goonersguide.com/football-pick-59781-Everton-vs-Crystal-Palace.htm\n  - Title: Prediction Everton vs Crystal Palace: analysis, odds and betting tips\n    Content: The odds are: Everton to win 2.15, draw 3.50, Crystal Palace to win 3.30. The odds are Over 2.5 at 1.90 and Under 2.5 at 1.90. odds for both\n    URL: https://betmines.com/match-preview/everton-vs-crystal-palace-prediction-match-preview-and-analysis-premier-league-22-08-2026\n\nGame ID: 3\nSource event_id: 401879299\nMatchup: Sunderland (away) @ Ipswich Town (home)\nHome: Ipswich Town\nAway: Sunderland\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: Portman Road\nRound: unavailable\nHome form: WDDWD\nAway form: WWDDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Ipswich Town +175 (open +170); Draw +230 (open +220); Sunderland +165 (open +160)\nTavily context:\n  - Title: Preview: Ipswich Town vs Sunderland - prediction, team news, lineups\n    Content: As for Sunderland, Le Bris has confirmed that Nordi Mukiele, Omar Alderete and Meunier have all recovered from minor injuries and are available for selection, with Simon Adingra (ankle) the club’s only absentee.\n\nTrai Hume featured regularLY as a right-winger in pre-season and could remain in the same attacking role this weekend, with Nilson Angulo, Chemsdine Talbi and Romain Mundle all battling for starts on the opposite flank. ...\n    URL: https://www.sportsmole.co.uk/football/ipswich-town/preview/ipswich-vs-sunderland-prediction-team-news-lineups_603322.html\n  - Title: Ipswich Town vs Sunderland: Comprehensive Premier ...\n    Content: Brian BrobbeySunderland\n\n## Team news & squads\n\n## Ipswich Town vs Sunderland Probable lineups\n\nIpswich Town crest\n\nIpswich Town\n\nIPS\n\nFormation\n\nSunderland crest\n\nSunderland\n\nSUN\n\nSunderland crest\n\nSunderland\n\nSUN\n\n### Manager\n\n G. O'Neil\n\nGary O'Neil is without Azor Matusiwa and Jack Taylor through injury as Ipswich prepare for the Premier League opener. No suspensions are currently recorded, and no confirmed probable lineup has been released ahead of the fixture. Updates will be added closer to kick-off. ...\n    URL: https://www.goal.com/en/news/ipswich-town-sunderland-premier-league-preview/blt2859b8b04a2bb2bd\n  - Title: Ipswich vs Sunderland Premier League predictions & tips\n    Content: Ipswich and Sunderland are predicted to draw with under 2.5 goals in the match. Date: Saturday, August 22, 2026 ・ which is coming in at 40/1.\n    URL: https://www.ladbrokes.com/en/news/ipswich-sunderland-premier-league-predictions-tips-2026-08-22\n  - Title: Ipswich Town vs Sunderland Prediction and Betting Tips | August 22nd 2026\n    Content: However, whether the Tractor Boys are ready for life in the top flight this time is still debatable. Sunderland, on the other hand, have a settled team and a well-oiled system under Regis Le Bris.\n\nWhether the Black Cats can enjoy such an excellent season again is hard to say, but we expect them to pick up an opening day win here.\n\nPrediction: Ipswich Town 0-2 Sunderland\n\n## Ipswich Town vs Sunderland Betting Tips\n\nTip 1: Result - Sunderland to win.\n\nTip 2: Sunderland to keep a clean sheet - Yes (Sunderland had an excellent defensive record last season with only 48 goals conceded). ...\n    URL: https://www.sportskeeda.com/football/ipswich-town-vs-sunderland-prediction-betting-tips-august-22nd-2026\n\nGame ID: 4\nSource event_id: 401879298\nMatchup: Leeds United (away) @ Nottingham Forest (home)\nHome: Nottingham Forest\nAway: Leeds United\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: The City Ground\nRound: unavailable\nHome form: DLDLW\nAway form: LWDWL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Nottingham Forest +130 (open +120); Draw +240 (open +245); Leeds United +215 (open +210)\nTavily context:\n  - Title: Nottingham Forest vs Leeds United - prediction, team news ...\n    Content: Leeds travel to the City Ground this weekend having lost only two of their final 12 Premier League away matches (albeit winning just one and drawing the remaining nine). However, only relegated duo Wolves (six) and Burnley (nine) collected fewer points on the road last season than the Whites (15).\n\nNottingham Forest pre-season form:\n\n W\n W\n L\n L\n L\n W\n\nLeeds United pre-season form:\n\n W\n D\n W\n W\n W\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Faaa-diomande-6a871fec4a4bf108581631.jpg)\n\n© Iconsport / PA Images ...\n    URL: https://www.sportsmole.co.uk/football/nottingham-forest/preview/nottm-forest-vs-leeds-prediction-team-news-lineups_603316.html\n  - Title: Nottingham Forest-Leeds - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nicolò Savona |  | Out | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Wilfried Gnonto |  | Out | N/A |\n| Gabriel Gudmundsson |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 13 | Leeds | 0 | 0 | 0 | 0 |\n| 18 | N. Forest | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (8) ...\n    URL: https://www.whoscored.com/matches/1983552/preview/england-premier-league-2026-2027-nottingham-forest-leeds\n  - Title: Nottingham Forest vs Leeds Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Stake Logo\n\nDraw No Bet\n\n1\n\n1.60\n\n2\n\n2.15\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.25\n\n1.95\n\n2 Hcp +0.25\n\n1.84\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n1.79\n\nOver 2.5\n\n2.00\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.74\n\nNo\n\n2.00\n\n Stake Logo\n\nChris Wood Favourite to Score the First Goal\n\nChris Wood is priced at 5.30 when it comes to First Goalscorer which makes him the favourite, while he’s also available at odds of 2.70 to find the net anytime.\n\nPlayer Goals\n\nChris Wood (Forest)\n\nFirst\n\n5.30\n\nAnytime\n\n2.70\n\n Stake Logo\n\nDominic Calvert-Lewin (Leeds)\n\nFirst\n\n5.80\n\nAnytime\n\n3.00\n\n Stake Logo ...\n    URL: https://www.sportsgambler.com/betting-tips/football/nottingham-forest-vs-leeds-prediction-lineups-odds-2026-08-22\n  - Title: Nottingham Forest vs Leeds prediction – Odds & stats – 22 August 2026\n    Content: -2.5\nProbability: 55.72%\n\nBet365\nBet365\n\n| Nottingham Forest |  | Leeds |\n ---\n| Nottingham Forest | stat | Leeds |\n| 2.5 | Average goals per game | 3.33 |\n| 1.17 | Average goal scored | 2.33 |\n| 1.33 | Goals conceded per match | 1 |\n| 50 % | Matches with -2.5 goals | 50 % |\n| 50 % | Matches with +2.5 goals | 50 % |\n| 2.33 | Average goals home team 1/away team 2 | 2.83 |\n| 1.67 | Avg. goals home team 1/away team 2 | 2.17 |\n| 0.67 | Avg. goals conceded home team 1/away team 2 | 0.67 |\nStats based on the last 6 matches\n\nNottingham Forest\nLeeds\n\n## Nottingham Forest vs Leeds BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/nottingham-forest-leeds-8559205\n\nGame ID: 5\nSource event_id: 401879321\nMatchup: Tottenham Hotspur (away) @ Brentford (home)\nHome: Brentford\nAway: Tottenham Hotspur\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: Gtech Community Stadium\nRound: unavailable\nHome form: DDLWL\nAway form: WLDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Brentford +145 (open +155); Draw +260 (open +250); Tottenham Hotspur +175 (open +155)\nTavily context:\n  - Title: Brentford vs Tottenham Hotspur prediction: teams form analysis, possible lineups on August 22, 2026 – Ratingbet.com\n    Content: ## Brentford vs Tottenham Hotspur: Key Statistics and Trends\n\n Brentford have won two in a row\n Tottenham Hotspur are unbeaten in their last eight matches\n\n## Brentford vs Tottenham Hotspur: Probable Starting Lineups\n\nBrentford are expected to play in a 1-4-2-3-1 formation (probable lineup): Kelleher - Collins, van den Berg, Lewis-Potter, Kayode - Janelt, Yarmolyuk - Schade, Jensen, Ouattara - Igor Thiago. Frederick is definitely out, van den Berg is doubtful. ...\n    URL: https://ratingbet.com/predictions/brentford-vs-tottenham-hotspur-prediction-teams-form-analysis-possible-lineups-on-august-22-2026\n  - Title: Brentford vs Tottenham - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brentford vs Tottenham Hotspur — Sat, August 22, 4:30 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n Gtech Community Stadium\n Michael Oliver\n\nBrentfordBrentford\n\n‌\n‌\n\nTottenhamTottenham Hotspur\n\n# Brentford vs Tottenham Hotspur — Sat, August 22, 4:30 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n Gtech Community Stadium\n Michael Oliver\n\nBrentfordBrentford\n\n‌\n‌\n\nTottenhamTottenham Hotspur\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sepp van den Berg\n\n  Knock / Mid October 2026\n\nvan den BergKnockMid October 2026\n\n  Benjamin Fredrick ...\n    URL: https://www.fotmob.com/matches/tottenham-vs-brentford/2u5c8b\n  - Title: Brentford FC – Tottenham Hotspur prediction 22.08.2026\n    Content: Below are the best available odds for the common markets:\n\n| Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 2.56 | 1win |\n| Draw | 3.71 | 1win |\n| Away Win | 2.82 | 1win |\n| Both Teams to Score - Yes | 1.55 | Paripesa |\n| Both Teams to Score - No | 2.37 | 1win |\n| Correct Score | 1:1   @ 7.00 | 1win | ...\n    URL: https://www.transfermarkt.com/betting/tips/brentford-fc-vs-tottenham-hotspur-prediction-22-08-2026\n  - Title: Brentford FC - Tottenham Hotspur betting tip & best odds | 22.08.2026\n    Content: ## Best Betting Odds for Brentford FC vs Tottenham Hotspur\n\nFor those interested in placing football bets today, the betting odds for this match offer intriguing possibilities. The best odds for a home win are 2.53 at 1win, while the odds for both teams to score are 1.57 at Easybet. These odds reflect the competitive nature of both teams, with Brentford's recent performances suggesting they can hold their own against a traditionally strong Tottenham side. ...\n    URL: https://www.futbol24.com/betting-tips/preview/22-08-2026-brentford-fc-tottenham-hotspur-betting-tip\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Premier League 2026-2027 forecast\n\nForecast Date (ET): 2026-08-21\n\nTarget Date (ET): 2026-08-22\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401879322\nMatchup: Manchester United (away) @ Hull City (home)\nHome: Hull City\nAway: Manchester United\nKickoff UTC: 2026-08-22T11:30Z\nKickoff ET: 2026-08-22 07:30 EDT\nVenue: The MKM Stadium\nRound: unavailable\nHome form: WWDWL\nAway form: WWDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: DraftKings: Hull City +700 (open +550); Draw +400 (open +360); Manchester United -260 (open -235)\nTavily context:\n  - Title: Hull City vs Manchester United - prediction, team news, lineups\n    Content: Eliot Matazo, Darko Gyabi, Jack Butland, Oscar Zambrano, Charlie Hughes, Joe Gelhardt and Hidemasa Morita are all out of the match through injury.\n\nMeanwhile, Cody Drameh and Matty Jacob face late fitness tests.\n\nAs for Man United, Matthijs de Ligt and Manuel Ugarte are both out, while Mason Mount and Karl Darlow face late fitness tests for the 20-time English champions. ...\n    URL: https://www.sportsmole.co.uk/football/man-utd/top-four-race/preview/hull-city-vs-man-utd-prediction-team-news-lineups_603353.html\n  - Title: Hull-Manchester United - Premier League 2026/2027 ...\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Jack Butland |  | Out | N/A |\n| Charlie Hughes |  | Out | N/A |\n| Óscar Zambrano |  | Out | N/A |\n| Darko Gyabi |  | Out | N/A |\n| Eliot Matazo |  | Out | N/A |\n| Matty Jacob |  | Out | N/A |\n| Joe Gelhardt |  | Out | N/A |\n| Cody Drameh |  | Doubtful | N/A |\n| Hidemasa Morita |  | Doubtful | N/A | ...\n    URL: https://www.whoscored.com/matches/1983548/preview/england-premier-league-2026-2027-hull-manchester-united\n  - Title: Hull City vs Manchester United Betting Pick | English Premier | 2026-08-22 |\n    Content: Hull City vs Manchester United Betting Odds guide\n\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- |\n| | Handicap BETS |  | HUL | H/C | MUN |  | BET365 |  | 2.05 | + 1.25 | 1.75 | | CLOUDBET | | 2.03 | + 1.25 | 1.84 |  | Fixed Odds BETS |  | HUL | DRAW | MUN |  | BET365 |  | 8.50 | 5.00 | 1.36 | | BETFRED | | 9.00 | 5.00 | 1.33 | | CLOUDBET | | 8.30 | 4.85 | 1.38 | | SPORTBET | | 8.02 | 4.73 | 1.34 |  | Click the bookmaker name to visit the betting site ...\n    URL: https://www.goonersguide.com/football-pick-59780-Hull-City-vs-Manchester-United.htm\n  - Title: Manchester United Betting Odds: 2026-2027 Season - 7bet\n    Content: In matchweek 1 of 38, Manchester United will face Hull City away from home. The match will take place on 22 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Hull City | Draw | Manchester United |\n| 17/3 | 3/1 | 3/7 |\n\nPREMIER LEAGUE BETTING\n\n## Matchday 2 – Manchester United vs Ipswich Town (30 August 2026)\n\nWithin matchweek 2 of 38, Manchester United will face Ipswich Town at home. The match will take place on 30 August. The current odds on the 1X2 market are as follows:\n\n|  |  |  |\n ---\n| Manchester United | Draw | Ipswich |\n| – | – | – | ...\n    URL: https://7bet.co.uk/blog/manchester-united-odds\n\nGame ID: 2\nSource event_id: 401879300\nMatchup: Crystal Palace (away) @ Everton (home)\nHome: Everton\nAway: Crystal Palace\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: Hill Dickinson Stadium\nRound: unavailable\nHome form: LLDDL\nAway form: WLDLD\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Everton +120 (open +100); Draw +240 (open +250); Crystal Palace +235 (open +255)\nTavily context:\n  - Title: Everton-Crystal Palace - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Tim Iroegbunam |  | Out | N/A |\n| James Garner |  | Doubtful | N/A |\n| Christian Nørgaard |  | Doubtful | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 8 | C. Palace | 0 | 0 | 0 | 0 |\n| 9 | Everton | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (0)\n\nfree soccer tips telegram @Diskistats last 6 plus odds won wafa wafa\n    URL: https://www.whoscored.com/matches/1983549/preview/england-premier-league-2026-2027-everton-crystal-palace\n  - Title: Everton vs Crystal Palace Premier League preview: Everything you need to know\n    Content: Crystal Palace\n\nCRY\n\n### Manager\n\n D. Moyes\n\nDavid Moyes is without James Garner and Tim Iroegbunam through injury as Everton prepare for the opening fixture. No suspensions are currently recorded for the home side, and a projected starting XI has not yet been confirmed. Updates to the squad will be added closer to kick-off.\n\nPierre Sage reports a clean bill of health for Crystal Palace, with no injuries or suspensions listed in the away camp. The Eagles have options across the squad following their summer recruitment, though a confirmed lineup has not been released at this stage.\n\n### Form ...\n    URL: https://www.goal.com/en/news/everton-crystal-palace-premier-league-preview/bltb73d4fb734c12f69\n  - Title: Everton vs Crystal Palace Betting Pick | English Premier | 2026-08-22 |\n    Content: #### Fixed Odds BETS\n\n##### EVE\n\n##### DRAW\n\n##### CRY\n\n| BET365 | | |\n ---\n| 2.15 | 3.40 | 3.40 |\n| BETFRED | | |\n| 2.15 | 3.50 | 3.30 |\n| CLOUDBET | | |\n| 2.18 | 3.40 | 3.35 |\n| SPORTBET | | |\n| 2.12 | 3.41 | 3.24 |\n\n| Click the bookmaker name to visit the betting site | | |\n ---\n\n### READER FEEDBACK\n\nThis preview has been read 73 times. ...\n    URL: https://www.goonersguide.com/football-pick-59781-Everton-vs-Crystal-Palace.htm\n  - Title: Prediction Everton vs Crystal Palace: analysis, odds and betting tips\n    Content: The odds are: Everton to win 2.15, draw 3.50, Crystal Palace to win 3.30. The odds are Over 2.5 at 1.90 and Under 2.5 at 1.90. odds for both\n    URL: https://betmines.com/match-preview/everton-vs-crystal-palace-prediction-match-preview-and-analysis-premier-league-22-08-2026\n\nGame ID: 3\nSource event_id: 401879299\nMatchup: Sunderland (away) @ Ipswich Town (home)\nHome: Ipswich Town\nAway: Sunderland\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: Portman Road\nRound: unavailable\nHome form: WDDWD\nAway form: WWDDL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Ipswich Town +175 (open +170); Draw +230 (open +220); Sunderland +165 (open +160)\nTavily context:\n  - Title: Preview: Ipswich Town vs Sunderland - prediction, team news, lineups\n    Content: As for Sunderland, Le Bris has confirmed that Nordi Mukiele, Omar Alderete and Meunier have all recovered from minor injuries and are available for selection, with Simon Adingra (ankle) the club’s only absentee.\n\nTrai Hume featured regularLY as a right-winger in pre-season and could remain in the same attacking role this weekend, with Nilson Angulo, Chemsdine Talbi and Romain Mundle all battling for starts on the opposite flank. ...\n    URL: https://www.sportsmole.co.uk/football/ipswich-town/preview/ipswich-vs-sunderland-prediction-team-news-lineups_603322.html\n  - Title: Ipswich Town vs Sunderland: Comprehensive Premier ...\n    Content: Brian BrobbeySunderland\n\n## Team news & squads\n\n## Ipswich Town vs Sunderland Probable lineups\n\nIpswich Town crest\n\nIpswich Town\n\nIPS\n\nFormation\n\nSunderland crest\n\nSunderland\n\nSUN\n\nSunderland crest\n\nSunderland\n\nSUN\n\n### Manager\n\n G. O'Neil\n\nGary O'Neil is without Azor Matusiwa and Jack Taylor through injury as Ipswich prepare for the Premier League opener. No suspensions are currently recorded, and no confirmed probable lineup has been released ahead of the fixture. Updates will be added closer to kick-off. ...\n    URL: https://www.goal.com/en/news/ipswich-town-sunderland-premier-league-preview/blt2859b8b04a2bb2bd\n  - Title: Ipswich vs Sunderland Premier League predictions & tips\n    Content: Ipswich and Sunderland are predicted to draw with under 2.5 goals in the match. Date: Saturday, August 22, 2026 ・ which is coming in at 40/1.\n    URL: https://www.ladbrokes.com/en/news/ipswich-sunderland-premier-league-predictions-tips-2026-08-22\n  - Title: Ipswich Town vs Sunderland Prediction and Betting Tips | August 22nd 2026\n    Content: However, whether the Tractor Boys are ready for life in the top flight this time is still debatable. Sunderland, on the other hand, have a settled team and a well-oiled system under Regis Le Bris.\n\nWhether the Black Cats can enjoy such an excellent season again is hard to say, but we expect them to pick up an opening day win here.\n\nPrediction: Ipswich Town 0-2 Sunderland\n\n## Ipswich Town vs Sunderland Betting Tips\n\nTip 1: Result - Sunderland to win.\n\nTip 2: Sunderland to keep a clean sheet - Yes (Sunderland had an excellent defensive record last season with only 48 goals conceded). ...\n    URL: https://www.sportskeeda.com/football/ipswich-town-vs-sunderland-prediction-betting-tips-august-22nd-2026\n\nGame ID: 4\nSource event_id: 401879298\nMatchup: Leeds United (away) @ Nottingham Forest (home)\nHome: Nottingham Forest\nAway: Leeds United\nKickoff UTC: 2026-08-22T14:00Z\nKickoff ET: 2026-08-22 10:00 EDT\nVenue: The City Ground\nRound: unavailable\nHome form: DLDLW\nAway form: LWDWL\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Nottingham Forest +130 (open +120); Draw +240 (open +245); Leeds United +215 (open +210)\nTavily context:\n  - Title: Nottingham Forest vs Leeds United - prediction, team news ...\n    Content: Leeds travel to the City Ground this weekend having lost only two of their final 12 Premier League away matches (albeit winning just one and drawing the remaining nine). However, only relegated duo Wolves (six) and Burnley (nine) collected fewer points on the road last season than the Whites (15).\n\nNottingham Forest pre-season form:\n\n W\n W\n L\n L\n L\n W\n\nLeeds United pre-season form:\n\n W\n D\n W\n W\n W\n L\n\n## Team News\n\n/https%3A%2F%2Fsportsmole-media-prod.s3.gra.io.cloud.ovh.net%2Fuploads%2F2026%2F08%2Faaa-diomande-6a871fec4a4bf108581631.jpg)\n\n© Iconsport / PA Images ...\n    URL: https://www.sportsmole.co.uk/football/nottingham-forest/preview/nottm-forest-vs-leeds-prediction-team-news-lineups_603316.html\n  - Title: Nottingham Forest-Leeds - Premier League 2026/2027 Statistical Preview\n    Content: ws_logo\nws_mobile_logo\nsearch\nwsplus-logo\n\nnav-search-icon\nhamburger-menu-icon\nws+_logo\n\nchevron-down\n\n## Predicted Lineups\n\n## Missing Players\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Nicolò Savona |  | Out | N/A |\n\n| Player | Reason | Status | Rating |\n ---  --- |\n| Wilfried Gnonto |  | Out | N/A |\n| Gabriel Gudmundsson |  | Out | N/A |\n\n## Team News\n\n### Head to Head Stats\n\n| R | Team | W | D | L | Pts |\n ---  ---  --- |\n| 13 | Leeds | 0 | 0 | 0 | 0 |\n| 18 | N. Forest | 0 | 0 | 0 | 0 |\n\n## Prediction\n\n## User Predictions\n\n## Comments (8) ...\n    URL: https://www.whoscored.com/matches/1983552/preview/england-premier-league-2026-2027-nottingham-forest-leeds\n  - Title: Nottingham Forest vs Leeds Prediction, Betting Tips, Lineups & Odds | 22 Aug 2026\n    Content: Stake Logo\n\nDraw No Bet\n\n1\n\n1.60\n\n2\n\n2.15\n\n Stake Logo\n\nAsian Handicap\n\n1 Hcp -0.25\n\n1.95\n\n2 Hcp +0.25\n\n1.84\n\n Stake Logo\n\nTotal Goals\n\nUnder 2.5\n\n1.79\n\nOver 2.5\n\n2.00\n\n Stake Logo\n\nBoth Teams to Score\n\nYes\n\n1.74\n\nNo\n\n2.00\n\n Stake Logo\n\nChris Wood Favourite to Score the First Goal\n\nChris Wood is priced at 5.30 when it comes to First Goalscorer which makes him the favourite, while he’s also available at odds of 2.70 to find the net anytime.\n\nPlayer Goals\n\nChris Wood (Forest)\n\nFirst\n\n5.30\n\nAnytime\n\n2.70\n\n Stake Logo\n\nDominic Calvert-Lewin (Leeds)\n\nFirst\n\n5.80\n\nAnytime\n\n3.00\n\n Stake Logo ...\n    URL: https://www.sportsgambler.com/betting-tips/football/nottingham-forest-vs-leeds-prediction-lineups-odds-2026-08-22\n  - Title: Nottingham Forest vs Leeds prediction – Odds & stats – 22 August 2026\n    Content: -2.5\nProbability: 55.72%\n\nBet365\nBet365\n\n| Nottingham Forest |  | Leeds |\n ---\n| Nottingham Forest | stat | Leeds |\n| 2.5 | Average goals per game | 3.33 |\n| 1.17 | Average goal scored | 2.33 |\n| 1.33 | Goals conceded per match | 1 |\n| 50 % | Matches with -2.5 goals | 50 % |\n| 50 % | Matches with +2.5 goals | 50 % |\n| 2.33 | Average goals home team 1/away team 2 | 2.83 |\n| 1.67 | Avg. goals home team 1/away team 2 | 2.17 |\n| 0.67 | Avg. goals conceded home team 1/away team 2 | 0.67 |\nStats based on the last 6 matches\n\nNottingham Forest\nLeeds\n\n## Nottingham Forest vs Leeds BTTS tips ...\n    URL: https://www.wincomparator.com/predictions/nottingham-forest-leeds-8559205\n\nGame ID: 5\nSource event_id: 401879321\nMatchup: Tottenham Hotspur (away) @ Brentford (home)\nHome: Brentford\nAway: Tottenham Hotspur\nKickoff UTC: 2026-08-22T16:30Z\nKickoff ET: 2026-08-22 12:30 EDT\nVenue: Gtech Community Stadium\nRound: unavailable\nHome form: DDLWL\nAway form: WLDWW\nHome record: 0-0-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Brentford +145 (open +155); Draw +260 (open +250); Tottenham Hotspur +175 (open +155)\nTavily context:\n  - Title: Brentford vs Tottenham Hotspur prediction: teams form analysis, possible lineups on August 22, 2026 – Ratingbet.com\n    Content: ## Brentford vs Tottenham Hotspur: Key Statistics and Trends\n\n Brentford have won two in a row\n Tottenham Hotspur are unbeaten in their last eight matches\n\n## Brentford vs Tottenham Hotspur: Probable Starting Lineups\n\nBrentford are expected to play in a 1-4-2-3-1 formation (probable lineup): Kelleher - Collins, van den Berg, Lewis-Potter, Kayode - Janelt, Yarmolyuk - Schade, Jensen, Ouattara - Igor Thiago. Frederick is definitely out, van den Berg is doubtful. ...\n    URL: https://ratingbet.com/predictions/brentford-vs-tottenham-hotspur-prediction-teams-form-analysis-possible-lineups-on-august-22-2026\n  - Title: Brentford vs Tottenham - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Brentford vs Tottenham Hotspur — Sat, August 22, 4:30 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n Gtech Community Stadium\n Michael Oliver\n\nBrentfordBrentford\n\n‌\n‌\n\nTottenhamTottenham Hotspur\n\n# Brentford vs Tottenham Hotspur — Sat, August 22, 4:30 PM UTC\n\nPremier League Round 1\n\n Premier League Round 1\n Gtech Community Stadium\n Michael Oliver\n\nBrentfordBrentford\n\n‌\n‌\n\nTottenhamTottenham Hotspur\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Sepp van den Berg\n\n  Knock / Mid October 2026\n\nvan den BergKnockMid October 2026\n\n  Benjamin Fredrick ...\n    URL: https://www.fotmob.com/matches/tottenham-vs-brentford/2u5c8b\n  - Title: Brentford FC – Tottenham Hotspur prediction 22.08.2026\n    Content: Below are the best available odds for the common markets:\n\n| Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 2.56 | 1win |\n| Draw | 3.71 | 1win |\n| Away Win | 2.82 | 1win |\n| Both Teams to Score - Yes | 1.55 | Paripesa |\n| Both Teams to Score - No | 2.37 | 1win |\n| Correct Score | 1:1   @ 7.00 | 1win | ...\n    URL: https://www.transfermarkt.com/betting/tips/brentford-fc-vs-tottenham-hotspur-prediction-22-08-2026\n  - Title: Brentford FC - Tottenham Hotspur betting tip & best odds | 22.08.2026\n    Content: ## Best Betting Odds for Brentford FC vs Tottenham Hotspur\n\nFor those interested in placing football bets today, the betting odds for this match offer intriguing possibilities. The best odds for a home win are 2.53 at 1win, while the odds for both teams to score are 1.57 at Easybet. These odds reflect the competitive nature of both teams, with Brentford's recent performances suggesting they can hold their own against a traditionally strong Tottenham side. ...\n    URL: https://www.futbol24.com/betting-tips/preview/22-08-2026-brentford-fc-tottenham-hotspur-betting-tip\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401879322",
+                        "date_utc": "2026-08-22T11:30Z",
+                        "kickoff_et": "2026-08-22 07:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Hull City",
+                        "away": "Manchester United",
+                        "home_id": "306",
+                        "away_id": "360",
+                        "matchup": "Manchester United (away) @ Hull City (home)",
+                        "venue": "The MKM Stadium",
+                        "city": "Hull",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WWDWL",
+                        "form_away": "WWDWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+550",
+                            "home_current": "+700",
+                            "draw_open": "+360",
+                            "draw_current": "+400",
+                            "away_open": "-235",
+                            "away_current": "-260"
+                        },
+                        "odds_text": "DraftKings: Hull City +700 (open +550); Draw +400 (open +360); Manchester United -260 (open -235)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401879300",
+                        "date_utc": "2026-08-22T14:00Z",
+                        "kickoff_et": "2026-08-22 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Everton",
+                        "away": "Crystal Palace",
+                        "home_id": "368",
+                        "away_id": "384",
+                        "matchup": "Crystal Palace (away) @ Everton (home)",
+                        "venue": "Hill Dickinson Stadium",
+                        "city": "Liverpool",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "LLDDL",
+                        "form_away": "WLDLD",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+100",
+                            "home_current": "+120",
+                            "draw_open": "+250",
+                            "draw_current": "+240",
+                            "away_open": "+255",
+                            "away_current": "+235"
+                        },
+                        "odds_text": "Provider unavailable: Everton +120 (open +100); Draw +240 (open +250); Crystal Palace +235 (open +255)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401879299",
+                        "date_utc": "2026-08-22T14:00Z",
+                        "kickoff_et": "2026-08-22 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Ipswich Town",
+                        "away": "Sunderland",
+                        "home_id": "373",
+                        "away_id": "366",
+                        "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                        "venue": "Portman Road",
+                        "city": "Ipswich",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "WDDWD",
+                        "form_away": "WWDDL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+170",
+                            "home_current": "+175",
+                            "draw_open": "+220",
+                            "draw_current": "+230",
+                            "away_open": "+160",
+                            "away_current": "+165"
+                        },
+                        "odds_text": "Provider unavailable: Ipswich Town +175 (open +170); Draw +230 (open +220); Sunderland +165 (open +160)",
+                        "game_id": 3
+                    },
+                    {
+                        "event_id": "401879298",
+                        "date_utc": "2026-08-22T14:00Z",
+                        "kickoff_et": "2026-08-22 10:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Nottingham Forest",
+                        "away": "Leeds United",
+                        "home_id": "393",
+                        "away_id": "357",
+                        "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                        "venue": "The City Ground",
+                        "city": "Nottingham",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DLDLW",
+                        "form_away": "LWDWL",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+120",
+                            "home_current": "+130",
+                            "draw_open": "+245",
+                            "draw_current": "+240",
+                            "away_open": "+210",
+                            "away_current": "+215"
+                        },
+                        "odds_text": "Provider unavailable: Nottingham Forest +130 (open +120); Draw +240 (open +245); Leeds United +215 (open +210)",
+                        "game_id": 4
+                    },
+                    {
+                        "event_id": "401879321",
+                        "date_utc": "2026-08-22T16:30Z",
+                        "kickoff_et": "2026-08-22 12:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Brentford",
+                        "away": "Tottenham Hotspur",
+                        "home_id": "337",
+                        "away_id": "367",
+                        "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                        "venue": "Gtech Community Stadium",
+                        "city": "Brentford",
+                        "country": "England",
+                        "round": null,
+                        "form_home": "DDLWL",
+                        "form_away": "WLDWW",
+                        "record_home": "0-0-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+155",
+                            "home_current": "+145",
+                            "draw_open": "+250",
+                            "draw_current": "+260",
+                            "away_open": "+155",
+                            "away_current": "+175"
+                        },
+                        "odds_text": "Provider unavailable: Brentford +145 (open +155); Draw +260 (open +250); Tottenham Hotspur +175 (open +155)",
+                        "game_id": 5
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-21T07:50:46.172721-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:36:50.158974-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites against newly promoted Hull City despite some squad injuries. The market strongly reflects their dominance, offering a low price on the away side.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton possesses a slight edge playing at home and the betting odds favor them as modest frontrunners, though Crystal Palace is entirely capable of keeping this close.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "A highly competitive game between two closely matched teams. Previews lean toward Sunderland having a more established, settled system which could help them edge out a narrow away victory.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest playing at home at The City Ground gives them a minor advantage over Leeds United, who historically struggle to convert away matches into wins.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Very tight odds indicate an even matchup, but Tottenham Hotspur's long unbeaten run makes them a slight favorite to secure the win on the road.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-21T07:37:21.114751-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites on the road, with implied odds pointing towards a nearly 70% chance of victory despite missing a few defensive pieces. Hull City face significant injury issues which will hamper their chances at home.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton hold the slight edge as home favorites at +120. Crystal Palace come into the matchup relatively healthy, but Everton's home advantage makes them the most likely winners in what should be a closely contested match.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland is slightly favored (+165) despite being away, indicating market confidence in their well-oiled system against a promoted Ipswich side. It promises to be a tight fixture with a high likelihood of a draw or narrow away win.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest are favored at The City Ground (+130) against a Leeds side that has historically struggled to collect points on the road. Forest's home advantage gives them a reasonable edge.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford are slight favorites at home (+145) over Tottenham Hotspur (+175). With competitive betting lines and Brentford's ability to challenge top teams at home, a narrow victory for the home side is a probable, albeit uncertain, outcome.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-21T07:37:54.088341-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites based on betting odds and recent form. Hull City is facing a significant injury crisis with numerous key players confirmed to be out. The disparity in squad health and overall quality strongly points towards a comfortable victory for the away side, even on the opening day of the season.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton are slight home favorites according to the betting markets. However, their pre-season form has been poor, contrasting with Crystal Palace who reportedly have a fully fit squad. The odds are tight, suggesting a close contest, but Everton's home advantage gives them a narrow edge in what is expected to be a competitive match.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very evenly matched game, with betting odds making Sunderland marginal favorites despite being the away team. Sunderland has a more settled squad with fewer injury concerns compared to Ipswich. While a draw is a strong possibility, the slight edge in squad fitness and market sentiment favors Sunderland to secure a narrow victory.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are clear favorites at home. They benefit from playing at The City Ground, where they are traditionally strong. Leeds United had a poor away record in the previous season and have a couple of key players out with injuries. These factors combine to make a home win the most probable outcome.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "The betting odds are extremely close, with a slight preference for Brentford at their home ground. Tottenham comes into the match with better recent form, but Brentford are notoriously difficult to beat at the Gtech Community Stadium. This projects to be a tight contest where any outcome is possible, but Brentford's home advantage makes them the narrowest of favorites.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-21T07:38:14.088637-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong favorites, as indicated by overwhelming odds across multiple bookmakers (-260, 1.36, 3/7). Their recent form is superior (WWDWW) compared to Hull City's (WWDWL), and while both teams have injury concerns, United's squad depth is expected to mitigate this more effectively. Hull City, likely a newly promoted or lower-tier team in the context of the Premier League, faces a tough opening fixture against a perennial contender.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Everton are slight favorites based on the structured odds (+120), benefiting from home advantage at Hill Dickinson Stadium. While Everton's recent form (LLDDL) is not strong and they face injuries to key players like James Garner and Tim Iroegbunam, Crystal Palace, despite a clean bill of health and mixed form (WLDLD), are the away side. The odds suggest a close encounter, but the home crowd and a slight edge in betting markets give Everton the narrow advantage.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium-high",
+                    "reasoning": "Sunderland is favored by the odds (+165) and a strong expert prediction (Sportskeeda forecasts a 0-2 away win for Sunderland). Sunderland boasts a more settled team and better health, with most key players recovered from injuries, while Ipswich Town has a couple of significant absentees. As a newly promoted side, Ipswich may find the opening day challenge of the Premier League formidable against a more established Sunderland squad.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are slight favorites according to the available odds (+130) and hold the home advantage at The City Ground. Both teams have mixed recent form, though Leeds showed stronger pre-season results and a decent, albeit draw-heavy, away record last season. While both sides have injuries, Forest's home status and the tight odds for an 'Under 2.5 goals' match suggest a narrow victory for the home side in a competitive fixture.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "The odds indicate a very tight match, with Brentford holding a slight favoritism for a home win (+145), despite Tottenham's strong recent form (WLDWW and 'unbeaten in last eight matches'). Brentford has home advantage at Gtech Community Stadium but faces some injury concerns. The betting market for 'Both Teams to Score - Yes' is strong, suggesting an open game. Given the narrow margins in the odds and Brentford's home field, they are marginally favored to secure a victory.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:40:18.953940-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.118,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.692,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "The 1X2 market makes Manchester United a heavy away favorite, near a 70% no-vig chance. Hull have a long injury list, and the overall squad-quality gap outweighs United's notable absences.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.295,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton are a modest home favorite in the odds, but Palace's cleaner injury report and Everton's poor recent form keep this close. Home advantage is just enough to make Everton the narrow pick.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.335,
+                    "draw_probability": 0.295,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "The market is close but slightly favors Sunderland, and the team news points to a relatively settled away side with only one key absentee. Ipswich's home edge keeps the probabilities tight.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.415,
+                    "draw_probability": 0.285,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest are the market home favorite, and Leeds' weak prior away profile plus injuries to Gnonto and Gudmundsson support a Forest lean. The odds edge is modest, so draw and away outcomes remain live.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.386,
+                    "draw_probability": 0.266,
+                    "away_win_probability": 0.348,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford have home advantage and the betting market has moved slightly toward them, but Tottenham's stronger recent run makes this a very tight fixture. Brentford are only a narrow home-win selection.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-21T07:40:36.692723-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong away favorites in the 1X2 market, with Hull carrying a long injury list and United entering with better recent form. United also appear to have the deeper squad despite a couple of absences.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Everton are slight home favorites by the odds, but the matchup is close, with Palace reported to have a healthier squad. Everton's home advantage gives them a narrow edge, though draw and away-win chances remain substantial.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away win",
+                    "confidence": "low",
+                    "reasoning": "The betting market is nearly even but gives Sunderland a marginal edge. Sunderland are described as settled tactically and have most players available, while Ipswich have some injury concerns, making the away side a slight pick.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are favored by the market and benefit from home advantage at the City Ground. Leeds have shown some encouraging form but had poor away returns last season and have a couple of notable absences.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight market, with Brentford only narrowly favored at home. Tottenham's recent unbeaten run offsets much of Brentford's home advantage, so the forecast leans slightly toward Brentford but with low confidence.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-21T07:41:29.906824-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Market pricing makes Manchester United a clear favorite even away (-260 range), implying a large talent gap. Hull have a long injury list, while United absences look less likely to overturn the baseline mismatch; draw is the main upset path early season.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds slightly favor Everton at home (+120 range) in a relatively even matchup, with draw and Palace close behind. Palace appear healthier, which keeps the away/draw chances high, but home advantage and marginal market edge lean Everton.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is close to a coin flip by odds (Sunderland only a slight favorite). Ipswich’s home factor plus opening-week variance raises draw/home upset risk, but Sunderland’s more settled availability and slightly stronger market rating give them a narrow edge.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are modest home favorites (+130 range) with Leeds not far behind, suggesting a tight game. Leeds injuries (e.g., Gnonto) slightly dampen away upside, so Forest have the best single-outcome probability, with the draw also live.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds make this nearly even, with Brentford a small home favorite and Tottenham close behind. Brentford’s home edge and competitive pricing slightly outweigh Tottenham’s strong recent run, but the narrow gap implies high uncertainty and meaningful draw probability.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-21T07:41:52.079769-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market and form strongly favor Manchester United despite a couple of injury absences (de Ligt, Ugarte) and late doubts; Hull have several injuries and are long-priced underdogs, so United are expected to win in regulation.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds and home advantage give Everton a small edge; Palace look healthy but Everton's early-season motivation and home support tilt the 90-minute result toward a home victory.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets and previews suggest a tight game but Sunderland arrive as the slightly stronger side overall; close contest likely but marginal edge to Sunderland for a regulation win.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are marginal favourites in available odds and at home; Leeds' away record is mixed, so expect Forest to eke out a win rather than a draw or away victory.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices show a close match with Tottenham slightly favored; Spurs' superior squad depth and recent form give them the edge for a 90-minute win, though Brentford at home can be dangerous.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-21T07:42:21.559499-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.18,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Man United remain strong despite injuries; Hull City have several outs; odds heavily favor the away side; 90 minutes likely end with an away win.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton have a slight home edge on opening day; Palace capable but Everton’s home form and squad depth give the edge.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Ipswich home advantage provides the narrow edge over Sunderland in a close matchup.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.46,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Forest favored at home against Leeds; home advantage and form tilt the result toward Forest.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Close contest with Brentford slight home edge; Spurs capable of an upset but home advantage leans Forest toward a home win.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-21T07:42:27.427143-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites per all major bookmakers, with odds implying a strong away win probability. Hull City are missing several key players due to injury, further weakening their chances. United's squad depth and recent form are superior, and even with a couple of absentees, they should have enough quality to secure a regulation-time victory.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers slightly favor Everton at home, and Crystal Palace have a poor recent away record. Everton have a couple of doubts but no major injury crisis, while Palace have a clean bill of health. The odds and home advantage tip the balance toward Everton, but the match is expected to be competitive and a draw is a real possibility.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "The odds are very close, with Sunderland slightly favored by some bookmakers and tipsters. Ipswich are newly promoted and have some injury concerns, while Sunderland have a settled squad and positive pre-season news. However, the match is expected to be tight, and a draw is also plausible. Sunderland's experience at this level gives them a marginal edge.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are slight favorites at home according to the odds, and Leeds have struggled to convert away matches into wins, drawing many on the road last season. Both teams have some absentees, but Forest's home advantage and Leeds' away struggles make a home win the most likely outcome, though a draw is also a strong possibility.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Bookmakers rate this match as very close, with Brentford and Tottenham nearly even in win probability and a relatively high chance of a draw. Both teams have shown inconsistent form, and Brentford's home advantage is offset by Tottenham's unbeaten run. The most likely outcome is a tightly contested draw, but either side could edge it.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-21T07:42:32.258734-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United have a strong away form and are heavily favored by the odds. Hull City have several key players out due to injury, which further tilts the balance in favor of Manchester United.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Everton have the home advantage and slightly better odds. Crystal Palace have a clean bill of health, but Everton's home form gives them a slight edge.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland have a settled team and a good defensive record. Ipswich Town's readiness for the top flight is questionable, giving Sunderland a slight edge.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Both teams have shown inconsistent form. Leeds have struggled on the road, while Nottingham Forest have a mixed pre-season record. A draw seems likely.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham are unbeaten in their last eight matches, while Brentford have shown resilience at home. The match is expected to be competitive, but Tottenham's form gives them a slight advantage.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-21T07:42:54.463816-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy market favorites (-260, ~1.36 decimal) against newly promoted Hull City, who have a lengthy injury list including Butland, Hughes, Zambrano, Gyabi, Matazo and Gelhardt. United's strong pre-season form (WWDWW) and squad depth advantage make an away win clearly most likely despite opening-day unpredictability.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Market prices Everton around 2.15 at home despite poor pre-season form (LLDDL), while Palace arrive with a clean bill of health under new manager Pierre Sage. Everton are missing Garner and Iroegbunam. Home advantage at their new stadium gives Everton a modest edge, but this is a tight matchup with substantial draw/away chances.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Odds are near coin-flip between promoted Ipswich (+175) and established Sunderland (+165). Sunderland have a settled squad under Le Bris with nearly all players fit (only Adingra out), while Ipswich are missing Matusiwa and Taylor. Sunderland's strong defensive record and stability give them a slight edge, but this is essentially a toss-up with high draw probability.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Forest are modest home favorites (+130) at the City Ground. Leeds had a weak away record last season (only 15 away points) though they drew many road games, elevating draw likelihood. Forest are missing only Savona while Leeds are without Gnonto and Gudmundsson. Home advantage tilts this toward Forest, but it's a close contest.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford are slight favorites at +145 versus Spurs at +175, though the line has moved toward Tottenham (from +155 open on both sides converging). Brentford are missing van den Berg (doubtful/out) and Fredrick, while Spurs are unbeaten in eight with strong pre-season form. Brentford's home strength at the Gtech gives them a narrow edge in a well-balanced, likely high-scoring fixture.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-21T07:43:05.287798-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "Manchester United",
+                    "confidence": "high",
+                    "reasoning": "Odds strongly favor United (-260). Newly promoted Hull have multiple key injuries. United are heavy favorites away.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Everton",
+                    "confidence": "low",
+                    "reasoning": "Everton slight home favorites at +120. Close match with Palace, but home advantage tips it slightly toward Everton.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Ipswich Town",
+                    "confidence": "low",
+                    "reasoning": "Very tight odds with Sunderland slightly favored on money line but home advantage evens it. Narrow home lean.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Nottingham Forest",
+                    "confidence": "medium",
+                    "reasoning": "Forest are home favorites (+130). Leeds have poor away record with only 15 points on the road last season. Home win favored.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "Brentford",
+                    "confidence": "low",
+                    "reasoning": "Brentford slight home favorites (+145 vs +175). Tottenham unbeaten in eight but away tie. Home advantage gives Brentford narrow edge.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-21T07:43:27.791468-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.13,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds strongly favour Manchester United across all bookmakers (roughly -260 on DraftKings, ~1.36 on fixed odds sites). Hull are a newly promoted/lower-table side with several key injuries (Butland, Hughes, Zambrano, Gyabi, Matazo, Gelhardt, Morita all out). United's only notable absences are De Ligt and Ugarte. Man United's away form (WWDWW) is strong and they are significant favourites. Hull's home form (WWDWL) is decent but quality gap is large. Confidence is medium rather than high given the unpredictability of opening-day fixtures.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton have home advantage at their new Hill Dickinson Stadium and are slight favourites (roughly +120/2.15). Crystal Palace have a clean bill of health under Pierre Sage while Everton are missing Iroegbunam with Garner and Nørgaard doubtful. Everton's recent form (LLDDL) is poor but home advantage in an opening-day fixture with a new venue boost is factored in. The odds suggest a very tight match with Everton only marginally ahead. Low confidence given both teams' inconsistent recent form.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very close match per the odds (Ipswich +175, Sunderland +165). Sunderland arrive with key injuries recovered (Mukiele, Alderete, Meunier fit) and only Adingra absent, suggesting a nearly full squad. Ipswich are missing Matusiwa and Taylor. Sunderland have a well-oiled system under Le Bris and a strong defensive record. Some analysts tip Sunderland to win. However the home factor and even odds make this highly uncertain. Low confidence.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Forest are moderate favourites at home (+130). Leeds have only Gnonto and Gudmundsson missing, while Forest have Savona out. Leeds collected very few away points last season. Forest's City Ground is a tough venue. However Leeds had an impressive pre-season (WDWWWL) and Forest's pre-season was mixed (WWLLLW). Chris Wood is a key threat for Forest. The odds lean Forest, but this is a competitive fixture. Low confidence given opening-day uncertainties.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.37,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is essentially a coin-flip match. Brentford are narrow home favourites (+145 vs Spurs +175 on ESPN odds), but fixed odds markets show near-parity (home ~2.53-2.56, away ~2.82). Brentford have van den Berg doubtful and Frederick out. Spurs are unbeaten in their last eight matches per available context. Brentford's home form (DDLWL) is modest. Very tight contest. Slight edge to Brentford via home advantage. Low confidence.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-21T07:43:53.579971-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.21,
+                    "away_win_probability": 0.67,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites with odds around -260, reflecting their superior quality. Hull City have significant injury problems with 7-9 players out including goalkeeper Butland and several key players. Man United have strong recent form (WWDWW) compared to Hull's mixed form (WWDWL). Despite being away, United's quality advantage and Hull's injury crisis make an away win highly probable. The odds movement from -235 to -260 suggests sharp money backing United.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "This appears to be a closely matched fixture with relatively balanced odds (Everton +120, Draw +240, Palace +235). Everton have home advantage and Crystal Palace's recent form has been inconsistent (WLDLD) compared to Everton's poor but more predictable form (LLDDL). Everton have injury concerns with Tim Iroegbunam out and doubts over James Garner, while Palace report a clean bill of health. The odds suggest a tight contest, but Everton's home advantage and Palace's away struggles tip the balance slightly toward the hosts.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland have a settled team under Regis Le Bris with excellent defensive organization (only 48 goals conceded last season). Multiple sources predict a Sunderland win, including a 0-2 prediction. Sunderland confirmed that key players Mukiele, Alderete, and Meunier have recovered from injuries with only Adingra unavailable. Ipswich have injury concerns with Matusiwa and Taylor out, and face uncertainty about Premier League readiness after promotion. Sunderland's stronger form (WWDDL vs WDDWD), better defensive record, and squad availability favor an away win despite Ipswich having home advantage.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest have home advantage with odds favoring them at +130 vs Leeds +215. Leeds struggled away last season with only 15 points collected on the road, one of the worst records. Forest have fewer injury concerns (only Savona out) compared to Leeds (Gnonto and Gudmundsson out). Recent form shows Forest ending on a win while Leeds ended with a loss. Leeds drew 9 of their final 12 away matches, showing difficulty winning on the road. Forest's home advantage and Leeds' poor away record make a home win the most likely outcome.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This is a very tight contest with close odds (Brentford +145, Draw +260, Spurs +175). Brentford have won their last two matches and have home advantage. Tottenham are unbeaten in their last 8 matches with strong recent form (WLDWW). However, Brentford have significant injury concerns with van den Berg doubtful and Fredrick definitely out. The odds are essentially a pick'em with slight home favoritism. Brentford's recent home form and Tottenham's historical inconsistency in these fixtures suggest a narrow home edge, but confidence is low given the even match-up and Spurs' quality advantage being offset by away travel.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-21T07:44:04.014356-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.55,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United are strong favorites despite away status, with odds around -260. Hull City have significant injury concerns (7 players out including goalkeeper Butland and multiple defenders). Man United's recent form is excellent (WWDWW) and they have greater squad depth. The absence of key Hull players makes them vulnerable despite home advantage.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton favored at +120 odds as home team. Crystal Palace have inconsistent away form (WLDLD) while Everton show recent home advantage potential. Everton have minor injuries (Tim Iroegbunam, James Garner doubtful) but Crystal Palace have a clean bill of health which is less critical given Everton's home status. Odds suggest slight Everton edge with reasonable draw possibility.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Match appears competitive with relatively balanced odds (Ipswich +175, Sunderland +165). Ipswich have home advantage with solid recent form (WDDWD). Sunderland show strong away credentials (WWDDL) and some analysis suggests they could win 2-0. However, Ipswich's return to Premier League and home advantage warrant slight favor. High prediction uncertainty reflects the competitive nature and prediction tips suggesting a draw (40/1).",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest slight favorites at +130 as home team. Forest show stronger home form (DLDLW) and recent pre-season success (W-W-L-L-L-W). Leeds have historically poor away record (only 15 points away last season) despite improved recent form (LWDWL). Forest injuries are minimal (Savona out) while Leeds missing Gnonto and Gudmundsson. Home advantage combined with Leeds' away struggles supports Forest edge.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Highly competitive match with balanced odds across all three outcomes (Brentford +145, Spurs +175, Draw +260). Tottenham unbeaten in last 8 matches (WLDWW) showing strong form, but Brentford won two in a row and have home advantage. Brentford have key injury concerns (van den Berg doubtful, Frederick out) which reduces their typical tactical flexibility. The balance of form and home advantage versus Spurs' excellent recent record suggests a competitive, potentially high-scoring draw as plausible outcome.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-21T07:44:55.223621-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.19,
+                    "away_win_probability": 0.71,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy away favorites at odds around -260, with strong pre-season form and a depleted Hull City squad missing multiple starters. Despite Hull's home advantage, the class gap and United's unbeaten away form make an away win the clear most likely outcome.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton are slight favorites at home with odds around +120, but Crystal Palace have a clean bill of health and the overall form is mixed for both sides. The probabilities are close, with home advantage giving Everton a modest edge.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland are narrow away favorites by odds and have a settled team under Régis Le Bris, while Ipswich are newly promoted and missing key midfielders. However, the margin is thin and Ipswich's home form keeps this very competitive.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Nottingham Forest are slight favorites at home according to the odds, and Leeds have been draw-heavy away from home. Leeds are missing Gnonto and Gudmundsson, which weakens their attack, but this remains a near coin-flip matchup.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford are slight home favorites by odds and have won two in a row, but Tottenham are unbeaten in their last eight matches. The market has moved slightly toward Brentford, yet the three-way probabilities remain close, with home advantage providing a small edge.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-21T07:45:00.197550-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.66,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are strong favorites with odds around -260, and Hull City have multiple injuries. United's form is excellent (WWDWW), while Hull's is mediocre (WWDWL).",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton have slight odds advantage (+120 vs +235) and home advantage. Crystal Palace have a clean bill of health, but Everton's form is poor (LLDDL), making this a close call.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland have a settled team and strong away form (WWDDL), while Ipswich are newly promoted and have key injuries. Odds are close, but Sunderland's system gives them a slight edge.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest have home advantage and odds slightly in their favor (+130 vs +215). Leeds have key injuries (Gnonto, Gudmundsson) and poor away form last season.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford have won two in a row and have home advantage, but Tottenham are unbeaten in eight. Odds are close, making this a tough call; slight lean to Brentford due to home form.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-21T07:45:40.947606-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United is heavily favored by the sportsbooks and faces a Hull City side depleted by numerous injuries to key players. Despite some minor injury concerns for United, their squad depth and superior quality should secure an away victory.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Everton has a slight edge at home according to the odds. While they have a couple of doubtful players, Crystal Palace's overall form and away record make this a tight contest, but the home advantage leans the prediction towards Everton.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Sunderland enters with a settled squad and key defenders returning from injury, whereas Ipswich is missing some midfield options. Bookmakers and some previews slightly favor the away side, making Sunderland the narrow pick in a very evenly matched game.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest is favored at home against a Leeds side that struggled on the road last season and is missing key attackers like Gnonto. Forest's home advantage and relatively stable squad give them the edge in this matchup.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham Hotspur has been in strong form, remaining unbeaten in their last eight matches. Brentford is dealing with defensive injuries, including van den Berg being doubtful, which gives Spurs the slight edge needed to edge out a road victory.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-21T07:45:59.335853-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.6,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United has a strong away form and is favored by the odds. Hull City has several key players out due to injury, which could significantly impact their performance.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Everton has a slight edge in the odds and will be playing at home, though both teams have had mixed recent form. Crystal Palace's full squad availability might not be enough to overcome Everton's home advantage.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Both teams are relatively even in terms of form and odds. Ipswich Town has some injuries, but Sunderland also has a few key players returning. The match is likely to be closely contested, leading to a potential draw.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest has a better recent form and is slightly favored by the odds. Leeds United has struggled on the road, and Nottingham Forest's home advantage and defensive record make them the more likely winner.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Brentford has been in good form and is slightly favored by the odds. Tottenham, while strong, has a mixed away form, and Brentford's home advantage and recent performances suggest they can secure a win.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-21T07:47:17.637999-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United enters as overwhelming favorites based on squad quality, historical pedigree, and betting odds (~1.35-1.40 implied). Hull City is missing several key defensive and midfield starters due to injury, severely weakening their home advantage. United's strong pre-season form (WWDWW) contrasts sharply with Hull's roster depletion. While Premier League openers can be volatile, United's superior depth and attacking threat should secure a regulation-time away victory.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "This fixture is highly competitive with nearly balanced implied probabilities. Everton holds a traditional home advantage at the Hill Dickinson Stadium and slightly favorable odds, but their recent form (LLDDL) and midfield injury concerns (Garner, Nørgaard doubtful) limit their ceiling. Crystal Palace arrives with a clean bill of health and a well-organized squad under new management. The narrow home edge, combined with typical opener caution, points to a tight contest likely decided by a single goal at home.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.34,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Both teams are evenly matched in pre-season form and betting odds, making this a highly unpredictable opener. Ipswich's home advantage is countered by Sunderland's more established tactical system under Regis Le Bris and stronger defensive organization. Expert previews and betting trends lean slightly toward Sunderland, noting their consistent structure and Ipswich's adjustment period to top-flight pace. A narrow away win or low-scoring draw is the most plausible regulation-time outcome.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest benefits from a solid home setup and Leeds United's historically poor away record in the Premier League. Leeds' pre-season form has been inconsistent, and they are missing key attacking outlets like Gnonto. Forest's physical presence, combined with Chris Wood's goal threat and the intimidating atmosphere at the City Ground, gives them the edge. Expect a structured, defensive-minded performance from Forest that secures a narrow regulation-time home victory.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford holds a slight home advantage and marginally better odds, leveraging their structured possession-based system that has historically troubled Tottenham at the Gtech Community Stadium. Tottenham's recent unbeaten run is offset by Brentford's familiarity with London derbies and the psychological edge of playing at home. However, Brentford's defensive absences (van den Berg, Fredrick) and Tottenham's attacking quality keep this closely contested. A narrow home win is the most likely regulation-time result in a volatile opener.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-21T07:48:11.087033-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.15,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.65,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United favored heavily in odds (-260) despite key injuries; Hull City lacks goalkeeper Jack Butland and multiple attackers. Man Utd squad depth superior.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds favor Everton at home despite poor recent form. Crystal Palace has no injuries listed, but Everton home advantage at Goodison Park typically boosts probability in opening fixtures.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.31,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Very evenly matched odds. Sunderland recovery of defensive key players and Regis Le Bris setup favors them away compared to Ipswich's early season injuries.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Leeds United recorded low points tally away from home last season. Nottingham Forest possesses home-field strength and striker Chris Wood in excellent pricing.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham unbeaten in last eight matches versus Brentford losing streaks. Brentford key defender Frederick ruled out gives Spurs attacking edge despite being away fixture.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-21T07:49:48.042982-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United are heavy favorites with superior squad quality despite missing de Ligt and Ugarte. Hull City have extensive injury problems including Butland, Hughes, and Gelhardt, significantly weakening their side.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton hold a slight edge at home but have significant injury concerns for Garner and Iroegbunam, while Crystal Palace report a fully fit squad. Market odds have drifted toward Palace, making this a tightly contested fixture.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland are slight market favorites with an excellent defensive record and nearly a full squad. Ipswich are missing key midfielders Matusiwa and Taylor, which hampers their ability to control the game at home.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.32,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest are favored at home with stronger overall depth. Leeds are without Gnonto and Gudmundsson and struggled to win away last season, drawing too many road matches.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.39,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.33,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford's strong home form and market support give them a narrow edge, though Tottenham enter unbeaten in eight matches. Brentford's defensive injuries add risk, keeping confidence tempered.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-21T07:50:36.685354-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.68,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Manchester United's superior squad depth and quality should overcome Hull City despite injuries to de Ligt and Ugarte. Hull City has significant injury concerns including Butland, Gelhardt, and Morita. The odds strongly favor the away side.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "draw",
+                    "confidence": "medium",
+                    "reasoning": "Everton holds slight home advantage but enters with poor form (LLDDL) and injury concerns to Garner and Iroegbunam. Crystal Palace has a fully fit squad and competitive odds. Expect a tight contest likely to end level.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Sunderland enters with strong pre-season form and a settled squad under Le Bris, with only Adingra absent. Ipswich faces Premier League opener nerves and injuries to Matusiwa and Taylor. Sunderland's momentum gives them the edge.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Nottingham Forest benefits from home advantage against a Leeds side that struggled immensely away from home last season (only 15 road points). Leeds is missing Gnonto and Gudmundsson, while Forest is nearly full strength.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.33,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.39,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Tottenham enters unbeaten in eight matches with superior attacking quality. While Brentford is strong at home and has won two straight, Tottenham's overall squad strength and pre-season form should secure the away victory.",
+                    "event_id": "401879321"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-21T07:50:46.154745-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Manchester United (away) @ Hull City (home)",
+                    "home_win_probability": 0.2,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.5,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Manchester United has a strong form and is favored by the odds, despite Hull City having a decent home form.",
+                    "event_id": "401879322"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Crystal Palace (away) @ Everton (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Everton is favored by the odds, but the match is expected to be close with both teams having similar forms.",
+                    "event_id": "401879300"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Sunderland (away) @ Ipswich Town (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Ipswich Town has a good home form and is slightly favored by the odds against Sunderland.",
+                    "event_id": "401879299"
+                },
+                {
+                    "game_id": 4,
+                    "matchup": "Leeds United (away) @ Nottingham Forest (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Leeds United has a slightly better form and is favored by the odds against Nottingham Forest.",
+                    "event_id": "401879298"
+                },
+                {
+                    "game_id": 5,
+                    "matchup": "Tottenham Hotspur (away) @ Brentford (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Brentford has a good home form and is slightly favored by the odds, but the match is expected to be close.",
+                    "event_id": "401879321"
+                }
+            ]
+        }
+    ]
+}

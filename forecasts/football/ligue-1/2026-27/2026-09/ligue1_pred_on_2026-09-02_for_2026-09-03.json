@@ -1,0 +1,668 @@
+{
+    "meta_info": {
+        "competition": "Ligue 1 2026-2027",
+        "competition_key": "ligue_1",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-09-02",
+        "target_date_et": "2026-09-03",
+        "panel_version": "ClubFootball-2026-27-WC25.v2",
+        "panel_source": "WorldCup-2026-runtime-25-kimi-successors",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-09-02-club-football-kimi-panel-transition-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K3",
+                "vendor": "kimi",
+                "api_model": "kimi-k3",
+                "caller": "kimi_json"
+            },
+            {
+                "model_name": "Kimi K2.7 Code",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.7-code",
+                "caller": "kimi_json"
+            }
+        ],
+        "system_prompt": "You forecast French Ligue 1 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-02\n\nTarget Date (ET): 2026-09-03\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876468\nMatchup: Lille (away) @ Toulouse (home)\nHome: Toulouse\nAway: Lille\nKickoff UTC: 2026-09-03T18:45Z\nKickoff ET: 2026-09-03 14:45 EDT\nVenue: Stadium Municipal de Toulouse\nRound: unavailable\nHome form: DLWWD\nAway form: DWLWD\nHome record: 0-1-1\nAway record: 1-1-0\nESPN structured 1X2 odds: DraftKings: Toulouse +245 (open +250); Draw +235 (open +235); Lille +115 (open +110)\nTavily context:\n  - Title: Toulouse vs Lille predicted lineup · 3 Sept 2026\n    Content: Lille\n\n4\n\n FWDBroholmInactiveOut\n DEFNianzouInjuryOut\n FWDIgamaneKnee InjuryOut\n FWDFernandez-PardoTransfer negotiationsOut\n\nReported availability, not a confirmed team sheet. Only an official lineup confirms who starts.\n\n### Toulouse\n\nNo standout lineup notes for this match.\n\n### Lille\n\nNo standout lineup notes for this match.\n\nHEAD TO HEAD · ALL COMPETITIONS\n\n## Toulousevs Lillerecord\n\n6\n\nToulouse wins\n\n6\n\nDraws\n\n17\n\nLille wins\n\n29meetingson record\n\nToulouse\n\n G. Restes started all 4 of our recorded meetings vs Lille\n Y. Gboho started all 4 of our recorded meetings vs Lille\n\nLille ...\n    URL: https://starting11.com/fixtures/toulouse-vs-lille\n  - Title: Toulouse vs Lille - live score, predicted lineups and H2H stats\n    Content: Soriba DiaouneMidfielder\n\n35DiaouneMidfielder\n\n  18\n\n  Dilane BakwaAttacker\n\n18BakwaAttacker\n\n  28\n\n  Gaëtan PerrinAttacker\n\n28PerrinAttacker\n\n  11\n\n  Osame SahraouiAttacker\n\n11SahraouiAttacker\n\n  Tanguy Nianzou Kouassi\n\n  Muscle injury / About 1-2 weeks\n\nKouassiMuscle injuryAbout 1-2 weeks\n\n  Hamza Igamane\n\n  Cruciate ligament injury / Early October 2026\n\nIgamaneCruciate ligament injuryEarly October 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Brest\n\n  2 - 2\n\n  Toulouse\n Toulouse\n\n  0 - 2\n\n  Lyon\n Toulouse\n\n  1 - 2\n\n  Hamburger SV\n Al-Ain\n\n  0 - 1\n\n  Toulouse\n Toulouse\n\n  2 - 1 ...\n    URL: https://www.fotmob.com/en-GB/matches/lille-vs-toulouse/2us06f\n  - Title: Toulouse FC - Lille OSC prediction & tips 03.09.2026\n    Content: Best odds for common markets right now:\n\n| Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 3.25 | 1win |\n| Draw | 3.41 | 1win |\n| Away Win | 2.41 | 1win |\n| Both Teams to Score - Yes | 1.80 | Paripesa |\n| Both Teams to Score - No | 1.97 | 1win |\n| Correct Score | 0:1 @ 7.50 | 1win |\n\nThe recommended single bet is OSC Lille to win at 2.41 with 1win — the Bookmaker offering the top price. For a secondary play, “Both Teams to Score – Yes” at 1.80 (Paripesa) has decent value given Lille’s attacking form and Toulouse’s susceptibility in recent friendlies and opening league games. ...\n    URL: https://www.transfermarkt.com/betting/tips/toulouse-fc-vs-osc-lille-prediction-03-09-2026\n  - Title: Toulouse vs LOSC Lille Predictions, Picks & Odds\n    Content: Ligue 1\n\nToulouse Toulouse\n\n03 Sep 2026 19:45\n\nLOSC Lille LOSC Lille\n\nPrediction:\n\nLOSC Lille to win 2.15\n\nView oddsBetfred >\n\nPick your prediction\n\n ToulouseDraw LOSC Lille\n\n# Toulouse vs LOSC Lille Predictions, Picks & Odds – 03/09/2026\n\nLigue 1 · 3\n\n03 Sep 2026  Stadium de Toulouse  Louis Hecq\n\n### Toulouse vs LOSC Lille – Best bets of the match ...\n    URL: https://www.toffeeweb.com/toulouse-vs-losc-lille-predictions-picks-odds-03-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "Ligue 1 2026-2027 forecast\n\nForecast Date (ET): 2026-09-02\n\nTarget Date (ET): 2026-09-03\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401876468\nMatchup: Lille (away) @ Toulouse (home)\nHome: Toulouse\nAway: Lille\nKickoff UTC: 2026-09-03T18:45Z\nKickoff ET: 2026-09-03 14:45 EDT\nVenue: Stadium Municipal de Toulouse\nRound: unavailable\nHome form: DLWWD\nAway form: DWLWD\nHome record: 0-1-1\nAway record: 1-1-0\nESPN structured 1X2 odds: DraftKings: Toulouse +245 (open +250); Draw +235 (open +235); Lille +115 (open +110)\nTavily context:\n  - Title: Toulouse vs Lille predicted lineup · 3 Sept 2026\n    Content: Lille\n\n4\n\n FWDBroholmInactiveOut\n DEFNianzouInjuryOut\n FWDIgamaneKnee InjuryOut\n FWDFernandez-PardoTransfer negotiationsOut\n\nReported availability, not a confirmed team sheet. Only an official lineup confirms who starts.\n\n### Toulouse\n\nNo standout lineup notes for this match.\n\n### Lille\n\nNo standout lineup notes for this match.\n\nHEAD TO HEAD · ALL COMPETITIONS\n\n## Toulousevs Lillerecord\n\n6\n\nToulouse wins\n\n6\n\nDraws\n\n17\n\nLille wins\n\n29meetingson record\n\nToulouse\n\n G. Restes started all 4 of our recorded meetings vs Lille\n Y. Gboho started all 4 of our recorded meetings vs Lille\n\nLille ...\n    URL: https://starting11.com/fixtures/toulouse-vs-lille\n  - Title: Toulouse vs Lille - live score, predicted lineups and H2H stats\n    Content: Soriba DiaouneMidfielder\n\n35DiaouneMidfielder\n\n  18\n\n  Dilane BakwaAttacker\n\n18BakwaAttacker\n\n  28\n\n  Gaëtan PerrinAttacker\n\n28PerrinAttacker\n\n  11\n\n  Osame SahraouiAttacker\n\n11SahraouiAttacker\n\n  Tanguy Nianzou Kouassi\n\n  Muscle injury / About 1-2 weeks\n\nKouassiMuscle injuryAbout 1-2 weeks\n\n  Hamza Igamane\n\n  Cruciate ligament injury / Early October 2026\n\nIgamaneCruciate ligament injuryEarly October 2026\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Team form\n\n Brest\n\n  2 - 2\n\n  Toulouse\n Toulouse\n\n  0 - 2\n\n  Lyon\n Toulouse\n\n  1 - 2\n\n  Hamburger SV\n Al-Ain\n\n  0 - 1\n\n  Toulouse\n Toulouse\n\n  2 - 1 ...\n    URL: https://www.fotmob.com/en-GB/matches/lille-vs-toulouse/2us06f\n  - Title: Toulouse FC - Lille OSC prediction & tips 03.09.2026\n    Content: Best odds for common markets right now:\n\n| Betting Market | Best Odds | Bookmaker |\n ---\n| Home Win | 3.25 | 1win |\n| Draw | 3.41 | 1win |\n| Away Win | 2.41 | 1win |\n| Both Teams to Score - Yes | 1.80 | Paripesa |\n| Both Teams to Score - No | 1.97 | 1win |\n| Correct Score | 0:1 @ 7.50 | 1win |\n\nThe recommended single bet is OSC Lille to win at 2.41 with 1win — the Bookmaker offering the top price. For a secondary play, “Both Teams to Score – Yes” at 1.80 (Paripesa) has decent value given Lille’s attacking form and Toulouse’s susceptibility in recent friendlies and opening league games. ...\n    URL: https://www.transfermarkt.com/betting/tips/toulouse-fc-vs-osc-lille-prediction-03-09-2026\n  - Title: Toulouse vs LOSC Lille Predictions, Picks & Odds\n    Content: Ligue 1\n\nToulouse Toulouse\n\n03 Sep 2026 19:45\n\nLOSC Lille LOSC Lille\n\nPrediction:\n\nLOSC Lille to win 2.15\n\nView oddsBetfred >\n\nPick your prediction\n\n ToulouseDraw LOSC Lille\n\n# Toulouse vs LOSC Lille Predictions, Picks & Odds – 03/09/2026\n\nLigue 1 · 3\n\n03 Sep 2026  Stadium de Toulouse  Louis Hecq\n\n### Toulouse vs LOSC Lille – Best bets of the match ...\n    URL: https://www.toffeeweb.com/toulouse-vs-losc-lille-predictions-picks-odds-03-09-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401876468",
+                        "date_utc": "2026-09-03T18:45Z",
+                        "kickoff_et": "2026-09-03 14:45 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Toulouse",
+                        "away": "Lille",
+                        "home_id": "179",
+                        "away_id": "166",
+                        "matchup": "Lille (away) @ Toulouse (home)",
+                        "venue": "Stadium Municipal de Toulouse",
+                        "city": "Toulouse",
+                        "country": "France",
+                        "round": null,
+                        "form_home": "DLWWD",
+                        "form_away": "DWLWD",
+                        "record_home": "0-1-1",
+                        "record_away": "1-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "+250",
+                            "home_current": "+245",
+                            "draw_open": "+235",
+                            "draw_current": "+235",
+                            "away_open": "+110",
+                            "away_current": "+115"
+                        },
+                        "odds_text": "DraftKings: Toulouse +245 (open +250); Draw +235 (open +235); Lille +115 (open +110)",
+                        "game_id": 1
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-09-02T09:56:32.544935-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-09-02T09:46:50.765491-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored in this matchup with bookmaker odds indicating a solid advantage (around +115). Lille also holds a strong historical head-to-head record with 17 wins compared to Toulouse's 6, making them the most likely side to secure three points.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-09-02T09:46:58.183906-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.275,
+                    "draw_probability": 0.283,
+                    "away_win_probability": 0.442,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters this match as the bookmakers' favorite at +115, reflecting an implied probability of about 44% to secure an away win. Lille holds a historically dominant head-to-head record against Toulouse with 17 wins in 29 meetings. Given their slightly better start to the season (1-1-0) compared to Toulouse (0-1-1), Lille's squad depth and attacking form give them the upper hand despite playing away from home.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-09-02T09:47:21.090516-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is the favorite according to betting markets and possesses a strong head-to-head record against Toulouse, with 17 wins to Toulouse's 6 in their last 29 meetings. Lille has also started the season stronger, remaining unbeaten with a 1-1-0 record, while Toulouse is still seeking its first win (0-1-1). Although both teams have similar recent form, Lille's overall profile is more favorable. The primary concern for Lille is a number of injuries to key players, which could impact their performance and gives Toulouse a better chance at home. Nonetheless, the balance of factors points towards an away win.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-09-02T09:47:30.299054-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored by bookmakers and expert predictions, and has a strong historical head-to-head record against Toulouse, alongside a better away record in the current season (1-1-0 vs Toulouse's 0-1-1 home record). Despite several notable injuries to Lille players, Toulouse's poor home record suggests they may struggle to capitalize. While the injuries introduce some uncertainty, Lille's overall strength makes them the most likely winner.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-09-02T09:50:32.870631-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices make Lille a clear but not overwhelming away favorite, and they enter with the stronger early record. Toulouse have home advantage and no major availability flags, while Lille have some attacking/defensive absences, which keeps the draw and home-win chances meaningful. Overall, Lille remain the most likely 90-minute result.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-09-02T09:50:39.049732-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are the market favorite and have the stronger recent head-to-head profile, with Toulouse still searching for a first win from their listed league record. Toulouse's home advantage and Lille availability concerns keep the draw and home upset probabilities meaningful, but Lille remain the most likely 90-minute result.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-09-02T09:51:03.484381-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.275,
+                    "draw_probability": 0.283,
+                    "away_win_probability": 0.442,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices make Lille the clear but not overwhelming favorite (away roughly mid-40%s after normalizing). Lille also has the stronger long-run head-to-head edge over Toulouse, while recent form for both sides is fairly mixed, which keeps the draw probability elevated.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-09-02T09:51:12.939569-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.26,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.46,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers and model edge toward Lille despite a few injury concerns; Lille have the stronger recent results and historical H2H edge. Toulouse has home advantage and mixed form, which raises draw probability, but Lille's attacking quality and market pricing make an away win the likeliest single outcome.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-09-02T09:51:58.209490-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.2751,
+                    "draw_probability": 0.2834,
+                    "away_win_probability": 0.4415,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds imply Lille are the closer favorite among the three outcomes; after normalizing the three-way odds, Lille (away) leads with ~0.441, draw ~0.283, Toulouse (home) ~0.275. Lille's away form and historically strong head-to-head record vs Toulouse support an away win; however lineup confirmations are pending and there is some uncertainty in team composition.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-09-02T09:52:00.330181-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille are favored by both bookmakers and prediction sites, with odds implying a clear edge despite playing away. Lille's recent form is solid and their squad is largely intact, while Toulouse have struggled defensively and have a weaker home record. Head-to-head history also favors Lille. The probability split reflects Lille's status as favorites, but accounts for the possibility of a draw given Toulouse's resilience at home.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-09-02T09:52:02.725539-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille has a stronger head-to-head record against Toulouse and better recent form. Despite some injuries, Lille's attacking capabilities and Toulouse's defensive vulnerabilities suggest a higher likelihood of an away win.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-09-02T09:52:10.535770-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Market odds make Lille clear favorites (+115 vs +245 for Toulouse), consistent with Lille's dominant head-to-head record (17 wins in 29 meetings) and better early-season form (1-1-0 vs 0-1-1). Lille has notable absences (Igamane, Nianzou, Broholm), which slightly tempers their edge, and Toulouse's home advantage keeps draw and home win probabilities meaningful. Normalized implied probabilities favor an away win at roughly 45%.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-09-02T09:52:15.539736-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "low",
+                    "reasoning": "Market odds favor Lille as the away side (around +115, implied favorite), consistent with predictions across sources. Lille has a slightly better early record (1-1-0) and Toulouse missing some attacking depth. However, home advantage and Lille's injury absences (Igamane, Nianzou) keep this close, so away win is favored but with low confidence.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-09-02T09:52:23.649336-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enter as favorites per market odds (~+115 on DraftKings), reflecting their stronger squad quality and positive head-to-head record (17 wins vs 6 for Toulouse in 29 meetings). Toulouse are without Nianzou (muscle injury) and Igamane (cruciate, out until October), weakening their attack and defense. Lille's form (DWLWD) is comparable to Toulouse's (DLWWD), but Lille's squad depth gives them the edge. Toulouse's home record is 0-1-1 so far this season. The implied odds from DraftKings (Lille ~47%, Draw ~30%, Toulouse ~29%) align closely with this assessment. Lille's absences (Broholim, Nianzou, Igamane, Fernandez-Pardo) are notable but their overall quality still makes them slight favorites.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-09-02T09:52:31.158476-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters with superior historical form against Toulouse (17-6-6 overall record) and better current away form (1-1-0 vs 0-1-1 home). Despite injuries to Nianzou, Igamane, Fernandez-Pardo, and Broholmn, Lille's attacking quality remains strong. Toulouse's recent form shows vulnerability (DLWWD with losses to Lyon 0-2 and Hamburg 1-2). The odds favor Lille at +115 (implied ~46% probability), aligning with their competitive advantage. Both teams have shown scoring ability, but Lille's experience and head-to-head dominance suggest they can secure all three points on the road. The draw probability remains significant given Toulouse's home advantage and Lille's injury concerns.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-09-02T09:52:35.041795-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille is favored by most predictive sources and betting markets despite playing away. Key Lille injuries (Igamane, Nianzou, Fernandez-Pardo) are significant but the team still has attacking depth. Toulouse's recent form is mixed (DLWWD) with a 0-1-1 record this season, while Lille has shown more consistency (DWLWD, 1-1-0). DraftKings odds favor Lille at -115 (implied ~54%), aligning with multiple prediction sources citing Lille as favorites. However, the injury list and home advantage for Toulouse create meaningful uncertainty, preventing high confidence. Both teams to score appears likely given attacking potential vs defensive vulnerabilities.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-09-02T09:52:55.700836-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.44,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "DraftKings odds imply Lille are the most likely winner after removing vig, and head-to-head history strongly favors Lille (17 wins vs Toulouse's 6). Toulouse's mixed home start and Lille's solid away form support an away-leaning three-way forecast, though a draw remains close.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-09-02T09:52:57.368418-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away",
+                    "confidence": "medium",
+                    "reasoning": "Lille have a stronger squad and better recent form, while Toulouse have struggled defensively. Bookmakers favor Lille, and Lille's attacking options are more potent despite some injuries.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-09-02T09:53:12.380320-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters as the favorite based on sportsbook odds and a strong historical head-to-head advantage over Toulouse. Despite dealing with a few injuries, Lille's superior squad depth and attacking quality give them the edge against a Toulouse side that has shown defensive vulnerabilities early in the season.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-09-02T09:53:21.029143-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.34,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "away win",
+                    "confidence": "medium",
+                    "reasoning": "Lille has a stronger head-to-head record against Toulouse, with 17 wins compared to Toulouse's 6. Additionally, Lille's away form (DWLWD) is slightly better than Toulouse's home form (DLWWD). The odds and recent form suggest Lille is more likely to win, but the draw probability is also significant due to Toulouse's potential to perform well at home.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-09-02T09:54:05.110646-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters as the betting favorite (+115) and holds a dominant historical head-to-head record (17 wins vs 6). Their current away record (1-1-0) surpasses Toulouse's home start (0-1-1), and early-season data points to defensive vulnerabilities for the hosts. Despite missing key defender Nianzou and forward Igamane to injury, Lille's squad depth and consistent performance in this fixture give them a slight edge. The draw is highly plausible given early-season volatility, but market odds and H2H trends point to a narrow away victory.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-09-02T09:54:40.094843-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.29,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Historical head-to-head records show Lille dominating with 17 wins against Toulouse's 6 across 29 meetings. Betting markets (DraftKings) price Lille as favorites at +115 compared to Toulouse's +245. Although Lille reports missing key attackers Broholm and Igamane, their overall squad depth and superior recent form (DWLWD vs Toulouse's DLWWD) favor an away result. Toulouse's poor early home record (0-1-1) further supports the prediction.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-09-02T09:55:34.629719-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.27,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enter as clear favorites based on dominant head-to-head history (17 wins in 29 meetings), stronger overall squad depth, and more reliable early-season form. Toulouse have looked shaky at home, managing only a draw with Brest and suffering a defeat to Lyon, while Lille’s away form (DWLWD) and market pricing (~+115) both point toward an away victory. Lille’s injury list is manageable, and although Toulouse hold home-field advantage, the quality gap and historical trend support a Lille win in regulation time.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K3",
+            "api_model": "kimi-k3",
+            "forecast_timestamp_et": "2026-09-02T09:56:05.485982-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.43,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "The market makes Lille a clear favorite despite playing away: DraftKings prices Lille +115 (~44% normalized), Draw +235 (~28%), Toulouse +245 (~28%), and other books show similar (Lille around 2.15-2.41). Lille also dominates the head-to-head (17 wins to Toulouse's 6 in 29 meetings) and Toulouse is winless through two league matches (0-1-1). However, confidence is tempered by significant Lille absences: Igamane (ACL, out until October), Fernandez-Pardo (transfer negotiations), Nianzou (muscle injury), and Broholm are all unavailable, weakening Lille's attack, and the line has drifted slightly against Lille (from +110 to +115). Toulouse's mixed recent results (draw with Brest, losses to Lyon and Hamburg) suggest they can compete but lack consistency. The draw is a live outcome given Lille's depleted squad, but Lille's superior quality and H2H edge make an away win the most likely regulation-time result.",
+                    "event_id": "401876468"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.7 Code",
+            "api_model": "kimi-k2.7-code",
+            "forecast_timestamp_et": "2026-09-02T09:56:32.526971-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Lille (away) @ Toulouse (home)",
+                    "home_win_probability": 0.28,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "away_win",
+                    "confidence": "medium",
+                    "reasoning": "Lille enters as the favorite based on market odds (+115), a stronger head-to-head record (17 wins in 29 meetings), and a slightly better season start (1-1-0 vs. Toulouse's 0-1-1). Toulouse has home advantage and Lille is missing several attackers (Broholm, Igamane, Fernandez-Pardo) and defender Nianzou, which limits confidence. Both teams show mixed recent form, but Lille's superior quality and historical dominance against Toulouse tip the balance toward an away win.",
+                    "event_id": "401876468"
+                }
+            ]
+        }
+    ]
+}

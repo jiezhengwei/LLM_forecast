@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "English Premier League 2025-26",
+        "system_prompt": "You are an expert English Premier League Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-05-14\n    Target Date: 2026-05-15\n    Competition: English Premier League 2025-26\n\n    [Premier League Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nPremier League Matchup                                  | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Liverpool @ Aston Villa                              | Scheduled    | Away: 47.2% (17-8-11) vs Home: 47.2% (17-8-11)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Liverpool (Away) @ Aston Villa (Home)\n**News & Injury Report:**\n- [Aston Villa vs Liverpool Prediction, Betting Tips, Lineups & Odds | 15 May 2026](https://www.sportsgambler.com/betting-tips/football/aston-villa-vs-liverpool-prediction-lineups-odds-2026-05-15/)\n  Snippet: ### Aston Villa Predicted Lineup 4-2-3-1\n\n### Liverpool Predicted Lineup 4-2-3-1\n\n### Aston Villa Predicted Lineup 4-2-3-1\n\n### Liverpool Predicted Lineup 4-2-3-1\n\n#### Previous Aston Villa Lineups\n\n#### Previous Liverpool Lineups\n\n### Injuries & Suspensions\n\n#### Aston Villa Player Stats & Squad\n\n#### Manager: Unai Emery ...\n- [Liverpool FC XI vs Aston Villa: Confirmed team news, predicted lineup, injury latest for Premier League | The Standard](https://www.standard.co.uk/sport/football/liverpool-fc-xi-vs-aston-villa-confirmed-team-news-predicted-lineup-injury-latest-premier-league-2026-b1282186.html)\n  Snippet: Arsenal Premier League title permutations as Man City face Crystal Palace\n\nArsenal Premier League title permutations as Man City face Crystal Palace\n\nAston Villa vs Liverpool: Prediction, kick-off time, team news, odds, h2h\n\nAston Villa vs Liverpool: Prediction, kick-off time, team news, odds, h2h\n\nSponsored\n\nRediscover your adventurous side on an exotic getaway\n\nRediscover your adventurous side on an exotic getaway\n\nInjured: Ekitike, Bradley, Leoni\n\nDoubts: Salah, Alisson, Konate, Wirtz, Endo\n\nTime and date: 8pm BST on Friday, May 15, 2026\n\nVenue: Villa Park\n\nHow to watch: Sky Sports ...\n**Betting Odds:**\n- [Aston Villa FC vs Liverpool FC Odds - Friday May 15 2026](https://www.oddsshark.com/soccer/epl/aston-villa-liverpool-odds-may-17-2026-2423139)\n  Snippet: | Date | Opp | Score | SU | Total | Venue | League |\n ---  ---  ---\n| May 10, 2026 | BUR | 2-2 | D | 2.50 | Away | England - English Premier League |\n| May 3, 2026 | TOT | 1-2 | L | 2.75 | Home | England - English Premier League |\n| Apr 25, 2026 | FUL | 0-1 | L | 2.75 | Away | England - English Premier League |\n| Apr 19, 2026 | SUN | 4-3 | W | 2.50 | Home | England - English Premier League |\n| Apr 12, 2026 | NOF | 1-1 | D | 2.50 | Away | England - English Premier League |\n| Mar 22, 2026 | WHU | 2-0 | W | 2.75 | Home | England - English Premier League | ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-05-14\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-05-14 22:20:24"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-05-14 22:18:59",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Aston Villa holds a significant home advantage at Villa Park. The most critical factor is Liverpool's severe injury crisis, with key players like Salah, Alisson, and Konate listed as doubts, which significantly weakens their squad. While the teams have identical season records, these potential absences heavily favor the home side. However, Aston Villa's poor recent form (one win in their last five games) reduces confidence in their ability to secure a victory, making a draw a strong possibility. Despite this, the combination of home-field advantage and Liverpool's personnel issues makes a home win the most probable outcome."
+                }
+            ],
+            "api_model": "gemini-2.5-pro",
+            "model_name": "Gemini 2.5 Pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:19:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Season profiles look very even (both listed at 17-8-11, 47.2% win rate), so venue and availability are decisive. Villa Park is a meaningful edge, and Liverpool have multiple key doubts (Salah, Alisson, Konate, Wirtz, Endo) which increases variance and slightly depresses away-win probability. With no clear market price provided in the prompt to anchor a strong favorite, this projects as a near coin-flip with a modest lean to Villa at home and a healthy draw chance."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:19:36",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Season records are effectively identical (both 17-8-11), so baseline strength is balanced. Home advantage at Villa Park and Unai Emery's consistent setup tilt the edge to Aston Villa. Multiple doubtful/injured key players reported (notably doubts around Mohamed Salah, Alisson, Konat\u00e9 for Liverpool and some Villa absences listed), which increases uncertainty and reduces Liverpool's usual attacking edge \u2014 if Salah is ruled out or limited that notably lowers Liverpool's away-win probability. Recent form is mixed for both sides (Villa 2-2 draw on May 10; Liverpool form patchy), and publicly available betting market information in the context is ambiguous rather than strongly favoring one side, so probabilities are tempered. Given the combination of home advantage, injury doubt to Liverpool's key personnel, and balanced season-long performance, Villa are the slight favorites but the match remains competitive with a high draw chance."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:19:58",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Villa at home with a 4-2-3-1 setup; injuries on both sides but Liverpool face notable doubts (Salah, Alisson, Konate, Wirtz, Endo) which weakens their attacking and midfield presence. Villa's forward line is also diminished by Ekitike\u2019s injury, yet home advantage and Emery's setup keep them competitive. The balance tilts slightly toward an away win due to Liverpool's potential to exploit gaps in Villa's depth, albeit with screening doubts and a likely tight game."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:20:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.36,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.36,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical season records (17-8-11, 47.2% win rate), suggesting a closely matched contest. Liverpool are dealing with several key injury doubts (Salah, Alisson, Konate, Wirtz, Endo), which could impact their performance, especially away from home. Aston Villa have a solid home record and are managed by Unai Emery, who is tactically astute. Recent form for both sides is mixed, with neither team showing dominant momentum. Betting odds and market signals suggest a near coin-flip, with a slight lean toward a draw given the circumstances and injury uncertainty."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:20:05",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical win rates this season (47.2%). Liverpool has key players like Salah and Alisson as doubts, which could impact their performance. Aston Villa has the home advantage, but recent form shows inconsistency for both teams. Betting odds suggest a balanced matchup, leading to a likely draw."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:20:08",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have identical season records (17-8-11). Liverpool have key doubts (Salah, Alisson, Konate, Wirtz, Endo) while Aston Villa have injuries (Ekitike, Bradley, Leoni). Recent form is mixed: Villa lost 2 of last 3, Liverpool won 2 of last 3. Betting odds not provided but implied probabilities suggest a balanced matchup. Home advantage slightly offsets Liverpool's quality, leading to a draw."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:20:17",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.38,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.34,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Low",
+                    "reasoning": "Both teams have identical 47.2% win rates (17-8-11), making this an evenly matched contest. Liverpool face significant injury concerns with doubts over key players Salah, Alisson, Konate, Wirtz, and Endo, plus confirmed injuries to Ekitike, Bradley, and Leoni. Aston Villa's recent form shows inconsistency (D-L-L-W-D in last 5) but they have home advantage at Villa Park. Liverpool's injury crisis, particularly potential absences of Salah (key attacker) and Alisson (goalkeeper), significantly weakens their squad depth. Given the home advantage, Villa Park atmosphere, and Liverpool's depleted squad, Aston Villa have a slight edge. However, the match is genuinely close to a three-way toss-up. Villa's recent struggles (only 1 win in last 5) prevent this from being a stronger home favorite. The probabilities reflect a tight, competitive match where home advantage and Liverpool's injury issues tip the balance slightly toward Villa, but a draw or away win remain very realistic outcomes given both teams' identical season records."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-05-14 22:20:24",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Liverpool (away) @ Aston Villa (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Liverpool has a slightly better win rate and form, despite having several key players listed as doubts. Aston Villa's recent form has been inconsistent with two losses and a draw in their last five matches. The betting odds and team news suggest that Liverpool, even with potential injuries, is still favored to win."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

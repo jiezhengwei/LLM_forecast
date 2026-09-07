@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "French Ligue 1 2025-26",
+        "system_prompt": "You are an expert French Ligue 1 Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-03-12\n    Target Date: 2026-03-13\n    Competition: French Ligue 1 2025-26\n\n    [Ligue 1 Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLigue 1 Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. AJ Auxerre @ Marseille                               | Scheduled    | Away: 16.0% (4-7-14) vs Home: 56.0% (14-4-7)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: AJ Auxerre (Away) @ Marseille (Home)\n**News & Injury Report:**\n- [Preview: Marseille vs Auxerre - prediction, team news, lineups](https://www.sportsmole.co.uk/football/marseille/preview/marseille-vs-auxerre-prediction-team-news-lineups_593589.html)\n  Snippet: AJA have won two of their last three Ligue 1 meetings with Marseille, including a 3-1 triumph in this exact fixture a season ago.\n\nMarseille Ligue 1 form:\n\n D\n L\n D\n L\n W\n W\n\nMarseille form (all competitions):\n\n L\n D\n L\n W\n L\n W\n\nAuxerre Ligue 1 form...\n- [Marseille vs Auxerre - live score, predicted lineups and H2H stats](https://www.fotmob.com/matches/auxerre-vs-marseille/2ftlic)\n  Snippet: The current predicted lineups are:   \nMarseille (4-2-3-1): Ger\u00f3nimo Rulli - Timothy Weah, Benjamin Pavard, Leonardo Balerdi, Facundo Medina - Geoffrey Kondogbia, Pierre-Emile H\u00f8jbjerg - Mason Greenwood, Hamed Traor\u00e8, Igor Paix\u00e3o - Pierre-Emerick Auba...\n**Betting Odds:**\n- [Olympique Marseille - AJ Auxerre betting tip & best odds | 13.03.2026](https://www.futbol24.com/betting-tips/preview/13-03-2026-olympique-marseille-aj-auxerre-betting-tip/)\n  Snippet: ## Our Betting Predictions\n\n1. \\\\Home win for Olympique Marseille - Tip 1\\\\: Given the current form and overall standings, we strongly believe that Olympique Marseille will secure a victory against AJ Auxerre. With odds of 1.51, Marseille's home adva...\n- [Marseille vs Auxerre Odds - Friday March 13 2026](https://www.oddsshark.com/soccer/ligue-1/marseille-auxerre-odds-march-15-2026-2427710)\n  Snippet: Skip to main content \n\nSoccer\n\n# Marseille vs Auxerre\n\nAuxerre\n\n4 - 7 - 14\n\nD-D-L-W-D-D\n\nMarseille\n\n14 - 4 - 7\n\nW-W-L-D-L-D\n\nMarch 13, 2026, 3:45 PM EDT  \n | Orange Velodrome\n\nPredicted Score\n\n0.6\n\nAUX\n\n2.2\n\nOM\n\nMoneyline Consensus\n\nLine History\n\nAUX...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-03-12\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-03-12 16:23:03"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-03-12 16:22:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.14,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market pricing heavily favors Marseille (home win odds ~1.51), consistent with the large season-strength gap (Marseille 14-4-7 vs Auxerre 4-7-14) and a strong home edge at the Velodrome. Model-style projected goals also lean clearly to OM (approx 2.2 vs 0.6). Marseille\u2019s recent league form is uneven (D-L-D-L-W-W), which keeps the draw and upset chances non-trivial, and Auxerre\u2019s recent H2H success in this fixture slightly increases variance, but overall OM remain the most likely winner."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.64,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market strongly favours Marseille (published best odds ~1.51 \u2192 implied ~66%). Marseille have a superior season record (14-4-7; 56% win rate) and strong home advantage at the V\u00e9lodrome. Squad and predicted lineup (Aubameyang, Greenwood, Kondogbia, H\u00f8jbjerg) quality tilt the balance. Auxerre have very poor away form (4-7-14; 16% win rate) despite recent head-to-head upsets (won 2 of last 3 vs OM), and their current form shows many draws and few wins. Marseille\u2019s inconsistency and the possibility of an upset justify a non-trivial draw probability. No major injuries reported that would dramatically change the outlook."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:20",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille hold a strong home record (14-4-7) and recent form is solid; Auxerre is weaker on the road (4-7-14). Betting odds show Marseille as the favorite (~1.5), aligning with a home win probability around 0.60-0.65. No major injuries reported in the provided notes."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:25",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille have a strong home record (56% win rate) and implied odds of ~1.51 (roughly 66% probability) further back them as major favorites. Auxerre's away record is poor (16% win rate), and although they have recently beaten Marseille in this fixture, their underlying form (recent run D-D-L-W-D-D) and squad quality remain inferior. Marseille\u2019s lineup is largely at full strength and statistical models predict a clear performance gap. There is some historical caution (Auxerre upset last season), but all signals\u2014including bookmaker odds and team form\u2014favor Marseille solidly."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille has a strong home record with a 56.0% win rate and is playing at their home stadium, the Orange Velodrome. Additionally, the betting odds heavily favor Marseille, reflecting confidence in their ability to win. Auxerre has historically struggled away with only a 16.0% win rate. Despite Auxerre's recent good head-to-head record against Marseille, the overall factors, including Marseille's squad strength, suggest a home win is likely."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille has a strong home record (14-4-7) compared to Auxerre's poor away record (4-7-14). Despite Auxerre winning two of the last three against Marseille, including last year's fixture, Marseille's current form, though inconsistent, is slightly better, including some recent wins. The betting odds (1.51 for Marseille win) strongly favor a home win. Marseille's predicted lineup also looks strong. Predicted score is 2.2 for Marseille and 0.6 for Auxerre."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:42",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille has strong home form (56% win rate, 14-4-7 record) and recent momentum with back-to-back Ligue 1 wins. Auxerre has poor away record (16% win rate, 4-7-14) and inconsistent form (D-D-L-W-D-D). Marseille's predicted lineup shows a strong squad with experienced players like Aubameyang, Pavard, and H\u00f8jbjerg. Betting odds heavily favor Marseille (1.51 implied probability ~66%), aligning with statistical advantage. Historical Auxerre wins provide some caution, but current form and venue strongly favor Marseille."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:22:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.23,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Marseille holds a significant advantage with a 56% win rate (14-4-7) compared to Auxerre's poor 16% (4-7-14). Betting odds strongly favor Marseille at 1.51, indicating approximately 66% implied probability for a home win. However, recent form shows Marseille struggling with mixed results (W-W-L-D-L-D), while Auxerre has historically performed well in this fixture, winning 2 of the last 3 meetings including a 3-1 victory at this venue last season. The predicted score of 2.2-0.6 favors Marseille significantly. Despite home advantage and superior season record, Marseille's inconsistent recent form and Auxerre's historical success in this matchup warrant some caution. Home advantage at Orange Velodrome and overall quality gap should prevail, but the draw probability remains meaningful given recent performances. Confidence is medium rather than high due to Marseille's recent inconsistency and Auxerre's proven ability to upset in this specific fixture."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-03-12 16:23:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "AJ Auxerre (away) @ Marseille (home)",
+                    "home_win_probability": 0.65,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.15,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "High",
+                    "reasoning": "Marseille has a strong home record with a 56.0% win rate, and they are favored by the betting odds at 1.51. Despite AJ Auxerre's recent success against Marseille, the overall form and home advantage for Marseille suggest a higher probability of a home win. The away team, AJ Auxerre, has a poor away record with only a 16.0% win rate."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}

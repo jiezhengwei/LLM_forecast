@@ -1,0 +1,163 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2025-26",
+        "system_prompt": "You are an expert La Liga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-26\n    Target Date: 2026-04-27\n    Competition: La Liga 2025-26\n\n    [La Liga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nLa Liga Matchup                                         | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. Levante @ Espanyol                                   | Scheduled    | Away: 25.0% (8-8-16) vs Home: 31.2% (10-8-14)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: Levante (Away) @ Espanyol (Home)\n**News & Injury Report:**\n- [Espanyol vs Levante - prediction, preview & betting tips - 27/04/2026](https://footballwhispers.com/blog/espanyol-vs-levante-prediction-27-04-2026/)\n  Snippet: However, while the Valencia-based side have won three consecutive home games, they are without a win in their last four matches on the road (D1, L4).\n\nAdditionally, Levante have a poor track record against Espanyol, having won only one of the last 11 encounters between these sides, with no wins in the last five H2Hs.\n\nThe visitors remain without Unai Elgezabal due to a muscular injury, while Ivan Romero also misses out due to suspension.\n\nKareem Tunde and Roger Brugue have doubts surrounding their availability for this game, with both players in line for a final check ahead of the game. ...\n- [Espanyol Barcelona - Levante UD prediction & tips 27.04.2026](https://www.transfermarkt.com/betting/tips/espanyol-barcelona-vs-levante-ud-prediction-27-04-2026/)\n  Snippet: | 10 | CA Osasuna  CA Osasuna | 39 | 32 | 10 | 9 | 13 | 37 | 39 | -2 |\n| 11 | Girona FC  Girona FC | 38 | 32 | 9 | 11 | 12 | 35 | 48 | -13 |\n| 12 | Espanyol Barcelona  Espanyol Barcelona | 38 | 32 | 10 | 8 | 14 | 37 | 49 | -12 |\n| 13 | Rayo Vallecano  Rayo Vallecano | 38 | 32 | 9 | 11 | 12 | 30 | 38 | -8 |\n| 14 | Valencia FC  Valencia CF | 36 | 32 | 9 | 9 | 14 | 35 | 47 | -12 |\n| 15 | RCD Mallorca  RCD Mallorca | 35 | 32 | 9 | 8 | 15 | 40 | 49 | -9 |\n| 16 | Elche CF  Elche CF | 35 | 32 | 8 | 11 | 13 | 42 | 49 | -7 |\n| 17 | Sevilla FC  Sevilla FC | 34 | 32 | 9 | 7 | 16 | 39 | 53 | -14 | ...\n**Betting Odds:**\n- [Espanyol vs Levante prediction \u2013 Odds & stats \u2013 27 April 2026](https://www.wincomparator.com/predictions/espanyol-levante-7687597/)\n  Snippet: Under/Over 2.5 Goals in Espanyol \u2013 Levante Match\n\nUnder 2.5 goals\n\nBet365\n\n1.91\n\nOver 2.5 goals\n\nBet365\n\n1.91\n\nCheck all odds\n\nBoth Teams To Score: Espanyol v Levante BTTS Odds\n\nYes\n\nBet365\n\n1.75\n\nNo\n\nBet365\n\n2\n\nCheck all odds\n\nEspanyol vs Levante 1X2 Odds Comparison\n\nBookmaker\n\n1\n\nx\n\n2\n\nBonus\n\nStake Stake\n\n1.93\n\n3.55\n\n4.1\n\n\u20ac1000\n\nMelbet Melbet\n\n1.9\n\n3.54\n\n4.1\n\n150%\n\nBetwinner Betwinner\n\n1.9\n\n3.54\n\n4.1\n\n\u20ac130\n\nBet365 Bet365\n\n1.9\n\n3.4\n\n4.1\n\nSee the offer\n\nBC Game BC Game\n\n1.88\n\n3.5\n\n4.1\n\n$4000\n\n888Starz 888Starz\n\n1.97\n\n3.67\n\n4.26\n\n$400\n\nBetfred Betfred\n\n1.9\n\n3.6\n\n4\n\n\u00a350\n\nTonybet Tonybet\n\n1.88 ...\n- [Espanyol vs. Levante prediction, odds, La Liga picks [4/27/2026]](https://www.dimers.com/news/espanyol-vs-levante-prediction-la-liga-monday-04-27-2026-ac)\n  Snippet: ## Espanyol vs. Levante odds\n\nWe have sourced the best La Liga odds in America for this game, which are listed here:\n\n### Moneyline\n\n| Espanyol | Levante | Draw |\n ---\n| +105 | +280 | +235 |\n\n### Total Goals\n\n| Over 2.5 | Under 2.5 |\n --- |\n| -120 | -115 |\n\nAll odds are correct at the time of publication and are subject to change.\n\n## Espanyol vs. Levante picks and best bet\n\nAfter matching our predictions against the best available odds, we can reveal our picks for each of the major markets. Plus, find our best bet for the game below: ...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-26\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-26 20:36:16"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-26 20:35:01",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.21,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market odds (~1.90/3.55/4.10) imply Espanyol as clear but not dominant favorites; normalized baseline is roughly 0.50/0.27/0.23. Form and squad news support a small upgrade to Espanyol: Levante are winless in recent away matches and travel without Unai Elgezabal (injury) plus Ivan Romero (suspension), with additional fitness doubts. H2H trend also strongly favors Espanyol (Levante only 1 win in last 11), making the home win the most likely outcome, with the draw still a meaningful secondary result."
+                }
+            ],
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:09",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.53,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Bookmakers strongly favour Espanyol (market decimals ~1.9 for home, ~3.4 draw, ~4.1 away -> market-implied roughly 52/29/24). Adjusting for on-the-ground factors: Espanyol have won three straight at home and hold a clear head-to-head advantage (Levante just 1 win in last 11 meetings and none in last 5). Levante are poor on the road (no wins in their last four away matches) and face absences/suspensions (Unai Elgezabal out, Ivan Romero suspended; other players doubtful), which weakens their already-limited away threat. Considering market prices and these situational negatives for Levante, tilt probability slightly more to the home side and reduce the away chance. Draw remains a meaningful outcome given La Liga draw frequency and relatively modest gap between teams."
+                }
+            ],
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:30",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.466,
+                    "draw_probability": 0.284,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol favored at home (based on odds and recent home form), boosted by a three-match home winning streak. Levante face injury suspensions (Unai Elgezabal out, Ivan Romero suspended) and doubts on Kareem Tunde and Roger Brugue. Weak head-to-head against Espanyol historically. Market odds imply a higher likelihood of home win, normalized to sum to 1.0."
+                }
+            ],
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:33",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol are at home, have a better head-to-head record, and face a Levante side missing key players (Elgezabal, Romero) with doubts over Tunde and Brugue. Levante have not won any of their last five trips to Espanyol and have poor recent away form (no wins in last four). The betting odds support Espanyol as a narrow favorite (home win odds ~1.9-1.97, implying 46-51% probability), while the draw is next favored (~3.5-3.67) and away win is least likely (~4.1-4.26). Both teams overall have low win rates, but context and odds make Espanyol the statistical favorite, with a moderate probability of a draw."
+                }
+            ],
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:37",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has a better home win rate (31.2%) compared to Levante's away win rate (25.0%). Levante is missing key players such as Unai Elgezabal and Ivan Romero, which weakens their squad further. The historical head-to-head record favors Espanyol significantly, and betting odds slightly favor Espanyol as well."
+                }
+            ],
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:48",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante @ Espanyol",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol is favored to win at home, supported by betting market odds indicating nearly a 50% implied probability. Levante is currently struggling on the road, going winless in their recent away matches, and suffers from a poor historical head-to-head record against Espanyol (winless in the last five meetings). Levante is also dealing with key absences, including a suspension for Ivan Romero and an injury to Unai Elgezabal."
+                }
+            ],
+            "model_name": "Gemini 3.0",
+            "api_model": "gemini-3-pro-preview"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:35:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.62,
+                    "draw_probability": 0.22,
+                    "away_win_probability": 0.16,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has home advantage and better recent form against Levante, who are winless in last 4 away matches. Levante injuries to Elgezabal and Romero weaken them. Betting odds favor home win (1.9) implying ~50% chance, but with injuries and H2H history, I estimate higher home win probability. Draw and away win are less likely but not negligible."
+                }
+            ],
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:36:03",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "Converting betting odds to implied probabilities: Espanyol (1.90) = 52.6%, Draw (3.54) = 28.2%, Levante (4.10) = 24.4%. After removing vig, probabilities normalize to approximately 48% home, 28% draw, 24% away. Key factors supporting Espanyol: (1) Home advantage, (2) Better head-to-head record (Levante won only 1 of last 11 encounters, winless in last 5 H2Hs), (3) Levante's poor away form (no wins in last 4 road matches - D1, L4), (4) Espanyol's decent home form (won 3 consecutive home games prior to current stretch). Levante injuries/suspensions: Unai Elgezabal (muscular injury), Ivan Romero (suspension), plus doubts over Kareem Tunde and Roger Brugue. Season records show both teams struggling (Espanyol 31.2% win rate, Levante 25.0%), but Espanyol's home venue and Levante's away struggles tip the balance. The relatively close odds reflect that both teams are mid-to-lower table, making this a competitive but home-favored fixture. Draw probability remains significant at 28% given both teams' inconsistent form."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5"
+        },
+        {
+            "forecast_timestamp": "2026-04-26 20:36:16",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Levante (away) @ Espanyol (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win / Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Espanyol has a slight home advantage with a 31.2% win rate at home, while Levante has a poor away record of 25.0%. Levante is also without key players due to injuries and suspensions. The betting odds slightly favor Espanyol, but the high draw probability reflects the recent form and historical head-to-head results."
+                }
+            ],
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max"
+        }
+    ]
+}

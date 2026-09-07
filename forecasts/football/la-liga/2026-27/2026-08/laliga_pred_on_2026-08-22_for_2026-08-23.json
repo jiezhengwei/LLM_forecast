@@ -1,0 +1,1278 @@
+{
+    "meta_info": {
+        "competition": "La Liga 2026-2027",
+        "competition_key": "la_liga",
+        "season": "2026-2027",
+        "period": 2,
+        "forecast_target": "three_way_90min",
+        "forecast_date_et": "2026-08-22",
+        "target_date_et": "2026-08-23",
+        "panel_version": "ClubFootball-2026-27-WC25.v1",
+        "panel_source": "WorldCup-2026-runtime-25",
+        "panel_size_expected": 25,
+        "panel_spec": "docs/superpowers/specs/2026-08-14-club-football-2026-27-production-design.md",
+        "model_config": [
+            {
+                "model_name": "Gemini 3.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-3.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 3.1 Pro Preview",
+                "vendor": "gemini",
+                "api_model": "gemini-3.1-pro-preview",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Pro",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-pro",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "Gemini 2.5 Flash",
+                "vendor": "gemini",
+                "api_model": "gemini-2.5-flash",
+                "caller": "gemini"
+            },
+            {
+                "model_name": "GPT-5.5 Pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-pro-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.5",
+                "vendor": "openai",
+                "api_model": "gpt-5.5-2026-04-23",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5.2 pro",
+                "vendor": "openai",
+                "api_model": "gpt-5.2-pro",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Mini",
+                "vendor": "openai",
+                "api_model": "gpt-5-mini",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-5 Nano",
+                "vendor": "openai",
+                "api_model": "gpt-5-nano",
+                "caller": "openai5"
+            },
+            {
+                "model_name": "GPT-4.1",
+                "vendor": "openai",
+                "api_model": "gpt-4.1",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "GPT-4o",
+                "vendor": "openai",
+                "api_model": "gpt-4o",
+                "caller": "openai_chat"
+            },
+            {
+                "model_name": "Claude Fable 5",
+                "vendor": "anthropic",
+                "api_model": "claude-fable-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Opus 4.8",
+                "vendor": "anthropic",
+                "api_model": "claude-opus-4-8",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.6",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-6",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Sonnet 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-sonnet-4-5",
+                "caller": "claude"
+            },
+            {
+                "model_name": "Claude Haiku 4.5",
+                "vendor": "anthropic",
+                "api_model": "claude-haiku-4-5-20251001",
+                "caller": "claude"
+            },
+            {
+                "model_name": "DeepSeek V4 Pro",
+                "vendor": "deepseek",
+                "api_model": "deepseek-v4-pro",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "DeepSeek",
+                "vendor": "deepseek",
+                "api_model": "deepseek-chat",
+                "caller": "compat_strict"
+            },
+            {
+                "model_name": "Qwen 3.7 Max",
+                "vendor": "qwen",
+                "api_model": "qwen3.7-max-2026-06-08",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen Max",
+                "vendor": "qwen",
+                "api_model": "qwen-max",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Plus",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-plus-2026-04-20",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Qwen 3.5 Flash",
+                "vendor": "qwen",
+                "api_model": "qwen3.5-flash-2026-02-23",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.6",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.6",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Kimi K2.5",
+                "vendor": "kimi",
+                "api_model": "kimi-k2.5",
+                "caller": "compat_loose"
+            },
+            {
+                "model_name": "Moonshot v1 32k",
+                "vendor": "kimi",
+                "api_model": "moonshot-v1-32k",
+                "caller": "compat_loose"
+            }
+        ],
+        "system_prompt": "You forecast Spanish La Liga 2026-2027 matches. Return valid JSON only. The target is the regulation-time three-way result: home win, draw, or away win, including stoppage time and excluding extra time/penalties.",
+        "user_prompts": [
+            "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882915\nMatchup: Villarreal (away) @ Atlético Madrid (home)\nHome: Atlético Madrid\nAway: Villarreal\nKickoff UTC: 2026-08-23T15:00Z\nKickoff ET: 2026-08-23 11:00 EDT\nVenue: Riyadh Air Metropolitano\nRound: unavailable\nHome form: WLWWL\nAway form: DWLLD\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Atlético Madrid -115 (open -115); Draw +270 (open +255); Villarreal +310 (open +295)\nTavily context:\n  - Title: Atletico Madrid vs Villarreal - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atletico Madrid vs Villarreal — Sun, August 23, 3:00 PM UTC\n\nLaLiga Round 2\n\n LaLiga Round 2\n Riyadh Air Metropolitano\n\nAtletico MadridAtletico Madrid\n\n‌\n‌\n\nVillarrealVillarreal\n\n# Atletico Madrid vs Villarreal — Sun, August 23, 3:00 PM UTC\n\nLaLiga Round 2\n\n LaLiga Round 2\n Riyadh Air Metropolitano\n\nAtletico MadridAtletico Madrid\n\n‌\n‌\n\nVillarrealVillarreal\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alexander Sørloth\n\n  Muscle injury / Late August 2026\n\nSørlothMuscle injuryLate August 2026\n\n## Team form\n\n Man City\n\n  3 - 1\n\n  Atletico Madrid\n Man United ...\n    URL: https://www.fotmob.com/matches/atletico-madrid-vs-villarreal/3ceu3u\n  - Title: Atlético de Madrid vs Villarreal Predictions, Picks & Odds - 23/08/2026\n    Content: The draw or away double chance stands as the value selection here. Atlético's depleted squad tells a damning story: Sørloth is ruled out, while Julián Álvarez, Llorente, Baena, and Pubill all remain doubtful. Simeone faces a genuine striker crisis at the worst possible moment, and the home side's form reflects it, with three defeats in their last five outings. ...\n    URL: https://www.toffeeweb.com/atletico-de-madrid-vs-villarreal-predictions-picks-odds-23-08-2026\n  - Title: Atlético Madrid vs Villarreal Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Atléti Corners\n\nOver 5.5\n\n1.85\n\nUnder 5.5\n\n1.83\n\n Stake Logo\n\nVillarreal Corners\n\nOver 3.5\n\n1.72\n\nUnder 3.5\n\n1.98\n\n Stake Logo\n\nMost Corners\n\n1\n\n1.50\n\nX\n\n7.50\n\n2\n\n2.90\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nFull-Time Result Atléti 1.86\n\nTotal Goals Under 2.5 1.95\n\nShots On Target Georges Mikautadze Over 0.5 1.73 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/atletico-madrid-vs-villarreal-prediction-lineups-odds-2026-08-23\n  - Title: Atletico Madrid vs Villarreal Picks & Prediction - 8/23/26\n    Content: ## Our Atletico Madrid vs Villarreal Prediction\n\nVillarreal did score twice in their first game, but in reality they didn’t create very much at all, especially considering they were up against newly-promoted Racing Santander. Giving away many more chances in the final third than they produced, this visiting team will need to do a lot more up against a tougher opponent. ...\n    URL: https://www.sportytrader.com/us/picks/atletico-madrid-villarreal-367419\n\nGame ID: 2\nSource event_id: 401882911\nMatchup: Racing Santander (away) @ Getafe (home)\nHome: Getafe\nAway: Racing Santander\nKickoff UTC: 2026-08-23T17:30Z\nKickoff ET: 2026-08-23 13:30 EDT\nVenue: Estadio Coliseum\nRound: unavailable\nHome form: WLWLW\nAway form: DWDWW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Getafe +120 (open -115); Draw +200 (open +200); Racing Santander +285 (open +390)\nTavily context:\n  - Title: Getafe vs Racing Santander Predictions, Picks & Odds - 23/08/2026\n    Content: 2.2Total goals\n\n35%Both teams score\n\n1.1Goals scored\n\n1.1Goals conceded\n\n#### Racing Santander\n\nRecent form\n\nD\n\nWins0/1 (0%)\n\nDraws1/1 (100%)\n\nLosses0/1 (0%)\n\nSeason statistics (1)\n\n3.5Total goals\n\n70%Both teams score\n\n2Goals scored\n\n1.5Goals conceded\n\n| Statistic | Getafe | Racing Santander |\n ---\n| Last 5 results | 2W 1D 2L | · | 1D |\n| Avg goals scored | 1.1 | · | 2.0 |\n| Avg goals conceded | 1.1 | · | 1.5 |\n| Under 2.5 (last 5) | 2/5 | · | 0/1 |\n\nProbable lineup\n\n### Lineups: Getafe vs Racing Santander\n\n#### Getafe\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/getafe-vs-racing-santander-predictions-picks-odds-23-08-2026\n  - Title: Getafe vs Racing Club Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Racing have won 6, lost 1 and drawn 3, averaging 16.0 attempts, 7.6 shots on goal and 2.7 goals. The Santander team average 51.1% possession, 5.9 corners in their favour and 3.7 corners against, while 1.6 goals have been conceded from 4.1 shots on goal and 11.6 attempts.\n\nAndres Martin is the leading goalscorer with 7, Asier Villalibre has 4, with Inigo Vicente and Giorgi Guliashvili getting 3. Inigo Vicente has been the chief assist maker in the previous 10 games with 6.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/getafe-vs-racing-club-santander-prediction-lineups-odds-2026-08-23\n  - Title: Getafe vs Racing Santander Prediction & Betting Tips - 23/08/2026\n    Content: For Racing, Sergio Canales operating behind Asier Villalibre in the number ten role gives Iñigo Arregui's side genuine creative threat on the break. The midfield pairing of Gustavo Puerta and Sergio Martínez will be tasked with screening a Getafe press that, whatever the final XI, is unlikely to be gentle.\n\n### Odds comparison ...\n    URL: https://thefootballfaithful.com/getafe-vs-racing-santander-prediction-betting-tips-23-08-2026\n  - Title: Prediction Getafe vs Racing Santander: analysis, odds and ...\n    Content: 6 hours ago — The La Liga match between Getafe and Racing Santander will be played on August 23, 2026 at 10:30. The odds are: Getafe to win 2.20, draw 2.90,\n    URL: https://betmines.com/match-preview/getafe-vs-racing-santander-prediction-match-preview-and-analysis-la-liga-23-08-2026\n\nGame ID: 3\nSource event_id: 401882913\nMatchup: Barcelona (away) @ Elche (home)\nHome: Elche\nAway: Barcelona\nKickoff UTC: 2026-08-23T19:30Z\nKickoff ET: 2026-08-23 15:30 EDT\nVenue: Estadio Martínez Valero\nRound: unavailable\nHome form: DDWLD\nAway form: WLWLW\nHome record: 0-1-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Elche +750 (open +650); Draw +475 (open +475); Barcelona -310 (open -320)\nTavily context:\n  - Title: Elche vs Barcelona LaLiga preview: Key stats, team news, tactics & transfers\n    Content: 11\n\n  Raphinha\n\n### Manager\n\n M. Anselmi\n\n H. Flick\n\nElche head into this fixture without four players. Yago Santiago, Grady Diangana, Abiel Osorio, and Adam Boayar are all listed as injured, leaving Anselmi with a reduced pool to select from. No suspensions are recorded, and no probable lineup has been confirmed ahead of kick-off.\n\nBarcelona also have injury concerns to manage. Frenkie de Jong and Roony Bardghji are both sidelined, though Flick has no suspensions to contend with. The club has not released a confirmed starting eleven, and updates are expected closer to the match.\n\n### Form ...\n    URL: https://www.goal.com/en/news/elche-barcelona-la-liga-preview/blte25d3aa30ee0f3e2\n  - Title: Elche vs Barcelona LaLiga preview: Team news, tactics & transfers | INDIVISA\n    Content: 11\n\n  Raphinha\n\n### Manager\n\n M. Anselmi\n\n H. Flick\n\nElche head into this fixture without four players. Yago Santiago, Grady Diangana, Abiel Osorio, and Adam Boayar are all listed as injured, leaving Anselmi with a reduced pool to select from. No suspensions are recorded, and no probable lineup has been confirmed ahead of kick-off.\n\nBarcelona also have injury concerns to manage. Frenkie de Jong and Roony Bardghji are both sidelined, though Flick has no suspensions to contend with. The club has not released a confirmed starting eleven, and updates are expected closer to the match.\n\n### Form ...\n    URL: https://www.goal.com/en/indivisa/news/elche-vs-barcelona-laliga-preview-key-stats-team-news-tactics-and-transfers/blte25d3aa30ee0f3e2\n  - Title: Elche vs Barcelona Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: For those wanting an alternative, Barca are 1.72 on the Half-Time Result market. This means they need to lead at the break, with Elche being priced up at 6.75 and the draw is 2.75.\n\nOver 2.5 Goals is trading at a shorter price than Under 2.5 Goals right now. BTTS betting is always a warm order and you can bet Yes at 1.73 on the Both Teams to Score market.\n\nThe leading football betting sites provide hundreds of markets for the latest La Liga games. Be sure to peruse all of the available options before going ahead with your preferred wager.\n\nFull-Time Result\n\n1\n\n9.00\n\nX\n\n5.60\n\n2\n\n1.30 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/elche-vs-barcelona-prediction-lineups-odds-2026-08-23\n  - Title: Elche vs Barcelona Prediction, Odds & Betting Tips | 23.08.2026 | La Liga\n    Content: ## Additional predictions\n\nElche vs FC Barcelona odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| BC.GAME logo  BC.GAME | 9.00 | 5.60 | 1.30 | 1.45 | 2.70 |\n| Mostbet logo  Mostbet | 8.80 | 5.10 | 1.31 | 1.48 | 2.62 |\n| Roobet logo  Roobet | 9.10 | 5.65 | 1.30 | 1.42 | 2.61 |\n| Redracer logo  Redracer | 9.00 | 5.75 | 1.30 | 1.44 | 2.75 |\n| Lucky Star logo  Lucky Star | 9.45 | 5.84 | 1.35 | 1.42 | 2.61 |\n| Melbet logo  Melbet | 9.10 | 5.65 | 1.30 |  |  |\n| Megapari logo  Megapari | 9.00 | 5.75 | 1.30 | 1.44 | 2.75 |\n| 22bet logo  22bet | 9.00 | 5.60 | 1.30 | 1.45 | 2.70 | ...\n    URL: https://www.mightytips.com/football-predictions/elche-vs-barcelona-prediction-23-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one."
+        ],
+        "chunk_manifest": [
+            {
+                "chunk_index": 1,
+                "user_prompt": "La Liga 2026-2027 forecast\n\nForecast Date (ET): 2026-08-22\n\nTarget Date (ET): 2026-08-23\n\nforecast_target: three_way_90min\n\nPredict the 90-minute regulation-time result, including stoppage time and excluding extra time and penalties.\n\nGame ID: 1\nSource event_id: 401882915\nMatchup: Villarreal (away) @ Atlético Madrid (home)\nHome: Atlético Madrid\nAway: Villarreal\nKickoff UTC: 2026-08-23T15:00Z\nKickoff ET: 2026-08-23 11:00 EDT\nVenue: Riyadh Air Metropolitano\nRound: unavailable\nHome form: WLWWL\nAway form: DWLLD\nHome record: 1-0-0\nAway record: 0-1-0\nESPN structured 1X2 odds: DraftKings: Atlético Madrid -115 (open -115); Draw +270 (open +255); Villarreal +310 (open +295)\nTavily context:\n  - Title: Atletico Madrid vs Villarreal - live score, predicted lineups and H2H stats\n    Content: TV schedules\n\n# Atletico Madrid vs Villarreal — Sun, August 23, 3:00 PM UTC\n\nLaLiga Round 2\n\n LaLiga Round 2\n Riyadh Air Metropolitano\n\nAtletico MadridAtletico Madrid\n\n‌\n‌\n\nVillarrealVillarreal\n\n# Atletico Madrid vs Villarreal — Sun, August 23, 3:00 PM UTC\n\nLaLiga Round 2\n\n LaLiga Round 2\n Riyadh Air Metropolitano\n\nAtletico MadridAtletico Madrid\n\n‌\n‌\n\nVillarrealVillarreal\n\n## Who will win?\n\n‌\n\n‌\n\n‌\n\n## Injured and suspended players\n\n  Alexander Sørloth\n\n  Muscle injury / Late August 2026\n\nSørlothMuscle injuryLate August 2026\n\n## Team form\n\n Man City\n\n  3 - 1\n\n  Atletico Madrid\n Man United ...\n    URL: https://www.fotmob.com/matches/atletico-madrid-vs-villarreal/3ceu3u\n  - Title: Atlético de Madrid vs Villarreal Predictions, Picks & Odds - 23/08/2026\n    Content: The draw or away double chance stands as the value selection here. Atlético's depleted squad tells a damning story: Sørloth is ruled out, while Julián Álvarez, Llorente, Baena, and Pubill all remain doubtful. Simeone faces a genuine striker crisis at the worst possible moment, and the home side's form reflects it, with three defeats in their last five outings. ...\n    URL: https://www.toffeeweb.com/atletico-de-madrid-vs-villarreal-predictions-picks-odds-23-08-2026\n  - Title: Atlético Madrid vs Villarreal Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Atléti Corners\n\nOver 5.5\n\n1.85\n\nUnder 5.5\n\n1.83\n\n Stake Logo\n\nVillarreal Corners\n\nOver 3.5\n\n1.72\n\nUnder 3.5\n\n1.98\n\n Stake Logo\n\nMost Corners\n\n1\n\n1.50\n\nX\n\n7.50\n\n2\n\n2.90\n\n Stake Logo\n\nPick odds and lines correct at publication. Live market odds are updated regularly and may differ. T&Cs apply. 18+ (or legal age) | Gamble Responsibly.\n\n### Bet Builder Tips\n\nFull-Time Result Atléti 1.86\n\nTotal Goals Under 2.5 1.95\n\nShots On Target Georges Mikautadze Over 0.5 1.73 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/atletico-madrid-vs-villarreal-prediction-lineups-odds-2026-08-23\n  - Title: Atletico Madrid vs Villarreal Picks & Prediction - 8/23/26\n    Content: ## Our Atletico Madrid vs Villarreal Prediction\n\nVillarreal did score twice in their first game, but in reality they didn’t create very much at all, especially considering they were up against newly-promoted Racing Santander. Giving away many more chances in the final third than they produced, this visiting team will need to do a lot more up against a tougher opponent. ...\n    URL: https://www.sportytrader.com/us/picks/atletico-madrid-villarreal-367419\n\nGame ID: 2\nSource event_id: 401882911\nMatchup: Racing Santander (away) @ Getafe (home)\nHome: Getafe\nAway: Racing Santander\nKickoff UTC: 2026-08-23T17:30Z\nKickoff ET: 2026-08-23 13:30 EDT\nVenue: Estadio Coliseum\nRound: unavailable\nHome form: WLWLW\nAway form: DWDWW\nHome record: 0-0-1\nAway record: 0-1-0\nESPN structured 1X2 odds: Provider unavailable: Getafe +120 (open -115); Draw +200 (open +200); Racing Santander +285 (open +390)\nTavily context:\n  - Title: Getafe vs Racing Santander Predictions, Picks & Odds - 23/08/2026\n    Content: 2.2Total goals\n\n35%Both teams score\n\n1.1Goals scored\n\n1.1Goals conceded\n\n#### Racing Santander\n\nRecent form\n\nD\n\nWins0/1 (0%)\n\nDraws1/1 (100%)\n\nLosses0/1 (0%)\n\nSeason statistics (1)\n\n3.5Total goals\n\n70%Both teams score\n\n2Goals scored\n\n1.5Goals conceded\n\n| Statistic | Getafe | Racing Santander |\n ---\n| Last 5 results | 2W 1D 2L | · | 1D |\n| Avg goals scored | 1.1 | · | 2.0 |\n| Avg goals conceded | 1.1 | · | 1.5 |\n| Under 2.5 (last 5) | 2/5 | · | 0/1 |\n\nProbable lineup\n\n### Lineups: Getafe vs Racing Santander\n\n#### Getafe\n\n3-4-2-1\n\nStarters ...\n    URL: https://www.toffeeweb.com/getafe-vs-racing-santander-predictions-picks-odds-23-08-2026\n  - Title: Getafe vs Racing Club Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: Racing have won 6, lost 1 and drawn 3, averaging 16.0 attempts, 7.6 shots on goal and 2.7 goals. The Santander team average 51.1% possession, 5.9 corners in their favour and 3.7 corners against, while 1.6 goals have been conceded from 4.1 shots on goal and 11.6 attempts.\n\nAndres Martin is the leading goalscorer with 7, Asier Villalibre has 4, with Inigo Vicente and Giorgi Guliashvili getting 3. Inigo Vicente has been the chief assist maker in the previous 10 games with 6.\n\n### Predicted & Confirmed Lineups ...\n    URL: https://www.sportsgambler.com/betting-tips/football/getafe-vs-racing-club-santander-prediction-lineups-odds-2026-08-23\n  - Title: Getafe vs Racing Santander Prediction & Betting Tips - 23/08/2026\n    Content: For Racing, Sergio Canales operating behind Asier Villalibre in the number ten role gives Iñigo Arregui's side genuine creative threat on the break. The midfield pairing of Gustavo Puerta and Sergio Martínez will be tasked with screening a Getafe press that, whatever the final XI, is unlikely to be gentle.\n\n### Odds comparison ...\n    URL: https://thefootballfaithful.com/getafe-vs-racing-santander-prediction-betting-tips-23-08-2026\n  - Title: Prediction Getafe vs Racing Santander: analysis, odds and ...\n    Content: 6 hours ago — The La Liga match between Getafe and Racing Santander will be played on August 23, 2026 at 10:30. The odds are: Getafe to win 2.20, draw 2.90,\n    URL: https://betmines.com/match-preview/getafe-vs-racing-santander-prediction-match-preview-and-analysis-la-liga-23-08-2026\n\nGame ID: 3\nSource event_id: 401882913\nMatchup: Barcelona (away) @ Elche (home)\nHome: Elche\nAway: Barcelona\nKickoff UTC: 2026-08-23T19:30Z\nKickoff ET: 2026-08-23 15:30 EDT\nVenue: Estadio Martínez Valero\nRound: unavailable\nHome form: DDWLD\nAway form: WLWLW\nHome record: 0-1-0\nAway record: 0-0-0\nESPN structured 1X2 odds: Provider unavailable: Elche +750 (open +650); Draw +475 (open +475); Barcelona -310 (open -320)\nTavily context:\n  - Title: Elche vs Barcelona LaLiga preview: Key stats, team news, tactics & transfers\n    Content: 11\n\n  Raphinha\n\n### Manager\n\n M. Anselmi\n\n H. Flick\n\nElche head into this fixture without four players. Yago Santiago, Grady Diangana, Abiel Osorio, and Adam Boayar are all listed as injured, leaving Anselmi with a reduced pool to select from. No suspensions are recorded, and no probable lineup has been confirmed ahead of kick-off.\n\nBarcelona also have injury concerns to manage. Frenkie de Jong and Roony Bardghji are both sidelined, though Flick has no suspensions to contend with. The club has not released a confirmed starting eleven, and updates are expected closer to the match.\n\n### Form ...\n    URL: https://www.goal.com/en/news/elche-barcelona-la-liga-preview/blte25d3aa30ee0f3e2\n  - Title: Elche vs Barcelona LaLiga preview: Team news, tactics & transfers | INDIVISA\n    Content: 11\n\n  Raphinha\n\n### Manager\n\n M. Anselmi\n\n H. Flick\n\nElche head into this fixture without four players. Yago Santiago, Grady Diangana, Abiel Osorio, and Adam Boayar are all listed as injured, leaving Anselmi with a reduced pool to select from. No suspensions are recorded, and no probable lineup has been confirmed ahead of kick-off.\n\nBarcelona also have injury concerns to manage. Frenkie de Jong and Roony Bardghji are both sidelined, though Flick has no suspensions to contend with. The club has not released a confirmed starting eleven, and updates are expected closer to the match.\n\n### Form ...\n    URL: https://www.goal.com/en/indivisa/news/elche-vs-barcelona-laliga-preview-key-stats-team-news-tactics-and-transfers/blte25d3aa30ee0f3e2\n  - Title: Elche vs Barcelona Prediction, Betting Tips, Lineups & Odds | 23 Aug 2026\n    Content: For those wanting an alternative, Barca are 1.72 on the Half-Time Result market. This means they need to lead at the break, with Elche being priced up at 6.75 and the draw is 2.75.\n\nOver 2.5 Goals is trading at a shorter price than Under 2.5 Goals right now. BTTS betting is always a warm order and you can bet Yes at 1.73 on the Both Teams to Score market.\n\nThe leading football betting sites provide hundreds of markets for the latest La Liga games. Be sure to peruse all of the available options before going ahead with your preferred wager.\n\nFull-Time Result\n\n1\n\n9.00\n\nX\n\n5.60\n\n2\n\n1.30 ...\n    URL: https://www.sportsgambler.com/betting-tips/football/elche-vs-barcelona-prediction-lineups-odds-2026-08-23\n  - Title: Elche vs Barcelona Prediction, Odds & Betting Tips | 23.08.2026 | La Liga\n    Content: ## Additional predictions\n\nElche vs FC Barcelona odds\n\n| 1 | X | 2 | Over 2.5 | Under 2.5 |\n ---  ---\n| BC.GAME logo  BC.GAME | 9.00 | 5.60 | 1.30 | 1.45 | 2.70 |\n| Mostbet logo  Mostbet | 8.80 | 5.10 | 1.31 | 1.48 | 2.62 |\n| Roobet logo  Roobet | 9.10 | 5.65 | 1.30 | 1.42 | 2.61 |\n| Redracer logo  Redracer | 9.00 | 5.75 | 1.30 | 1.44 | 2.75 |\n| Lucky Star logo  Lucky Star | 9.45 | 5.84 | 1.35 | 1.42 | 2.61 |\n| Melbet logo  Melbet | 9.10 | 5.65 | 1.30 |  |  |\n| Megapari logo  Megapari | 9.00 | 5.75 | 1.30 | 1.44 | 2.75 |\n| 22bet logo  22bet | 9.00 | 5.60 | 1.30 | 1.45 | 2.70 | ...\n    URL: https://www.mightytips.com/football-predictions/elche-vs-barcelona-prediction-23-08-2026\n\nReturn valid JSON only, with a predictions array. Do not output source event IDs.\n\nEach prediction must contain exactly these fields: game_id, matchup, home_win_probability, draw_probability, away_win_probability, predicted_outcome, confidence, reasoning.\n\ngame_id must be an unquoted positive JSON integer such as 1, never a quoted string such as \"1\" or a decimal such as 1.0.\n\nconfidence must be a nonempty JSON string such as \"low\", \"medium\", or \"high\", not a number.\n\nInclude every expected game_id exactly once. home_win_probability, draw_probability, and away_win_probability must be finite, nonnegative numbers summing to one.",
+                "fixtures": [
+                    {
+                        "event_id": "401882915",
+                        "date_utc": "2026-08-23T15:00Z",
+                        "kickoff_et": "2026-08-23 11:00 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Atlético Madrid",
+                        "away": "Villarreal",
+                        "home_id": "1068",
+                        "away_id": "102",
+                        "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                        "venue": "Riyadh Air Metropolitano",
+                        "city": "Madrid",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WLWWL",
+                        "form_away": "DWLLD",
+                        "record_home": "1-0-0",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": "DraftKings",
+                            "home_open": "-115",
+                            "home_current": "-115",
+                            "draw_open": "+255",
+                            "draw_current": "+270",
+                            "away_open": "+295",
+                            "away_current": "+310"
+                        },
+                        "odds_text": "DraftKings: Atlético Madrid -115 (open -115); Draw +270 (open +255); Villarreal +310 (open +295)",
+                        "game_id": 1
+                    },
+                    {
+                        "event_id": "401882911",
+                        "date_utc": "2026-08-23T17:30Z",
+                        "kickoff_et": "2026-08-23 13:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Getafe",
+                        "away": "Racing Santander",
+                        "home_id": "2922",
+                        "away_id": "87",
+                        "matchup": "Racing Santander (away) @ Getafe (home)",
+                        "venue": "Estadio Coliseum",
+                        "city": "Getafe",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "WLWLW",
+                        "form_away": "DWDWW",
+                        "record_home": "0-0-1",
+                        "record_away": "0-1-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "-115",
+                            "home_current": "+120",
+                            "draw_open": "+200",
+                            "draw_current": "+200",
+                            "away_open": "+390",
+                            "away_current": "+285"
+                        },
+                        "odds_text": "Provider unavailable: Getafe +120 (open -115); Draw +200 (open +200); Racing Santander +285 (open +390)",
+                        "game_id": 2
+                    },
+                    {
+                        "event_id": "401882913",
+                        "date_utc": "2026-08-23T19:30Z",
+                        "kickoff_et": "2026-08-23 15:30 EDT",
+                        "status": "STATUS_SCHEDULED",
+                        "home": "Elche",
+                        "away": "Barcelona",
+                        "home_id": "3751",
+                        "away_id": "83",
+                        "matchup": "Barcelona (away) @ Elche (home)",
+                        "venue": "Estadio Martínez Valero",
+                        "city": "Elche",
+                        "country": "Spain",
+                        "round": null,
+                        "form_home": "DDWLD",
+                        "form_away": "WLWLW",
+                        "record_home": "0-1-0",
+                        "record_away": "0-0-0",
+                        "odds": {
+                            "provider": null,
+                            "home_open": "+650",
+                            "home_current": "+750",
+                            "draw_open": "+475",
+                            "draw_current": "+475",
+                            "away_open": "-320",
+                            "away_current": "-310"
+                        },
+                        "odds_text": "Provider unavailable: Elche +750 (open +650); Draw +475 (open +475); Barcelona -310 (open -320)",
+                        "game_id": 3
+                    }
+                ]
+            }
+        ],
+        "chunks": 1,
+        "generated_at_et": "2026-08-22T08:27:45.057642-04:00",
+        "panel_summary": {
+            "successful_columns": 25,
+            "permanent_gap_columns": 0,
+            "retryable_columns": 0
+        }
+    },
+    "model_predictions": [
+        {
+            "model_name": "Gemini 3.5 Flash",
+            "api_model": "gemini-3.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:16:24.589371-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.49,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are strong favorites at home at the Riyadh Air Metropolitano. While they face some squad depletion and injury issues, notably Alexander Sørloth being ruled out, their home record remains robust. Villarreal are capable but struggled to impose themselves convincingly in their opener against a newly-promoted side.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are given the upper hand by bookmakers at home, but Racing Santander showed resilience in their opening fixture and are dangerous on the break. Getafe's aggressive defensive style should see them control the pace, making a narrow home win or a low-scoring draw the most probable outcomes.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enter this match as heavy favorites despite a few key missing players like Frenkie de Jong. Elche have several injuries of their own and lack the quality depth needed to hold back Flick's attacking side. A comfortable away win is highly anticipated.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 3.1 Pro Preview",
+            "api_model": "gemini-3.1-pro-preview",
+            "forecast_timestamp_et": "2026-08-22T08:16:37.652342-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.5099,
+                    "draw_probability": 0.2576,
+                    "away_win_probability": 0.2325,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite some injury concerns for Atlético Madrid, they are the clear home favorites with implied probabilities around 51%. Villarreal has struggled to create many chances in recent matches.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4339,
+                    "draw_probability": 0.3182,
+                    "away_win_probability": 0.2479,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe is favored at home with odds of +120, but Racing Santander has been in decent form. This is expected to be a tight matchup where a home win is the most likely, yet not highly certain, outcome.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1122,
+                    "draw_probability": 0.166,
+                    "away_win_probability": 0.7218,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a heavy favorite on the road, with implied odds indicating over a 72% chance of winning. Elche is missing several players due to injury and will likely struggle against Barcelona's superior quality.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Pro",
+            "api_model": "gemini-2.5-pro",
+            "forecast_timestamp_et": "2026-08-22T08:16:59.386891-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Atlético Madrid are the betting favorites at home, but their squad is significantly depleted by injuries, with reports of a 'striker crisis' as key forward Alexander Sørloth is ruled out and several others are doubtful. Villarreal's own form has been inconsistent. While Atlético's home advantage is a major factor, their personnel issues reduce the certainty of a win, making this a much tighter contest than the odds initially suggest.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe are an established La Liga side playing at home against the newly-promoted Racing Santander. After losing their opening match, Getafe will be motivated to secure a result at their home stadium. Getafe's typically physical and high-press style is difficult for visiting teams to handle, especially for a side just promoted to the top flight. The odds favor a home win, which aligns with the circumstances of the match.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "There is a vast difference in quality between the two squads, with Barcelona being one of the league's top contenders and Elche a smaller club. The betting odds heavily favor Barcelona (around -310), indicating a high probability of an away win. While Barcelona is missing a couple of players like Frenkie de Jong, their squad depth is immense. Elche also faces its own injury problems, further tipping the scales in favor of the visitors.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Gemini 2.5 Flash",
+            "api_model": "gemini-2.5-flash",
+            "forecast_timestamp_et": "2026-08-22T08:17:16.656152-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid, while playing at home, faces a significant challenge with a reported striker crisis and several key players injured or doubtful. Their recent form also shows vulnerability with three losses in five outings. Villarreal, despite an unconvincing first match performance, will look to exploit Atlético's weaknesses. The initial odds favored Atlético, but the substantial injury concerns warrant a re-evaluation, pushing the probabilities towards a more balanced outcome, though Atlético remains the slight favorite on paper.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.434,
+                    "draw_probability": 0.318,
+                    "away_win_probability": 0.248,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe holds the home advantage and is favored by the odds. Their aggressive playing style is likely to put pressure on Racing Santander. While Racing, a newly promoted team, managed a draw in their opening fixture against Villarreal, Getafe represents a tough La Liga opponent at home. Racing's strong attacking statistics mentioned in some contexts are promising, but the overall strength and home factor lean towards a Getafe victory.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.112,
+                    "draw_probability": 0.166,
+                    "away_win_probability": 0.722,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enters this match as a clear favorite with significantly superior squad quality compared to Elche. Despite missing key players like Frenkie de Jong and Roony Bardghji due to injury, Barcelona's depth and overall strength are expected to be sufficient. Elche also has a list of injured players and is generally seen as an underdog. All available betting odds reflect a high probability of an away win for Barcelona.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5 Pro",
+            "api_model": "gpt-5.5-pro-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:19:07.628412-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are moderate home favorites in the 1X2 market and have the stronger home profile at the Metropolitano. Villarreal are capable of making this competitive, and Atlético injury doubts raise the draw and upset risk, but the home edge remains the most likely outcome.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are only slight favorites after market movement toward Racing Santander, but home advantage and top-flight continuity give them a narrow edge. Racing's strong recent attacking form and the generally draw-prone profile of this matchup keep the forecast close.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy away favorites in the market and have a clear squad-quality and attacking advantage. Elche have multiple injuries and face a major step up in opposition, while Barcelona's absences are not enough to materially reduce them from being the most likely winner.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.5",
+            "api_model": "gpt-5.5-2026-04-23",
+            "forecast_timestamp_et": "2026-08-22T08:19:18.309484-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid have the stronger home profile and are market favorites at the Metropolitano. Villarreal are capable of keeping this close, and Atlético's reported attacking injuries/doubts reduce the margin, but home advantage and overall squad quality still make Atlético the most likely 90-minute result.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe retain a modest home edge and are slight favorites, but the odds movement and Racing Santander's positive recent form suggest a competitive match. Getafe's physical style at the Coliseum gives them the narrowest edge, while draw risk is significant.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites despite being away, with a large squad-quality advantage and attacking depth. Elche have multiple injury concerns and are priced as clear underdogs, making a Barcelona 90-minute win the most likely outcome.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5.2 pro",
+            "api_model": "gpt-5.2-pro",
+            "forecast_timestamp_et": "2026-08-22T08:20:00.029363-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Market prices Atlético as a modest home favorite, but reported absences/doubts (notably Sørloth and other attackers) reduce their edge and increase draw/upset risk. Villarreal’s baseline quality keeps them live, yet Atlético’s home advantage and defensive structure still make the home win the single most likely 90-minute outcome.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Odds indicate Getafe are only a slight favorite and have drifted from earlier pricing, suggesting meaningful uncertainty. Getafe’s home-field/physical style typically raises their floor, but Racing’s positive recent form and counterattacking threat make a draw or away result plausible, keeping confidence low.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "The betting market makes Barcelona a strong road favorite, and the matchup gap remains large even with a couple of Barça injuries. Elche’s squad limitations and missing players increase the likelihood Barcelona control chances and take all three points in regulation time.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Mini",
+            "api_model": "gpt-5-mini",
+            "forecast_timestamp_et": "2026-08-22T08:20:10.139813-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.24,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Bookmakers make Atlético the narrow favorite; Atlético's season start and home status give them a slight edge despite striker Alexander Sørloth being injured and squad doubts that reduce their attacking depth. Villarreal showed they can score but have been inconsistent away and created few chances in their opener. The neutral/overseas venue (Riyadh) slightly mutes home advantage but not enough to overturn Atlético as the likeliest 90-minute winner.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Markets and Getafe's solid recent form (WLWLW) point to a home-edge; Racing Santander have been competitive but their early-season record is limited. Odds favor Getafe at home and Getafe's setup typically makes them hard to break down, so a home win is most likely, with a draw as the second plausible outcome.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites in the market and have stronger form and squad depth; Elche have several injuries and a mixed run of results. Even with absences like Frenkie de Jong, Barcelona's quality on paper and likely dominance make an away win the clear 90-minute expectation, with draws and home shocks less probable.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-5 Nano",
+            "api_model": "gpt-5-nano",
+            "forecast_timestamp_et": "2026-08-22T08:20:47.059925-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.2574,
+                    "away_win_probability": 0.2326,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Odds-based normalization from opening three-way market; Atlético Madrid favored at home. Minor adjustment for Sørloth injury may dampen home edge slightly.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4342,
+                    "draw_probability": 0.3177,
+                    "away_win_probability": 0.2481,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe slight favorite per odds; no standout injuries reported affecting the balance; home advantage contributes to margin.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1126,
+                    "draw_probability": 0.166,
+                    "away_win_probability": 0.7214,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona as heavy favorite on the road; despite notable injuries (Barca and Elche squad concerns), odds-heavy away win reflects expected regulation-time result.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4.1",
+            "api_model": "gpt-4.1",
+            "forecast_timestamp_et": "2026-08-22T08:20:50.998375-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are favored by bookmakers and have home advantage, but their squad is depleted with key injuries and doubts, especially in attack. Villarreal are also not in top form and struggled to create chances in their opener. Despite Atlético's recent mixed results, their defensive solidity and home support give them the edge, though the risk of a draw or Villarreal upset is higher than usual.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.41,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are slight favorites at home, but Racing Santander have shown strong recent form and attacking threat, with creative players capable of hurting Getafe on the break. Both teams have similar defensive records, and the match could be tight. The probability of a draw is significant, but Getafe's home advantage and slightly better odds tip the balance in their favor.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.74,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are overwhelming favorites despite some injury concerns, facing an Elche side missing several key players and lacking squad depth. Bookmakers and statistical models heavily favor Barcelona, and Elche's recent form and squad limitations make an upset highly unlikely. Expect a comfortable Barcelona win.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "GPT-4o",
+            "api_model": "gpt-4o",
+            "forecast_timestamp_et": "2026-08-22T08:20:54.581531-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Despite Atlético Madrid's injury concerns and recent form, they are still favored at home. Villarreal's away form is not strong enough to confidently predict an upset.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Getafe's home advantage is offset by Racing Santander's solid recent form. Both teams have shown inconsistencies, making a draw a plausible outcome.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is heavily favored due to their superior squad and form, despite some injury issues. Elche's injuries further weaken their chances against a strong opponent.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Fable 5",
+            "api_model": "claude-fable-5",
+            "forecast_timestamp_et": "2026-08-22T08:21:09.533485-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético are modest favorites at home per market odds (-115), but injuries to Sørloth and doubts over Álvarez, Llorente and Baena, plus mixed recent form (WLWWL with recent losses), keep this competitive. Villarreal's solid organization gives real draw/away value, so home win is the most likely single outcome but with limited confidence.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.44,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are slight home favorites (+120), but the line has moved toward newly-promoted Racing Santander, who arrive in strong form (unbeaten, high-scoring) with creative threats like Canales and Andrés Martín. Getafe's physical home style edges them ahead, but this is a genuinely uncertain match with a strong draw possibility.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites (~1.30 across books, -310) with a vastly superior squad despite missing De Jong. Elche have multiple injuries and rely on home resilience, but their draw-heavy form (DDWLD) suggests they can frustrate rather than win. Barcelona to win is clearly the most probable regulation-time outcome.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Opus 4.8",
+            "api_model": "claude-opus-4-8",
+            "forecast_timestamp_et": "2026-08-22T08:21:19.555898-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Atlético Madrid",
+                    "confidence": "low",
+                    "reasoning": "Atlético are favorites at home (-115) but face a striker crisis with Sørloth out and Álvarez, Llorente doubtful. Villarreal have talent and this is closer than usual, but home advantage and squad quality still edge Atlético.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.29,
+                    "predicted_outcome": "Getafe",
+                    "confidence": "low",
+                    "reasoning": "Getafe at home with their aggressive press are slight favorites, though the odds are tight (+120). Racing Santander have shown attacking threat with Canales and Villalibre. Close match with home edge to Getafe.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.69,
+                    "predicted_outcome": "Barcelona",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites (-310) despite missing De Jong and Bardghji. Their attacking quality far exceeds Elche, who are missing four players. Odds strongly favor an away win.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.6",
+            "api_model": "claude-sonnet-4-6",
+            "forecast_timestamp_et": "2026-08-22T08:21:37.680972-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.31,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Atlético Madrid host Villarreal at the Metropolitano, but Simeone's squad is heavily depleted: Sørloth is ruled out, and Julián Álvarez, Llorente, Baena, and Pubill are all doubtful. The home side has lost three of their last five and conceded 3 to Man City recently. Odds have tightened significantly from open, with Atlético moving from -115 to essentially even money, reflecting the injury concerns. Villarreal are in modest form (DWLLD) but offer value on the counter. Despite home advantage and Simeone's tactical discipline, the striker crisis makes a home win far from certain. A narrow Atlético win is the slight lean given home advantage, but this is a genuinely uncertain match.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe host newly-promoted Racing Santander in what looks like a tight affair. Getafe opened as slight home favorites but the odds have shifted to now favor Getafe at +120, suggesting market movement toward the visitors or draw. Racing drew their opening game and have shown decent attacking output (averaging 2.0 goals/game in limited sample). Getafe's form (WLWLW) is inconsistent but they have home advantage and La Liga experience. Racing's creative threat via Canales and Villalibre could trouble Getafe. The odds movement from -115 to +120 for Getafe is notable and unusual — possibly reflecting injury news or sharp action. Slight lean to Getafe given home advantage in La Liga for an established side vs promoted team.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.09,
+                    "draw_probability": 0.16,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites at -310 to -320 and this is reflected across all bookmakers (1.30 odds for away win). Elche, recently promoted, face a massive quality gap. Elche have four players injured and are yet to confirm a lineup. Barcelona have Flick's system well-drilled with Raphinha as a key threat, and despite losing De Jong and Bardghji to injury, their squad depth is vastly superior. Barcelona's form (WLWLW alternating) shows resilience and their away record vs weaker sides is strong. Elche drew at home in round 1 but face a completely different level of opposition here. A comfortable Barcelona away win is the strong expectation.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Sonnet 4.5",
+            "api_model": "claude-sonnet-4-5",
+            "forecast_timestamp_et": "2026-08-22T08:22:00.020548-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home",
+                    "confidence": "low",
+                    "reasoning": "Atlético Madrid faces significant squad issues with Sørloth ruled out and multiple players (Álvarez, Llorente, Baena, Pubill) doubtful, creating a genuine striker crisis. Their recent form shows 3 defeats in last 5 matches (WLWWL). However, they have home advantage at Riyadh Air Metropolitano and opened with a win (1-0-0 record). Villarreal drew their opener and have mixed form (DWLLD, 0-1-0 record). Despite Atlético's injury concerns, the odds favor them at -115, though multiple sources suggest the draw/away double chance offers value. The home advantage and Simeone's tactical acumen give Atlético a slight edge, but this is a low-confidence prediction given the personnel problems and inconsistent form.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.29,
+                    "away_win_probability": 0.26,
+                    "predicted_outcome": "home",
+                    "confidence": "medium",
+                    "reasoning": "Getafe lost their opener (0-0-1 record) but have shown decent recent form overall (WLWLW). Racing Santander, newly promoted, drew their first match 2-2 against lower opposition but created few chances while conceding many in the final third (0-1-0 record). The odds shifted significantly in Getafe's favor from opening (+390 for Racing to +285), suggesting market confidence in the home side. Getafe averages 1.1 goals scored and conceded, while Racing has shown they can score (2.0 average) but are defensively vulnerable (1.5 conceded). Home advantage at Estadio Coliseum and Racing's step up in competition quality favor Getafe, though the match could be close given both teams' modest attacking output.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.71,
+                    "predicted_outcome": "away",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites at -310 odds despite playing away. They haven't started the season yet (0-0-0 record) but have strong recent form (WLWLW). Elche drew their opener (0-1-0 record) and are without four injured players (Santiago, Diangana, Osorio, Boayar). Barcelona miss Frenkie de Jong and Roony Bardghji but have far superior squad depth. The betting markets heavily favor Barcelona with Over 2.5 Goals at 1.45 and Barcelona to lead at halftime at 1.72. Elche's odds of +750 reflect their significant underdog status. Despite away travel and some injuries, Barcelona's quality differential is substantial, making them clear favorites to win comfortably against a promoted/lower-table Elche side.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Claude Haiku 4.5",
+            "api_model": "claude-haiku-4-5-20251001",
+            "forecast_timestamp_et": "2026-08-22T08:22:06.266464-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.52,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.2,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid are favored at home despite injury concerns (Sørloth out, multiple players doubtful). Recent form shows 3 defeats in last 5, but betting odds favor them (-115). Villarreal have weak away form (DWLLD) and underperformed in their opening match. Home advantage and market odds support Atlético, though injuries introduce uncertainty.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe show stronger recent form (WLWLW) with home advantage. Racing Santander's recent record shows only 1 draw (DWDWW) with mixed overall results. Getafe's odds (+120) reflect slight home favorability. Racing have stronger historical performance but current form and home advantage favor Getafe. Match should be competitive.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.08,
+                    "draw_probability": 0.12,
+                    "away_win_probability": 0.8,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are clear favorites despite away fixture, reflected in -310 odds. Barcelona's form is superior (WLWLW) compared to Elche (DDWLD). Barcelona have injury concerns (de Jong, Bardghji) but maintain stronger squad depth. Elche lack four players and show inconsistent form. Market odds heavily favor Barcelona, and quality differential is substantial. High confidence in away win.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek V4 Pro",
+            "api_model": "deepseek-v4-pro",
+            "forecast_timestamp_et": "2026-08-22T08:22:48.206427-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.5,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético are home and favored, but injuries and a depleted attack make this tighter than the odds suggest; the market still gives them the edge.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe have home advantage and top-flight experience, but Racing's strong recent away form and market movement add real draw/away risk.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.12,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.71,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona have a significant talent and squad advantage despite injuries, making them clear away favorites against an injury-hit Elche.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "DeepSeek",
+            "api_model": "deepseek-chat",
+            "forecast_timestamp_et": "2026-08-22T08:22:51.380781-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.27,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid have home advantage and are favored by odds, but they have key injuries and poor recent form. Villarreal are solid away and could capitalize, but Atlético's quality and home support give them the edge.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe are at home and have decent form, but Racing Santander are unbeaten in their last five and have shown scoring ability. Odds are close, making this a low-confidence pick for a home win.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona are heavy favorites with superior squad depth and form. Elche are newly promoted and have injury issues. Despite playing away, Barcelona's quality should dominate.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.7 Max",
+            "api_model": "qwen3.7-max-2026-06-08",
+            "forecast_timestamp_et": "2026-08-22T08:23:21.168534-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.51,
+                    "draw_probability": 0.26,
+                    "away_win_probability": 0.23,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Despite injury concerns and a depleted squad for Atlético Madrid, they remain slight favorites at the Riyadh Air Metropolitano against a Villarreal side that has struggled for consistency on the road.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.43,
+                    "draw_probability": 0.32,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe is favored at home against newly-promoted Racing Santander. While Racing showed promise in their first match, Getafe's physical style and home advantage give them the edge in a likely tight, low-scoring affair.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.11,
+                    "draw_probability": 0.17,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is the heavy favorite despite a few injury concerns. Elche's depleted squad and the vast difference in overall squad quality make a Barcelona victory highly probable.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen Max",
+            "api_model": "qwen-max",
+            "forecast_timestamp_et": "2026-08-22T08:23:38.576033-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid, despite their recent form and injury concerns, are still a strong team at home. Villarreal's away form is not particularly impressive, and the odds favor a home win or draw.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe has a decent home record and a balanced form. Racing Santander, although they have shown good form, are a newly promoted team and might struggle against more experienced La Liga sides like Getafe.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a dominant force in La Liga, and despite some injury concerns, they are heavily favored to win. Elche, with their current form and injuries, is unlikely to cause an upset.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Plus",
+            "api_model": "qwen3.5-plus-2026-04-20",
+            "forecast_timestamp_et": "2026-08-22T08:24:55.647981-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.24,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid's home advantage and defensive organization typically secure narrow wins, even with a depleted attack. Villarreal's away form and limited chance creation suggest they will struggle to break down Simeone's block, making a home victory the most likely outcome despite the tight odds.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "Getafe's physical, low-block home style clashes with Racing Santander's organized counter-attacking setup. Both sides show balanced early metrics, and La Liga openers frequently trend toward cautious, low-scoring affairs. The evenly matched odds and tactical stalemate potential point to a regulation-time draw.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.15,
+                    "away_win_probability": 0.75,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona's superior squad depth, attacking talent, and tactical quality heavily favor them on the road. Elche enters missing multiple key players and will likely defend deep, but Barça's individual quality and pressing intensity should overwhelm them over 90 minutes, making a comfortable away victory highly probable.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Qwen 3.5 Flash",
+            "api_model": "qwen3.5-flash-2026-02-23",
+            "forecast_timestamp_et": "2026-08-22T08:25:50.753008-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atletico Madrid hosts Villarreal at the Metropolitano despite recent injury concerns to their strike force (Sørloth out, Alvarez doubtful). While recent form suggests vulnerability, home advantage and defensive solidity under Simeone typically secure results in early-season fixtures. The market odds slightly favor the home side, indicating underlying belief in their capacity to grind out a victory even with depleted attacking options.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.4,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "draw",
+                    "confidence": "low",
+                    "reasoning": "This fixture appears evenly contested with odds shifting significantly towards a draw outcome compared to opening prices. Getafe maintains a defensive posture at home, while Racing Santander has shown strong attacking form recently with high goal averages. The convergence of Getafe's defensive stability and Racing's away momentum suggests a tight contest likely ending in stalemate.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona arrives as heavy favorites with odds reflecting a decisive advantage over Elche. Although Barcelona lacks Frenkie de Jong, their squad depth and quality remain superior. Elche enters with four key attackers sidelined, severely compromising their ability to challenge at home. Historical dominance combined with current lineup disadvantages points strongly toward a Barcelona victory.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.6",
+            "api_model": "kimi-k2.6",
+            "forecast_timestamp_et": "2026-08-22T08:26:54.256066-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.47,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid own strong home support and won their opener, yet a depleted attacking corps—Sørloth ruled out and Álvarez among several doubtful—limits their ceiling. Villarreal were unconvincing in a draw with promoted Racing Santander and have struggled for creativity on the road, so an away victory is unlikely, but the hosts’ injury issues lift the draw probability.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.28,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe’s La Liga experience and home advantage give them a slender edge, but an opening-day loss and market drift toward Racing Santander reflect concern. The visitors opened with a solid draw against Villarreal and carry momentum, making this a tight affair where Getafe’s narrow superiority may still prevail.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona’s overall quality, depth, and tactical control make them heavy favorites against an Elche side missing four players and still finding its feet at this level. Even without Frenkie de Jong and Roony Bardghji, Barcelona’s attacking talent and defensive solidity should comfortably see them through to an away victory.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Kimi K2.5",
+            "api_model": "kimi-k2.5",
+            "forecast_timestamp_et": "2026-08-22T08:27:39.147691-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.42,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid faces a significant injury crisis with Sørloth ruled out and key attackers Álvarez, Llorente, Baena, and Pubill doubtful. Despite these absences and recent inconsistent results, they remain favorites at home against a Villarreal side that has shown mediocre form (DWLLD) and struggled to create chances against weaker opposition. The market odds reflect Atlético's underlying quality, but the depleted squad increases the probability of a draw or away result compared to typical home fixtures.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "low",
+                    "reasoning": "Getafe hosts newly-promoted Racing Santander in a tightly contested fixture. While Getafe holds home advantage and slight odds favorability, their inconsistent form (WLWLW) contrasts with Racing's unbeaten run (DWDWW) and potent attack averaging 2.7 goals over their last ten matches. Racing's ability to score against top-half opposition and Getafe's defensive vulnerabilities suggest this match could easily end in a draw or away upset, though home advantage narrowly tips the prediction toward Getafe.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.18,
+                    "away_win_probability": 0.72,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona enters as heavy favorites against an Elche side missing four players through injury including key attackers. Despite Barcelona's absences of Frenkie de Jong and Roony Bardghji, their superior squad depth, tactical quality under Flick, and historical dominance against lower-table sides should prevail. Elche's defensive vulnerabilities and the significant talent gap make the away victory the most probable outcome, though Barcelona's injuries slightly increase the draw probability compared to full strength.",
+                    "event_id": "401882913"
+                }
+            ]
+        },
+        {
+            "model_name": "Moonshot v1 32k",
+            "api_model": "moonshot-v1-32k",
+            "forecast_timestamp_et": "2026-08-22T08:27:45.055334-04:00",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "Villarreal (away) @ Atlético Madrid (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Atlético Madrid has a slight edge at home despite their recent form and injuries, given Villarreal's away struggles.",
+                    "event_id": "401882915"
+                },
+                {
+                    "game_id": 2,
+                    "matchup": "Racing Santander (away) @ Getafe (home)",
+                    "home_win_probability": 0.45,
+                    "draw_probability": 0.25,
+                    "away_win_probability": 0.3,
+                    "predicted_outcome": "home_win",
+                    "confidence": "medium",
+                    "reasoning": "Getafe's home form and Racing Santander's away struggles suggest a potential home win.",
+                    "event_id": "401882911"
+                },
+                {
+                    "game_id": 3,
+                    "matchup": "Barcelona (away) @ Elche (home)",
+                    "home_win_probability": 0.1,
+                    "draw_probability": 0.2,
+                    "away_win_probability": 0.7,
+                    "predicted_outcome": "away_win",
+                    "confidence": "high",
+                    "reasoning": "Barcelona is a strong favorite against Elche, who has several injuries and a poor home record.",
+                    "event_id": "401882913"
+                }
+            ]
+        }
+    ]
+}

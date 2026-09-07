@@ -1,0 +1,154 @@
+{
+    "meta_info": {
+        "competition": "German Bundesliga 2025-26",
+        "system_prompt": "You are an expert German Bundesliga Football Analyst and Bettor.\nYou think in probabilities. Football matches CAN end in a draw (unlike NBA).\nYour goal is to predict the outcome (Home Win, Draw, or Away Win) based on team strength,\nrecent form, injuries, home-court advantage, and betting market odds.\nReply in valid JSON format only.",
+        "user_prompt": "\n    Current Date: 2026-04-16\n    Target Date: 2026-04-17\n    Competition: German Bundesliga 2025-26\n\n    [Bundesliga Schedule & Team Stats]\n    ------------------------------------------------------------------------------------------------------------\nBundesliga Matchup                                      | Status       | Season Record (W-D-L) & Win Rate   \n------------------------------------------------------------------------------------------------------------\n1. FC Cologne @ St. Pauli                               | Scheduled    | Away: 24.1% (7-9-13) vs Home: 20.7% (6-7-16)\n\n    [Real-time News, Injury Reports & Betting Odds]\n    ### Real-time News, Injury Reports & Betting Odds\n\n#### Matchup: FC Cologne (Away) @ St. Pauli (Home)\n**News & Injury Report:**\n- [St. Pauli vs FC Koln Prediction, Betting Tips, Lineups & Odds](https://www.sportsgambler.com/betting-tips/football/st-pauli-vs-fc-koln-prediction-lineups-odds-2026-04-17/)\n  Snippet: Type Name Info\n\nJoel Chima Fujita Yellow cards \n\nPosition: Midfielder Matches: 28 Goals: 1 Assists: 3 Expected return: 2026-04-25\n\nJackson Irvine 2nd yellow (Red \n\nPosition: Midfielder Matches: 19 Goals: - Assists: - Expected return: 2026-04-17\n\nEric...\n- [St. Pauli vs FC Koln prediction 17.04.2026 | Bundesliga - MightyTips](https://www.mightytips.com/football-predictions/st-pauli-vs-fc-koln-prediction-17-04-2026/)\n  Snippet: 1\n\nMarvin Schwabe\n\nDefenders\n\n28\n\nSebastian Sebulonsen\n\n22\n\nJahmai Simpson-Pusey\n\n39\n\nCenk Ozkacar\n\n32\n\nKristoffer Lund\n\nMidfielders\n\n29\n\nJan Thielmann\n\n18\n\nIsak Johannesson\n\n6\n\nEric Martel\n\n16\n\nJakub Kaminski\n\nForwards\n\n13\n\nSaid El Mala\n\n9\n\nRagner A...\n**Betting Odds:**\n- [St Pauli vs Cologne : Prediction (17 Apr 2026) Odds & Betting tips](https://ghanasoccernet.com/predictions/st-pauli-vs-fc-cologne-prediction-preview-and-team-news-17-04-26)\n  Snippet: Bundesliga Predictions\n\n# St. Pauli vs FC Cologne : Prediction, Preview and Team News \u2013 17/04/26\n\n18:30, 17 apr 2026\n\nCountdown to event\n\n00\n\n00\n\n00\n\n00\n\nEvent starts in\n\n00\n\n00\n\n00\n\n00\n\nVictor Manieson\n\nBetting in\n\n for the first time all season.\n\n#...\n- [St. Pauli vs 1. FC K\u00f6ln Odds - Friday April 17 2026](https://www.oddsshark.com/soccer/bundesliga/st-pauli-1-fc-koln-odds-april-18-2026-2417689)\n  Snippet: Skip to main content \n\nSoccer\n\n# St. Pauli vs 1. FC K\u00f6ln\n\n1. FC K\u00f6ln\n\n7 - 9 - 13\n\nW-D-D-D-L-L\n\nSt. Pauli\n\n6 - 7 - 16\n\nL-D-L-L-D-W\n\nApril 17, 2026, 2:30 PM EDT  \n | Millerntor-Stadion\n\nPredicted Score\n\n1.7\n\nKOE\n\n1.4\n\nSTP\n\nMoneyline Consensus\n\nLine His...\n\n----------------------------------------\n\n\n    Task: \n        Predict the outcome for EVERY match listed in the schedule.\n        Football CAN end in a draw. For each match, estimate THREE probabilities:\n          - home_win_probability (0.0 to 1.0)\n          - draw_probability (0.0 to 1.0)\n          - away_win_probability (0.0 to 1.0)\n        These three must sum to 1.0.\n        If betting odds are available in the context above, use them as a key calibration signal.\n\n    Output Format (JSON strictly):\n        {\n            \"forecast_timestamp\": \"2026-04-16\",\n            \"predictions\": [\n                {\n                    \"game_id\": 1,\n                    \"matchup\": \"AwayTeam (away) @ HomeTeam (home)\",\n                    \"home_win_probability\": 0.45,\n                    \"draw_probability\": 0.25,\n                    \"away_win_probability\": 0.30,\n                    \"predicted_outcome\": \"Home Win / Draw / Away Win\",\n                    \"confidence\": \"High/Medium/Low\",\n                    \"reasoning\": \"Key player X is injured...\"\n                },\n                ... (repeat for all matches)\n            ]\n        }\n    ",
+        "generated_at": "2026-04-16 20:57:27"
+    },
+    "model_predictions": [
+        {
+            "forecast_timestamp": "2026-04-16 20:55:51",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.38,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Low",
+                    "reasoning": "Both sides profile as lower-table teams (St. Pauli 6-7-16 vs K\u00f6ln 7-9-13), so the draw rate is materially high. Market-derived expected score signals a slight K\u00f6ln edge (approx 1.7 vs 1.4), which nudges the away-win probability above the home win despite St. Pauli\u2019s home advantage. St. Pauli also appear weakened in midfield with Joel Chima Fujita suspended (yellow-card accumulation), reducing ball-winning/structure; Irvine\u2019s availability is unclear/just returning, adding uncertainty. Recent form for both is shaky, keeping confidence low and draw probability elevated."
+                }
+            ],
+            "model_name": "GPT-5.2 pro"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:12",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.25,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.45,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Market and model edge to FC Cologne: consensus odds/predicted score sources give Cologne a slight edge (predicted goals ~1.7 vs 1.4 for St. Pauli). Season win-rate inputs show Cologne marginally stronger on the road (away win-rate ~24.1%) than St. Pauli are at home (~20.7%). Recent form: Cologne's sequence (W-D-D-D-L-L) shows greater consistency and more draws (harder to beat) compared with St. Pauli (L-D-L-L-D-W), who are more variable and have more losses. Injury/availability: St. Pauli midfield disruptions noted (Joel Chima Fujita appears unavailable until ~2026-04-25, and Jackson Irvine has suspension/availability uncertainty), which weakens St. Pauli's center of midfield for this match. Home advantage at Millerntor appears limited this season. Combining betting-market calibration, team form, and the midfield absences, the model favors an away win but keeps a substantial draw probability given both teams' low scoring/win rates. Confidence is medium due to sparse / slightly ambiguous injury reporting and overall parity between teams."
+                }
+            ],
+            "model_name": "GPT-5 Mini"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:35",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.3,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.42,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Cologne have a higher season win-rate on the road (24.1%) than St. Pauli do at home (20.7%), suggesting Cologne are marginally stronger in this matchup. Market odds referenced in the context imply a close game with a slight tilt toward the away side; no overwhelming injuries reported that would dramatically shift probability."
+                }
+            ],
+            "model_name": "GPT-5 Nano"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:39",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.31,
+                    "away_win_probability": 0.37,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have struggled throughout the season, with Cologne having a slightly better record and away win rate (24.1%) compared to St. Pauli's home win rate (20.7%). St. Pauli are missing Joel Chima Fujita due to suspension but welcome back Jackson Irvine, which should give their midfield a boost. Cologne\u2019s recent form is slightly better (W-D-D-D-L-L vs. L-D-L-L-D-W for St. Pauli), and consensus betting market odds and predicted scores lean slightly towards Cologne as well (Cologne 1.7 vs. St. Pauli 1.4 expected goals). Match is tight and draw is a strong possibility too, but slight edge to Cologne given current team news and market sentiment."
+                }
+            ],
+            "model_name": "GPT-4.1"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:43",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw",
+                    "confidence": "Medium",
+                    "reasoning": "Both teams have similar form and league position, with recent performances showing mixed results. Cologne is slightly stronger based on current standings, but key midfielders for St. Pauli are absent or returning. Home advantage for St. Pauli increases the draw likelihood."
+                }
+            ],
+            "model_name": "GPT-4o"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:46",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "1. FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.48,
+                    "draw_probability": 0.27,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "St. Pauli is at home and Oddsshark predicts a score of 1.4 for them versus 1.7 for Cologne, indicating a slight home advantage. However, Irvine's suspension is a significant factor. Considering St. Pauli's slightly better form (L-D-L-L-D-W) compared to Cologne (W-D-D-D-L-L) and the home advantage, but balancing it with Irvine's red card suspension, a home win is slightly more probable, but not by a large margin. The draw probability is considerable given both teams' draw history."
+                }
+            ],
+            "model_name": "Gemini 3.0"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:56:57",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.4,
+                    "draw_probability": 0.35,
+                    "away_win_probability": 0.25,
+                    "predicted_outcome": "Home Win",
+                    "confidence": "Medium",
+                    "reasoning": "St. Pauli has slight home advantage at Millerntor-Stadion and shows marginally better recent form (W-D-L pattern: L-D-L-L-D-W vs Koln's W-D-D-D-L-L). Cologne's away record is poor (24.1% win rate) and they have key midfielder Joel Chima Fujita suspended (yellow card accumulation) until April 25th, while Jackson Irvine returns from suspension. Betting odds snippet suggests St. Pauli as slight favorite (implied probability around 40-45% for home win). Both teams have similar poor season records (St. Pauli 20.7% win rate vs Cologne 24.1%), making this a close match likely decided by home advantage and Cologne's missing midfield presence."
+                }
+            ],
+            "model_name": "DeepSeek"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:57:06",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.32,
+                    "draw_probability": 0.28,
+                    "away_win_probability": 0.4,
+                    "predicted_outcome": "Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "Despite both teams struggling this season, FC Cologne holds a slight edge. St. Pauli's home record is poor (6-7-16, 20.7% win rate) while Cologne's away record, though modest (7-9-13, 24.1% win rate), is comparatively better. Key injury concern for St. Pauli: Jackson Irvine is suspended (returning 2026-04-17, likely still unavailable for this match) and Joel Chima Fujita is out until April 25. The predicted score from betting markets suggests 1.7-1.4 in favor of Cologne, indicating a close match with slight away advantage. Both teams are in poor form based on recent results (Cologne: W-D-D-D-L-L; St. Pauli: L-D-L-L-D-W), but Cologne's last draw streak suggests more defensive solidity. St. Pauli's one recent win doesn't offset their overall struggles. The moneyline consensus and predicted score favor the away side. Given the tight nature and both teams' inconsistency, a draw is also a realistic outcome, but Cologne's marginally better season performance and St. Pauli's injury issues tip the balance toward an away win."
+                }
+            ],
+            "model_name": "Claude Sonnet 4.5"
+        },
+        {
+            "forecast_timestamp": "2026-04-16 20:57:27",
+            "predictions": [
+                {
+                    "game_id": 1,
+                    "matchup": "FC Cologne (away) @ St. Pauli (home)",
+                    "home_win_probability": 0.35,
+                    "draw_probability": 0.3,
+                    "away_win_probability": 0.35,
+                    "predicted_outcome": "Draw / Away Win",
+                    "confidence": "Medium",
+                    "reasoning": "St. Pauli has a poor home record with only 20.7% win rate, and they are missing key midfielders Joel Chima Fujita and Jackson Irvine due to suspensions. FC Cologne, despite their away record, might capitalize on the weakened St. Pauli midfield. The betting odds also suggest a close match, with no clear favorite."
+                }
+            ],
+            "model_name": "Qwen Max"
+        }
+    ]
+}
