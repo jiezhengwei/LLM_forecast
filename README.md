@@ -10,6 +10,7 @@ This repository makes the recorded prompts, model responses, and OpenTimestamps 
 - [Download the file index](metadata/forecast_index.csv) (dates, model-label counts, SHA-256 hashes, and proof status)
 - [See archive coverage and validation status](docs/archive_snapshot.md)
 - [Verify a forecast file](docs/verification.md)
+- [Five pseudo-OOS experiments: retrospective timestamp evidence](pseudo_oos/attestations/2026-10-27/README.md)
 - [Understand fields, historical model labels, and sample scope](docs/data_notes.md)
 - [Download this repository as a ZIP](https://github.com/jiezhengwei/LLM_forecast/archive/refs/heads/main.zip)
 
@@ -48,6 +49,10 @@ The research workflow records forecast-file SHA-256 hashes through the [project 
 **A GitHub upload date is not the original forecast time.** Historical files are being imported with their existing evidence. The index distinguishes dates in the source filename from the time the file was first imported here. Git commit dates alone do not establish that a forecast preceded an event.
 
 The import checks that every OTS proof is parseable and commits to the exact SHA-256 digest of its JSON file. Some saved proofs contain Bitcoin attestations; others contain only pending calendar attestations. Neither state is reported here as independently verified against the Bitcoin chain. Establishing a pre-event forecast requires verification of the external timestamp and comparison with the relevant event start time. See the [verification guide](docs/verification.md).
+
+## Retrospective pseudo-OOS evidence
+
+A separate [proof package dated 27 October 2026](pseudo_oos/attestations/2026-10-27/README.md) preserves five completed pseudo-out-of-sample experiments. It contains exact manifests, existing OTS proof versions, public verification receipts, and verification instructions. These five final proofs were verified against two public Bitcoin data sources; this is not local full-node verification. Their timestamps establish retrospective preservation, not historical execution dates, preregistration, or pre-event prediction. Underlying experiment files are not included in that minimal proof package.
 
 ## Updating the archive
 
